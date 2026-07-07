@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.pyc
+.env
+.pytest_cache/
+.coverage
+htmlcov/
+.uv-cache/
+.uv-python/
+state/cache/*.tmp

@@ -1,0 +1,197 @@
+from __future__ import annotations
+
+import json
+import os
+import re
+from hashlib import sha1
+from dataclasses import dataclass
+from datetime import date, datetime
+from io import BytesIO
+from typing import Any
+
+from src.collectors.utils import USER_AGENT, normalize_code, request_get
+from src.core.bizday import JST, today_jst
+
+
+YANOSHIN_LIST_URL = os.getenv("YANOSHIN_TDNET_LIST_URL", "https://webapi.yanoshin.jp/tdnet/list/{yyyymmdd}.json")
+TDNET_HTML_URL = os.getenv("TDNET_HTML_URL", "https://www.release.tdnet.info/inbs/I_list_001_{yyyymmdd}.html")
+
+PO_INCLUDE_KEYWORDS = ["新株式発行", "公募による新株式発行", "公募", "売出し", "売出", "株式の売出し"]
+PO_EXCLUDE_KEYWORDS = ["立会外分売", "株主割当", "行使価額修正条項", "第三者割当"]
+BUYBACK_KEYWORDS = ["自己株式の取得", "自己株式取得", "自己株式取得に係る事項"]
+
+
+@dataclass
+class Disclosure:
+    id: str
+    code: str
+    name: str
+    title: str
+    announced_at: datetime
+    pdf_url: str | None = None
+    source_url: str | None = None
+
+
+def classify_title(title: str) -> set[str]:
+    normalized = re.sub(r"\s+", "", title or "")
+    classes: set[str] = set()
+    if is_po_title(normalized):
+        classes.add("po")
+    if is_po_pricing_title(normalized):
+        classes.add("po_pricing")
+    if "立会外分売" in normalized:
+        classes.add("bunbai")
+    if "転換社債型新株予約権付社債" in normalized or "CB発行" in normalized:
+        classes.add("cb")
+    if "株式分割" in normalized:
+        classes.add("split")
+    if contains_buyback(normalized):
+        classes.add("buyback")
+    return classes
+
+
+def is_po_title(title: str) -> bool:
+    normalized = re.sub(r"\s+", "", title or "")
+    if is_po_pricing_title(normalized):
+        return False
+    if not any(keyword in normalized for keyword in PO_INCLUDE_KEYWORDS):
+        return False
+    if any(keyword in normalized for keyword in PO_EXCLUDE_KEYWORDS):
+        return False
+    if "自己株式の処分" in normalized and not any(keyword in normalized for keyword in ["公募", "売出", "新株式発行"]):
+        return False
+    return True
+
+
+def is_po_pricing_title(title: str) -> bool:
+    normalized = re.sub(r"\s+", "", title or "")
+    price_keywords = ["発行価格", "売出価格", "発行価格等", "発行価額", "売出価額"]
+    return any(keyword in normalized for keyword in price_keywords) and "決定" in normalized
+
+
+def contains_buyback(text: str | None) -> bool:
+    normalized = re.sub(r"\s+", "", text or "")
+    return any(keyword in normalized for keyword in BUYBACK_KEYWORDS)
+
+
+def fetch_disclosures(target_date: date | None = None) -> list[Disclosure]:
+    day = target_date or today_jst()
+    yyyymmdd = day.strftime("%Y%m%d")
+    try:
+        return fetch_yanoshin_disclosures(yyyymmdd)
+    except Exception:
+        return fetch_tdnet_html_disclosures(yyyymmdd)
+
+
+def fetch_yanoshin_disclosures(yyyymmdd: str) -> list[Disclosure]:
+    url = YANOSHIN_LIST_URL.format(yyyymmdd=yyyymmdd)
+    payload = json.loads(request_get(url).decode("utf-8"))
+    if isinstance(payload, list):
+        rows = payload
+    else:
+        rows = payload.get("items") or payload.get("disclosures") or payload.get("tdnet") or payload.get("data") or []
+    return [_normalize_json_disclosure(row) for row in rows if _normalize_json_disclosure(row)]
+
+
+def _normalize_json_disclosure(row: dict[str, Any]) -> Disclosure | None:
+    disclosure_id = str(row.get("id") or row.get("disclosure_id") or row.get("tdnet_id") or row.get("XbrlFilingNumber") or "")
+    title = str(row.get("title") or row.get("Title") or "")
+    code = normalize_code(row.get("company_code") or row.get("code") or row.get("Code") or row.get("ticker"))
+    if not disclosure_id or not title or not code:
+        return None
+    raw_datetime = row.get("datetime") or row.get("published_at") or row.get("date") or row.get("Date")
+    announced_at = _parse_datetime(raw_datetime)
+    return Disclosure(
+        id=disclosure_id,
+        code=code,
+        name=str(row.get("company_name") or row.get("name") or row.get("CompanyName") or ""),
+        title=title,
+        announced_at=announced_at,
+        pdf_url=row.get("pdf_url") or row.get("pdf") or row.get("url") or row.get("PdfUrl"),
+        source_url=row.get("source_url") or row.get("detail_url"),
+    )
+
+
+def fetch_tdnet_html_disclosures(yyyymmdd: str) -> list[Disclosure]:
+    from bs4 import BeautifulSoup
+
+    url = TDNET_HTML_URL.format(yyyymmdd=yyyymmdd)
+    html = request_get(url).decode("utf-8", errors="ignore")
+    soup = BeautifulSoup(html, "html.parser")
+    disclosures: list[Disclosure] = []
+    for row in soup.select("tr"):
+        cells = [cell.get_text(" ", strip=True) for cell in row.find_all(["td", "th"])]
+        joined = " ".join(cells)
+        code = normalize_code(joined)
+        link = row.find("a", href=True)
+        title = link.get_text(" ", strip=True) if link else joined
+        if not code or not title or len(title) < 4:
+            continue
+        pdf_url = None
+        if link and ".pdf" in link["href"].lower():
+            from src.collectors.utils import absolute_url
+
+            pdf_url = absolute_url(url, link["href"])
+        disclosure_id = _html_disclosure_id(link["href"] if link else joined, yyyymmdd, code, title)
+        disclosures.append(
+            Disclosure(
+                id=disclosure_id,
+                code=code,
+                name=_guess_name(cells, code),
+                title=title,
+                announced_at=_parse_datetime(yyyymmdd),
+                pdf_url=pdf_url,
+                source_url=url,
+            )
+        )
+    return disclosures
+
+
+def fetch_pdf_text(pdf_url: str | None) -> str:
+    if not pdf_url:
+        return ""
+    import pdfplumber
+
+    content = request_get(pdf_url)
+    parts: list[str] = []
+    with pdfplumber.open(BytesIO(content)) as pdf:
+        for page in pdf.pages:
+            parts.append(page.extract_text() or "")
+    return "\n".join(parts)
+
+
+def _parse_datetime(value: Any) -> datetime:
+    if isinstance(value, datetime):
+        return value.astimezone(JST) if value.tzinfo else value.replace(tzinfo=JST)
+    text = str(value or "")
+    for fmt, size in (
+        ("%Y%m%d%H%M", 12),
+        ("%Y%m%d", 8),
+        ("%Y-%m-%d %H:%M:%S", 19),
+        ("%Y-%m-%d", 10),
+    ):
+        try:
+            parsed = datetime.strptime(text[:size], fmt)
+            return parsed.replace(tzinfo=JST)
+        except ValueError:
+            pass
+    try:
+        parsed = datetime.fromisoformat(text.replace("Z", "+00:00"))
+        return parsed.astimezone(JST) if parsed.tzinfo else parsed.replace(tzinfo=JST)
+    except ValueError:
+        return datetime.now(JST)
+
+
+def _html_disclosure_id(seed: str, yyyymmdd: str, code: str, title: str) -> str:
+    match = re.search(r"(\d{8,})", seed or "")
+    if match:
+        return match.group(1)
+    digest = sha1(f"{yyyymmdd}:{code}:{title}".encode("utf-8")).hexdigest()[:12]
+    return f"tdnet-{yyyymmdd}-{code}-{digest}"
+
+
+def _guess_name(cells: list[str], code: str) -> str:
+    for index, cell in enumerate(cells):
+        if code in cell and index + 1 < len(cells):
+            return cells[index + 1]
+    return ""
