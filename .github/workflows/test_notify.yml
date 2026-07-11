@@ -1,0 +1,32 @@
+name: test_notify
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      SLACK_WEBHOOK_PO: ${{ secrets.SLACK_WEBHOOK_PO }}
+      SLACK_WEBHOOK_IPO: ${{ secrets.SLACK_WEBHOOK_IPO }}
+      SLACK_WEBHOOK_BUNBAI: ${{ secrets.SLACK_WEBHOOK_BUNBAI }}
+      SLACK_WEBHOOK_CB: ${{ secrets.SLACK_WEBHOOK_CB }}
+      SLACK_WEBHOOK_SPLIT: ${{ secrets.SLACK_WEBHOOK_SPLIT }}
+      SLACK_WEBHOOK_SYSTEM: ${{ secrets.SLACK_WEBHOOK_SYSTEM }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Send test notifications
+        run: |
+          python - <<'EOF'
+          from src.notifiers.slack import SlackNotifier
+          labels = {"ipo": "æ°è¦ä¸å ´(IPO)", "po": "å¬åå¢è³(PO)", "bunbai": "ç«ä¼å¤åå£²", "cb": "è»¢æç¤¾åµ(CB)", "split": "æ ªå¼åå²", "system": "ã·ã¹ãã /ã¨ã©ã¼"}
+          n = SlackNotifier(dry_run=False)
+          for t, label in labels.items():
+              n.send(t, ":white_check_mark: ããã¯ *" + label + "* ãã£ã³ãã«ã®ãã¹ãéç¥ã§ããå±ãã¦ããã°è¨­å®æåã§ãï¼", header="ãã¹ãéç¥")
+              print("sent test to " + t)
+          EOF
