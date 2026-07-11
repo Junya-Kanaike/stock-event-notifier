@@ -24,9 +24,9 @@ jobs:
         run: |
           python - <<'EOF'
           from src.notifiers.slack import SlackNotifier
-          labels = {"ipo": "æ°è¦ä¸å ´(IPO)", "po": "å¬åå¢è³(PO)", "bunbai": "ç«ä¼å¤åå£²", "cb": "è»¢æç¤¾åµ(CB)", "split": "æ ªå¼åå²", "system": "ã·ã¹ãã /ã¨ã©ã¼"}
+          labels = {"ipo": "IPO", "po": "PO", "bunbai": "BUNBAI", "cb": "CB", "split": "SPLIT", "system": "SYSTEM"}
           n = SlackNotifier(dry_run=False)
           for t, label in labels.items():
-              n.send(t, ":white_check_mark: ããã¯ *" + label + "* ãã£ã³ãã«ã®ãã¹ãéç¥ã§ããå±ãã¦ããã°è¨­å®æåã§ãï¼", header="ãã¹ãéç¥")
+              n.send(t, ":white_check_mark: Test notification for [" + label + "] channel. If you can see this, the setup is OK!", header="TEST")
               print("sent test to " + t)
           EOF
