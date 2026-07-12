@@ -1,4 +1,580 @@
 {
   "notified_ids": [],
-  "events": []
+  "events": [
+    {
+      "id": "ipo-2026-2026-08-04",
+      "type": "ipo",
+      "code": "2026",
+      "name": "（株）エブリー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.675684+09:00",
+      "detail": {
+        "listing_date": "2026-08-04"
+      },
+      "schedule": [
+        {
+          "date": "2026-08-03",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-08-04",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-07-29",
+      "type": "ipo",
+      "code": "2026",
+      "name": "（株）ビーエイブル",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.676006+09:00",
+      "detail": {
+        "listing_date": "2026-07-29"
+      },
+      "schedule": [
+        {
+          "date": "2026-07-28",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-07-29",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-07-22",
+      "type": "ipo",
+      "code": "2026",
+      "name": "（株）ティアフォー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.676298+09:00",
+      "detail": {
+        "listing_date": "2026-07-22"
+      },
+      "schedule": [
+        {
+          "date": "2026-07-21",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-07-22",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-07-15",
+      "type": "ipo",
+      "code": "2026",
+      "name": "チャットプラス（株）",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.676623+09:00",
+      "detail": {
+        "listing_date": "2026-07-15"
+      },
+      "schedule": [
+        {
+          "date": "2026-07-14",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-07-15",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-07-01",
+      "type": "ipo",
+      "code": "2026",
+      "name": "ギフティグループ（株） *",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.676876+09:00",
+      "detail": {
+        "listing_date": "2026-07-01"
+      },
+      "schedule": [
+        {
+          "date": "2026-06-30",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-07-01",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-06-30",
+      "type": "ipo",
+      "code": "2026",
+      "name": "ネイス（株） 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.677078+09:00",
+      "detail": {
+        "listing_date": "2026-06-30"
+      },
+      "schedule": [
+        {
+          "date": "2026-06-29",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-06-30",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-06-23",
+      "type": "ipo",
+      "code": "2026",
+      "name": "LiNKX（株） 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.677262+09:00",
+      "detail": {
+        "listing_date": "2026-06-23"
+      },
+      "schedule": [
+        {
+          "date": "2026-06-22",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-06-23",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-06-16",
+      "type": "ipo",
+      "code": "2026",
+      "name": "GO（株） 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.677481+09:00",
+      "detail": {
+        "listing_date": "2026-06-16"
+      },
+      "schedule": [
+        {
+          "date": "2026-06-15",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-06-16",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-06-01",
+      "type": "ipo",
+      "code": "2026",
+      "name": "前澤ホールディングス（株） *",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.677669+09:00",
+      "detail": {
+        "listing_date": "2026-06-01"
+      },
+      "schedule": [
+        {
+          "date": "2026-05-29",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-06-01",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-04-24",
+      "type": "ipo",
+      "code": "2026",
+      "name": "梅乃宿酒造（株） 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.677841+09:00",
+      "detail": {
+        "listing_date": "2026-04-24"
+      },
+      "schedule": [
+        {
+          "date": "2026-04-23",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-04-24",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-04-23",
+      "type": "ipo",
+      "code": "2026",
+      "name": "犬猫生活（株） 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.678009+09:00",
+      "detail": {
+        "listing_date": "2026-04-23"
+      },
+      "schedule": [
+        {
+          "date": "2026-04-22",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-04-23",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-04-22",
+      "type": "ipo",
+      "code": "2026",
+      "name": "（株）SQUEEZE 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.678179+09:00",
+      "detail": {
+        "listing_date": "2026-04-22"
+      },
+      "schedule": [
+        {
+          "date": "2026-04-21",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-04-22",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-04-21",
+      "type": "ipo",
+      "code": "2026",
+      "name": "（株）バトンズ 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.678346+09:00",
+      "detail": {
+        "listing_date": "2026-04-21"
+      },
+      "schedule": [
+        {
+          "date": "2026-04-20",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-04-21",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-04-09",
+      "type": "ipo",
+      "code": "2026",
+      "name": "（株）ソフトテックス 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.678536+09:00",
+      "detail": {
+        "listing_date": "2026-04-09"
+      },
+      "schedule": [
+        {
+          "date": "2026-04-08",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-04-09",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-04-07",
+      "type": "ipo",
+      "code": "2026",
+      "name": "ヒトトヒトホールディングス（株） 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.678710+09:00",
+      "detail": {
+        "listing_date": "2026-04-07"
+      },
+      "schedule": [
+        {
+          "date": "2026-04-06",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-04-07",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-04-06",
+      "type": "ipo",
+      "code": "2026",
+      "name": "（株）システムエグゼ",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.678879+09:00",
+      "detail": {
+        "listing_date": "2026-04-06"
+      },
+      "schedule": [
+        {
+          "date": "2026-04-03",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-04-06",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-04-02",
+      "type": "ipo",
+      "code": "2026",
+      "name": "（株）ビタブリッドジャパン 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.679048+09:00",
+      "detail": {
+        "listing_date": "2026-04-02"
+      },
+      "schedule": [
+        {
+          "date": "2026-04-01",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-04-02",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-04-01",
+      "type": "ipo",
+      "code": "2026",
+      "name": "ムニノバホールディングス（株） *",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.679284+09:00",
+      "detail": {
+        "listing_date": "2026-04-01"
+      },
+      "schedule": [
+        {
+          "date": "2026-03-31",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-04-01",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-03-27",
+      "type": "ipo",
+      "code": "2026",
+      "name": "（株）セイワホールディングス 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.679623+09:00",
+      "detail": {
+        "listing_date": "2026-03-27"
+      },
+      "schedule": [
+        {
+          "date": "2026-03-26",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-03-27",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-03-25",
+      "type": "ipo",
+      "code": "2026",
+      "name": "ジェイファーマ（株） 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.679910+09:00",
+      "detail": {
+        "listing_date": "2026-03-25"
+      },
+      "schedule": [
+        {
+          "date": "2026-03-24",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-03-25",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-02-27",
+      "type": "ipo",
+      "code": "2026",
+      "name": "（株）ギークリー 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.680197+09:00",
+      "detail": {
+        "listing_date": "2026-02-27"
+      },
+      "schedule": [
+        {
+          "date": "2026-02-26",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-02-27",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-02-24",
+      "type": "ipo",
+      "code": "2026",
+      "name": "イノバセル（株） 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.680363+09:00",
+      "detail": {
+        "listing_date": "2026-02-24"
+      },
+      "schedule": [
+        {
+          "date": "2026-02-20",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-02-24",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-2026-2026-02-13",
+      "type": "ipo",
+      "code": "2026",
+      "name": "（株）ＴＯブックス 代表者インタビュー",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-13T08:24:22.680648+09:00",
+      "detail": {
+        "listing_date": "2026-02-13"
+      },
+      "schedule": [
+        {
+          "date": "2026-02-12",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-02-13",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    }
+  ]
 }
