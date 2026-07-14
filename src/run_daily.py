@@ -54,12 +54,13 @@ def sync_ipo_events(state: dict[str, Any], master: dict[str, Any], margin: dict[
         event_id = f"ipo-{code}-{listing_date}"
         existing = find_event_by_id(state, event_id)
         master_item = lookup_master(master, code, fallback_name=item.get("name", ""))
+        market = master_item["market"] if master_item["market"] != "取得失敗" else item.get("market") or "取得失敗"
         event = {
             "id": event_id,
             "type": "ipo",
             "code": code,
             "name": master_item["name"] or item.get("name", ""),
-            "market": master_item["market"],
+            "market": market,
             "margin": lookup_margin(margin, code),
             "announced_at": existing.get("announced_at") if existing else now_jst().isoformat(),
             "detail": {"listing_date": listing_date},

@@ -4,3 +4,4 @@ pdfplumber
 jpholiday
 openpyxl
 xlrd
+tzdata; platform_system == "Windows"

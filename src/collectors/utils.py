@@ -4,6 +4,7 @@ import json
 import os
 import re
 import time
+import unicodedata
 from datetime import datetime, timedelta
 from io import BytesIO
 from pathlib import Path
@@ -23,8 +24,9 @@ CACHE_DIR = REPO_ROOT / "state" / "cache"
 def normalize_code(value: Any) -> str | None:
     if value is None:
         return None
-    match = re.search(r"(\d{4})", str(value))
-    return match.group(1) if match else None
+    text = unicodedata.normalize("NFKC", str(value)).upper()
+    match = re.search(r"(?<![0-9A-Z])(?P<code>\d{3}[A-Z]|\d{4})\d?(?![0-9A-Z])", text)
+    return match.group("code") if match else None
 
 
 def request_get(url: str, *, timeout: int = DEFAULT_TIMEOUT, retries: int = 2) -> bytes:

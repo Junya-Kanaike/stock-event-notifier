@@ -32,16 +32,59 @@ def parse_ipo_html(html: str, default_year: int | None = None) -> list[dict[str,
     soup = BeautifulSoup(html, "html.parser")
     year = default_year or date.today().year
     records: list[dict[str, Any]] = []
+    columns: dict[str, int] | None = None
     for row in soup.select("tr"):
         cells = [cell.get_text(" ", strip=True) for cell in row.find_all(["td", "th"])]
-        joined = " ".join(cells)
-        code = normalize_code(joined)
-        dates = find_dates(joined, default_year=year)
+        if not cells:
+            continue
+        if any("上場日" in cell for cell in cells) and any("コード" in cell for cell in cells):
+            columns = _column_indexes(cells)
+            continue
+
+        code_text = _cell(cells, columns, "code") if columns else ""
+        date_text = _cell(cells, columns, "date") if columns else ""
+        code = normalize_code(code_text) or _code_from_cells(cells)
+        dates = find_dates(date_text, default_year=year) if date_text else find_dates(" ".join(cells), default_year=year)
         if not code or not dates:
             continue
-        name = _guess_name(cells, code)
-        records.append({"code": code, "name": name, "listing_date": dates[0].isoformat(), "source_url": IPO_URL})
+        name = _cell(cells, columns, "name") if columns else _guess_name(cells, code)
+        market = _cell(cells, columns, "market") if columns else ""
+        records.append(
+            {
+                "code": code,
+                "name": name,
+                "market": market,
+                "listing_date": dates[0].isoformat(),
+                "source_url": IPO_URL,
+            }
+        )
     return records
+
+
+def _column_indexes(cells: list[str]) -> dict[str, int]:
+    def find(label: str) -> int:
+        return next((index for index, cell in enumerate(cells) if label in cell), -1)
+
+    return {
+        "date": find("上場日"),
+        "name": find("会社名"),
+        "code": find("コード"),
+        "market": find("市場区分"),
+    }
+
+
+def _cell(cells: list[str], columns: dict[str, int] | None, key: str) -> str:
+    index = columns.get(key, -1) if columns else -1
+    return cells[index] if 0 <= index < len(cells) else ""
+
+
+def _code_from_cells(cells: list[str]) -> str | None:
+    for cell in cells:
+        compact = re.sub(r"\s+", "", cell).upper()
+        code = normalize_code(compact)
+        if code and compact in {code, f"{code}0"}:
+            return code
+    return None
 
 
 def _guess_name(cells: list[str], code: str) -> str:

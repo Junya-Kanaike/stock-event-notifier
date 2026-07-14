@@ -88,6 +88,7 @@ def parse_po_details(
         text,
         ["発行価格等決定日", "発行価格等の決定日", "価格決定日", "発行価格", "売出価格"],
         default_year=default_year,
+        fallback_any=False,
     )
     settlement_date, settlement_raw = first_date_near_keywords(
         text,

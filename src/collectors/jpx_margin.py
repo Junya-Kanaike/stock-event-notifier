@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 from src.collectors.utils import absolute_url, load_json_cache, normalize_code, request_get, save_json_cache, workbook_rows
 
 
-MARGIN_URL = os.getenv("JPX_MARGIN_URL", "https://www.jpx.co.jp/markets/statistics-equities/margin/index.html")
+MARGIN_URL = os.getenv("JPX_MARGIN_URL", "https://www.jpx.co.jp/listing/others/margin/index.html")
 CACHE_NAME = "jpx_margin.json"
 
 

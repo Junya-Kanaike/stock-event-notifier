@@ -26,6 +26,7 @@ def parse_split_details(text: str, disclosure_date: date) -> dict[str, Any]:
         text,
         ["効力発生日", "効力発生予定日"],
         default_year=disclosure_date.year,
+        fallback_any=False,
     )
     return {
         "ratio": extract_split_ratio(text),

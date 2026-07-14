@@ -19,25 +19,32 @@ def clean_text(text: str | None) -> str:
     return re.sub(r"\s+", " ", normalized).strip()
 
 
+def _safe_date(year: int, month: int, day: int) -> date | None:
+    try:
+        return date(year, month, day)
+    except ValueError:
+        return None
+
+
 def parse_date_token(token: str, default_year: int | None = None) -> date | None:
     value = clean_text(token)
     value = re.sub(r"\([^)]+\)|（[^）]+）", "", value)
 
     m = re.search(r"(?P<y>20\d{2})[/-](?P<m>\d{1,2})[/-](?P<d>\d{1,2})", value)
     if m:
-        return date(int(m.group("y")), int(m.group("m")), int(m.group("d")))
+        return _safe_date(int(m.group("y")), int(m.group("m")), int(m.group("d")))
 
     m = re.search(r"(?P<y>20\d{2})年(?P<m>\d{1,2})月(?P<d>\d{1,2})日", value)
     if m:
-        return date(int(m.group("y")), int(m.group("m")), int(m.group("d")))
+        return _safe_date(int(m.group("y")), int(m.group("m")), int(m.group("d")))
 
     m = re.search(r"(?P<m>\d{1,2})[/-](?P<d>\d{1,2})", value)
     if m and default_year:
-        return date(default_year, int(m.group("m")), int(m.group("d")))
+        return _safe_date(default_year, int(m.group("m")), int(m.group("d")))
 
     m = re.search(r"(?P<m>\d{1,2})月(?P<d>\d{1,2})日", value)
     if m and default_year:
-        return date(default_year, int(m.group("m")), int(m.group("d")))
+        return _safe_date(default_year, int(m.group("m")), int(m.group("d")))
 
     return None
 

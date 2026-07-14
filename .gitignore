@@ -7,4 +7,6 @@ __pycache__/
 htmlcov/
 .uv-cache/
 .uv-python/
+.venv/
 state/cache/*.tmp
+.DS_Store
