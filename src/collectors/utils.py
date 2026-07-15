@@ -5,7 +5,7 @@ import os
 import re
 import time
 import unicodedata
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from io import BytesIO
 from pathlib import Path
 from typing import Any, Iterable
@@ -19,13 +19,16 @@ USER_AGENT = os.getenv(
 )
 DEFAULT_TIMEOUT = int(os.getenv("HTTP_TIMEOUT_SECONDS", "15"))
 CACHE_DIR = REPO_ROOT / "state" / "cache"
+CACHE_FORMAT_VERSION = 1
 
 
 def normalize_code(value: Any) -> str | None:
     if value is None:
         return None
     text = unicodedata.normalize("NFKC", str(value)).upper()
-    match = re.search(r"(?<![0-9A-Z])(?P<code>\d{3}[A-Z]|\d{4})\d?(?![0-9A-Z])", text)
+    # TDnet sometimes appends a category zero (72030 -> 7203). Do not
+    # truncate arbitrary five-digit instruments such as 92015.
+    match = re.search(r"(?<![0-9A-Z])(?P<code>\d{3}[A-Z]|\d{4})0?(?![0-9A-Z])", text)
     return match.group("code") if match else None
 
 
@@ -54,17 +57,43 @@ def load_json_cache(name: str, max_age: timedelta | None = None) -> Any | None:
     target = cache_path(name)
     if not target.exists():
         return None
-    if max_age and datetime.now() - datetime.fromtimestamp(target.stat().st_mtime) > max_age:
+
+    try:
+        with target.open("r", encoding="utf-8") as fh:
+            payload = json.load(fh)
+    except (OSError, json.JSONDecodeError):
         return None
-    with target.open("r", encoding="utf-8") as fh:
-        return json.load(fh)
+
+    if isinstance(payload, dict) and payload.get("cache_version") == CACHE_FORMAT_VERSION and "data" in payload:
+        if max_age:
+            try:
+                fetched_at = datetime.fromisoformat(str(payload["fetched_at"]).replace("Z", "+00:00"))
+                if fetched_at.tzinfo is None:
+                    fetched_at = fetched_at.replace(tzinfo=timezone.utc)
+            except (KeyError, TypeError, ValueError):
+                return None
+            if datetime.now(timezone.utc) - fetched_at.astimezone(timezone.utc) > max_age:
+                return None
+        return payload["data"]
+
+    # Legacy caches used git checkout mtimes as their TTL. A checkout refreshes
+    # those mtimes, so legacy content must be refreshed whenever an age limit is
+    # requested. It remains available as an explicit stale fallback.
+    return None if max_age else payload
 
 
 def save_json_cache(name: str, data: Any) -> None:
+    if os.getenv("CACHE_READ_ONLY") == "1":
+        return
     target = cache_path(name)
     tmp = target.with_suffix(target.suffix + ".tmp")
     with tmp.open("w", encoding="utf-8") as fh:
-        json.dump(data, fh, ensure_ascii=False, indent=2)
+        payload = {
+            "cache_version": CACHE_FORMAT_VERSION,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "data": data,
+        }
+        json.dump(payload, fh, ensure_ascii=False, indent=2)
         fh.write("\n")
     tmp.replace(target)
 

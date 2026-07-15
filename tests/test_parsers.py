@@ -2,6 +2,7 @@ from datetime import date
 import unittest
 
 from src.core.dateparse import find_dates, parse_date_token
+from src.parsers.bunbai_pdf import parse_bunbai_details
 from src.parsers.po_pdf import parse_po_details
 from src.parsers.split_pdf import parse_split_details
 
@@ -35,6 +36,11 @@ class ParserTest(unittest.TestCase):
     def test_po_parser_does_not_use_unrelated_dates_as_pricing_date(self):
         detail = parse_po_details("公募による新株式発行", "取締役会決議日 2026年7月13日", date(2026, 7, 13))
         self.assertIsNone(detail["pricing_date"])
+
+    def test_bunbai_parser_extracts_execution_date_near_keyword(self):
+        detail = parse_bunbai_details("分売実施予定日 2026年7月21日", date(2026, 7, 15))
+        self.assertEqual(detail["execution_date"], "2026-07-21")
+        self.assertFalse(detail["execution_date_confirmed"])
 
 
 if __name__ == "__main__":

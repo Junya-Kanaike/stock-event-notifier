@@ -21,10 +21,15 @@ def fetch_margin(force: bool = False) -> dict[str, str]:
         page = request_get(MARGIN_URL).decode("utf-8", errors="ignore")
         excel_url = find_margin_excel_url(page, MARGIN_URL)
         records = parse_margin_excel(request_get(excel_url))
+        if not records:
+            raise RuntimeError("JPX margin parser returned no records")
         save_json_cache(CACHE_NAME, records)
         return records
-    except Exception:
-        return load_json_cache(CACHE_NAME) or {}
+    except Exception as exc:
+        fallback = load_json_cache(CACHE_NAME)
+        if fallback:
+            return fallback
+        raise RuntimeError("JPX margin data is unavailable and no usable cache exists") from exc
 
 
 def find_margin_excel_url(html: str, base_url: str) -> str:
@@ -33,6 +38,8 @@ def find_margin_excel_url(html: str, base_url: str) -> str:
     for link in soup.find_all("a", href=True):
         href = link["href"]
         label = link.get_text(" ", strip=True)
+        if not label and link.parent:
+            label = link.parent.get_text(" ", strip=True)
         if not re.search(r"\.(xls|xlsx)$", href, re.I):
             continue
         score = 0
@@ -64,4 +71,6 @@ def parse_margin_excel(content: bytes) -> dict[str, str]:
 
 
 def lookup_margin(margin: dict[str, str], code: str) -> str:
+    if not margin:
+        return "取得失敗"
     return margin.get(code) or "対象外"

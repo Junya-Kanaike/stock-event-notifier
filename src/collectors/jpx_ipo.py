@@ -22,10 +22,15 @@ def fetch_ipos(force: bool = False) -> list[dict[str, Any]]:
     try:
         html = request_get(IPO_URL).decode("utf-8", errors="ignore")
         records = parse_ipo_html(html)
+        if not records:
+            raise RuntimeError("JPX IPO parser returned no records")
         save_json_cache(CACHE_NAME, records)
         return records
-    except Exception:
-        return load_json_cache(CACHE_NAME) or []
+    except Exception as exc:
+        fallback = load_json_cache(CACHE_NAME)
+        if fallback:
+            return fallback
+        raise RuntimeError("JPX IPO data is unavailable and no usable cache exists") from exc
 
 
 def parse_ipo_html(html: str, default_year: int | None = None) -> list[dict[str, Any]]:
@@ -33,12 +38,20 @@ def parse_ipo_html(html: str, default_year: int | None = None) -> list[dict[str,
     year = default_year or date.today().year
     records: list[dict[str, Any]] = []
     columns: dict[str, int] | None = None
+    pending_record: dict[str, Any] | None = None
     for row in soup.select("tr"):
         cells = [cell.get_text(" ", strip=True) for cell in row.find_all(["td", "th"])]
         if not cells:
             continue
         if any("上場日" in cell for cell in cells) and any("コード" in cell for cell in cells):
             columns = _column_indexes(cells)
+            continue
+
+        # JPX renders each company across two <tr> elements. The second row
+        # begins with the market segment and contains no code or listing date.
+        if pending_record and any(market in cells[0] for market in ("プライム", "スタンダード", "グロース")):
+            pending_record["market"] = cells[0]
+            pending_record = None
             continue
 
         code_text = _cell(cells, columns, "code") if columns else ""
@@ -49,15 +62,15 @@ def parse_ipo_html(html: str, default_year: int | None = None) -> list[dict[str,
             continue
         name = _cell(cells, columns, "name") if columns else _guess_name(cells, code)
         market = _cell(cells, columns, "market") if columns else ""
-        records.append(
-            {
-                "code": code,
-                "name": name,
-                "market": market,
-                "listing_date": dates[0].isoformat(),
-                "source_url": IPO_URL,
-            }
-        )
+        record = {
+            "code": code,
+            "name": name,
+            "market": market,
+            "listing_date": dates[0].isoformat(),
+            "source_url": IPO_URL,
+        }
+        records.append(record)
+        pending_record = record if not market else None
     return records
 
 

@@ -17,10 +17,15 @@ def fetch_master(force: bool = False) -> dict[str, dict[str, str]]:
         return cached
     try:
         records = parse_master_excel(request_get(MASTER_URL))
+        if not records:
+            raise RuntimeError("JPX master parser returned no records")
         save_json_cache(CACHE_NAME, records)
         return records
-    except Exception:
-        return load_json_cache(CACHE_NAME) or {}
+    except Exception as exc:
+        fallback = load_json_cache(CACHE_NAME)
+        if fallback:
+            return fallback
+        raise RuntimeError("JPX master data is unavailable and no usable cache exists") from exc
 
 
 def parse_master_excel(content: bytes) -> dict[str, dict[str, str]]:
