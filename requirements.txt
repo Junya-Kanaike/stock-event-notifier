@@ -6,4 +6,4 @@ Pillow==12.3.0
 jpholiday==1.0.3
 openpyxl==3.1.5
 xlrd==2.0.2
-tzdata==2026.2; platform_system == "Windows"
+tzdata==2026.3; platform_system == "Windows"
