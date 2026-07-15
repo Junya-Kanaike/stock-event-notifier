@@ -1,0 +1,24 @@
+{
+  "cache_version": 1,
+  "fetched_at": "2026-07-15T12:30:41.354866+00:00",
+  "data": [
+    {
+      "code": "7369",
+      "name": "（株）メイホーホールディングス",
+      "execution_date": "2026-06-26",
+      "source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
+    },
+    {
+      "code": "3695",
+      "name": "ＧＭＯプロダクトプラットフォーム（株）",
+      "execution_date": "2026-06-24",
+      "source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
+    },
+    {
+      "code": "2198",
+      "name": "アイ・ケイ・ケイホールディングス（株）",
+      "execution_date": "2026-06-19",
+      "source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
+    }
+  ]
+}
