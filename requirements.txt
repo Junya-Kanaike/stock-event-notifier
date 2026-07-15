@@ -1,7 +1,9 @@
-requests
-beautifulsoup4
-pdfplumber
-jpholiday
-openpyxl
-xlrd
-tzdata; platform_system == "Windows"
+requests==2.34.2
+urllib3==2.7.0
+beautifulsoup4==4.15.0
+pdfplumber==0.11.10
+Pillow==12.3.0
+jpholiday==1.0.3
+openpyxl==3.1.5
+xlrd==2.0.2
+tzdata==2026.2; platform_system == "Windows"

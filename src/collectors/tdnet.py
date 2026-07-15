@@ -16,7 +16,7 @@ from src.core.bizday import JST, today_jst
 YANOSHIN_LIST_URL = os.getenv("YANOSHIN_TDNET_LIST_URL", "https://webapi.yanoshin.jp/tdnet/list/{yyyymmdd}.json")
 TDNET_HTML_URL = os.getenv("TDNET_HTML_URL", "https://www.release.tdnet.info/inbs/I_list_001_{yyyymmdd}.html")
 
-PO_INCLUDE_KEYWORDS = ["新株式発行", "公募による新株式発行", "公募", "売出し", "売出", "株式の売出し"]
+PO_INCLUDE_KEYWORDS = ["公募", "募集による新株式発行", "売出し", "売出", "株式の売出し"]
 PO_EXCLUDE_KEYWORDS = ["立会外分売", "株主割当", "行使価額修正条項", "第三者割当"]
 BUYBACK_KEYWORDS = ["自己株式の取得", "自己株式取得", "自己株式取得に係る事項"]
 
@@ -78,9 +78,12 @@ def fetch_disclosures(target_date: date | None = None) -> list[Disclosure]:
     day = target_date or today_jst()
     yyyymmdd = day.strftime("%Y%m%d")
     try:
-        return fetch_yanoshin_disclosures(yyyymmdd)
+        disclosures = fetch_yanoshin_disclosures(yyyymmdd)
+        if disclosures:
+            return disclosures
     except Exception:
-        return fetch_tdnet_html_disclosures(yyyymmdd)
+        pass
+    return fetch_tdnet_html_disclosures(yyyymmdd)
 
 
 def fetch_yanoshin_disclosures(yyyymmdd: str) -> list[Disclosure]:
@@ -88,9 +91,24 @@ def fetch_yanoshin_disclosures(yyyymmdd: str) -> list[Disclosure]:
     payload = json.loads(request_get(url).decode("utf-8"))
     if isinstance(payload, list):
         rows = payload
+    elif isinstance(payload, dict):
+        known_keys = ("items", "disclosures", "tdnet", "data")
+        if not any(key in payload for key in known_keys):
+            raise ValueError("Unknown yanoshin response schema")
+        rows = next((payload.get(key) for key in known_keys if payload.get(key) is not None), [])
     else:
-        rows = payload.get("items") or payload.get("disclosures") or payload.get("tdnet") or payload.get("data") or []
-    return [_normalize_json_disclosure(row) for row in rows if _normalize_json_disclosure(row)]
+        raise ValueError("Unknown yanoshin response type")
+    if not isinstance(rows, list):
+        raise ValueError("Yanoshin disclosure rows are not a list")
+
+    disclosures: list[Disclosure] = []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        normalized = _normalize_json_disclosure(row)
+        if normalized:
+            disclosures.append(normalized)
+    return disclosures
 
 
 def _normalize_json_disclosure(row: dict[str, Any]) -> Disclosure | None:
@@ -99,8 +117,13 @@ def _normalize_json_disclosure(row: dict[str, Any]) -> Disclosure | None:
     code = normalize_code(row.get("company_code") or row.get("code") or row.get("Code") or row.get("ticker"))
     if not disclosure_id or not title or not code:
         return None
-    raw_datetime = row.get("datetime") or row.get("published_at") or row.get("date") or row.get("Date")
-    announced_at = _parse_datetime(raw_datetime)
+    raw_date = row.get("datetime") or row.get("published_at") or row.get("pubdate") or row.get("date") or row.get("Date")
+    raw_time = row.get("time") or row.get("Time")
+    raw_datetime = f"{raw_date} {raw_time}" if raw_date and raw_time else raw_date
+    try:
+        announced_at = _parse_datetime(raw_datetime)
+    except ValueError:
+        return None
     return Disclosure(
         id=disclosure_id,
         code=code,
@@ -114,36 +137,47 @@ def _normalize_json_disclosure(row: dict[str, Any]) -> Disclosure | None:
 
 def fetch_tdnet_html_disclosures(yyyymmdd: str) -> list[Disclosure]:
     from bs4 import BeautifulSoup
+    from src.collectors.utils import absolute_url
 
     url = TDNET_HTML_URL.format(yyyymmdd=yyyymmdd)
     html = request_get(url).decode("utf-8", errors="ignore")
     soup = BeautifulSoup(html, "html.parser")
     disclosures: list[Disclosure] = []
-    for row in soup.select("tr"):
-        cells = [cell.get_text(" ", strip=True) for cell in row.find_all(["td", "th"])]
-        joined = " ".join(cells)
-        code = normalize_code(joined)
-        link = row.find("a", href=True)
-        title = link.get_text(" ", strip=True) if link else joined
-        if not code or not title or len(title) < 4:
+    rows = soup.select("tr")
+    if not rows:
+        raise RuntimeError("TDnet fallback page contains no table rows")
+    header_found = False
+    for row in rows:
+        # The TDnet page contains an outer layout <tr> around the disclosure
+        # table. Only direct cells belong to the current row.
+        cell_nodes = row.find_all(["td", "th"], recursive=False)
+        cells = [cell.get_text(" ", strip=True) for cell in cell_nodes]
+        if len(cells) >= 4 and cells[:4] == ["時刻", "コード", "会社名", "表題"]:
+            header_found = True
             continue
-        pdf_url = None
-        if link and ".pdf" in link["href"].lower():
-            from src.collectors.utils import absolute_url
-
-            pdf_url = absolute_url(url, link["href"])
-        disclosure_id = _html_disclosure_id(link["href"] if link else joined, yyyymmdd, code, title)
+        if len(cells) < 4 or not re.fullmatch(r"\d{1,2}:\d{2}", cells[0]):
+            continue
+        code = normalize_code(cells[1])
+        title_node = cell_nodes[3]
+        title = title_node.get_text(" ", strip=True)
+        link = title_node.find("a", href=re.compile(r"\.pdf(?:$|[?#])", re.I))
+        if not code or not title or not link:
+            continue
+        pdf_url = absolute_url(url, link["href"])
+        disclosure_id = _html_disclosure_id(link["href"], yyyymmdd, code, title)
         disclosures.append(
             Disclosure(
                 id=disclosure_id,
                 code=code,
-                name=_guess_name(cells, code),
+                name=cells[2],
                 title=title,
-                announced_at=_parse_datetime(yyyymmdd),
+                announced_at=_parse_datetime(f"{yyyymmdd}{cells[0].replace(':', '')}"),
                 pdf_url=pdf_url,
                 source_url=url,
             )
         )
+    if not header_found:
+        raise RuntimeError("TDnet fallback page schema is unrecognized")
     return disclosures
 
 
@@ -178,8 +212,8 @@ def _parse_datetime(value: Any) -> datetime:
     try:
         parsed = datetime.fromisoformat(text.replace("Z", "+00:00"))
         return parsed.astimezone(JST) if parsed.tzinfo else parsed.replace(tzinfo=JST)
-    except ValueError:
-        return datetime.now(JST)
+    except ValueError as exc:
+        raise ValueError(f"Invalid disclosure datetime: {text!r}") from exc
 
 
 def _html_disclosure_id(seed: str, yyyymmdd: str, code: str, title: str) -> str:

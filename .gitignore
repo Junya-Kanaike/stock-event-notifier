@@ -9,4 +9,5 @@ htmlcov/
 .uv-python/
 .venv/
 state/cache/*.tmp
+state/archive/*.tmp
 .DS_Store

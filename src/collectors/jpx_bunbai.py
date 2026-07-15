@@ -24,8 +24,11 @@ def fetch_bunbai(force: bool = False) -> list[dict[str, Any]]:
         records = parse_bunbai_html(html)
         save_json_cache(CACHE_NAME, records)
         return records
-    except Exception:
-        return load_json_cache(CACHE_NAME) or []
+    except Exception as exc:
+        fallback = load_json_cache(CACHE_NAME)
+        if fallback is not None:
+            return fallback
+        raise RuntimeError("JPX off-auction distribution data is unavailable and no cache exists") from exc
 
 
 def parse_bunbai_html(html: str, default_year: int | None = None) -> list[dict[str, Any]]:

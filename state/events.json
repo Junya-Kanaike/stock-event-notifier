@@ -76,29 +76,6 @@
       "source_title": "株式の売出しに係る仮条件等の決定に関するお知らせ"
     },
     {
-      "id": "po-2984-2026-07-15",
-      "type": "po",
-      "code": "2984",
-      "name": "ヤマイチエステート",
-      "market": "スタンダード",
-      "margin": "対象外",
-      "announced_at": "2026-07-15T00:00:00+09:00",
-      "detail": {
-        "po_kind": "offering",
-        "size_oku": null,
-        "dilution_pct": null,
-        "pricing_date": null,
-        "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "settlement_date": "2026-07-15",
-        "settlement_date_raw": "払込期日 2026年7月15日 （2）発行する株式の種類及び数 当社普通株式 100,000株 （3）発行価額 1株につき692円 （4）発行総額 69,200,000円 （5）割当先 当社子会社の取締役 1名 100,000株 以 上",
-        "settlement_estimated": false
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260715593817.pdf",
-      "source_title": "譲渡制限付株式報酬としての新株式発行の払込完了に関するお知らせ"
-    },
-    {
       "id": "po-4071-2026-07-15",
       "type": "po",
       "code": "4071",
@@ -120,29 +97,6 @@
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260715594785.pdf",
       "source_title": "（訂正）ラクスとの資本業務提携に関する覚書の締結、当社株式の売出し並びに主要株主、主要株主である筆頭株主及びその他の関係会社の異動予定の一部訂正"
-    },
-    {
-      "id": "po-3306-2026-07-15",
-      "type": "po",
-      "code": "3306",
-      "name": "日本製麻",
-      "market": "スタンダード",
-      "margin": "対象外",
-      "announced_at": "2026-07-15T00:00:00+09:00",
-      "detail": {
-        "po_kind": "offering",
-        "size_oku": null,
-        "dilution_pct": null,
-        "pricing_date": null,
-        "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "settlement_date": "2026-08-12",
-        "settlement_date_raw": "払込期日 2026年8月12日 発行する株式の （2） 当社普通株式55,000株 種類及び数 （3） 発行価額 1株につき695円 （4） 発行総額 38,225,000円 株式の割当ての 当社の取締役(監査等委員である取締役を除く。) 4名 35,500株 対象者及びその （5） 人数並びに割当 当社の監査等委員である取締役 3名 19,500株 てる株",
-        "settlement_estimated": false
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260715594772.pdf",
-      "source_title": "譲渡制限付株式報酬としての新株式発行に関するお知らせ"
     }
   ]
 }

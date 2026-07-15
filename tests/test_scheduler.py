@@ -69,13 +69,81 @@ class SchedulerTest(unittest.TestCase):
                     }
                 ],
             }
-            changed = run_daily.sync_ipo_events(state, {"1234": {"name": "テスト", "market": "グロース"}}, {})
+            changed = run_daily.sync_ipo_events(
+                state,
+                {"1234": {"name": "テスト", "market": "グロース"}},
+                {"9999": "貸借"},
+                as_of=date(2026, 7, 17),
+            )
             self.assertFalse(changed)
             by_label = {item["label"]: item["sent"] for item in state["events"][0]["schedule"]}
             self.assertTrue(by_label["listing-1bd"])
             self.assertFalse(by_label["listing_day"])
         finally:
             run_daily.fetch_ipos = original_fetch_ipos
+
+    def test_daily_sync_drops_past_ipo_and_keeps_same_day_listings(self):
+        original_fetch_ipos = run_daily.fetch_ipos
+        try:
+            run_daily.fetch_ipos = lambda: [
+                {"code": "598A", "name": "過去", "market": "グロース", "listing_date": "2026-07-15"},
+                {"code": "603A", "name": "A社", "market": "グロース", "listing_date": "2026-07-29"},
+                {"code": "604A", "name": "B社", "market": "スタンダード", "listing_date": "2026-07-29"},
+            ]
+            state = {"notified_ids": [], "events": []}
+            changed = run_daily.sync_ipo_events(state, {}, {"9999": "貸借"}, as_of=date(2026, 7, 16))
+            self.assertTrue(changed)
+            self.assertEqual({event["code"] for event in state["events"]}, {"603A", "604A"})
+        finally:
+            run_daily.fetch_ipos = original_fetch_ipos
+
+    def test_daily_sync_preserves_future_ipo_missing_from_temporary_feed(self):
+        original_fetch_ipos = run_daily.fetch_ipos
+        try:
+            run_daily.fetch_ipos = lambda: []
+            state = {
+                "notified_ids": [],
+                "events": [
+                    {
+                        "id": "ipo-603A-2026-07-29",
+                        "type": "ipo",
+                        "detail": {"listing_date": "2026-07-29"},
+                        "schedule": [],
+                    }
+                ],
+            }
+            changed = run_daily.sync_ipo_events(state, {}, {}, as_of=date(2026, 7, 16))
+            self.assertFalse(changed)
+            self.assertEqual([event["id"] for event in state["events"]], ["ipo-603A-2026-07-29"])
+        finally:
+            run_daily.fetch_ipos = original_fetch_ipos
+
+    def test_bunbai_sync_merges_pending_tdnet_event(self):
+        original_fetch_bunbai = run_daily.fetch_bunbai
+        try:
+            run_daily.fetch_bunbai = lambda: [
+                {"code": "7203", "name": "テスト", "execution_date": "2026-07-21", "source_url": "https://example.test"}
+            ]
+            state = {
+                "notified_ids": [],
+                "events": [
+                    {
+                        "id": "bunbai-7203-2026-07-15",
+                        "type": "bunbai",
+                        "code": "7203",
+                        "announced_at": "2026-07-15T15:00:00+09:00",
+                        "detail": {"execution_date": None, "execution_date_confirmed": False},
+                        "schedule": [],
+                    }
+                ],
+            }
+            changed = run_daily.sync_bunbai_events(state, {}, {"9999": "貸借"}, as_of=date(2026, 7, 17))
+            self.assertTrue(changed)
+            self.assertEqual(len(state["events"]), 1)
+            self.assertEqual(state["events"][0]["id"], "bunbai-7203-2026-07-15")
+            self.assertTrue(state["events"][0]["detail"]["execution_date_confirmed"])
+        finally:
+            run_daily.fetch_bunbai = original_fetch_bunbai
 
 
 if __name__ == "__main__":
