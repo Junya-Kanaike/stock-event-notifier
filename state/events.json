@@ -5,7 +5,66 @@
     "140120260713591898",
     "140120260709590524",
     "140120260706588341",
-    "140120260714593349"
+    "140120260714593349",
+    "140120260706588342",
+    "140120260715593892",
+    "140120260714593697",
+    "140120260710591189"
   ],
-  "events": []
+  "events": [
+    {
+      "id": "po-543A-2026-07-15",
+      "type": "po",
+      "code": "543A",
+      "name": "ＡＲＣＨＩＯＮ",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-15T00:00:00+09:00",
+      "detail": {
+        "po_kind": "both",
+        "size_oku": null,
+        "dilution_pct": null,
+        "pricing_date": "2026-07-22",
+        "pricing_date_raw": "売出価格の仮条件等が下記のとおり 決定されましたので、お知らせいたします。 記 1.株式の売出し（引受人の買取引受けによる国内売出し及び海外売出し） (1) 売出価格の仮条件 1株につき250円から300円 ただし、売出価格は、売出価格等決定日（2026年7月22日（水）から2026 年7月 27 日（月）までの間のいずれかの日）の株式会社東京証券取引所に ",
+        "pricing_date_confirmed": false,
+        "settlement_date": "2026-07-30",
+        "settlement_date_raw": null,
+        "settlement_estimated": true
+      },
+      "schedule": [
+        {
+          "date": "2026-07-22",
+          "label": "pricing_day",
+          "sent": false
+        },
+        {
+          "date": "2026-07-23",
+          "label": "pricing_day+1",
+          "sent": false
+        },
+        {
+          "date": "2026-07-24",
+          "label": "pricing_day+2",
+          "sent": false
+        },
+        {
+          "date": "2026-07-30",
+          "label": "settlement",
+          "sent": false
+        },
+        {
+          "date": "2026-08-27",
+          "label": "pricing_day+25bd",
+          "sent": false
+        },
+        {
+          "date": "2026-08-28",
+          "label": "pricing_day+26bd",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260714593697.pdf",
+      "source_title": "株式の売出しに係る仮条件等の決定に関するお知らせ"
+    }
+  ]
 }
