@@ -26,7 +26,9 @@
     "140120260716595055",
     "140120260716594943",
     "140120260716594913",
-    "140120260716595340"
+    "140120260716595340",
+    "140120260715594693",
+    "140120260716595399"
   ],
   "events": [
     {
@@ -205,6 +207,29 @@
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "po-3282-2026-07-16",
+      "type": "po",
+      "code": "3282",
+      "name": "コンフォリア・レジデンシャル投資法人",
+      "market": "REIT・ベンチャーファンド・カントリーファンド・インフラファンド",
+      "margin": "貸借",
+      "announced_at": "2026-07-16T17:00:00+09:00",
+      "detail": {
+        "po_kind": "both",
+        "size_oku": 5.42,
+        "dilution_pct": null,
+        "pricing_date": null,
+        "pricing_date_raw": null,
+        "pricing_date_confirmed": false,
+        "settlement_date": "2026-08-04",
+        "settlement_date_raw": "受渡期日 2026年8月4日（火） （注）引受人は払込金額（発行価額）で買取引受けを行い、発行価格（募集価格）で募集を行います。 ご注意:本報道発表文は、本投資法人の新投資口発行及び投資口売出しに関して一般に公表するための文書であり、投資勧誘を 目的として作成されたものではありません。投資を行う際には、必ず本投資法人が作成する新投資口発行及び投資口売 出届出",
+        "settlement_estimated": false
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260715594693.pdf",
+      "source_title": "新投資口発行及び投資口売出しに係る価格等の決定に関するお知らせ"
     }
   ],
   "source_health": {
