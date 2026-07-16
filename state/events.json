@@ -198,5 +198,12 @@
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
     }
-  ]
+  ],
+  "source_health": {
+    "tdnet": {
+      "last_checked_date": "2026-07-16",
+      "last_success_date": "2026-07-16",
+      "consecutive_empty_days": 0
+    }
+  }
 }
