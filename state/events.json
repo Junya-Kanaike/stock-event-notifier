@@ -231,12 +231,12 @@
         {
           "date": "2026-07-16",
           "label": "pricing_day",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-07-17",
           "label": "pricing_day+1",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-07-21",
