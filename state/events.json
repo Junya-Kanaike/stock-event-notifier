@@ -36,19 +36,19 @@
       "type": "po",
       "code": "543A",
       "name": "ＡＲＣＨＩＯＮ",
-      "market": "取得失敗",
+      "market": "プライム",
       "margin": "対象外",
       "announced_at": "2026-07-15T00:00:00+09:00",
       "detail": {
-        "po_kind": "both",
+        "po_kind": "secondary",
         "size_oku": null,
         "dilution_pct": null,
         "pricing_date": "2026-07-22",
         "pricing_date_raw": "売出価格の仮条件等が下記のとおり 決定されましたので、お知らせいたします。 記 1.株式の売出し（引受人の買取引受けによる国内売出し及び海外売出し） (1) 売出価格の仮条件 1株につき250円から300円 ただし、売出価格は、売出価格等決定日（2026年7月22日（水）から2026 年7月 27 日（月）までの間のいずれかの日）の株式会社東京証券取引所に ",
         "pricing_date_confirmed": false,
-        "settlement_date": "2026-07-30",
-        "settlement_date_raw": null,
-        "settlement_estimated": true
+        "settlement_date": "2026-07-29",
+        "settlement_date_raw": "受渡期日 2026年7月29日から2026年8月3日までの間のいずれかの日",
+        "settlement_estimated": false
       },
       "schedule": [
         {
@@ -67,7 +67,7 @@
           "sent": false
         },
         {
-          "date": "2026-07-30",
+          "date": "2026-07-29",
           "label": "settlement",
           "sent": false
         },
@@ -218,16 +218,47 @@
       "announced_at": "2026-07-16T17:00:00+09:00",
       "detail": {
         "po_kind": "both",
-        "size_oku": 5.42,
+        "size_oku": 110.42,
         "dilution_pct": null,
-        "pricing_date": null,
+        "pricing_date": "2026-07-16",
         "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
+        "pricing_date_confirmed": true,
         "settlement_date": "2026-08-04",
         "settlement_date_raw": "受渡期日 2026年8月4日（火） （注）引受人は払込金額（発行価額）で買取引受けを行い、発行価格（募集価格）で募集を行います。 ご注意:本報道発表文は、本投資法人の新投資口発行及び投資口売出しに関して一般に公表するための文書であり、投資勧誘を 目的として作成されたものではありません。投資を行う際には、必ず本投資法人が作成する新投資口発行及び投資口売 出届出",
         "settlement_estimated": false
       },
-      "schedule": [],
+      "schedule": [
+        {
+          "date": "2026-07-16",
+          "label": "pricing_day",
+          "sent": false
+        },
+        {
+          "date": "2026-07-17",
+          "label": "pricing_day+1",
+          "sent": false
+        },
+        {
+          "date": "2026-07-21",
+          "label": "pricing_day+2",
+          "sent": false
+        },
+        {
+          "date": "2026-08-04",
+          "label": "settlement",
+          "sent": false
+        },
+        {
+          "date": "2026-08-24",
+          "label": "pricing_day+25bd",
+          "sent": false
+        },
+        {
+          "date": "2026-08-25",
+          "label": "pricing_day+26bd",
+          "sent": false
+        }
+      ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260715594693.pdf",
       "source_title": "新投資口発行及び投資口売出しに係る価格等の決定に関するお知らせ"
     }

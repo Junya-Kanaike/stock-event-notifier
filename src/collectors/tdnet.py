@@ -65,8 +65,17 @@ def is_po_title(title: str) -> bool:
 
 def is_po_pricing_title(title: str) -> bool:
     normalized = re.sub(r"\s+", "", title or "")
-    price_keywords = ["発行価格", "売出価格", "発行価格等", "発行価額", "売出価額"]
-    return any(keyword in normalized for keyword in price_keywords) and "決定" in normalized
+    if "決定" not in normalized or "仮条件" in normalized:
+        return False
+
+    price_keywords = ["発行価格", "売出価格", "発行価額", "売出価額"]
+    if any(keyword in normalized for keyword in price_keywords):
+        return True
+
+    # REITなどでは「発行価格」と明記せず「価格等の決定」とだけ表現
+    # されるため、募集・売出しの文脈がある場合に限って価格決定として扱う。
+    offering_context = ["新株式発行", "新投資口発行", "株式売出し", "株式の売出し", "投資口売出し", "公募"]
+    return "価格等の決定" in normalized and any(keyword in normalized for keyword in offering_context)
 
 
 def contains_buyback(text: str | None) -> bool:

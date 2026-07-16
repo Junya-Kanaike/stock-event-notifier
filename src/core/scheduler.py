@@ -12,6 +12,8 @@ class DueNotification:
     event: dict[str, Any]
     schedule_item: dict[str, Any]
     text: str
+    scheduled_for: date
+    overdue: bool = False
 
 
 def _entry(day: date, label: str, sent: bool = False) -> dict[str, Any]:
@@ -125,12 +127,24 @@ def render_daily_message(event: dict[str, Any], label: str) -> str:
 
 
 def due_notifications(state: dict[str, Any], today: date | str) -> list[DueNotification]:
-    today_iso = as_date(today).isoformat()
+    target_date = as_date(today)
     due: list[DueNotification] = []
     for event in state.get("events", []):
         if event.get("detail", {}).get("canceled"):
             continue
         for item in event.get("schedule", []):
-            if item.get("date") == today_iso and not item.get("sent"):
-                due.append(DueNotification(event, item, render_daily_message(event, item.get("label", ""))))
-    return due
+            if item.get("sent") or not item.get("date"):
+                continue
+            scheduled_for = as_date(item["date"])
+            if scheduled_for > target_date:
+                continue
+            overdue = scheduled_for < target_date
+            text = render_daily_message(event, item.get("label", ""))
+            if overdue:
+                text = (
+                    f"⚠️ [遅延通知] 本来の通知日: {scheduled_for.isoformat()}\n"
+                    f"{text}\n"
+                    "※以下の日時表現と売買指示は本来の通知日時点の内容で、現在時点の指示ではありません。"
+                )
+            due.append(DueNotification(event, item, text, scheduled_for, overdue))
+    return sorted(due, key=lambda item: (item.scheduled_for, item.event.get("id", ""), item.schedule_item.get("label", "")))

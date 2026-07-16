@@ -1,4 +1,5 @@
 from datetime import date
+from pathlib import Path
 import unittest
 
 from src.core.dateparse import find_dates, parse_date_token
@@ -7,10 +8,14 @@ from src.parsers.po_pdf import parse_po_details
 from src.parsers.split_pdf import parse_split_details
 
 
+FIXTURE_DIR = Path(__file__).parent / "fixtures" / "tdnet"
+
+
 class ParserTest(unittest.TestCase):
     def test_invalid_date_tokens_are_ignored(self):
         self.assertIsNone(parse_date_token("19/30", default_year=2026))
         self.assertEqual(find_dates("19/30 価格決定日 7/15", default_year=2026), [date(2026, 7, 15)])
+        self.assertEqual(find_dates("受渡期日 2026 年 7 月 29 日"), [date(2026, 7, 29)])
 
     def test_po_parser_extracts_required_fields(self):
         text = """
@@ -41,6 +46,28 @@ class ParserTest(unittest.TestCase):
         detail = parse_bunbai_details("分売実施予定日 2026年7月21日", date(2026, 7, 15))
         self.assertEqual(detail["execution_date"], "2026-07-21")
         self.assertFalse(detail["execution_date_confirmed"])
+
+    def test_real_tdnet_reit_price_decision_extracts_total_size_and_settlement(self):
+        text = (FIXTURE_DIR / "3282_price_decision_20260716.txt").read_text(encoding="utf-8")
+        title = "新投資口発行及び投資口売出しに係る価格等の決定に関するお知らせ"
+
+        detail = parse_po_details(title, text, date(2026, 7, 16))
+
+        self.assertEqual(detail["po_kind"], "both")
+        self.assertEqual(detail["size_oku"], 110.42)
+        self.assertEqual(detail["settlement_date"], "2026-08-04")
+        self.assertFalse(detail["settlement_estimated"])
+
+    def test_real_tdnet_preliminary_terms_extracts_date_range(self):
+        text = (FIXTURE_DIR / "543A_preliminary_terms_20260715.txt").read_text(encoding="utf-8")
+        title = "株式の売出しに係る仮条件等の決定に関するお知らせ"
+
+        detail = parse_po_details(title, text, date(2026, 7, 15))
+
+        self.assertEqual(detail["po_kind"], "secondary")
+        self.assertEqual(detail["pricing_date"], "2026-07-22")
+        self.assertEqual(detail["settlement_date"], "2026-07-29")
+        self.assertFalse(detail["settlement_estimated"])
 
 
 if __name__ == "__main__":

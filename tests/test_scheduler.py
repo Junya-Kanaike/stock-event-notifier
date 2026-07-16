@@ -1,5 +1,6 @@
 from datetime import date
 import unittest
+from unittest.mock import Mock
 
 from src.core.scheduler import build_bunbai_schedule, build_po_schedule, due_notifications
 from src.notifiers.slack import SlackNotifier
@@ -44,6 +45,46 @@ class SchedulerTest(unittest.TestCase):
         notifier = SlackNotifier(dry_run=True)
         notifier.send(due[0].event["type"], due[0].text)
         self.assertEqual(len(notifier.sent_messages), 1)
+
+    def test_daily_notification_recovers_unsent_overdue_item(self):
+        state = {
+            "notified_ids": [],
+            "events": [
+                {
+                    "id": "ipo-1234-2026-07-16",
+                    "type": "ipo",
+                    "code": "1234",
+                    "name": "テスト",
+                    "detail": {},
+                    "schedule": [
+                        {"date": "2026-07-16", "label": "listing_day", "sent": False},
+                        {"date": "2026-07-18", "label": "listing_day", "sent": False},
+                    ],
+                }
+            ],
+        }
+
+        due = due_notifications(state, date(2026, 7, 17))
+
+        self.assertEqual(len(due), 1)
+        self.assertTrue(due[0].overdue)
+        self.assertEqual(due[0].scheduled_for, date(2026, 7, 16))
+        self.assertIn("[遅延通知]", due[0].text)
+        self.assertIn("2026-07-16", due[0].text)
+        self.assertIn("現在時点の指示ではありません", due[0].text)
+
+    def test_daily_notification_does_not_repeat_sent_overdue_item(self):
+        state = {
+            "events": [
+                {
+                    "id": "ipo-1234-2026-07-16",
+                    "type": "ipo",
+                    "schedule": [{"date": "2026-07-16", "label": "listing_day", "sent": True}],
+                }
+            ]
+        }
+
+        self.assertEqual(due_notifications(state, date(2026, 7, 17)), [])
 
     def test_daily_sync_preserves_sent_flags(self):
         original_fetch_ipos = run_daily.fetch_ipos
@@ -117,6 +158,25 @@ class SchedulerTest(unittest.TestCase):
             self.assertEqual([event["id"] for event in state["events"]], ["ipo-603A-2026-07-29"])
         finally:
             run_daily.fetch_ipos = original_fetch_ipos
+
+    def test_daily_sync_can_force_jpx_refresh(self):
+        original_fetch_ipos = run_daily.fetch_ipos
+        original_fetch_bunbai = run_daily.fetch_bunbai
+        try:
+            ipo_fetch = Mock(return_value=[])
+            bunbai_fetch = Mock(return_value=[])
+            run_daily.fetch_ipos = ipo_fetch
+            run_daily.fetch_bunbai = bunbai_fetch
+
+            state = {"notified_ids": [], "events": []}
+            run_daily.sync_ipo_events(state, {}, {}, as_of=date(2026, 7, 16), force_refresh=True)
+            run_daily.sync_bunbai_events(state, {}, {}, as_of=date(2026, 7, 16), force_refresh=True)
+
+            ipo_fetch.assert_called_once_with(force=True)
+            bunbai_fetch.assert_called_once_with(force=True)
+        finally:
+            run_daily.fetch_ipos = original_fetch_ipos
+            run_daily.fetch_bunbai = original_fetch_bunbai
 
     def test_bunbai_sync_merges_pending_tdnet_event(self):
         original_fetch_bunbai = run_daily.fetch_bunbai

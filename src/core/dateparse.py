@@ -34,7 +34,7 @@ def parse_date_token(token: str, default_year: int | None = None) -> date | None
     if m:
         return _safe_date(int(m.group("y")), int(m.group("m")), int(m.group("d")))
 
-    m = re.search(r"(?P<y>20\d{2})年(?P<m>\d{1,2})月(?P<d>\d{1,2})日", value)
+    m = re.search(r"(?P<y>20\d{2})\s*年\s*(?P<m>\d{1,2})\s*月\s*(?P<d>\d{1,2})\s*日", value)
     if m:
         return _safe_date(int(m.group("y")), int(m.group("m")), int(m.group("d")))
 
@@ -42,7 +42,7 @@ def parse_date_token(token: str, default_year: int | None = None) -> date | None
     if m and default_year:
         return _safe_date(default_year, int(m.group("m")), int(m.group("d")))
 
-    m = re.search(r"(?P<m>\d{1,2})月(?P<d>\d{1,2})日", value)
+    m = re.search(r"(?P<m>\d{1,2})\s*月\s*(?P<d>\d{1,2})\s*日", value)
     if m and default_year:
         return _safe_date(default_year, int(m.group("m")), int(m.group("d")))
 
@@ -50,7 +50,7 @@ def parse_date_token(token: str, default_year: int | None = None) -> date | None
 
 
 DATE_PATTERN = re.compile(
-    r"(?:20\d{2}[/-]\d{1,2}[/-]\d{1,2}|20\d{2}年\d{1,2}月\d{1,2}日|\d{1,2}[/-]\d{1,2}|\d{1,2}月\d{1,2}日)"
+    r"(?:20\d{2}[/-]\d{1,2}[/-]\d{1,2}|20\d{2}\s*年\s*\d{1,2}\s*月\s*\d{1,2}\s*日|\d{1,2}[/-]\d{1,2}|\d{1,2}\s*月\s*\d{1,2}\s*日)"
 )
 
 

@@ -24,6 +24,7 @@ class CacheTest(unittest.TestCase):
         path = utils.cache_path("sample.json")
         payload = json.loads(path.read_text(encoding="utf-8"))
         self.assertEqual(payload["cache_version"], 1)
+        self.assertEqual(utils.cache_fetched_at("sample.json").isoformat(), payload["fetched_at"])
         self.assertEqual(utils.load_json_cache("sample.json", max_age=timedelta(days=1)), {"7203": "貸借"})
 
         payload["fetched_at"] = (datetime.now(timezone.utc) - timedelta(days=2)).isoformat()
@@ -35,6 +36,7 @@ class CacheTest(unittest.TestCase):
         path = utils.cache_path("legacy.json")
         path.write_text(json.dumps({"7203": "貸借"}), encoding="utf-8")
         self.assertIsNone(utils.load_json_cache("legacy.json", max_age=timedelta(days=1)))
+        self.assertIsNone(utils.cache_fetched_at("legacy.json"))
         self.assertEqual(utils.load_json_cache("legacy.json"), {"7203": "貸借"})
 
     def test_normalize_code_supports_letter_codes_and_safe_tdnet_suffix(self):

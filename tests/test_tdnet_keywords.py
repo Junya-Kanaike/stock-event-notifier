@@ -24,6 +24,14 @@ class TdnetKeywordTest(unittest.TestCase):
         self.assertNotIn("po", classify_title("発行価格及び売出価格等の決定に関するお知らせ"))
         self.assertIn("po_pricing", classify_title("発行価格及び売出価格等の決定に関するお知らせ"))
 
+    def test_po_pricing_recognizes_generic_price_decision_but_not_preliminary_terms(self):
+        title = "新投資口発行及び投資口売出しに係る価格等の決定に関するお知らせ"
+        self.assertEqual(classify_title(title), {"po_pricing"})
+
+        preliminary = "株式の売出しに係る売出価格の仮条件等の決定に関するお知らせ"
+        self.assertIn("po", classify_title(preliminary))
+        self.assertNotIn("po_pricing", classify_title(preliminary))
+
     def test_cb_titles(self):
         titles = [
             "2029年満期ユーロ円建転換社債型新株予約権付社債発行に関するお知らせ",

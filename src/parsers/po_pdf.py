@@ -13,6 +13,7 @@ SIZE_LABELS = [
     "発行価額の総額",
     "発行価額総額",
     "払込金額の総額",
+    "払込金額（発行価額）の総額",
     "売出価額の総額",
     "売出価額総額",
     "オーバーアロットメント",
@@ -45,7 +46,7 @@ def amount_to_oku(number: str, unit: str) -> float:
 
 def extract_size_oku(text: str) -> float | None:
     normalized = clean_text(text)
-    amounts: list[float] = []
+    amounts_by_span: dict[tuple[int, int], float] = {}
     for label in SIZE_LABELS:
         start = normalized.find(label)
         if start < 0:
@@ -53,10 +54,11 @@ def extract_size_oku(text: str) -> float | None:
         snippet = normalized[start : start + 160]
         match = AMOUNT_PATTERN.search(snippet)
         if match:
-            amounts.append(amount_to_oku(match.group(1), match.group(2)))
+            span = (start + match.start(), start + match.end())
+            amounts_by_span[span] = amount_to_oku(match.group(1), match.group(2))
 
-    if amounts:
-        return round(sum(amounts), 2)
+    if amounts_by_span:
+        return round(sum(amounts_by_span.values()), 2)
 
     match = re.search(r"(?:約|総額)?\s*([0-9][0-9,]*(?:\.[0-9]+)?)\s*億円", normalized)
     if match:

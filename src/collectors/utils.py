@@ -53,6 +53,23 @@ def cache_path(name: str) -> Path:
     return CACHE_DIR / name
 
 
+def cache_fetched_at(name: str) -> datetime | None:
+    target = cache_path(name)
+    if not target.exists():
+        return None
+    try:
+        with target.open("r", encoding="utf-8") as fh:
+            payload = json.load(fh)
+        if not isinstance(payload, dict) or payload.get("cache_version") != CACHE_FORMAT_VERSION:
+            return None
+        fetched_at = datetime.fromisoformat(str(payload["fetched_at"]).replace("Z", "+00:00"))
+        if fetched_at.tzinfo is None:
+            fetched_at = fetched_at.replace(tzinfo=timezone.utc)
+        return fetched_at.astimezone(timezone.utc)
+    except (KeyError, OSError, TypeError, ValueError, json.JSONDecodeError):
+        return None
+
+
 def load_json_cache(name: str, max_age: timedelta | None = None) -> Any | None:
     target = cache_path(name)
     if not target.exists():

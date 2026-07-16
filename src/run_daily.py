@@ -6,10 +6,11 @@ from datetime import date
 import os
 from typing import Any
 
-from src.collectors.jpx_bunbai import fetch_bunbai
-from src.collectors.jpx_ipo import fetch_ipos
-from src.collectors.jpx_margin import fetch_margin, lookup_margin
+from src.collectors.jpx_bunbai import CACHE_NAME as BUNBAI_CACHE_NAME, fetch_bunbai
+from src.collectors.jpx_ipo import CACHE_NAME as IPO_CACHE_NAME, fetch_ipos
+from src.collectors.jpx_margin import CACHE_NAME as MARGIN_CACHE_NAME, fetch_margin, lookup_margin
 from src.collectors.jpx_master import fetch_master, lookup_master
+from src.collectors.utils import cache_fetched_at
 from src.core.bizday import add_business_days, as_date, is_business_day, now_jst, today_jst
 from src.core.scheduler import build_bunbai_schedule, build_ipo_schedule, due_notifications
 from src.core.store import archive_completed_events, load_state, save_state, upsert_event
@@ -44,15 +45,19 @@ def main(argv: list[str] | None = None) -> int:
         failures.append(f"JPX銘柄マスター取得失敗: {exc}")
         notify_system_safely(notifier, failures[-1])
 
+    margin_cache_before = cache_fetched_at(MARGIN_CACHE_NAME)
     try:
-        margin = fetch_margin()
+        margin = fetch_margin(force=True)
+        report_cache_refresh(notifier, "JPX信用区分", MARGIN_CACHE_NAME, margin_cache_before, dry_run=args.dry_run)
     except Exception as exc:
         margin = {}
         failures.append(f"JPX信用区分取得失敗: {exc}")
         notify_system_safely(notifier, failures[-1])
 
+    ipo_cache_before = cache_fetched_at(IPO_CACHE_NAME)
     try:
-        did_change = sync_ipo_events(state, master, margin, as_of=target_date)
+        did_change = sync_ipo_events(state, master, margin, as_of=target_date, force_refresh=True)
+        report_cache_refresh(notifier, "JPX IPO", IPO_CACHE_NAME, ipo_cache_before, dry_run=args.dry_run)
         changed |= did_change
         if did_change and not args.dry_run:
             save_state(state)
@@ -60,8 +65,10 @@ def main(argv: list[str] | None = None) -> int:
         failures.append(f"IPO同期失敗: {exc}")
         notify_system_safely(notifier, failures[-1])
 
+    bunbai_cache_before = cache_fetched_at(BUNBAI_CACHE_NAME)
     try:
-        did_change = sync_bunbai_events(state, master, margin, as_of=target_date)
+        did_change = sync_bunbai_events(state, master, margin, as_of=target_date, force_refresh=True)
+        report_cache_refresh(notifier, "JPX立会外分売", BUNBAI_CACHE_NAME, bunbai_cache_before, dry_run=args.dry_run)
         changed |= did_change
         if did_change and not args.dry_run:
             save_state(state)
@@ -93,10 +100,12 @@ def sync_ipo_events(
     margin: dict[str, str],
     *,
     as_of: date | None = None,
+    force_refresh: bool = False,
 ) -> bool:
     reference_date = as_of or today_jst()
     changed = False
-    for item in fetch_ipos():
+    records = fetch_ipos(force=True) if force_refresh else fetch_ipos()
+    for item in records:
         code = item.get("code")
         listing_date = item.get("listing_date")
         if not code or not listing_date:
@@ -150,10 +159,12 @@ def sync_bunbai_events(
     margin: dict[str, str],
     *,
     as_of: date | None = None,
+    force_refresh: bool = False,
 ) -> bool:
     reference_date = as_of or today_jst()
     changed = False
-    for item in fetch_bunbai():
+    records = fetch_bunbai(force=True) if force_refresh else fetch_bunbai()
+    for item in records:
         code = item.get("code")
         execution_date = item.get("execution_date")
         if not code or not execution_date:
@@ -204,6 +215,23 @@ def notify_system_safely(notifier: SlackNotifier, text: str) -> None:
         notifier.system(text)
     except Exception as exc:  # Avoid masking the source failure or exposing webhook URLs.
         print(f"System alert failed: {type(exc).__name__}")
+
+
+def report_cache_refresh(
+    notifier: SlackNotifier,
+    label: str,
+    cache_name: str,
+    previous_fetched_at: Any,
+    *,
+    dry_run: bool,
+) -> None:
+    if dry_run:
+        return
+    current_fetched_at = cache_fetched_at(cache_name)
+    if current_fetched_at is not None and current_fetched_at != previous_fetched_at:
+        return
+    timestamp = previous_fetched_at.isoformat() if previous_fetched_at is not None else "不明"
+    notify_system_safely(notifier, f"{label}の日次更新に失敗し、既存キャッシュを使用しました（取得日時: {timestamp}）")
 
 
 if __name__ == "__main__":
