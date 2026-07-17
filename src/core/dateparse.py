@@ -5,8 +5,8 @@ from datetime import date
 
 
 FULLWIDTH_TRANSLATION = str.maketrans(
-    "０１２３４５６７８９／－．：",
-    "0123456789/-.:" ,
+    "０１２３４５６７８９／－．：％",
+    "0123456789/-.:%",
 )
 
 

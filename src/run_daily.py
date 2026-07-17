@@ -77,7 +77,11 @@ def main(argv: list[str] | None = None) -> int:
         notify_system_safely(notifier, failures[-1])
 
     for due in due_notifications(state, target_date):
-        notifier.send(due.event.get("type", "system"), due.text, pdf_url=due.event.get("pdf_url"))
+        notifier.send(
+            due.event.get("type", "system"),
+            due.text,
+            pdf_url=due.event.get("latest_pdf_url") or due.event.get("pdf_url"),
+        )
         due.schedule_item["sent"] = True
         changed = True
         if not args.dry_run:

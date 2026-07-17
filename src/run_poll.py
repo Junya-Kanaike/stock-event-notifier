@@ -10,6 +10,8 @@ from src.collectors.jpx_margin import fetch_margin, lookup_margin
 from src.collectors.jpx_master import fetch_master, lookup_master
 from src.collectors.tdnet import Disclosure, classify_title, contains_buyback, fetch_disclosures, fetch_pdf_text
 from src.core.bizday import JST, is_business_day, today_jst
+from src.core.dateparse import clean_text, find_dates
+from src.core.po import format_po_message, merge_po_details, refresh_po_missing_fields
 from src.core.scheduler import build_bunbai_schedule, build_po_schedule, build_split_schedule
 from src.core.store import (
     add_notified_id,
@@ -86,6 +88,8 @@ def main(argv: list[str] | None = None) -> int:
             if "buyback" in classes:
                 item_changed |= handle_buyback(disclosure, state, notifier)
                 known_buybacks.add((disclosure.code, disclosure.announced_at.date().isoformat()))
+            elif "po_correction" in classes:
+                item_changed |= handle_po_correction(disclosure, state, notifier, master, margin)
             elif "po_pricing" in classes:
                 item_changed |= handle_po_pricing(disclosure, state, notifier, master, margin)
             elif "po" in classes:
@@ -130,7 +134,9 @@ def base_event(disclosure: Disclosure, event_type: str, master: dict[str, Any], 
         "detail": {},
         "schedule": [],
         "pdf_url": disclosure.pdf_url,
+        "latest_pdf_url": disclosure.pdf_url,
         "source_title": disclosure.title,
+        "related_disclosures": [disclosure_reference(disclosure, "source")],
     }
 
 
@@ -152,6 +158,8 @@ def handle_po_pricing(
     master: dict[str, Any],
     margin: dict[str, str],
 ) -> bool:
+    text = fetch_pdf_text(disclosure.pdf_url)
+    parsed_detail = parse_po_details(disclosure.title, text, disclosure.announced_at.date())
     candidates = find_events(
         state,
         event_type="po",
@@ -159,29 +167,95 @@ def handle_po_pricing(
         predicate=lambda event: not event.get("detail", {}).get("pricing_date_confirmed"),
     )
     if not candidates:
-        text = fetch_pdf_text(disclosure.pdf_url)
         event = base_event(disclosure, "po", master, margin)
-        detail = parse_po_details(disclosure.title, text, disclosure.announced_at.date())
+        detail = parsed_detail
         pricing_date = disclosure.announced_at.date().isoformat()
         detail["pricing_date"] = pricing_date
+        detail["pricing_date_end"] = pricing_date
         detail["pricing_date_confirmed"] = True
+        detail["pricing_date_status"] = "confirmed"
+        detail["parse_warnings"] = ["当初発表を取得できず価格決定資料から復元"]
+        refresh_po_missing_fields(detail)
         event["detail"] = detail
         event["schedule"] = build_po_schedule(pricing_date, detail.get("settlement_date"))
         notifier.send(
             "po",
-            format_po_announcement(event) + "\n⚠️ 当初発表を取得できなかったため価格決定情報から復元",
+            format_po_message(event, "PO価格決定（復元）"),
             header="PO価格決定（復元）",
-            pdf_url=event.get("pdf_url"),
+            pdf_url=event.get("latest_pdf_url"),
         )
         upsert_event(state, event)
         return True
     event = sorted(candidates, key=lambda item: item.get("announced_at", ""), reverse=True)[0]
-    old_schedule = event.get("schedule", [])
-    detail = event.setdefault("detail", {})
+    updated = deepcopy(event)
+    old_schedule = updated.get("schedule", [])
+    detail = merge_po_details(updated.get("detail", {}), parsed_detail)
     pricing_date = disclosure.announced_at.date().isoformat()
     detail["pricing_date"] = pricing_date
+    detail["pricing_date_end"] = pricing_date
     detail["pricing_date_confirmed"] = True
-    event["schedule"] = build_po_schedule(pricing_date, detail.get("settlement_date"), old_schedule=old_schedule)
+    detail["pricing_date_status"] = "confirmed"
+    refresh_po_missing_fields(detail)
+    updated["detail"] = detail
+    updated["latest_pdf_url"] = disclosure.pdf_url
+    append_related_disclosure(updated, disclosure, "pricing")
+    updated["schedule"] = build_po_schedule(pricing_date, detail.get("settlement_date"), old_schedule=old_schedule)
+    notifier.send(
+        "po",
+        format_po_message(updated, "PO価格決定"),
+        header="PO価格決定",
+        pdf_url=disclosure.pdf_url,
+    )
+    upsert_event(state, updated)
+    return True
+
+
+def handle_po_correction(
+    disclosure: Disclosure,
+    state: dict[str, Any],
+    notifier: SlackNotifier,
+    master: dict[str, Any],
+    margin: dict[str, str],
+) -> bool:
+    text = fetch_pdf_text(disclosure.pdf_url)
+    parsed_detail = parse_po_details(disclosure.title, text, disclosure.announced_at.date())
+    candidates = find_events(state, event_type="po", code=disclosure.code)
+    if candidates:
+        original = sorted(candidates, key=lambda item: item.get("announced_at", ""), reverse=True)[0]
+        updated = deepcopy(original)
+        updated["detail"] = merge_po_details(updated.get("detail", {}), parsed_detail)
+        updated["latest_pdf_url"] = disclosure.pdf_url
+        append_related_disclosure(updated, disclosure, "correction")
+        if updated["detail"].get("pricing_date"):
+            updated["schedule"] = build_po_schedule(
+                updated["detail"]["pricing_date"],
+                updated["detail"].get("settlement_date"),
+                old_schedule=updated.get("schedule", []),
+            )
+    else:
+        updated = recover_original_po_event(disclosure, text, master, margin)
+        if updated:
+            updated["detail"] = merge_po_details(updated.get("detail", {}), parsed_detail)
+            updated["detail"].setdefault("recovery_notes", []).append("訂正資料から元開示を自動補完")
+            updated["latest_pdf_url"] = disclosure.pdf_url
+            append_related_disclosure(updated, disclosure, "correction")
+        else:
+            updated = base_event(disclosure, "po", master, margin)
+            parsed_detail["parse_warnings"] = ["元のPO発表を状態ストアまたは訂正資料から特定できません"]
+            refresh_po_missing_fields(parsed_detail)
+            updated["detail"] = parsed_detail
+        if updated["detail"].get("pricing_date"):
+            updated["schedule"] = build_po_schedule(
+                updated["detail"]["pricing_date"], updated["detail"].get("settlement_date")
+            )
+
+    notifier.send(
+        "po",
+        format_po_message(updated, "PO訂正"),
+        header="PO訂正",
+        pdf_url=disclosure.pdf_url,
+    )
+    upsert_event(state, updated)
     return True
 
 
@@ -262,21 +336,69 @@ def extract_cb_amount(text: str) -> str | None:
 
 
 def format_po_announcement(event: dict[str, Any]) -> str:
-    detail = event.get("detail", {})
-    kind = {"offering": "公募増資", "secondary": "売出し", "both": "公募増資+売出し"}.get(detail.get("po_kind"), "要確認")
-    size = "取得失敗" if detail.get("size_oku") is None else f"約{detail['size_oku']:,}億円"
-    dilution = "" if detail.get("dilution_pct") is None else f"(発行済比 {detail['dilution_pct']}%)"
-    pricing = detail.get("pricing_date_raw") or detail.get("pricing_date") or "取得失敗"
-    settlement = detail.get("settlement_date") or "取得失敗"
-    if detail.get("settlement_estimated"):
-        settlement += "(暫定)"
-    return (
-        f"[PO発表] {event['code']} {event['name']}({event['market']} / {event['margin']})\n"
-        f"種別: {kind}\n"
-        f"吸収規模: {size}{dilution}\n"
-        f"価格決定日: {pricing}\n"
-        f"想定受渡日: {settlement}"
-    )
+    return format_po_message(event, "PO発表")
+
+
+def disclosure_reference(disclosure: Disclosure, relation: str) -> dict[str, Any]:
+    return {
+        "id": disclosure.id,
+        "relation": relation,
+        "title": disclosure.title,
+        "announced_at": disclosure.announced_at.astimezone(JST).isoformat(),
+        "pdf_url": disclosure.pdf_url,
+    }
+
+
+def append_related_disclosure(event: dict[str, Any], disclosure: Disclosure, relation: str) -> None:
+    references = event.setdefault("related_disclosures", [])
+    if any(item.get("id") == disclosure.id for item in references):
+        return
+    references.append(disclosure_reference(disclosure, relation))
+
+
+def recover_original_po_event(
+    correction: Disclosure,
+    correction_text: str,
+    master: dict[str, Any],
+    margin: dict[str, str],
+) -> dict[str, Any] | None:
+    original_date = original_disclosure_date(correction_text, correction.announced_at.date().year)
+    if not original_date:
+        return None
+    try:
+        disclosures = fetch_disclosures(original_date)
+    except Exception:
+        return None
+    candidates = [
+        item
+        for item in disclosures
+        if item.code == correction.code and "po" in classify_title(item.title) and "po_correction" not in classify_title(item.title)
+    ]
+    if not candidates:
+        return None
+    original = sorted(candidates, key=lambda item: (item.announced_at, item.id))[-1]
+    try:
+        original_text = fetch_pdf_text(original.pdf_url)
+    except Exception:
+        return None
+    event = base_event(original, "po", master, margin)
+    event["related_disclosures"] = [disclosure_reference(original, "original")]
+    event["detail"] = parse_po_details(original.title, original_text, original.announced_at.date())
+    if event["detail"].get("pricing_date"):
+        event["schedule"] = build_po_schedule(
+            event["detail"]["pricing_date"], event["detail"].get("settlement_date")
+        )
+    return event
+
+
+def original_disclosure_date(text: str, default_year: int) -> date | None:
+    normalized = clean_text(text)
+    marker = "に開示いたしました"
+    position = normalized.find(marker)
+    if position < 0:
+        return None
+    dates = find_dates(normalized[max(0, position - 60) : position], default_year=default_year)
+    return dates[-1] if dates else None
 
 
 def format_bunbai_announcement(event: dict[str, Any]) -> str:

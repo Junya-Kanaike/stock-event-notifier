@@ -42,6 +42,8 @@ class SchedulerTest(unittest.TestCase):
         due = due_notifications(state, date(2026, 7, 17))
         self.assertEqual(len(due), 1)
         self.assertIn("寄り付きで買う", due[0].text)
+        self.assertIn("吸収規模:", due[0].text)
+        self.assertIn("希薄化率:", due[0].text)
         notifier = SlackNotifier(dry_run=True)
         notifier.send(due[0].event["type"], due[0].text)
         self.assertEqual(len(notifier.sent_messages), 1)
@@ -85,6 +87,42 @@ class SchedulerTest(unittest.TestCase):
         }
 
         self.assertEqual(due_notifications(state, date(2026, 7, 17)), [])
+
+    def test_po_daily_message_includes_saved_detail_and_status(self):
+        state = {
+            "events": [
+                {
+                    "id": "po-1234-2026-07-16",
+                    "type": "po",
+                    "code": "1234",
+                    "name": "テスト",
+                    "market": "プライム",
+                    "margin": "貸借",
+                    "detail": {
+                        "po_kind": "secondary",
+                        "size_oku": None,
+                        "size_oku_min": 100.0,
+                        "size_oku_max": 120.0,
+                        "size_status": "estimated",
+                        "size_basis": "株数（OA上限込み）×仮条件",
+                        "dilution_pct": None,
+                        "dilution_status": "unavailable",
+                        "pricing_date": "2026-07-16",
+                        "pricing_date_end": "2026-07-18",
+                        "pricing_date_status": "provisional",
+                        "settlement_date": "2026-07-24",
+                        "settlement_date_status": "confirmed",
+                    },
+                    "schedule": [{"date": "2026-07-16", "label": "pricing_day", "sent": False}],
+                }
+            ]
+        }
+
+        text = due_notifications(state, date(2026, 7, 16))[0].text
+
+        self.assertIn("約100〜120億円（概算・株数（OA上限込み）×仮条件）", text)
+        self.assertIn("希薄化率: 未取得", text)
+        self.assertIn("2026-07-16〜2026-07-18（暫定）", text)
 
     def test_daily_sync_preserves_sent_flags(self):
         original_fetch_ipos = run_daily.fetch_ipos

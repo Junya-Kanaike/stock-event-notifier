@@ -5,6 +5,7 @@ from datetime import date
 from typing import Any
 
 from src.core.bizday import add_business_days, as_date, prev_business_day
+from src.core.po import format_po_detail_block
 
 
 @dataclass
@@ -89,17 +90,17 @@ def render_daily_message(event: dict[str, Any], label: str) -> str:
 
     if event.get("type") == "po":
         if label == "pricing_day":
-            return f"[PO] 本日は {display} の価格決定日です。*寄り付きで買う*"
+            return _po_daily(event, f"[PO] 本日は {display} の価格決定日です。*寄り付きで買う*")
         if label == "pricing_day+1":
-            return f"[PO] 本日は {display} の価格決定日の翌営業日です。*寄り付きで買う*"
+            return _po_daily(event, f"[PO] 本日は {display} の価格決定日の翌営業日です。*寄り付きで買う*")
         if label == "pricing_day+2":
-            return f"[PO] 本日は {display} の価格決定日の翌々営業日です。*寄り付きで買う*"
+            return _po_daily(event, f"[PO] 本日は {display} の価格決定日の翌々営業日です。*寄り付きで買う*")
         if label == "settlement":
-            return f"[PO] 本日は {display} の受渡日です。*寄り付きで買う*"
+            return _po_daily(event, f"[PO] 本日は {display} の受渡日です。*寄り付きで買う*")
         if label == "pricing_day+25bd":
-            return f"[PO] 本日は {display} の価格決定日から25営業日後です"
+            return _po_daily(event, f"[PO] 本日は {display} の価格決定日から25営業日後です")
         if label == "pricing_day+26bd":
-            return f"[PO] 本日は {display} の価格決定日から26営業日後です"
+            return _po_daily(event, f"[PO] 本日は {display} の価格決定日から26営業日後です")
 
     if event.get("type") == "ipo":
         if label == "listing-1bd":
@@ -124,6 +125,10 @@ def render_daily_message(event: dict[str, Any], label: str) -> str:
             return f"[株式分割] 本日 {suffix}の効力発生日です"
 
     return f"[{event.get('type', 'event')}] {display}: {label}"
+
+
+def _po_daily(event: dict[str, Any], action: str) -> str:
+    return f"{action}\n{format_po_detail_block(event)}"
 
 
 def due_notifications(state: dict[str, Any], today: date | str) -> list[DueNotification]:

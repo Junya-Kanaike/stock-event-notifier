@@ -14,6 +14,7 @@
     "140120260707588790",
     "140120260714593678",
     "140120260715594293",
+    "140120260714592985",
     "140120260715594785",
     "140120260715594168",
     "140120260715594772",
@@ -51,14 +52,32 @@
       "announced_at": "2026-07-15T00:00:00+09:00",
       "detail": {
         "po_kind": "secondary",
+        "source_stage": "preliminary",
         "size_oku": null,
+        "size_oku_min": 2265.09,
+        "size_oku_max": 2718.1,
+        "size_status": "estimated",
+        "size_basis": "株数（OA上限込み）×仮条件",
+        "share_count": 787855700,
+        "oa_share_count": 118178300,
+        "price_min_yen": 250.0,
+        "price_max_yen": 300.0,
         "dilution_pct": null,
+        "dilution_status": "unavailable",
         "pricing_date": "2026-07-22",
+        "pricing_date_end": "2026-07-27",
         "pricing_date_raw": "売出価格の仮条件等が下記のとおり 決定されましたので、お知らせいたします。 記 1.株式の売出し（引受人の買取引受けによる国内売出し及び海外売出し） (1) 売出価格の仮条件 1株につき250円から300円 ただし、売出価格は、売出価格等決定日（2026年7月22日（水）から2026 年7月 27 日（月）までの間のいずれかの日）の株式会社東京証券取引所に ",
         "pricing_date_confirmed": false,
+        "pricing_date_status": "provisional",
         "settlement_date": "2026-07-29",
+        "settlement_date_end": "2026-08-03",
         "settlement_date_raw": "受渡期日 2026年7月29日から2026年8月3日までの間のいずれかの日",
-        "settlement_estimated": false
+        "settlement_estimated": false,
+        "settlement_date_status": "provisional",
+        "parse_warnings": [],
+        "missing_fields": [
+          "dilution_pct"
+        ]
       },
       "schedule": [
         {
@@ -93,30 +112,104 @@
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260714593697.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260714593697.pdf",
+      "related_disclosures": [
+        {
+          "id": "140120260714593697",
+          "relation": "preliminary",
+          "title": "株式の売出しに係る仮条件等の決定に関するお知らせ",
+          "announced_at": "2026-07-15T00:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260714593697.pdf"
+        }
+      ],
       "source_title": "株式の売出しに係る仮条件等の決定に関するお知らせ"
     },
     {
-      "id": "po-4071-2026-07-15",
+      "id": "po-4071-2026-07-14",
       "type": "po",
       "code": "4071",
       "name": "プラスアルファ・コンサルティング",
       "market": "プライム",
       "margin": "対象外",
-      "announced_at": "2026-07-15T00:00:00+09:00",
+      "announced_at": "2026-07-14T15:30:00+09:00",
       "detail": {
         "po_kind": "secondary",
-        "size_oku": null,
-        "dilution_pct": null,
-        "pricing_date": null,
-        "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "settlement_date": null,
-        "settlement_date_raw": null,
-        "settlement_estimated": false
+        "source_stage": "announcement",
+        "latest_source_stage": "correction",
+        "size_oku": 231.35,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "confirmed",
+        "size_basis": "開示資料記載額",
+        "dilution_pct": 16.29,
+        "dilution_status": "confirmed",
+        "pricing_date": "2026-07-14",
+        "pricing_date_end": null,
+        "pricing_date_raw": "売出価格 1株につき3,350円。売出価格については売買当事者における協議の上、決定されております。申込期間 2026年7月14日",
+        "pricing_date_confirmed": true,
+        "pricing_date_status": "confirmed",
+        "settlement_date": "2026-08-21",
+        "settlement_date_end": null,
+        "settlement_date_raw": "受渡期日 2026年8月21日（予定）",
+        "settlement_estimated": false,
+        "settlement_date_status": "provisional",
+        "parse_warnings": [],
+        "recovery_notes": [
+          "訂正資料から元開示を自動補完"
+        ],
+        "missing_fields": []
       },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260715594785.pdf",
-      "source_title": "（訂正）ラクスとの資本業務提携に関する覚書の締結、当社株式の売出し並びに主要株主、主要株主である筆頭株主及びその他の関係会社の異動予定の一部訂正"
+      "schedule": [
+        {
+          "date": "2026-07-14",
+          "label": "pricing_day",
+          "sent": true
+        },
+        {
+          "date": "2026-07-15",
+          "label": "pricing_day+1",
+          "sent": true
+        },
+        {
+          "date": "2026-07-16",
+          "label": "pricing_day+2",
+          "sent": true
+        },
+        {
+          "date": "2026-08-21",
+          "label": "settlement",
+          "sent": false
+        },
+        {
+          "date": "2026-08-20",
+          "label": "pricing_day+25bd",
+          "sent": false
+        },
+        {
+          "date": "2026-08-21",
+          "label": "pricing_day+26bd",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260714592985.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260715594785.pdf",
+      "related_disclosures": [
+        {
+          "id": "140120260714592985",
+          "relation": "original",
+          "title": "ラクスとの資本業務提携に関する覚書の締結、当社株式の売出し、並びに主要株主、主要株主である筆頭株主及びその他の関係会社の異動の予定に関するお知らせ",
+          "announced_at": "2026-07-14T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260714592985.pdf"
+        },
+        {
+          "id": "140120260715594785",
+          "relation": "correction",
+          "title": "（訂正）ラクスとの資本業務提携に関する覚書の締結、当社株式の売出し並びに主要株主、主要株主である筆頭株主及びその他の関係会社の異動予定の一部訂正",
+          "announced_at": "2026-07-15T00:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260715594785.pdf"
+        }
+      ],
+      "source_title": "ラクスとの資本業務提携に関する覚書の締結、当社株式の売出し、並びに主要株主、主要株主である筆頭株主及びその他の関係会社の異動の予定に関するお知らせ"
     },
     {
       "id": "ipo-607A-2026-08-04",
@@ -228,14 +321,30 @@
       "announced_at": "2026-07-16T17:00:00+09:00",
       "detail": {
         "po_kind": "both",
+        "source_stage": "pricing",
         "size_oku": 110.42,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "confirmed",
+        "size_basis": "開示資料記載額",
         "dilution_pct": null,
+        "dilution_status": "unavailable",
         "pricing_date": "2026-07-16",
+        "pricing_date_end": "2026-07-16",
         "pricing_date_raw": null,
         "pricing_date_confirmed": true,
+        "pricing_date_status": "confirmed",
         "settlement_date": "2026-08-04",
+        "settlement_date_end": null,
         "settlement_date_raw": "受渡期日 2026年8月4日（火） （注）引受人は払込金額（発行価額）で買取引受けを行い、発行価格（募集価格）で募集を行います。 ご注意:本報道発表文は、本投資法人の新投資口発行及び投資口売出しに関して一般に公表するための文書であり、投資勧誘を 目的として作成されたものではありません。投資を行う際には、必ず本投資法人が作成する新投資口発行及び投資口売 出届出",
-        "settlement_estimated": false
+        "settlement_estimated": false,
+        "settlement_date_status": "confirmed",
+        "parse_warnings": [
+          "当初発表を取得できず価格決定資料から復元"
+        ],
+        "missing_fields": [
+          "dilution_pct"
+        ]
       },
       "schedule": [
         {
@@ -270,6 +379,16 @@
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260715594693.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260715594693.pdf",
+      "related_disclosures": [
+        {
+          "id": "140120260715594693",
+          "relation": "pricing",
+          "title": "新投資口発行及び投資口売出しに係る価格等の決定に関するお知らせ",
+          "announced_at": "2026-07-16T17:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260715594693.pdf"
+        }
+      ],
       "source_title": "新投資口発行及び投資口売出しに係る価格等の決定に関するお知らせ"
     },
     {
