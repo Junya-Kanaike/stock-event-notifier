@@ -97,7 +97,7 @@
         {
           "date": "2026-07-22",
           "label": "pricing_day",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-07-23",
@@ -320,7 +320,7 @@
         {
           "date": "2026-07-22",
           "label": "listing_day",
-          "sent": false
+          "sent": true
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
