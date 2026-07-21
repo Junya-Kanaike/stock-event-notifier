@@ -49,7 +49,11 @@
     "140120260721596675",
     "140120260721596694",
     "140120260721596879",
-    "140120260721596858"
+    "140120260721596858",
+    "140120260721596354",
+    "140120260721596687",
+    "140120260721596796",
+    "140120260721597047"
   ],
   "events": [
     {
@@ -428,6 +432,33 @@
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260717596054.pdf",
       "source_title": "株式分割、株式分割に伴う定款の一部変更及び配当予想の修正に関するお知らせ"
+    },
+    {
+      "id": "bunbai-5075-2026-07-21",
+      "type": "bunbai",
+      "code": "5075",
+      "name": "アップコン",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-21T17:00:00+09:00",
+      "detail": {
+        "execution_date": null,
+        "execution_date_raw": null,
+        "execution_date_confirmed": false
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260721596354.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260721596354.pdf",
+      "source_title": "株式の立会外分売実施に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260721596354",
+          "relation": "source",
+          "title": "株式の立会外分売実施に関するお知らせ",
+          "announced_at": "2026-07-21T17:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260721596354.pdf"
+        }
+      ]
     }
   ],
   "source_health": {
