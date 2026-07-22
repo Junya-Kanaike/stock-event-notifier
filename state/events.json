@@ -53,7 +53,9 @@
     "140120260721596354",
     "140120260721596687",
     "140120260721596796",
-    "140120260721597047"
+    "140120260721597047",
+    "140120260722597228",
+    "140120260722597543"
   ],
   "events": [
     {
@@ -457,6 +459,49 @@
           "title": "株式の立会外分売実施に関するお知らせ",
           "announced_at": "2026-07-21T17:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260721596354.pdf"
+        }
+      ]
+    },
+    {
+      "id": "bunbai-5075-2026-07-22",
+      "type": "bunbai",
+      "code": "5075",
+      "name": "アップコン",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-07-22T13:30:00+09:00",
+      "detail": {
+        "execution_date": "2026-07-22",
+        "execution_date_raw": "分売実施日 分売株式数 分売の値段 買付申込数量の限度 2026年7月22日(水) 136,800株 1,037円 3,000株 （ご参考）2026年7月21日にお知らせいたしました内容は、以下のとおりです。 1.分 売 予 定 株 式 数 180,000株 2.分 売 実 施 日 2026年7月22日(水) 3.分 売 の 値 段 1,037円 4.買付申",
+        "execution_date_confirmed": false
+      },
+      "schedule": [
+        {
+          "date": "2026-07-21",
+          "label": "execution-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-07-22",
+          "label": "execution_day",
+          "sent": false
+        },
+        {
+          "date": "2026-07-29",
+          "label": "execution+5bd",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260722597543.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260722597543.pdf",
+      "source_title": "株式の立会外分売終了に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260722597543",
+          "relation": "source",
+          "title": "株式の立会外分売終了に関するお知らせ",
+          "announced_at": "2026-07-22T13:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260722597543.pdf"
         }
       ]
     }
