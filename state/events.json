@@ -109,7 +109,7 @@
         {
           "date": "2026-07-23",
           "label": "pricing_day+1",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-07-24",
@@ -315,31 +315,6 @@
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
     },
     {
-      "id": "ipo-593A-2026-07-22",
-      "type": "ipo",
-      "code": "593A",
-      "name": "（株）ティアフォー",
-      "market": "グロース",
-      "margin": "対象外",
-      "announced_at": "2026-07-15T21:30:41.110589+09:00",
-      "detail": {
-        "listing_date": "2026-07-22"
-      },
-      "schedule": [
-        {
-          "date": "2026-07-21",
-          "label": "listing-1bd",
-          "sent": true
-        },
-        {
-          "date": "2026-07-22",
-          "label": "listing_day",
-          "sent": true
-        }
-      ],
-      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
-    },
-    {
       "id": "po-3282-2026-07-16",
       "type": "po",
       "code": "3282",
@@ -491,12 +466,12 @@
         {
           "date": "2026-07-21",
           "label": "execution-1bd",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-07-22",
           "label": "execution_day",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-07-29",
