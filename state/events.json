@@ -119,7 +119,7 @@
         {
           "date": "2026-07-24",
           "label": "pricing_day+2",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-07-29",
