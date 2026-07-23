@@ -59,7 +59,9 @@
     "140120260721597038",
     "140120260722597492",
     "140120260722597522",
-    "140120260722597166"
+    "140120260722597166",
+    "140120260710591218",
+    "140120260722597269"
   ],
   "events": [
     {
@@ -527,6 +529,59 @@
           "title": "第２四半期（中間期）業績予想と実績の差異及び通期業績予想並びに中間配当及び株式分割後の期末配当予想の修正（増配）に関するお知らせ",
           "announced_at": "2026-07-22T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260721597038.pdf"
+        }
+      ]
+    },
+    {
+      "id": "po-9509-2026-07-23",
+      "type": "po",
+      "code": "9509",
+      "name": "北海道電力",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-07-23T14:00:00+09:00",
+      "detail": {
+        "po_kind": "offering",
+        "source_stage": "announcement",
+        "size_oku": 800.0,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "confirmed",
+        "size_basis": "開示資料記載額",
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": null,
+        "pricing_date_end": null,
+        "pricing_date_raw": null,
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "unavailable",
+        "settlement_date": null,
+        "settlement_date_end": null,
+        "settlement_date_raw": null,
+        "settlement_estimated": false,
+        "settlement_date_status": "unavailable",
+        "parse_warnings": [],
+        "missing_fields": [
+          "dilution_pct",
+          "pricing_date",
+          "settlement_date"
+        ]
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260710591218.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260710591218.pdf",
+      "source_title": "公募ハイブリッド社債（劣後特約付社債）の発行条件決定について",
+      "related_disclosures": [
+        {
+          "id": "140120260710591218",
+          "relation": "source",
+          "title": "公募ハイブリッド社債（劣後特約付社債）の発行条件決定について",
+          "announced_at": "2026-07-23T14:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260710591218.pdf"
         }
       ]
     }
