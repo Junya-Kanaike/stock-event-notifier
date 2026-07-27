@@ -96,6 +96,32 @@ def trim_notified_ids(state: dict[str, Any], limit: int = 5000) -> bool:
     return True
 
 
+def record_disclosure_failure(
+    state: dict[str, Any],
+    disclosure_id: str,
+    *,
+    code: str = "",
+    title: str = "",
+    failed_on: str = "",
+) -> int:
+    failures = state.setdefault("failed_disclosures", {})
+    entry = failures.get(disclosure_id) or {"attempts": 0, "code": code, "title": title, "first_failed_on": failed_on}
+    entry["attempts"] = int(entry.get("attempts", 0)) + 1
+    entry["last_failed_on"] = failed_on
+    failures[disclosure_id] = entry
+    return entry["attempts"]
+
+
+def clear_disclosure_failure(state: dict[str, Any], disclosure_id: str) -> bool:
+    failures = state.get("failed_disclosures")
+    if not failures or disclosure_id not in failures:
+        return False
+    del failures[disclosure_id]
+    if not failures:
+        state.pop("failed_disclosures", None)
+    return True
+
+
 def record_source_result(
     state: dict[str, Any],
     source: str,

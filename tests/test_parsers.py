@@ -77,6 +77,7 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(detail["pricing_date"], "2026-07-22")
         self.assertEqual(detail["pricing_date_end"], "2026-07-27")
         self.assertEqual(detail["pricing_date_status"], "provisional")
+        self.assertIsNone(detail["pricing_method"])
         self.assertEqual(detail["settlement_date"], "2026-07-29")
         self.assertEqual(detail["settlement_date_end"], "2026-08-03")
         self.assertEqual(detail["settlement_date_status"], "provisional")
@@ -97,6 +98,7 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(detail["pricing_date_status"], "confirmed")
         self.assertEqual(detail["settlement_date"], "2026-08-21")
         self.assertEqual(detail["settlement_date_status"], "provisional")
+        self.assertEqual(detail["pricing_method"], "negotiated")
 
 
 if __name__ == "__main__":

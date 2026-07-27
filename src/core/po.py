@@ -99,6 +99,10 @@ def format_po_detail_block(event: dict[str, Any]) -> str:
         f"価格決定日: {_format_date_range(detail, 'pricing_date')}",
         f"受渡日: {_format_date_range(detail, 'settlement_date')}",
     ]
+    if detail.get("pricing_method") == "negotiated":
+        lines.append("備考: 相対協議で価格決定済みの売出しのため、スケジュール通知は行いません")
+    elif not detail.get("pricing_date_confirmed"):
+        lines.append("備考: 売買スケジュール通知は価格決定の確定後に開始します")
     if detail.get("parse_warnings"):
         lines.append("注意: " + " / ".join(detail["parse_warnings"]))
     if detail.get("recovery_notes"):
