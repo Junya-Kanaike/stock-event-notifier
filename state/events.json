@@ -80,7 +80,16 @@
     "140120260727599800",
     "140120260721596935",
     "140120260724599372",
-    "140120260727599854"
+    "140120260727599854",
+    "140120260723598309",
+    "140120260724599548",
+    "140120260724599592",
+    "140120260727500041",
+    "140120260727599866",
+    "140120260723598560",
+    "140120260723598739",
+    "140120260724599559",
+    "140120260727500230"
   ],
   "events": [
     {
@@ -746,6 +755,98 @@
           "title": "AMED公募課題 令和8年度「再生医療・遺伝子治療の産業化に向けた基盤技術開発事業（再生・細胞医療・遺伝子治療産業化促進事業）」採択のお知らせ",
           "announced_at": "2026-07-27T11:45:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260727599854.pdf"
+        }
+      ]
+    },
+    {
+      "id": "split-8011-2026-07-27",
+      "type": "split",
+      "code": "8011",
+      "name": "三陽商会",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-07-27T16:00:00+09:00",
+      "detail": {
+        "ratio": "3",
+        "effective_date": "2026-09-01",
+        "effective_date_raw": "効力発生日 2026年9月1日（火） 2. 株式分割に伴う定款の一部変更 (1) 変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年9月1日を効力発生日として当社定 款第6条に定める発行可能株式総数を変更します。 (2) 変更の内容（下線は変更部分） 現行定款 変更後定款 （発行可能株式総数） （発行可能株式総数） 第6条 第"
+      },
+      "schedule": [
+        {
+          "date": "2026-08-31",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-09-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260723598560.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260723598560.pdf",
+      "source_title": "（開示事項の変更）「株式分割及び株式分割に伴う定款の一部変更並びに株主優待制度の変更（拡充）に関するお知らせ」の一部変更に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260723598560",
+          "relation": "source",
+          "title": "（開示事項の変更）「株式分割及び株式分割に伴う定款の一部変更並びに株主優待制度の変更（拡充）に関するお知らせ」の一部変更に関するお知らせ",
+          "announced_at": "2026-07-27T16:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260723598560.pdf"
+        }
+      ]
+    },
+    {
+      "id": "po-205A-2026-07-27",
+      "type": "po",
+      "code": "205A",
+      "name": "ロゴスホールディングス",
+      "market": "グロース",
+      "margin": "信用",
+      "announced_at": "2026-07-27T16:00:00+09:00",
+      "detail": {
+        "po_kind": "secondary",
+        "source_stage": "announcement",
+        "size_oku": null,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "unavailable",
+        "size_basis": null,
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": null,
+        "pricing_date_end": null,
+        "pricing_date_raw": null,
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "unavailable",
+        "settlement_date": null,
+        "settlement_date_end": null,
+        "settlement_date_raw": null,
+        "settlement_estimated": false,
+        "settlement_date_status": "unavailable",
+        "parse_warnings": [],
+        "missing_fields": [
+          "size",
+          "dilution_pct",
+          "pricing_date",
+          "settlement_date"
+        ]
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260723598739.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260723598739.pdf",
+      "source_title": "株式の売出し並びに主要株主及び主要株主である筆頭株主の異動に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260723598739",
+          "relation": "source",
+          "title": "株式の売出し並びに主要株主及び主要株主である筆頭株主の異動に関するお知らせ",
+          "announced_at": "2026-07-27T16:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260723598739.pdf"
         }
       ]
     }
