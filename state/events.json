@@ -158,7 +158,7 @@
         {
           "date": "2026-07-29",
           "label": "settlement",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-27",
@@ -323,7 +323,7 @@
         {
           "date": "2026-07-29",
           "label": "listing_day",
-          "sent": false
+          "sent": true
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
@@ -348,7 +348,7 @@
         {
           "date": "2026-07-29",
           "label": "listing_day",
-          "sent": false
+          "sent": true
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
@@ -515,7 +515,7 @@
         {
           "date": "2026-07-29",
           "label": "execution+5bd",
-          "sent": false
+          "sent": true
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260722597543.pdf",
