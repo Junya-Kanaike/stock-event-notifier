@@ -99,7 +99,8 @@
     "140120260728500854",
     "140120260728500864",
     "140120260728500811",
-    "140120260729501780"
+    "140120260729501780",
+    "140120260728501193"
   ],
   "events": [
     {
@@ -857,6 +858,44 @@
           "title": "株式の売出し並びに主要株主及び主要株主である筆頭株主の異動に関するお知らせ",
           "announced_at": "2026-07-27T16:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260723598739.pdf"
+        }
+      ]
+    },
+    {
+      "id": "split-7433-2026-07-29",
+      "type": "split",
+      "code": "7433",
+      "name": "伯東",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-07-29T15:00:00+09:00",
+      "detail": {
+        "ratio": null,
+        "effective_date": "2026-10-01",
+        "effective_date_raw": "効力発生日 2026年10月1日 2. 株式分割に伴う定款の一部変更 （1） 変更の理由 上記の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年10月1日を効力発生日とし て、当社定款の一部を変更いたします。 （2） 定款変更の内容 （下線が変更部分） 現行定款 変更定款案 （発行可能株式総数） （発行可能株式総数） 第6条 当会社の発行可能"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-30",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260728501193.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260728501193.pdf",
+      "source_title": "株式分割および株式分割に伴う定款の一部変更に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260728501193",
+          "relation": "source",
+          "title": "株式分割および株式分割に伴う定款の一部変更に関するお知らせ",
+          "announced_at": "2026-07-29T15:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260728501193.pdf"
         }
       ]
     }
