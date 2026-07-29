@@ -307,56 +307,6 @@
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
     },
     {
-      "id": "ipo-603A-2026-07-29",
-      "type": "ipo",
-      "code": "603A",
-      "name": "（株）アイ・グリッド・ソリューションズ",
-      "market": "グロース",
-      "margin": "対象外",
-      "announced_at": "2026-07-15T21:30:41.110392+09:00",
-      "detail": {
-        "listing_date": "2026-07-29"
-      },
-      "schedule": [
-        {
-          "date": "2026-07-28",
-          "label": "listing-1bd",
-          "sent": true
-        },
-        {
-          "date": "2026-07-29",
-          "label": "listing_day",
-          "sent": true
-        }
-      ],
-      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
-    },
-    {
-      "id": "ipo-604A-2026-07-29",
-      "type": "ipo",
-      "code": "604A",
-      "name": "（株）ビーエイブル",
-      "market": "スタンダード",
-      "margin": "対象外",
-      "announced_at": "2026-07-15T21:30:41.110577+09:00",
-      "detail": {
-        "listing_date": "2026-07-29"
-      },
-      "schedule": [
-        {
-          "date": "2026-07-28",
-          "label": "listing-1bd",
-          "sent": true
-        },
-        {
-          "date": "2026-07-29",
-          "label": "listing_day",
-          "sent": true
-        }
-      ],
-      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
-    },
-    {
       "id": "po-3282-2026-07-16",
       "type": "po",
       "code": "3282",
