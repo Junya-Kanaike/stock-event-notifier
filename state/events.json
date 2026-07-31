@@ -121,7 +121,18 @@
     "140120260729502538",
     "140120260730503915",
     "140120260729502552",
-    "140120260730504224"
+    "140120260730504224",
+    "140120260731504865",
+    "140120260731505007",
+    "140120260727500284",
+    "140120260731504318",
+    "140120260715594749",
+    "140120260728501252",
+    "140120260730504129",
+    "140120260730503409",
+    "140120260730504194",
+    "140120260731504544",
+    "140120260730503139"
   ],
   "events": [
     {
@@ -905,6 +916,89 @@
           "title": "株式分割、株式分割に伴う定款の一部変更および 配当予想の修正（増配）に関するお知らせ",
           "announced_at": "2026-07-30T17:40:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260730503915.pdf"
+        }
+      ]
+    },
+    {
+      "id": "po-9235-2026-07-31",
+      "type": "po",
+      "code": "9235",
+      "name": "売れるネット広告社グループ",
+      "market": "グロース",
+      "margin": "信用",
+      "announced_at": "2026-07-31T12:00:00+09:00",
+      "detail": {
+        "po_kind": "secondary",
+        "source_stage": "announcement",
+        "size_oku": null,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "unavailable",
+        "size_basis": null,
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": "2026-08-07",
+        "pricing_date_end": null,
+        "pricing_date_raw": "売出価格 1株につき477円 （8） 売出価格の総額 193,275,630円 （9） 売渡期日 2026年8月7日 ※上記については、金融商品取引法に定める有価証券通知書を福岡財務支局へ提出いたします。 2.売出しの目的 加藤公一レオ氏と柴田雄平氏との間で、当社株式の譲渡を行うことにつき契約が締結されたことから、関 係法令の定める手続きに則り、売出による譲",
+        "pricing_date_confirmed": true,
+        "pricing_date_status": "confirmed",
+        "settlement_date": "2026-08-18",
+        "settlement_date_end": null,
+        "settlement_date_raw": null,
+        "settlement_estimated": true,
+        "settlement_date_status": "estimated",
+        "parse_warnings": [],
+        "missing_fields": [
+          "size",
+          "dilution_pct"
+        ]
+      },
+      "schedule": [
+        {
+          "date": "2026-08-07",
+          "label": "pricing_day",
+          "sent": false
+        },
+        {
+          "date": "2026-08-10",
+          "label": "pricing_day+1",
+          "sent": false
+        },
+        {
+          "date": "2026-08-12",
+          "label": "pricing_day+2",
+          "sent": false
+        },
+        {
+          "date": "2026-08-18",
+          "label": "settlement",
+          "sent": false
+        },
+        {
+          "date": "2026-09-14",
+          "label": "pricing_day+25bd",
+          "sent": false
+        },
+        {
+          "date": "2026-09-15",
+          "label": "pricing_day+26bd",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260731505007.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260731505007.pdf",
+      "source_title": "売れるネット広告社グループ株式会社（証券コード9235）株式の売出し及び公開買付けに準ずる行為として政令で定める買集め行為に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260731505007",
+          "relation": "source",
+          "title": "売れるネット広告社グループ株式会社（証券コード9235）株式の売出し及び公開買付けに準ずる行為として政令で定める買集め行為に関するお知らせ",
+          "announced_at": "2026-07-31T12:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260731505007.pdf"
         }
       ]
     }
