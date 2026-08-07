@@ -10,11 +10,13 @@ from src.collectors.jpx_bunbai import CACHE_NAME as BUNBAI_CACHE_NAME, fetch_bun
 from src.collectors.jpx_ipo import CACHE_NAME as IPO_CACHE_NAME, fetch_ipos
 from src.collectors.jpx_margin import CACHE_NAME as MARGIN_CACHE_NAME, fetch_margin, lookup_margin
 from src.collectors.jpx_master import fetch_master, lookup_master
+from src.collectors.tdnet import classify_title
 from src.collectors.utils import cache_fetched_at
 from src.core.bizday import add_business_days, as_date, is_business_day, now_jst, today_jst
 from src.core.scheduler import build_bunbai_schedule, build_ipo_schedule, due_notifications
 from src.core.store import archive_completed_events, load_state, save_state, upsert_event
 from src.notifiers.slack import SlackNotifier
+from src.parsers.po_pdf import is_negotiated_sale
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -35,7 +37,8 @@ def main(argv: list[str] | None = None) -> int:
     state = load_state()
     if args.dry_run:
         state = deepcopy(state)
-    changed = False
+    # 旧判定で登録された非株式の「公募」や相対取引を、後続通知の判定前に除去する。
+    changed = drop_unsupported_po_events(state)
     failures: list[str] = []
 
     try:
@@ -87,6 +90,10 @@ def main(argv: list[str] | None = None) -> int:
         if not args.dry_run:
             save_state(state)
 
+    # 過去IPOの削除は遅延通知の送信後に行う（未送信のまま消さない）。
+    changed |= drop_past_ipo_events(state, target_date)
+    changed |= alert_stale_po_pricing(state, notifier, target_date)
+
     if changed and not args.dry_run:
         save_state(state)
     if not args.dry_run:
@@ -134,15 +141,74 @@ def sync_ipo_events(
         }
         _, did_change = upsert_event(state, event)
         changed |= did_change
+    return changed
 
+
+def drop_past_ipo_events(state: dict[str, Any], reference_date: date) -> bool:
     events = state.setdefault("events", [])
     retained = [
         event
         for event in events
         if event.get("type") != "ipo" or not _is_past_ipo_event(event, reference_date)
     ]
-    if len(retained) != len(events):
-        state["events"] = retained
+    if len(retained) == len(events):
+        return False
+    state["events"] = retained
+    return True
+
+
+def drop_unsupported_po_events(state: dict[str, Any]) -> bool:
+    events = state.setdefault("events", [])
+    retained: list[dict[str, Any]] = []
+    for event in events:
+        if event.get("type") != "po":
+            retained.append(event)
+            continue
+
+        detail = event.get("detail", {})
+        title_classes = classify_title(event.get("source_title", ""))
+        pricing_evidence = detail.get("pricing_date_raw") or ""
+        if not ({"po", "po_pricing", "po_correction"} & title_classes) or detail.get("pricing_method") == "negotiated":
+            continue
+        if is_negotiated_sale(pricing_evidence):
+            continue
+        retained.append(event)
+
+    if len(retained) == len(events):
+        return False
+    state["events"] = retained
+    return True
+
+
+def alert_stale_po_pricing(state: dict[str, Any], notifier: SlackNotifier, target_date: date) -> bool:
+    """価格決定期間を過ぎても決定開示を検知できていないPOを1回だけ警告する。"""
+    changed = False
+    for event in state.get("events", []):
+        if event.get("type") != "po":
+            continue
+        detail = event.get("detail", {})
+        if (
+            detail.get("canceled")
+            or detail.get("pricing_date_confirmed")
+            or detail.get("pricing_method") == "negotiated"
+            or detail.get("pricing_watch_alerted")
+        ):
+            continue
+        window_end = detail.get("pricing_date_end") or detail.get("pricing_date")
+        if not window_end:
+            continue
+        try:
+            end = as_date(window_end)
+        except (TypeError, ValueError):
+            continue
+        if end >= target_date:
+            continue
+        notify_system_safely(
+            notifier,
+            f"PO価格決定を未検知: {event.get('code')} {event.get('name')} の価格決定期間"
+            f"（〜{end.isoformat()}）を過ぎましたが決定開示を検知できていません。スケジュール通知は保留中です",
+        )
+        detail["pricing_watch_alerted"] = True
         changed = True
     return changed
 

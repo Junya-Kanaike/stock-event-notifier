@@ -133,6 +133,18 @@ def classify_source_stage(title: str) -> str:
     return "announcement"
 
 
+NEGOTIATED_PRICE_MARKERS = [
+    "売買当事者における協議",
+    "売買当事者間の協議",
+    "当事者間の協議により決定",
+]
+
+
+def is_negotiated_sale(text: str) -> bool:
+    compact = re.sub(r"\s+", "", text or "")
+    return any(marker in compact for marker in NEGOTIATED_PRICE_MARKERS)
+
+
 def has_confirmed_price(text: str) -> bool:
     compact = re.sub(r"\s+", "", normalize_digits(text))
     price_is_stated = bool(
@@ -209,6 +221,7 @@ def parse_po_details(
     details: dict[str, Any] = {
         "po_kind": classify_po_kind(title, text),
         "source_stage": source_stage,
+        "pricing_method": "negotiated" if is_negotiated_sale(text) else None,
         "size_oku": size_oku,
         "size_oku_min": estimated_size.get("size_oku_min") if estimated_size else None,
         "size_oku_max": estimated_size.get("size_oku_max") if estimated_size else None,
