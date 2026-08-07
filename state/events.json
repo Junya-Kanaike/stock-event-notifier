@@ -1394,7 +1394,7 @@
         {
           "date": "2026-08-07",
           "label": "pricing_day",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-10",
