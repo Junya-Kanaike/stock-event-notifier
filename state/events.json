@@ -582,7 +582,39 @@
     "140120260807514231",
     "140120260807514875",
     "140120260805510804",
-    "140120260806511985"
+    "140120260806511985",
+    "140120260807513793",
+    "140120260730503908",
+    "140120260803506658",
+    "140120260804508313",
+    "140120260806511103",
+    "140120260806511295",
+    "140120260806511430",
+    "140120260806511596",
+    "140120260806512780",
+    "140120260806512837",
+    "140120260806512842",
+    "140120260806513021",
+    "140120260807513976",
+    "140120260807514025",
+    "140120260807514290",
+    "140120260807514997",
+    "140120260807515049",
+    "140120260807515076",
+    "140120260807515130",
+    "140120260807515189",
+    "140120260807515239",
+    "140120260807515247",
+    "140120260807515330",
+    "140120260805510628",
+    "140120260806512648",
+    "140120260805509342",
+    "140120260806511505",
+    "140120260806513237",
+    "140120260806513242",
+    "140120260807515180",
+    "140120260807515231",
+    "140120260807515309"
   ],
   "events": [
     {
@@ -2071,6 +2103,135 @@
           "title": "株式分割および株式分割に伴う定款の一部変更、ならびに配当予想の修正に関するお知らせ",
           "announced_at": "2026-08-07T14:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260806511609.pdf"
+        }
+      ]
+    },
+    {
+      "id": "split-4667-2026-08-07",
+      "type": "split",
+      "code": "4667",
+      "name": "アイサンテクノロジー",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-08-07T15:20:00+09:00",
+      "detail": {
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "effective_date_raw": "効力発生日 2026年10月1日（木） （3）その他 今回の株式分割に際しまして、資本金の額に変更はありません。 2.株式分割に伴う定款の一部変更 （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項に基づき、当社定款第6条の発行可能株式総数を変更するもの です。 （2）変更の内容 （下線は変更部分） （下線は変更部分） 現行定款 変更後定款 （発"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-30",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260730503908.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260730503908.pdf",
+      "source_title": "株式分割及び株式分割に伴う定款の一部変更並びに配当予想の修正、株主優待制度の一部変更に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260730503908",
+          "relation": "source",
+          "title": "株式分割及び株式分割に伴う定款の一部変更並びに配当予想の修正、株主優待制度の一部変更に関するお知らせ",
+          "announced_at": "2026-08-07T15:20:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260730503908.pdf"
+        }
+      ]
+    },
+    {
+      "id": "split-5706-2026-08-07",
+      "type": "split",
+      "code": "5706",
+      "name": "三井金属",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-08-07T15:30:00+09:00",
+      "detail": {
+        "ratio": "1",
+        "effective_date": "2026-10-01",
+        "effective_date_raw": "効力発生日 2026年10月1日 （木） 4. 定款の一部変更 (1) 変更の理由 上記の株式分割に伴い、会社法第184 条第2項の規定に基づき、2026年10月1日を効力発生日と して、当社定款第6条に定める発行可能株式総数を変更いたします。 (2) 定款変更の内容 変更の内容は以下のとおりです。 (下線は変更部分を示す) 変更前 変更後 （発行可能株式総"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-30",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260804508313.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260804508313.pdf",
+      "source_title": "株式分割および株式分割に伴う定款の一部変更ならびに配当予想の修正に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260804508313",
+          "relation": "source",
+          "title": "株式分割および株式分割に伴う定款の一部変更ならびに配当予想の修正に関するお知らせ",
+          "announced_at": "2026-08-07T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260804508313.pdf"
+        }
+      ]
+    },
+    {
+      "id": "po-1911-2026-08-07",
+      "type": "po",
+      "code": "1911",
+      "name": "住友林業",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-08-07T15:30:00+09:00",
+      "detail": {
+        "po_kind": "offering",
+        "source_stage": "announcement",
+        "size_oku": 3500.0,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "confirmed",
+        "size_basis": "開示資料記載額",
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": null,
+        "pricing_date_end": null,
+        "pricing_date_raw": null,
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "unavailable",
+        "settlement_date": null,
+        "settlement_date_end": null,
+        "settlement_date_raw": null,
+        "settlement_estimated": false,
+        "settlement_date_status": "unavailable",
+        "parse_warnings": [],
+        "missing_fields": [
+          "dilution_pct",
+          "pricing_date",
+          "settlement_date"
+        ]
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260807515130.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260807515130.pdf",
+      "source_title": "公募ハイブリッド社債（劣後特約付社債）発行に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260807515130",
+          "relation": "source",
+          "title": "公募ハイブリッド社債（劣後特約付社債）発行に関するお知らせ",
+          "announced_at": "2026-08-07T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260807515130.pdf"
         }
       ]
     }
