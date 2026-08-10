@@ -641,7 +641,11 @@
     "140120260810516284",
     "140120260810516312",
     "140120260806513229",
-    "140120260810516033"
+    "140120260810516033",
+    "140120260810516141",
+    "140120260803506167",
+    "140120260807515408",
+    "140120260810515985"
   ],
   "events": [
     {
@@ -2259,6 +2263,60 @@
           "title": "公募ハイブリッド社債（劣後特約付社債）発行に関するお知らせ",
           "announced_at": "2026-08-07T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260807515130.pdf"
+        }
+      ]
+    },
+    {
+      "id": "po-6228-2026-08-10",
+      "type": "po",
+      "code": "6228",
+      "name": "ジェイ・イー・ティ",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-08-10T12:30:00+09:00",
+      "detail": {
+        "po_kind": "offering",
+        "source_stage": "announcement",
+        "size_oku": null,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "unavailable",
+        "size_basis": null,
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": null,
+        "pricing_date_end": null,
+        "pricing_date_raw": null,
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "unavailable",
+        "settlement_date": null,
+        "settlement_date_end": null,
+        "settlement_date_raw": null,
+        "settlement_estimated": false,
+        "settlement_date_status": "unavailable",
+        "parse_warnings": [],
+        "missing_fields": [
+          "size",
+          "dilution_pct",
+          "pricing_date",
+          "settlement_date"
+        ]
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260810516141.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260810516141.pdf",
+      "source_title": "（開示事項の中止）令和５年度補正予算「中堅・中小企業の賃上げに向けた省力化等の大規模成長投資補助金事業」（一次公募）交付決定辞退のお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260810516141",
+          "relation": "source",
+          "title": "（開示事項の中止）令和５年度補正予算「中堅・中小企業の賃上げに向けた省力化等の大規模成長投資補助金事業」（一次公募）交付決定辞退のお知らせ",
+          "announced_at": "2026-08-10T12:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260810516141.pdf"
         }
       ]
     }
