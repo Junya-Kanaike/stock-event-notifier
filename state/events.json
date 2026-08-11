@@ -1512,7 +1512,7 @@
         {
           "date": "2026-08-12",
           "label": "pricing_day+2",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-18",
