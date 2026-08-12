@@ -2519,6 +2519,31 @@
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260810516010.pdf"
         }
       ]
+    },
+    {
+      "id": "ipo-618A-2026-09-11",
+      "type": "ipo",
+      "code": "618A",
+      "name": "（株）KOMPEITO",
+      "market": "グロース",
+      "margin": "対象外",
+      "announced_at": "2026-08-13T08:02:19.286867+09:00",
+      "detail": {
+        "listing_date": "2026-09-11"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-10",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-09-11",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
     }
   ],
   "source_health": {
