@@ -670,7 +670,14 @@
     "140120260807514246",
     "140120260812517552",
     "140120260812517587",
-    "140120260810516340"
+    "140120260810516340",
+    "140120260810516398",
+    "140120260807515838",
+    "140120260810516225",
+    "140120260810517326",
+    "140120260812517768",
+    "140120260812518324",
+    "140120260810516010"
   ],
   "events": [
     {
@@ -2423,6 +2430,87 @@
           "title": "株式の立会外分売に関するお知らせ",
           "announced_at": "2026-08-10T16:31:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260806512659.pdf"
+        }
+      ]
+    },
+    {
+      "id": "bunbai-9221-2026-08-12",
+      "type": "bunbai",
+      "code": "9221",
+      "name": "フルハシＥＰＯ",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-08-12T15:30:00+09:00",
+      "detail": {
+        "execution_date": "2026-08-20",
+        "execution_date_raw": "分売予定期間 2026年8月20日（木）～ 2026年8月24日（月） 3.分売値段 分売実施日前日の終値もしくは最終気配値を基準として決定する 予定です。 4.買付申込数量の限度 買付顧客一人につき3,000株（売買単位:100株） 5.実施取引所 東京証券取引所 6.実施の目的 主要株主1名から一定数量の売却意向があり、発行会社として検 討した結果、株式",
+        "execution_date_confirmed": false
+      },
+      "schedule": [
+        {
+          "date": "2026-08-19",
+          "label": "execution-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-08-20",
+          "label": "execution_day",
+          "sent": false
+        },
+        {
+          "date": "2026-08-27",
+          "label": "execution+5bd",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260810516225.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260810516225.pdf",
+      "source_title": "株式の立会外分売に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260810516225",
+          "relation": "source",
+          "title": "株式の立会外分売に関するお知らせ",
+          "announced_at": "2026-08-12T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260810516225.pdf"
+        }
+      ]
+    },
+    {
+      "id": "split-3932-2026-08-12",
+      "type": "split",
+      "code": "3932",
+      "name": "アカツキ",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-08-12T15:31:00+09:00",
+      "detail": {
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "effective_date_raw": "効力発生日 2026年10月1日 3. 定款の一部変更 （1）変更の理由 上記の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年10月1日を効力発生日と して、当社定款の一部を変更いたします。 （2）定款変更の内容 （下線は変更箇所を示しております。） 現行定款 変更後 第6条 第6条 （発行可能株式総数及び発行可能種類株式総数） （発行可能"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-30",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260810516010.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260810516010.pdf",
+      "source_title": "株式分割、定款の一部変更等に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260810516010",
+          "relation": "source",
+          "title": "株式分割、定款の一部変更等に関するお知らせ",
+          "announced_at": "2026-08-12T15:31:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260810516010.pdf"
         }
       ]
     }
