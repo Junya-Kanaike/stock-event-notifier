@@ -2557,6 +2557,31 @@
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-619A-2026-09-16",
+      "type": "ipo",
+      "code": "619A",
+      "name": "（株）オリバー",
+      "market": "スタンダード",
+      "margin": "対象外",
+      "announced_at": "2026-08-14T08:03:42.740531+09:00",
+      "detail": {
+        "listing_date": "2026-09-16"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-15",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-09-16",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
     }
   ],
   "source_health": {

@@ -1,7 +1,14 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-08-12T23:02:19.286471+00:00",
+  "fetched_at": "2026-08-13T23:03:42.740118+00:00",
   "data": [
+    {
+      "code": "619A",
+      "name": "（株）オリバー",
+      "market": "スタンダード",
+      "listing_date": "2026-09-16",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
     {
       "code": "618A",
       "name": "（株）KOMPEITO",
