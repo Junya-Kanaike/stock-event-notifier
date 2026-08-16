@@ -2682,6 +2682,81 @@
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260814520282.pdf"
         }
       ]
+    },
+    {
+      "id": "ipo-622A-2026-09-18",
+      "type": "ipo",
+      "code": "622A",
+      "name": "（株）テクノクラフト",
+      "market": "スタンダード",
+      "margin": "対象外",
+      "announced_at": "2026-08-17T07:37:03.759035+09:00",
+      "detail": {
+        "listing_date": "2026-09-18"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-17",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-09-18",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-623A-2026-09-18",
+      "type": "ipo",
+      "code": "623A",
+      "name": "（株）ベルテックス",
+      "market": "スタンダード",
+      "margin": "対象外",
+      "announced_at": "2026-08-17T07:37:03.759712+09:00",
+      "detail": {
+        "listing_date": "2026-09-18"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-17",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-09-18",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "ipo-621A-2026-09-16",
+      "type": "ipo",
+      "code": "621A",
+      "name": "（株）オーディオストック",
+      "market": "グロース",
+      "margin": "対象外",
+      "announced_at": "2026-08-17T07:37:03.760169+09:00",
+      "detail": {
+        "listing_date": "2026-09-16"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-15",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-09-16",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
     }
   ],
   "source_health": {
