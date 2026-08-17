@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-08-16T22:37:03.758594+00:00",
+  "fetched_at": "2026-08-17T22:41:52.049845+00:00",
   "data": [
     {
       "code": "622A",
@@ -14,6 +14,13 @@
       "name": "（株）ベルテックス",
       "market": "スタンダード",
       "listing_date": "2026-09-18",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "code": "625A",
+      "name": "（株）Skyfall",
+      "market": "グロース",
+      "listing_date": "2026-09-17",
       "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
     },
     {

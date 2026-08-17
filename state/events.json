@@ -1577,7 +1577,7 @@
         {
           "date": "2026-08-18",
           "label": "settlement",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-09-14",
@@ -2456,7 +2456,7 @@
         {
           "date": "2026-08-18",
           "label": "execution-1bd",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-19",
@@ -2822,6 +2822,31 @@
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260817521974.pdf"
         }
       ]
+    },
+    {
+      "id": "ipo-625A-2026-09-17",
+      "type": "ipo",
+      "code": "625A",
+      "name": "（株）Skyfall",
+      "market": "グロース",
+      "margin": "対象外",
+      "announced_at": "2026-08-18T07:41:52.051008+09:00",
+      "detail": {
+        "listing_date": "2026-09-17"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-16",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-09-17",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
     }
   ],
   "source_health": {
