@@ -736,7 +736,9 @@
     "140120260818522362",
     "140120260818522425",
     "140120260818522527",
-    "140120260818522509"
+    "140120260818522509",
+    "140120260817521782",
+    "140120260818522576"
   ],
   "events": [
     {
@@ -2857,6 +2859,49 @@
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "bunbai-3695-2026-08-18",
+      "type": "bunbai",
+      "code": "3695",
+      "name": "ＧＭＯプロダクトプラットフォーム",
+      "market": "グロース",
+      "margin": "信用",
+      "announced_at": "2026-08-18T16:40:00+09:00",
+      "detail": {
+        "execution_date": "2026-08-19",
+        "execution_date_raw": "分売実施日 2026年8月19日（水） 3.分売値段 1,389円 4.買付申込数量の限度 買付顧客1人につき4,000株（売買単位:100株） 5.実施取引所 東京証券取引所 グロース市場における上場維持基準のうち、流通株式比率の適合に向け、流 6.実施の目的 通株式数増加を図るため。 （ご参考） 分売値段の算定 算定基準日及びその価格 2026年8月18",
+        "execution_date_confirmed": false
+      },
+      "schedule": [
+        {
+          "date": "2026-08-18",
+          "label": "execution-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-08-19",
+          "label": "execution_day",
+          "sent": false
+        },
+        {
+          "date": "2026-08-26",
+          "label": "execution+5bd",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260817521782.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260817521782.pdf",
+      "source_title": "株式の立会外分売実施に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260817521782",
+          "relation": "source",
+          "title": "株式の立会外分売実施に関するお知らせ",
+          "announced_at": "2026-08-18T16:40:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260817521782.pdf"
+        }
+      ]
     }
   ],
   "source_health": {
