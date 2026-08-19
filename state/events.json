@@ -747,7 +747,11 @@
     "140120260818522563",
     "140120260819522916",
     "140120260818522647",
-    "140120260819523096"
+    "140120260819523096",
+    "140120260819523007",
+    "140120260819523169",
+    "140120260819523203",
+    "140120260819523180"
   ],
   "events": [
     {
@@ -3019,6 +3023,49 @@
           "title": "新投資口発行及び投資口売出しに関するお知らせ",
           "announced_at": "2026-08-19T15:45:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260818522647.pdf"
+        }
+      ]
+    },
+    {
+      "id": "bunbai-9221-2026-08-19",
+      "type": "bunbai",
+      "code": "9221",
+      "name": "フルハシＥＰＯ",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-08-19T16:30:00+09:00",
+      "detail": {
+        "execution_date": "2026-08-20",
+        "execution_date_raw": "分売実施日 2026年8月20日（木） 3.分売値段 1,067円 4.買付申込数量の限度 買付顧客一人につき3,000株（売買単位:100株） 5.実施取引所 東京証券取引所 6.実施の目的 主要株主1名から一定数量の売却意向があり、発行会社として検 討した結果、株式の流動性の向上並びに流通株式比率の向上を図 るため、立会外分売を行うものであります。 （ご",
+        "execution_date_confirmed": false
+      },
+      "schedule": [
+        {
+          "date": "2026-08-19",
+          "label": "execution-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-08-20",
+          "label": "execution_day",
+          "sent": false
+        },
+        {
+          "date": "2026-08-27",
+          "label": "execution+5bd",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260819523007.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260819523007.pdf",
+      "source_title": "株式の立会外分売実施に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260819523007",
+          "relation": "source",
+          "title": "株式の立会外分売実施に関するお知らせ",
+          "announced_at": "2026-08-19T16:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260819523007.pdf"
         }
       ]
     }
