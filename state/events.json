@@ -742,7 +742,9 @@
     "140120260818522695",
     "140120260819522784",
     "140120260819522785",
-    "140120260819522803"
+    "140120260819522803",
+    "140120260819522835",
+    "140120260818522563"
   ],
   "events": [
     {
@@ -2919,6 +2921,49 @@
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "bunbai-3695-2026-08-19",
+      "type": "bunbai",
+      "code": "3695",
+      "name": "ＧＭＯプロダクトプラットフォーム",
+      "market": "グロース",
+      "margin": "信用",
+      "announced_at": "2026-08-19T10:31:00+09:00",
+      "detail": {
+        "execution_date": "2026-08-19",
+        "execution_date_raw": "分売実施日 株数 分売値段 買付申込数量の限度 2026年8月19日（水） 122,300株 1,389円 4,000株 （ご参考） 2026年8月18日にお知らせいたしました内容は以下のとおりです。 1.分売予定株式数 122,300株 2.分売実施日 2026年8月19日（水） 3.分売値段 1,389円 4.買付申込数量の限度 買付顧客1人につき4,0",
+        "execution_date_confirmed": false
+      },
+      "schedule": [
+        {
+          "date": "2026-08-18",
+          "label": "execution-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-08-19",
+          "label": "execution_day",
+          "sent": false
+        },
+        {
+          "date": "2026-08-26",
+          "label": "execution+5bd",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260818522563.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260818522563.pdf",
+      "source_title": "株式の立会外分売終了に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260818522563",
+          "relation": "source",
+          "title": "株式の立会外分売終了に関するお知らせ",
+          "announced_at": "2026-08-19T10:31:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260818522563.pdf"
+        }
+      ]
     }
   ],
   "source_health": {
