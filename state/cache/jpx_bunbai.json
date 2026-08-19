@@ -1,7 +1,13 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-08-18T22:42:25.763238+00:00",
+  "fetched_at": "2026-08-19T22:42:25.105740+00:00",
   "data": [
+    {
+      "code": "9221",
+      "name": "フルハシＥＰＯ(株)",
+      "execution_date": "2026-08-20",
+      "source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
+    },
     {
       "code": "3695",
       "name": "ＧＭＯプロダクトプラットフォーム（株）",

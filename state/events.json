@@ -903,7 +903,7 @@
         {
           "date": "2026-08-20",
           "label": "pricing_day+25bd",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-21",
@@ -2529,7 +2529,7 @@
         {
           "date": "2026-08-20",
           "label": "execution_day",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-27",
@@ -2939,19 +2939,18 @@
       "announced_at": "2026-08-19T10:31:00+09:00",
       "detail": {
         "execution_date": "2026-08-19",
-        "execution_date_raw": "分売実施日 株数 分売値段 買付申込数量の限度 2026年8月19日（水） 122,300株 1,389円 4,000株 （ご参考） 2026年8月18日にお知らせいたしました内容は以下のとおりです。 1.分売予定株式数 122,300株 2.分売実施日 2026年8月19日（水） 3.分売値段 1,389円 4.買付申込数量の限度 買付顧客1人につき4,0",
-        "execution_date_confirmed": false
+        "execution_date_confirmed": true
       },
       "schedule": [
         {
           "date": "2026-08-18",
           "label": "execution-1bd",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-19",
           "label": "execution_day",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-26",
@@ -2959,18 +2958,7 @@
           "sent": false
         }
       ],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260818522563.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260818522563.pdf",
-      "source_title": "株式の立会外分売終了に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260818522563",
-          "relation": "source",
-          "title": "株式の立会外分売終了に関するお知らせ",
-          "announced_at": "2026-08-19T10:31:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260818522563.pdf"
-        }
-      ]
+      "pdf_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
     },
     {
       "id": "po-3455-2026-08-19",
@@ -3036,19 +3024,18 @@
       "announced_at": "2026-08-19T16:30:00+09:00",
       "detail": {
         "execution_date": "2026-08-20",
-        "execution_date_raw": "分売実施日 2026年8月20日（木） 3.分売値段 1,067円 4.買付申込数量の限度 買付顧客一人につき3,000株（売買単位:100株） 5.実施取引所 東京証券取引所 6.実施の目的 主要株主1名から一定数量の売却意向があり、発行会社として検 討した結果、株式の流動性の向上並びに流通株式比率の向上を図 るため、立会外分売を行うものであります。 （ご",
-        "execution_date_confirmed": false
+        "execution_date_confirmed": true
       },
       "schedule": [
         {
           "date": "2026-08-19",
           "label": "execution-1bd",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-20",
           "label": "execution_day",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-27",
@@ -3056,18 +3043,7 @@
           "sent": false
         }
       ],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260819523007.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260819523007.pdf",
-      "source_title": "株式の立会外分売実施に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260819523007",
-          "relation": "source",
-          "title": "株式の立会外分売実施に関するお知らせ",
-          "announced_at": "2026-08-19T16:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260819523007.pdf"
-        }
-      ]
+      "pdf_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
     }
   ],
   "source_health": {
