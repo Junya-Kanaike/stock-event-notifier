@@ -913,7 +913,7 @@
         {
           "date": "2026-08-21",
           "label": "settlement",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-20",
@@ -923,7 +923,7 @@
         {
           "date": "2026-08-21",
           "label": "pricing_day+26bd",
-          "sent": false
+          "sent": true
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260714592985.pdf",
@@ -2708,7 +2708,7 @@
         {
           "date": "2026-08-21",
           "label": "execution-1bd",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-24",
@@ -3070,19 +3070,18 @@
       "announced_at": "2026-08-20T10:30:00+09:00",
       "detail": {
         "execution_date": "2026-08-20",
-        "execution_date_raw": "分売実施日 株数 分売値段 買付申込数量の限度 2026年8月20日（木） 300,000株 1,067円 3,000株 （ご参考） 2026年8月19日にお知らせいたしました内容は、以下のとおりです。 1.分売予定株式数 300,000株 2.分売実施日 2026年8月20日（木） 3.分売値段 1,067円 4.買付申込数量の限度 買付顧客一人につき3,",
-        "execution_date_confirmed": false
+        "execution_date_confirmed": true
       },
       "schedule": [
         {
           "date": "2026-08-19",
           "label": "execution-1bd",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-20",
           "label": "execution_day",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-27",
@@ -3090,18 +3089,7 @@
           "sent": false
         }
       ],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260819523009.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260819523009.pdf",
-      "source_title": "株式の立会外分売終了に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260819523009",
-          "relation": "source",
-          "title": "株式の立会外分売終了に関するお知らせ",
-          "announced_at": "2026-08-20T10:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260819523009.pdf"
-        }
-      ]
+      "pdf_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
     },
     {
       "id": "po-7966-2026-08-20",
