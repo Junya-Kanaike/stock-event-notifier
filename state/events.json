@@ -780,7 +780,10 @@
     "140120260820523855",
     "140120260820523872",
     "140120260821524159",
-    "140120260821524250"
+    "140120260821524250",
+    "140120260821524566",
+    "140120260821524608",
+    "140120260821524611"
   ],
   "events": [
     {
@@ -3246,6 +3249,87 @@
           "title": "株式の売出しに関するお知らせ",
           "announced_at": "2026-08-21T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524159.pdf"
+        }
+      ]
+    },
+    {
+      "id": "split-4762-2026-08-21",
+      "type": "split",
+      "code": "4762",
+      "name": "エックスネット",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-08-21T16:00:00+09:00",
+      "detail": {
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "effective_date_raw": "効力発生日 2026年10月1日（木曜日） （4） その他 今回の株式分割に際して、資本金の額に変更はありません。 2. 株式分割に伴う定款の一部変更について （1） 変更の理由 上記株式分割の割合に応じた発行可能株式総数の増加に伴い、会社法第184条第2項に 基づき、2026年10月1日（木曜日）を効力発生日として、当社定款の一部を変更いたし ます。 （2"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-30",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524566.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260821524566.pdf",
+      "source_title": "「株式分割」、株式分割に伴う「定款の一部変更」、「配当予想の修正」および「株主優待制度の変更」に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260821524566",
+          "relation": "source",
+          "title": "「株式分割」、株式分割に伴う「定款の一部変更」、「配当予想の修正」および「株主優待制度の変更」に関するお知らせ",
+          "announced_at": "2026-08-21T16:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524566.pdf"
+        }
+      ]
+    },
+    {
+      "id": "bunbai-4073-2026-08-21",
+      "type": "bunbai",
+      "code": "4073",
+      "name": "ジィ・シィ企画",
+      "market": "グロース",
+      "margin": "信用",
+      "announced_at": "2026-08-21T16:35:00+09:00",
+      "detail": {
+        "execution_date": "2026-08-24",
+        "execution_date_raw": "分売実施日 2026年8月24日（月） 3. 分売値段 468円 4. 買付申込数量の限度 買付顧客1人につき1,000株（売買単位:100株） 5. 実施取引所 東京証券取引所 6. 実施の目的 一定数量の売却意向があり、当社として検討した結果、当社株式の分布状況の改善 および流動性の向上を目的とするものです。 本立会外分売に関して、当社の主要株主である株",
+        "execution_date_confirmed": false
+      },
+      "schedule": [
+        {
+          "date": "2026-08-21",
+          "label": "execution-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-08-24",
+          "label": "execution_day",
+          "sent": false
+        },
+        {
+          "date": "2026-08-31",
+          "label": "execution+5bd",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524608.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260821524608.pdf",
+      "source_title": "株式の立会外分売実施に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260821524608",
+          "relation": "source",
+          "title": "株式の立会外分売実施に関するお知らせ",
+          "announced_at": "2026-08-21T16:35:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524608.pdf"
         }
       ]
     }
