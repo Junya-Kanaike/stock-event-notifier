@@ -15,16 +15,18 @@ from src.core.po import format_po_message, merge_po_details, refresh_po_missing_
 from src.core.scheduler import build_bunbai_schedule, build_po_schedule, build_split_schedule
 from src.core.store import (
     add_notified_id,
+    clear_disclosure_failure,
     find_events,
     has_notified,
     load_state,
+    record_disclosure_failure,
     record_source_result,
     save_state,
     trim_notified_ids,
     upsert_event,
 )
 from src.notifiers.slack import SlackNotifier
-from src.parsers.po_pdf import parse_po_details
+from src.parsers.po_pdf import is_negotiated_sale, parse_po_details
 from src.parsers.bunbai_pdf import parse_bunbai_details
 from src.parsers.split_pdf import parse_split_details
 
@@ -72,6 +74,33 @@ def main(argv: list[str] | None = None) -> int:
     if health_changed and not args.dry_run:
         save_state(state)
 
+    item_changed, failures = process_disclosures(
+        disclosures, state, notifier, master, margin, dry_run=args.dry_run
+    )
+    changed |= item_changed
+
+    changed |= trim_notified_ids(state)
+    if changed and not args.dry_run:
+        save_state(state)
+    if failures:
+        raise RuntimeError("; ".join(failures))
+    return 0
+
+
+MAX_DISCLOSURE_FAILURES = 3
+
+
+def process_disclosures(
+    disclosures: list[Disclosure],
+    state: dict[str, Any],
+    notifier: SlackNotifier,
+    master: dict[str, Any],
+    margin: dict[str, str],
+    *,
+    dry_run: bool,
+) -> tuple[bool, list[str]]:
+    changed = False
+    failures: list[str] = []
     known_buybacks: set[tuple[str, str]] = set()
 
     for disclosure in disclosures:
@@ -105,20 +134,39 @@ def main(argv: list[str] | None = None) -> int:
                 item_changed |= handle_split(disclosure, state, notifier, master, margin)
 
             item_changed |= add_notified_id(state, disclosure.id)
+            item_changed |= clear_disclosure_failure(state, disclosure.id)
             changed |= item_changed
-            if item_changed and not args.dry_run:
+            if item_changed and not dry_run:
                 save_state(state)
         except Exception as exc:
-            if changed and not args.dry_run:
+            # 壊れたPDFなどの「毒開示」1件で巡回全体を止めない。開示単位で
+            # 失敗を記録し、既定回数を超えたら恒久スキップして先へ進む。
+            attempts = record_disclosure_failure(
+                state,
+                disclosure.id,
+                code=disclosure.code,
+                title=disclosure.title,
+                failed_on=disclosure.announced_at.date().isoformat(),
+            )
+            if attempts >= MAX_DISCLOSURE_FAILURES:
+                add_notified_id(state, disclosure.id)
+                clear_disclosure_failure(state, disclosure.id)
+                message = (
+                    f"TDnet処理を{attempts}回失敗したためスキップ確定: "
+                    f"{disclosure.code} {disclosure.title}: {exc}"
+                )
+            else:
+                message = (
+                    f"TDnet処理失敗（{attempts}/{MAX_DISCLOSURE_FAILURES}回目、次回巡回で再試行）: "
+                    f"{disclosure.code} {disclosure.title}: {exc}"
+                )
+            changed = True
+            if not dry_run:
                 save_state(state)
-            message = f"TDnet処理失敗: {disclosure.code} {disclosure.title}: {exc}"
             notify_system_safely(notifier, message)
-            raise RuntimeError(message) from exc
+            failures.append(message)
 
-    changed |= trim_notified_ids(state)
-    if changed and not args.dry_run:
-        save_state(state)
-    return 0
+    return changed, failures
 
 
 def base_event(disclosure: Disclosure, event_type: str, master: dict[str, Any], margin: dict[str, str]) -> dict[str, Any]:
@@ -140,12 +188,23 @@ def base_event(disclosure: Disclosure, event_type: str, master: dict[str, Any], 
     }
 
 
+def po_schedule_for(detail: dict[str, Any], old_schedule: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
+    # 相対協議で価格決定済みの売出しは戦略対象外のため、スケジュール通知を
+    # 作らない（送信済みの項目だけをアーカイブ用に残す）。
+    if detail.get("pricing_method") == "negotiated":
+        return [item for item in (old_schedule or []) if item.get("sent")]
+    if not detail.get("pricing_date"):
+        return old_schedule or []
+    return build_po_schedule(detail["pricing_date"], detail.get("settlement_date"), old_schedule=old_schedule)
+
+
 def handle_po(disclosure: Disclosure, state: dict[str, Any], notifier: SlackNotifier, master: dict[str, Any], margin: dict[str, str]) -> bool:
     text = fetch_pdf_text(disclosure.pdf_url)
     event = base_event(disclosure, "po", master, margin)
     event["detail"] = parse_po_details(disclosure.title, text, disclosure.announced_at.date())
-    if event["detail"].get("pricing_date"):
-        event["schedule"] = build_po_schedule(event["detail"]["pricing_date"], event["detail"].get("settlement_date"))
+    if not is_supported_po(event["detail"]):
+        return True
+    event["schedule"] = po_schedule_for(event["detail"])
     notifier.send("po", format_po_announcement(event), header="PO発表", pdf_url=event.get("pdf_url"))
     upsert_event(state, event)
     return True
@@ -177,7 +236,9 @@ def handle_po_pricing(
         detail["parse_warnings"] = ["当初発表を取得できず価格決定資料から復元"]
         refresh_po_missing_fields(detail)
         event["detail"] = detail
-        event["schedule"] = build_po_schedule(pricing_date, detail.get("settlement_date"))
+        event["schedule"] = po_schedule_for(detail)
+        if not is_supported_po(detail):
+            return True
         notifier.send(
             "po",
             format_po_message(event, "PO価格決定（復元）"),
@@ -199,7 +260,9 @@ def handle_po_pricing(
     updated["detail"] = detail
     updated["latest_pdf_url"] = disclosure.pdf_url
     append_related_disclosure(updated, disclosure, "pricing")
-    updated["schedule"] = build_po_schedule(pricing_date, detail.get("settlement_date"), old_schedule=old_schedule)
+    updated["schedule"] = po_schedule_for(detail, old_schedule=old_schedule)
+    if not is_supported_po(detail):
+        return True
     notifier.send(
         "po",
         format_po_message(updated, "PO価格決定"),
@@ -226,12 +289,7 @@ def handle_po_correction(
         updated["detail"] = merge_po_details(updated.get("detail", {}), parsed_detail)
         updated["latest_pdf_url"] = disclosure.pdf_url
         append_related_disclosure(updated, disclosure, "correction")
-        if updated["detail"].get("pricing_date"):
-            updated["schedule"] = build_po_schedule(
-                updated["detail"]["pricing_date"],
-                updated["detail"].get("settlement_date"),
-                old_schedule=updated.get("schedule", []),
-            )
+        updated["schedule"] = po_schedule_for(updated["detail"], old_schedule=updated.get("schedule", []))
     else:
         updated = recover_original_po_event(disclosure, text, master, margin)
         if updated:
@@ -244,11 +302,10 @@ def handle_po_correction(
             parsed_detail["parse_warnings"] = ["元のPO発表を状態ストアまたは訂正資料から特定できません"]
             refresh_po_missing_fields(parsed_detail)
             updated["detail"] = parsed_detail
-        if updated["detail"].get("pricing_date"):
-            updated["schedule"] = build_po_schedule(
-                updated["detail"]["pricing_date"], updated["detail"].get("settlement_date")
-            )
+        updated["schedule"] = po_schedule_for(updated["detail"], old_schedule=updated.get("schedule", []))
 
+    if not is_supported_po(updated["detail"]):
+        return True
     notifier.send(
         "po",
         format_po_message(updated, "PO訂正"),
@@ -259,12 +316,39 @@ def handle_po_correction(
     return True
 
 
+def is_supported_po(detail: dict[str, Any]) -> bool:
+    """相対協議で価格決定済みの特定先への売出しはPO戦略の対象外。"""
+    pricing_evidence = detail.get("pricing_date_raw") or ""
+    return detail.get("pricing_method") != "negotiated" and not is_negotiated_sale(pricing_evidence)
+
+
 def handle_bunbai(disclosure: Disclosure, state: dict[str, Any], notifier: SlackNotifier, master: dict[str, Any], margin: dict[str, str]) -> bool:
     text = fetch_pdf_text(disclosure.pdf_url)
+    detail = parse_bunbai_details(text, disclosure.announced_at.date())
+
+    # TDnetは同一の立会外分売について「実施のお知らせ」「分売条件決定」「終了のお知らせ」
+    # など複数の開示を出す。これらは別イベントを作らず、実施日が未確定の既存イベントへ
+    # 統合し、続報で実施日が判明した時点でスケジュールを補完する。
+    pending = find_events(
+        state,
+        event_type="bunbai",
+        code=disclosure.code,
+        predicate=lambda event: not event.get("detail", {}).get("execution_date_confirmed"),
+    )
+    if pending:
+        event = sorted(pending, key=lambda item: item.get("announced_at", ""), reverse=True)[0]
+        append_related_disclosure(event, disclosure, "update")
+        event["latest_pdf_url"] = disclosure.pdf_url
+        if detail.get("execution_date") and not event.get("detail", {}).get("execution_date"):
+            event["detail"] = detail
+            event["schedule"] = build_bunbai_schedule(detail["execution_date"], old_schedule=event.get("schedule"))
+        upsert_event(state, event)
+        return True
+
     event = base_event(disclosure, "bunbai", master, margin)
-    event["detail"] = parse_bunbai_details(text, disclosure.announced_at.date())
-    if event["detail"].get("execution_date"):
-        event["schedule"] = build_bunbai_schedule(event["detail"]["execution_date"])
+    event["detail"] = detail
+    if detail.get("execution_date"):
+        event["schedule"] = build_bunbai_schedule(detail["execution_date"])
     else:
         notify_system_safely(notifier, f"立会外分売実施日の抽出失敗: {disclosure.code} {disclosure.title}")
     notifier.send("bunbai", format_bunbai_announcement(event), header="立会外分売発表", pdf_url=event.get("pdf_url"))
@@ -384,10 +468,7 @@ def recover_original_po_event(
     event = base_event(original, "po", master, margin)
     event["related_disclosures"] = [disclosure_reference(original, "original")]
     event["detail"] = parse_po_details(original.title, original_text, original.announced_at.date())
-    if event["detail"].get("pricing_date"):
-        event["schedule"] = build_po_schedule(
-            event["detail"]["pricing_date"], event["detail"].get("settlement_date")
-        )
+    event["schedule"] = po_schedule_for(event["detail"])
     return event
 
 
