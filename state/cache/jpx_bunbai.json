@@ -1,7 +1,13 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-08-20T22:45:29.784598+00:00",
+  "fetched_at": "2026-08-23T22:38:18.389330+00:00",
   "data": [
+    {
+      "code": "4073",
+      "name": "(株)ジィ・シィ企画",
+      "execution_date": "2026-08-24",
+      "source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
+    },
     {
       "code": "9221",
       "name": "フルハシＥＰＯ(株)",
