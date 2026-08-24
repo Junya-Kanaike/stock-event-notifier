@@ -20,9 +20,32 @@ TDNET_HTML_URL = os.getenv("TDNET_HTML_URL", "https://www.release.tdnet.info/inb
 MAX_TDNET_PAGES = int(os.getenv("TDNET_MAX_PAGES", "10"))
 YANOSHIN_RESULT_CAP = int(os.getenv("YANOSHIN_RESULT_CAP", "300"))
 
-PO_INCLUDE_KEYWORDS = ["公募", "募集による新株式発行", "売出し", "売出", "株式の売出し"]
-PO_EXCLUDE_KEYWORDS = ["立会外分売", "株主割当", "行使価額修正条項", "第三者割当"]
+PO_INCLUDE_KEYWORDS = ["公募増資", "募集による新株式発行", "株式の売出", "株式売出", "投資口の売出", "投資口売出"]
+# 「公募」単独は社債の公募（公募社債）や補助金・助成事業の公募（AMED公募事業等）にも
+# 使われる語のため、株式・投資口関連の文脈と共起した場合のみPOとして扱う。
+PO_AMBIGUOUS_KEYWORDS = ["公募"]
+PO_STOCK_CONTEXT_KEYWORDS = [
+    "新株式発行",
+    "新投資口発行",
+    "自己株式の処分",
+    "株式売出",
+    "株式の売出",
+    "投資口売出",
+    "投資口の売出",
+    "増資",
+]
+PO_EXCLUDE_KEYWORDS = ["立会外分売", "株主割当", "行使価額修正条項", "第三者割当", "社債"]
 BUYBACK_KEYWORDS = ["自己株式の取得", "自己株式取得", "自己株式取得に係る事項"]
+
+
+def _matches_po_keywords(normalized: str) -> bool:
+    if any(keyword in normalized for keyword in PO_INCLUDE_KEYWORDS):
+        return True
+    if any(keyword in normalized for keyword in ["新株式発行", "新投資口発行"]) and "売出" in normalized:
+        return True
+    if any(keyword in normalized for keyword in PO_AMBIGUOUS_KEYWORDS):
+        return any(keyword in normalized for keyword in PO_STOCK_CONTEXT_KEYWORDS)
+    return False
 
 
 @dataclass
@@ -61,7 +84,7 @@ def is_po_title(title: str) -> bool:
     normalized = re.sub(r"\s+", "", title or "")
     if is_po_pricing_title(normalized):
         return False
-    if not any(keyword in normalized for keyword in PO_INCLUDE_KEYWORDS):
+    if not _matches_po_keywords(normalized):
         return False
     if any(keyword in normalized for keyword in PO_EXCLUDE_KEYWORDS):
         return False
@@ -76,12 +99,14 @@ def is_po_correction_title(title: str) -> bool:
         return False
     if any(keyword in normalized for keyword in PO_EXCLUDE_KEYWORDS):
         return False
-    return any(keyword in normalized for keyword in PO_INCLUDE_KEYWORDS)
+    return _matches_po_keywords(normalized)
 
 
 def is_po_pricing_title(title: str) -> bool:
     normalized = re.sub(r"\s+", "", title or "")
     if "決定" not in normalized or "仮条件" in normalized:
+        return False
+    if any(keyword in normalized for keyword in PO_EXCLUDE_KEYWORDS) or "新株予約権" in normalized:
         return False
 
     price_keywords = ["発行価格", "売出価格", "発行価額", "売出価額"]

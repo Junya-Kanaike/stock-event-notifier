@@ -24,6 +24,17 @@ class TdnetKeywordTest(unittest.TestCase):
         self.assertNotIn("po", classify_title("発行価格及び売出価格等の決定に関するお知らせ"))
         self.assertIn("po_pricing", classify_title("発行価格及び売出価格等の決定に関するお知らせ"))
 
+    def test_po_does_not_match_non_equity_uses_of_public_offering(self):
+        false_positive_titles = [
+            "公募ハイブリッド社債（劣後特約付社債）の発行条件決定について",
+            "AMED公募事業「再生医療・遺伝子治療の産業化に向けた基盤技術開発事業」に係る提案の採択に関するお知らせ",
+            "AMED公募課題 令和8年度「再生医療・遺伝子治療の産業化に向けた基盤技術開発事業」採択のお知らせ",
+            "第三者割当による新株式の発行価額の決定に関するお知らせ",
+            "第10回新株予約権の発行価額の決定に関するお知らせ",
+        ]
+        for title in false_positive_titles:
+            self.assertNotIn("po", classify_title(title), title)
+
     def test_po_pricing_recognizes_generic_price_decision_but_not_preliminary_terms(self):
         title = "新投資口発行及び投資口売出しに係る価格等の決定に関するお知らせ"
         self.assertEqual(classify_title(title), {"po_pricing"})

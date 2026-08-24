@@ -5,7 +5,13 @@ from unittest.mock import patch
 from src.collectors.tdnet import Disclosure
 from src.core.bizday import JST
 from src.notifiers.slack import SlackNotifier
-from src.run_poll import handle_buyback, handle_po_correction, handle_po_pricing, original_disclosure_date
+from src.run_poll import (
+    handle_bunbai,
+    handle_buyback,
+    handle_po_correction,
+    handle_po_pricing,
+    original_disclosure_date,
+)
 
 
 class PollRecoveryTest(unittest.TestCase):
@@ -182,6 +188,46 @@ class PollRecoveryTest(unittest.TestCase):
         self.assertEqual(event["detail"]["size_oku"], 50.0)
         self.assertEqual(event["detail"]["recovery_notes"], ["訂正資料から元開示を自動補完"])
         self.assertEqual([item["relation"] for item in event["related_disclosures"]], ["original", "correction"])
+
+    def test_bunbai_followup_merges_into_pending_event_without_duplicating(self):
+        first = Disclosure(
+            id="bunbai-first",
+            code="5075",
+            name="アップコン",
+            title="株式の立会外分売実施に関するお知らせ",
+            announced_at=datetime(2026, 7, 21, 17, 0, tzinfo=JST),
+            pdf_url="https://example.test/first.pdf",
+        )
+        followup = Disclosure(
+            id="bunbai-followup",
+            code="5075",
+            name="アップコン",
+            title="株式の立会外分売終了に関するお知らせ",
+            announced_at=datetime(2026, 7, 22, 13, 30, tzinfo=JST),
+            pdf_url="https://example.test/followup.pdf",
+        )
+        state = {"notified_ids": [], "events": []}
+        notifier = SlackNotifier(dry_run=True)
+
+        # 実施のお知らせ（本文から実施日を抽出できず未確定イベントとして登録）。
+        with patch("src.run_poll.fetch_pdf_text", return_value="立会外分売の実施を決定しました"):
+            handle_bunbai(first, state, notifier, {}, {})
+        self.assertEqual(len(state["events"]), 1)
+        messages_after_first = len(notifier.sent_messages)
+
+        # 終了のお知らせ（実施日が判明）。新規イベントを作らず既存へ統合し、追加送信もしない。
+        with patch("src.run_poll.fetch_pdf_text", return_value="分売実施日 2026年7月22日"):
+            handle_bunbai(followup, state, notifier, {}, {})
+
+        self.assertEqual(len(state["events"]), 1)
+        self.assertEqual(len(notifier.sent_messages), messages_after_first)
+        event = state["events"][0]
+        self.assertEqual(event["detail"]["execution_date"], "2026-07-22")
+        self.assertEqual(
+            {item["label"] for item in event["schedule"]},
+            {"execution-1bd", "execution_day", "execution+5bd"},
+        )
+        self.assertIn("update", [item["relation"] for item in event["related_disclosures"]])
 
     def test_original_disclosure_date_uses_date_before_correction_marker(self):
         text = "2026 年 7 月 14 日に開示いたしました資料を訂正します。"

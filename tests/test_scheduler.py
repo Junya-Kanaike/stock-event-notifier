@@ -34,7 +34,7 @@ class SchedulerTest(unittest.TestCase):
                     "name": "トヨタ自動車",
                     "market": "プライム",
                     "margin": "貸借",
-                    "detail": {},
+                    "detail": {"pricing_date_confirmed": True},
                     "schedule": [{"date": "2026-07-17", "label": "pricing_day", "sent": False}],
                 }
             ],
@@ -47,6 +47,30 @@ class SchedulerTest(unittest.TestCase):
         notifier = SlackNotifier(dry_run=True)
         notifier.send(due[0].event["type"], due[0].text)
         self.assertEqual(len(notifier.sent_messages), 1)
+
+    def test_unconfirmed_po_schedule_is_held_until_pricing_confirmation(self):
+        event = {
+            "id": "po-543A-2026-07-15",
+            "type": "po",
+            "code": "543A",
+            "name": "テスト",
+            "market": "プライム",
+            "margin": "対象外",
+            "detail": {
+                "pricing_date": "2026-07-22",
+                "pricing_date_end": "2026-07-27",
+                "pricing_date_confirmed": False,
+            },
+            "schedule": [{"date": "2026-07-22", "label": "pricing_day", "sent": False}],
+        }
+        state = {"notified_ids": [], "events": [event]}
+
+        self.assertEqual(due_notifications(state, date(2026, 7, 22)), [])
+
+        event["detail"]["pricing_date_confirmed"] = True
+        due = due_notifications(state, date(2026, 7, 22))
+        self.assertEqual(len(due), 1)
+        self.assertIn("寄り付きで買う", due[0].text)
 
     def test_daily_notification_recovers_unsent_overdue_item(self):
         state = {
@@ -109,6 +133,7 @@ class SchedulerTest(unittest.TestCase):
                         "dilution_status": "unavailable",
                         "pricing_date": "2026-07-16",
                         "pricing_date_end": "2026-07-18",
+                        "pricing_date_confirmed": True,
                         "pricing_date_status": "provisional",
                         "settlement_date": "2026-07-24",
                         "settlement_date_status": "confirmed",
@@ -161,7 +186,7 @@ class SchedulerTest(unittest.TestCase):
         finally:
             run_daily.fetch_ipos = original_fetch_ipos
 
-    def test_daily_sync_drops_past_ipo_and_keeps_same_day_listings(self):
+    def test_daily_sync_skips_past_listing_and_keeps_same_day_listings(self):
         original_fetch_ipos = run_daily.fetch_ipos
         try:
             run_daily.fetch_ipos = lambda: [
@@ -175,6 +200,66 @@ class SchedulerTest(unittest.TestCase):
             self.assertEqual({event["code"] for event in state["events"]}, {"603A", "604A"})
         finally:
             run_daily.fetch_ipos = original_fetch_ipos
+
+    def test_past_ipo_is_dropped_only_after_overdue_notification(self):
+        # daily jobが上場日に実行できなかった場合でも、遅延通知を送ってから削除する。
+        state = {
+            "notified_ids": [],
+            "events": [
+                {
+                    "id": "ipo-598A-2026-07-16",
+                    "type": "ipo",
+                    "code": "598A",
+                    "name": "テスト",
+                    "detail": {"listing_date": "2026-07-16"},
+                    "schedule": [
+                        {"date": "2026-07-15", "label": "listing-1bd", "sent": True},
+                        {"date": "2026-07-16", "label": "listing_day", "sent": False},
+                    ],
+                }
+            ],
+        }
+
+        due = due_notifications(state, date(2026, 7, 17))
+        self.assertEqual(len(due), 1)
+        self.assertTrue(due[0].overdue)
+        self.assertIn("[遅延通知]", due[0].text)
+        due[0].schedule_item["sent"] = True
+
+        self.assertTrue(run_daily.drop_past_ipo_events(state, date(2026, 7, 17)))
+        self.assertEqual(state["events"], [])
+        self.assertFalse(run_daily.drop_past_ipo_events(state, date(2026, 7, 17)))
+
+    def test_stale_po_pricing_alerts_once_and_holds_schedule(self):
+        state = {
+            "notified_ids": [],
+            "events": [
+                {
+                    "id": "po-543A-2026-07-15",
+                    "type": "po",
+                    "code": "543A",
+                    "name": "テスト",
+                    "detail": {
+                        "pricing_date": "2026-07-22",
+                        "pricing_date_end": "2026-07-27",
+                        "pricing_date_confirmed": False,
+                    },
+                    "schedule": [{"date": "2026-07-22", "label": "pricing_day", "sent": False}],
+                }
+            ],
+        }
+        notifier = SlackNotifier(dry_run=True)
+
+        self.assertFalse(run_daily.alert_stale_po_pricing(state, notifier, date(2026, 7, 27)))
+        self.assertEqual(notifier.sent_messages, [])
+
+        self.assertTrue(run_daily.alert_stale_po_pricing(state, notifier, date(2026, 7, 28)))
+        self.assertEqual(len(notifier.sent_messages), 1)
+        self.assertIn("PO価格決定を未検知", notifier.sent_messages[0]["payload"]["text"])
+        self.assertEqual(due_notifications(state, date(2026, 7, 28)), [])
+
+        self.assertFalse(run_daily.alert_stale_po_pricing(state, notifier, date(2026, 7, 29)))
+        self.assertEqual(len(notifier.sent_messages), 1)
 
     def test_daily_sync_preserves_future_ipo_missing_from_temporary_feed(self):
         original_fetch_ipos = run_daily.fetch_ipos
