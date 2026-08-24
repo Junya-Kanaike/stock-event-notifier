@@ -5,7 +5,7 @@ import unittest
 from src.core.dateparse import find_dates, parse_date_token
 from src.parsers.bunbai_pdf import parse_bunbai_details
 from src.parsers.po_pdf import parse_po_details
-from src.parsers.split_pdf import parse_split_details
+from src.parsers.split_pdf import extract_split_ratio, parse_split_details
 
 
 FIXTURE_DIR = Path(__file__).parent / "fixtures" / "tdnet"
@@ -38,6 +38,19 @@ class ParserTest(unittest.TestCase):
         detail = parse_split_details(text, date(2026, 7, 7))
         self.assertEqual(detail["ratio"], "2")
         self.assertEqual(detail["effective_date"], "2026-08-01")
+
+    def test_split_ratio_does_not_strip_integer_trailing_zero(self):
+        self.assertEqual(extract_split_ratio("普通株式1株を10株に分割します"), "10")
+        self.assertEqual(extract_split_ratio("普通株式1株を2.0株に分割します"), "2")
+
+    def test_po_parser_does_not_use_unrelated_date_after_same_as_reference(self):
+        text = "受渡期日と同一とする。取締役会開催日 2026年8月20日"
+
+        detail = parse_po_details("株式の売出しに関するお知らせ", text, date(2026, 8, 19))
+
+        self.assertIsNone(detail["settlement_date"])
+        self.assertEqual(detail["settlement_date_status"], "unavailable")
+        self.assertIn("settlement_date", detail["missing_fields"])
 
     def test_po_parser_does_not_use_unrelated_dates_as_pricing_date(self):
         detail = parse_po_details("公募による新株式発行", "取締役会決議日 2026年7月13日", date(2026, 7, 13))

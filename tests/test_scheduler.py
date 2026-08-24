@@ -270,6 +270,37 @@ class SchedulerTest(unittest.TestCase):
         finally:
             run_daily.fetch_bunbai = original_fetch_bunbai
 
+    def test_bunbai_sync_reuses_existing_event_with_same_execution_date(self):
+        original_fetch_bunbai = run_daily.fetch_bunbai
+        try:
+            run_daily.fetch_bunbai = lambda: [
+                {"code": "4073", "name": "テスト", "execution_date": "2026-08-24", "source_url": "https://jpx.test"}
+            ]
+            state = {
+                "events": [
+                    {
+                        "id": "bunbai-4073-2026-08-14",
+                        "type": "bunbai",
+                        "code": "4073",
+                        "name": "テスト",
+                        "announced_at": "2026-08-14T15:30:00+09:00",
+                        "detail": {"execution_date": "2026-08-24", "execution_date_confirmed": True},
+                        "schedule": [{"date": "2026-08-24", "label": "execution_day", "sent": True}],
+                        "pdf_url": "https://tdnet.test/original.pdf",
+                    }
+                ]
+            }
+
+            changed = run_daily.sync_bunbai_events(state, {}, {}, as_of=date(2026, 8, 24))
+
+            self.assertTrue(changed)
+            self.assertEqual(len(state["events"]), 1)
+            self.assertEqual(state["events"][0]["id"], "bunbai-4073-2026-08-14")
+            self.assertEqual(state["events"][0]["pdf_url"], "https://tdnet.test/original.pdf")
+            self.assertTrue(next(item for item in state["events"][0]["schedule"] if item["label"] == "execution_day")["sent"])
+        finally:
+            run_daily.fetch_bunbai = original_fetch_bunbai
+
 
 if __name__ == "__main__":
     unittest.main()

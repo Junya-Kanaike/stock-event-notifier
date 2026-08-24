@@ -24,6 +24,20 @@ class TdnetKeywordTest(unittest.TestCase):
         self.assertNotIn("po", classify_title("発行価格及び売出価格等の決定に関するお知らせ"))
         self.assertIn("po_pricing", classify_title("発行価格及び売出価格等の決定に関するお知らせ"))
 
+    def test_po_does_not_match_non_equity_uses_of_public_offering(self):
+        false_positive_titles = [
+            "公募ハイブリッド社債（劣後特約付社債）の発行条件決定について",
+            "AMED公募事業「再生医療・遺伝子治療の産業化に向けた基盤技術開発事業」に係る提案の採択に関するお知らせ",
+            "AMED公募課題 令和8年度「再生医療・遺伝子治療の産業化に向けた基盤技術開発事業」採択のお知らせ",
+            "令和5年度補正予算事業（一次公募）交付決定辞退のお知らせ",
+        ]
+        for title in false_positive_titles:
+            self.assertNotIn("po", classify_title(title), title)
+
+    def test_po_change_notice_is_classified_as_correction(self):
+        title = "売出株式数の変更に関するお知らせ"
+        self.assertEqual(classify_title(title), {"po_correction"})
+
     def test_po_pricing_recognizes_generic_price_decision_but_not_preliminary_terms(self):
         title = "新投資口発行及び投資口売出しに係る価格等の決定に関するお知らせ"
         self.assertEqual(classify_title(title), {"po_pricing"})
@@ -44,6 +58,18 @@ class TdnetKeywordTest(unittest.TestCase):
         ]
         for title in titles:
             self.assertIn("cb", classify_title(title), title)
+
+    def test_cb_adjustments_are_not_new_cb_events(self):
+        titles = [
+            "株式分割に伴う転換社債型新株予約権付社債の転換価額の調整に関するお知らせ",
+            "2028年満期ユーロ円建転換社債型新株予約権付社債の転換価額の調整に関するお知らせ",
+        ]
+        for title in titles:
+            self.assertNotIn("cb", classify_title(title), title)
+
+    def test_split_is_preserved_when_cb_adjustment_is_mentioned(self):
+        title = "株式分割及び転換社債型新株予約権付社債の転換価額の調整に関するお知らせ"
+        self.assertEqual(classify_title(title), {"split"})
 
     def test_split_titles(self):
         titles = [

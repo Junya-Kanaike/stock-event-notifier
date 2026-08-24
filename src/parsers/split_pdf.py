@@ -17,7 +17,8 @@ def extract_split_ratio(text: str) -> str | None:
     for pattern in patterns:
         match = re.search(pattern, normalized)
         if match:
-            return match.group(1).rstrip("0").rstrip(".")
+            value = match.group(1)
+            return value.rstrip("0").rstrip(".") if "." in value else value
     return None
 
 

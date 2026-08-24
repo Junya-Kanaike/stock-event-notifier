@@ -12,6 +12,7 @@ from src.collectors.jpx_margin import CACHE_NAME as MARGIN_CACHE_NAME, fetch_mar
 from src.collectors.jpx_master import fetch_master, lookup_master
 from src.collectors.utils import cache_fetched_at
 from src.core.bizday import add_business_days, as_date, is_business_day, now_jst, today_jst
+from src.core.reconcile import reconcile_event_state
 from src.core.scheduler import build_bunbai_schedule, build_ipo_schedule, due_notifications
 from src.core.store import archive_completed_events, load_state, save_state, upsert_event
 from src.notifiers.slack import SlackNotifier
@@ -35,7 +36,9 @@ def main(argv: list[str] | None = None) -> int:
     state = load_state()
     if args.dry_run:
         state = deepcopy(state)
-    changed = False
+    changed = reconcile_event_state(state)
+    if changed and not args.dry_run:
+        save_state(state)
     failures: list[str] = []
 
     try:
@@ -176,9 +179,17 @@ def sync_bunbai_events(
         if add_business_days(execution_date, 5) < reference_date:
             continue
         canonical_id = f"bunbai-{code}-{execution_date}"
-        existing = find_event_by_id(state, canonical_id) or find_pending_bunbai_event(state, code)
+        existing = find_event_by_id(state, canonical_id) or find_matching_bunbai_event(
+            state, code, execution_date
+        )
         event_id = existing.get("id") if existing else canonical_id
-        master_item = lookup_master(master, code, fallback_name=item.get("name", ""))
+        master_item = lookup_master(
+            master,
+            code,
+            fallback_name=item.get("name", "") or (existing.get("name", "") if existing else ""),
+        )
+        detail = deepcopy(existing.get("detail", {})) if existing else {}
+        detail.update({"execution_date": execution_date, "execution_date_confirmed": True})
         event = {
             "id": event_id,
             "type": "bunbai",
@@ -187,10 +198,16 @@ def sync_bunbai_events(
             "market": master_item["market"],
             "margin": lookup_margin(margin, code),
             "announced_at": existing.get("announced_at") if existing else now_jst().isoformat(),
-            "detail": {"execution_date": execution_date, "execution_date_confirmed": True},
+            "detail": detail,
             "schedule": build_bunbai_schedule(execution_date, old_schedule=existing.get("schedule") if existing else None),
-            "pdf_url": item.get("source_url"),
+            "pdf_url": existing.get("pdf_url") if existing and existing.get("pdf_url") else item.get("source_url"),
         }
+        if existing:
+            for key in ["latest_pdf_url", "source_title", "related_disclosures"]:
+                if key in existing:
+                    event[key] = existing[key]
+            if item.get("source_url") and item.get("source_url") != event.get("pdf_url"):
+                event["jpx_source_url"] = item["source_url"]
         _, did_change = upsert_event(state, event)
         changed |= did_change
     return changed
@@ -212,6 +229,21 @@ def find_pending_bunbai_event(state: dict[str, Any], code: str) -> dict[str, Any
         and not event.get("detail", {}).get("execution_date_confirmed")
     ]
     return max(candidates, key=lambda event: event.get("announced_at", ""), default=None)
+
+
+def find_matching_bunbai_event(
+    state: dict[str, Any], code: str, execution_date: str
+) -> dict[str, Any] | None:
+    same_date = [
+        event
+        for event in state.get("events", [])
+        if event.get("type") == "bunbai"
+        and event.get("code") == code
+        and event.get("detail", {}).get("execution_date") == execution_date
+    ]
+    if same_date:
+        return min(same_date, key=lambda event: event.get("announced_at", ""))
+    return find_pending_bunbai_event(state, code)
 
 
 def notify_system_safely(notifier: SlackNotifier, text: str) -> None:

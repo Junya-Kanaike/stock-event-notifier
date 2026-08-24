@@ -20,8 +20,26 @@ TDNET_HTML_URL = os.getenv("TDNET_HTML_URL", "https://www.release.tdnet.info/inb
 MAX_TDNET_PAGES = int(os.getenv("TDNET_MAX_PAGES", "10"))
 YANOSHIN_RESULT_CAP = int(os.getenv("YANOSHIN_RESULT_CAP", "300"))
 
-PO_INCLUDE_KEYWORDS = ["公募", "募集による新株式発行", "売出し", "売出", "株式の売出し"]
-PO_EXCLUDE_KEYWORDS = ["立会外分売", "株主割当", "行使価額修正条項", "第三者割当"]
+PO_INCLUDE_KEYWORDS = [
+    "公募増資",
+    "募集による新株式発行",
+    "株式の売出",
+    "株式売出",
+    "売出株式",
+    "投資口の売出",
+    "投資口売出",
+]
+PO_STOCK_CONTEXT_KEYWORDS = [
+    "新株式発行",
+    "新投資口発行",
+    "自己株式の処分",
+    "株式売出",
+    "株式の売出",
+    "投資口売出",
+    "投資口の売出",
+    "増資",
+]
+PO_EXCLUDE_KEYWORDS = ["立会外分売", "株主割当", "行使価額修正条項", "第三者割当", "社債"]
 BUYBACK_KEYWORDS = ["自己株式の取得", "自己株式取得", "自己株式取得に係る事項"]
 
 
@@ -48,7 +66,7 @@ def classify_title(title: str) -> set[str]:
             classes.add("po_pricing")
     if "立会外分売" in normalized:
         classes.add("bunbai")
-    if "転換社債型新株予約権付社債" in normalized or "CB発行" in normalized:
+    if is_cb_title(normalized):
         classes.add("cb")
     if "株式分割" in normalized:
         classes.add("split")
@@ -61,7 +79,7 @@ def is_po_title(title: str) -> bool:
     normalized = re.sub(r"\s+", "", title or "")
     if is_po_pricing_title(normalized):
         return False
-    if not any(keyword in normalized for keyword in PO_INCLUDE_KEYWORDS):
+    if not _matches_po_keywords(normalized):
         return False
     if any(keyword in normalized for keyword in PO_EXCLUDE_KEYWORDS):
         return False
@@ -72,16 +90,18 @@ def is_po_title(title: str) -> bool:
 
 def is_po_correction_title(title: str) -> bool:
     normalized = re.sub(r"\s+", "", title or "")
-    if "訂正" not in normalized:
+    if not any(marker in normalized for marker in ["訂正", "変更"]):
         return False
     if any(keyword in normalized for keyword in PO_EXCLUDE_KEYWORDS):
         return False
-    return any(keyword in normalized for keyword in PO_INCLUDE_KEYWORDS)
+    return _matches_po_keywords(normalized)
 
 
 def is_po_pricing_title(title: str) -> bool:
     normalized = re.sub(r"\s+", "", title or "")
     if "決定" not in normalized or "仮条件" in normalized:
+        return False
+    if any(keyword in normalized for keyword in PO_EXCLUDE_KEYWORDS) or "新株予約権" in normalized:
         return False
 
     price_keywords = ["発行価格", "売出価格", "発行価額", "売出価額"]
@@ -92,6 +112,26 @@ def is_po_pricing_title(title: str) -> bool:
     # されるため、募集・売出しの文脈がある場合に限って価格決定として扱う。
     offering_context = ["新株式発行", "新投資口発行", "株式売出し", "株式の売出し", "投資口売出し", "公募"]
     return "価格等の決定" in normalized and any(keyword in normalized for keyword in offering_context)
+
+
+def _matches_po_keywords(normalized: str) -> bool:
+    if any(keyword in normalized for keyword in PO_INCLUDE_KEYWORDS):
+        return True
+    if any(keyword in normalized for keyword in ["新株式発行", "新投資口発行"]) and "売出" in normalized:
+        return True
+    if "公募" in normalized:
+        return any(keyword in normalized for keyword in PO_STOCK_CONTEXT_KEYWORDS)
+    return False
+
+
+def is_cb_title(title: str) -> bool:
+    normalized = re.sub(r"\s+", "", title or "")
+    has_cb_subject = "転換社債型新株予約権付社債" in normalized or "CB発行" in normalized
+    if not has_cb_subject:
+        return False
+    if any(marker in normalized for marker in ["転換価額の調整", "転換状況", "月間行使状況", "繰上償還"]):
+        return False
+    return any(marker in normalized for marker in ["発行に関する", "発行について", "発行決議", "発行条件"])
 
 
 def contains_buyback(text: str | None) -> bool:

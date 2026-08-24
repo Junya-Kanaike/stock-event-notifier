@@ -141,6 +141,23 @@ def has_confirmed_price(text: str) -> bool:
     return price_is_stated and "決定" in compact and "仮条件" not in compact
 
 
+def has_ambiguous_settlement_reference(text: str | None) -> bool:
+    """Return true when the settlement label only refers to another date.
+
+    TDnet documents sometimes say ``受渡期日と同一とする`` before an unrelated
+    date.  Treating the first later date as the settlement date creates a false
+    trading schedule.
+    """
+    compact = re.sub(r"\s+", "", normalize_digits(text or ""))
+    return bool(
+        re.match(
+            r"(?:受渡期日|受渡日|払込期日|払込日)(?:は)?"
+            r"(?:受渡期日|受渡日|払込期日|払込日)?(?:と|に)?同一(?:とする|の日)?",
+            compact,
+        )
+    )
+
+
 def _range_end(raw: str | None, start: date | None, default_year: int) -> date | None:
     if not raw or not start:
         return None
@@ -189,9 +206,12 @@ def parse_po_details(
         default_year=default_year,
         fallback_any=False,
     )
+    settlement_reference_only = has_ambiguous_settlement_reference(settlement_raw)
+    if settlement_reference_only:
+        settlement_date = None
 
     settlement_estimated = False
-    if pricing_date and not settlement_date:
+    if pricing_date and not settlement_date and not settlement_reference_only:
         settlement_date = add_business_days(pricing_date, 6)
         settlement_estimated = True
 

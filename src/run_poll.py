@@ -12,6 +12,7 @@ from src.collectors.tdnet import Disclosure, classify_title, contains_buyback, f
 from src.core.bizday import JST, is_business_day, today_jst
 from src.core.dateparse import clean_text, find_dates
 from src.core.po import format_po_message, merge_po_details, refresh_po_missing_fields
+from src.core.reconcile import reconcile_event_state
 from src.core.scheduler import build_bunbai_schedule, build_po_schedule, build_split_schedule
 from src.core.store import (
     add_notified_id,
@@ -45,7 +46,10 @@ def main(argv: list[str] | None = None) -> int:
     state = load_state()
     if args.dry_run:
         state = deepcopy(state)
-    changed = False
+    changed = reconcile_event_state(state)
+    changed |= recover_split_events(state, notifier)
+    if changed and not args.dry_run:
+        save_state(state)
 
     try:
         master = fetch_master()
@@ -85,24 +89,15 @@ def main(argv: list[str] | None = None) -> int:
 
         try:
             item_changed = False
-            if "buyback" in classes:
-                item_changed |= handle_buyback(disclosure, state, notifier)
-                known_buybacks.add((disclosure.code, disclosure.announced_at.date().isoformat()))
-            elif "po_correction" in classes:
-                item_changed |= handle_po_correction(disclosure, state, notifier, master, margin)
-            elif "po_pricing" in classes:
-                item_changed |= handle_po_pricing(disclosure, state, notifier, master, margin)
-            elif "po" in classes:
-                item_changed |= handle_po(disclosure, state, notifier, master, margin)
-            elif "bunbai" in classes:
-                item_changed |= handle_bunbai(disclosure, state, notifier, master, margin)
-            elif "cb" in classes:
-                if not margin:
-                    notify_system_safely(notifier, f"CB判定保留: {disclosure.code} 信用区分を取得できません")
-                    continue
-                item_changed |= handle_cb(disclosure, state, notifier, master, margin, known_buybacks)
-            elif "split" in classes:
-                item_changed |= handle_split(disclosure, state, notifier, master, margin)
+            item_changed |= process_disclosure(
+                disclosure,
+                classes,
+                state,
+                notifier,
+                master,
+                margin,
+                known_buybacks,
+            )
 
             item_changed |= add_notified_id(state, disclosure.id)
             changed |= item_changed
@@ -119,6 +114,40 @@ def main(argv: list[str] | None = None) -> int:
     if changed and not args.dry_run:
         save_state(state)
     return 0
+
+
+def process_disclosure(
+    disclosure: Disclosure,
+    classes: set[str],
+    state: dict[str, Any],
+    notifier: SlackNotifier,
+    master: dict[str, Any],
+    margin: dict[str, str],
+    known_buybacks: set[tuple[str, str]],
+) -> bool:
+    """Process every independent event class carried by one disclosure."""
+    changed = False
+    if "buyback" in classes:
+        changed |= handle_buyback(disclosure, state, notifier)
+        known_buybacks.add((disclosure.code, disclosure.announced_at.date().isoformat()))
+
+    if "po_correction" in classes:
+        changed |= handle_po_correction(disclosure, state, notifier, master, margin)
+    elif "po_pricing" in classes:
+        changed |= handle_po_pricing(disclosure, state, notifier, master, margin)
+    elif "po" in classes:
+        changed |= handle_po(disclosure, state, notifier, master, margin)
+
+    if "bunbai" in classes:
+        changed |= handle_bunbai(disclosure, state, notifier, master, margin)
+    if "cb" in classes:
+        if margin:
+            changed |= handle_cb(disclosure, state, notifier, master, margin, known_buybacks)
+        else:
+            notify_system_safely(notifier, f"CB判定保留: {disclosure.code} 信用区分を取得できません")
+    if "split" in classes:
+        changed |= handle_split(disclosure, state, notifier, master, margin)
+    return changed
 
 
 def base_event(disclosure: Disclosure, event_type: str, master: dict[str, Any], margin: dict[str, str]) -> dict[str, Any]:
@@ -261,13 +290,31 @@ def handle_po_correction(
 
 def handle_bunbai(disclosure: Disclosure, state: dict[str, Any], notifier: SlackNotifier, master: dict[str, Any], margin: dict[str, str]) -> bool:
     text = fetch_pdf_text(disclosure.pdf_url)
-    event = base_event(disclosure, "bunbai", master, margin)
-    event["detail"] = parse_bunbai_details(text, disclosure.announced_at.date())
+    parsed_detail = parse_bunbai_details(text, disclosure.announced_at.date())
+    followup = is_bunbai_followup_title(disclosure.title)
+    existing = find_bunbai_event_for_update(state, disclosure.code, parsed_detail.get("execution_date"), followup)
+    if existing:
+        event = deepcopy(existing)
+        detail = event.setdefault("detail", {})
+        for key, value in parsed_detail.items():
+            if value is not None:
+                detail[key] = value
+        detail["execution_date_confirmed"] = bool(detail.get("execution_date_confirmed")) or followup
+        event["latest_pdf_url"] = disclosure.pdf_url
+        append_related_disclosure(event, disclosure, bunbai_relation(disclosure.title))
+    else:
+        event = base_event(disclosure, "bunbai", master, margin)
+        parsed_detail["execution_date_confirmed"] = followup
+        event["detail"] = parsed_detail
+
     if event["detail"].get("execution_date"):
-        event["schedule"] = build_bunbai_schedule(event["detail"]["execution_date"])
+        event["schedule"] = build_bunbai_schedule(
+            event["detail"]["execution_date"], old_schedule=event.get("schedule", [])
+        )
     else:
         notify_system_safely(notifier, f"立会外分売実施日の抽出失敗: {disclosure.code} {disclosure.title}")
-    notifier.send("bunbai", format_bunbai_announcement(event), header="立会外分売発表", pdf_url=event.get("pdf_url"))
+    label = "立会外分売更新" if existing else "立会外分売発表"
+    notifier.send("bunbai", format_bunbai_announcement(event, label), header=label, pdf_url=disclosure.pdf_url)
     upsert_event(state, event)
     return True
 
@@ -301,13 +348,70 @@ def handle_split(
     margin: dict[str, str],
 ) -> bool:
     text = fetch_pdf_text(disclosure.pdf_url)
-    event = base_event(disclosure, "split", master, margin)
-    event["detail"] = parse_split_details(text, disclosure.announced_at.date())
+    parsed_detail = parse_split_details(text, disclosure.announced_at.date())
+    existing = find_split_event_for_update(state, disclosure)
+    if existing:
+        event = deepcopy(existing)
+        detail = event.setdefault("detail", {})
+        for key, value in parsed_detail.items():
+            if value is not None:
+                detail[key] = value
+        event["latest_pdf_url"] = disclosure.pdf_url
+        append_related_disclosure(event, disclosure, "correction")
+    else:
+        event = base_event(disclosure, "split", master, margin)
+        event["detail"] = parsed_detail
     if event["detail"].get("effective_date"):
-        event["schedule"] = build_split_schedule(event["detail"]["effective_date"])
+        event["schedule"] = build_split_schedule(
+            event["detail"]["effective_date"], old_schedule=event.get("schedule", [])
+        )
     else:
         notify_system_safely(notifier, f"株式分割効力発生日の抽出失敗: {disclosure.code} {disclosure.title}")
     _, changed = upsert_event(state, event)
+    return changed
+
+
+def recover_split_events(state: dict[str, Any], notifier: SlackNotifier) -> bool:
+    """Reparse split events damaged by old classification or ratio parsing."""
+    changed = False
+    for event in find_events(
+        state,
+        event_type="split",
+        predicate=lambda item: bool(item.get("detail", {}).get("recovery_needed")),
+    ):
+        detail = event.setdefault("detail", {})
+        try:
+            pdf_url = event.get("latest_pdf_url") or event.get("pdf_url")
+            if not pdf_url:
+                raise ValueError("PDF URLなし")
+            text = fetch_pdf_text(pdf_url)
+            disclosure_date = date.fromisoformat(str(event.get("announced_at", ""))[:10])
+            parsed = parse_split_details(text, disclosure_date)
+            if parsed.get("ratio") == "1":
+                parsed["ratio"] = None
+            for key, value in parsed.items():
+                if value is not None:
+                    detail[key] = value
+            if detail.get("effective_date"):
+                event["schedule"] = build_split_schedule(
+                    detail["effective_date"], old_schedule=event.get("schedule", [])
+                )
+            if not detail.get("ratio") or not detail.get("effective_date"):
+                raise ValueError("分割比率または効力発生日を抽出できません")
+        except Exception as exc:
+            error = f"{type(exc).__name__}: {exc}"
+            if detail.get("recovery_last_error") != error:
+                detail["recovery_last_error"] = error
+                changed = True
+            if not detail.get("recovery_alerted"):
+                notify_system_safely(notifier, f"株式分割の再抽出失敗: {event.get('code')} {error}")
+                detail["recovery_alerted"] = True
+                changed = True
+            continue
+
+        for key in ["recovery_needed", "recovery_reason", "recovery_last_error", "recovery_alerted"]:
+            detail.pop(key, None)
+        changed = True
     return changed
 
 
@@ -356,6 +460,54 @@ def append_related_disclosure(event: dict[str, Any], disclosure: Disclosure, rel
     references.append(disclosure_reference(disclosure, relation))
 
 
+def is_bunbai_followup_title(title: str) -> bool:
+    normalized = clean_text(title).replace(" ", "")
+    return any(marker in normalized for marker in ["分売実施", "分売終了", "分売条件", "訂正", "変更"])
+
+
+def bunbai_relation(title: str) -> str:
+    normalized = clean_text(title).replace(" ", "")
+    if "終了" in normalized:
+        return "completion"
+    if "実施" in normalized or "条件" in normalized:
+        return "execution"
+    return "update"
+
+
+def find_bunbai_event_for_update(
+    state: dict[str, Any],
+    code: str,
+    execution_date: str | None,
+    followup: bool,
+) -> dict[str, Any] | None:
+    candidates = find_events(state, event_type="bunbai", code=code)
+    same_date = [
+        event for event in candidates if execution_date and event.get("detail", {}).get("execution_date") == execution_date
+    ]
+    if same_date:
+        return min(same_date, key=lambda event: event.get("announced_at", ""))
+    if not followup:
+        return None
+    pending = [event for event in candidates if not event.get("detail", {}).get("execution_date_confirmed")]
+    return max(pending, key=lambda event: event.get("announced_at", ""), default=None)
+
+
+def find_split_event_for_update(state: dict[str, Any], disclosure: Disclosure) -> dict[str, Any] | None:
+    normalized = clean_text(disclosure.title).replace(" ", "")
+    if not any(marker in normalized for marker in ["訂正", "変更"]):
+        return None
+    candidates: list[dict[str, Any]] = []
+    disclosure_day = disclosure.announced_at.date()
+    for event in find_events(state, event_type="split", code=disclosure.code):
+        try:
+            event_day = date.fromisoformat(str(event.get("announced_at", ""))[:10])
+        except ValueError:
+            continue
+        if 0 <= (disclosure_day - event_day).days <= 180:
+            candidates.append(event)
+    return max(candidates, key=lambda event: event.get("announced_at", ""), default=None)
+
+
 def recover_original_po_event(
     correction: Disclosure,
     correction_text: str,
@@ -401,9 +553,9 @@ def original_disclosure_date(text: str, default_year: int) -> date | None:
     return dates[-1] if dates else None
 
 
-def format_bunbai_announcement(event: dict[str, Any]) -> str:
+def format_bunbai_announcement(event: dict[str, Any], label: str = "立会外分売発表") -> str:
     execution = event.get("detail", {}).get("execution_date") or "要確認"
-    return f"[立会外分売発表] {event['code']} {event['name']}({event['market']} / {event['margin']})\n分売実施日: {execution}"
+    return f"[{label}] {event['code']} {event['name']}({event['market']} / {event['margin']})\n分売実施日: {execution}"
 
 
 def format_cb_announcement(event: dict[str, Any]) -> str:
