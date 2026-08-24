@@ -806,7 +806,8 @@
     "140120260824525162",
     "140120260824525247",
     "140120260824525271",
-    "140120260824525276"
+    "140120260824525276",
+    "140120260824525357"
   ],
   "events": [
     {
@@ -1099,7 +1100,7 @@
       "type": "bunbai",
       "code": "5075",
       "name": "アップコン",
-      "market": "取得失敗",
+      "market": "名証",
       "margin": "対象外",
       "announced_at": "2026-07-21T17:00:00+09:00",
       "detail": {
@@ -1191,11 +1192,9 @@
       "margin": "貸借",
       "announced_at": "2026-07-24T15:30:00+09:00",
       "detail": {
-        "ratio": null,
+        "ratio": "10",
         "effective_date": "2026-10-01",
-        "effective_date_raw": "効力発生日 2026年10月1日 2.株式分割に伴う定款の一部変更 （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年10月1日をもって、 当社定款第5条に定める発行可能株式総数を変更いたします。 （2）変更の内容（下線部は変更箇所） 現行定款 変更後 （発行可能株式総数） （発行可能株式総数） 第5条 当会社の発行可能",
-        "recovery_needed": true,
-        "recovery_reason": "末尾0欠落の可能性がある1:1比率を再抽出"
+        "effective_date_raw": "効力発生日 2026年10月1日 2.株式分割に伴う定款の一部変更 （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年10月1日をもって、 当社定款第5条に定める発行可能株式総数を変更いたします。 （2）変更の内容（下線部は変更箇所） 現行定款 変更後 （発行可能株式総数） （発行可能株式総数） 第5条 当会社の発行可能"
       },
       "schedule": [
         {
@@ -1744,7 +1743,8 @@
       "detail": {
         "ratio": null,
         "effective_date": null,
-        "effective_date_raw": null
+        "effective_date_raw": null,
+        "review_notified": true
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260803506965.pdf",
@@ -1771,7 +1771,8 @@
       "detail": {
         "ratio": null,
         "effective_date": null,
-        "effective_date_raw": null
+        "effective_date_raw": null,
+        "review_notified": true
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260803506574.pdf",
@@ -1834,13 +1835,22 @@
       "margin": "貸借",
       "announced_at": "2026-08-04T15:40:00+09:00",
       "detail": {
-        "ratio": null,
-        "effective_date": null,
-        "effective_date_raw": null,
-        "recovery_needed": true,
-        "recovery_reason": "CB転換価額調整として誤分類された株式分割を再抽出"
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "effective_date_raw": "効力発生日 2026年10月1日（木曜日） 2. 株式分割に伴う定款の一部変更について (1) 定款変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年10月1日（木曜日）をもって、 当社定款第6条の発行可能株式総数を分割比率に合わせて変更いたします。 (2) 定款変更の内容 変更の内容は以下のとおりです。 （下線は変更部分を示"
       },
-      "schedule": [],
+      "schedule": [
+        {
+          "date": "2026-09-30",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260803507046.pdf",
       "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260803507046.pdf",
       "source_title": "株式分割、株式分割に伴う定款の一部変更、転換社債型新株予約権付社債の転換価額の調整及び期末配当予想の修正並びに配当方針の変更に関するお知らせ",
@@ -2091,11 +2101,9 @@
       "margin": "貸借",
       "announced_at": "2026-08-07T15:30:00+09:00",
       "detail": {
-        "ratio": null,
+        "ratio": "10",
         "effective_date": "2026-10-01",
-        "effective_date_raw": "効力発生日 2026年10月1日 （木） 4. 定款の一部変更 (1) 変更の理由 上記の株式分割に伴い、会社法第184 条第2項の規定に基づき、2026年10月1日を効力発生日と して、当社定款第6条に定める発行可能株式総数を変更いたします。 (2) 定款変更の内容 変更の内容は以下のとおりです。 (下線は変更部分を示す) 変更前 変更後 （発行可能株式総",
-        "recovery_needed": true,
-        "recovery_reason": "末尾0欠落の可能性がある1:1比率を再抽出"
+        "effective_date_raw": "効力発生日 2026年10月1日 （木） 4. 定款の一部変更 (1) 変更の理由 上記の株式分割に伴い、会社法第184 条第2項の規定に基づき、2026年10月1日を効力発生日と して、当社定款第6条に定める発行可能株式総数を変更いたします。 (2) 定款変更の内容 変更の内容は以下のとおりです。 (下線は変更部分を示す) 変更前 変更後 （発行可能株式総"
       },
       "schedule": [
         {
@@ -2511,7 +2519,8 @@
       "detail": {
         "ratio": null,
         "effective_date": null,
-        "effective_date_raw": null
+        "effective_date_raw": null,
+        "review_notified": true
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260814521420.pdf",
@@ -2532,7 +2541,7 @@
       "type": "bunbai",
       "code": "9170",
       "name": "成友興業",
-      "market": "取得失敗",
+      "market": "名証",
       "margin": "対象外",
       "announced_at": "2026-08-17T17:00:00+09:00",
       "detail": {
@@ -2870,7 +2879,7 @@
       "type": "split",
       "code": "5979",
       "name": "カネソウ",
-      "market": "取得失敗",
+      "market": "名証",
       "margin": "対象外",
       "announced_at": "2026-08-24T14:00:00+09:00",
       "detail": {
@@ -3104,8 +3113,8 @@
   ],
   "source_health": {
     "tdnet": {
-      "last_checked_date": "2026-08-24",
-      "last_success_date": "2026-08-24",
+      "last_checked_date": "2026-08-25",
+      "last_success_date": "2026-08-25",
       "consecutive_empty_days": 0
     }
   }
