@@ -61,6 +61,8 @@ def parse_bunbai_html(html: str, default_year: int | None = None) -> list[dict[s
                 "source_url": BUNBAI_URL,
             }
         )
+    if columns is None:
+        raise RuntimeError("JPX bunbai table headers are unrecognized")
     return records
 
 

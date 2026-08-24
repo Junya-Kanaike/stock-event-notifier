@@ -108,6 +108,7 @@ class TdnetKeywordTest(unittest.TestCase):
             "pubdate": "2026-07-14 15:30:00",
             "company_code": "40710",
             "company_name": "\u30d7\u30e9\u30b9\u30a2\u30eb\u30d5\u30a1",
+            "markets_string": "\u6771",
             "title": "\u5f53\u793e\u682a\u5f0f\u306e\u58f2\u51fa\u3057\u306b\u95a2\u3059\u308b\u304a\u77e5\u3089\u305b",
             "document_url": "https://webapi.yanoshin.jp/rd.php?https://www.release.tdnet.info/inbs/140120260714592985.pdf"
           }}]
@@ -119,6 +120,7 @@ class TdnetKeywordTest(unittest.TestCase):
         self.assertEqual(disclosure.id, "140120260714592985")
         self.assertEqual(disclosure.code, "4071")
         self.assertEqual(disclosure.announced_at.isoformat(), "2026-07-14T15:30:00+09:00")
+        self.assertEqual(disclosure.market, "東証")
         self.assertEqual(disclosure.pdf_url, "https://www.release.tdnet.info/inbs/140120260714592985.pdf")
 
     def test_unknown_yanoshin_schema_raises_for_html_fallback(self):

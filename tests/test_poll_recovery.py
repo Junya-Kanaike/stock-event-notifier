@@ -8,16 +8,159 @@ from src.notifiers.slack import SlackNotifier
 from src.run_poll import (
     handle_bunbai,
     handle_buyback,
+    handle_po,
     handle_po_correction,
     handle_po_pricing,
     handle_split,
+    enrich_event_markets,
+    fetch_poll_disclosures,
     original_disclosure_date,
+    notify_unresolved_split_events,
+    poll_target_dates,
     process_disclosure,
+    process_disclosure_batch,
+    recover_missing_event_markets,
     recover_split_events,
 )
 
 
 class PollRecoveryTest(unittest.TestCase):
+    def test_default_poll_includes_previous_business_day(self):
+        self.assertEqual(
+            poll_target_dates(date(2026, 8, 24), explicit_date=False),
+            [date(2026, 8, 21), date(2026, 8, 24)],
+        )
+        self.assertEqual(
+            poll_target_dates(date(2026, 8, 24), explicit_date=True),
+            [date(2026, 8, 24)],
+        )
+
+    def test_poll_fetch_continues_when_one_date_fails(self):
+        disclosure = Disclosure(
+            id="split-1",
+            code="7203",
+            name="テスト",
+            title="株式分割に関するお知らせ",
+            announced_at=datetime(2026, 8, 24, 15, 0, tzinfo=JST),
+        )
+        notifier = SlackNotifier(dry_run=True)
+        with patch("src.run_poll.fetch_disclosures", side_effect=[RuntimeError("temporary"), [disclosure]]):
+            disclosures, failures = fetch_poll_disclosures(
+                [date(2026, 8, 21), date(2026, 8, 24)], notifier
+            )
+
+        self.assertEqual(disclosures, [disclosure])
+        self.assertEqual(len(failures), 1)
+        self.assertIn("2026-08-21", failures[0])
+
+    def test_disclosure_failure_does_not_stop_later_items_and_abandons_after_five(self):
+        first = Disclosure(
+            id="bad-1",
+            code="1111",
+            name="失敗",
+            title="株式分割に関するお知らせ",
+            announced_at=datetime(2026, 8, 24, 15, 0, tzinfo=JST),
+        )
+        second = Disclosure(
+            id="good-1",
+            code="2222",
+            name="成功",
+            title="株式分割に関するお知らせ",
+            announced_at=datetime(2026, 8, 24, 15, 1, tzinfo=JST),
+        )
+        state = {"events": [], "notified_ids": []}
+        notifier = SlackNotifier(dry_run=True)
+
+        with patch("src.run_poll.process_disclosure", side_effect=[RuntimeError("bad"), True]):
+            changed = process_disclosure_batch(
+                [first, second], state, notifier, {}, {}, dry_run=True
+            )
+
+        self.assertTrue(changed)
+        self.assertNotIn("bad-1", state["notified_ids"])
+        self.assertIn("good-1", state["notified_ids"])
+        self.assertEqual(state["disclosure_failures"]["bad-1"]["count"], 1)
+
+        for _ in range(4):
+            with patch("src.run_poll.process_disclosure", side_effect=RuntimeError("bad")):
+                process_disclosure_batch([first], state, notifier, {}, {}, dry_run=True)
+        self.assertIn("bad-1", state["notified_ids"])
+        self.assertTrue(state["disclosure_failures"]["bad-1"]["abandoned"])
+
+    def test_pdf_failure_keeps_po_notification_flow_alive(self):
+        disclosure = Disclosure(
+            id="po-pdf-failure",
+            code="7203",
+            name="テスト",
+            title="公募による新株式発行に関するお知らせ",
+            announced_at=datetime(2026, 8, 24, 15, 0, tzinfo=JST),
+            pdf_url="https://example.test/missing.pdf",
+        )
+        state = {"events": []}
+        notifier = SlackNotifier(dry_run=True)
+
+        with patch("src.run_poll.fetch_pdf_text", side_effect=RuntimeError("404")):
+            changed = handle_po(disclosure, state, notifier, {}, {})
+
+        self.assertTrue(changed)
+        self.assertEqual(len(state["events"]), 1)
+        self.assertIn("PDF取得失敗", state["events"][0]["detail"]["parse_warnings"][0])
+        self.assertTrue(any(item["type"] == "po" for item in notifier.sent_messages))
+        self.assertTrue(any(item["type"] == "system" for item in notifier.sent_messages))
+
+    def test_source_market_fills_master_gap_and_existing_event(self):
+        disclosure = Disclosure(
+            id="regional-1",
+            code="5075",
+            name="アップコン",
+            title="株式の立会外分売に関するお知らせ",
+            announced_at=datetime(2026, 8, 24, 15, 0, tzinfo=JST),
+            market="名証",
+        )
+        event = {
+            "id": "bunbai-5075",
+            "type": "bunbai",
+            "code": "5075",
+            "market": "取得失敗",
+            "related_disclosures": [{"id": "regional-1"}],
+        }
+        state = {"events": [event]}
+
+        self.assertTrue(enrich_event_markets(state, [disclosure]))
+        self.assertEqual(event["market"], "名証")
+
+    def test_missing_market_is_recovered_from_original_disclosure_date(self):
+        disclosure = Disclosure(
+            id="regional-old",
+            code="5075",
+            name="アップコン",
+            title="株式の立会外分売に関するお知らせ",
+            announced_at=datetime(2026, 7, 21, 15, 0, tzinfo=JST),
+            market="名証",
+        )
+        state = {
+            "events": [
+                {
+                    "id": "bunbai-5075",
+                    "type": "bunbai",
+                    "market": "取得失敗",
+                    "related_disclosures": [
+                        {
+                            "id": "regional-old",
+                            "announced_at": "2026-07-21T15:00:00+09:00",
+                        }
+                    ],
+                }
+            ]
+        }
+
+        with patch("src.run_poll.fetch_disclosures", return_value=[disclosure]) as fetch:
+            changed = recover_missing_event_markets(state, [])
+
+        self.assertTrue(changed)
+        self.assertEqual(state["events"][0]["market"], "名証")
+        fetch.assert_called_once_with(date(2026, 7, 21))
+
     def test_bunbai_followup_updates_original_event(self):
         disclosure = Disclosure(
             id="bunbai-update",
@@ -88,6 +231,49 @@ class PollRecoveryTest(unittest.TestCase):
         self.assertEqual(event["detail"]["ratio"], "3")
         self.assertEqual(event["detail"]["effective_date"], "2026-10-01")
         self.assertEqual(event["related_disclosures"][-1]["relation"], "correction")
+
+    def test_split_without_effective_date_sends_review_notification(self):
+        disclosure = Disclosure(
+            id="split-missing-date",
+            code="7203",
+            name="テスト",
+            title="株式分割に関するお知らせ",
+            announced_at=datetime(2026, 8, 24, 15, 0, tzinfo=JST),
+            pdf_url="https://example.test/split.pdf",
+        )
+        notifier = SlackNotifier(dry_run=True)
+        state = {"events": []}
+
+        with patch("src.run_poll.fetch_pdf_text", return_value="普通株式1株を2株に分割"):
+            changed = handle_split(disclosure, state, notifier, {}, {})
+
+        self.assertTrue(changed)
+        self.assertTrue(any(item["type"] == "split" for item in notifier.sent_messages))
+        self.assertTrue(any(item["type"] == "system" for item in notifier.sent_messages))
+        self.assertTrue(state["events"][0]["detail"]["review_notified"])
+
+    def test_existing_split_without_date_gets_one_recovery_review(self):
+        state = {
+            "events": [
+                {
+                    "id": "split-old",
+                    "type": "split",
+                    "code": "249A",
+                    "name": "テスト",
+                    "market": "グロース",
+                    "detail": {"ratio": None, "effective_date": None},
+                    "schedule": [],
+                }
+            ]
+        }
+        notifier = SlackNotifier(dry_run=True)
+
+        self.assertTrue(notify_unresolved_split_events(state, notifier))
+        self.assertFalse(notify_unresolved_split_events(state, notifier))
+        self.assertEqual(
+            len([item for item in notifier.sent_messages if item["type"] == "split"]),
+            1,
+        )
 
     def test_recovery_reparses_bad_integer_split_ratio(self):
         state = {

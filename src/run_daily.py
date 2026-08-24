@@ -138,26 +138,7 @@ def sync_ipo_events(
         _, did_change = upsert_event(state, event)
         changed |= did_change
 
-    events = state.setdefault("events", [])
-    retained = [
-        event
-        for event in events
-        if event.get("type") != "ipo" or not _is_past_ipo_event(event, reference_date)
-    ]
-    if len(retained) != len(events):
-        state["events"] = retained
-        changed = True
     return changed
-
-
-def _is_past_ipo_event(event: dict[str, Any], reference_date: date) -> bool:
-    listing_date = event.get("detail", {}).get("listing_date")
-    if not listing_date:
-        return False
-    try:
-        return as_date(listing_date) < reference_date
-    except (TypeError, ValueError):
-        return False
 
 
 def sync_bunbai_events(

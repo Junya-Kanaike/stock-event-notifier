@@ -188,7 +188,7 @@ class SchedulerTest(unittest.TestCase):
         finally:
             run_daily.fetch_ipos = original_fetch_ipos
 
-    def test_daily_sync_drops_past_ipo_and_keeps_same_day_listings(self):
+    def test_daily_sync_keeps_past_unsent_ipo_for_delayed_notification(self):
         original_fetch_ipos = run_daily.fetch_ipos
         try:
             run_daily.fetch_ipos = lambda: [
@@ -196,10 +196,23 @@ class SchedulerTest(unittest.TestCase):
                 {"code": "603A", "name": "A社", "market": "グロース", "listing_date": "2026-07-29"},
                 {"code": "604A", "name": "B社", "market": "スタンダード", "listing_date": "2026-07-29"},
             ]
-            state = {"notified_ids": [], "events": []}
+            state = {
+                "notified_ids": [],
+                "events": [
+                    {
+                        "id": "ipo-598A-2026-07-15",
+                        "type": "ipo",
+                        "code": "598A",
+                        "detail": {"listing_date": "2026-07-15"},
+                        "schedule": [{"date": "2026-07-15", "label": "listing_day", "sent": False}],
+                    }
+                ],
+            }
             changed = run_daily.sync_ipo_events(state, {}, {"9999": "貸借"}, as_of=date(2026, 7, 16))
             self.assertTrue(changed)
-            self.assertEqual({event["code"] for event in state["events"]}, {"603A", "604A"})
+            self.assertEqual({event["code"] for event in state["events"]}, {"598A", "603A", "604A"})
+            due = due_notifications(state, date(2026, 7, 16))
+            self.assertEqual([item.event["code"] for item in due], ["598A"])
         finally:
             run_daily.fetch_ipos = original_fetch_ipos
 

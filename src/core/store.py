@@ -96,6 +96,39 @@ def trim_notified_ids(state: dict[str, Any], limit: int = 5000) -> bool:
     return True
 
 
+def record_disclosure_failure(
+    state: dict[str, Any],
+    disclosure_id: str,
+    *,
+    code: str,
+    title: str,
+    error: str,
+    abandon_after: int = 5,
+) -> tuple[int, bool]:
+    failures = state.setdefault("disclosure_failures", {})
+    previous = failures.get(disclosure_id, {})
+    count = min(int(previous.get("count", 0)) + 1, abandon_after)
+    current = {
+        "count": count,
+        "code": code,
+        "title": title,
+        "last_error": error,
+        "abandoned": count >= abandon_after,
+    }
+    failures[disclosure_id] = current
+    return count, current != previous
+
+
+def clear_disclosure_failure(state: dict[str, Any], disclosure_id: str) -> bool:
+    failures = state.get("disclosure_failures")
+    if not isinstance(failures, dict) or disclosure_id not in failures:
+        return False
+    del failures[disclosure_id]
+    if not failures:
+        state.pop("disclosure_failures", None)
+    return True
+
+
 def record_source_result(
     state: dict[str, Any],
     source: str,

@@ -10,10 +10,28 @@ from src.core.store import (
     record_source_result,
     trim_notified_ids,
     upsert_event,
+    clear_disclosure_failure,
+    record_disclosure_failure,
 )
 
 
 class StoreTest(unittest.TestCase):
+    def test_disclosure_failure_is_counted_and_can_be_cleared(self):
+        state = {"events": []}
+        for expected in range(1, 6):
+            count, changed = record_disclosure_failure(
+                state,
+                "disclosure-1",
+                code="7203",
+                title="株式分割",
+                error="RuntimeError",
+            )
+            self.assertEqual(count, expected)
+            self.assertTrue(changed)
+        self.assertTrue(state["disclosure_failures"]["disclosure-1"]["abandoned"])
+        self.assertTrue(clear_disclosure_failure(state, "disclosure-1"))
+        self.assertNotIn("disclosure_failures", state)
+
     def test_notified_id_dedupe(self):
         state = {"notified_ids": [], "events": []}
         self.assertFalse(has_notified(state, "202607070001"))

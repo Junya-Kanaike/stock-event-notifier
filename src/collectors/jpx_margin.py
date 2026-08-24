@@ -60,7 +60,7 @@ def parse_margin_excel(content: bytes) -> dict[str, str]:
     for row in workbook_rows(content):
         cells = ["" if cell is None else str(cell).strip() for cell in row]
         joined = " ".join(cells)
-        code = normalize_code(joined)
+        code = _code_from_cells(cells)
         if not code:
             continue
         if "貸借" in joined:
@@ -68,6 +68,15 @@ def parse_margin_excel(content: bytes) -> dict[str, str]:
         elif "制度信用" in joined or "信用" in joined:
             records.setdefault(code, "信用")
     return records
+
+
+def _code_from_cells(cells: list[str]) -> str | None:
+    for cell in cells:
+        compact = re.sub(r"\s+", "", cell).upper()
+        code = normalize_code(compact)
+        if code and compact in {code, f"{code}0", f"{code}.0"}:
+            return code
+    return None
 
 
 def lookup_margin(margin: dict[str, str], code: str) -> str:

@@ -52,6 +52,7 @@ class Disclosure:
     announced_at: datetime
     pdf_url: str | None = None
     source_url: str | None = None
+    market: str | None = None
 
 
 def classify_title(title: str) -> set[str]:
@@ -151,7 +152,9 @@ def fetch_disclosures(target_date: date | None = None) -> list[Disclosure]:
     html_disclosures = fetch_tdnet_html_disclosures(yyyymmdd)
     if not disclosures:
         return html_disclosures
-    by_id = {item.id: item for item in [*disclosures, *html_disclosures]}
+    # Prefer Yanoshin rows because they also carry the source exchange.
+    by_id = {item.id: item for item in html_disclosures}
+    by_id.update({item.id: item for item in disclosures})
     return list(by_id.values())
 
 
@@ -211,7 +214,24 @@ def _normalize_json_disclosure(row: dict[str, Any]) -> Disclosure | None:
         announced_at=announced_at,
         pdf_url=pdf_url,
         source_url=row.get("source_url") or row.get("detail_url"),
+        market=_normalize_disclosure_market(
+            row.get("markets_string") or row.get("market") or row.get("Market")
+        ),
     )
+
+
+def _normalize_disclosure_market(value: Any) -> str | None:
+    text = re.sub(r"\s+", "", str(value or ""))
+    if not text:
+        return None
+    for label in ["プライム", "スタンダード", "グロース", "PROMarket", "PROマーケット"]:
+        if label in text:
+            return "PRO Market" if label.startswith("PRO") else label
+    exchanges = []
+    for marker, label in [("東", "東証"), ("名", "名証"), ("札", "札証"), ("福", "福証")]:
+        if marker in text and label not in exchanges:
+            exchanges.append(label)
+    return "・".join(exchanges) or text
 
 
 def _unwrap_yanoshin_url(value: Any) -> str | None:

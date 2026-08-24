@@ -9,16 +9,18 @@ from typing import Any
 from src.collectors.jpx_margin import fetch_margin, lookup_margin
 from src.collectors.jpx_master import fetch_master, lookup_master
 from src.collectors.tdnet import Disclosure, classify_title, contains_buyback, fetch_disclosures, fetch_pdf_text
-from src.core.bizday import JST, is_business_day, today_jst
+from src.core.bizday import JST, is_business_day, prev_business_day, today_jst
 from src.core.dateparse import clean_text, find_dates
 from src.core.po import format_po_message, merge_po_details, refresh_po_missing_fields
 from src.core.reconcile import reconcile_event_state
 from src.core.scheduler import build_bunbai_schedule, build_po_schedule, build_split_schedule
 from src.core.store import (
     add_notified_id,
+    clear_disclosure_failure,
     find_events,
     has_notified,
     load_state,
+    record_disclosure_failure,
     record_source_result,
     save_state,
     trim_notified_ids,
@@ -48,6 +50,7 @@ def main(argv: list[str] | None = None) -> int:
         state = deepcopy(state)
     changed = reconcile_event_state(state)
     changed |= recover_split_events(state, notifier)
+    changed |= notify_unresolved_split_events(state, notifier)
     if changed and not args.dry_run:
         save_state(state)
 
@@ -63,21 +66,68 @@ def main(argv: list[str] | None = None) -> int:
         margin = {}
         notify_system_safely(notifier, f"JPX信用区分取得失敗: {exc}")
 
-    try:
-        disclosures = sorted(fetch_disclosures(target_date), key=lambda item: (item.announced_at, item.id))
-    except Exception as exc:
-        notify_system_safely(notifier, f"TDnet取得失敗: {exc}")
-        raise
+    target_dates = poll_target_dates(target_date, explicit_date=bool(args.date))
+    disclosures, source_failures = fetch_poll_disclosures(target_dates, notifier)
+    changed |= recover_missing_event_markets(state, disclosures)
 
-    health_changed, should_alert = record_source_result(state, "tdnet", target_date, len(disclosures))
-    changed |= health_changed
-    if should_alert:
-        notify_system_safely(notifier, "TDnet取得件数が3営業日以上連続で0件です。取得元の仕様変更を確認してください")
-    if health_changed and not args.dry_run:
+    if len(source_failures) < len(target_dates):
+        health_changed, should_alert = record_source_result(state, "tdnet", target_date, len(disclosures))
+        changed |= health_changed
+        if should_alert:
+            notify_system_safely(notifier, "TDnet取得件数が3営業日以上連続で0件です。取得元の仕様変更を確認してください")
+        if health_changed and not args.dry_run:
+            save_state(state)
+
+    changed |= process_disclosure_batch(
+        disclosures,
+        state,
+        notifier,
+        master,
+        margin,
+        dry_run=args.dry_run,
+    )
+
+    changed |= trim_notified_ids(state)
+    if changed and not args.dry_run:
         save_state(state)
+    if source_failures:
+        raise RuntimeError("; ".join(source_failures))
+    return 0
 
+
+def poll_target_dates(target_date: date, *, explicit_date: bool) -> list[date]:
+    if explicit_date:
+        return [target_date]
+    return [prev_business_day(target_date), target_date]
+
+
+def fetch_poll_disclosures(
+    target_dates: list[date], notifier: SlackNotifier
+) -> tuple[list[Disclosure], list[str]]:
+    by_id: dict[str, Disclosure] = {}
+    failures: list[str] = []
+    for target_date in target_dates:
+        try:
+            for disclosure in fetch_disclosures(target_date):
+                by_id[disclosure.id] = disclosure
+        except Exception as exc:
+            message = f"TDnet取得失敗 ({target_date.isoformat()}): {exc}"
+            failures.append(message)
+            notify_system_safely(notifier, message)
+    return sorted(by_id.values(), key=lambda item: (item.announced_at, item.id)), failures
+
+
+def process_disclosure_batch(
+    disclosures: list[Disclosure],
+    state: dict[str, Any],
+    notifier: SlackNotifier,
+    master: dict[str, Any],
+    margin: dict[str, str],
+    *,
+    dry_run: bool,
+) -> bool:
+    changed = False
     known_buybacks: set[tuple[str, str]] = set()
-
     for disclosure in disclosures:
         if has_notified(state, disclosure.id):
             if "buyback" in classify_title(disclosure.title):
@@ -88,8 +138,7 @@ def main(argv: list[str] | None = None) -> int:
             continue
 
         try:
-            item_changed = False
-            item_changed |= process_disclosure(
+            item_changed = process_disclosure(
                 disclosure,
                 classes,
                 state,
@@ -98,22 +147,38 @@ def main(argv: list[str] | None = None) -> int:
                 margin,
                 known_buybacks,
             )
-
-            item_changed |= add_notified_id(state, disclosure.id)
-            changed |= item_changed
-            if item_changed and not args.dry_run:
-                save_state(state)
         except Exception as exc:
-            if changed and not args.dry_run:
-                save_state(state)
-            message = f"TDnet処理失敗: {disclosure.code} {disclosure.title}: {exc}"
+            error = f"{type(exc).__name__}: {exc}"
+            count, item_changed = record_disclosure_failure(
+                state,
+                disclosure.id,
+                code=disclosure.code,
+                title=disclosure.title,
+                error=error,
+            )
+            if count >= 5:
+                item_changed |= add_notified_id(state, disclosure.id)
+                message = (
+                    f"TDnet処理を5回失敗したため打ち切りました: "
+                    f"{disclosure.code} {disclosure.title}: {error}"
+                )
+            else:
+                message = (
+                    f"TDnet処理失敗 ({count}/5、次回再試行): "
+                    f"{disclosure.code} {disclosure.title}: {error}"
+                )
             notify_system_safely(notifier, message)
-            raise RuntimeError(message) from exc
+            changed |= item_changed
+            if item_changed and not dry_run:
+                save_state(state)
+            continue
 
-    changed |= trim_notified_ids(state)
-    if changed and not args.dry_run:
-        save_state(state)
-    return 0
+        item_changed |= clear_disclosure_failure(state, disclosure.id)
+        item_changed |= add_notified_id(state, disclosure.id)
+        changed |= item_changed
+        if item_changed and not dry_run:
+            save_state(state)
+    return changed
 
 
 def process_disclosure(
@@ -152,12 +217,15 @@ def process_disclosure(
 
 def base_event(disclosure: Disclosure, event_type: str, master: dict[str, Any], margin: dict[str, str]) -> dict[str, Any]:
     master_item = lookup_master(master, disclosure.code, fallback_name=disclosure.name)
+    market = master_item["market"]
+    if market == "取得失敗" and disclosure.market:
+        market = disclosure.market
     return {
         "id": f"{event_type}-{disclosure.code}-{disclosure.announced_at.date().isoformat()}",
         "type": event_type,
         "code": disclosure.code,
         "name": master_item["name"] or disclosure.name,
-        "market": master_item["market"],
+        "market": market,
         "margin": lookup_margin(margin, disclosure.code),
         "announced_at": disclosure.announced_at.astimezone(JST).isoformat(),
         "detail": {},
@@ -169,12 +237,86 @@ def base_event(disclosure: Disclosure, event_type: str, master: dict[str, Any], 
     }
 
 
+def enrich_event_markets(state: dict[str, Any], disclosures: list[Disclosure]) -> bool:
+    by_id = {item.id: item for item in disclosures if item.market}
+    changed = False
+    for event in state.get("events", []):
+        if event.get("market") != "取得失敗":
+            continue
+        reference_ids = {item.get("id") for item in event.get("related_disclosures", [])}
+        source = next((by_id[item_id] for item_id in reference_ids if item_id in by_id), None)
+        if source and source.market:
+            event["market"] = source.market
+            changed = True
+    return changed
+
+
+def recover_missing_event_markets(
+    state: dict[str, Any], known_disclosures: list[Disclosure]
+) -> bool:
+    changed = enrich_event_markets(state, known_disclosures)
+    known_ids = {item.id for item in known_disclosures}
+    dates: set[date] = set()
+    for event in state.get("events", []):
+        if event.get("market") != "取得失敗":
+            continue
+        references = event.get("related_disclosures", [])
+        for reference in references:
+            if reference.get("id") in known_ids:
+                continue
+            try:
+                dates.add(date.fromisoformat(str(reference.get("announced_at", ""))[:10]))
+            except ValueError:
+                continue
+
+    recovered: list[Disclosure] = []
+    for target_date in sorted(dates)[:10]:
+        try:
+            recovered.extend(fetch_disclosures(target_date))
+        except Exception:
+            continue
+    if recovered:
+        changed |= enrich_event_markets(state, recovered)
+    return changed
+
+
+def fetch_disclosure_text_safely(
+    disclosure: Disclosure, notifier: SlackNotifier
+) -> tuple[str, str | None]:
+    if not disclosure.pdf_url:
+        warning = "⚠️ PDF URLなし"
+        notify_system_safely(notifier, f"TDnet PDF取得失敗: {disclosure.code} {warning}")
+        return "", warning
+    try:
+        text = fetch_pdf_text(disclosure.pdf_url)
+    except Exception as exc:
+        warning = f"⚠️ PDF取得失敗 ({type(exc).__name__})"
+        notify_system_safely(notifier, f"TDnet PDF取得失敗: {disclosure.code} {warning}")
+        return "", warning
+    if not text.strip():
+        warning = "⚠️ PDF本文を抽出できません"
+        notify_system_safely(notifier, f"TDnet PDF本文抽出失敗: {disclosure.code}")
+        return "", warning
+    return text, None
+
+
+def add_parse_warning(detail: dict[str, Any], warning: str | None) -> None:
+    if not warning:
+        return
+    warnings = detail.setdefault("parse_warnings", [])
+    if warning not in warnings:
+        warnings.append(warning)
+
+
 def handle_po(disclosure: Disclosure, state: dict[str, Any], notifier: SlackNotifier, master: dict[str, Any], margin: dict[str, str]) -> bool:
-    text = fetch_pdf_text(disclosure.pdf_url)
+    text, pdf_warning = fetch_disclosure_text_safely(disclosure, notifier)
     event = base_event(disclosure, "po", master, margin)
     event["detail"] = parse_po_details(disclosure.title, text, disclosure.announced_at.date())
+    add_parse_warning(event["detail"], pdf_warning)
     if event["detail"].get("pricing_date"):
         event["schedule"] = build_po_schedule(event["detail"]["pricing_date"], event["detail"].get("settlement_date"))
+    else:
+        notify_system_safely(notifier, f"PO価格決定日の抽出失敗: {disclosure.code} {disclosure.title}")
     notifier.send("po", format_po_announcement(event), header="PO発表", pdf_url=event.get("pdf_url"))
     upsert_event(state, event)
     return True
@@ -187,8 +329,9 @@ def handle_po_pricing(
     master: dict[str, Any],
     margin: dict[str, str],
 ) -> bool:
-    text = fetch_pdf_text(disclosure.pdf_url)
+    text, pdf_warning = fetch_disclosure_text_safely(disclosure, notifier)
     parsed_detail = parse_po_details(disclosure.title, text, disclosure.announced_at.date())
+    add_parse_warning(parsed_detail, pdf_warning)
     candidates = find_events(
         state,
         event_type="po",
@@ -203,7 +346,7 @@ def handle_po_pricing(
         detail["pricing_date_end"] = pricing_date
         detail["pricing_date_confirmed"] = True
         detail["pricing_date_status"] = "confirmed"
-        detail["parse_warnings"] = ["当初発表を取得できず価格決定資料から復元"]
+        add_parse_warning(detail, "当初発表を取得できず価格決定資料から復元")
         refresh_po_missing_fields(detail)
         event["detail"] = detail
         event["schedule"] = build_po_schedule(pricing_date, detail.get("settlement_date"))
@@ -246,8 +389,9 @@ def handle_po_correction(
     master: dict[str, Any],
     margin: dict[str, str],
 ) -> bool:
-    text = fetch_pdf_text(disclosure.pdf_url)
+    text, pdf_warning = fetch_disclosure_text_safely(disclosure, notifier)
     parsed_detail = parse_po_details(disclosure.title, text, disclosure.announced_at.date())
+    add_parse_warning(parsed_detail, pdf_warning)
     candidates = find_events(state, event_type="po", code=disclosure.code)
     if candidates:
         original = sorted(candidates, key=lambda item: item.get("announced_at", ""), reverse=True)[0]
@@ -270,7 +414,7 @@ def handle_po_correction(
             append_related_disclosure(updated, disclosure, "correction")
         else:
             updated = base_event(disclosure, "po", master, margin)
-            parsed_detail["parse_warnings"] = ["元のPO発表を状態ストアまたは訂正資料から特定できません"]
+            add_parse_warning(parsed_detail, "元のPO発表を状態ストアまたは訂正資料から特定できません")
             refresh_po_missing_fields(parsed_detail)
             updated["detail"] = parsed_detail
         if updated["detail"].get("pricing_date"):
@@ -289,8 +433,9 @@ def handle_po_correction(
 
 
 def handle_bunbai(disclosure: Disclosure, state: dict[str, Any], notifier: SlackNotifier, master: dict[str, Any], margin: dict[str, str]) -> bool:
-    text = fetch_pdf_text(disclosure.pdf_url)
+    text, pdf_warning = fetch_disclosure_text_safely(disclosure, notifier)
     parsed_detail = parse_bunbai_details(text, disclosure.announced_at.date())
+    add_parse_warning(parsed_detail, pdf_warning)
     followup = is_bunbai_followup_title(disclosure.title)
     existing = find_bunbai_event_for_update(state, disclosure.code, parsed_detail.get("execution_date"), followup)
     if existing:
@@ -329,12 +474,13 @@ def handle_cb(
 ) -> bool:
     if lookup_margin(margin, disclosure.code) != "貸借":
         return True
-    text = fetch_pdf_text(disclosure.pdf_url)
+    text, pdf_warning = fetch_disclosure_text_safely(disclosure, notifier)
     same_day_key = (disclosure.code, disclosure.announced_at.date().isoformat())
     if same_day_key in same_day_buybacks or contains_buyback(disclosure.title) or contains_buyback(text):
         return True
     event = base_event(disclosure, "cb", master, margin)
     event["detail"] = {"amount": extract_cb_amount(text), "canceled": False}
+    add_parse_warning(event["detail"], pdf_warning)
     notifier.send("cb", format_cb_announcement(event), header="CB発表", pdf_url=event.get("pdf_url"))
     upsert_event(state, event)
     return True
@@ -347,8 +493,9 @@ def handle_split(
     master: dict[str, Any],
     margin: dict[str, str],
 ) -> bool:
-    text = fetch_pdf_text(disclosure.pdf_url)
+    text, pdf_warning = fetch_disclosure_text_safely(disclosure, notifier)
     parsed_detail = parse_split_details(text, disclosure.announced_at.date())
+    add_parse_warning(parsed_detail, pdf_warning)
     existing = find_split_event_for_update(state, disclosure)
     if existing:
         event = deepcopy(existing)
@@ -367,6 +514,13 @@ def handle_split(
         )
     else:
         notify_system_safely(notifier, f"株式分割効力発生日の抽出失敗: {disclosure.code} {disclosure.title}")
+        notifier.send(
+            "split",
+            format_split_review(event),
+            header="株式分割 要確認",
+            pdf_url=disclosure.pdf_url,
+        )
+        event["detail"]["review_notified"] = True
     _, changed = upsert_event(state, event)
     return changed
 
@@ -415,6 +569,33 @@ def recover_split_events(state: dict[str, Any], notifier: SlackNotifier) -> bool
     return changed
 
 
+def notify_unresolved_split_events(state: dict[str, Any], notifier: SlackNotifier) -> bool:
+    """Send the review notice that old parser failures previously omitted."""
+    changed = False
+    for event in find_events(
+        state,
+        event_type="split",
+        predicate=lambda item: not item.get("detail", {}).get("effective_date")
+        and not item.get("detail", {}).get("review_notified"),
+    ):
+        try:
+            notifier.send(
+                "split",
+                format_split_review(event),
+                header="株式分割 要確認",
+                pdf_url=event.get("latest_pdf_url") or event.get("pdf_url"),
+            )
+        except Exception as exc:
+            notify_system_safely(
+                notifier,
+                f"株式分割の要確認通知失敗: {event.get('code')} {type(exc).__name__}",
+            )
+            continue
+        event.setdefault("detail", {})["review_notified"] = True
+        changed = True
+    return changed
+
+
 def handle_buyback(disclosure: Disclosure, state: dict[str, Any], notifier: SlackNotifier) -> bool:
     changed = False
     disclosure_day = disclosure.announced_at.date().isoformat()
@@ -444,13 +625,16 @@ def format_po_announcement(event: dict[str, Any]) -> str:
 
 
 def disclosure_reference(disclosure: Disclosure, relation: str) -> dict[str, Any]:
-    return {
+    reference = {
         "id": disclosure.id,
         "relation": relation,
         "title": disclosure.title,
         "announced_at": disclosure.announced_at.astimezone(JST).isoformat(),
         "pdf_url": disclosure.pdf_url,
     }
+    if disclosure.market:
+        reference["market"] = disclosure.market
+    return reference
 
 
 def append_related_disclosure(event: dict[str, Any], disclosure: Disclosure, relation: str) -> None:
@@ -554,13 +738,31 @@ def original_disclosure_date(text: str, default_year: int) -> date | None:
 
 
 def format_bunbai_announcement(event: dict[str, Any], label: str = "立会外分売発表") -> str:
-    execution = event.get("detail", {}).get("execution_date") or "要確認"
-    return f"[{label}] {event['code']} {event['name']}({event['market']} / {event['margin']})\n分売実施日: {execution}"
+    detail = event.get("detail", {})
+    execution = detail.get("execution_date") or "要確認"
+    text = f"[{label}] {event['code']} {event['name']}({event['market']} / {event['margin']})\n分売実施日: {execution}"
+    if detail.get("parse_warnings"):
+        text += "\n注意: " + " / ".join(detail["parse_warnings"])
+    return text
 
 
 def format_cb_announcement(event: dict[str, Any]) -> str:
-    amount = event.get("detail", {}).get("amount") or "取得失敗"
-    return f"[CB発表] {event['code']} {event['name']}({event['market']} / 貸借)\n発行額: {amount}"
+    detail = event.get("detail", {})
+    amount = detail.get("amount") or "取得失敗"
+    text = f"[CB発表] {event['code']} {event['name']}({event['market']} / 貸借)\n発行額: {amount}"
+    if detail.get("parse_warnings"):
+        text += "\n注意: " + " / ".join(detail["parse_warnings"])
+    return text
+
+
+def format_split_review(event: dict[str, Any]) -> str:
+    detail = event.get("detail", {})
+    ratio = detail.get("ratio") or "要確認"
+    warnings = " / ".join(detail.get("parse_warnings") or ["効力発生日を抽出できません"])
+    return (
+        f"[株式分割 要確認] {event.get('code')} {event.get('name')}({event.get('market')})\n"
+        f"分割比率: 1:{ratio}\n注意: {warnings}"
+    )
 
 
 def notify_system_safely(notifier: SlackNotifier, text: str) -> None:

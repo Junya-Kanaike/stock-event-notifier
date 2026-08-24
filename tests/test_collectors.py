@@ -1,8 +1,10 @@
 import unittest
+from unittest.mock import patch
 
+from src.collectors import jpx_margin
 from src.collectors.jpx_bunbai import parse_bunbai_html
 from src.collectors.jpx_ipo import parse_ipo_html
-from src.collectors.jpx_margin import find_margin_excel_url
+from src.collectors.jpx_margin import find_margin_excel_url, parse_margin_excel
 
 
 class CollectorParserTest(unittest.TestCase):
@@ -44,6 +46,10 @@ class CollectorParserTest(unittest.TestCase):
         self.assertEqual(records[0]["name"], "テスト株式会社")
         self.assertEqual(records[0]["execution_date"], "2026-07-21")
 
+    def test_bunbai_parser_rejects_unrecognized_table_structure(self):
+        with self.assertRaises(RuntimeError):
+            parse_bunbai_html("<table><tr><th>日付</th><th>会社</th></tr></table>")
+
     def test_margin_excel_link_uses_surrounding_label(self):
         html = """
         <p>制度信用・貸借銘柄一覧 <a href="/files/margin.xlsx"><img alt="Excel"></a></p>
@@ -52,6 +58,17 @@ class CollectorParserTest(unittest.TestCase):
             find_margin_excel_url(html, "https://www.jpx.co.jp/listing/others/margin/index.html"),
             "https://www.jpx.co.jp/files/margin.xlsx",
         )
+
+    def test_margin_parser_only_accepts_code_shaped_cells(self):
+        rows = [
+            ["2026年8月25日現在", "制度信用・貸借銘柄一覧"],
+            ["更新日 2026年8月25日", "トヨタ", "7203.0", "貸借"],
+            ["2026年8月", "ソニー", "6758", "制度信用"],
+        ]
+        with patch.object(jpx_margin, "workbook_rows", return_value=rows):
+            records = parse_margin_excel(b"dummy")
+
+        self.assertEqual(records, {"7203": "貸借", "6758": "信用"})
 
 
 if __name__ == "__main__":
