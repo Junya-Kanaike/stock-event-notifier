@@ -791,7 +791,9 @@
     "140120260824524813",
     "140120260824524789",
     "140120260821524658",
-    "140120260821524659"
+    "140120260821524659",
+    "140120260819523040",
+    "140120260820523912"
   ],
   "events": [
     {
@@ -3396,6 +3398,82 @@
           "title": "（開示事項の変更）株式分割により増加する株式等の変更に関するお知らせ",
           "announced_at": "2026-08-24T10:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260824524813.pdf"
+        }
+      ]
+    },
+    {
+      "id": "split-5979-2026-08-24",
+      "type": "split",
+      "code": "5979",
+      "name": "カネソウ",
+      "market": "取得失敗",
+      "margin": "対象外",
+      "announced_at": "2026-08-24T14:00:00+09:00",
+      "detail": {
+        "ratio": null,
+        "effective_date": "2026-10-01",
+        "effective_date_raw": "効力発生日 2026年10月1日（木曜日） 3.定款の一部変更 （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年10月1日をもって、当 社定款第6条で定める発行可能株式総数を変更いたします。 （2）定款変更の内容 （下線は変更部分を示しております。） 現行定款 変更後定款 （発行可能株式総数） （発行可能株式総数） 第"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-30",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260819523040.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260819523040.pdf",
+      "source_title": "株式分割、株式分割に伴う定款の一部変更及び配当予想の修正に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260819523040",
+          "relation": "source",
+          "title": "株式分割、株式分割に伴う定款の一部変更及び配当予想の修正に関するお知らせ",
+          "announced_at": "2026-08-24T14:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260819523040.pdf"
+        }
+      ]
+    },
+    {
+      "id": "split-8343-2026-08-24",
+      "type": "split",
+      "code": "8343",
+      "name": "秋田銀行",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-08-24T14:00:00+09:00",
+      "detail": {
+        "ratio": null,
+        "effective_date": "2026-10-01",
+        "effective_date_raw": "効力発生日 2026年10月1日 1 ④ その他 今回の株式分割に際して、資本金の額の変更はありません。 2 定款の一部変更について (1) 変更の理由 今回の株式分割にともない、会社法第184条第2項の規定に基づき、定款に定める発行可能株式 総数に関する規定を以下のとおり変更いたします。 (2) 変更の内容（下線は変更箇所を示しております） 変更後 変更前"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-30",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260820523912.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260820523912.pdf",
+      "source_title": "株式分割、株式分割にともなう定款の一部変更および配当予想の修正ならびに株主優待制度の変更に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260820523912",
+          "relation": "source",
+          "title": "株式分割、株式分割にともなう定款の一部変更および配当予想の修正ならびに株主優待制度の変更に関するお知らせ",
+          "announced_at": "2026-08-24T14:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260820523912.pdf"
         }
       ]
     }
