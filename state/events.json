@@ -785,7 +785,11 @@
     "140120260821524608",
     "140120260821524611",
     "140120260821524629",
-    "140120260821524656"
+    "140120260821524656",
+    "140120260824524831",
+    "140120260821524660",
+    "140120260824524813",
+    "140120260824524789"
   ],
   "events": [
     {
@@ -3322,6 +3326,76 @@
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
+    },
+    {
+      "id": "bunbai-4073-2026-08-24",
+      "type": "bunbai",
+      "code": "4073",
+      "name": "ジィ・シィ企画",
+      "market": "グロース",
+      "margin": "信用",
+      "announced_at": "2026-08-24T10:00:00+09:00",
+      "detail": {
+        "execution_date": "2026-08-24",
+        "execution_date_raw": "分売実施日 株数 分売値段 買付申込数量の限度 2026年8月24日（月） 60,000株 468円 1,000株 （ご参考） 2026年8月21日（金）にお知らせいたしました内容は以下のとおりです。 1. 分売予定株式数 60,000株 2. 分売実施日 2026年8月24日（月） 3. 分売値段 468円 4. 買付申込数量の限度 買付顧客1人につき1,",
+        "execution_date_confirmed": false
+      },
+      "schedule": [
+        {
+          "date": "2026-08-21",
+          "label": "execution-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-08-24",
+          "label": "execution_day",
+          "sent": false
+        },
+        {
+          "date": "2026-08-31",
+          "label": "execution+5bd",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260824524831.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824524831.pdf",
+      "source_title": "株式の立会外分売終了および主要株主の異動に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260824524831",
+          "relation": "source",
+          "title": "株式の立会外分売終了および主要株主の異動に関するお知らせ",
+          "announced_at": "2026-08-24T10:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260824524831.pdf"
+        }
+      ]
+    },
+    {
+      "id": "split-2108-2026-08-24",
+      "type": "split",
+      "code": "2108",
+      "name": "日本甜菜製糖",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-08-24T10:30:00+09:00",
+      "detail": {
+        "ratio": null,
+        "effective_date": null,
+        "effective_date_raw": null
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260824524813.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824524813.pdf",
+      "source_title": "（開示事項の変更）株式分割により増加する株式等の変更に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260824524813",
+          "relation": "source",
+          "title": "（開示事項の変更）株式分割により増加する株式等の変更に関するお知らせ",
+          "announced_at": "2026-08-24T10:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260824524813.pdf"
+        }
+      ]
     }
   ],
   "source_health": {
