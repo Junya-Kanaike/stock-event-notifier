@@ -131,11 +131,20 @@ def _po_daily(event: dict[str, Any], action: str) -> str:
     return f"{action}\n{format_po_detail_block(event)}"
 
 
+def is_po_awaiting_pricing(event: dict[str, Any]) -> bool:
+    """Return whether a PO still lacks a confirmed pricing disclosure."""
+    if event.get("type") != "po":
+        return False
+    return event.get("detail", {}).get("pricing_date_confirmed") is not True
+
+
 def due_notifications(state: dict[str, Any], today: date | str) -> list[DueNotification]:
     target_date = as_date(today)
     due: list[DueNotification] = []
     for event in state.get("events", []):
         if event.get("detail", {}).get("canceled"):
+            continue
+        if is_po_awaiting_pricing(event):
             continue
         for item in event.get("schedule", []):
             if item.get("sent") or not item.get("date"):

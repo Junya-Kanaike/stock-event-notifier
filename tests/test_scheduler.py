@@ -34,7 +34,7 @@ class SchedulerTest(unittest.TestCase):
                     "name": "トヨタ自動車",
                     "market": "プライム",
                     "margin": "貸借",
-                    "detail": {},
+                    "detail": {"pricing_date_confirmed": True},
                     "schedule": [{"date": "2026-07-17", "label": "pricing_day", "sent": False}],
                 }
             ],
@@ -75,6 +75,32 @@ class SchedulerTest(unittest.TestCase):
         self.assertIn("2026-07-16", due[0].text)
         self.assertIn("現在時点の指示ではありません", due[0].text)
 
+    def test_unconfirmed_po_notifications_are_held_until_pricing_is_confirmed(self):
+        event = {
+            "id": "po-6232-2026-08-24",
+            "type": "po",
+            "code": "6232",
+            "name": "ＡＣＳＬ",
+            "detail": {
+                "pricing_date": "2026-08-25",
+                "pricing_date_end": "2026-08-26",
+                "pricing_date_confirmed": False,
+            },
+            "schedule": [
+                {"date": "2026-08-25", "label": "pricing_day", "sent": False},
+                {"date": "2026-08-26", "label": "pricing_day+1", "sent": False},
+            ],
+        }
+        state = {"events": [event]}
+
+        self.assertEqual(due_notifications(state, date(2026, 8, 25)), [])
+        self.assertEqual(due_notifications(state, date(2026, 8, 27)), [])
+
+        event["detail"]["pricing_date_confirmed"] = True
+        due = due_notifications(state, date(2026, 8, 25))
+        self.assertEqual(len(due), 1)
+        self.assertEqual(due[0].schedule_item["label"], "pricing_day")
+
     def test_daily_notification_does_not_repeat_sent_overdue_item(self):
         state = {
             "events": [
@@ -109,6 +135,7 @@ class SchedulerTest(unittest.TestCase):
                         "dilution_status": "unavailable",
                         "pricing_date": "2026-07-16",
                         "pricing_date_end": "2026-07-18",
+                        "pricing_date_confirmed": True,
                         "pricing_date_status": "provisional",
                         "settlement_date": "2026-07-24",
                         "settlement_date_status": "confirmed",
