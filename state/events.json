@@ -1050,7 +1050,7 @@
         {
           "date": "2026-08-25",
           "label": "pricing_day+26bd",
-          "sent": false
+          "sent": true
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260715594693.pdf",
@@ -1103,36 +1103,9 @@
       "margin": "対象外",
       "announced_at": "2026-07-21T17:00:00+09:00",
       "detail": {
-        "execution_date": null,
-        "execution_date_raw": null,
-        "execution_date_confirmed": false
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260721596354.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260721596354.pdf",
-      "source_title": "株式の立会外分売実施に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260721596354",
-          "relation": "source",
-          "title": "株式の立会外分売実施に関するお知らせ",
-          "announced_at": "2026-07-21T17:00:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260721596354.pdf"
-        }
-      ]
-    },
-    {
-      "id": "bunbai-5075-2026-07-22",
-      "type": "bunbai",
-      "code": "5075",
-      "name": "アップコン",
-      "market": "取得失敗",
-      "margin": "対象外",
-      "announced_at": "2026-07-22T13:30:00+09:00",
-      "detail": {
         "execution_date": "2026-07-22",
         "execution_date_raw": "分売実施日 分売株式数 分売の値段 買付申込数量の限度 2026年7月22日(水) 136,800株 1,037円 3,000株 （ご参考）2026年7月21日にお知らせいたしました内容は、以下のとおりです。 1.分 売 予 定 株 式 数 180,000株 2.分 売 実 施 日 2026年7月22日(水) 3.分 売 の 値 段 1,037円 4.買付申",
-        "execution_date_confirmed": false
+        "execution_date_confirmed": true
       },
       "schedule": [
         {
@@ -1151,10 +1124,17 @@
           "sent": true
         }
       ],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260722597543.pdf",
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260721596354.pdf",
       "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260722597543.pdf",
-      "source_title": "株式の立会外分売終了に関するお知らせ",
+      "source_title": "株式の立会外分売実施に関するお知らせ",
       "related_disclosures": [
+        {
+          "id": "140120260721596354",
+          "relation": "source",
+          "title": "株式の立会外分売実施に関するお知らせ",
+          "announced_at": "2026-07-21T17:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260721596354.pdf"
+        },
         {
           "id": "140120260722597543",
           "relation": "source",
@@ -1203,59 +1183,6 @@
       ]
     },
     {
-      "id": "po-9509-2026-07-23",
-      "type": "po",
-      "code": "9509",
-      "name": "北海道電力",
-      "market": "プライム",
-      "margin": "貸借",
-      "announced_at": "2026-07-23T14:00:00+09:00",
-      "detail": {
-        "po_kind": "offering",
-        "source_stage": "announcement",
-        "size_oku": 800.0,
-        "size_oku_min": null,
-        "size_oku_max": null,
-        "size_status": "confirmed",
-        "size_basis": "開示資料記載額",
-        "share_count": null,
-        "oa_share_count": null,
-        "price_min_yen": null,
-        "price_max_yen": null,
-        "dilution_pct": null,
-        "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": null,
-        "settlement_date_end": null,
-        "settlement_date_raw": null,
-        "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
-        "parse_warnings": [],
-        "missing_fields": [
-          "dilution_pct",
-          "pricing_date",
-          "settlement_date"
-        ]
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260710591218.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260710591218.pdf",
-      "source_title": "公募ハイブリッド社債（劣後特約付社債）の発行条件決定について",
-      "related_disclosures": [
-        {
-          "id": "140120260710591218",
-          "relation": "source",
-          "title": "公募ハイブリッド社債（劣後特約付社債）の発行条件決定について",
-          "announced_at": "2026-07-23T14:00:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260710591218.pdf"
-        }
-      ]
-    },
-    {
       "id": "split-8377-2026-07-24",
       "type": "split",
       "code": "8377",
@@ -1264,9 +1191,11 @@
       "margin": "貸借",
       "announced_at": "2026-07-24T15:30:00+09:00",
       "detail": {
-        "ratio": "1",
+        "ratio": null,
         "effective_date": "2026-10-01",
-        "effective_date_raw": "効力発生日 2026年10月1日 2.株式分割に伴う定款の一部変更 （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年10月1日をもって、 当社定款第5条に定める発行可能株式総数を変更いたします。 （2）変更の内容（下線部は変更箇所） 現行定款 変更後 （発行可能株式総数） （発行可能株式総数） 第5条 当会社の発行可能"
+        "effective_date_raw": "効力発生日 2026年10月1日 2.株式分割に伴う定款の一部変更 （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年10月1日をもって、 当社定款第5条に定める発行可能株式総数を変更いたします。 （2）変更の内容（下線部は変更箇所） 現行定款 変更後 （発行可能株式総数） （発行可能株式総数） 第5条 当会社の発行可能",
+        "recovery_needed": true,
+        "recovery_reason": "末尾0欠落の可能性がある1:1比率を再抽出"
       },
       "schedule": [
         {
@@ -1290,113 +1219,6 @@
           "title": "「株式分割」、株式分割に伴う「定款の一部変更」、「配当予想の修正」および「株式優待制度の変更」に関するお知らせ",
           "announced_at": "2026-07-24T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260723598198.pdf"
-        }
-      ]
-    },
-    {
-      "id": "po-4978-2026-07-24",
-      "type": "po",
-      "code": "4978",
-      "name": "リプロセル",
-      "market": "グロース",
-      "margin": "信用",
-      "announced_at": "2026-07-24T17:50:00+09:00",
-      "detail": {
-        "po_kind": "offering",
-        "source_stage": "announcement",
-        "size_oku": null,
-        "size_oku_min": null,
-        "size_oku_max": null,
-        "size_status": "unavailable",
-        "size_basis": null,
-        "share_count": null,
-        "oa_share_count": null,
-        "price_min_yen": null,
-        "price_max_yen": null,
-        "dilution_pct": null,
-        "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": null,
-        "settlement_date_end": null,
-        "settlement_date_raw": null,
-        "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
-        "parse_warnings": [],
-        "missing_fields": [
-          "size",
-          "dilution_pct",
-          "pricing_date",
-          "settlement_date"
-        ]
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260724599552.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260724599552.pdf",
-      "source_title": "AMED公募事業「再生医療・遺伝子治療の産業化に向けた基盤技術開発事業」に係る提案の採択に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260724599552",
-          "relation": "source",
-          "title": "AMED公募事業「再生医療・遺伝子治療の産業化に向けた基盤技術開発事業」に係る提案の採択に関するお知らせ",
-          "announced_at": "2026-07-24T17:50:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260724599552.pdf"
-        }
-      ]
-    },
-    {
-      "id": "po-4593-2026-07-27",
-      "type": "po",
-      "code": "4593",
-      "name": "ヘリオス",
-      "market": "グロース",
-      "margin": "貸借",
-      "announced_at": "2026-07-27T11:45:00+09:00",
-      "detail": {
-        "po_kind": "offering",
-        "source_stage": "announcement",
-        "size_oku": 2.4,
-        "size_oku_min": null,
-        "size_oku_max": null,
-        "size_status": "confirmed",
-        "size_basis": "開示資料記載額",
-        "share_count": null,
-        "oa_share_count": null,
-        "price_min_yen": null,
-        "price_max_yen": null,
-        "dilution_pct": null,
-        "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": null,
-        "settlement_date_end": null,
-        "settlement_date_raw": null,
-        "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
-        "parse_warnings": [],
-        "missing_fields": [
-          "dilution_pct",
-          "pricing_date",
-          "settlement_date"
-        ]
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260727599854.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260727599854.pdf",
-      "source_title": "AMED公募課題 令和8年度「再生医療・遺伝子治療の産業化に向けた基盤技術開発事業（再生・細胞医療・遺伝子治療産業化促進事業）」採択のお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260727599854",
-          "relation": "source",
-          "title": "AMED公募課題 令和8年度「再生医療・遺伝子治療の産業化に向けた基盤技術開発事業（再生・細胞医療・遺伝子治療産業化促進事業）」採択のお知らせ",
-          "announced_at": "2026-07-27T11:45:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260727599854.pdf"
         }
       ]
     },
@@ -1874,59 +1696,6 @@
       ]
     },
     {
-      "id": "po-8439-2026-08-03",
-      "type": "po",
-      "code": "8439",
-      "name": "東京センチュリー",
-      "market": "プライム",
-      "margin": "貸借",
-      "announced_at": "2026-08-03T15:30:00+09:00",
-      "detail": {
-        "po_kind": "offering",
-        "source_stage": "announcement",
-        "size_oku": 200.0,
-        "size_oku_min": null,
-        "size_oku_max": null,
-        "size_status": "confirmed",
-        "size_basis": "開示資料記載額",
-        "share_count": null,
-        "oa_share_count": null,
-        "price_min_yen": null,
-        "price_max_yen": null,
-        "dilution_pct": null,
-        "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": null,
-        "settlement_date_end": null,
-        "settlement_date_raw": null,
-        "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
-        "parse_warnings": [],
-        "missing_fields": [
-          "dilution_pct",
-          "pricing_date",
-          "settlement_date"
-        ]
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260803506646.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260803506646.pdf",
-      "source_title": "第5回公募ハイブリッド社債（劣後特約付）の発行に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260803506646",
-          "relation": "source",
-          "title": "第5回公募ハイブリッド社債（劣後特約付）の発行に関するお知らせ",
-          "announced_at": "2026-08-03T15:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260803506646.pdf"
-        }
-      ]
-    },
-    {
       "id": "split-4746-2026-08-03",
       "type": "split",
       "code": "4746",
@@ -2057,16 +1826,19 @@
       ]
     },
     {
-      "id": "cb-4062-2026-08-04",
-      "type": "cb",
+      "id": "split-4062-2026-08-04",
+      "type": "split",
       "code": "4062",
       "name": "イビデン",
       "market": "プライム",
       "margin": "貸借",
       "announced_at": "2026-08-04T15:40:00+09:00",
       "detail": {
-        "amount": null,
-        "canceled": false
+        "ratio": null,
+        "effective_date": null,
+        "effective_date_raw": null,
+        "recovery_needed": true,
+        "recovery_reason": "CB転換価額調整として誤分類された株式分割を再抽出"
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260803507046.pdf",
@@ -2235,32 +2007,6 @@
       ]
     },
     {
-      "id": "cb-6383-2026-08-06",
-      "type": "cb",
-      "code": "6383",
-      "name": "ダイフク",
-      "market": "プライム",
-      "margin": "貸借",
-      "announced_at": "2026-08-06T15:30:00+09:00",
-      "detail": {
-        "amount": null,
-        "canceled": false
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260806511438.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260806511438.pdf",
-      "source_title": "2028年満期ユーロ円建転換社債型新株予約権付社債及び2030年満期ユーロ円建転換社債型新株予約権付社債の転換価額の調整に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260806511438",
-          "relation": "source",
-          "title": "2028年満期ユーロ円建転換社債型新株予約権付社債及び2030年満期ユーロ円建転換社債型新株予約権付社債の転換価額の調整に関するお知らせ",
-          "announced_at": "2026-08-06T15:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260806511438.pdf"
-        }
-      ]
-    },
-    {
       "id": "split-7716-2026-08-07",
       "type": "split",
       "code": "7716",
@@ -2345,9 +2091,11 @@
       "margin": "貸借",
       "announced_at": "2026-08-07T15:30:00+09:00",
       "detail": {
-        "ratio": "1",
+        "ratio": null,
         "effective_date": "2026-10-01",
-        "effective_date_raw": "効力発生日 2026年10月1日 （木） 4. 定款の一部変更 (1) 変更の理由 上記の株式分割に伴い、会社法第184 条第2項の規定に基づき、2026年10月1日を効力発生日と して、当社定款第6条に定める発行可能株式総数を変更いたします。 (2) 定款変更の内容 変更の内容は以下のとおりです。 (下線は変更部分を示す) 変更前 変更後 （発行可能株式総"
+        "effective_date_raw": "効力発生日 2026年10月1日 （木） 4. 定款の一部変更 (1) 変更の理由 上記の株式分割に伴い、会社法第184 条第2項の規定に基づき、2026年10月1日を効力発生日と して、当社定款第6条に定める発行可能株式総数を変更いたします。 (2) 定款変更の内容 変更の内容は以下のとおりです。 (下線は変更部分を示す) 変更前 変更後 （発行可能株式総",
+        "recovery_needed": true,
+        "recovery_reason": "末尾0欠落の可能性がある1:1比率を再抽出"
       },
       "schedule": [
         {
@@ -2371,113 +2119,6 @@
           "title": "株式分割および株式分割に伴う定款の一部変更ならびに配当予想の修正に関するお知らせ",
           "announced_at": "2026-08-07T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260804508313.pdf"
-        }
-      ]
-    },
-    {
-      "id": "po-1911-2026-08-07",
-      "type": "po",
-      "code": "1911",
-      "name": "住友林業",
-      "market": "プライム",
-      "margin": "貸借",
-      "announced_at": "2026-08-07T15:30:00+09:00",
-      "detail": {
-        "po_kind": "offering",
-        "source_stage": "announcement",
-        "size_oku": 3500.0,
-        "size_oku_min": null,
-        "size_oku_max": null,
-        "size_status": "confirmed",
-        "size_basis": "開示資料記載額",
-        "share_count": null,
-        "oa_share_count": null,
-        "price_min_yen": null,
-        "price_max_yen": null,
-        "dilution_pct": null,
-        "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": null,
-        "settlement_date_end": null,
-        "settlement_date_raw": null,
-        "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
-        "parse_warnings": [],
-        "missing_fields": [
-          "dilution_pct",
-          "pricing_date",
-          "settlement_date"
-        ]
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260807515130.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260807515130.pdf",
-      "source_title": "公募ハイブリッド社債（劣後特約付社債）発行に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260807515130",
-          "relation": "source",
-          "title": "公募ハイブリッド社債（劣後特約付社債）発行に関するお知らせ",
-          "announced_at": "2026-08-07T15:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260807515130.pdf"
-        }
-      ]
-    },
-    {
-      "id": "po-6228-2026-08-10",
-      "type": "po",
-      "code": "6228",
-      "name": "ジェイ・イー・ティ",
-      "market": "スタンダード",
-      "margin": "信用",
-      "announced_at": "2026-08-10T12:30:00+09:00",
-      "detail": {
-        "po_kind": "offering",
-        "source_stage": "announcement",
-        "size_oku": null,
-        "size_oku_min": null,
-        "size_oku_max": null,
-        "size_status": "unavailable",
-        "size_basis": null,
-        "share_count": null,
-        "oa_share_count": null,
-        "price_min_yen": null,
-        "price_max_yen": null,
-        "dilution_pct": null,
-        "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": null,
-        "settlement_date_end": null,
-        "settlement_date_raw": null,
-        "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
-        "parse_warnings": [],
-        "missing_fields": [
-          "size",
-          "dilution_pct",
-          "pricing_date",
-          "settlement_date"
-        ]
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260810516141.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260810516141.pdf",
-      "source_title": "（開示事項の中止）令和５年度補正予算「中堅・中小企業の賃上げに向けた省力化等の大規模成長投資補助金事業」（一次公募）交付決定辞退のお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260810516141",
-          "relation": "source",
-          "title": "（開示事項の中止）令和５年度補正予算「中堅・中小企業の賃上げに向けた省力化等の大規模成長投資補助金事業」（一次公募）交付決定辞退のお知らせ",
-          "announced_at": "2026-08-10T12:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260810516141.pdf"
         }
       ]
     },
@@ -2530,7 +2171,7 @@
       "detail": {
         "execution_date": "2026-08-19",
         "execution_date_raw": "分売予定期間 2026年8月19日（水）～2026年8月21日（金） 3.分売値段 分売実施日前日の終値もしくは最終気配値を基準として決定する予定です。 4.買付申込数量の限度 買付顧客1人につき4,000株（売買単位:100株） 5.実施取引所 東京証券取引所 グロース市場における上場維持基準のうち、流通株式比率の適合に向け、流 6.実施の目的 通株式数増",
-        "execution_date_confirmed": false
+        "execution_date_confirmed": true
       },
       "schedule": [
         {
@@ -2550,7 +2191,7 @@
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260806512659.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260806512659.pdf",
+      "latest_pdf_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -2560,7 +2201,8 @@
           "announced_at": "2026-08-10T16:31:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260806512659.pdf"
         }
-      ]
+      ],
+      "jpx_source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
     },
     {
       "id": "bunbai-9221-2026-08-12",
@@ -2573,7 +2215,7 @@
       "detail": {
         "execution_date": "2026-08-20",
         "execution_date_raw": "分売予定期間 2026年8月20日（木）～ 2026年8月24日（月） 3.分売値段 分売実施日前日の終値もしくは最終気配値を基準として決定する 予定です。 4.買付申込数量の限度 買付顧客一人につき3,000株（売買単位:100株） 5.実施取引所 東京証券取引所 6.実施の目的 主要株主1名から一定数量の売却意向があり、発行会社として検 討した結果、株式",
-        "execution_date_confirmed": false
+        "execution_date_confirmed": true
       },
       "schedule": [
         {
@@ -2593,7 +2235,7 @@
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260810516225.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260810516225.pdf",
+      "latest_pdf_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -2603,7 +2245,8 @@
           "announced_at": "2026-08-12T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260810516225.pdf"
         }
-      ]
+      ],
+      "jpx_source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
     },
     {
       "id": "split-3932-2026-08-12",
@@ -2741,8 +2384,8 @@
       "announced_at": "2026-08-14T15:30:00+09:00",
       "detail": {
         "execution_date": "2026-08-24",
-        "execution_date_raw": "分売予定期間 2026年8月24日（月）～2026年8月28日（金） 3. 分売値段 分売実施日前日の終値もしくは最終気配値を基準として決定する予定です。 4. 買付申込数量の限度 買付顧客1人につき1,000株（売買単位:100株） 5. 実施取引所 東京証券取引所 6. 実施の目的 一定数量の売却意向があり、当社として検討した結果、当社株式の分布状況の改",
-        "execution_date_confirmed": false
+        "execution_date_raw": "分売実施日 株数 分売値段 買付申込数量の限度 2026年8月24日（月） 60,000株 468円 1,000株 （ご参考） 2026年8月21日（金）にお知らせいたしました内容は以下のとおりです。 1. 分売予定株式数 60,000株 2. 分売実施日 2026年8月24日（月） 3. 分売値段 468円 4. 買付申込数量の限度 買付顧客1人につき1,",
+        "execution_date_confirmed": true
       },
       "schedule": [
         {
@@ -2762,7 +2405,7 @@
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260814520282.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260814520282.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824524831.pdf",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -2771,8 +2414,16 @@
           "title": "株式の立会外分売に関するお知らせ",
           "announced_at": "2026-08-14T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260814520282.pdf"
+        },
+        {
+          "id": "140120260824524831",
+          "relation": "source",
+          "title": "株式の立会外分売終了および主要株主の異動に関するお知らせ",
+          "announced_at": "2026-08-24T10:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260824524831.pdf"
         }
-      ]
+      ],
+      "jpx_source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
     },
     {
       "id": "ipo-622A-2026-09-18",
@@ -2887,11 +2538,11 @@
       "detail": {
         "execution_date": null,
         "execution_date_raw": null,
-        "execution_date_confirmed": false
+        "execution_date_confirmed": true
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260817521974.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260817521974.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824525247.pdf",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -2900,6 +2551,13 @@
           "title": "株式の立会外分売に関するお知らせ",
           "announced_at": "2026-08-17T17:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260817521974.pdf"
+        },
+        {
+          "id": "140120260824525247",
+          "relation": "source",
+          "title": "株式の立会外分売実施に関するお知らせ",
+          "announced_at": "2026-08-24T16:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525247.pdf"
         }
       ]
     },
@@ -2929,37 +2587,6 @@
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
     },
     {
-      "id": "bunbai-3695-2026-08-18",
-      "type": "bunbai",
-      "code": "3695",
-      "name": "ＧＭＯプロダクトプラットフォーム",
-      "market": "グロース",
-      "margin": "信用",
-      "announced_at": "2026-08-18T16:40:00+09:00",
-      "detail": {
-        "execution_date": "2026-08-19",
-        "execution_date_confirmed": true
-      },
-      "schedule": [
-        {
-          "date": "2026-08-18",
-          "label": "execution-1bd",
-          "sent": true
-        },
-        {
-          "date": "2026-08-19",
-          "label": "execution_day",
-          "sent": true
-        },
-        {
-          "date": "2026-08-26",
-          "label": "execution+5bd",
-          "sent": false
-        }
-      ],
-      "pdf_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
-    },
-    {
       "id": "ipo-627A-2026-09-18",
       "type": "ipo",
       "code": "627A",
@@ -2983,37 +2610,6 @@
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
-    },
-    {
-      "id": "bunbai-3695-2026-08-19",
-      "type": "bunbai",
-      "code": "3695",
-      "name": "ＧＭＯプロダクトプラットフォーム",
-      "market": "グロース",
-      "margin": "信用",
-      "announced_at": "2026-08-19T10:31:00+09:00",
-      "detail": {
-        "execution_date": "2026-08-19",
-        "execution_date_confirmed": true
-      },
-      "schedule": [
-        {
-          "date": "2026-08-18",
-          "label": "execution-1bd",
-          "sent": true
-        },
-        {
-          "date": "2026-08-19",
-          "label": "execution_day",
-          "sent": true
-        },
-        {
-          "date": "2026-08-26",
-          "label": "execution+5bd",
-          "sent": false
-        }
-      ],
-      "pdf_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
     },
     {
       "id": "po-3455-2026-08-19",
@@ -3070,68 +2666,6 @@
       ]
     },
     {
-      "id": "bunbai-9221-2026-08-19",
-      "type": "bunbai",
-      "code": "9221",
-      "name": "フルハシＥＰＯ",
-      "market": "スタンダード",
-      "margin": "信用",
-      "announced_at": "2026-08-19T16:30:00+09:00",
-      "detail": {
-        "execution_date": "2026-08-20",
-        "execution_date_confirmed": true
-      },
-      "schedule": [
-        {
-          "date": "2026-08-19",
-          "label": "execution-1bd",
-          "sent": true
-        },
-        {
-          "date": "2026-08-20",
-          "label": "execution_day",
-          "sent": true
-        },
-        {
-          "date": "2026-08-27",
-          "label": "execution+5bd",
-          "sent": false
-        }
-      ],
-      "pdf_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
-    },
-    {
-      "id": "bunbai-9221-2026-08-20",
-      "type": "bunbai",
-      "code": "9221",
-      "name": "フルハシＥＰＯ",
-      "market": "スタンダード",
-      "margin": "信用",
-      "announced_at": "2026-08-20T10:30:00+09:00",
-      "detail": {
-        "execution_date": "2026-08-20",
-        "execution_date_confirmed": true
-      },
-      "schedule": [
-        {
-          "date": "2026-08-19",
-          "label": "execution-1bd",
-          "sent": true
-        },
-        {
-          "date": "2026-08-20",
-          "label": "execution_day",
-          "sent": true
-        },
-        {
-          "date": "2026-08-27",
-          "label": "execution+5bd",
-          "sent": false
-        }
-      ],
-      "pdf_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
-    },
-    {
       "id": "po-7966-2026-08-20",
       "type": "po",
       "code": "7966",
@@ -3158,20 +2692,24 @@
         "pricing_date_raw": null,
         "pricing_date_confirmed": false,
         "pricing_date_status": "unavailable",
-        "settlement_date": "2026-08-20",
+        "settlement_date": null,
         "settlement_date_end": null,
         "settlement_date_raw": "受渡期日と同一とする。 (7) 申 込 証 拠 金 1株につき売出価格と同一金額とする。 (8) 申 込 株 数 単 位 100株 (9) 売出価格、その他オーバーアロットメントによる売出しに必要な一切の事項の承認について は、代表取締役社長に一任する。 (10) オーバーアロットメントによる売出しについては、2026年8月20日(木)に金融商品取引法 によ",
         "settlement_estimated": false,
-        "settlement_date_status": "confirmed",
-        "parse_warnings": [],
+        "settlement_date_status": "unavailable",
+        "parse_warnings": [
+          "他の日付を参照する受渡期日を確定日として扱わず除外"
+        ],
         "missing_fields": [
           "dilution_pct",
-          "pricing_date"
-        ]
+          "pricing_date",
+          "settlement_date"
+        ],
+        "latest_source_stage": "announcement"
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260819523356.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260819523356.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824525134.pdf",
       "source_title": "株式の売出し並びにその他の関係会社、主要株主及び主要株主である筆頭株主の異動に関するお知らせ",
       "related_disclosures": [
         {
@@ -3180,6 +2718,13 @@
           "title": "株式の売出し並びにその他の関係会社、主要株主及び主要株主である筆頭株主の異動に関するお知らせ",
           "announced_at": "2026-08-20T16:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260819523356.pdf"
+        },
+        {
+          "id": "140120260824525134",
+          "relation": "source",
+          "title": "売出株式数の変更に関するお知らせ",
+          "announced_at": "2026-08-24T16:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525134.pdf"
         }
       ]
     },
@@ -3209,7 +2754,7 @@
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260820523872.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260820523872.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824524813.pdf",
       "source_title": "株式分割、株式分割に伴う定款の一部変更、配当予想の修正、譲渡制限付株式報酬制度における付与株式総数（年間）の調整及び株主優待制度の変更に関するお知らせ",
       "related_disclosures": [
         {
@@ -3218,6 +2763,13 @@
           "title": "株式分割、株式分割に伴う定款の一部変更、配当予想の修正、譲渡制限付株式報酬制度における付与株式総数（年間）の調整及び株主優待制度の変更に関するお知らせ",
           "announced_at": "2026-08-21T15:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260820523872.pdf"
+        },
+        {
+          "id": "140120260824524813",
+          "relation": "source",
+          "title": "（開示事項の変更）株式分割により増加する株式等の変更に関するお知らせ",
+          "announced_at": "2026-08-24T10:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260824524813.pdf"
         }
       ]
     },
@@ -3310,107 +2862,6 @@
           "title": "「株式分割」、株式分割に伴う「定款の一部変更」、「配当予想の修正」および「株主優待制度の変更」に関するお知らせ",
           "announced_at": "2026-08-21T16:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524566.pdf"
-        }
-      ]
-    },
-    {
-      "id": "bunbai-4073-2026-08-21",
-      "type": "bunbai",
-      "code": "4073",
-      "name": "ジィ・シィ企画",
-      "market": "グロース",
-      "margin": "信用",
-      "announced_at": "2026-08-21T16:35:00+09:00",
-      "detail": {
-        "execution_date": "2026-08-24",
-        "execution_date_confirmed": true
-      },
-      "schedule": [
-        {
-          "date": "2026-08-21",
-          "label": "execution-1bd",
-          "sent": true
-        },
-        {
-          "date": "2026-08-24",
-          "label": "execution_day",
-          "sent": true
-        },
-        {
-          "date": "2026-08-31",
-          "label": "execution+5bd",
-          "sent": false
-        }
-      ],
-      "pdf_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
-    },
-    {
-      "id": "bunbai-4073-2026-08-24",
-      "type": "bunbai",
-      "code": "4073",
-      "name": "ジィ・シィ企画",
-      "market": "グロース",
-      "margin": "信用",
-      "announced_at": "2026-08-24T10:00:00+09:00",
-      "detail": {
-        "execution_date": "2026-08-24",
-        "execution_date_raw": "分売実施日 株数 分売値段 買付申込数量の限度 2026年8月24日（月） 60,000株 468円 1,000株 （ご参考） 2026年8月21日（金）にお知らせいたしました内容は以下のとおりです。 1. 分売予定株式数 60,000株 2. 分売実施日 2026年8月24日（月） 3. 分売値段 468円 4. 買付申込数量の限度 買付顧客1人につき1,",
-        "execution_date_confirmed": false
-      },
-      "schedule": [
-        {
-          "date": "2026-08-21",
-          "label": "execution-1bd",
-          "sent": false
-        },
-        {
-          "date": "2026-08-24",
-          "label": "execution_day",
-          "sent": false
-        },
-        {
-          "date": "2026-08-31",
-          "label": "execution+5bd",
-          "sent": false
-        }
-      ],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260824524831.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824524831.pdf",
-      "source_title": "株式の立会外分売終了および主要株主の異動に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260824524831",
-          "relation": "source",
-          "title": "株式の立会外分売終了および主要株主の異動に関するお知らせ",
-          "announced_at": "2026-08-24T10:00:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260824524831.pdf"
-        }
-      ]
-    },
-    {
-      "id": "split-2108-2026-08-24",
-      "type": "split",
-      "code": "2108",
-      "name": "日本甜菜製糖",
-      "market": "プライム",
-      "margin": "貸借",
-      "announced_at": "2026-08-24T10:30:00+09:00",
-      "detail": {
-        "ratio": null,
-        "effective_date": null,
-        "effective_date_raw": null
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260824524813.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824524813.pdf",
-      "source_title": "（開示事項の変更）株式分割により増加する株式等の変更に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260824524813",
-          "relation": "source",
-          "title": "（開示事項の変更）株式分割により増加する株式等の変更に関するお知らせ",
-          "announced_at": "2026-08-24T10:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260824524813.pdf"
         }
       ]
     },
@@ -3544,87 +2995,6 @@
       ]
     },
     {
-      "id": "po-7966-2026-08-24",
-      "type": "po",
-      "code": "7966",
-      "name": "リンテック",
-      "market": "プライム",
-      "margin": "貸借",
-      "announced_at": "2026-08-24T16:00:00+09:00",
-      "detail": {
-        "po_kind": "secondary",
-        "source_stage": "announcement",
-        "size_oku": null,
-        "size_oku_min": null,
-        "size_oku_max": null,
-        "size_status": "unavailable",
-        "size_basis": null,
-        "share_count": null,
-        "oa_share_count": null,
-        "price_min_yen": null,
-        "price_max_yen": null,
-        "dilution_pct": null,
-        "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": null,
-        "settlement_date_end": null,
-        "settlement_date_raw": null,
-        "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
-        "parse_warnings": [],
-        "missing_fields": [
-          "size",
-          "dilution_pct",
-          "pricing_date",
-          "settlement_date"
-        ]
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525134.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824525134.pdf",
-      "source_title": "売出株式数の変更に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260824525134",
-          "relation": "source",
-          "title": "売出株式数の変更に関するお知らせ",
-          "announced_at": "2026-08-24T16:00:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525134.pdf"
-        }
-      ]
-    },
-    {
-      "id": "bunbai-9170-2026-08-24",
-      "type": "bunbai",
-      "code": "9170",
-      "name": "成友興業",
-      "market": "取得失敗",
-      "margin": "対象外",
-      "announced_at": "2026-08-24T16:30:00+09:00",
-      "detail": {
-        "execution_date": null,
-        "execution_date_raw": null,
-        "execution_date_confirmed": false
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525247.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824525247.pdf",
-      "source_title": "株式の立会外分売実施に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260824525247",
-          "relation": "source",
-          "title": "株式の立会外分売実施に関するお知らせ",
-          "announced_at": "2026-08-24T16:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525247.pdf"
-        }
-      ]
-    },
-    {
       "id": "po-6232-2026-08-24",
       "type": "po",
       "code": "6232",
@@ -3705,6 +3075,31 @@
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525276.pdf"
         }
       ]
+    },
+    {
+      "id": "ipo-634A-2026-09-25",
+      "type": "ipo",
+      "code": "634A",
+      "name": "（株）レイヤード",
+      "market": "スタンダード",
+      "margin": "対象外",
+      "announced_at": "2026-08-25T07:45:06.105683+09:00",
+      "detail": {
+        "listing_date": "2026-09-25"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-24",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-09-25",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
     }
   ],
   "source_health": {
