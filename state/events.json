@@ -817,7 +817,16 @@
     "140120260824525090",
     "140120260818522456",
     "140120260824525300",
-    "140120260824525351"
+    "140120260824525351",
+    "140120260825525454",
+    "140120260825525580",
+    "140120260825525704",
+    "140120260825525710",
+    "140120260825525826",
+    "140120260824525197",
+    "140120260824525282",
+    "140120260825525804",
+    "140120260825525852"
   ],
   "events": [
     {
@@ -3238,6 +3247,127 @@
           "title": "「株式分割」、株式分割に伴う「定款の一部変更」、「株主優待制度の変更」および「配当予想の修正」に関するお知らせ",
           "announced_at": "2026-08-25T14:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260818522456.pdf",
+          "market": "東証"
+        }
+      ]
+    },
+    {
+      "id": "bunbai-9959-2026-08-25",
+      "type": "bunbai",
+      "code": "9959",
+      "name": "アシードホールディングス",
+      "market": "スタンダード",
+      "margin": "貸借",
+      "announced_at": "2026-08-25T15:30:00+09:00",
+      "detail": {
+        "execution_date": null,
+        "execution_date_raw": null,
+        "execution_date_confirmed": false
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525454.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260825525454.pdf",
+      "source_title": "株式の立会外分売に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260825525454",
+          "relation": "source",
+          "title": "株式の立会外分売に関するお知らせ",
+          "announced_at": "2026-08-25T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525454.pdf",
+          "market": "東証"
+        }
+      ]
+    },
+    {
+      "id": "split-8766-2026-08-25",
+      "type": "split",
+      "code": "8766",
+      "name": "東京海上ホールディングス",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-08-25T15:30:00+09:00",
+      "detail": {
+        "ratio": "15",
+        "effective_date": "2026-10-01",
+        "effective_date_raw": "効力発生日 2026年10月1日（木） 2.株主優待制度の導入 （1） 株主優待制度導入の目的 当社株式への投資魅力を高め、より多くの株主の皆さまに中長期的に当社株式を保有いただくことを目 的として、株主優待制度を導入いたします。 （2） 基準日 本制度は、2027年3月31日を初回の基準日として開始し、以後、毎年3月31日を基準日といたします。 （3） 対"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-30",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525826.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260825525826.pdf",
+      "source_title": "株式分割、株主優待制度の導入、株式分割に伴う定款の一部変更、配当予想の修正および自己株式取得に係る事項の変更に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260825525826",
+          "relation": "source",
+          "title": "株式分割、株主優待制度の導入、株式分割に伴う定款の一部変更、配当予想の修正および自己株式取得に係る事項の変更に関するお知らせ",
+          "announced_at": "2026-08-25T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525826.pdf",
+          "market": "東証"
+        }
+      ]
+    },
+    {
+      "id": "po-5726-2026-08-25",
+      "type": "po",
+      "code": "5726",
+      "name": "大阪チタニウムテクノロジーズ",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-08-25T16:00:00+09:00",
+      "detail": {
+        "po_kind": "both",
+        "source_stage": "announcement",
+        "size_oku": 390.0,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "estimated",
+        "size_basis": "開示資料記載額",
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": null,
+        "pricing_date_end": null,
+        "pricing_date_raw": null,
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "unavailable",
+        "settlement_date": null,
+        "settlement_date_end": null,
+        "settlement_date_raw": null,
+        "settlement_estimated": false,
+        "settlement_date_status": "unavailable",
+        "parse_warnings": [],
+        "missing_fields": [
+          "dilution_pct",
+          "pricing_date",
+          "settlement_date"
+        ]
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525282.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824525282.pdf",
+      "source_title": "新株式発行及び株式売出しに関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260824525282",
+          "relation": "source",
+          "title": "新株式発行及び株式売出しに関するお知らせ",
+          "announced_at": "2026-08-25T16:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525282.pdf",
           "market": "東証"
         }
       ]
