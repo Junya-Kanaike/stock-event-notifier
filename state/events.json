@@ -832,7 +832,8 @@
     "140120260825525949",
     "140120260825525958",
     "140120260825525954",
-    "140120260825525964"
+    "140120260825525964",
+    "140120260825526021"
   ],
   "events": [
     {
@@ -3051,10 +3052,10 @@
         "dilution_pct": null,
         "dilution_status": "unavailable",
         "pricing_date": "2026-08-25",
-        "pricing_date_end": "2026-08-26",
+        "pricing_date_end": "2026-08-25",
         "pricing_date_raw": "発行価格等決定日 2026年8月25日（火）～ 2026年8月26日（水） 払込期日 2026年9月8日（火） 受渡期日 2026年9月9日（水） ロックアップ条項 当社及び当社代表取締役Co-CEO早川 研介:180日間 ブックランナー兼主幹事会社 BofA証券株式会社 1:最終的な募集株式の数は、4,800,000株を上限として、引受人が、投資家からの当",
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "provisional",
+        "pricing_date_confirmed": true,
+        "pricing_date_status": "confirmed",
         "settlement_date": "2026-09-09",
         "settlement_date_end": null,
         "settlement_date_raw": "受渡期日 2026年9月9日（水） ロックアップ条項 当社及び当社代表取締役Co-CEO早川 研介:180日間 ブックランナー兼主幹事会社 BofA証券株式会社 1:最終的な募集株式の数は、4,800,000株を上限として、引受人が、投資家からの当社普通株式に対する需要状況及び市場環境等を勘案した上で発行価格等決定日に決定します。 CONFIDENTIAL ",
@@ -3063,7 +3064,8 @@
         "parse_warnings": [],
         "missing_fields": [
           "dilution_pct"
-        ]
+        ],
+        "latest_source_stage": "pricing"
       },
       "schedule": [
         {
@@ -3098,7 +3100,7 @@
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525276.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824525276.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260825526021.pdf",
       "source_title": "海外募集による新株式発行に関する補足説明資料",
       "related_disclosures": [
         {
@@ -3107,6 +3109,14 @@
           "title": "海外募集による新株式発行に関する補足説明資料",
           "announced_at": "2026-08-24T17:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525276.pdf"
+        },
+        {
+          "id": "140120260825526021",
+          "relation": "pricing",
+          "title": "海外募集による新株式発行に係る発行価格等の決定に関するお知らせ",
+          "announced_at": "2026-08-25T18:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260825526021.pdf",
+          "market": "東証"
         }
       ]
     },
