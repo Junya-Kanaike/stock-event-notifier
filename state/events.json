@@ -810,7 +810,9 @@
     "140120260824525357",
     "140120260824525359",
     "140120260825525469",
-    "140120260825525523"
+    "140120260825525523",
+    "140120260825525600",
+    "140120260825525622"
   ],
   "events": [
     {
@@ -3112,6 +3114,45 @@
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "id": "split-9687-2026-08-25",
+      "type": "split",
+      "code": "9687",
+      "name": "ＫＳＫ",
+      "market": "スタンダード",
+      "margin": "貸借",
+      "announced_at": "2026-08-25T12:00:00+09:00",
+      "detail": {
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "effective_date_raw": "効力発生日 2026年10月1日 （4） 新株予約権行使価額の調整 今回の株式分割に伴い、当社発行の新株予約権の1株当たりの権利行使価額及び行使されてい ない新株予約権1個当たりの目的である株式の数を、2026年10月1日以降、次のとおり調整い たします。 新株予約権1個当たりの目的である 行使価額 株式の数 調整前 調整後 調整前 調整後 2014年第1回"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-30",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525622.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260825525622.pdf",
+      "source_title": "株式分割、株式分割に伴う定款の一部変更及び配当予想の修正に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260825525622",
+          "relation": "source",
+          "title": "株式分割、株式分割に伴う定款の一部変更及び配当予想の修正に関するお知らせ",
+          "announced_at": "2026-08-25T12:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525622.pdf",
+          "market": "東証"
+        }
+      ]
     }
   ],
   "source_health": {
