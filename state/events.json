@@ -812,7 +812,8 @@
     "140120260825525469",
     "140120260825525523",
     "140120260825525600",
-    "140120260825525622"
+    "140120260825525622",
+    "140120260825525700"
   ],
   "events": [
     {
@@ -3151,6 +3152,50 @@
           "announced_at": "2026-08-25T12:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525622.pdf",
           "market": "東証"
+        }
+      ]
+    },
+    {
+      "id": "bunbai-9170-2026-08-25",
+      "type": "bunbai",
+      "code": "9170",
+      "name": "成友興業",
+      "market": "名証",
+      "margin": "対象外",
+      "announced_at": "2026-08-25T12:30:00+09:00",
+      "detail": {
+        "execution_date": "2026-08-25",
+        "execution_date_raw": "分売実施日 分売株式数 分売の値段 買付申込数量の限度 2026年8月25日（火） 78,200株 1,843円 3,000株 （ご参考）2026年8月24日にお知らせいたしました内容は、以下のとおりです。 1.分 売 予 定 株 式 数 168,000株 2. 分 売 実 施 日 2026年8月25日（火） 3. 分 売 の 値 段 1,843円 4. 買",
+        "execution_date_confirmed": true
+      },
+      "schedule": [
+        {
+          "date": "2026-08-24",
+          "label": "execution-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-08-25",
+          "label": "execution_day",
+          "sent": false
+        },
+        {
+          "date": "2026-09-01",
+          "label": "execution+5bd",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525700.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260825525700.pdf",
+      "source_title": "株式の立会外分売終了に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260825525700",
+          "relation": "source",
+          "title": "株式の立会外分売終了に関するお知らせ",
+          "announced_at": "2026-08-25T12:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525700.pdf",
+          "market": "名証"
         }
       ]
     }
