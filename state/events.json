@@ -906,7 +906,7 @@
         {
           "date": "2026-08-27",
           "label": "pricing_day+25bd",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-28",
@@ -2273,7 +2273,7 @@
         {
           "date": "2026-08-27",
           "label": "execution+5bd",
-          "sent": false
+          "sent": true
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260810516225.pdf",
@@ -2697,12 +2697,12 @@
         {
           "date": "2026-08-26",
           "label": "pricing_day",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-27",
           "label": "pricing_day+1",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-28",
@@ -3122,7 +3122,7 @@
         {
           "date": "2026-08-27",
           "label": "pricing_day+2",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-09-09",
