@@ -854,7 +854,22 @@
     "140120260828527585",
     "140120260826526588",
     "140120260820523729",
-    "140120260824525307"
+    "140120260824525307",
+    "140120260820523609",
+    "140120260821524205",
+    "140120260825525873",
+    "140120260827527401",
+    "140120260827527416",
+    "140120260828527605",
+    "140120260828527884",
+    "140120260828527939",
+    "140120260827527452",
+    "140120260827527453",
+    "140120260828527923",
+    "140120260828528035",
+    "140120260825525796",
+    "140120260827527450",
+    "140120260828528059"
   ],
   "events": [
     {
@@ -3555,6 +3570,212 @@
           "title": "株式分割および株式分割に伴う定款一部変更ならびに期末配当予想の修正に関するお知らせ",
           "announced_at": "2026-08-28T14:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260820523729.pdf",
+          "market": "東証"
+        }
+      ]
+    },
+    {
+      "id": "split-8174-2026-08-28",
+      "type": "split",
+      "code": "8174",
+      "name": "日本瓦斯",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-08-28T15:30:00+09:00",
+      "detail": {
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "effective_date_raw": "効力発生日 2026年10月1日(木) (3)その他 ①資本金の額の変更 今回の株式分割に際しまして、資本金の額の変更はありません。 2.株式分割に伴う定款の一部変更 (1) 定款変更の理由 今回の株式分割に伴い、会社法第 184 条第2項の規定に基づき、株式分割と同日付で当社定款第5条を 次のとおり変更いたします。 (2) 定款変更の内容 変更の内容は以下"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-30",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260820523609.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260820523609.pdf",
+      "source_title": "株式分割、株式分割に伴う定款の一部変更、株式分割に伴う自己株式取得に係る事項の一部変更および配当予想の修正に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260820523609",
+          "relation": "source",
+          "title": "株式分割、株式分割に伴う定款の一部変更、株式分割に伴う自己株式取得に係る事項の一部変更および配当予想の修正に関するお知らせ",
+          "announced_at": "2026-08-28T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260820523609.pdf",
+          "market": "東証"
+        }
+      ]
+    },
+    {
+      "id": "po-4777-2026-08-28",
+      "type": "po",
+      "code": "4777",
+      "name": "ガーラ",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-08-28T15:30:00+09:00",
+      "detail": {
+        "po_kind": "secondary",
+        "source_stage": "announcement",
+        "size_oku": null,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "unavailable",
+        "size_basis": null,
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "dilution_pct": 16.04,
+        "dilution_status": "confirmed",
+        "pricing_date": "2026-07-03",
+        "pricing_date_end": null,
+        "pricing_date_raw": "売出価格 1株につき、取引日の直前2ヶ月間の各日の終値の平均に120% を乗じた価格（韓国の関連法令に基づく最大株主に係る割増評価 を反映したもの）。本公表時点では確定していないため計算方法に より記載しており、価格の確定後、有価証券通知書の変更通知書及 び訂正目論見書を提出する予定です。なお、取引日の前後各2ヶ 月間（2026年7月3日～2026年11月3",
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "provisional",
+        "settlement_date": "2026-07-13",
+        "settlement_date_end": null,
+        "settlement_date_raw": null,
+        "settlement_estimated": true,
+        "settlement_date_status": "estimated",
+        "parse_warnings": [],
+        "missing_fields": [
+          "size"
+        ]
+      },
+      "schedule": [
+        {
+          "date": "2026-07-03",
+          "label": "pricing_day",
+          "sent": false
+        },
+        {
+          "date": "2026-07-06",
+          "label": "pricing_day+1",
+          "sent": false
+        },
+        {
+          "date": "2026-07-07",
+          "label": "pricing_day+2",
+          "sent": false
+        },
+        {
+          "date": "2026-07-13",
+          "label": "settlement",
+          "sent": false
+        },
+        {
+          "date": "2026-08-10",
+          "label": "pricing_day+25bd",
+          "sent": false
+        },
+        {
+          "date": "2026-08-12",
+          "label": "pricing_day+26bd",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260827527416.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260827527416.pdf",
+      "source_title": "株式会社ガーラ（証券コード4777）株式の売出し及び公開買付けに準ずる行為として政令で定める買集め行為に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260827527416",
+          "relation": "source",
+          "title": "株式会社ガーラ（証券コード4777）株式の売出し及び公開買付けに準ずる行為として政令で定める買集め行為に関するお知らせ",
+          "announced_at": "2026-08-28T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260827527416.pdf",
+          "market": "東証"
+        }
+      ]
+    },
+    {
+      "id": "po-8117-2026-08-28",
+      "type": "po",
+      "code": "8117",
+      "name": "中央自動車工業",
+      "market": "スタンダード",
+      "margin": "貸借",
+      "announced_at": "2026-08-28T16:00:00+09:00",
+      "detail": {
+        "po_kind": "secondary",
+        "source_stage": "announcement",
+        "size_oku": null,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "unavailable",
+        "size_basis": null,
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": null,
+        "pricing_date_end": null,
+        "pricing_date_raw": null,
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "unavailable",
+        "settlement_date": null,
+        "settlement_date_end": null,
+        "settlement_date_raw": null,
+        "settlement_estimated": false,
+        "settlement_date_status": "unavailable",
+        "parse_warnings": [],
+        "missing_fields": [
+          "size",
+          "dilution_pct",
+          "pricing_date",
+          "settlement_date"
+        ]
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260827527452.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260827527452.pdf",
+      "source_title": "株式の売出しに関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260827527452",
+          "relation": "source",
+          "title": "株式の売出しに関するお知らせ",
+          "announced_at": "2026-08-28T16:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260827527452.pdf",
+          "market": "東証"
+        }
+      ]
+    },
+    {
+      "id": "split-2814-2026-08-28",
+      "type": "split",
+      "code": "2814",
+      "name": "佐藤食品工業",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-08-28T17:00:00+09:00",
+      "detail": {
+        "ratio": "2",
+        "effective_date": null,
+        "effective_date_raw": null,
+        "review_notified": true
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260827527450.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260827527450.pdf",
+      "source_title": "株式分割、配当予想の修正および株主優待制度の実質的拡充に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260827527450",
+          "relation": "source",
+          "title": "株式分割、配当予想の修正および株主優待制度の実質的拡充に関するお知らせ",
+          "announced_at": "2026-08-28T17:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260827527450.pdf",
           "market": "東証"
         }
       ]
