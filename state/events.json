@@ -918,7 +918,7 @@
         {
           "date": "2026-08-28",
           "label": "pricing_day+26bd",
-          "sent": false
+          "sent": true
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260714593697.pdf",
@@ -1203,7 +1203,7 @@
         {
           "date": "2026-08-28",
           "label": "effective-1bd",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-08-31",
@@ -2714,7 +2714,7 @@
         {
           "date": "2026-08-28",
           "label": "pricing_day+2",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-10-05",
