@@ -874,7 +874,15 @@
     "140120260828528131",
     "140120260831528280",
     "140120260826526596",
-    "140120260831528322"
+    "140120260831528322",
+    "140120260820523541",
+    "140120260831528292",
+    "140120260831528604",
+    "140120260828527914",
+    "140120260831528550",
+    "140120260831528551",
+    "140120260831528929",
+    "140120260831528420"
   ],
   "events": [
     {
@@ -2843,22 +2851,22 @@
       "detail": {
         "po_kind": "secondary",
         "source_stage": "announcement",
-        "size_oku": null,
+        "size_oku": 0.0,
         "size_oku_min": null,
         "size_oku_max": null,
-        "size_status": "unavailable",
-        "size_basis": null,
+        "size_status": "confirmed",
+        "size_basis": "開示資料記載額",
         "share_count": null,
         "oa_share_count": null,
         "price_min_yen": null,
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
+        "pricing_date": "2026-08-31",
+        "pricing_date_end": "2026-08-31",
         "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
+        "pricing_date_confirmed": true,
+        "pricing_date_status": "confirmed",
         "settlement_date": null,
         "settlement_date_end": null,
         "settlement_date_raw": null,
@@ -2866,15 +2874,40 @@
         "settlement_date_status": "unavailable",
         "parse_warnings": [],
         "missing_fields": [
-          "size",
           "dilution_pct",
-          "pricing_date",
           "settlement_date"
-        ]
+        ],
+        "latest_source_stage": "pricing"
       },
-      "schedule": [],
+      "schedule": [
+        {
+          "date": "2026-08-31",
+          "label": "pricing_day",
+          "sent": false
+        },
+        {
+          "date": "2026-09-01",
+          "label": "pricing_day+1",
+          "sent": false
+        },
+        {
+          "date": "2026-09-02",
+          "label": "pricing_day+2",
+          "sent": false
+        },
+        {
+          "date": "2026-10-08",
+          "label": "pricing_day+25bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-09",
+          "label": "pricing_day+26bd",
+          "sent": false
+        }
+      ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524159.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260821524159.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260831528420.pdf",
       "source_title": "株式の売出しに関するお知らせ",
       "related_disclosures": [
         {
@@ -2883,6 +2916,14 @@
           "title": "株式の売出しに関するお知らせ",
           "announced_at": "2026-08-21T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524159.pdf"
+        },
+        {
+          "id": "140120260831528420",
+          "relation": "pricing",
+          "title": "売出価格等の決定に関するお知らせ",
+          "announced_at": "2026-08-31T17:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260831528420.pdf",
+          "market": "東証"
         }
       ]
     },
@@ -3302,11 +3343,11 @@
       "detail": {
         "execution_date": null,
         "execution_date_raw": null,
-        "execution_date_confirmed": false
+        "execution_date_confirmed": true
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525454.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260825525454.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260831528929.pdf",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -3315,6 +3356,14 @@
           "title": "株式の立会外分売に関するお知らせ",
           "announced_at": "2026-08-25T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525454.pdf",
+          "market": "東証"
+        },
+        {
+          "id": "140120260831528929",
+          "relation": "execution",
+          "title": "株式の立会外分売実施に関するお知らせ",
+          "announced_at": "2026-08-31T16:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260831528929.pdf",
           "market": "東証"
         }
       ]
@@ -3784,6 +3833,123 @@
           "announced_at": "2026-08-28T19:10:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260828527929.pdf",
           "market": "東証"
+        }
+      ]
+    },
+    {
+      "id": "split-1718-2026-08-31",
+      "type": "split",
+      "code": "1718",
+      "name": "美樹工業",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-08-31T15:30:00+09:00",
+      "detail": {
+        "ratio": null,
+        "effective_date": "2026-10-01",
+        "effective_date_raw": "効力発生日 2026年10月1日 2. 株式分割に伴う定款の一部変更について (1) 定款変更の理由 今回の株式分割に伴い、会社法第 184 条第2項の規定に基づき、取締役会決議により 2026 年 10 月1日をもって当社定款第6条に定める発行可能株式総数を変更いたします。 (2) 定款変更の内容 （下線部分は変更箇所を示しております。） 現行定款 変更後"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-30",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260820523541.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260820523541.pdf",
+      "source_title": "株式分割及び定款の一部変更並びに配当予想の修正に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260820523541",
+          "relation": "source",
+          "title": "株式分割及び定款の一部変更並びに配当予想の修正に関するお知らせ",
+          "announced_at": "2026-08-31T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260820523541.pdf",
+          "market": "東証"
+        }
+      ]
+    },
+    {
+      "id": "split-5805-2026-08-31",
+      "type": "split",
+      "code": "5805",
+      "name": "ＳＷＣＣ",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-08-31T15:30:00+09:00",
+      "detail": {
+        "ratio": null,
+        "effective_date": "2026-10-01",
+        "effective_date_raw": "効力発生日 2026年10月1日（木） （3）その他 今回の株式分割に際しまして、資本金の額の変更はありません。 1 3.株式分割に伴う定款の一部変更 （1）変更の目的 今回の株式分割に伴い、会社法第184条第2項の規定に基づく取締役会決議により、2026年10月1 日（木）をもって、当社定款の一部を以下のとおり変更いたします。 （2）変更の内容 （下線:変"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-30",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260831528292.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260831528292.pdf",
+      "source_title": "「株式分割」、株式分割に伴う「定款の一部変更」および「配当予想の修正」に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260831528292",
+          "relation": "source",
+          "title": "「株式分割」、株式分割に伴う「定款の一部変更」および「配当予想の修正」に関するお知らせ",
+          "announced_at": "2026-08-31T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260831528292.pdf",
+          "market": "東証"
+        }
+      ]
+    },
+    {
+      "id": "split-4616-2026-08-31",
+      "type": "split",
+      "code": "4616",
+      "name": "川上塗料",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-08-31T16:00:00+09:00",
+      "detail": {
+        "ratio": "3",
+        "effective_date": "2026-12-01",
+        "effective_date_raw": "効力発生日（予定） 2026年 12月 1日（火曜日） 1 (3)その他 ①資本金の額について 今回の株式分割に際しまして、資本金の額の変更はありません。 ②2026年11月期の期末配当金について 株式分割の効力発生日は2026年12月1日であるため、2026年11月末日を基準日とする 2026年11月期の期末配当金につきましては、株式分割前の株式数を基準に"
+      },
+      "schedule": [
+        {
+          "date": "2026-11-30",
+          "label": "effective-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-12-01",
+          "label": "effective_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260831528550.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260831528550.pdf",
+      "source_title": "株式分割、株式分割に伴う定款の一部変更および株主優待制度の変更（拡充）に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260831528550",
+          "relation": "source",
+          "title": "株式分割、株式分割に伴う定款の一部変更および株主優待制度の変更（拡充）に関するお知らせ",
+          "announced_at": "2026-08-31T16:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260831528550.pdf",
+          "market": "東証・名証"
         }
       ]
     }
