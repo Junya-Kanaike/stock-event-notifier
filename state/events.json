@@ -1164,7 +1164,7 @@
         {
           "date": "2026-09-01",
           "label": "effective_day",
-          "sent": false
+          "sent": true
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260717596054.pdf",
@@ -1268,7 +1268,7 @@
         {
           "date": "2026-09-01",
           "label": "effective_day",
-          "sent": false
+          "sent": true
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260723598560.pdf",
@@ -2883,12 +2883,12 @@
         {
           "date": "2026-08-31",
           "label": "pricing_day",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-09-01",
           "label": "pricing_day+1",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-09-02",
@@ -3276,7 +3276,7 @@
         {
           "date": "2026-09-01",
           "label": "execution+5bd",
-          "sent": false
+          "sent": true
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525700.pdf",
@@ -3952,6 +3952,37 @@
           "market": "東証・名証"
         }
       ]
+    },
+    {
+      "id": "bunbai-9959-2026-09-01",
+      "type": "bunbai",
+      "code": "9959",
+      "name": "アシードホールディングス",
+      "market": "スタンダード",
+      "margin": "貸借",
+      "announced_at": "2026-09-01T10:18:36.147928+09:00",
+      "detail": {
+        "execution_date": "2026-09-01",
+        "execution_date_confirmed": true
+      },
+      "schedule": [
+        {
+          "date": "2026-08-31",
+          "label": "execution-1bd",
+          "sent": true
+        },
+        {
+          "date": "2026-09-01",
+          "label": "execution_day",
+          "sent": true
+        },
+        {
+          "date": "2026-09-08",
+          "label": "execution+5bd",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
     }
   ],
   "source_health": {
