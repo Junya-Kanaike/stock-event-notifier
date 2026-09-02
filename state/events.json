@@ -1156,7 +1156,10 @@
     "140120260902530593",
     "140120260819523263",
     "140120260819523269",
-    "140120260902530655"
+    "140120260902530655",
+    "140120260831529202",
+    "140120260901530234",
+    "140120260902530446"
   ],
   "events": [
     {
@@ -3359,7 +3362,7 @@
       "detail": {
         "po_kind": "secondary",
         "source_stage": "announcement",
-        "size_oku": 150.0,
+        "size_oku": 0.0,
         "size_oku_min": null,
         "size_oku_max": null,
         "size_status": "confirmed",
@@ -3370,11 +3373,11 @@
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
+        "pricing_date": "2026-09-02",
+        "pricing_date_end": "2026-09-02",
         "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
+        "pricing_date_confirmed": true,
+        "pricing_date_status": "confirmed",
         "settlement_date": null,
         "settlement_date_end": null,
         "settlement_date_raw": null,
@@ -3383,13 +3386,39 @@
         "parse_warnings": [],
         "missing_fields": [
           "dilution_pct",
-          "pricing_date",
           "settlement_date"
-        ]
+        ],
+        "latest_source_stage": "pricing"
       },
-      "schedule": [],
+      "schedule": [
+        {
+          "date": "2026-09-02",
+          "label": "pricing_day",
+          "sent": false
+        },
+        {
+          "date": "2026-09-03",
+          "label": "pricing_day+1",
+          "sent": false
+        },
+        {
+          "date": "2026-09-04",
+          "label": "pricing_day+2",
+          "sent": false
+        },
+        {
+          "date": "2026-10-13",
+          "label": "pricing_day+25bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-14",
+          "label": "pricing_day+26bd",
+          "sent": false
+        }
+      ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524618.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260821524618.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260831529202.pdf",
       "source_title": "株式の売出しに関するお知らせ",
       "related_disclosures": [
         {
@@ -3398,6 +3427,14 @@
           "title": "株式の売出しに関するお知らせ",
           "announced_at": "2026-08-24T16:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524618.pdf"
+        },
+        {
+          "id": "140120260831529202",
+          "relation": "pricing",
+          "title": "売出価格等の決定に関するお知らせ",
+          "announced_at": "2026-09-02T17:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260831529202.pdf",
+          "market": "東証"
         }
       ]
     },
