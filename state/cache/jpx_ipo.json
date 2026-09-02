@@ -1,7 +1,28 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-09-01T01:18:35.784763+00:00",
+  "fetched_at": "2026-09-02T00:15:32.359732+00:00",
   "data": [
+    {
+      "code": "640A",
+      "name": "（株）ASNOVA Companies *",
+      "market": "グロース",
+      "listing_date": "2026-10-01",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "code": "641A",
+      "name": "NOK Group（株） *",
+      "market": "プライム",
+      "listing_date": "2026-10-01",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "code": "642A",
+      "name": "キューデンホールディングス（株） *",
+      "market": "プライム",
+      "listing_date": "2026-10-01",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
     {
       "code": "634A",
       "name": "（株）レイヤード",
