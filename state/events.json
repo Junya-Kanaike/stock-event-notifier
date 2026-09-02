@@ -4412,8 +4412,8 @@
   ],
   "source_health": {
     "tdnet": {
-      "last_checked_date": "2026-09-01",
-      "last_success_date": "2026-09-01",
+      "last_checked_date": "2026-09-02",
+      "last_success_date": "2026-09-02",
       "consecutive_empty_days": 0
     }
   }
