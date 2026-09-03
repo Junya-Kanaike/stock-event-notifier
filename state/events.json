@@ -3064,7 +3064,7 @@
         {
           "date": "2026-09-03",
           "label": "pricing_day+2",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-10-09",
@@ -3394,12 +3394,12 @@
         {
           "date": "2026-09-02",
           "label": "pricing_day",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-09-03",
           "label": "pricing_day+1",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-09-04",
@@ -3804,7 +3804,7 @@
         {
           "date": "2026-09-03",
           "label": "pricing_day+2",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-10-09",
