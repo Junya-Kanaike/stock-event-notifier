@@ -3462,7 +3462,7 @@
         {
           "date": "2026-09-04",
           "label": "pricing_day+2",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-10-13",
