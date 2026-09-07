@@ -1253,7 +1253,20 @@
     "140120260904531846",
     "140120260901529552",
     "140120260907532288",
-    "140120260904532085"
+    "140120260904532085",
+    "140120260904532009",
+    "140120260904531771",
+    "140120260901530076",
+    "140120260907532226",
+    "140120260903531140",
+    "140120260904531574",
+    "140120260907532216",
+    "140120260907532217",
+    "140120260907532385",
+    "140120260907532410",
+    "140120260907532428",
+    "140120260907532493",
+    "140120260907532411"
   ],
   "events": [
     {
@@ -4649,6 +4662,61 @@
           "announced_at": "2026-09-02T16:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260902530592.pdf",
           "market": "東証"
+        }
+      ]
+    },
+    {
+      "id": "po-9334-2026-09-07",
+      "type": "po",
+      "code": "9334",
+      "name": "アイビスホールディングス",
+      "market": "PRO Market",
+      "margin": "対象外",
+      "announced_at": "2026-09-07T16:15:00+09:00",
+      "detail": {
+        "po_kind": "both",
+        "source_stage": "announcement",
+        "size_oku": null,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "unavailable",
+        "size_basis": null,
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": null,
+        "pricing_date_end": null,
+        "pricing_date_raw": null,
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "unavailable",
+        "settlement_date": null,
+        "settlement_date_end": null,
+        "settlement_date_raw": null,
+        "settlement_estimated": false,
+        "settlement_date_status": "unavailable",
+        "parse_warnings": [],
+        "missing_fields": [
+          "size",
+          "dilution_pct",
+          "pricing_date",
+          "settlement_date"
+        ]
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260907532411.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260907532411.pdf",
+      "source_title": "募集株式発行及び株式売出しに関する取締役会決議のお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260907532411",
+          "relation": "source",
+          "title": "募集株式発行及び株式売出しに関する取締役会決議のお知らせ",
+          "announced_at": "2026-09-07T16:15:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260907532411.pdf",
+          "market": "東証・福証"
         }
       ]
     }
