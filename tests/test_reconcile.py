@@ -31,9 +31,11 @@ class ReconcileStateTest(unittest.TestCase):
 
     def test_consolidates_bunbai_po_and_split_updates_and_preserves_sent_flags(self):
         bunbai_original = self.event("bunbai-1", "bunbai", "4073", "株式の立会外分売に関するお知らせ")
+        bunbai_original.update({"market": "グロース", "margin": "信用"})
         bunbai_original["detail"] = {"execution_date": "2026-08-24", "execution_date_confirmed": False}
         bunbai_original["schedule"] = [{"date": "2026-08-24", "label": "execution_day", "sent": True}]
         bunbai_update = self.event("bunbai-2", "bunbai", "4073", "株式の立会外分売終了に関するお知らせ", "2026-08-24")
+        bunbai_update.update({"market": "グロース", "margin": "信用"})
         bunbai_update["detail"] = {"execution_date": "2026-08-24", "execution_date_confirmed": True}
         bunbai_update["schedule"] = [{"date": "2026-08-24", "label": "execution_day", "sent": False}]
 

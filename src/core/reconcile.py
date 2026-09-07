@@ -6,6 +6,7 @@ from typing import Any
 
 from src.collectors.tdnet import classify_title
 from src.core.po import merge_po_details, refresh_po_missing_fields
+from src.core.eligibility import apply_eligibility
 from src.core.scheduler import build_bunbai_schedule, build_po_schedule, build_split_schedule
 from src.parsers.po_pdf import has_ambiguous_settlement_reference
 
@@ -16,13 +17,19 @@ UPDATE_MARKERS = ("訂正", "変更", "終了", "条件決定", "実施に関す
 def reconcile_event_state(state: dict[str, Any]) -> bool:
     """Remove known false positives and consolidate follow-up disclosures."""
     before = deepcopy(state.get("events", []))
+    previous_schema_version = state.get("schema_version", 1)
     events = [_sanitize_event(_reclassify_event(event)) for event in state.setdefault("events", [])]
     events = [event for event in events if _is_supported_event(event)]
     events = _merge_bunbai_duplicates(events)
     events = _merge_update_duplicates(events, "po")
     events = _merge_update_duplicates(events, "split")
+    for event in events:
+        apply_eligibility(event)
+        if event.get("eligibility", {}).get("status") != "eligible":
+            event["schedule"] = []
     state["events"] = events
-    return events != before
+    state["schema_version"] = 2
+    return events != before or previous_schema_version != 2
 
 
 def _reclassify_event(event: dict[str, Any]) -> dict[str, Any]:
@@ -56,6 +63,24 @@ def _sanitize_event(event: dict[str, Any]) -> dict[str, Any]:
         detail["ratio"] = None
         detail["recovery_needed"] = True
         detail["recovery_reason"] = "末尾0欠落の可能性がある1:1比率を再抽出"
+
+    if event.get("type") == "split":
+        if detail.get("review_notified"):
+            detail["pending_notified"] = True
+        for key in [
+            "record_date",
+            "ex_right_date",
+            "rights_final_date",
+            "rights_final_calculation_basis",
+            "rights_final_status",
+        ]:
+            detail.setdefault(key, None)
+        rights_final_date = detail.get("rights_final_date")
+        event["schedule"] = (
+            build_split_schedule(rights_final_date, old_schedule=event.get("schedule", []))
+            if rights_final_date and not detail.get("rights_date_conflict")
+            else []
+        )
 
     if event.get("type") == "po" and has_ambiguous_settlement_reference(detail.get("settlement_date_raw")):
         detail["settlement_date"] = None
@@ -174,10 +199,10 @@ def _merge_update_duplicates(events: list[dict[str, Any]], event_type: str) -> l
             for key, value in duplicate.get("detail", {}).items():
                 if value is not None:
                     primary_detail[key] = value
-            effective_date = primary_detail.get("effective_date")
-            if effective_date:
+            rights_final_date = primary_detail.get("rights_final_date")
+            if rights_final_date and not primary_detail.get("rights_date_conflict"):
                 primary["schedule"] = build_split_schedule(
-                    effective_date,
+                    rights_final_date,
                     old_schedule=_combined_schedule(primary.get("schedule", []), duplicate.get("schedule", [])),
                 )
         _merge_event_metadata(primary, duplicate)

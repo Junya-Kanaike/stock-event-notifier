@@ -1,9 +1,18 @@
-name: daily_morning
+name: timed_notifications
 
 on:
   schedule:
-    # JST daily 07:17. Weekend runs send only the system heartbeat.
-    - cron: "17 22 * * *"
+    # JST 07:50, 08:00, 08:10 on TSE business-day candidates.
+    - cron: "50 22 * * 0-4"
+    - cron: "0,10 23 * * 0-4"
+    # JST 11:50, 12:00, 12:10.
+    - cron: "50 2 * * 1-5"
+    - cron: "0,10 3 * * 1-5"
+    # JST 18:50, 19:00, 19:10.
+    - cron: "50 9 * * 1-5"
+    - cron: "0,10 10 * * 1-5"
+    # JST 20:10, after the final TDnet poll, for the once-daily system summary.
+    - cron: "10 11 * * 1-5"
   workflow_dispatch:
 
 permissions:
@@ -14,7 +23,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  daily:
+  notify:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
@@ -28,15 +37,15 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
         with:
           python-version: "3.12"
           cache: pip
       - name: Install dependencies
         run: python -m pip install --disable-pip-version-check -r requirements.txt
-      - name: Send daily notifications
-        run: python -m src.run_daily
+      - name: Send time-gated notifications
+        run: python -m src.run_daily --notifications-only
       - name: Commit state changes
         if: always()
         run: bash scripts/commit_state.sh

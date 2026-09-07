@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 from copy import deepcopy
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any, Callable
 
@@ -10,7 +10,7 @@ from typing import Any, Callable
 REPO_ROOT = Path(__file__).resolve().parents[2]
 STATE_PATH = REPO_ROOT / "state" / "events.json"
 ARCHIVE_DIR = REPO_ROOT / "state" / "archive"
-DEFAULT_STATE: dict[str, Any] = {"notified_ids": [], "events": []}
+DEFAULT_STATE: dict[str, Any] = {"schema_version": 2, "notified_ids": [], "events": []}
 
 
 def load_state(path: Path | str = STATE_PATH) -> dict[str, Any]:
@@ -21,6 +21,7 @@ def load_state(path: Path | str = STATE_PATH) -> dict[str, Any]:
         data = json.load(fh)
     data.setdefault("notified_ids", [])
     data.setdefault("events", [])
+    data.setdefault("schema_version", 1)
     if not isinstance(data["notified_ids"], list) or not isinstance(data["events"], list):
         raise ValueError("Invalid event state schema")
     return data
@@ -165,6 +166,36 @@ def record_source_result(
     return True, should_alert
 
 
+def record_source_success(state: dict[str, Any], source: str, succeeded_at: datetime) -> bool:
+    health = state.setdefault("source_health", {})
+    previous = health.get(source, {})
+    current = dict(previous)
+    current["last_success_date"] = succeeded_at.date().isoformat()
+    current["last_success_at"] = succeeded_at.isoformat()
+    if current == previous:
+        return False
+    health[source] = current
+    return True
+
+
+def record_notification_counts(
+    state: dict[str, Any], day: date, *, success_count: int, failure_count: int
+) -> bool:
+    if not success_count and not failure_count:
+        return False
+    stats = state.setdefault("notification_stats", {})
+    key = day.isoformat()
+    previous = stats.get(key, {})
+    current = {
+        "success": int(previous.get("success", 0)) + success_count,
+        "failure": int(previous.get("failure", 0)) + failure_count,
+    }
+    stats[key] = current
+    for stale_key in sorted(stats)[:-45]:
+        stats.pop(stale_key, None)
+    return current != previous
+
+
 def archive_completed_events(
     state: dict[str, Any],
     as_of: date,
@@ -179,7 +210,14 @@ def archive_completed_events(
     for event in state.get("events", []):
         schedule = event.get("schedule", [])
         dates = [date.fromisoformat(item["date"]) for item in schedule if item.get("date")]
-        if dates and all(item.get("sent") for item in schedule) and max(dates) < cutoff:
+        try:
+            announced = date.fromisoformat(str(event.get("announced_at", ""))[:10])
+        except ValueError:
+            announced = None
+        terminal = event.get("eligibility", {}).get("status") == "excluded" or event.get("detail", {}).get("canceled")
+        if (dates and all(item.get("sent") for item in schedule) and max(dates) < cutoff) or (
+            terminal and announced and announced < cutoff
+        ):
             completed.append(event)
         else:
             retained.append(event)
@@ -192,7 +230,10 @@ def archive_completed_events(
     by_year: dict[int, list[dict[str, Any]]] = {}
     for event in completed:
         schedule_dates = [date.fromisoformat(item["date"]) for item in event.get("schedule", []) if item.get("date")]
-        year = max(schedule_dates).year
+        if schedule_dates:
+            year = max(schedule_dates).year
+        else:
+            year = date.fromisoformat(str(event.get("announced_at"))[:10]).year
         by_year.setdefault(year, []).append(event)
 
     for year, events in by_year.items():
