@@ -23,6 +23,7 @@ class TdnetKeywordTest(unittest.TestCase):
         self.assertFalse(is_po_title("譲渡制限付株式報酬としての新株式発行に関するお知らせ"))
         self.assertNotIn("po", classify_title("発行価格及び売出価格等の決定に関するお知らせ"))
         self.assertIn("po_pricing", classify_title("発行価格及び売出価格等の決定に関するお知らせ"))
+        self.assertNotIn("po", classify_title("海外募集による新株式発行の払込完了に関するお知らせ"))
 
     def test_po_does_not_match_non_equity_uses_of_public_offering(self):
         false_positive_titles = [
@@ -79,6 +80,9 @@ class TdnetKeywordTest(unittest.TestCase):
         ]
         for title in titles:
             self.assertIn("split", classify_title(title), title)
+
+    def test_split_related_notice_is_not_a_new_split_event(self):
+        self.assertNotIn("split", classify_title("株式分割に伴う配当予想の修正に関するお知らせ"))
 
     def test_bunbai_titles(self):
         titles = [

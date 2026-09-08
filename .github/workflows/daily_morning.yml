@@ -2,8 +2,8 @@ name: daily_morning
 
 on:
   schedule:
-    # JST daily 07:17. Weekend runs send only the system heartbeat.
-    - cron: "17 22 * * *"
+    # JST daily 05:37. The long pre-open buffer absorbs hosted-runner delays.
+    - cron: "37 20 * * *"
   workflow_dispatch:
 
 permissions:

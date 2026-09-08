@@ -72,14 +72,20 @@ def first_date_near_keywords(
     fallback_any: bool = True,
 ) -> tuple[date | None, str | None]:
     normalized = clean_text(text)
-    for keyword in keywords:
-        pos = normalized.find(keyword)
-        if pos < 0:
-            continue
-        snippet = normalized[pos : pos + window]
-        dates = find_dates(snippet, default_year=default_year)
-        if dates:
-            return dates[0], snippet
+    candidates = [normalized]
+    compact = re.sub(r"\s+", "", normalized)
+    if compact != normalized:
+        candidates.append(compact)
+    for candidate in candidates:
+        for keyword in keywords:
+            compact_keyword = re.sub(r"\s+", "", keyword)
+            pos = candidate.find(compact_keyword)
+            if pos < 0:
+                continue
+            snippet = candidate[pos : pos + window]
+            dates = find_dates(snippet, default_year=default_year)
+            if dates:
+                return dates[0], snippet
     if fallback_any:
         dates = find_dates(normalized, default_year=default_year)
         return (dates[0], None) if dates else (None, None)

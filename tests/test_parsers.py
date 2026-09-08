@@ -30,7 +30,7 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(detail["dilution_pct"], 8.3)
         self.assertEqual(detail["pricing_date"], "2026-07-08")
         self.assertEqual(detail["pricing_date_end"], "2026-07-10")
-        self.assertEqual(detail["settlement_date"], "2026-07-16")
+        self.assertEqual(detail["settlement_date"], "2026-07-15")
         self.assertTrue(detail["settlement_estimated"])
 
     def test_split_parser_extracts_ratio_and_effective_date(self):
@@ -110,6 +110,31 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(detail["pricing_date_status"], "confirmed")
         self.assertEqual(detail["settlement_date"], "2026-08-21")
         self.assertEqual(detail["settlement_date_status"], "provisional")
+
+    def test_central_automotive_spaced_table_extracts_total_dates_and_amount(self):
+        announcement = (FIXTURE_DIR / "8117_announcement_20260828.txt").read_text(encoding="utf-8")
+        detail = parse_po_details("株式の売出しに関するお知らせ", announcement, date(2026, 8, 28))
+        self.assertEqual(detail["secondary_sale_shares"], 3_548_600)
+        self.assertEqual(detail["oa_shares"], 532_200)
+        self.assertEqual(detail["total_offered_shares"], 4_080_800)
+        self.assertEqual(detail["pricing_date"], "2026-09-07")
+        self.assertEqual(detail["pricing_date_end"], "2026-09-10")
+        self.assertEqual(detail["settlement_date"], "2026-09-14")
+
+        pricing = (FIXTURE_DIR / "8117_pricing_20260907.txt").read_text(encoding="utf-8")
+        decided = parse_po_details("売出価格等の決定に関するお知らせ", pricing, date(2026, 9, 7))
+        self.assertEqual(decided["size_oku"], 87.08)
+        self.assertEqual(decided["offer_price_yen"], 2_134)
+        self.assertEqual(decided["settlement_date"], "2026-09-14")
+
+    def test_japan_airport_pricing_uses_explicit_settlement_date(self):
+        text = (FIXTURE_DIR / "9706_pricing_20260902.txt").read_text(encoding="utf-8")
+        detail = parse_po_details("売出価格等の決定に関するお知らせ", text, date(2026, 9, 2))
+        self.assertEqual(detail["size_oku"], 643.17)
+        self.assertEqual(detail["secondary_sale_shares"], 10_028_400)
+        self.assertEqual(detail["oa_shares"], 1_504_200)
+        self.assertEqual(detail["settlement_date"], "2026-09-09")
+        self.assertFalse(detail["settlement_estimated"])
 
 
 if __name__ == "__main__":

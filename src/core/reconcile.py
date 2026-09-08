@@ -99,11 +99,13 @@ def _sanitize_event(event: dict[str, Any]) -> dict[str, Any]:
 def _is_supported_event(event: dict[str, Any]) -> bool:
     event_type = event.get("type")
     title = event.get("source_title") or ""
-    if event_type not in {"po", "cb"} or not title:
+    if event_type not in {"po", "cb", "split"} or not title:
         return True
     classes = classify_title(title)
     if event_type == "po":
         return bool({"po", "po_pricing", "po_correction"} & classes)
+    if event_type == "split":
+        return "split" in classes
     return "cb" in classes
 
 

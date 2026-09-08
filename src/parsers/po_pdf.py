@@ -16,9 +16,12 @@ SIZE_LABELS = [
     "払込金額（発行価額）の総額",
     "売出価額の総額",
     "売出価額総額",
-    "オーバーアロットメント",
-    "OA",
-    "ＯＡ",
+    "発行価格の総額",
+    "発行価格総額",
+    "募集価格の総額",
+    "募集価格総額",
+    "売出価格の総額",
+    "売出価格総額",
 ]
 SHARE_PATTERN = re.compile(r"([0-9][0-9,]*)\s*(?:株|口)")
 
@@ -46,17 +49,20 @@ def amount_to_oku(number: str, unit: str) -> float:
 
 
 def extract_size_oku(text: str) -> float | None:
-    normalized = clean_text(text)
+    normalized = re.sub(r"\s+", "", normalize_digits(text))
     amounts_by_span: dict[tuple[int, int], float] = {}
     for label in SIZE_LABELS:
-        start = normalized.find(label)
-        if start < 0:
-            continue
-        snippet = normalized[start : start + 160]
-        match = AMOUNT_PATTERN.search(snippet)
-        if match:
-            span = (start + match.start(), start + match.end())
-            amounts_by_span[span] = amount_to_oku(match.group(1), match.group(2))
+        start = 0
+        while True:
+            position = normalized.find(label, start)
+            if position < 0:
+                break
+            snippet = normalized[position + len(label) : position + len(label) + 80]
+            match = AMOUNT_PATTERN.search(snippet)
+            if match:
+                span = (position + len(label) + match.start(), position + len(label) + match.end())
+                amounts_by_span[span] = amount_to_oku(match.group(1), match.group(2))
+            start = position + len(label)
 
     if amounts_by_span:
         return round(sum(amounts_by_span.values()), 2)
@@ -182,6 +188,15 @@ def _shares_after_labels(compact: str, labels: list[str], *, window: int = 220) 
 
 
 def _secondary_sale_shares(compact: str) -> int | None:
+    # pdfplumber may emit a two-column heading as
+    # "売出株式の <value> 種類及び数".  Capture that total before
+    # scanning shareholder rows, whose first value is not the offering total.
+    heading_total = re.search(
+        r"売出株式の(?:当社)?(?:普通)?株式([0-9][0-9,]*)株種類及び数",
+        compact,
+    )
+    if heading_total:
+        return int(heading_total.group(1).replace(",", ""))
     labels = [
         "売出株式数",
         "売出株式の種類及び数",
@@ -322,7 +337,7 @@ def parse_po_details(
 
     settlement_estimated = False
     if pricing_date and not settlement_date and not settlement_reference_only:
-        settlement_date = add_business_days(pricing_date, 6)
+        settlement_date = add_business_days(pricing_date, 5)
         settlement_estimated = True
 
     po_kind = classify_po_kind(title, text)
@@ -357,6 +372,7 @@ def parse_po_details(
 
     dilution_pct = extract_dilution_pct(text)
     details: dict[str, Any] = {
+        "parser_version": 2,
         "po_kind": po_kind,
         "source_stage": source_stage,
         "size_oku": size_oku,

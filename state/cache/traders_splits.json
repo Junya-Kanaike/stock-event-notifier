@@ -1,0 +1,2662 @@
+{
+  "cache_version": 1,
+  "fetched_at": "2026-09-08T14:13:22.916861+00:00",
+  "data": {
+    "1570": [
+      {
+        "code": "1570",
+        "name": "ＮＦ日経レハ",
+        "rights_final_date": "2027-02-24",
+        "ratio": "50",
+        "effective_date": "2027-03-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1591": [
+      {
+        "code": "1591",
+        "name": "ＮＦＪＰＸ４００",
+        "rights_final_date": "2027-01-27",
+        "ratio": "100",
+        "effective_date": "2027-02-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1577": [
+      {
+        "code": "1577",
+        "name": "ＮＦ高配７０",
+        "rights_final_date": "2027-01-27",
+        "ratio": "200",
+        "effective_date": "2027-02-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6465": [
+      {
+        "code": "6465",
+        "name": "ホシザキ",
+        "rights_final_date": "2026-12-28",
+        "ratio": "2",
+        "effective_date": "2027-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8976": [
+      {
+        "code": "8976",
+        "name": "大和オフィス",
+        "rights_final_date": "2026-11-26",
+        "ratio": "4",
+        "effective_date": "2026-12-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4616": [
+      {
+        "code": "4616",
+        "name": "川上塗",
+        "rights_final_date": "2026-11-26",
+        "ratio": "3",
+        "effective_date": "2026-12-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1546": [
+      {
+        "code": "1546",
+        "name": "ＮＦダウヘ無",
+        "rights_final_date": "2026-11-02",
+        "ratio": "400",
+        "effective_date": "2026-11-06",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1328": [
+      {
+        "code": "1328",
+        "name": "ＮＦ金価格",
+        "rights_final_date": "2026-10-28",
+        "ratio": "50",
+        "effective_date": "2026-11-02",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1321": [
+      {
+        "code": "1321",
+        "name": "ＮＦＮＫ２２５",
+        "rights_final_date": "2026-10-02",
+        "ratio": "100",
+        "effective_date": "2026-10-07",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "278A": [
+      {
+        "code": "278A",
+        "name": "テラドローン",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9987": [
+      {
+        "code": "9987",
+        "name": "スズケン",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9956": [
+      {
+        "code": "9956",
+        "name": "バローＨＤ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9068": [
+      {
+        "code": "9068",
+        "name": "丸全運",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9065": [
+      {
+        "code": "9065",
+        "name": "山　九",
+        "rights_final_date": "2026-09-28",
+        "ratio": "5",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8766": [
+      {
+        "code": "8766",
+        "name": "東京海上",
+        "rights_final_date": "2026-09-28",
+        "ratio": "15",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8551": [
+      {
+        "code": "8551",
+        "name": "北日銀",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8388": [
+      {
+        "code": "8388",
+        "name": "阿波銀",
+        "rights_final_date": "2026-09-28",
+        "ratio": "5",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8377": [
+      {
+        "code": "8377",
+        "name": "ほくほく",
+        "rights_final_date": "2026-09-28",
+        "ratio": "10",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8370": [
+      {
+        "code": "8370",
+        "name": "紀陽銀行",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8361": [
+      {
+        "code": "8361",
+        "name": "大垣銀",
+        "rights_final_date": "2026-09-28",
+        "ratio": "5",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8360": [
+      {
+        "code": "8360",
+        "name": "山梨銀",
+        "rights_final_date": "2026-09-28",
+        "ratio": "5",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8343": [
+      {
+        "code": "8343",
+        "name": "秋田銀",
+        "rights_final_date": "2026-09-28",
+        "ratio": "5",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8316": [
+      {
+        "code": "8316",
+        "name": "三井住友",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8174": [
+      {
+        "code": "8174",
+        "name": "日ガス",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8084": [
+      {
+        "code": "8084",
+        "name": "ＲＹＯＤＥＮ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8035": [
+      {
+        "code": "8035",
+        "name": "東エレク",
+        "rights_final_date": "2026-09-28",
+        "ratio": "5",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7988": [
+      {
+        "code": "7988",
+        "name": "ニフコ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7911": [
+      {
+        "code": "7911",
+        "name": "ＴＯＰＰＡＮＨＤ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7433": [
+      {
+        "code": "7433",
+        "name": "伯　東",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7282": [
+      {
+        "code": "7282",
+        "name": "豊田合",
+        "rights_final_date": "2026-09-28",
+        "ratio": "5",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7242": [
+      {
+        "code": "7242",
+        "name": "カヤバ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6622": [
+      {
+        "code": "6622",
+        "name": "ダイヘン",
+        "rights_final_date": "2026-09-28",
+        "ratio": "5",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6379": [
+      {
+        "code": "6379",
+        "name": "レイズネクスト",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6368": [
+      {
+        "code": "6368",
+        "name": "オルガノ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "5",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6135": [
+      {
+        "code": "6135",
+        "name": "牧野フ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "5",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5805": [
+      {
+        "code": "5805",
+        "name": "ＳＷＣＣ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "5",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5706": [
+      {
+        "code": "5706",
+        "name": "三井金属",
+        "rights_final_date": "2026-09-28",
+        "ratio": "10",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5334": [
+      {
+        "code": "5334",
+        "name": "特殊陶",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5232": [
+      {
+        "code": "5232",
+        "name": "住阪セメ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4471": [
+      {
+        "code": "4471",
+        "name": "三洋化",
+        "rights_final_date": "2026-09-28",
+        "ratio": "4",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4062": [
+      {
+        "code": "4062",
+        "name": "イビデン",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      },
+      {
+        "code": "4062",
+        "name": "イビデン",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3932": [
+      {
+        "code": "3932",
+        "name": "アカツキ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3106": [
+      {
+        "code": "3106",
+        "name": "クラボウ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "5",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3099": [
+      {
+        "code": "3099",
+        "name": "ミツコシイセタン",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "285A": [
+      {
+        "code": "285A",
+        "name": "キオクシアＨＤ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2282": [
+      {
+        "code": "2282",
+        "name": "日本ハム",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2108": [
+      {
+        "code": "2108",
+        "name": "甜菜糖",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1926": [
+      {
+        "code": "1926",
+        "name": "ライト工",
+        "rights_final_date": "2026-09-28",
+        "ratio": "4",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1925": [
+      {
+        "code": "1925",
+        "name": "大和ハウス",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1815": [
+      {
+        "code": "1815",
+        "name": "鉄建建設",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9687": [
+      {
+        "code": "9687",
+        "name": "ＫＳＫ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9074": [
+      {
+        "code": "9074",
+        "name": "日石輸",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7716": [
+      {
+        "code": "7716",
+        "name": "ナカニシ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6627": [
+      {
+        "code": "6627",
+        "name": "テラプロ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "5",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4762": [
+      {
+        "code": "4762",
+        "name": "エックスネット",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4746": [
+      {
+        "code": "4746",
+        "name": "東計電算",
+        "rights_final_date": "2026-09-28",
+        "ratio": "4",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4667": [
+      {
+        "code": "4667",
+        "name": "アイサンテクノロ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2469": [
+      {
+        "code": "2469",
+        "name": "ヒビノ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1965": [
+      {
+        "code": "1965",
+        "name": "テクノ菱和",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1718": [
+      {
+        "code": "1718",
+        "name": "美樹工業",
+        "rights_final_date": "2026-09-28",
+        "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5979": [
+      {
+        "code": "5979",
+        "name": "カネソウ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2814": [
+      {
+        "code": "2814",
+        "name": "佐藤食",
+        "rights_final_date": "2026-09-11",
+        "ratio": "2",
+        "effective_date": "2026-09-16",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "249A": [
+      {
+        "code": "249A",
+        "name": "ヒューマンＡ",
+        "rights_final_date": "2026-08-31",
+        "ratio": "5",
+        "effective_date": "2026-09-03",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9279": [
+      {
+        "code": "9279",
+        "name": "ギフトＨＤ",
+        "rights_final_date": "2026-08-27",
+        "ratio": "2",
+        "effective_date": "2026-09-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8011": [
+      {
+        "code": "8011",
+        "name": "三陽商",
+        "rights_final_date": "2026-08-27",
+        "ratio": "3",
+        "effective_date": "2026-09-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7649": [
+      {
+        "code": "7649",
+        "name": "スギＨＤ",
+        "rights_final_date": "2026-08-27",
+        "ratio": "2",
+        "effective_date": "2026-09-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6834": [
+      {
+        "code": "6834",
+        "name": "精工技研",
+        "rights_final_date": "2026-08-27",
+        "ratio": "5",
+        "effective_date": "2026-09-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9900": [
+      {
+        "code": "9900",
+        "name": "サガミＨＤ",
+        "rights_final_date": "2026-08-26",
+        "ratio": "2",
+        "effective_date": "2026-08-31",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9334": [
+      {
+        "code": "9334",
+        "name": "アイビスＨＤ",
+        "rights_final_date": "2026-07-29",
+        "ratio": "2",
+        "effective_date": "2026-08-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4380": [
+      {
+        "code": "4380",
+        "name": "Ｍマート",
+        "rights_final_date": "2026-07-29",
+        "ratio": "2",
+        "effective_date": "2026-08-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8309": [
+      {
+        "code": "8309",
+        "name": "三住トラスト",
+        "rights_final_date": "2026-07-29",
+        "ratio": "4",
+        "effective_date": "2026-08-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3193": [
+      {
+        "code": "3193",
+        "name": "エターナルホスヒ",
+        "rights_final_date": "2026-07-29",
+        "ratio": "2",
+        "effective_date": "2026-08-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2163": [
+      {
+        "code": "2163",
+        "name": "アルトナー",
+        "rights_final_date": "2026-07-29",
+        "ratio": "2",
+        "effective_date": "2026-08-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7678": [
+      {
+        "code": "7678",
+        "name": "あさくま",
+        "rights_final_date": "2026-07-29",
+        "ratio": "2",
+        "effective_date": "2026-08-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6863": [
+      {
+        "code": "6863",
+        "name": "ニレコ",
+        "rights_final_date": "2026-07-29",
+        "ratio": "3",
+        "effective_date": "2026-08-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2961": [
+      {
+        "code": "2961",
+        "name": "日本調理",
+        "rights_final_date": "2026-07-29",
+        "ratio": "4",
+        "effective_date": "2026-08-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9388": [
+      {
+        "code": "9388",
+        "name": "パパネッツ",
+        "rights_final_date": "2026-07-29",
+        "ratio": "2",
+        "effective_date": "2026-08-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2869": [
+      {
+        "code": "2869",
+        "name": "ｉＦナ１００ダ",
+        "rights_final_date": "2026-07-02",
+        "ratio": "25",
+        "effective_date": "2026-07-07",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2237": [
+      {
+        "code": "2237",
+        "name": "ｉＦ５００ダ",
+        "rights_final_date": "2026-07-02",
+        "ratio": "50",
+        "effective_date": "2026-07-07",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7132": [
+      {
+        "code": "7132",
+        "name": "フローバル",
+        "rights_final_date": "2026-06-26",
+        "ratio": "3",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7409": [
+      {
+        "code": "7409",
+        "name": "ＡｅｒｏＥｄｇｅ",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      },
+      {
+        "code": "7409",
+        "name": "ＡｅｒｏＥｄｇｅ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "3",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7069": [
+      {
+        "code": "7069",
+        "name": "サイババズ",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "378A": [
+      {
+        "code": "378A",
+        "name": "ヒット",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "325A": [
+      {
+        "code": "325A",
+        "name": "ＴＥＮＴＩＡＬ",
+        "rights_final_date": "2026-06-26",
+        "ratio": "3",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2986": [
+      {
+        "code": "2986",
+        "name": "ＬＡＨＤ",
+        "rights_final_date": "2026-06-26",
+        "ratio": "3",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8818": [
+      {
+        "code": "8818",
+        "name": "京阪神ビ",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8053": [
+      {
+        "code": "8053",
+        "name": "住友商",
+        "rights_final_date": "2026-06-26",
+        "ratio": "4",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7846": [
+      {
+        "code": "7846",
+        "name": "パイロット",
+        "rights_final_date": "2026-06-26",
+        "ratio": "3",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7236": [
+      {
+        "code": "7236",
+        "name": "ティラド",
+        "rights_final_date": "2026-06-26",
+        "ratio": "10",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7173": [
+      {
+        "code": "7173",
+        "name": "きらぼし",
+        "rights_final_date": "2026-06-26",
+        "ratio": "8",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5802": [
+      {
+        "code": "5802",
+        "name": "住友電",
+        "rights_final_date": "2026-06-26",
+        "ratio": "4",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5801": [
+      {
+        "code": "5801",
+        "name": "古河電",
+        "rights_final_date": "2026-06-26",
+        "ratio": "10",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4641": [
+      {
+        "code": "4641",
+        "name": "アルプス技",
+        "rights_final_date": "2026-06-26",
+        "ratio": "3",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4452": [
+      {
+        "code": "4452",
+        "name": "花　王",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4099": [
+      {
+        "code": "4099",
+        "name": "四国化ＨＤ",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3673": [
+      {
+        "code": "3673",
+        "name": "ブロドリーフ",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3563": [
+      {
+        "code": "3563",
+        "name": "Ｆ＆ＬＣ",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3176": [
+      {
+        "code": "3176",
+        "name": "三洋貿易",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3110": [
+      {
+        "code": "3110",
+        "name": "日東紡",
+        "rights_final_date": "2026-06-26",
+        "ratio": "5",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3091": [
+      {
+        "code": "3091",
+        "name": "ブロンコＢ",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2264": [
+      {
+        "code": "2264",
+        "name": "森永乳",
+        "rights_final_date": "2026-06-26",
+        "ratio": "4",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1899": [
+      {
+        "code": "1899",
+        "name": "福田組",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1663": [
+      {
+        "code": "1663",
+        "name": "Ｋ＆Ｏエナジー",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7781": [
+      {
+        "code": "7781",
+        "name": "平　山",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7462": [
+      {
+        "code": "7462",
+        "name": "ＣＡＰＩＴＡ",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7460": [
+      {
+        "code": "7460",
+        "name": "ヤ　　ギ",
+        "rights_final_date": "2026-06-26",
+        "ratio": "3",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7425": [
+      {
+        "code": "7425",
+        "name": "初穂商事",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6549": [
+      {
+        "code": "6549",
+        "name": "ディエムソリュ",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3277": [
+      {
+        "code": "3277",
+        "name": "サンセイランデ",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2436": [
+      {
+        "code": "2436",
+        "name": "共同ＰＲ",
+        "rights_final_date": "2026-06-26",
+        "ratio": "2",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9170": [
+      {
+        "code": "9170",
+        "name": "成友興業",
+        "rights_final_date": "2026-06-26",
+        "ratio": "3",
+        "effective_date": "2026-07-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2164": [
+      {
+        "code": "2164",
+        "name": "地域新聞",
+        "rights_final_date": "2026-06-23",
+        "ratio": "1.8",
+        "effective_date": "2026-06-26",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5840": [
+      {
+        "code": "5840",
+        "name": "日本総険",
+        "rights_final_date": "2026-06-10",
+        "ratio": "2",
+        "effective_date": "2026-06-13",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2559": [
+      {
+        "code": "2559",
+        "name": "ＭＸＳ世界",
+        "rights_final_date": "2026-06-04",
+        "ratio": "10",
+        "effective_date": "2026-06-09",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2558": [
+      {
+        "code": "2558",
+        "name": "ＭＸＳ米株",
+        "rights_final_date": "2026-06-04",
+        "ratio": "10",
+        "effective_date": "2026-06-09",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "485A": [
+      {
+        "code": "485A",
+        "name": "パワーエックス",
+        "rights_final_date": "2026-05-27",
+        "ratio": "3",
+        "effective_date": "2026-06-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4394": [
+      {
+        "code": "4394",
+        "name": "エクスモーション",
+        "rights_final_date": "2026-05-27",
+        "ratio": "2",
+        "effective_date": "2026-06-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6083": [
+      {
+        "code": "6083",
+        "name": "ＥＲＩ　ＨＤ",
+        "rights_final_date": "2026-05-27",
+        "ratio": "3",
+        "effective_date": "2026-06-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2303": [
+      {
+        "code": "2303",
+        "name": "ドーン",
+        "rights_final_date": "2026-05-27",
+        "ratio": "2",
+        "effective_date": "2026-06-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "353A": [
+      {
+        "code": "353A",
+        "name": "エレコミ",
+        "rights_final_date": "2026-05-27",
+        "ratio": "2",
+        "effective_date": "2026-06-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7485": [
+      {
+        "code": "7485",
+        "name": "岡谷鋼機",
+        "rights_final_date": "2026-05-27",
+        "ratio": "2",
+        "effective_date": "2026-06-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1545": [
+      {
+        "code": "1545",
+        "name": "ＮＦナスヘ無",
+        "rights_final_date": "2026-05-21",
+        "ratio": "200",
+        "effective_date": "2026-05-26",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4445": [
+      {
+        "code": "4445",
+        "name": "リビンＴ",
+        "rights_final_date": "2026-05-07",
+        "ratio": "2",
+        "effective_date": "2026-05-12",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "456A": [
+      {
+        "code": "456A",
+        "name": "ヒューマンメイト",
+        "rights_final_date": "2026-04-27",
+        "ratio": "4",
+        "effective_date": "2026-05-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "441A": [
+      {
+        "code": "441A",
+        "name": "Ｎ　Ｅ",
+        "rights_final_date": "2026-04-27",
+        "ratio": "2",
+        "effective_date": "2026-05-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "334A": [
+      {
+        "code": "334A",
+        "name": "ＶＰＪ",
+        "rights_final_date": "2026-04-27",
+        "ratio": "2",
+        "effective_date": "2026-05-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1436": [
+      {
+        "code": "1436",
+        "name": "グリーンエナシ",
+        "rights_final_date": "2026-04-27",
+        "ratio": "3",
+        "effective_date": "2026-05-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2695": [
+      {
+        "code": "2695",
+        "name": "くら寿司",
+        "rights_final_date": "2026-04-27",
+        "ratio": "2",
+        "effective_date": "2026-05-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1961": [
+      {
+        "code": "1961",
+        "name": "三機工",
+        "rights_final_date": "2026-04-27",
+        "ratio": "3",
+        "effective_date": "2026-05-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3804": [
+      {
+        "code": "3804",
+        "name": "システムディ",
+        "rights_final_date": "2026-04-27",
+        "ratio": "3",
+        "effective_date": "2026-05-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3565": [
+      {
+        "code": "3565",
+        "name": "アセンテック",
+        "rights_final_date": "2026-04-27",
+        "ratio": "3",
+        "effective_date": "2026-05-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6085": [
+      {
+        "code": "6085",
+        "name": "アーキテクツＳＪ",
+        "rights_final_date": "2026-04-21",
+        "ratio": "10",
+        "effective_date": "2026-04-24",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1367": [
+      {
+        "code": "1367",
+        "name": "ｉＦＴＰＸダ",
+        "rights_final_date": "2026-04-14",
+        "ratio": "25",
+        "effective_date": "2026-04-17",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1365": [
+      {
+        "code": "1365",
+        "name": "ｉＦ２２５ダ",
+        "rights_final_date": "2026-04-14",
+        "ratio": "25",
+        "effective_date": "2026-04-17",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1629": [
+      {
+        "code": "1629",
+        "name": "ＮＦ商社卸",
+        "rights_final_date": "2026-03-27",
+        "ratio": "500",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1306": [
+      {
+        "code": "1306",
+        "name": "ＮＦＴＯＰＩＸ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "10",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9562": [
+      {
+        "code": "9562",
+        "name": "ビジネスコー",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7685": [
+      {
+        "code": "7685",
+        "name": "ＢＵＹＳＥＬＬ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7376": [
+      {
+        "code": "7376",
+        "name": "ＢＣＣ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5834": [
+      {
+        "code": "5834",
+        "name": "ＳＢＩリーシンク",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "338A": [
+      {
+        "code": "338A",
+        "name": "Ｚｅｎｍｕ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "302A": [
+      {
+        "code": "302A",
+        "name": "ビースタイル",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9658": [
+      {
+        "code": "9658",
+        "name": "太田昭",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9533": [
+      {
+        "code": "9533",
+        "name": "邦ガス",
+        "rights_final_date": "2026-03-27",
+        "ratio": "4",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9008": [
+      {
+        "code": "9008",
+        "name": "京　王",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8393": [
+      {
+        "code": "8393",
+        "name": "宮崎銀",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8392": [
+      {
+        "code": "8392",
+        "name": "大分銀",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8386": [
+      {
+        "code": "8386",
+        "name": "百十四",
+        "rights_final_date": "2026-03-27",
+        "ratio": "4",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8367": [
+      {
+        "code": "8367",
+        "name": "南都銀",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8366": [
+      {
+        "code": "8366",
+        "name": "滋賀銀",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8345": [
+      {
+        "code": "8345",
+        "name": "岩手銀",
+        "rights_final_date": "2026-03-27",
+        "ratio": "4",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8341": [
+      {
+        "code": "8341",
+        "name": "七十七",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8336": [
+      {
+        "code": "8336",
+        "name": "武蔵銀",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8219": [
+      {
+        "code": "8219",
+        "name": "青山商",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8136": [
+      {
+        "code": "8136",
+        "name": "サンリオ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8078": [
+      {
+        "code": "8078",
+        "name": "阪和興",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8060": [
+      {
+        "code": "8060",
+        "name": "キヤノンＭＪ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8050": [
+      {
+        "code": "8050",
+        "name": "セイコーＧ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8012": [
+      {
+        "code": "8012",
+        "name": "長瀬産",
+        "rights_final_date": "2026-03-27",
+        "ratio": "4",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7735": [
+      {
+        "code": "7735",
+        "name": "スクリン",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7466": [
+      {
+        "code": "7466",
+        "name": "ＳＰＫ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7389": [
+      {
+        "code": "7389",
+        "name": "あいちＦＧ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7380": [
+      {
+        "code": "7380",
+        "name": "十六ＦＧ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7322": [
+      {
+        "code": "7322",
+        "name": "３３ＦＧ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "4",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7181": [
+      {
+        "code": "7181",
+        "name": "かんぽ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7012": [
+      {
+        "code": "7012",
+        "name": "川　重",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6745": [
+      {
+        "code": "6745",
+        "name": "ホーチキ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6454": [
+      {
+        "code": "6454",
+        "name": "マックス",
+        "rights_final_date": "2026-03-27",
+        "ratio": "4",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6264": [
+      {
+        "code": "6264",
+        "name": "マルマエ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6196": [
+      {
+        "code": "6196",
+        "name": "ストライクＧ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5803": [
+      {
+        "code": "5803",
+        "name": "フジクラ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "6",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5445": [
+      {
+        "code": "5445",
+        "name": "東京鉄",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5393": [
+      {
+        "code": "5393",
+        "name": "ニチアス",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5331": [
+      {
+        "code": "5331",
+        "name": "ノリタケ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4923": [
+      {
+        "code": "4923",
+        "name": "コ　タ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "1.05",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4709": [
+      {
+        "code": "4709",
+        "name": "ＩＤＨＤ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4368": [
+      {
+        "code": "4368",
+        "name": "扶桑化学",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "417A": [
+      {
+        "code": "417A",
+        "name": "ブルーゾーン",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4116": [
+      {
+        "code": "4116",
+        "name": "大日精",
+        "rights_final_date": "2026-03-27",
+        "ratio": "4",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4022": [
+      {
+        "code": "4022",
+        "name": "ラサ工",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4008": [
+      {
+        "code": "4008",
+        "name": "住精化",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3964": [
+      {
+        "code": "3964",
+        "name": "オークネット",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3465": [
+      {
+        "code": "3465",
+        "name": "ケイアイスター",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3443": [
+      {
+        "code": "3443",
+        "name": "川田ＴＥＣＨ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3104": [
+      {
+        "code": "3104",
+        "name": "富士紡ＨＤ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2602": [
+      {
+        "code": "2602",
+        "name": "日清オイリオ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2220": [
+      {
+        "code": "2220",
+        "name": "亀田菓",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1982": [
+      {
+        "code": "1982",
+        "name": "日比谷",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9763": [
+      {
+        "code": "9763",
+        "name": "丸建リース",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8046": [
+      {
+        "code": "8046",
+        "name": "丸藤パ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7887": [
+      {
+        "code": "7887",
+        "name": "南海プライ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7875": [
+      {
+        "code": "7875",
+        "name": "竹田ｉＰ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7305": [
+      {
+        "code": "7305",
+        "name": "新家工",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6676": [
+      {
+        "code": "6676",
+        "name": "ＢＵＦＦＡＬＯ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6675": [
+      {
+        "code": "6675",
+        "name": "サクサ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6227": [
+      {
+        "code": "6227",
+        "name": "ＡＩメカテック",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6226": [
+      {
+        "code": "6226",
+        "name": "守谷輸送",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5729": [
+      {
+        "code": "5729",
+        "name": "日精鉱",
+        "rights_final_date": "2026-03-27",
+        "ratio": "4",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5273": [
+      {
+        "code": "5273",
+        "name": "三谷セキ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "4",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3796": [
+      {
+        "code": "3796",
+        "name": "いい生活",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3712": [
+      {
+        "code": "3712",
+        "name": "情報企画",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2612": [
+      {
+        "code": "2612",
+        "name": "かどや",
+        "rights_final_date": "2026-03-27",
+        "ratio": "3",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2003": [
+      {
+        "code": "2003",
+        "name": "日東富士",
+        "rights_final_date": "2026-03-27",
+        "ratio": "4",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1909": [
+      {
+        "code": "1909",
+        "name": "日本ドライ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "4",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1847": [
+      {
+        "code": "1847",
+        "name": "イチケン",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1798": [
+      {
+        "code": "1798",
+        "name": "守谷商会",
+        "rights_final_date": "2026-03-27",
+        "ratio": "5",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1723": [
+      {
+        "code": "1723",
+        "name": "日本電技",
+        "rights_final_date": "2026-03-27",
+        "ratio": "4",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "242A": [
+      {
+        "code": "242A",
+        "name": "リプライオリテ",
+        "rights_final_date": "2026-03-27",
+        "ratio": "2",
+        "effective_date": "2026-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "329A": [
+      {
+        "code": "329A",
+        "name": "ジール",
+        "rights_final_date": "2026-03-09",
+        "ratio": "10",
+        "effective_date": "2026-03-12",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7946": [
+      {
+        "code": "7946",
+        "name": "光陽社",
+        "rights_final_date": "2026-03-04",
+        "ratio": "5",
+        "effective_date": "2026-03-08",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "370A": [
+      {
+        "code": "370A",
+        "name": "リバイブル",
+        "rights_final_date": "2026-02-25",
+        "ratio": "5",
+        "effective_date": "2026-03-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9602": [
+      {
+        "code": "9602",
+        "name": "東　宝",
+        "rights_final_date": "2026-02-25",
+        "ratio": "5",
+        "effective_date": "2026-03-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8273": [
+      {
+        "code": "8273",
+        "name": "イズミ",
+        "rights_final_date": "2026-02-25",
+        "ratio": "3",
+        "effective_date": "2026-03-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6590": [
+      {
+        "code": "6590",
+        "name": "芝浦メカ",
+        "rights_final_date": "2026-02-25",
+        "ratio": "5",
+        "effective_date": "2026-03-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4825": [
+      {
+        "code": "4825",
+        "name": "ＷＮＩウェザー",
+        "rights_final_date": "2026-02-25",
+        "ratio": "2",
+        "effective_date": "2026-03-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3612": [
+      {
+        "code": "3612",
+        "name": "ワールド",
+        "rights_final_date": "2026-02-25",
+        "ratio": "2",
+        "effective_date": "2026-03-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7608": [
+      {
+        "code": "7608",
+        "name": "エスケイ",
+        "rights_final_date": "2026-02-25",
+        "ratio": "2",
+        "effective_date": "2026-03-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8227": [
+      {
+        "code": "8227",
+        "name": "しまむら",
+        "rights_final_date": "2026-02-18",
+        "ratio": "3",
+        "effective_date": "2026-02-21",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3282": [
+      {
+        "code": "3282",
+        "name": "コンフォリア",
+        "rights_final_date": "2026-01-28",
+        "ratio": "3",
+        "effective_date": "2026-02-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7050": [
+      {
+        "code": "7050",
+        "name": "フロンティアＩ",
+        "rights_final_date": "2026-01-28",
+        "ratio": "2",
+        "effective_date": "2026-02-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4422": [
+      {
+        "code": "4422",
+        "name": "ＶＡＬＵＥＮＥＸ",
+        "rights_final_date": "2026-01-28",
+        "ratio": "3",
+        "effective_date": "2026-02-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "366A": [
+      {
+        "code": "366A",
+        "name": "ウェルネスＣ",
+        "rights_final_date": "2026-01-28",
+        "ratio": "2",
+        "effective_date": "2026-02-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2983": [
+      {
+        "code": "2983",
+        "name": "アールプランナ",
+        "rights_final_date": "2026-01-28",
+        "ratio": "2",
+        "effective_date": "2026-02-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8142": [
+      {
+        "code": "8142",
+        "name": "トーホー",
+        "rights_final_date": "2026-01-28",
+        "ratio": "3",
+        "effective_date": "2026-02-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2323": [
+      {
+        "code": "2323",
+        "name": "ｆｏｎｆｕｎ",
+        "rights_final_date": "2026-01-27",
+        "ratio": "3",
+        "effective_date": "2026-01-30",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8057": [
+      {
+        "code": "8057",
+        "name": "内田洋",
+        "rights_final_date": "2026-01-16",
+        "ratio": "5",
+        "effective_date": "2026-01-21",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7089": [
+      {
+        "code": "7089",
+        "name": "フォースタ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4811": [
+      {
+        "code": "4811",
+        "name": "ドリームアーツ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "3",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9984": [
+      {
+        "code": "9984",
+        "name": "ソフトバンクＧ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "4",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9757": [
+      {
+        "code": "9757",
+        "name": "船総研ＨＤ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9722": [
+      {
+        "code": "9722",
+        "name": "藤田観",
+        "rights_final_date": "2025-12-26",
+        "ratio": "5",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8830": [
+      {
+        "code": "8830",
+        "name": "住友不",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8179": [
+      {
+        "code": "8179",
+        "name": "ロイヤルＨＤ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8020": [
+      {
+        "code": "8020",
+        "name": "兼　　松",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "8001": [
+      {
+        "code": "8001",
+        "name": "伊藤忠",
+        "rights_final_date": "2025-12-26",
+        "ratio": "5",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7628": [
+      {
+        "code": "7628",
+        "name": "オーハシテクニカ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7609": [
+      {
+        "code": "7609",
+        "name": "ダイトロン",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7552": [
+      {
+        "code": "7552",
+        "name": "ハピネット",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6592": [
+      {
+        "code": "6592",
+        "name": "マブチ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6369": [
+      {
+        "code": "6369",
+        "name": "トーヨーカネツ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6328": [
+      {
+        "code": "6328",
+        "name": "荏原実業",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5262": [
+      {
+        "code": "5262",
+        "name": "日ヒューム",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5108": [
+      {
+        "code": "5108",
+        "name": "ブリヂストン",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4828": [
+      {
+        "code": "4828",
+        "name": "ビーエンジ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "5",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4812": [
+      {
+        "code": "4812",
+        "name": "電通総研",
+        "rights_final_date": "2025-12-26",
+        "ratio": "3",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4396": [
+      {
+        "code": "4396",
+        "name": "システムサポＨ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4183": [
+      {
+        "code": "4183",
+        "name": "三井化学",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3916": [
+      {
+        "code": "3916",
+        "name": "ＤＩＴ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3661": [
+      {
+        "code": "3661",
+        "name": "エムアップＨＤ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2501": [
+      {
+        "code": "2501",
+        "name": "サッポロビー",
+        "rights_final_date": "2025-12-26",
+        "ratio": "5",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2146": [
+      {
+        "code": "2146",
+        "name": "ＵＴ　ＧＲＯＵＰ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "15",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1980": [
+      {
+        "code": "1980",
+        "name": "ダイダン",
+        "rights_final_date": "2025-12-26",
+        "ratio": "3",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1414": [
+      {
+        "code": "1414",
+        "name": "ショーボンド",
+        "rights_final_date": "2025-12-26",
+        "ratio": "4",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1333": [
+      {
+        "code": "1333",
+        "name": "Ｕｍｉｏｓ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "3",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6772": [
+      {
+        "code": "6772",
+        "name": "コスモス電",
+        "rights_final_date": "2025-12-26",
+        "ratio": "5",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6648": [
+      {
+        "code": "6648",
+        "name": "かわでん",
+        "rights_final_date": "2025-12-26",
+        "ratio": "5",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6061": [
+      {
+        "code": "6061",
+        "name": "ユニバ園芸",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4976": [
+      {
+        "code": "4976",
+        "name": "ドライルーブ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "3",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4935": [
+      {
+        "code": "4935",
+        "name": "リベルタ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "5",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4635": [
+      {
+        "code": "4635",
+        "name": "東インキ",
+        "rights_final_date": "2025-12-26",
+        "ratio": "5",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4107": [
+      {
+        "code": "4107",
+        "name": "伊勢化",
+        "rights_final_date": "2025-12-26",
+        "ratio": "10",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3986": [
+      {
+        "code": "3986",
+        "name": "ビーブレイク",
+        "rights_final_date": "2025-12-26",
+        "ratio": "3",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2114": [
+      {
+        "code": "2114",
+        "name": "フジ日本",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5241": [
+      {
+        "code": "5241",
+        "name": "日本オーエー",
+        "rights_final_date": "2025-12-26",
+        "ratio": "2",
+        "effective_date": "2026-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ]
+  }
+}

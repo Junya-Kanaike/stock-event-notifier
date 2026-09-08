@@ -11,6 +11,7 @@ from src.collectors.jpx_ex_rights import CACHE_NAME as EX_RIGHTS_CACHE_NAME, fet
 from src.collectors.jpx_ipo import CACHE_NAME as IPO_CACHE_NAME, fetch_ipos
 from src.collectors.jpx_margin import CACHE_NAME as MARGIN_CACHE_NAME, fetch_margin, lookup_margin
 from src.collectors.jpx_master import CACHE_NAME as MASTER_CACHE_NAME, fetch_master, lookup_master
+from src.collectors.traders_split import CACHE_NAME as TRADERS_SPLIT_CACHE_NAME, fetch_traders_splits
 from src.collectors.utils import cache_fetched_at
 from src.core.bizday import add_business_days, as_date, is_business_day, now_jst, today_jst
 from src.core.eligibility import ELIGIBLE, PENDING
@@ -26,7 +27,7 @@ from src.core.store import (
 )
 from src.core.transitions import eligibility_transition, mark_transition_notified
 from src.notifiers.slack import SlackNotifier
-from src.run_poll import reconcile_split_ex_rights
+from src.run_poll import reconcile_split_ex_rights, reconcile_split_traders
 
 
 SYSTEM_SUMMARY_AFTER = time(20, 0)
@@ -106,6 +107,22 @@ def main(argv: list[str] | None = None) -> int:
     except Exception as exc:
         margin = {}
         failures.append(f"JPX信用区分取得失敗: {exc}")
+        notify_system_safely(notifier, failures[-1])
+
+    traders_cache_before = cache_fetched_at(TRADERS_SPLIT_CACHE_NAME)
+    try:
+        traders_splits = fetch_traders_splits(force=True)
+        changed |= record_cached_source_success(state, "traders_split", TRADERS_SPLIT_CACHE_NAME)
+        report_cache_refresh(
+            notifier,
+            "トレーダーズ・ウェブ株式分割",
+            TRADERS_SPLIT_CACHE_NAME,
+            traders_cache_before,
+            dry_run=args.dry_run,
+        )
+        changed |= reconcile_split_traders(state, traders_splits, notifier, as_of=target_date)
+    except Exception as exc:
+        failures.append(f"トレーダーズ・ウェブ株式分割取得失敗: {exc}")
         notify_system_safely(notifier, failures[-1])
 
     ex_rights_cache_before = cache_fetched_at(EX_RIGHTS_CACHE_NAME)
