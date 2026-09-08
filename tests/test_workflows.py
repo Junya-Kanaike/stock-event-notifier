@@ -17,7 +17,7 @@ class WorkflowConfigTest(unittest.TestCase):
     def test_daily_schedule_runs_early_and_keeps_manual_fallback(self):
         workflow = (REPO_ROOT / ".github" / "workflows" / "daily_morning.yml").read_text(encoding="utf-8")
 
-        self.assertIn('cron: "17 22 * * *"', workflow)
+        self.assertIn('cron: "37 20 * * *"', workflow)
         self.assertIn("workflow_dispatch:", workflow)
         self.assertNotIn("Run unit tests", workflow)
 
@@ -25,8 +25,7 @@ class WorkflowConfigTest(unittest.TestCase):
         workflow = (REPO_ROOT / ".github" / "workflows" / "timed_notifications.yml").read_text(encoding="utf-8")
 
         for cron in [
-            'cron: "50 22 * * 0-4"',
-            'cron: "0,10 23 * * 0-4"',
+            'cron: "3,23,43 21-23 * * 0-4"',
             'cron: "50 2 * * 1-5"',
             'cron: "0,10 3 * * 1-5"',
             'cron: "50 9 * * 1-5"',

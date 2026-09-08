@@ -39,7 +39,15 @@ PO_STOCK_CONTEXT_KEYWORDS = [
     "投資口の売出",
     "増資",
 ]
-PO_EXCLUDE_KEYWORDS = ["立会外分売", "株主割当", "行使価額修正条項", "第三者割当", "社債"]
+PO_EXCLUDE_KEYWORDS = [
+    "立会外分売",
+    "株主割当",
+    "行使価額修正条項",
+    "第三者割当",
+    "社債",
+    "払込完了",
+    "募集完了",
+]
 BUYBACK_KEYWORDS = ["自己株式の取得", "自己株式取得", "自己株式取得に係る事項"]
 
 
@@ -75,7 +83,7 @@ def classify_title(title: str) -> set[str]:
         classes.add("bunbai")
     if is_cb_title(normalized):
         classes.add("cb")
-    if "株式分割" in normalized:
+    if is_split_title(normalized):
         classes.add("split")
     if contains_buyback(normalized):
         classes.add("buyback")
@@ -139,6 +147,24 @@ def is_cb_title(title: str) -> bool:
     if any(marker in normalized for marker in ["転換価額の調整", "転換状況", "月間行使状況", "繰上償還"]):
         return False
     return any(marker in normalized for marker in ["発行に関する", "発行について", "発行決議", "発行条件"])
+
+
+def is_split_title(title: str) -> bool:
+    normalized = re.sub(r"\s+", "", title or "").replace("「", "").replace("」", "")
+    if "株式分割" not in normalized:
+        return False
+    return any(
+        marker in normalized
+        for marker in [
+            "株式分割に関する",
+            "株式分割の決定",
+            "株式分割の実施",
+            "株式分割及び",
+            "株式分割および",
+            "株式分割、",
+            "株式分割により増加する株式",
+        ]
+    )
 
 
 def contains_buyback(text: str | None) -> bool:

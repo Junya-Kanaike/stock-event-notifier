@@ -138,7 +138,7 @@ class PollRecoveryTest(unittest.TestCase):
         self.assertIn("bad-1", state["notified_ids"])
         self.assertTrue(state["disclosure_failures"]["bad-1"]["abandoned"])
 
-    def test_pdf_failure_keeps_po_notification_flow_alive(self):
+    def test_pdf_failure_is_reported_only_to_system(self):
         disclosure = Disclosure(
             id="po-pdf-failure",
             code="7203",
@@ -156,8 +156,39 @@ class PollRecoveryTest(unittest.TestCase):
         self.assertTrue(changed)
         self.assertEqual(len(state["events"]), 1)
         self.assertIn("PDF取得失敗", state["events"][0]["detail"]["parse_warnings"][0])
-        self.assertTrue(any(item["type"] == "po" for item in notifier.sent_messages))
+        self.assertFalse(any(item["type"] == "po" for item in notifier.sent_messages))
         self.assertTrue(any(item["type"] == "system" for item in notifier.sent_messages))
+
+    def test_po_cancellation_stops_schedule_without_channel_notification(self):
+        disclosure = Disclosure(
+            id="po-cancel",
+            code="7203",
+            name="テスト",
+            title="株式の売出し中止に関するお知らせ",
+            announced_at=datetime(2026, 9, 8, 16, 0, tzinfo=JST),
+            pdf_url="https://example.test/cancel.pdf",
+        )
+        state = {
+            "events": [
+                {
+                    "id": "po-7203-2026-09-01",
+                    "type": "po",
+                    "code": "7203",
+                    "name": "テスト",
+                    "announced_at": "2026-09-01T15:00:00+09:00",
+                    "detail": {},
+                    "schedule": [{"date": "2026-09-09", "label": "pricing_day+2", "sent": False}],
+                }
+            ]
+        }
+        notifier = SlackNotifier(dry_run=True)
+
+        self.assertTrue(handle_po(disclosure, state, notifier, {}, {}))
+
+        event = state["events"][0]
+        self.assertTrue(event["detail"]["canceled"])
+        self.assertEqual(event["schedule"], [])
+        self.assertEqual(notifier.sent_messages, [])
 
     def test_source_market_fills_master_gap_and_existing_event(self):
         disclosure = Disclosure(
@@ -283,7 +314,7 @@ class PollRecoveryTest(unittest.TestCase):
         self.assertEqual(event["detail"]["effective_date"], "2026-10-01")
         self.assertEqual(event["related_disclosures"][-1]["relation"], "correction")
 
-    def test_split_without_effective_date_sends_review_notification(self):
+    def test_split_without_effective_date_does_not_flood_trading_channel(self):
         disclosure = Disclosure(
             id="split-missing-date",
             code="7203",
@@ -299,11 +330,10 @@ class PollRecoveryTest(unittest.TestCase):
             changed = handle_split(disclosure, state, notifier, {}, {})
 
         self.assertTrue(changed)
-        self.assertTrue(any(item["type"] == "split" for item in notifier.sent_messages))
-        self.assertTrue(any(item["type"] == "system" for item in notifier.sent_messages))
+        self.assertFalse(any(item["type"] == "split" for item in notifier.sent_messages))
         self.assertTrue(state["events"][0]["detail"]["review_notified"])
 
-    def test_existing_split_without_date_gets_one_recovery_review(self):
+    def test_existing_split_without_date_is_marked_without_channel_notification(self):
         state = {
             "events": [
                 {
@@ -324,7 +354,7 @@ class PollRecoveryTest(unittest.TestCase):
         self.assertFalse(notify_unresolved_split_events(state, notifier))
         self.assertEqual(
             len([item for item in notifier.sent_messages if item["type"] == "split"]),
-            1,
+            0,
         )
 
     def test_recovery_reparses_bad_integer_split_ratio(self):
@@ -402,7 +432,7 @@ class PollRecoveryTest(unittest.TestCase):
         self.assertEqual(len(state["events"]), 1)
         self.assertTrue(state["events"][0]["detail"]["pricing_date_confirmed"])
         self.assertEqual(state["events"][0]["detail"]["pricing_date"], "2026-07-15")
-        self.assertEqual(len(notifier.sent_messages), 1)
+        self.assertEqual(len(notifier.sent_messages), 0)
 
     def test_buyback_state_is_not_canceled_when_correction_send_fails(self):
         class FailingNotifier:
@@ -479,6 +509,7 @@ class PollRecoveryTest(unittest.TestCase):
         self.assertEqual(event["detail"]["size_status"], "confirmed")
         self.assertTrue(event["detail"]["pricing_date_confirmed"])
         self.assertEqual(event["latest_pdf_url"], disclosure.pdf_url)
+        self.assertIn("[PO予定通知]", notifier.sent_messages[0]["payload"]["text"])
         self.assertIn("吸収規模: 約120億円（確定）", notifier.sent_messages[0]["payload"]["text"])
 
     def test_correction_merges_into_original_event_without_erasing_known_values(self):

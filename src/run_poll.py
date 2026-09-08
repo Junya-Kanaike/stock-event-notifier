@@ -2,13 +2,14 @@ from __future__ import annotations
 
 import argparse
 from copy import deepcopy
-from datetime import date, datetime
+from datetime import date, datetime, timedelta
 import os
 from typing import Any
 
 from src.collectors.jpx_margin import CACHE_NAME as MARGIN_CACHE_NAME, fetch_margin, lookup_margin
 from src.collectors.jpx_master import CACHE_NAME as MASTER_CACHE_NAME, fetch_master, lookup_master
 from src.collectors.jpx_ex_rights import CACHE_NAME as EX_RIGHTS_CACHE_NAME, fetch_ex_rights
+from src.collectors.traders_split import CACHE_NAME as TRADERS_SPLIT_CACHE_NAME, fetch_traders_splits
 from src.collectors.tdnet import Disclosure, classify_title, contains_buyback, fetch_disclosures, fetch_pdf_text
 from src.collectors.yahoo_price import fetch_close_on_or_before, reference_close_date
 from src.collectors.utils import cache_fetched_at
@@ -23,7 +24,7 @@ from src.core.po import (
 )
 from src.core.reconcile import reconcile_event_state
 from src.core.scheduler import build_bunbai_schedule, build_po_schedule, build_split_schedule
-from src.core.split import apply_jpx_ex_right
+from src.core.split import apply_jpx_ex_right, apply_traders_split
 from src.core.store import (
     add_notified_id,
     clear_disclosure_failure,
@@ -90,9 +91,17 @@ def main(argv: list[str] | None = None) -> int:
         ex_rights = {}
         notify_system_safely(notifier, f"JPX権利落情報取得失敗: {exc}")
 
+    try:
+        traders_splits = fetch_traders_splits()
+        changed |= record_cached_source_success(state, "traders_split", TRADERS_SPLIT_CACHE_NAME)
+    except Exception as exc:
+        traders_splits = {}
+        notify_system_safely(notifier, f"トレーダーズ・ウェブ株式分割取得失敗: {exc}")
+
     changed |= refresh_event_reference_data(state, master, margin)
     changed |= recover_po_calculations(state, notifier, now=datetime.now(JST))
     changed |= recover_split_events(state, notifier)
+    changed |= reconcile_split_traders(state, traders_splits, notifier, as_of=target_date)
     changed |= reconcile_split_ex_rights(state, ex_rights, notifier)
     changed |= refresh_po_reference_prices(state, notifier, now=datetime.now(JST))
     changed |= notify_resolved_reference_transitions(state, notifier)
@@ -121,6 +130,7 @@ def main(argv: list[str] | None = None) -> int:
         margin,
         dry_run=args.dry_run,
     )
+    changed |= reconcile_split_traders(state, traders_splits, notifier, as_of=target_date)
 
     changed |= trim_notified_ids(state)
     changed |= record_notification_counts(
@@ -341,7 +351,6 @@ def refresh_po_reference_prices(
         if detail.get("size_status") == "confirmed" and detail.get("confirmed_size_yen") is not None:
             continue
         before = deepcopy(event)
-        old_reference_date = detail.get("reference_close_date")
         price_changed = apply_po_reference_price(event, notifier, now=now)
         yahoo_succeeded |= price_changed
         apply_eligibility(event)
@@ -350,27 +359,8 @@ def refresh_po_reference_prices(
                 detail["pricing_date"], detail.get("settlement_date"), old_schedule=event.get("schedule", [])
             )
         transition = eligibility_transition(event)
-        if transition in {"new", "confirmed"} and detail.get("notification_tracking_started"):
-            label = "PO対象確定" if transition == "confirmed" else "PO発表"
-            notifier.send(
-                "po",
-                format_po_message(event, label),
-                header=label,
-                pdf_url=event.get("latest_pdf_url") or event.get("pdf_url"),
-            )
-            mark_transition_notified(event, transition)
-        elif (
-            price_changed
-            and old_reference_date
-            and old_reference_date != detail.get("reference_close_date")
-            and detail.get("eligible_notified")
-        ):
-            notifier.send(
-                "po",
-                format_po_message(event, "PO想定吸収規模更新"),
-                header="PO想定吸収規模更新",
-                pdf_url=event.get("latest_pdf_url") or event.get("pdf_url"),
-            )
+        if detail.get("notification_tracking_started"):
+            notify_po_state(notifier, event, transition)
         changed |= event != before
     if yahoo_succeeded:
         changed |= record_source_success(state, "yahoo_price", now)
@@ -384,22 +374,44 @@ def recover_po_calculations(
     for event in find_events(
         state,
         event_type="po",
-        predicate=lambda item: not item.get("detail", {}).get("total_offered_shares")
+        predicate=lambda item: item.get("detail", {}).get("parser_version") != 2
+        or not item.get("detail", {}).get("total_offered_shares")
         or item.get("detail", {}).get("effective_size_yen") is None,
     ):
         before = deepcopy(event)
         detail = event.setdefault("detail", {})
-        urls = [event.get("pdf_url")]
+        sources: list[dict[str, Any]] = [
+            {
+                "pdf_url": event.get("pdf_url"),
+                "title": event.get("source_title") or "PO発表",
+                "announced_at": event.get("announced_at"),
+            }
+        ]
+        sources.extend(event.get("related_disclosures") or [])
+        by_url = {
+            str(source.get("pdf_url")): source
+            for source in sources
+            if source.get("pdf_url")
+        }
         latest = event.get("latest_pdf_url")
-        if latest and latest not in urls:
-            urls.append(latest)
+        if latest and str(latest) not in by_url:
+            by_url[str(latest)] = {
+                "pdf_url": latest,
+                "title": event.get("source_title") or "PO更新",
+                "announced_at": event.get("announced_at"),
+            }
         try:
-            disclosure_date = date.fromisoformat(str(event.get("announced_at", ""))[:10])
-            for pdf_url in [value for value in urls if value]:
-                text = fetch_pdf_text(str(pdf_url))
-                title = event.get("source_title") or "PO発表"
-                parsed = parse_po_details(title, text, disclosure_date)
+            for source in by_url.values():
+                disclosure_date = date.fromisoformat(str(source.get("announced_at", ""))[:10])
+                text = fetch_pdf_text(str(source["pdf_url"]))
+                parsed = parse_po_details(str(source.get("title") or "PO発表"), text, disclosure_date)
                 detail = merge_po_details(detail, parsed)
+                if parsed.get("source_stage") == "pricing":
+                    pricing_date = disclosure_date.isoformat()
+                    detail["pricing_date"] = pricing_date
+                    detail["pricing_date_end"] = pricing_date
+                    detail["pricing_date_confirmed"] = True
+                    detail["pricing_date_status"] = "confirmed"
             event["detail"] = detail
             if apply_po_reference_price(event, notifier, now=now):
                 changed |= record_source_success(state, "yahoo_price", now)
@@ -494,7 +506,7 @@ def add_parse_warning(detail: dict[str, Any], warning: str | None) -> None:
 
 def handle_po(disclosure: Disclosure, state: dict[str, Any], notifier: SlackNotifier, master: dict[str, Any], margin: dict[str, str]) -> bool:
     if is_cancellation_title(disclosure.title):
-        return cancel_matching_event(state, notifier, "po", disclosure, "PO")
+        return cancel_matching_event(state, notifier, "po", disclosure, "PO", notify=False)
     text, pdf_warning = fetch_disclosure_text_safely(disclosure, notifier)
     event = base_event(disclosure, "po", master, margin)
     event["detail"] = parse_po_details(disclosure.title, text, disclosure.announced_at.date())
@@ -508,7 +520,7 @@ def handle_po(disclosure: Disclosure, state: dict[str, Any], notifier: SlackNoti
         event["schedule"] = build_po_schedule(event["detail"]["pricing_date"], event["detail"].get("settlement_date"))
     elif not event["detail"].get("pricing_date"):
         notify_system_safely(notifier, f"PO価格決定日の抽出失敗: {disclosure.code} {disclosure.title}")
-    notify_po_state(notifier, event, transition, update_label="PO発表")
+    notify_po_state(notifier, event, transition)
     upsert_event(state, event)
     return True
 
@@ -544,13 +556,12 @@ def handle_po_pricing(
         transition = eligibility_transition(event)
         if event.get("eligibility", {}).get("status") == ELIGIBLE:
             event["schedule"] = build_po_schedule(pricing_date, detail.get("settlement_date"))
-        notify_po_state(notifier, event, transition, update_label="PO価格決定（復元）")
+        notify_po_state(notifier, event, transition)
         upsert_event(state, event)
         return True
     event = sorted(candidates, key=lambda item: item.get("announced_at", ""), reverse=True)[0]
     updated = deepcopy(event)
     old_schedule = updated.get("schedule", [])
-    old_pricing_date = updated.get("detail", {}).get("pricing_date")
     detail = merge_po_details(updated.get("detail", {}), parsed_detail)
     detail["notification_tracking_started"] = True
     pricing_date = disclosure.announced_at.date().isoformat()
@@ -567,8 +578,7 @@ def handle_po_pricing(
         updated["schedule"] = build_po_schedule(pricing_date, detail.get("settlement_date"), old_schedule=old_schedule)
     else:
         updated["schedule"] = []
-    pricing_label = "日程変更" if old_pricing_date and old_pricing_date != pricing_date else "PO価格決定"
-    notify_po_state(notifier, updated, transition, update_label=pricing_label, force_update=True)
+    notify_po_state(notifier, updated, transition)
     upsert_event(state, updated)
     return True
 
@@ -589,7 +599,6 @@ def handle_po_correction(
     if candidates:
         original = sorted(candidates, key=lambda item: item.get("announced_at", ""), reverse=True)[0]
         updated = deepcopy(original)
-        old_pricing_date = updated.get("detail", {}).get("pricing_date")
         updated["detail"] = merge_po_details(updated.get("detail", {}), parsed_detail)
         updated["latest_pdf_url"] = disclosure.pdf_url
         append_related_disclosure(updated, disclosure, "correction")
@@ -600,7 +609,6 @@ def handle_po_correction(
                 old_schedule=updated.get("schedule", []),
             )
     else:
-        old_pricing_date = None
         updated = recover_original_po_event(disclosure, text, master, margin)
         if updated:
             updated["detail"] = merge_po_details(updated.get("detail", {}), parsed_detail)
@@ -621,12 +629,7 @@ def handle_po_correction(
     transition = eligibility_transition(updated)
     if updated.get("eligibility", {}).get("status") != ELIGIBLE:
         updated["schedule"] = []
-    correction_label = (
-        "日程変更"
-        if old_pricing_date and old_pricing_date != updated["detail"].get("pricing_date")
-        else "PO訂正"
-    )
-    notify_po_state(notifier, updated, transition, update_label=correction_label, force_update=True)
+    notify_po_state(notifier, updated, transition)
     upsert_event(state, updated)
     return True
 
@@ -635,21 +638,13 @@ def notify_po_state(
     notifier: SlackNotifier,
     event: dict[str, Any],
     transition: str | None,
-    *,
-    update_label: str,
-    force_update: bool = False,
 ) -> None:
-    label: str | None = None
     if transition == "pending":
-        label = "PO判定待ち"
-    elif transition == "confirmed":
-        label = "PO対象確定"
-    elif transition == "new":
-        label = update_label
-    elif force_update and event.get("eligibility", {}).get("status") == ELIGIBLE and event.get("detail", {}).get("eligible_notified"):
-        label = update_label
-    if not label:
+        mark_transition_notified(event, transition)
         return
+    if transition not in {"new", "confirmed"}:
+        return
+    label = "PO予定通知"
     notifier.send(
         "po",
         format_po_message(event, label),
@@ -761,7 +756,6 @@ def handle_split(
     if existing:
         event = deepcopy(existing)
         detail = event.setdefault("detail", {})
-        previous_rights_final = detail.get("rights_final_date")
         for key, value in parsed_detail.items():
             if value is not None:
                 detail[key] = value
@@ -770,7 +764,6 @@ def handle_split(
     else:
         event = base_event(disclosure, "split", master, margin)
         event["detail"] = parsed_detail
-        previous_rights_final = None
     transition = eligibility_transition(event)
     if event.get("eligibility", {}).get("status") == ELIGIBLE and event["detail"].get("rights_final_date"):
         event["schedule"] = build_split_schedule(
@@ -779,38 +772,13 @@ def handle_split(
     else:
         event["schedule"] = []
     if transition == "pending":
-        notify_system_safely(notifier, f"株式分割権利付最終日の判定保留: {disclosure.code} {disclosure.title}")
-        notifier.send(
-            "split",
-            format_split_review(event),
-            header="株式分割・判定待ち",
-            pdf_url=disclosure.pdf_url,
-        )
         event["detail"]["review_notified"] = True
         mark_transition_notified(event, transition)
     elif transition == "confirmed":
-        notifier.send(
-            "split",
-            format_split_review(event, label="株式分割 対象確定"),
-            header="株式分割 対象確定",
-            pdf_url=disclosure.pdf_url,
-        )
         mark_transition_notified(event, transition)
     elif transition == "new":
         # 通常の株式分割発表は通知せず、予定だけ登録する。
         mark_transition_notified(event, transition)
-    elif (
-        existing
-        and previous_rights_final
-        and previous_rights_final != event["detail"].get("rights_final_date")
-        and event.get("eligibility", {}).get("status") == ELIGIBLE
-    ):
-        notifier.send(
-            "split",
-            format_split_review(event, label="日程変更"),
-            header="株式分割 日程変更",
-            pdf_url=disclosure.pdf_url,
-        )
     _, changed = upsert_event(state, event)
     return changed
 
@@ -865,7 +833,7 @@ def recover_split_events(state: dict[str, Any], notifier: SlackNotifier) -> bool
 
 
 def notify_unresolved_split_events(state: dict[str, Any], notifier: SlackNotifier) -> bool:
-    """Send the review notice that old parser failures previously omitted."""
+    """Record unresolved splits without flooding the trading channel."""
     changed = False
     for event in find_events(state, event_type="split"):
         changed |= apply_eligibility(event)
@@ -875,19 +843,6 @@ def notify_unresolved_split_events(state: dict[str, Any], notifier: SlackNotifie
         predicate=lambda item: item.get("eligibility", {}).get("status") == PENDING
         and not item.get("detail", {}).get("review_notified"),
     ):
-        try:
-            notifier.send(
-                "split",
-                format_split_review(event),
-                header="株式分割・判定待ち",
-                pdf_url=event.get("latest_pdf_url") or event.get("pdf_url"),
-            )
-        except Exception as exc:
-            notify_system_safely(
-                notifier,
-                f"株式分割の要確認通知失敗: {event.get('code')} {type(exc).__name__}",
-            )
-            continue
         event.setdefault("detail", {})["review_notified"] = True
         event["detail"]["pending_notified"] = True
         changed = True
@@ -932,13 +887,15 @@ def notify_resolved_reference_transitions(state: dict[str, Any], notifier: Slack
 
         event_type = event.get("type")
         if event_type == "po":
-            text, header = format_po_message(event, "PO対象確定"), "PO対象確定"
+            text, header = format_po_message(event, "PO予定通知"), "PO予定通知"
         elif event_type == "bunbai":
             text, header = format_bunbai_announcement(event, "立会外分売 対象確定"), "立会外分売 対象確定"
         elif event_type == "cb":
             text, header = format_cb_announcement(event, "CB対象確定"), "CB対象確定"
         elif event_type == "split":
-            text, header = format_split_review(event, "株式分割 対象確定"), "株式分割 対象確定"
+            mark_transition_notified(event, "confirmed")
+            changed |= event != before
+            continue
         else:
             continue
         notifier.send(
@@ -950,6 +907,76 @@ def notify_resolved_reference_transitions(state: dict[str, Any], notifier: Slack
         mark_transition_notified(event, "confirmed")
         changed |= event != before
     return changed
+
+
+def reconcile_split_traders(
+    state: dict[str, Any],
+    records: dict[str, list[dict[str, Any]]],
+    notifier: SlackNotifier,
+    *,
+    as_of: date | None = None,
+) -> bool:
+    """Resolve split dates/ratios from the user-designated Traders Web source."""
+    changed = False
+    for event in find_events(state, event_type="split"):
+        record = _matching_traders_split(event, records.get(str(event.get("code") or ""), []))
+        if not record:
+            continue
+        before = deepcopy(event)
+        detail = event.setdefault("detail", {})
+        had_rights_final = bool(detail.get("rights_final_date"))
+        apply_traders_split(detail, record)
+        apply_eligibility(event)
+        if detail.get("rights_date_conflict"):
+            event["schedule"] = []
+            if not detail.get("traders_conflict_notified"):
+                notify_system_safely(
+                    notifier,
+                    f"株式分割の権利付最終日がトレーダーズ・ウェブと不一致: {event.get('code')} "
+                    f"PDF/JPX={detail.get('rights_final_date')} Traders={detail.get('traders_rights_final_date')}",
+                )
+                detail["traders_conflict_notified"] = True
+        elif event.get("eligibility", {}).get("status") == ELIGIBLE:
+            event["schedule"] = build_split_schedule(
+                detail["rights_final_date"], old_schedule=event.get("schedule", [])
+            )
+            if not had_rights_final:
+                reference_date = as_of or today_jst()
+                for item in event["schedule"]:
+                    if date.fromisoformat(item["date"]) < reference_date:
+                        item["sent"] = True
+                        item["suppressed_reason"] = "reference_resolved_after_scheduled_date"
+            transition = eligibility_transition(event)
+            if transition in {"new", "confirmed"}:
+                mark_transition_notified(event, transition)
+        changed |= event != before
+    return changed
+
+
+def _matching_traders_split(
+    event: dict[str, Any], candidates: list[dict[str, Any]]
+) -> dict[str, Any] | None:
+    if not candidates:
+        return None
+    detail = event.get("detail", {})
+    effective = detail.get("effective_date")
+    if effective:
+        exact = [record for record in candidates if record.get("effective_date") == effective]
+        if exact:
+            return exact[-1]
+    try:
+        announced = date.fromisoformat(str(event.get("announced_at", ""))[:10])
+    except ValueError:
+        return None
+    nearby = []
+    for record in candidates:
+        try:
+            rights_final = date.fromisoformat(str(record.get("rights_final_date")))
+        except ValueError:
+            continue
+        if announced <= rights_final <= announced + timedelta(days=370):
+            nearby.append(record)
+    return min(nearby, key=lambda record: record["rights_final_date"], default=None)
 
 
 def reconcile_split_ex_rights(
@@ -972,12 +999,6 @@ def reconcile_split_ex_rights(
                     f"株式分割の権利付最終日がJPX情報と不一致: {event.get('code')} "
                     f"PDF/計算={detail.get('rights_final_date')} JPX={detail.get('jpx_rights_final_date')}",
                 )
-                notifier.send(
-                    "split",
-                    format_split_review(event),
-                    header="株式分割・判定待ち",
-                    pdf_url=event.get("latest_pdf_url") or event.get("pdf_url"),
-                )
                 detail["rights_conflict_notified"] = True
                 detail["pending_notified"] = True
         elif event.get("eligibility", {}).get("status") == ELIGIBLE:
@@ -985,15 +1006,7 @@ def reconcile_split_ex_rights(
                 detail["rights_final_date"], old_schedule=event.get("schedule", [])
             )
             transition = eligibility_transition(event)
-            if transition == "confirmed":
-                notifier.send(
-                    "split",
-                    format_split_review(event, label="株式分割 対象確定"),
-                    header="株式分割 対象確定",
-                    pdf_url=event.get("latest_pdf_url") or event.get("pdf_url"),
-                )
-                mark_transition_notified(event, transition)
-            elif transition == "new":
+            if transition in {"new", "confirmed"}:
                 mark_transition_notified(event, transition)
         changed |= event != before
     return changed
@@ -1056,7 +1069,7 @@ def extract_cb_amount(text: str) -> str | None:
 
 
 def format_po_announcement(event: dict[str, Any]) -> str:
-    return format_po_message(event, "PO発表")
+    return format_po_message(event, "PO予定通知")
 
 
 def disclosure_reference(disclosure: Disclosure, relation: str) -> dict[str, Any]:
@@ -1140,6 +1153,8 @@ def cancel_matching_event(
     event_type: str,
     disclosure: Disclosure,
     event_name: str,
+    *,
+    notify: bool = True,
 ) -> bool:
     candidates = find_events(state, event_type=event_type, code=disclosure.code)
     if not candidates:
@@ -1154,12 +1169,13 @@ def cancel_matching_event(
     event["latest_pdf_url"] = disclosure.pdf_url
     append_related_disclosure(event, disclosure, "cancellation")
     event["eligibility"] = {"status": EXCLUDED, "reasons": ["イベント中止"]}
-    notifier.send(
-        event_type,
-        f"[中止] {event.get('code')} {event.get('name')} ({event_name})\n{disclosure.title}",
-        header=f"{event_name} 中止",
-        pdf_url=disclosure.pdf_url,
-    )
+    if notify:
+        notifier.send(
+            event_type,
+            f"[中止] {event.get('code')} {event.get('name')} ({event_name})\n{disclosure.title}",
+            header=f"{event_name} 中止",
+            pdf_url=disclosure.pdf_url,
+        )
     return True
 
 

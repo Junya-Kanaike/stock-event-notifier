@@ -17,7 +17,7 @@ from src.core.scheduler import (
 from src.notifiers.slack import SlackNotifier
 from src.core.transitions import eligibility_transition
 from src.run_daily import send_daily_system_summary
-from src.run_poll import format_bunbai_announcement, format_cb_announcement, format_split_review, handle_cb
+from src.run_poll import format_bunbai_announcement, format_cb_announcement, handle_cb
 
 
 def event(event_type: str, *, code: str = "7203", name: str = "検証銘柄") -> dict:
@@ -74,11 +74,8 @@ def main() -> int:
     notifier = SlackNotifier(dry_run=True)
 
     po = event("po")
-    notifier.send("po", format_po_message(po, "PO判定待ち"))
+    notifier.send("po", format_po_message(po, "PO予定通知"))
     assert "寄り付き" not in notifier.sent_messages[-1]["payload"]["text"]
-    notifier.send("po", format_po_message(po, "PO対象確定"))
-    notifier.send("po", format_po_message(po, "日程変更"))
-    notifier.send("po", "[中止] 7203 検証銘柄 (PO)")
     po_schedule = build_po_schedule("2026-09-09", "2026-09-17")
     for item in po_schedule:
         send_due(
@@ -148,9 +145,6 @@ def main() -> int:
     notifier.send("cb", "⚠️ [取消] 6758 検証銘柄: 自社株買い同時発表を確認")
 
     split = event("split", code="9984")
-    notifier.send("split", format_split_review(split))
-    notifier.send("split", format_split_review(split, "株式分割 対象確定"))
-    notifier.send("split", format_split_review(split, "日程変更"))
     notifier.send("split", "[中止] 9984 検証銘柄 (株式分割)")
     split_schedule = build_split_schedule("2026-09-25")
     split_times = {
