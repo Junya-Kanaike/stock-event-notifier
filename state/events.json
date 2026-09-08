@@ -5268,7 +5268,8 @@
         "reference_close_kind": "announcement_close",
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
-        "pending_notified": true
+        "pending_notified": true,
+        "latest_source_stage": "announcement"
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260908532913.pdf",
@@ -5297,7 +5298,7 @@
       "last_checked_date": "2026-09-08",
       "last_success_date": "2026-09-08",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-08T17:17:21.576186+09:00"
+      "last_success_at": "2026-09-08T21:55:42.792917+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
