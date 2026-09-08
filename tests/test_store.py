@@ -1,5 +1,5 @@
 import unittest
-from datetime import date
+from datetime import date, datetime
 from pathlib import Path
 import tempfile
 
@@ -8,6 +8,8 @@ from src.core.store import (
     archive_completed_events,
     has_notified,
     record_source_result,
+    record_source_success,
+    record_notification_counts,
     trim_notified_ids,
     upsert_event,
     clear_disclosure_failure,
@@ -16,6 +18,14 @@ from src.core.store import (
 
 
 class StoreTest(unittest.TestCase):
+    def test_records_source_timestamp_and_accumulates_notification_counts(self):
+        state = {"events": []}
+        stamp = datetime.fromisoformat("2026-09-08T12:34:56+09:00")
+        self.assertTrue(record_source_success(state, "jpx_master", stamp))
+        self.assertEqual(state["source_health"]["jpx_master"]["last_success_at"], stamp.isoformat())
+        self.assertTrue(record_notification_counts(state, stamp.date(), success_count=2, failure_count=1))
+        self.assertTrue(record_notification_counts(state, stamp.date(), success_count=3, failure_count=0))
+        self.assertEqual(state["notification_stats"]["2026-09-08"], {"success": 5, "failure": 1})
     def test_disclosure_failure_is_counted_and_can_be_cleared(self):
         state = {"events": []}
         for expected in range(1, 6):

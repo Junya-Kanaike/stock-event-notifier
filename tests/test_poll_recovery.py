@@ -6,6 +6,7 @@ from src.collectors.tdnet import Disclosure
 from src.core.bizday import JST
 from src.notifiers.slack import SlackNotifier
 from src.run_poll import (
+    apply_po_reference_price,
     handle_bunbai,
     handle_buyback,
     handle_po,
@@ -25,6 +26,56 @@ from src.run_poll import (
 
 
 class PollRecoveryTest(unittest.TestCase):
+    def test_po_yahoo_failure_alert_is_deduplicated_for_same_reference_date(self):
+        event = {
+            "type": "po",
+            "code": "7203",
+            "announced_at": "2026-09-08T14:00:00+09:00",
+            "detail": {"total_offered_shares": 1_000_000},
+        }
+        notifier = SlackNotifier(dry_run=True)
+        with patch("src.run_poll.fetch_close_on_or_before", side_effect=RuntimeError("down")):
+            for _ in range(2):
+                apply_po_reference_price(
+                    event,
+                    notifier,
+                    now=datetime(2026, 9, 8, 15, 0, tzinfo=JST),
+                )
+        self.assertEqual(len(notifier.sent_messages), 1)
+
+    def test_batch_knows_same_day_buyback_before_processing_cb(self):
+        cb_disclosure = Disclosure(
+            id="cb-batch",
+            code="7203",
+            name="テスト",
+            title="転換社債型新株予約権付社債の発行に関するお知らせ",
+            announced_at=datetime(2026, 9, 8, 15, 0, tzinfo=JST),
+        )
+        buyback = Disclosure(
+            id="buyback-batch",
+            code="7203",
+            name="テスト",
+            title="自己株式の取得に関するお知らせ",
+            announced_at=datetime(2026, 9, 8, 16, 0, tzinfo=JST),
+        )
+        observed: list[set[tuple[str, str]]] = []
+
+        def fake_cb(disclosure, state, notifier, master, margin, known_buybacks):
+            observed.append(set(known_buybacks))
+            return True
+
+        with patch("src.run_poll.handle_cb", side_effect=fake_cb), patch(
+            "src.run_poll.handle_buyback", return_value=True
+        ):
+            process_disclosure_batch(
+                [cb_disclosure, buyback],
+                {"events": [], "notified_ids": []},
+                SlackNotifier(dry_run=True),
+                {},
+                {},
+                dry_run=True,
+            )
+        self.assertIn(("7203", "2026-09-08"), observed[0])
     def test_default_poll_includes_previous_business_day(self):
         self.assertEqual(
             poll_target_dates(date(2026, 8, 24), explicit_date=False),
@@ -260,7 +311,8 @@ class PollRecoveryTest(unittest.TestCase):
                     "type": "split",
                     "code": "249A",
                     "name": "テスト",
-                    "market": "グロース",
+                    "market": "プライム",
+                    "margin": "貸借",
                     "detail": {"ratio": None, "effective_date": None},
                     "schedule": [],
                 }
@@ -292,7 +344,7 @@ class PollRecoveryTest(unittest.TestCase):
 
         with patch(
             "src.run_poll.fetch_pdf_text",
-            return_value="普通株式1株を10株に分割します。効力発生日 2026年10月1日",
+            return_value="普通株式1株を10株に分割します。基準日 2026年9月30日。効力発生日 2026年10月1日",
         ):
             changed = recover_split_events(state, SlackNotifier(dry_run=True))
 
@@ -300,7 +352,7 @@ class PollRecoveryTest(unittest.TestCase):
         detail = state["events"][0]["detail"]
         self.assertEqual(detail["ratio"], "10")
         self.assertNotIn("recovery_needed", detail)
-        self.assertEqual(len(state["events"][0]["schedule"]), 2)
+        self.assertEqual(len(state["events"][0]["schedule"]), 3)
 
     def test_multi_class_disclosure_processes_each_independent_event(self):
         disclosure = Disclosure(
@@ -409,6 +461,11 @@ class PollRecoveryTest(unittest.TestCase):
         }
         notifier = SlackNotifier(dry_run=True)
         pdf_text = """
+        募集株式数 10,000,000株
+        売出株式数 2,000,000株
+        発行価格 1株につき1,000円
+        売出価格 1株につき1,000円
+        発行価格及び売出価格を決定いたしました。
         払込金額（発行価額）の総額 10,000百万円
         売出価額の総額 2,000百万円
         受渡期日 2026年7月24日

@@ -19,6 +19,8 @@ class SlackNotifier:
     def __init__(self, dry_run: bool | None = None) -> None:
         self.dry_run = dry_run if dry_run is not None else os.getenv("SLACK_DRY_RUN") == "1"
         self.sent_messages: list[dict[str, Any]] = []
+        self.success_count = 0
+        self.failure_count = 0
 
     def send(
         self,
@@ -33,14 +35,20 @@ class SlackNotifier:
         self.sent_messages.append({"type": event_type, "payload": payload})
         if self.dry_run:
             print(f"[SLACK_DRY_RUN:{event_type}] {text}")
+            self.success_count += 1
             return
 
         env_name = WEBHOOK_ENV_BY_TYPE.get(event_type, "SLACK_WEBHOOK_SYSTEM")
         webhook_url = os.getenv(env_name)
         if not webhook_url:
+            self.failure_count += 1
             raise RuntimeError(f"Missing Slack webhook secret: {env_name}")
-
-        post_payload(webhook_url, payload)
+        try:
+            post_payload(webhook_url, payload)
+        except Exception:
+            self.failure_count += 1
+            raise
+        self.success_count += 1
 
     def system(self, text: str) -> None:
         system_url = os.getenv("SLACK_WEBHOOK_SYSTEM")

@@ -58,7 +58,7 @@ def parse_ipo_html(html: str, default_year: int | None = None) -> list[dict[str,
         date_text = _cell(cells, columns, "date") if columns else ""
         code = normalize_code(code_text) or _code_from_cells(cells)
         dates = find_dates(date_text, default_year=year) if date_text else find_dates(" ".join(cells), default_year=year)
-        if not code or not dates:
+        if not code:
             continue
         name = _cell(cells, columns, "name") if columns else _guess_name(cells, code)
         market = _cell(cells, columns, "market") if columns else ""
@@ -66,7 +66,7 @@ def parse_ipo_html(html: str, default_year: int | None = None) -> list[dict[str,
             "code": code,
             "name": name,
             "market": market,
-            "listing_date": dates[0].isoformat(),
+            "listing_date": dates[0].isoformat() if dates else None,
             "source_url": IPO_URL,
         }
         records.append(record)

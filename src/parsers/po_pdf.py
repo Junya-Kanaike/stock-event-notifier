@@ -20,6 +20,7 @@ SIZE_LABELS = [
     "OA",
     "ＯＡ",
 ]
+SHARE_PATTERN = re.compile(r"([0-9][0-9,]*)\s*(?:株|口)")
 
 
 def classify_po_kind(title: str, text: str = "") -> str:
@@ -122,6 +123,115 @@ def extract_estimated_size(text: str) -> dict[str, Any] | None:
     }
 
 
+def extract_share_breakdown(text: str, po_kind: str) -> dict[str, Any]:
+    compact = re.sub(r"\s+", "", normalize_digits(text))
+    public = _shares_after_labels(
+        compact,
+        ["公募による新株式発行", "公募による募集", "募集株式数", "発行新株式数", "新たに発行する株式数"],
+    )
+    secondary = _secondary_sale_shares(compact)
+    oa_marker_present = any(marker in compact for marker in ["オーバーアロットメント", "ＯＡによる売出し", "OAによる売出し"])
+    oa = _oa_shares(compact) if oa_marker_present else 0
+
+    required: list[int | None] = []
+    if po_kind in {"offering", "both"}:
+        required.append(public)
+    if po_kind in {"secondary", "both"}:
+        required.append(secondary)
+    required.append(oa)
+    complete = bool(required) and all(value is not None and value >= 0 for value in required)
+    total = int(sum(value for value in required if value is not None)) if complete else None
+    return {
+        "public_offering_shares": public,
+        "secondary_sale_shares": secondary,
+        "oa_shares": oa,
+        "total_offered_shares": total,
+        "share_breakdown_complete": complete,
+        "oa_marker_present": oa_marker_present,
+    }
+
+
+def extract_confirmed_prices(text: str) -> dict[str, float | None]:
+    compact = re.sub(r"\s+", "", normalize_digits(text))
+    issue = _price_after_labels(compact, ["発行価格", "募集価格"])
+    sale = _price_after_labels(compact, ["売出価格"])
+    if issue is None and sale is not None:
+        issue = sale
+    if sale is None and issue is not None:
+        sale = issue
+    return {
+        "issue_price_yen": issue,
+        "sale_price_yen": sale,
+        "offer_price_yen": issue if issue == sale else issue or sale,
+    }
+
+
+def _shares_after_labels(compact: str, labels: list[str], *, window: int = 220) -> int | None:
+    for label in labels:
+        start = 0
+        while True:
+            position = compact.find(label, start)
+            if position < 0:
+                break
+            snippet = compact[position + len(label) : position + len(label) + window]
+            match = SHARE_PATTERN.search(snippet)
+            if match:
+                return int(match.group(1).replace(",", ""))
+            start = position + len(label)
+    return None
+
+
+def _secondary_sale_shares(compact: str) -> int | None:
+    labels = [
+        "売出株式数",
+        "売出株式の種類及び数",
+        "売出しに係る株式の数",
+        "引受人の買取引受けによる売出し",
+        "買取引受けによる売出し",
+    ]
+    for label in labels:
+        start = 0
+        while True:
+            position = compact.find(label, start)
+            if position < 0:
+                break
+            prefix = compact[max(0, position - 100) : position]
+            if "オーバーアロットメント" not in prefix:
+                snippet = compact[position + len(label) : position + len(label) + 260]
+                match = SHARE_PATTERN.search(snippet)
+                if match:
+                    return int(match.group(1).replace(",", ""))
+            start = position + len(label)
+    combined = re.search(r"合計による(?:当社)?(?:普通)?株式([0-9][0-9,]*)株", compact)
+    return int(combined.group(1).replace(",", "")) if combined else None
+
+
+def _oa_shares(compact: str) -> int | None:
+    for marker in ["オーバーアロットメント", "ＯＡによる売出し", "OAによる売出し"]:
+        position = compact.find(marker)
+        if position < 0:
+            continue
+        snippet = compact[position : position + 700]
+        patterns = [
+            r"(?:売出株式の種類及び数|売出株式数|上限|最大)(?:当社)?(?:普通)?株式?([0-9][0-9,]*)株",
+            r"(?:当社)?(?:普通)?株式([0-9][0-9,]*)株",
+            r"([0-9][0-9,]*)株",
+        ]
+        for pattern in patterns:
+            match = re.search(pattern, snippet)
+            if match:
+                return int(match.group(1).replace(",", ""))
+    return None
+
+
+def _price_after_labels(compact: str, labels: list[str]) -> float | None:
+    for label in labels:
+        match = re.search(rf"{re.escape(label)}(?:1株につき|1口当たり|は)?([0-9][0-9,]*(?:\.[0-9]+)?)円", compact)
+        if match:
+            return float(match.group(1).replace(",", ""))
+    return None
+
+
 def classify_source_stage(title: str) -> str:
     normalized = re.sub(r"\s+", "", title or "")
     if "訂正" in normalized:
@@ -215,8 +325,28 @@ def parse_po_details(
         settlement_date = add_business_days(pricing_date, 6)
         settlement_estimated = True
 
+    po_kind = classify_po_kind(title, text)
+    share_breakdown = extract_share_breakdown(text, po_kind)
     size_oku = extract_size_oku(text)
     estimated_size = extract_estimated_size(text) if size_oku is None else None
+    if estimated_size:
+        if po_kind == "secondary" and share_breakdown["secondary_sale_shares"] is None:
+            share_breakdown["secondary_sale_shares"] = estimated_size["share_count"]
+        if share_breakdown["oa_shares"] is None:
+            share_breakdown["oa_shares"] = estimated_size["oa_share_count"]
+        required = [share_breakdown["oa_shares"]]
+        if po_kind in {"offering", "both"}:
+            required.append(share_breakdown["public_offering_shares"])
+        if po_kind in {"secondary", "both"}:
+            required.append(share_breakdown["secondary_sale_shares"])
+        share_breakdown["share_breakdown_complete"] = all(value is not None for value in required)
+        if share_breakdown["share_breakdown_complete"]:
+            share_breakdown["total_offered_shares"] = sum(int(value) for value in required if value is not None)
+    confirmed_prices = extract_confirmed_prices(text) if source_stage == "pricing" or has_confirmed_price(text) else {
+        "issue_price_yen": None,
+        "sale_price_yen": None,
+        "offer_price_yen": None,
+    }
     pricing_date_end = _range_end(pricing_raw, pricing_date, default_year)
     settlement_date_end = _range_end(settlement_raw, settlement_date, default_year)
     size_status = "confirmed" if size_oku is not None else "estimated" if estimated_size else "unavailable"
@@ -227,7 +357,7 @@ def parse_po_details(
 
     dilution_pct = extract_dilution_pct(text)
     details: dict[str, Any] = {
-        "po_kind": classify_po_kind(title, text),
+        "po_kind": po_kind,
         "source_stage": source_stage,
         "size_oku": size_oku,
         "size_oku_min": estimated_size.get("size_oku_min") if estimated_size else None,
@@ -238,6 +368,8 @@ def parse_po_details(
         "oa_share_count": estimated_size.get("oa_share_count") if estimated_size else None,
         "price_min_yen": estimated_size.get("price_min_yen") if estimated_size else None,
         "price_max_yen": estimated_size.get("price_max_yen") if estimated_size else None,
+        **share_breakdown,
+        **confirmed_prices,
         "dilution_pct": dilution_pct,
         "dilution_status": "confirmed" if dilution_pct is not None else "unavailable",
         "pricing_date": pricing_date.isoformat() if pricing_date else None,

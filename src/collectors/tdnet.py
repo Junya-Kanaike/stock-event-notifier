@@ -55,6 +55,12 @@ class Disclosure:
     market: str | None = None
 
 
+class DisclosureBatch(list[Disclosure]):
+    def __init__(self, values: list[Disclosure], total_count: int | None = None):
+        super().__init__(values)
+        self.total_count = total_count
+
+
 def classify_title(title: str) -> set[str]:
     normalized = re.sub(r"\s+", "", title or "")
     classes: set[str] = set()
@@ -145,7 +151,11 @@ def fetch_disclosures(target_date: date | None = None) -> list[Disclosure]:
     yyyymmdd = day.strftime("%Y%m%d")
     try:
         disclosures = fetch_yanoshin_disclosures(yyyymmdd)
-        if 0 < len(disclosures) < YANOSHIN_RESULT_CAP:
+        total_count = getattr(disclosures, "total_count", None)
+        if disclosures and (
+            (total_count is not None and len(disclosures) >= total_count)
+            or (total_count is None and len(disclosures) < YANOSHIN_RESULT_CAP)
+        ):
             return disclosures
     except Exception:
         return fetch_tdnet_html_disclosures(yyyymmdd)
@@ -163,11 +173,17 @@ def fetch_yanoshin_disclosures(yyyymmdd: str) -> list[Disclosure]:
     payload = json.loads(request_get(url).decode("utf-8"))
     if isinstance(payload, list):
         rows = payload
+        total_count = len(rows)
     elif isinstance(payload, dict):
         known_keys = ("items", "disclosures", "tdnet", "data")
         if not any(key in payload for key in known_keys):
             raise ValueError("Unknown yanoshin response schema")
         rows = next((payload.get(key) for key in known_keys if payload.get(key) is not None), [])
+        raw_total = payload.get("total_count", payload.get("totalCount", payload.get("total")))
+        try:
+            total_count = int(raw_total) if raw_total is not None else None
+        except (TypeError, ValueError):
+            total_count = None
     else:
         raise ValueError("Unknown yanoshin response type")
     if not isinstance(rows, list):
@@ -183,7 +199,7 @@ def fetch_yanoshin_disclosures(yyyymmdd: str) -> list[Disclosure]:
         normalized = _normalize_json_disclosure(payload)
         if normalized:
             disclosures.append(normalized)
-    return disclosures
+    return DisclosureBatch(disclosures, total_count=total_count)
 
 
 def _normalize_json_disclosure(row: dict[str, Any]) -> Disclosure | None:
@@ -276,7 +292,11 @@ def _parse_tdnet_html_page(soup: Any, url: str, yyyymmdd: str) -> list[Disclosur
         # table. Only direct cells belong to the current row.
         cell_nodes = row.find_all(["td", "th"], recursive=False)
         cells = [cell.get_text(" ", strip=True) for cell in cell_nodes]
-        if len(cells) >= 4 and cells[:4] == ["時刻", "コード", "会社名", "表題"]:
+        compact_headers = [re.sub(r"\s+", "", value) for value in cells]
+        if len(cells) >= 4 and all(
+            any(alias in header for header in compact_headers)
+            for alias in ["時刻", "コード", "会社", "表題"]
+        ):
             header_found = True
             continue
         if len(cells) < 4 or not re.fullmatch(r"\d{1,2}:\d{2}", cells[0]):

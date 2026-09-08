@@ -1,6 +1,6 @@
 # stock-event-notifier
 
-日本株のPO、IPO、立会外分売、CB、株式分割を検知し、イベント別のSlackチャンネルへ通知する個人向けMVPです。TDnetとJPXの公開情報だけを使い、GitHub Actions上で無人運用します。
+日本株のPO、IPO、立会外分売、CB、株式分割を検知し、イベント別のSlackチャンネルへ通知する個人向けシステムです。TDnet、JPX、Yahoo Financeの公開情報を使い、GitHub Actions上で無人運用します。
 
 詳細な業務仕様は [event_notifier_spec.md](event_notifier_spec.md) を参照してください。
 
@@ -8,6 +8,7 @@
 
 - `poll_tdnet`: 平日の日中にTDnetを巡回し、PO、立会外分売、CB、株式分割を処理
 - `daily_morning`: 営業日の朝にJPXデータを更新し、当日分と未送信の遅延通知を処理
+- `timed_notifications`: 分割の08:00 / 12:00 / 19:00通知を冗長cronで処理し、平日20:10にsystem集約を送信
 - `state/events.json`: イベント、通知済み開示ID、取得元の稼働状態を保存
 - `state/cache`: JPX銘柄、信用区分、IPO、立会外分売の取得結果を保存
 
@@ -16,7 +17,7 @@ GitHub Actionsのscheduled workflowは実行時刻を保証しません。遅延
 ## 必要環境
 
 - Python 3.12
-- Slack Incoming Webhook 6本（systemは任意）
+- Slack Incoming Webhook 6本
 - GitHub Actionsから状態をpushできるリポジトリ権限
 
 ## ローカルセットアップ
@@ -34,6 +35,12 @@ python -m unittest discover -s tests -v
 python -m compileall -q src tests
 ```
 
+全通知文言・時刻境界・通知抑止をSlack dry-runで確認する場合:
+
+```bash
+python -m scripts.notification_matrix
+```
+
 ## Slack設定
 
 GitHub ActionsのRepository secretsに以下を登録します。
@@ -43,7 +50,7 @@ GitHub ActionsのRepository secretsに以下を登録します。
 - `SLACK_WEBHOOK_BUNBAI`
 - `SLACK_WEBHOOK_CB`
 - `SLACK_WEBHOOK_SPLIT`
-- `SLACK_WEBHOOK_SYSTEM`（運用アラート用、任意）
+- `SLACK_WEBHOOK_SYSTEM`（運用アラート・日次集約用）
 
 Webhook URLをコード、状態JSON、ログへ記録しないでください。設定後は `test_notify` workflowを手動実行して全チャンネルへの到達を確認します。
 
@@ -62,13 +69,14 @@ python -m src.run_daily --date 2026-07-16 --dry-run
 
 - `.github/workflows/poll_tdnet.yml`: TDnet巡回
 - `.github/workflows/daily_morning.yml`: 朝の日次通知
+- `.github/workflows/timed_notifications.yml`: 時刻指定通知と日次system集約
 - `.github/workflows/test_notify.yml`: Webhook疎通確認
 - `.github/workflows/ci.yml`: 単体テスト、構文確認、依存関係監査
 
 状態変更は `scripts/commit_state.sh` がcommitし、競合時はrebaseして最大3回pushを試行します。
 単体テストはコード変更時のCIへ集約し、定期通知workflowではデータ取得と通知だけを実行します。
 
-標準cronは混雑しやすい毎時0分を避け、TDnetをJST平日08:03から19:53まで10分間隔、日次処理を07:17に設定しています。それでもGitHub Actionsはscheduled eventの実行時刻を保証しません。
+標準cronはTDnetをJST平日08:03から19:53まで10分間隔、日次処理を07:17に設定しています。分割通知は目標時刻の前後にもcronを置き、`not_before_jst`を満たした最初の実行だけが送信します。それでもGitHub Actionsはscheduled eventの実行時刻を保証しません。
 
 厳密な10分間隔が必要な場合は、外部cronから次のREST APIを呼び出します。workflow側は `workflow_dispatch` に対応済みです。
 
@@ -97,13 +105,17 @@ Content-Type: application/json
 
 - TDnet: yanoshin APIを優先し、取得不能または空の場合はTDnet HTMLへフォールバック
 - JPX信用区分・IPO・立会外分売: 日次ジョブで強制更新
+- JPX権利落情報: 分割の権利付最終日を照合・確定
 - JPX銘柄マスター: 月次データのためキャッシュを利用
+- Yahoo Finance chart API (`query2.finance.yahoo.com`): PO発表日の未調整終値（raw close）
 
 日次強制更新に失敗して既存キャッシュを使った場合、キャッシュ取得日時を含むsystem通知を送ります。
 
 TDnet HTMLへフォールバックした場合は、1ページ目だけでなく当日の全ページを取得します。訂正資料に元開示日が記載されている場合は、その日の同一銘柄の元開示を1回だけ検索し、数値と日程を補完します。
 
-PO通知は発表時と日次通知の両方で、種別、吸収規模、希薄化率、価格決定日、受渡日を表示します。開示資料に総額がなく株数と仮条件がある場合は、OA上限込みの想定吸収規模レンジを計算し「概算」と表示します。各項目は「確定」「概算」「暫定」「未取得」を区別します。
+POの対象判定は80億円以上です。価格決定前は「発表日終値×（公募株数＋売出株数＋OA株数）」、価格決定後は決定価格と株数内訳から再計算します。一度80億円以上になった案件は後から下回っても対象を維持します。通知には種別、吸収規模、株数内訳、使用価格、希薄化率、価格決定日、受渡日を表示します。
+
+株式分割は効力発生日通知を行いません。東証Prime/Standardの貸借銘柄だけを対象に、権利付最終日当日19:00、翌営業日12:00、5営業日後08:00の3回を通知します。
 
 ## 回帰テストの追加
 
