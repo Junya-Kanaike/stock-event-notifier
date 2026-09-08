@@ -1271,7 +1271,16 @@
     "140120260908532844",
     "140120260907532613",
     "140120260908532886",
-    "140120260907532745"
+    "140120260907532745",
+    "140120260907532525",
+    "140120260908533027",
+    "140120260907532261",
+    "140120260907532475",
+    "140120260908532909",
+    "140120260908532913",
+    "140120260908532991",
+    "140120260908533097",
+    "140120260908533189"
   ],
   "events": [
     {
@@ -5203,6 +5212,84 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "po-6232-2026-09-08",
+      "type": "po",
+      "code": "6232",
+      "name": "ＡＣＳＬ",
+      "market": "グロース",
+      "margin": "貸借",
+      "announced_at": "2026-09-08T15:30:00+09:00",
+      "detail": {
+        "po_kind": "offering",
+        "source_stage": "announcement",
+        "size_oku": null,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "unavailable",
+        "size_basis": null,
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "public_offering_shares": null,
+        "secondary_sale_shares": null,
+        "oa_shares": 0,
+        "total_offered_shares": null,
+        "share_breakdown_complete": false,
+        "oa_marker_present": false,
+        "issue_price_yen": null,
+        "sale_price_yen": null,
+        "offer_price_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": null,
+        "pricing_date_end": null,
+        "pricing_date_raw": null,
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "unavailable",
+        "settlement_date": null,
+        "settlement_date_end": null,
+        "settlement_date_raw": null,
+        "settlement_estimated": false,
+        "settlement_date_status": "unavailable",
+        "parse_warnings": [],
+        "missing_fields": [
+          "size",
+          "dilution_pct",
+          "pricing_date",
+          "settlement_date"
+        ],
+        "notification_tracking_started": true,
+        "reference_close_yen": 1381.0,
+        "reference_close_date": "2026-09-08",
+        "reference_close_source": "Yahoo Finance chart (raw close)",
+        "reference_close_kind": "announcement_close",
+        "effective_size_yen": null,
+        "po_threshold_ever_met": false,
+        "pending_notified": true
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260908532913.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260908532913.pdf",
+      "source_title": "海外募集による新株式発行の払込完了に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260908532913",
+          "relation": "source",
+          "title": "海外募集による新株式発行の払込完了に関するお知らせ",
+          "announced_at": "2026-09-08T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260908532913.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "pending",
+        "reasons": [
+          "吸収規模未確定"
+        ]
+      }
     }
   ],
   "source_health": {
@@ -5210,7 +5297,7 @@
       "last_checked_date": "2026-09-08",
       "last_success_date": "2026-09-08",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-08T12:25:51.544007+09:00"
+      "last_success_at": "2026-09-08T17:17:21.576186+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -5226,13 +5313,13 @@
     },
     "yahoo_price": {
       "last_success_date": "2026-09-08",
-      "last_success_at": "2026-09-08T10:07:20.952209+09:00"
+      "last_success_at": "2026-09-08T17:17:21.903685+09:00"
     }
   },
   "schema_version": 2,
   "notification_stats": {
     "2026-09-08": {
-      "success": 59,
+      "success": 61,
       "failure": 0
     }
   }
