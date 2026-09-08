@@ -1523,24 +1523,21 @@
           "date": "2026-08-27",
           "label": "rights_final+0_after_close",
           "sent": true,
-          "not_before_jst": "19:00",
-          "suppressed_reason": "reference_resolved_after_scheduled_date"
+          "not_before_jst": "19:00"
         },
         {
           "date": "2026-08-28",
           "label": "rights_final+1_noon",
           "sent": true,
           "not_before_jst": "12:00",
-          "action_cutoff_jst": "15:30",
-          "suppressed_reason": "reference_resolved_after_scheduled_date"
+          "action_cutoff_jst": "15:30"
         },
         {
           "date": "2026-09-03",
           "label": "rights_final+5_preopen",
           "sent": true,
           "not_before_jst": "08:00",
-          "action_cutoff_jst": "09:00",
-          "suppressed_reason": "reference_resolved_after_scheduled_date"
+          "action_cutoff_jst": "09:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260717596054.pdf",
@@ -1650,24 +1647,21 @@
           "date": "2026-08-27",
           "label": "rights_final+0_after_close",
           "sent": true,
-          "not_before_jst": "19:00",
-          "suppressed_reason": "reference_resolved_after_scheduled_date"
+          "not_before_jst": "19:00"
         },
         {
           "date": "2026-08-28",
           "label": "rights_final+1_noon",
           "sent": true,
           "not_before_jst": "12:00",
-          "action_cutoff_jst": "15:30",
-          "suppressed_reason": "reference_resolved_after_scheduled_date"
+          "action_cutoff_jst": "15:30"
         },
         {
           "date": "2026-09-03",
           "label": "rights_final+5_preopen",
           "sent": true,
           "not_before_jst": "08:00",
-          "action_cutoff_jst": "09:00",
-          "suppressed_reason": "reference_resolved_after_scheduled_date"
+          "action_cutoff_jst": "09:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260723598560.pdf",
@@ -4228,8 +4222,9 @@
         {
           "date": "2026-09-09",
           "label": "settlement",
-          "sent": false,
-          "action_cutoff_jst": "09:00"
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-09-09T00:03:06.536417+09:00"
         },
         {
           "date": "2026-10-13",
@@ -5130,8 +5125,9 @@
         {
           "date": "2026-09-09",
           "label": "pricing_day+2",
-          "sent": false,
-          "action_cutoff_jst": "09:00"
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-09-09T00:03:06.536417+09:00"
         },
         {
           "date": "2026-09-14",
@@ -5870,6 +5866,10 @@
   "notification_stats": {
     "2026-09-08": {
       "success": 64,
+      "failure": 0
+    },
+    "2026-09-09": {
+      "success": 2,
       "failure": 0
     }
   },
