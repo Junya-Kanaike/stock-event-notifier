@@ -2003,7 +2003,7 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": true,
+          "sent": false,
           "not_before_jst": "19:00"
         },
         {
@@ -2134,7 +2134,7 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": true,
+          "sent": false,
           "not_before_jst": "19:00"
         },
         {
