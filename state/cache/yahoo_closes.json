@@ -1,0 +1,134 @@
+{
+  "cache_version": 1,
+  "fetched_at": "2026-09-08T01:07:21.325508+00:00",
+  "data": {
+    "9235:2026-07-31": {
+      "code": "9235",
+      "symbol": "9235.T",
+      "date": "2026-07-31",
+      "close_yen": 498.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-07-31"
+    },
+    "3455:2026-08-19": {
+      "code": "3455",
+      "symbol": "3455.T",
+      "date": "2026-08-19",
+      "close_yen": 103100.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-08-19"
+    },
+    "7966:2026-08-20": {
+      "code": "7966",
+      "symbol": "7966.T",
+      "date": "2026-08-20",
+      "close_yen": 5730.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-08-20"
+    },
+    "9322:2026-08-21": {
+      "code": "9322",
+      "symbol": "9322.T",
+      "date": "2026-08-21",
+      "close_yen": 2475.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-08-21"
+    },
+    "9706:2026-08-24": {
+      "code": "9706",
+      "symbol": "9706.T",
+      "date": "2026-08-24",
+      "close_yen": 5727.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-08-24"
+    },
+    "6232:2026-08-24": {
+      "code": "6232",
+      "symbol": "6232.T",
+      "date": "2026-08-24",
+      "close_yen": 1594.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-08-24"
+    },
+    "5726:2026-08-25": {
+      "code": "5726",
+      "symbol": "5726.T",
+      "date": "2026-08-25",
+      "close_yen": 2851.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-08-25"
+    },
+    "4777:2026-08-28": {
+      "code": "4777",
+      "symbol": "4777.T",
+      "date": "2026-08-28",
+      "close_yen": 202.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-08-28"
+    },
+    "8117:2026-08-28": {
+      "code": "8117",
+      "symbol": "8117.T",
+      "date": "2026-08-28",
+      "close_yen": 2286.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-08-28"
+    },
+    "3765:2026-08-28": {
+      "code": "3765",
+      "symbol": "3765.T",
+      "date": "2026-08-28",
+      "close_yen": 2473.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-08-28"
+    },
+    "4099:2026-09-01": {
+      "code": "4099",
+      "symbol": "4099.T",
+      "date": "2026-09-01",
+      "close_yen": 2391.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-09-01"
+    },
+    "194A:2026-09-02": {
+      "code": "194A",
+      "symbol": "194A.T",
+      "date": "2026-09-02",
+      "close_yen": 2080.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-09-02"
+    },
+    "543A:2026-07-15": {
+      "code": "543A",
+      "symbol": "543A.T",
+      "date": "2026-07-15",
+      "close_yen": 301.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-07-15"
+    },
+    "4071:2026-07-14": {
+      "code": "4071",
+      "symbol": "4071.T",
+      "date": "2026-07-14",
+      "close_yen": 2911.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-07-14"
+    },
+    "3282:2026-07-16": {
+      "code": "3282",
+      "symbol": "3282.T",
+      "date": "2026-07-16",
+      "close_yen": 105500.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-07-16"
+    },
+    "205A:2026-07-27": {
+      "code": "205A",
+      "symbol": "205A.T",
+      "date": "2026-07-27",
+      "close_yen": 1886.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-07-27"
+    }
+  }
+}
