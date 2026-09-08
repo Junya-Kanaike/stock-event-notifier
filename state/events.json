@@ -2008,8 +2008,9 @@
         {
           "date": "2026-09-08",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-08T22:55:23.815525+09:00"
         },
         {
           "date": "2026-09-09",
@@ -2333,8 +2334,9 @@
         {
           "date": "2026-09-08",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-08T22:55:23.815525+09:00"
         },
         {
           "date": "2026-09-09",
@@ -5320,8 +5322,12 @@
   "schema_version": 2,
   "notification_stats": {
     "2026-09-08": {
-      "success": 61,
+      "success": 64,
       "failure": 0
     }
+  },
+  "daily_system_summary": {
+    "last_sent_date": "2026-09-08",
+    "last_sent_at": "2026-09-08T22:55:23.815525+09:00"
   }
 }
