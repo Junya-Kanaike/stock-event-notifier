@@ -1,7 +1,14 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-09-08T00:26:01.800293+00:00",
+  "fetched_at": "2026-09-08T22:57:28.798831+00:00",
   "data": [
+    {
+      "code": "648A",
+      "name": "（株）ルクレ",
+      "market": "グロース",
+      "listing_date": "2026-10-15",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
     {
       "code": "640A",
       "name": "（株）ASNOVA Companies *",

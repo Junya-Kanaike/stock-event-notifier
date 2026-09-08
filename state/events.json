@@ -1892,80 +1892,6 @@
       }
     },
     {
-      "id": "po-9235-2026-07-31",
-      "type": "po",
-      "code": "9235",
-      "name": "売れるネット広告社グループ",
-      "market": "グロース",
-      "margin": "信用",
-      "announced_at": "2026-07-31T12:00:00+09:00",
-      "detail": {
-        "po_kind": "secondary",
-        "source_stage": "announcement",
-        "size_oku": 38.65508307,
-        "size_oku_min": null,
-        "size_oku_max": null,
-        "size_status": "confirmed",
-        "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
-        "share_count": null,
-        "oa_share_count": null,
-        "price_min_yen": null,
-        "price_max_yen": null,
-        "dilution_pct": null,
-        "dilution_status": "unavailable",
-        "pricing_date": "2026-08-07",
-        "pricing_date_end": null,
-        "pricing_date_raw": "売出価格 1株につき477円 （8） 売出価格の総額 193,275,630円 （9） 売渡期日 2026年8月7日 ※上記については、金融商品取引法に定める有価証券通知書を福岡財務支局へ提出いたします。 2.売出しの目的 加藤公一レオ氏と柴田雄平氏との間で、当社株式の譲渡を行うことにつき契約が締結されたことから、関 係法令の定める手続きに則り、売出による譲",
-        "pricing_date_confirmed": true,
-        "pricing_date_status": "confirmed",
-        "settlement_date": "2026-08-18",
-        "settlement_date_end": null,
-        "settlement_date_raw": null,
-        "settlement_estimated": true,
-        "settlement_date_status": "estimated",
-        "parse_warnings": [],
-        "missing_fields": [
-          "dilution_pct"
-        ],
-        "secondary_sale_shares": 8103791,
-        "oa_shares": 0,
-        "total_offered_shares": 8103791,
-        "share_breakdown_complete": true,
-        "oa_marker_present": false,
-        "issue_price_yen": 477.0,
-        "sale_price_yen": 477.0,
-        "offer_price_yen": 477.0,
-        "latest_source_stage": "announcement",
-        "po_threshold_ever_met": false,
-        "reference_close_yen": 498.0,
-        "reference_close_date": "2026-07-31",
-        "reference_close_source": "Yahoo Finance chart (raw close)",
-        "reference_close_kind": "announcement_close",
-        "confirmed_size_yen": 3865508307,
-        "confirmed_size_oku": 38.65508307,
-        "effective_size_yen": 3865508307
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260731505007.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260731505007.pdf",
-      "source_title": "売れるネット広告社グループ株式会社（証券コード9235）株式の売出し及び公開買付けに準ずる行為として政令で定める買集め行為に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260731505007",
-          "relation": "source",
-          "title": "売れるネット広告社グループ株式会社（証券コード9235）株式の売出し及び公開買付けに準ずる行為として政令で定める買集め行為に関するお知らせ",
-          "announced_at": "2026-07-31T12:00:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260731505007.pdf"
-        }
-      ],
-      "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "吸収規模80億円未満"
-        ]
-      }
-    },
-    {
       "id": "split-8084-2026-07-31",
       "type": "split",
       "code": "8084",
@@ -2899,49 +2825,6 @@
       }
     },
     {
-      "id": "split-4667-2026-08-07",
-      "type": "split",
-      "code": "4667",
-      "name": "アイサンテクノロジー",
-      "market": "スタンダード",
-      "margin": "信用",
-      "announced_at": "2026-08-07T15:20:00+09:00",
-      "detail": {
-        "ratio": "3",
-        "effective_date": "2026-10-01",
-        "effective_date_raw": "効力発生日 2026年10月1日（木） （3）その他 今回の株式分割に際しまして、資本金の額に変更はありません。 2.株式分割に伴う定款の一部変更 （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項に基づき、当社定款第6条の発行可能株式総数を変更するもの です。 （2）変更の内容 （下線は変更部分） （下線は変更部分） 現行定款 変更後定款 （発",
-        "record_date": null,
-        "ex_right_date": null,
-        "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
-        "rights_final_status": "confirmed",
-        "traders_rights_final_date": "2026-09-28",
-        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
-        "rights_final_confirmed": true,
-        "rights_date_conflict": false
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260730503908.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260730503908.pdf",
-      "source_title": "株式分割及び株式分割に伴う定款の一部変更並びに配当予想の修正、株主優待制度の一部変更に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260730503908",
-          "relation": "source",
-          "title": "株式分割及び株式分割に伴う定款の一部変更並びに配当予想の修正、株主優待制度の一部変更に関するお知らせ",
-          "announced_at": "2026-08-07T15:20:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260730503908.pdf"
-        }
-      ],
-      "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "貸借対象外"
-        ]
-      }
-    },
-    {
       "id": "split-5706-2026-08-07",
       "type": "split",
       "code": "5706",
@@ -3248,7 +3131,8 @@
       "margin": "対象外",
       "announced_at": "2026-08-13T08:02:19.286867+09:00",
       "detail": {
-        "listing_date": "2026-09-11"
+        "listing_date": "2026-09-11",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -3277,7 +3161,8 @@
       "margin": "対象外",
       "announced_at": "2026-08-14T08:03:42.740531+09:00",
       "detail": {
-        "listing_date": "2026-09-16"
+        "listing_date": "2026-09-16",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -3405,7 +3290,8 @@
       "margin": "対象外",
       "announced_at": "2026-08-17T07:37:03.759035+09:00",
       "detail": {
-        "listing_date": "2026-09-18"
+        "listing_date": "2026-09-18",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -3434,7 +3320,8 @@
       "margin": "対象外",
       "announced_at": "2026-08-17T07:37:03.759712+09:00",
       "detail": {
-        "listing_date": "2026-09-18"
+        "listing_date": "2026-09-18",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -3463,7 +3350,8 @@
       "margin": "対象外",
       "announced_at": "2026-08-17T07:37:03.760169+09:00",
       "detail": {
-        "listing_date": "2026-09-16"
+        "listing_date": "2026-09-16",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -3578,7 +3466,8 @@
       "margin": "対象外",
       "announced_at": "2026-08-18T07:41:52.051008+09:00",
       "detail": {
-        "listing_date": "2026-09-17"
+        "listing_date": "2026-09-17",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -3607,7 +3496,8 @@
       "margin": "対象外",
       "announced_at": "2026-08-19T07:42:25.340591+09:00",
       "detail": {
-        "listing_date": "2026-09-18"
+        "listing_date": "2026-09-18",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -4352,7 +4242,8 @@
       "margin": "対象外",
       "announced_at": "2026-08-25T07:45:06.105683+09:00",
       "detail": {
-        "listing_date": "2026-09-25"
+        "listing_date": "2026-09-25",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -5191,12 +5082,12 @@
         "record_date": null,
         "ex_right_date": "2026-09-14",
         "rights_final_date": "2026-09-11",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "jpx_ex_right_date": "2026-09-14",
         "jpx_rights_final_date": "2026-09-11",
         "jpx_ex_rights_source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "traders_rights_final_date": "2026-09-11",
@@ -5583,7 +5474,8 @@
       "margin": "対象外",
       "announced_at": "2026-09-02T09:15:32.360160+09:00",
       "detail": {
-        "listing_date": "2026-10-01"
+        "listing_date": "2026-10-01",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -5612,7 +5504,8 @@
       "margin": "対象外",
       "announced_at": "2026-09-02T09:15:32.360709+09:00",
       "detail": {
-        "listing_date": "2026-10-01"
+        "listing_date": "2026-10-01",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -5641,7 +5534,8 @@
       "margin": "対象外",
       "announced_at": "2026-09-02T09:15:32.360736+09:00",
       "detail": {
-        "listing_date": "2026-10-01"
+        "listing_date": "2026-10-01",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -5817,7 +5711,8 @@
       "margin": "対象外",
       "announced_at": "2026-09-08T09:26:01.801379+09:00",
       "detail": {
-        "listing_date": "2026-09-29"
+        "listing_date": "2026-09-29",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -5827,6 +5722,36 @@
         },
         {
           "date": "2026-09-29",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
+    },
+    {
+      "id": "ipo-648A-2026-10-15",
+      "type": "ipo",
+      "code": "648A",
+      "name": "（株）ルクレ",
+      "market": "グロース",
+      "margin": "対象外",
+      "announced_at": "2026-09-09T07:57:28.799378+09:00",
+      "detail": {
+        "listing_date": "2026-10-15",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-10-14",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-15",
           "label": "listing_day",
           "sent": false
         }
@@ -5851,15 +5776,27 @@
     },
     "jpx_margin": {
       "last_success_date": "2026-09-08",
-      "last_success_at": "2026-09-08T00:26:01.577756+00:00"
+      "last_success_at": "2026-09-08T22:57:26.260574+00:00"
     },
     "jpx_ex_rights": {
       "last_success_date": "2026-09-08",
-      "last_success_at": "2026-09-08T01:06:19.772523+00:00"
+      "last_success_at": "2026-09-08T22:57:28.538473+00:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-09-08",
       "last_success_at": "2026-09-08T17:17:21.903685+09:00"
+    },
+    "traders_split": {
+      "last_success_date": "2026-09-08",
+      "last_success_at": "2026-09-08T22:57:27.907858+00:00"
+    },
+    "jpx_ipo": {
+      "last_success_date": "2026-09-08",
+      "last_success_at": "2026-09-08T22:57:28.798831+00:00"
+    },
+    "jpx_bunbai": {
+      "last_success_date": "2026-09-08",
+      "last_success_at": "2026-09-08T22:57:29.130287+00:00"
     }
   },
   "schema_version": 2,
@@ -5869,7 +5806,7 @@
       "failure": 0
     },
     "2026-09-09": {
-      "success": 2,
+      "success": 3,
       "failure": 0
     }
   },

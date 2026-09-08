@@ -48,5 +48,122 @@
         "pdf_url": "https://www.release.tdnet.info/inbs/140120260722597543.pdf"
       }
     ]
+  },
+  {
+    "id": "po-9235-2026-07-31",
+    "type": "po",
+    "code": "9235",
+    "name": "売れるネット広告社グループ",
+    "market": "グロース",
+    "margin": "信用",
+    "announced_at": "2026-07-31T12:00:00+09:00",
+    "detail": {
+      "po_kind": "secondary",
+      "source_stage": "announcement",
+      "size_oku": 38.65508307,
+      "size_oku_min": null,
+      "size_oku_max": null,
+      "size_status": "confirmed",
+      "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
+      "share_count": null,
+      "oa_share_count": null,
+      "price_min_yen": null,
+      "price_max_yen": null,
+      "dilution_pct": null,
+      "dilution_status": "unavailable",
+      "pricing_date": "2026-08-07",
+      "pricing_date_end": null,
+      "pricing_date_raw": "売出価格 1株につき477円 （8） 売出価格の総額 193,275,630円 （9） 売渡期日 2026年8月7日 ※上記については、金融商品取引法に定める有価証券通知書を福岡財務支局へ提出いたします。 2.売出しの目的 加藤公一レオ氏と柴田雄平氏との間で、当社株式の譲渡を行うことにつき契約が締結されたことから、関 係法令の定める手続きに則り、売出による譲",
+      "pricing_date_confirmed": true,
+      "pricing_date_status": "confirmed",
+      "settlement_date": "2026-08-18",
+      "settlement_date_end": null,
+      "settlement_date_raw": null,
+      "settlement_estimated": true,
+      "settlement_date_status": "estimated",
+      "parse_warnings": [],
+      "missing_fields": [
+        "dilution_pct"
+      ],
+      "secondary_sale_shares": 8103791,
+      "oa_shares": 0,
+      "total_offered_shares": 8103791,
+      "share_breakdown_complete": true,
+      "oa_marker_present": false,
+      "issue_price_yen": 477.0,
+      "sale_price_yen": 477.0,
+      "offer_price_yen": 477.0,
+      "latest_source_stage": "announcement",
+      "po_threshold_ever_met": false,
+      "reference_close_yen": 498.0,
+      "reference_close_date": "2026-07-31",
+      "reference_close_source": "Yahoo Finance chart (raw close)",
+      "reference_close_kind": "announcement_close",
+      "confirmed_size_yen": 3865508307,
+      "confirmed_size_oku": 38.65508307,
+      "effective_size_yen": 3865508307
+    },
+    "schedule": [],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260731505007.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260731505007.pdf",
+    "source_title": "売れるネット広告社グループ株式会社（証券コード9235）株式の売出し及び公開買付けに準ずる行為として政令で定める買集め行為に関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120260731505007",
+        "relation": "source",
+        "title": "売れるネット広告社グループ株式会社（証券コード9235）株式の売出し及び公開買付けに準ずる行為として政令で定める買集め行為に関するお知らせ",
+        "announced_at": "2026-07-31T12:00:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260731505007.pdf"
+      }
+    ],
+    "eligibility": {
+      "status": "excluded",
+      "reasons": [
+        "吸収規模80億円未満"
+      ]
+    }
+  },
+  {
+    "id": "split-4667-2026-08-07",
+    "type": "split",
+    "code": "4667",
+    "name": "アイサンテクノロジー",
+    "market": "スタンダード",
+    "margin": "信用",
+    "announced_at": "2026-08-07T15:20:00+09:00",
+    "detail": {
+      "ratio": "3",
+      "effective_date": "2026-10-01",
+      "effective_date_raw": "効力発生日 2026年10月1日（木） （3）その他 今回の株式分割に際しまして、資本金の額に変更はありません。 2.株式分割に伴う定款の一部変更 （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項に基づき、当社定款第6条の発行可能株式総数を変更するもの です。 （2）変更の内容 （下線は変更部分） （下線は変更部分） 現行定款 変更後定款 （発",
+      "record_date": null,
+      "ex_right_date": null,
+      "rights_final_date": "2026-09-28",
+      "rights_final_calculation_basis": "traders_web_rights_final_date",
+      "rights_final_status": "confirmed",
+      "traders_rights_final_date": "2026-09-28",
+      "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
+      "rights_final_source": "traders_web",
+      "rights_final_confirmed": true,
+      "rights_date_conflict": false
+    },
+    "schedule": [],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260730503908.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260730503908.pdf",
+    "source_title": "株式分割及び株式分割に伴う定款の一部変更並びに配当予想の修正、株主優待制度の一部変更に関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120260730503908",
+        "relation": "source",
+        "title": "株式分割及び株式分割に伴う定款の一部変更並びに配当予想の修正、株主優待制度の一部変更に関するお知らせ",
+        "announced_at": "2026-08-07T15:20:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260730503908.pdf"
+      }
+    ],
+    "eligibility": {
+      "status": "excluded",
+      "reasons": [
+        "貸借対象外"
+      ]
+    }
   }
 ]
