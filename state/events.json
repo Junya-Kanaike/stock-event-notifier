@@ -1268,7 +1268,10 @@
     "140120260907532493",
     "140120260907532411",
     "140120260907532664",
-    "140120260908532844"
+    "140120260908532844",
+    "140120260907532613",
+    "140120260908532886",
+    "140120260907532745"
   ],
   "events": [
     {
@@ -3340,16 +3343,17 @@
         "pricing_date_raw": "売出価格等の決定に関するお知らせ 2026年8月20日付の当社取締役会決議により決定し、同日及び2026年8月24日に公表いたしまし た当社普通株式の売出しに関し、売出価格等が下記のとおり決定されましたのでお知らせいたしま す。 記 1.当社株式の売出し（引受人の買取引受による売出し） (1) 売 出 価 格 1株につき 5,335円 (2) 売 出 価 格",
         "pricing_date_confirmed": true,
         "pricing_date_status": "confirmed",
-        "settlement_date": "2026-08-28",
+        "settlement_date": null,
         "settlement_date_end": null,
         "settlement_date_raw": "受渡期日と同一とする。 (7) 申 込 証 拠 金 1株につき売出価格と同一金額とする。 (8) 申 込 株 数 単 位 100株 (9) 売出価格、その他オーバーアロットメントによる売出しに必要な一切の事項の承認について は、代表取締役社長に一任する。 (10) オーバーアロットメントによる売出しについては、2026年8月20日(木)に金融商品取引法 によ",
-        "settlement_estimated": true,
-        "settlement_date_status": "estimated",
+        "settlement_estimated": false,
+        "settlement_date_status": "unavailable",
         "parse_warnings": [
           "他の日付を参照する受渡期日を確定日として扱わず除外"
         ],
         "missing_fields": [
-          "dilution_pct"
+          "dilution_pct",
+          "settlement_date"
         ],
         "latest_source_stage": "announcement",
         "secondary_sale_shares": 12436600,
@@ -3385,12 +3389,6 @@
         {
           "date": "2026-08-24",
           "label": "pricing_day+2",
-          "sent": false,
-          "action_cutoff_jst": "09:00"
-        },
-        {
-          "date": "2026-08-28",
-          "label": "settlement",
           "sent": false,
           "action_cutoff_jst": "09:00"
         },
@@ -5205,7 +5203,7 @@
       "last_checked_date": "2026-09-08",
       "last_success_date": "2026-09-08",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-08T10:07:26.032714+09:00"
+      "last_success_at": "2026-09-08T12:25:51.544007+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
