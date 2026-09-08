@@ -4229,12 +4229,12 @@
         {
           "date": "2026-09-07",
           "label": "pricing_day",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-09-08",
           "label": "pricing_day+1",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-09-09",
@@ -4499,7 +4499,7 @@
         {
           "date": "2026-09-08",
           "label": "execution+5bd",
-          "sent": false
+          "sent": true
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
@@ -4753,6 +4753,31 @@
           "market": "東証・福証"
         }
       ]
+    },
+    {
+      "id": "ipo-646A-2026-09-29",
+      "type": "ipo",
+      "code": "646A",
+      "name": "クラサスケミカル（株）",
+      "market": "スタンダード",
+      "margin": "対象外",
+      "announced_at": "2026-09-08T09:26:01.801379+09:00",
+      "detail": {
+        "listing_date": "2026-09-29"
+      },
+      "schedule": [
+        {
+          "date": "2026-09-28",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-09-29",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
     }
   ],
   "source_health": {

@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-09-06T23:55:58.324247+00:00",
+  "fetched_at": "2026-09-08T00:26:01.800293+00:00",
   "data": [
     {
       "code": "640A",
@@ -21,6 +21,13 @@
       "name": "キューデンホールディングス（株） *",
       "market": "プライム",
       "listing_date": "2026-10-01",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "code": "646A",
+      "name": "クラサスケミカル（株）",
+      "market": "スタンダード",
+      "listing_date": "2026-09-29",
       "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
     },
     {
