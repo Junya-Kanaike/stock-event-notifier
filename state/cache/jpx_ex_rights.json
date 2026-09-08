@@ -1,0 +1,15 @@
+{
+  "cache_version": 1,
+  "fetched_at": "2026-09-08T01:06:19.772523+00:00",
+  "data": {
+    "2814": {
+      "code": "2814",
+      "name": "佐藤食品",
+      "market": "スタンダード市場",
+      "ex_right_date": "2026-09-14",
+      "record_date": "2026-09-15",
+      "rights_final_date": "2026-09-11",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    }
+  }
+}
