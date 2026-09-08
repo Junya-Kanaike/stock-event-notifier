@@ -1895,16 +1895,14 @@
           "date": "2026-09-03",
           "label": "rights_final+0_after_close",
           "sent": true,
-          "not_before_jst": "19:00",
-          "sent_at": "2026-09-08T16:27:11.078209+09:00"
+          "not_before_jst": "19:00"
         },
         {
           "date": "2026-09-04",
           "label": "rights_final+1_noon",
           "sent": true,
           "not_before_jst": "12:00",
-          "action_cutoff_jst": "15:30",
-          "sent_at": "2026-09-08T16:27:11.078209+09:00"
+          "action_cutoff_jst": "15:30"
         },
         {
           "date": "2026-09-10",
