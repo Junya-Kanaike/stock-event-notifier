@@ -3156,8 +3156,7 @@
         {
           "date": "2026-09-10",
           "label": "listing-1bd",
-          "sent": true,
-          "sent_at": "2026-09-10T00:05:11.328003+09:00"
+          "sent": true
         },
         {
           "date": "2026-09-11",
@@ -5112,12 +5111,12 @@
         "record_date": null,
         "ex_right_date": "2026-09-14",
         "rights_final_date": "2026-09-11",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "jpx_ex_right_date": "2026-09-14",
         "jpx_rights_final_date": "2026-09-11",
         "jpx_ex_rights_source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "traders_rights_final_date": "2026-09-11",
@@ -5909,12 +5908,12 @@
       "last_success_at": "2026-08-24T22:45:04.932305+00:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-09-08",
-      "last_success_at": "2026-09-08T22:57:26.260574+00:00"
+      "last_success_date": "2026-09-09",
+      "last_success_at": "2026-09-09T22:43:27.916143+00:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-09-08",
-      "last_success_at": "2026-09-08T22:57:28.538473+00:00"
+      "last_success_date": "2026-09-09",
+      "last_success_at": "2026-09-09T22:43:30.323178+00:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-09-08",
@@ -5922,15 +5921,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-09-09",
-      "last_success_at": "2026-09-09T08:19:50.554191+00:00"
+      "last_success_at": "2026-09-09T22:43:29.538809+00:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-09-08",
-      "last_success_at": "2026-09-08T22:57:28.798831+00:00"
+      "last_success_date": "2026-09-09",
+      "last_success_at": "2026-09-09T22:43:30.684222+00:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-09-08",
-      "last_success_at": "2026-09-08T22:57:29.130287+00:00"
+      "last_success_date": "2026-09-09",
+      "last_success_at": "2026-09-09T22:43:31.088885+00:00"
     }
   },
   "schema_version": 2,
@@ -5944,7 +5943,7 @@
       "failure": 0
     },
     "2026-09-10": {
-      "success": 2,
+      "success": 3,
       "failure": 0
     }
   },
