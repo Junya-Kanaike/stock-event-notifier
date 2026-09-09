@@ -3544,17 +3544,16 @@
         "pricing_date_raw": null,
         "pricing_date_confirmed": true,
         "pricing_date_status": "confirmed",
-        "settlement_date": null,
+        "settlement_date": "2026-09-02",
         "settlement_date_end": null,
-        "settlement_date_raw": null,
+        "settlement_date_raw": "受渡期日2026年9月2日（水）（注）引受人は払込金額（発行価額）で買取引受けを行い、発行価格（募集価格）で募集を行います。2.投資口売出し（オーバーアロットメントによる売出し）(1)売出投資口数4,642口(2)売出価格1口当たり金95,160円(3)売出価額の総額441,732,720円(4)申込期間2026年8月27日（木）(5)申込証拠金の入金期間2",
         "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
+        "settlement_date_status": "confirmed",
         "parse_warnings": [],
         "missing_fields": [
-          "dilution_pct",
-          "settlement_date"
+          "dilution_pct"
         ],
-        "latest_source_stage": "announcement",
+        "latest_source_stage": "pricing",
         "share_breakdown_complete": false,
         "oa_marker_present": true,
         "po_threshold_ever_met": false,
@@ -3565,7 +3564,8 @@
         "reference_close_date": "2026-08-19",
         "reference_close_source": "Yahoo Finance chart (raw close)",
         "reference_close_kind": "announcement_close",
-        "effective_size_yen": null
+        "effective_size_yen": null,
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260818522647.pdf",
@@ -3617,24 +3617,23 @@
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": "2026-08-20",
+        "pricing_date": "2026-09-01",
         "pricing_date_end": "2026-09-01",
-        "pricing_date_raw": "売出価格等の決定に関するお知らせ 2026年8月20日付の当社取締役会決議により決定し、同日及び2026年8月24日に公表いたしまし た当社普通株式の売出しに関し、売出価格等が下記のとおり決定されましたのでお知らせいたしま す。 記 1.当社株式の売出し（引受人の買取引受による売出し） (1) 売 出 価 格 1株につき 5,335円 (2) 売 出 価 格",
+        "pricing_date_raw": "売出価格未定（日本証券業協会の定める有価証券の引受け等に関する規則第25条に規定される方式により、2026年9月1日(火)から2026年9月3日(木)までの間のいずれかの日（以下「売出価格等決定日」という。）の株式会社東京証券取引所における当社普通株式の普通取引の終値（当日に終値のない場合は、その日に先立つ直近日の終値）に0.90～1.00を乗じた価格（1円",
         "pricing_date_confirmed": true,
         "pricing_date_status": "confirmed",
-        "settlement_date": null,
+        "settlement_date": "2026-09-08",
         "settlement_date_end": null,
-        "settlement_date_raw": "受渡期日と同一とする。 (7) 申 込 証 拠 金 1株につき売出価格と同一金額とする。 (8) 申 込 株 数 単 位 100株 (9) 売出価格、その他オーバーアロットメントによる売出しに必要な一切の事項の承認について は、代表取締役社長に一任する。 (10) オーバーアロットメントによる売出しについては、2026年8月20日(木)に金融商品取引法 によ",
+        "settlement_date_raw": "受渡期日2026年9月8日（火）（注）引受人は引受価額で買取引受けを行い、売出価格で売出しを行います。2.当社株式の売出し（オーバーアロットメントによる売出し）(1)売出株式数1,865,400株(2)売出価格1株につき5,335円(3)売出価格の総額9,951,909,000円(4)申込期間2026年9月2日（水）～2026年9月3日（木）(5)受渡期日2",
         "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
+        "settlement_date_status": "confirmed",
         "parse_warnings": [
           "他の日付を参照する受渡期日を確定日として扱わず除外"
         ],
         "missing_fields": [
-          "dilution_pct",
-          "settlement_date"
+          "dilution_pct"
         ],
-        "latest_source_stage": "announcement",
+        "latest_source_stage": "pricing",
         "secondary_sale_shares": 12436600,
         "oa_shares": 1865400,
         "total_offered_shares": 14302000,
@@ -3650,38 +3649,42 @@
         "reference_close_kind": "announcement_close",
         "confirmed_size_yen": 76301170000,
         "confirmed_size_oku": 763.0117,
-        "effective_size_yen": 76301170000
+        "effective_size_yen": 76301170000,
+        "parser_version": 2
       },
       "schedule": [
         {
-          "date": "2026-08-20",
+          "date": "2026-09-01",
           "label": "pricing_day",
           "sent": false,
-          "action_cutoff_jst": "09:00",
-          "overdue_unresolved": true
+          "action_cutoff_jst": "09:00"
         },
         {
-          "date": "2026-08-21",
+          "date": "2026-09-02",
           "label": "pricing_day+1",
           "sent": false,
-          "action_cutoff_jst": "09:00",
-          "overdue_unresolved": true
+          "action_cutoff_jst": "09:00"
         },
         {
-          "date": "2026-08-24",
+          "date": "2026-09-03",
           "label": "pricing_day+2",
           "sent": false,
-          "action_cutoff_jst": "09:00",
-          "overdue_unresolved": true
+          "action_cutoff_jst": "09:00"
         },
         {
-          "date": "2026-09-29",
+          "date": "2026-09-08",
+          "label": "settlement",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-10-09",
           "label": "pricing_day+25bd",
           "sent": false,
           "action_cutoff_jst": "09:00"
         },
         {
-          "date": "2026-09-30",
+          "date": "2026-10-13",
           "label": "pricing_day+26bd",
           "sent": false,
           "action_cutoff_jst": "09:00"
@@ -3804,7 +3807,7 @@
       "detail": {
         "po_kind": "secondary",
         "source_stage": "announcement",
-        "size_oku": 4.804,
+        "size_oku": 12.03402,
         "size_oku_min": null,
         "size_oku_max": null,
         "size_status": "confirmed",
@@ -3815,24 +3818,24 @@
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": "2026-08-21",
+        "pricing_date": "2026-08-31",
         "pricing_date_end": "2026-08-31",
-        "pricing_date_raw": "売出価格等の決定に関するお知らせ 2026年8月21日開催の当社取締役会において決議いたしました当社普通株式の売出しに関し、売出価格 等が下記のとおり決定されましたのでお知らせいたします。 記 1.当社株式の売出し（引受人の買取引受による売出し） (1) 売 出 価 格 1株につき 2,402円 (2) 売 出 価 格 の 総 額 1,046,551,400",
+        "pricing_date_raw": "売出価格未定（日本証券業協会の定める有価証券の引受け等に関する規則第25条に規定される方式により、2026年8月31日(月)から2026年9月2日(水)までの間のいずれかの日（以下「売出価格等決定日」という。）の株式会社東京証券取引所における当社普通株式の普通取引の終値（当日に終値のない場合は、その日に先立つ直近日の終値）に0.90～1.00を乗じた価格（1",
         "pricing_date_confirmed": true,
         "pricing_date_status": "confirmed",
-        "settlement_date": "2026-08-31",
+        "settlement_date": "2026-09-07",
         "settlement_date_end": null,
-        "settlement_date_raw": null,
-        "settlement_estimated": true,
-        "settlement_date_status": "estimated",
+        "settlement_date_raw": "受渡期日2026年9月7日(月)（注）引受人は引受価額で買取引受けを行い、売出価格で売出しを行います。2.当社株式の売出し（オーバーアロットメントによる売出し）(1)売出株式数65,300株(2)売出価格1株につき2,402円(3)売出価格の総額156,850,600円(4)申込期間2026年9月1日(火)～2026年9月2日(水)(5)受渡期日2026年9",
+        "settlement_estimated": false,
+        "settlement_date_status": "confirmed",
         "parse_warnings": [],
         "missing_fields": [
           "dilution_pct"
         ],
-        "latest_source_stage": "announcement",
-        "secondary_sale_shares": 134700,
+        "latest_source_stage": "pricing",
+        "secondary_sale_shares": 435700,
         "oa_shares": 65300,
-        "total_offered_shares": 200000,
+        "total_offered_shares": 501000,
         "share_breakdown_complete": true,
         "oa_marker_present": true,
         "po_threshold_ever_met": false,
@@ -3843,9 +3846,10 @@
         "reference_close_date": "2026-08-21",
         "reference_close_source": "Yahoo Finance chart (raw close)",
         "reference_close_kind": "announcement_close",
-        "confirmed_size_yen": 480400000,
-        "confirmed_size_oku": 4.804,
-        "effective_size_yen": 480400000
+        "confirmed_size_yen": 1203402000,
+        "confirmed_size_oku": 12.03402,
+        "effective_size_yen": 1203402000,
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524159.pdf",
@@ -4176,21 +4180,21 @@
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": "2026-08-24",
-        "pricing_date_end": "2026-08-26",
-        "pricing_date_raw": "発行価格等の決定に関するお知らせ 当社は、2026 年8月 24 日付の取締役会において決議いたしました海外募集による新株式発行（以下 「本海外募集」といいます。）に関し、2026年8月25日に、下記のとおり、発行価格等を決定いたしま したので、お知らせいたします。 記 (1) 発 行 新 株 式 数 (注)1. 4,180,000株 (2) 発行価格（募集",
+        "pricing_date": "2026-08-25",
+        "pricing_date_end": "2026-08-25",
+        "pricing_date_raw": "発行価格等決定日 2026年8月25日（火）～ 2026年8月26日（水） 払込期日 2026年9月8日（火） 受渡期日 2026年9月9日（水） ロックアップ条項 当社及び当社代表取締役Co-CEO早川 研介:180日間 ブックランナー兼主幹事会社 BofA証券株式会社 1:最終的な募集株式の数は、4,800,000株を上限として、引受人が、投資家からの当",
         "pricing_date_confirmed": true,
         "pricing_date_status": "confirmed",
-        "settlement_date": "2026-09-01",
+        "settlement_date": "2026-09-09",
         "settlement_date_end": null,
-        "settlement_date_raw": "受渡期日 2026年9月9日（水） ロックアップ条項 当社及び当社代表取締役Co-CEO早川 研介:180日間 ブックランナー兼主幹事会社 BofA証券株式会社 1:最終的な募集株式の数は、4,800,000株を上限として、引受人が、投資家からの当社普通株式に対する需要状況及び市場環境等を勘案した上で発行価格等決定日に決定します。 CONFIDENTIAL ",
-        "settlement_estimated": true,
-        "settlement_date_status": "estimated",
+        "settlement_date_raw": "受渡期日2026年9月9日（水）(注)1.2026年8月24日付の取締役会決議における会社法第199条第1項の決議に基づく募集株式の種類及び数は当社普通株式4,800,000株（①引受人の買取引受けの対象株式として3,800,000株及び②引受人の追加的な買取引受けの対象株式の上限として1,000,000株の合計）となっておりましたが、引受人が上記募集株式の",
+        "settlement_estimated": false,
+        "settlement_date_status": "confirmed",
         "parse_warnings": [],
         "missing_fields": [
           "dilution_pct"
         ],
-        "latest_source_stage": "announcement",
+        "latest_source_stage": "pricing",
         "oa_shares": 0,
         "share_breakdown_complete": true,
         "oa_marker_present": false,
@@ -4203,7 +4207,8 @@
         "reference_close_kind": "announcement_close",
         "estimated_size_yen": 6662920000,
         "estimated_size_oku": 66.6292,
-        "effective_size_yen": 6662920000
+        "effective_size_yen": 6662920000,
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525276.pdf",
@@ -4566,21 +4571,21 @@
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": "2026-08-25",
+        "pricing_date": "2026-09-01",
         "pricing_date_end": "2026-09-01",
         "pricing_date_raw": "発行価格及び売出価格等の決定に関するお知らせ 2026 年8月 25 日開催の当社取締役会において決議いたしました新株式発行及び当社株式の売出しに関 し、発行価格及び売出価格等が下記のとおり決定されましたので、お知らせいたします。 記 1.公募による新株式発行（一般募集） (1) 発 行 価 格 1株につき 2,592円 (2) 発 行 価 格 の 総 額 ",
         "pricing_date_confirmed": true,
         "pricing_date_status": "confirmed",
-        "settlement_date": "2026-09-02",
+        "settlement_date": "2026-09-10",
         "settlement_date_end": null,
-        "settlement_date_raw": null,
-        "settlement_estimated": true,
-        "settlement_date_status": "estimated",
+        "settlement_date_raw": "受渡期日2026年9月10日(木)ご注意:この文書は、いかなる証券についての投資募集行為の一部をなすものでもありません。この文書は、当社の新株式発行及び株式売出しに関して一般に公表することのみを目的とする記者発表文であり、日本国内外を問わず投資勧誘等を目的として作成されたものではありません。当社普通株式に投資を行う際は、必ず当社が作成する新株式発行並びに株式",
+        "settlement_estimated": false,
+        "settlement_date_status": "confirmed",
         "parse_warnings": [],
         "missing_fields": [
           "dilution_pct"
         ],
-        "latest_source_stage": "announcement",
+        "latest_source_stage": "pricing",
         "public_offering_shares": 1,
         "secondary_sale_shares": 1050000,
         "oa_shares": 1050000,
@@ -4597,7 +4602,8 @@
         "reference_close_kind": "announcement_close",
         "confirmed_size_yen": 5443202592,
         "confirmed_size_oku": 54.43202592,
-        "effective_size_yen": 5443202592
+        "effective_size_yen": 5443202592,
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525282.pdf",
@@ -4897,7 +4903,7 @@
         "pricing_date_raw": "売出価格 1株につき、取引日の直前2ヶ月間の各日の終値の平均に120% を乗じた価格（韓国の関連法令に基づく最大株主に係る割増評価 を反映したもの）。本公表時点では確定していないため計算方法に より記載しており、価格の確定後、有価証券通知書の変更通知書及 び訂正目論見書を提出する予定です。なお、取引日の前後各2ヶ 月間（2026年7月3日～2026年11月3",
         "pricing_date_confirmed": false,
         "pricing_date_status": "provisional",
-        "settlement_date": "2026-07-13",
+        "settlement_date": "2026-07-10",
         "settlement_date_end": null,
         "settlement_date_raw": null,
         "settlement_estimated": true,
@@ -4917,7 +4923,8 @@
         "reference_close_kind": "announcement_close",
         "estimated_size_yen": 908107362,
         "estimated_size_oku": 9.08107362,
-        "effective_size_yen": 908107362
+        "effective_size_yen": 908107362,
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260827527416.pdf",
@@ -5082,12 +5089,12 @@
         "record_date": null,
         "ex_right_date": "2026-09-14",
         "rights_final_date": "2026-09-11",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_status": "confirmed",
         "jpx_ex_right_date": "2026-09-14",
         "jpx_rights_final_date": "2026-09-11",
         "jpx_ex_rights_source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html",
-        "rights_final_source": "jpx_ex_rights",
+        "rights_final_source": "traders_web",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "traders_rights_final_date": "2026-09-11",
@@ -5136,20 +5143,18 @@
         "price_max_yen": null,
         "dilution_pct": 22.93,
         "dilution_status": "confirmed",
-        "pricing_date": null,
+        "pricing_date": "2026-08-28",
         "pricing_date_end": null,
-        "pricing_date_raw": null,
+        "pricing_date_raw": "売出価格売出価格については、売買当事者間において協議の上、決定されております。（3）売出価格の総額28,635,502,500円売出株式の所有者（4）SONFinancial合同会社12,006,500株及び売出株式数SONFinancial合同会社によるSMEに対する市場外での相対取引に（5）売出方法よる譲渡（6）申込期間2026年8月28日（7）受渡期日",
         "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
+        "pricing_date_status": "provisional",
         "settlement_date": "2026-12-30",
         "settlement_date_end": null,
         "settlement_date_raw": "受渡期日 2026年12月30日（予定） （8） 申込証拠金 該当事項はありません。 （9） 申込株式数単位 100株 上記については、金融商品取引法に定める有価証券通知書を関東財 （10） その他 務局長に提出しております。 2.売出しの目的 SMEとSON Financial合同会社との間で、SON Financial合同会社が本クロージング時点で保有す",
         "settlement_estimated": false,
         "settlement_date_status": "provisional",
         "parse_warnings": [],
-        "missing_fields": [
-          "pricing_date"
-        ],
+        "missing_fields": [],
         "secondary_sale_shares": 100,
         "oa_shares": 0,
         "total_offered_shares": 100,
@@ -5163,7 +5168,8 @@
         "reference_close_kind": "announcement_close",
         "estimated_size_yen": 247300,
         "estimated_size_oku": 0.002473,
-        "effective_size_yen": 247300
+        "effective_size_yen": 247300,
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260828527929.pdf",
@@ -5402,7 +5408,7 @@
       "detail": {
         "po_kind": "secondary",
         "source_stage": "announcement",
-        "size_oku": 52.683294,
+        "size_oku": 130.773354,
         "size_oku_min": null,
         "size_oku_max": null,
         "size_status": "estimated",
@@ -5413,38 +5419,74 @@
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
+        "pricing_date": "2026-09-09",
+        "pricing_date_end": "2026-09-14",
+        "pricing_date_raw": "売出価格未定（日本証券業協会の定める有価証券の引受け等に関する規則第25条に規定される方式により、2026年9月9日（水）から2026年9月14日（月）までの間のいずれかの日（以下、「売出価格等決定日」という。）の株式会社東京証券取引所における当社普通株式の普通取引の終値（当日に終値のない場合は、その日に先立つ直近日の終値）に0.90～1.00を乗じた価格（",
         "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": null,
+        "pricing_date_status": "provisional",
+        "settlement_date": "2026-09-16",
         "settlement_date_end": null,
         "settlement_date_raw": null,
-        "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
+        "settlement_estimated": true,
+        "settlement_date_status": "estimated",
         "parse_warnings": [],
         "missing_fields": [
-          "dilution_pct",
-          "pricing_date",
-          "settlement_date"
+          "dilution_pct"
         ],
-        "secondary_sale_shares": 1490000,
+        "secondary_sale_shares": 4756000,
         "oa_shares": 713400,
-        "total_offered_shares": 2203400,
+        "total_offered_shares": 5469400,
         "share_breakdown_complete": true,
         "oa_marker_present": true,
         "latest_source_stage": "announcement",
-        "po_threshold_ever_met": false,
+        "po_threshold_ever_met": true,
         "reference_close_yen": 2391.0,
         "reference_close_date": "2026-09-01",
         "reference_close_source": "Yahoo Finance chart (raw close)",
         "reference_close_kind": "announcement_close",
-        "estimated_size_yen": 5268329400,
-        "estimated_size_oku": 52.683294,
-        "effective_size_yen": 5268329400
+        "estimated_size_yen": 13077335400,
+        "estimated_size_oku": 130.773354,
+        "effective_size_yen": 13077335400,
+        "parser_version": 2
       },
-      "schedule": [],
+      "schedule": [
+        {
+          "date": "2026-09-09",
+          "label": "pricing_day",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-09-10",
+          "label": "pricing_day+1",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-09-11",
+          "label": "pricing_day+2",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-09-16",
+          "label": "settlement",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-10-20",
+          "label": "pricing_day+25bd",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-10-21",
+          "label": "pricing_day+26bd",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        }
+      ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260901529515.pdf",
       "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260901529515.pdf",
       "source_title": "株式の売出しに関するお知らせ",
@@ -5459,10 +5501,8 @@
         }
       ],
       "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "吸収規模80億円未満"
-        ]
+        "status": "eligible",
+        "reasons": []
       }
     },
     {
@@ -5566,7 +5606,7 @@
       "detail": {
         "po_kind": "secondary",
         "source_stage": "announcement",
-        "size_oku": 29.32176,
+        "size_oku": 63.47328,
         "size_oku_min": null,
         "size_oku_max": null,
         "size_status": "estimated",
@@ -5577,25 +5617,23 @@
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
+        "pricing_date": "2026-09-09",
+        "pricing_date_end": "2026-09-14",
+        "pricing_date_raw": "売出価格未定（日本証券業協会の定める有価証券の引受け等に関する規則第25条に規定される方式により、2026年9月9日(水)から2026年9月14日(月)までの間のいずれかの日（以下「売出価格等決定日」という。）の株式会社東京証券取引所における当社普通株式の普通取引の終値（当日に終値のない場合は、その日に先立つ直近日の終値）に0.90～1.00を乗じた価格（1",
         "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": null,
+        "pricing_date_status": "provisional",
+        "settlement_date": "2026-09-16",
         "settlement_date_end": null,
         "settlement_date_raw": null,
-        "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
+        "settlement_estimated": true,
+        "settlement_date_status": "estimated",
         "parse_warnings": [],
         "missing_fields": [
-          "dilution_pct",
-          "pricing_date",
-          "settlement_date"
+          "dilution_pct"
         ],
-        "secondary_sale_shares": 1011700,
+        "secondary_sale_shares": 2653600,
         "oa_shares": 398000,
-        "total_offered_shares": 1409700,
+        "total_offered_shares": 3051600,
         "share_breakdown_complete": true,
         "oa_marker_present": true,
         "latest_source_stage": "announcement",
@@ -5604,9 +5642,10 @@
         "reference_close_date": "2026-09-02",
         "reference_close_source": "Yahoo Finance chart (raw close)",
         "reference_close_kind": "announcement_close",
-        "estimated_size_yen": 2932176000,
-        "estimated_size_oku": 29.32176,
-        "effective_size_yen": 2932176000
+        "estimated_size_yen": 6347328000,
+        "estimated_size_oku": 63.47328,
+        "effective_size_yen": 6347328000,
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260902530592.pdf",
@@ -5651,24 +5690,22 @@
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
+        "pricing_date": "2026-10-02",
+        "pricing_date_end": "2026-10-05",
+        "pricing_date_raw": "価格決定日2026年10月2日（金曜日）（発行価格及び売出価格は、募集株式の払込金額以上の価格で、仮条件における需要状況等を勘案した上で決定する。（4）募集・売出期間2026年10月5日（月曜日）から2026年10月8日（木曜日）まで（5）払込期日2026年10月9日（金曜日）（※）上記のオーバーアロットメントによる株式売出しは、公募による募集株式発行に伴い",
         "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": null,
+        "pricing_date_status": "provisional",
+        "settlement_date": "2026-10-13",
         "settlement_date_end": null,
-        "settlement_date_raw": null,
+        "settlement_date_raw": "受渡期日2026年10月13日（火曜日）（10）引受人の対価引受手数料は支払わず、これに代わるものとして一般募集における発行価格から引受価額を差し引いた額の総額を引受人の手取金とする。（11）払込取扱場所株式会社三十三銀行今池支店（12）前記各項を除くほか、この募集株式発行に関し取締役会の承認を要する事項は、今後開催予定の取締役会において決定し、その他必要な",
         "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
+        "settlement_date_status": "provisional",
         "parse_warnings": [
           "⚠️ Yahoo終値取得失敗 (RuntimeError)"
         ],
         "missing_fields": [
           "size",
-          "dilution_pct",
-          "pricing_date",
-          "settlement_date"
+          "dilution_pct"
         ],
         "public_offering_shares": 200000,
         "secondary_sale_shares": 30000,
@@ -5679,7 +5716,8 @@
         "latest_source_stage": "announcement",
         "po_threshold_ever_met": false,
         "effective_size_yen": null,
-        "reference_close_failure_key": "2026-09-07:RuntimeError"
+        "reference_close_failure_key": "2026-09-07:RuntimeError",
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260907532411.pdf",
@@ -5765,10 +5803,10 @@
   ],
   "source_health": {
     "tdnet": {
-      "last_checked_date": "2026-09-08",
-      "last_success_date": "2026-09-08",
+      "last_checked_date": "2026-09-09",
+      "last_success_date": "2026-09-09",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-08T21:55:42.792917+09:00"
+      "last_success_at": "2026-09-09T10:11:19.319841+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
