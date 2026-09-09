@@ -3156,7 +3156,8 @@
         {
           "date": "2026-09-10",
           "label": "listing-1bd",
-          "sent": false
+          "sent": true,
+          "sent_at": "2026-09-10T00:05:11.328003+09:00"
         },
         {
           "date": "2026-09-11",
@@ -5488,8 +5489,9 @@
         {
           "date": "2026-09-10",
           "label": "pricing_day+1",
-          "sent": false,
-          "action_cutoff_jst": "09:00"
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-09-10T00:05:11.328003+09:00"
         },
         {
           "date": "2026-09-11",
@@ -5939,6 +5941,10 @@
     },
     "2026-09-09": {
       "success": 9,
+      "failure": 0
+    },
+    "2026-09-10": {
+      "success": 2,
       "failure": 0
     }
   },
