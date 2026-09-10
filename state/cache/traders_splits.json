@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-09-09T22:43:29.538809+00:00",
+  "fetched_at": "2026-09-10T08:19:39.067558+00:00",
   "data": {
     "1570": [
       {
@@ -89,6 +89,16 @@
         "rights_final_date": "2026-10-02",
         "ratio": "100",
         "effective_date": "2026-10-07",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "4374": [
+      {
+        "code": "4374",
+        "name": "ロボペイ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "2",
+        "effective_date": "2026-10-01",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],

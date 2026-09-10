@@ -1299,7 +1299,19 @@
     "140120260909533713",
     "140120260909533714",
     "140120260909533735",
-    "140120260909533390"
+    "140120260909533390",
+    "140120260902530350",
+    "140120260910533940",
+    "140120260908533070",
+    "140120260909533574",
+    "140120260910533885",
+    "140120260910533931",
+    "140120260910534115",
+    "140120260910534145",
+    "140120260910534327",
+    "140120260910533897",
+    "140120260910534058",
+    "140120260910534445"
   ],
   "events": [
     {
@@ -5864,16 +5876,18 @@
         "ratio": "2",
         "record_date": "2026-09-15",
         "record_date_raw": "分割基準日までの間に増加する可能性があります。 （3）分割の日程 （1） 基準日公告日 2026年9月15日（予定） （2） 基 準 日 2026年9月30日（予定） （3） 効 力 発 生 日 2026年10月1日（予定） 3.株式分割に伴う定款の一部変更について （1）変更の理由 今回の株式分割に伴い、会社法第184 条第2項の規定に基づき、2026年1",
-        "rights_final_date": "2026-09-11",
+        "rights_final_date": "2026-09-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "record_date_t_plus_2",
-        "rights_final_calculation_basis": "record_date_t_plus_2",
-        "rights_final_confirmed": false,
-        "rights_final_status": "provisional",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_confirmed": true,
+        "rights_final_status": "confirmed",
         "rights_date_conflict": false,
         "ex_right_date": "2026-09-14",
         "effective_date": "2026-10-01",
-        "effective_date_raw": "効力発生日 2026年10月1日 4.配当予想の修正について（実質的な変更なし） 今回の株式分割に伴い、2026年2月12日に公表いたしました2026年12月期の期末配当予想額を以 下のとおり修正いたします。なお、本修正は分割比率に合わせて実施するものであり、実質的な変更はあ りません。 第2四半期 期末 合計 前回予想 - 31円00銭 31円00銭 （2"
+        "effective_date_raw": "効力発生日 2026年10月1日 4.配当予想の修正について（実質的な変更なし） 今回の株式分割に伴い、2026年2月12日に公表いたしました2026年12月期の期末配当予想額を以 下のとおり修正いたします。なお、本修正は分割比率に合わせて実施するものであり、実質的な変更はあ りません。 第2四半期 期末 合計 前回予想 - 31円00銭 31円00銭 （2",
+        "traders_rights_final_date": "2026-09-28",
+        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split"
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260909533522.pdf",
@@ -5895,6 +5909,42 @@
           "東証Prime・Standard以外"
         ]
       }
+    },
+    {
+      "id": "bunbai-7682-2026-09-10",
+      "type": "bunbai",
+      "code": "7682",
+      "name": "浜木綿",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-09-10T15:30:00+09:00",
+      "detail": {
+        "execution_date": null,
+        "execution_date_raw": null,
+        "execution_date_confirmed": false,
+        "notification_tracking_started": true,
+        "pending_notified": true
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260909533574.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260909533574.pdf",
+      "source_title": "株式の立会外分売に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260909533574",
+          "relation": "source",
+          "title": "株式の立会外分売に関するお知らせ",
+          "announced_at": "2026-09-10T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260909533574.pdf",
+          "market": "東証・名証"
+        }
+      ],
+      "eligibility": {
+        "status": "pending",
+        "reasons": [
+          "分売実施日未取得"
+        ]
+      }
     }
   ],
   "source_health": {
@@ -5902,7 +5952,7 @@
       "last_checked_date": "2026-09-10",
       "last_success_date": "2026-09-10",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-10T12:27:07.381738+09:00"
+      "last_success_at": "2026-09-10T17:19:57.477008+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -5921,8 +5971,8 @@
       "last_success_at": "2026-09-08T17:17:21.903685+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-09-09",
-      "last_success_at": "2026-09-09T22:43:29.538809+00:00"
+      "last_success_date": "2026-09-10",
+      "last_success_at": "2026-09-10T08:19:39.067558+00:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-09-09",
@@ -5944,7 +5994,7 @@
       "failure": 0
     },
     "2026-09-10": {
-      "success": 3,
+      "success": 5,
       "failure": 0
     }
   },
