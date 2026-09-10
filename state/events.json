@@ -5111,12 +5111,12 @@
         "record_date": null,
         "ex_right_date": "2026-09-14",
         "rights_final_date": "2026-09-11",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_status": "confirmed",
         "jpx_ex_right_date": "2026-09-14",
         "jpx_rights_final_date": "2026-09-11",
         "jpx_ex_rights_source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html",
-        "rights_final_source": "jpx_ex_rights",
+        "rights_final_source": "traders_web",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "traders_rights_final_date": "2026-09-11",
@@ -5898,10 +5898,10 @@
   ],
   "source_health": {
     "tdnet": {
-      "last_checked_date": "2026-09-09",
-      "last_success_date": "2026-09-09",
+      "last_checked_date": "2026-09-10",
+      "last_success_date": "2026-09-10",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-09T22:01:09.718668+09:00"
+      "last_success_at": "2026-09-10T09:58:46.649456+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
