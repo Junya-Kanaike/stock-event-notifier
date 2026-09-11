@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-09-10T22:45:20.218210+00:00",
+  "fetched_at": "2026-09-11T08:13:52.408929+00:00",
   "data": {
     "1570": [
       {
@@ -606,6 +606,16 @@
         "name": "テクノ菱和",
         "rights_final_date": "2026-09-28",
         "ratio": "3",
+        "effective_date": "2026-10-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "1904": [
+      {
+        "code": "1904",
+        "name": "大成温",
+        "rights_final_date": "2026-09-28",
+        "ratio": "4",
         "effective_date": "2026-10-01",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
