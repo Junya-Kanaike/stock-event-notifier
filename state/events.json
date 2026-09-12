@@ -6056,10 +6056,14 @@
     "2026-09-12": {
       "success": 1,
       "failure": 0
+    },
+    "2026-09-13": {
+      "success": 1,
+      "failure": 0
     }
   },
   "daily_system_summary": {
-    "last_sent_date": "2026-09-12",
-    "last_sent_at": "2026-09-12T07:46:04.261875+09:00"
+    "last_sent_date": "2026-09-13",
+    "last_sent_at": "2026-09-13T07:31:20.775987+09:00"
   }
 }
