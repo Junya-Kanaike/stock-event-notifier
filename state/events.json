@@ -3230,50 +3230,6 @@
       }
     },
     {
-      "id": "split-6627-2026-08-14",
-      "type": "split",
-      "code": "6627",
-      "name": "テラプローブ",
-      "market": "スタンダード",
-      "margin": "信用",
-      "announced_at": "2026-08-14T15:30:00+09:00",
-      "detail": {
-        "ratio": "5",
-        "effective_date": "2026-10-01",
-        "effective_date_raw": "効力発生日 2026年10月1日（木） （5）その他 今回の株式分割に際して、資本金の額の変更はありません。 2.株式分割に伴う定款の一部変更 （1）定款変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づく取締役会決議により、2026年10月1日を効 力発生日として、当社定款の一部を変更いたします。 （2）定款の一部変更の内容 （変更箇所に",
-        "record_date": null,
-        "ex_right_date": null,
-        "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
-        "rights_final_status": "confirmed",
-        "traders_rights_final_date": "2026-09-28",
-        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
-        "rights_final_confirmed": true,
-        "rights_date_conflict": false,
-        "ratio_source": "traders_web"
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260810517155.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260810517155.pdf",
-      "source_title": "株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260810517155",
-          "relation": "source",
-          "title": "株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
-          "announced_at": "2026-08-14T15:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260810517155.pdf"
-        }
-      ],
-      "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "貸借対象外"
-        ]
-      }
-    },
-    {
       "id": "bunbai-4073-2026-08-14",
       "type": "bunbai",
       "code": "4073",
@@ -5081,8 +5037,9 @@
         {
           "date": "2026-09-14",
           "label": "settlement",
-          "sent": false,
-          "action_cutoff_jst": "09:00"
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-09-14T07:35:02.535404+09:00"
         },
         {
           "date": "2026-10-16",
@@ -5140,12 +5097,12 @@
         "record_date": null,
         "ex_right_date": "2026-09-14",
         "rights_final_date": "2026-09-11",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "jpx_ex_right_date": "2026-09-14",
         "jpx_rights_final_date": "2026-09-11",
         "jpx_ex_rights_source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "traders_rights_final_date": "2026-09-11",
@@ -6011,28 +5968,28 @@
       "last_success_at": "2026-08-24T22:45:04.932305+00:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-09-10",
-      "last_success_at": "2026-09-10T22:45:18.016760+00:00"
+      "last_success_date": "2026-09-13",
+      "last_success_at": "2026-09-13T22:35:07.406288+00:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-09-10",
-      "last_success_at": "2026-09-10T22:45:20.868727+00:00"
+      "last_success_date": "2026-09-13",
+      "last_success_at": "2026-09-13T22:35:09.450612+00:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-09-08",
       "last_success_at": "2026-09-08T17:17:21.903685+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-09-11",
-      "last_success_at": "2026-09-11T08:13:52.408929+00:00"
+      "last_success_date": "2026-09-13",
+      "last_success_at": "2026-09-13T22:35:08.827909+00:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-09-10",
-      "last_success_at": "2026-09-10T22:45:21.152446+00:00"
+      "last_success_date": "2026-09-13",
+      "last_success_at": "2026-09-13T22:35:09.715419+00:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-09-10",
-      "last_success_at": "2026-09-10T22:45:21.448864+00:00"
+      "last_success_date": "2026-09-13",
+      "last_success_at": "2026-09-13T22:35:09.993726+00:00"
     }
   },
   "schema_version": 2,
@@ -6059,6 +6016,10 @@
     },
     "2026-09-13": {
       "success": 1,
+      "failure": 0
+    },
+    "2026-09-14": {
+      "success": 2,
       "failure": 0
     }
   },
