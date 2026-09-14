@@ -1328,7 +1328,17 @@
     "140120260911535250",
     "140120260904531809",
     "140120260910534365",
-    "140120260914535452"
+    "140120260914535452",
+    "140120260911534924",
+    "140120260911535276",
+    "140120260911535294",
+    "140120260914536039",
+    "140120260914536075",
+    "140120260910534082",
+    "140120260914535618",
+    "140120260914535876",
+    "140120260910534047",
+    "140120260914536158"
   ],
   "events": [
     {
@@ -5956,6 +5966,134 @@
           "東証以外"
         ]
       }
+    },
+    {
+      "id": "bunbai-5071-2026-09-14",
+      "type": "bunbai",
+      "code": "5071",
+      "name": "ヴィス",
+      "market": "スタンダード",
+      "margin": "貸借",
+      "announced_at": "2026-09-14T15:31:00+09:00",
+      "detail": {
+        "execution_date": "2026-09-25",
+        "execution_date_raw": "分売予定期間2026年9月25日（金）3.分売値段分売の値段については、分売実施日の前日の終値もしくは最終気配値を基準として決定いたします。4.買付申込数量の限度買付顧客1人につき5,000株（売買単位:100株）5.実施取引所東京証券取引所6.実施の目的当社株式の分布状況を改善し、より多くの個人投資家の皆様に当社株式を保有いただくことで、株式の流動性向上を",
+        "execution_date_confirmed": false,
+        "notification_tracking_started": true,
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-09-24",
+          "label": "execution-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-09-25",
+          "label": "execution_day",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-10-02",
+          "label": "execution+5bd",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260914536075.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260914536075.pdf",
+      "source_title": "株式の立会外分売に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260914536075",
+          "relation": "source",
+          "title": "株式の立会外分売に関するお知らせ",
+          "announced_at": "2026-09-14T15:31:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260914536075.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
+    },
+    {
+      "id": "po-212A-2026-09-14",
+      "type": "po",
+      "code": "212A",
+      "name": "フィットイージー",
+      "market": "プライム",
+      "margin": "信用",
+      "announced_at": "2026-09-14T16:00:00+09:00",
+      "detail": {
+        "parser_version": 2,
+        "po_kind": "secondary",
+        "source_stage": "announcement",
+        "size_oku": 63.687,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "estimated",
+        "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "public_offering_shares": null,
+        "secondary_sale_shares": 2000000,
+        "oa_shares": 300000,
+        "total_offered_shares": 2300000,
+        "share_breakdown_complete": true,
+        "oa_marker_present": true,
+        "issue_price_yen": null,
+        "sale_price_yen": null,
+        "offer_price_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": "2026-09-28",
+        "pricing_date_end": "2026-10-01",
+        "pricing_date_raw": "売出価格未定（日本証券業協会の定める有価証券の引受け等に関する規則第25条に規定される方式により、2026年9月28日（月）から2026年10月1日（木）までの間のいずれかの日（以下「売出価格等決定日」という。）の株式会社東京証券取引所における当社普通株式の普通取引の終値（当日に終値のない場合は、その日に先立つ直近日の終値）に0.90～1.00を乗じた価格（",
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "provisional",
+        "settlement_date": "2026-10-05",
+        "settlement_date_end": null,
+        "settlement_date_raw": null,
+        "settlement_estimated": true,
+        "settlement_date_status": "estimated",
+        "parse_warnings": [],
+        "missing_fields": [
+          "dilution_pct"
+        ],
+        "notification_tracking_started": true,
+        "reference_close_yen": 2769.0,
+        "reference_close_date": "2026-09-14",
+        "reference_close_source": "Yahoo Finance chart (raw close)",
+        "reference_close_kind": "announcement_close",
+        "estimated_size_yen": 6368700000,
+        "estimated_size_oku": 63.687,
+        "effective_size_yen": 6368700000
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260914535618.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260914535618.pdf",
+      "source_title": "株式の売出し及び親会社以外の支配株主の異動に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260914535618",
+          "relation": "source",
+          "title": "株式の売出し及び親会社以外の支配株主の異動に関するお知らせ",
+          "announced_at": "2026-09-14T16:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260914535618.pdf",
+          "market": "東証・名証"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "吸収規模80億円未満"
+        ]
+      }
     }
   ],
   "source_health": {
@@ -5963,7 +6101,7 @@
       "last_checked_date": "2026-09-14",
       "last_success_date": "2026-09-14",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-14T12:45:20.961967+09:00"
+      "last_success_at": "2026-09-14T18:17:07.545597+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -5978,12 +6116,12 @@
       "last_success_at": "2026-09-13T22:35:09.450612+00:00"
     },
     "yahoo_price": {
-      "last_success_date": "2026-09-08",
-      "last_success_at": "2026-09-08T17:17:21.903685+09:00"
+      "last_success_date": "2026-09-14",
+      "last_success_at": "2026-09-14T18:17:08.503025+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-09-13",
-      "last_success_at": "2026-09-13T22:35:08.827909+00:00"
+      "last_success_date": "2026-09-14",
+      "last_success_at": "2026-09-14T09:16:47.996583+00:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-09-13",
@@ -6021,7 +6159,7 @@
       "failure": 0
     },
     "2026-09-14": {
-      "success": 2,
+      "success": 3,
       "failure": 0
     }
   },
