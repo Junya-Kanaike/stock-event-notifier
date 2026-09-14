@@ -3227,8 +3227,7 @@
         {
           "date": "2026-09-15",
           "label": "listing-1bd",
-          "sent": true,
-          "sent_at": "2026-09-15T01:00:26.420395+09:00"
+          "sent": true
         },
         {
           "date": "2026-09-16",
@@ -3373,8 +3372,7 @@
         {
           "date": "2026-09-15",
           "label": "listing-1bd",
-          "sent": true,
-          "sent_at": "2026-09-15T01:00:26.420395+09:00"
+          "sent": true
         },
         {
           "date": "2026-09-16",
@@ -5111,12 +5109,12 @@
         "record_date": null,
         "ex_right_date": "2026-09-14",
         "rights_final_date": "2026-09-11",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "jpx_ex_right_date": "2026-09-14",
         "jpx_rights_final_date": "2026-09-11",
         "jpx_ex_rights_source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "traders_rights_final_date": "2026-09-11",
@@ -6110,12 +6108,12 @@
       "last_success_at": "2026-08-24T22:45:04.932305+00:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-09-13",
-      "last_success_at": "2026-09-13T22:35:07.406288+00:00"
+      "last_success_date": "2026-09-14",
+      "last_success_at": "2026-09-14T23:24:53.701259+00:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-09-13",
-      "last_success_at": "2026-09-13T22:35:09.450612+00:00"
+      "last_success_date": "2026-09-14",
+      "last_success_at": "2026-09-14T23:24:56.466195+00:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-09-14",
@@ -6123,15 +6121,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-09-14",
-      "last_success_at": "2026-09-14T15:55:24.226217+00:00"
+      "last_success_at": "2026-09-14T23:24:55.833588+00:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-09-13",
-      "last_success_at": "2026-09-13T22:35:09.715419+00:00"
+      "last_success_date": "2026-09-14",
+      "last_success_at": "2026-09-14T23:24:56.825704+00:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-09-13",
-      "last_success_at": "2026-09-13T22:35:09.993726+00:00"
+      "last_success_date": "2026-09-14",
+      "last_success_at": "2026-09-14T23:24:57.226603+00:00"
     }
   },
   "schema_version": 2,
@@ -6165,7 +6163,7 @@
       "failure": 0
     },
     "2026-09-15": {
-      "success": 3,
+      "success": 4,
       "failure": 0
     }
   },
