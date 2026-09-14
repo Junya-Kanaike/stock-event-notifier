@@ -6098,10 +6098,10 @@
   ],
   "source_health": {
     "tdnet": {
-      "last_checked_date": "2026-09-14",
-      "last_success_date": "2026-09-14",
+      "last_checked_date": "2026-09-15",
+      "last_success_date": "2026-09-15",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-14T18:17:07.545597+09:00"
+      "last_success_at": "2026-09-15T00:55:44.521976+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -6121,7 +6121,7 @@
     },
     "traders_split": {
       "last_success_date": "2026-09-14",
-      "last_success_at": "2026-09-14T09:16:47.996583+00:00"
+      "last_success_at": "2026-09-14T15:55:24.226217+00:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-09-13",
@@ -6160,6 +6160,10 @@
     },
     "2026-09-14": {
       "success": 3,
+      "failure": 0
+    },
+    "2026-09-15": {
+      "success": 1,
       "failure": 0
     }
   },
