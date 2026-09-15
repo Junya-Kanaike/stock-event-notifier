@@ -1340,7 +1340,12 @@
     "140120260910534047",
     "140120260914536158",
     "140120260914536152",
-    "140120260914536258"
+    "140120260914536258",
+    "140120260915536403",
+    "140120260915536456",
+    "140120260915536520",
+    "140120260915536324",
+    "140120260915536785"
   ],
   "events": [
     {
@@ -6096,6 +6101,70 @@
           "吸収規模80億円未満"
         ]
       }
+    },
+    {
+      "id": "split-6036-2026-09-15",
+      "type": "split",
+      "code": "6036",
+      "name": "ＫｅｅＰｅｒ技研",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-09-15T16:40:00+09:00",
+      "detail": {
+        "ratio": "2",
+        "record_date": "2026-10-30",
+        "record_date_raw": "基準日（実質10月30日（金））として、同日最終の株主名簿に記載または記録 された株主の所有する当社普通株式1株につき、2株の割合をもって分割いたします。 ② 分割により増加する株式数 株式分割前の発行済株式総数 28,280,840株 今回の分割により増加する株式数 28,280,840株 株式分割後の発行済株式総数 56,561,680株 株式分割後の発",
+        "rights_final_date": "2026-10-28",
+        "rights_final_date_raw": null,
+        "rights_final_source": "record_date_t_plus_2",
+        "rights_final_calculation_basis": "record_date_t_plus_2",
+        "rights_final_confirmed": false,
+        "rights_final_status": "provisional",
+        "rights_date_conflict": false,
+        "ex_right_date": "2026-10-29",
+        "effective_date": "2026-11-01",
+        "effective_date_raw": "効力発生日 2026年11月 1日（日） ④ 定款及び資本金の額の変更について 当社の定款に定める発行可能株式総数の範囲内での株式分割であるため、今回の株式分割に伴う定款 の変更はありません。また、今回の株式分割に際して、資本金の額の変更はありません。 1 2.株主優待制度の一部変更について (1) 株主優待制度の一部変更の理由 当社は、株主の皆様の日頃のご",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-10-28",
+          "label": "rights_final+0_after_close",
+          "sent": false,
+          "not_before_jst": "19:00"
+        },
+        {
+          "date": "2026-10-29",
+          "label": "rights_final+1_noon",
+          "sent": false,
+          "not_before_jst": "12:00",
+          "action_cutoff_jst": "15:30"
+        },
+        {
+          "date": "2026-11-05",
+          "label": "rights_final+5_preopen",
+          "sent": false,
+          "not_before_jst": "08:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260915536785.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260915536785.pdf",
+      "source_title": "株式分割、株主優待制度の一部変更及び配当予想の修正に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260915536785",
+          "relation": "source",
+          "title": "株式分割、株主優待制度の一部変更及び配当予想の修正に関するお知らせ",
+          "announced_at": "2026-09-15T16:40:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260915536785.pdf",
+          "market": "東証・名証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
@@ -6103,7 +6172,7 @@
       "last_checked_date": "2026-09-15",
       "last_success_date": "2026-09-15",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-15T12:45:43.692756+09:00"
+      "last_success_at": "2026-09-15T17:59:35.883533+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -6122,8 +6191,8 @@
       "last_success_at": "2026-09-14T18:17:08.503025+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-09-14",
-      "last_success_at": "2026-09-14T23:24:55.833588+00:00"
+      "last_success_date": "2026-09-15",
+      "last_success_at": "2026-09-15T08:59:18.053045+00:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-09-14",
