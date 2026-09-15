@@ -1280,7 +1280,72 @@
     "140120260908532913",
     "140120260908532991",
     "140120260908533097",
-    "140120260908533189"
+    "140120260908533189",
+    "140120260908532821",
+    "140120260909533544",
+    "140120260909533557",
+    "140120260901530045",
+    "140120260908533294",
+    "140120260908533295",
+    "140120260909533346",
+    "140120260909533350",
+    "140120260909533464",
+    "140120260909533522",
+    "140120260909533640",
+    "140120260909533495",
+    "140120260909533298",
+    "140120260909533391",
+    "140120260909533677",
+    "140120260909533713",
+    "140120260909533714",
+    "140120260909533735",
+    "140120260909533390",
+    "140120260902530350",
+    "140120260910533940",
+    "140120260908533070",
+    "140120260909533574",
+    "140120260910533885",
+    "140120260910533931",
+    "140120260910534115",
+    "140120260910534145",
+    "140120260910534327",
+    "140120260910533897",
+    "140120260910534058",
+    "140120260910534445",
+    "140120260910534502",
+    "140120260911534652",
+    "140120260910534375",
+    "140120260910534500",
+    "140120260910534103",
+    "140120260910534558",
+    "140120260910534557",
+    "140120260911534747",
+    "140120260911534756",
+    "140120260911535137",
+    "140120260911535153",
+    "140120260910534408",
+    "140120260911534852",
+    "140120260911535250",
+    "140120260904531809",
+    "140120260910534365",
+    "140120260914535452",
+    "140120260911534924",
+    "140120260911535276",
+    "140120260911535294",
+    "140120260914536039",
+    "140120260914536075",
+    "140120260910534082",
+    "140120260914535618",
+    "140120260914535876",
+    "140120260910534047",
+    "140120260914536158",
+    "140120260914536152",
+    "140120260914536258",
+    "140120260915536403",
+    "140120260915536456",
+    "140120260915536520",
+    "140120260915536324",
+    "140120260915536785"
   ],
   "events": [
     {
@@ -1523,24 +1588,21 @@
           "date": "2026-08-27",
           "label": "rights_final+0_after_close",
           "sent": true,
-          "not_before_jst": "19:00",
-          "suppressed_reason": "reference_resolved_after_scheduled_date"
+          "not_before_jst": "19:00"
         },
         {
           "date": "2026-08-28",
           "label": "rights_final+1_noon",
           "sent": true,
           "not_before_jst": "12:00",
-          "action_cutoff_jst": "15:30",
-          "suppressed_reason": "reference_resolved_after_scheduled_date"
+          "action_cutoff_jst": "15:30"
         },
         {
           "date": "2026-09-03",
           "label": "rights_final+5_preopen",
           "sent": true,
           "not_before_jst": "08:00",
-          "action_cutoff_jst": "09:00",
-          "suppressed_reason": "reference_resolved_after_scheduled_date"
+          "action_cutoff_jst": "09:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260717596054.pdf",
@@ -1650,24 +1712,21 @@
           "date": "2026-08-27",
           "label": "rights_final+0_after_close",
           "sent": true,
-          "not_before_jst": "19:00",
-          "suppressed_reason": "reference_resolved_after_scheduled_date"
+          "not_before_jst": "19:00"
         },
         {
           "date": "2026-08-28",
           "label": "rights_final+1_noon",
           "sent": true,
           "not_before_jst": "12:00",
-          "action_cutoff_jst": "15:30",
-          "suppressed_reason": "reference_resolved_after_scheduled_date"
+          "action_cutoff_jst": "15:30"
         },
         {
           "date": "2026-09-03",
           "label": "rights_final+5_preopen",
           "sent": true,
           "not_before_jst": "08:00",
-          "action_cutoff_jst": "09:00",
-          "suppressed_reason": "reference_resolved_after_scheduled_date"
+          "action_cutoff_jst": "09:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260723598560.pdf",
@@ -1895,80 +1954,6 @@
       "eligibility": {
         "status": "eligible",
         "reasons": []
-      }
-    },
-    {
-      "id": "po-9235-2026-07-31",
-      "type": "po",
-      "code": "9235",
-      "name": "売れるネット広告社グループ",
-      "market": "グロース",
-      "margin": "信用",
-      "announced_at": "2026-07-31T12:00:00+09:00",
-      "detail": {
-        "po_kind": "secondary",
-        "source_stage": "announcement",
-        "size_oku": 38.65508307,
-        "size_oku_min": null,
-        "size_oku_max": null,
-        "size_status": "confirmed",
-        "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
-        "share_count": null,
-        "oa_share_count": null,
-        "price_min_yen": null,
-        "price_max_yen": null,
-        "dilution_pct": null,
-        "dilution_status": "unavailable",
-        "pricing_date": "2026-08-07",
-        "pricing_date_end": null,
-        "pricing_date_raw": "売出価格 1株につき477円 （8） 売出価格の総額 193,275,630円 （9） 売渡期日 2026年8月7日 ※上記については、金融商品取引法に定める有価証券通知書を福岡財務支局へ提出いたします。 2.売出しの目的 加藤公一レオ氏と柴田雄平氏との間で、当社株式の譲渡を行うことにつき契約が締結されたことから、関 係法令の定める手続きに則り、売出による譲",
-        "pricing_date_confirmed": true,
-        "pricing_date_status": "confirmed",
-        "settlement_date": "2026-08-18",
-        "settlement_date_end": null,
-        "settlement_date_raw": null,
-        "settlement_estimated": true,
-        "settlement_date_status": "estimated",
-        "parse_warnings": [],
-        "missing_fields": [
-          "dilution_pct"
-        ],
-        "secondary_sale_shares": 8103791,
-        "oa_shares": 0,
-        "total_offered_shares": 8103791,
-        "share_breakdown_complete": true,
-        "oa_marker_present": false,
-        "issue_price_yen": 477.0,
-        "sale_price_yen": 477.0,
-        "offer_price_yen": 477.0,
-        "latest_source_stage": "announcement",
-        "po_threshold_ever_met": false,
-        "reference_close_yen": 498.0,
-        "reference_close_date": "2026-07-31",
-        "reference_close_source": "Yahoo Finance chart (raw close)",
-        "reference_close_kind": "announcement_close",
-        "confirmed_size_yen": 3865508307,
-        "confirmed_size_oku": 38.65508307,
-        "effective_size_yen": 3865508307
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260731505007.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260731505007.pdf",
-      "source_title": "売れるネット広告社グループ株式会社（証券コード9235）株式の売出し及び公開買付けに準ずる行為として政令で定める買集め行為に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260731505007",
-          "relation": "source",
-          "title": "売れるネット広告社グループ株式会社（証券コード9235）株式の売出し及び公開買付けに準ずる行為として政令で定める買集め行為に関するお知らせ",
-          "announced_at": "2026-07-31T12:00:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260731505007.pdf"
-        }
-      ],
-      "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "吸収規模80億円未満"
-        ]
       }
     },
     {
@@ -2905,49 +2890,6 @@
       }
     },
     {
-      "id": "split-4667-2026-08-07",
-      "type": "split",
-      "code": "4667",
-      "name": "アイサンテクノロジー",
-      "market": "スタンダード",
-      "margin": "信用",
-      "announced_at": "2026-08-07T15:20:00+09:00",
-      "detail": {
-        "ratio": "3",
-        "effective_date": "2026-10-01",
-        "effective_date_raw": "効力発生日 2026年10月1日（木） （3）その他 今回の株式分割に際しまして、資本金の額に変更はありません。 2.株式分割に伴う定款の一部変更 （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項に基づき、当社定款第6条の発行可能株式総数を変更するもの です。 （2）変更の内容 （下線は変更部分） （下線は変更部分） 現行定款 変更後定款 （発",
-        "record_date": null,
-        "ex_right_date": null,
-        "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
-        "rights_final_status": "confirmed",
-        "traders_rights_final_date": "2026-09-28",
-        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
-        "rights_final_confirmed": true,
-        "rights_date_conflict": false
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260730503908.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260730503908.pdf",
-      "source_title": "株式分割及び株式分割に伴う定款の一部変更並びに配当予想の修正、株主優待制度の一部変更に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260730503908",
-          "relation": "source",
-          "title": "株式分割及び株式分割に伴う定款の一部変更並びに配当予想の修正、株主優待制度の一部変更に関するお知らせ",
-          "announced_at": "2026-08-07T15:20:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260730503908.pdf"
-        }
-      ],
-      "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "貸借対象外"
-        ]
-      }
-    },
-    {
       "id": "split-5706-2026-08-07",
       "type": "split",
       "code": "5706",
@@ -3254,18 +3196,20 @@
       "margin": "対象外",
       "announced_at": "2026-08-13T08:02:19.286867+09:00",
       "detail": {
-        "listing_date": "2026-09-11"
+        "listing_date": "2026-09-11",
+        "eligible_notified": true
       },
       "schedule": [
         {
           "date": "2026-09-10",
           "label": "listing-1bd",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-09-11",
           "label": "listing_day",
-          "sent": false
+          "sent": true,
+          "sent_at": "2026-09-11T07:45:12.928975+09:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -3283,13 +3227,14 @@
       "margin": "対象外",
       "announced_at": "2026-08-14T08:03:42.740531+09:00",
       "detail": {
-        "listing_date": "2026-09-16"
+        "listing_date": "2026-09-16",
+        "eligible_notified": true
       },
       "schedule": [
         {
           "date": "2026-09-15",
           "label": "listing-1bd",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-09-16",
@@ -3301,50 +3246,6 @@
       "eligibility": {
         "status": "eligible",
         "reasons": []
-      }
-    },
-    {
-      "id": "split-6627-2026-08-14",
-      "type": "split",
-      "code": "6627",
-      "name": "テラプローブ",
-      "market": "スタンダード",
-      "margin": "信用",
-      "announced_at": "2026-08-14T15:30:00+09:00",
-      "detail": {
-        "ratio": "5",
-        "effective_date": "2026-10-01",
-        "effective_date_raw": "効力発生日 2026年10月1日（木） （5）その他 今回の株式分割に際して、資本金の額の変更はありません。 2.株式分割に伴う定款の一部変更 （1）定款変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づく取締役会決議により、2026年10月1日を効 力発生日として、当社定款の一部を変更いたします。 （2）定款の一部変更の内容 （変更箇所に",
-        "record_date": null,
-        "ex_right_date": null,
-        "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
-        "rights_final_status": "confirmed",
-        "traders_rights_final_date": "2026-09-28",
-        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
-        "rights_final_confirmed": true,
-        "rights_date_conflict": false,
-        "ratio_source": "traders_web"
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260810517155.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260810517155.pdf",
-      "source_title": "株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260810517155",
-          "relation": "source",
-          "title": "株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
-          "announced_at": "2026-08-14T15:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260810517155.pdf"
-        }
-      ],
-      "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "貸借対象外"
-        ]
       }
     },
     {
@@ -3411,7 +3312,8 @@
       "margin": "対象外",
       "announced_at": "2026-08-17T07:37:03.759035+09:00",
       "detail": {
-        "listing_date": "2026-09-18"
+        "listing_date": "2026-09-18",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -3440,7 +3342,8 @@
       "margin": "対象外",
       "announced_at": "2026-08-17T07:37:03.759712+09:00",
       "detail": {
-        "listing_date": "2026-09-18"
+        "listing_date": "2026-09-18",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -3469,13 +3372,14 @@
       "margin": "対象外",
       "announced_at": "2026-08-17T07:37:03.760169+09:00",
       "detail": {
-        "listing_date": "2026-09-16"
+        "listing_date": "2026-09-16",
+        "eligible_notified": true
       },
       "schedule": [
         {
           "date": "2026-09-15",
           "label": "listing-1bd",
-          "sent": false
+          "sent": true
         },
         {
           "date": "2026-09-16",
@@ -3584,7 +3488,8 @@
       "margin": "対象外",
       "announced_at": "2026-08-18T07:41:52.051008+09:00",
       "detail": {
-        "listing_date": "2026-09-17"
+        "listing_date": "2026-09-17",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -3613,7 +3518,8 @@
       "margin": "対象外",
       "announced_at": "2026-08-19T07:42:25.340591+09:00",
       "detail": {
-        "listing_date": "2026-09-18"
+        "listing_date": "2026-09-18",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -3660,17 +3566,16 @@
         "pricing_date_raw": null,
         "pricing_date_confirmed": true,
         "pricing_date_status": "confirmed",
-        "settlement_date": null,
+        "settlement_date": "2026-09-02",
         "settlement_date_end": null,
-        "settlement_date_raw": null,
+        "settlement_date_raw": "受渡期日2026年9月2日（水）（注）引受人は払込金額（発行価額）で買取引受けを行い、発行価格（募集価格）で募集を行います。2.投資口売出し（オーバーアロットメントによる売出し）(1)売出投資口数4,642口(2)売出価格1口当たり金95,160円(3)売出価額の総額441,732,720円(4)申込期間2026年8月27日（木）(5)申込証拠金の入金期間2",
         "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
+        "settlement_date_status": "confirmed",
         "parse_warnings": [],
         "missing_fields": [
-          "dilution_pct",
-          "settlement_date"
+          "dilution_pct"
         ],
-        "latest_source_stage": "announcement",
+        "latest_source_stage": "pricing",
         "share_breakdown_complete": false,
         "oa_marker_present": true,
         "po_threshold_ever_met": false,
@@ -3681,7 +3586,8 @@
         "reference_close_date": "2026-08-19",
         "reference_close_source": "Yahoo Finance chart (raw close)",
         "reference_close_kind": "announcement_close",
-        "effective_size_yen": null
+        "effective_size_yen": null,
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260818522647.pdf",
@@ -3733,24 +3639,23 @@
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": "2026-08-20",
+        "pricing_date": "2026-09-01",
         "pricing_date_end": "2026-09-01",
-        "pricing_date_raw": "売出価格等の決定に関するお知らせ 2026年8月20日付の当社取締役会決議により決定し、同日及び2026年8月24日に公表いたしまし た当社普通株式の売出しに関し、売出価格等が下記のとおり決定されましたのでお知らせいたしま す。 記 1.当社株式の売出し（引受人の買取引受による売出し） (1) 売 出 価 格 1株につき 5,335円 (2) 売 出 価 格",
+        "pricing_date_raw": "売出価格未定（日本証券業協会の定める有価証券の引受け等に関する規則第25条に規定される方式により、2026年9月1日(火)から2026年9月3日(木)までの間のいずれかの日（以下「売出価格等決定日」という。）の株式会社東京証券取引所における当社普通株式の普通取引の終値（当日に終値のない場合は、その日に先立つ直近日の終値）に0.90～1.00を乗じた価格（1円",
         "pricing_date_confirmed": true,
         "pricing_date_status": "confirmed",
-        "settlement_date": null,
+        "settlement_date": "2026-09-08",
         "settlement_date_end": null,
-        "settlement_date_raw": "受渡期日と同一とする。 (7) 申 込 証 拠 金 1株につき売出価格と同一金額とする。 (8) 申 込 株 数 単 位 100株 (9) 売出価格、その他オーバーアロットメントによる売出しに必要な一切の事項の承認について は、代表取締役社長に一任する。 (10) オーバーアロットメントによる売出しについては、2026年8月20日(木)に金融商品取引法 によ",
+        "settlement_date_raw": "受渡期日2026年9月8日（火）（注）引受人は引受価額で買取引受けを行い、売出価格で売出しを行います。2.当社株式の売出し（オーバーアロットメントによる売出し）(1)売出株式数1,865,400株(2)売出価格1株につき5,335円(3)売出価格の総額9,951,909,000円(4)申込期間2026年9月2日（水）～2026年9月3日（木）(5)受渡期日2",
         "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
+        "settlement_date_status": "confirmed",
         "parse_warnings": [
           "他の日付を参照する受渡期日を確定日として扱わず除外"
         ],
         "missing_fields": [
-          "dilution_pct",
-          "settlement_date"
+          "dilution_pct"
         ],
-        "latest_source_stage": "announcement",
+        "latest_source_stage": "pricing",
         "secondary_sale_shares": 12436600,
         "oa_shares": 1865400,
         "total_offered_shares": 14302000,
@@ -3766,38 +3671,46 @@
         "reference_close_kind": "announcement_close",
         "confirmed_size_yen": 76301170000,
         "confirmed_size_oku": 763.0117,
-        "effective_size_yen": 76301170000
+        "effective_size_yen": 76301170000,
+        "parser_version": 2
       },
       "schedule": [
         {
-          "date": "2026-08-20",
+          "date": "2026-09-01",
           "label": "pricing_day",
           "sent": false,
           "action_cutoff_jst": "09:00",
           "overdue_unresolved": true
         },
         {
-          "date": "2026-08-21",
+          "date": "2026-09-02",
           "label": "pricing_day+1",
-          "sent": false,
+          "sent": true,
           "action_cutoff_jst": "09:00",
-          "overdue_unresolved": true
+          "sent_at": "2026-09-09T10:18:15.108559+09:00"
         },
         {
-          "date": "2026-08-24",
+          "date": "2026-09-03",
           "label": "pricing_day+2",
-          "sent": false,
+          "sent": true,
           "action_cutoff_jst": "09:00",
-          "overdue_unresolved": true
+          "sent_at": "2026-09-09T10:18:15.108559+09:00"
         },
         {
-          "date": "2026-09-29",
+          "date": "2026-09-08",
+          "label": "settlement",
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-09-09T10:18:15.108559+09:00"
+        },
+        {
+          "date": "2026-10-09",
           "label": "pricing_day+25bd",
           "sent": false,
           "action_cutoff_jst": "09:00"
         },
         {
-          "date": "2026-09-30",
+          "date": "2026-10-13",
           "label": "pricing_day+26bd",
           "sent": false,
           "action_cutoff_jst": "09:00"
@@ -3920,7 +3833,7 @@
       "detail": {
         "po_kind": "secondary",
         "source_stage": "announcement",
-        "size_oku": 4.804,
+        "size_oku": 12.03402,
         "size_oku_min": null,
         "size_oku_max": null,
         "size_status": "confirmed",
@@ -3931,24 +3844,24 @@
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": "2026-08-21",
+        "pricing_date": "2026-08-31",
         "pricing_date_end": "2026-08-31",
-        "pricing_date_raw": "売出価格等の決定に関するお知らせ 2026年8月21日開催の当社取締役会において決議いたしました当社普通株式の売出しに関し、売出価格 等が下記のとおり決定されましたのでお知らせいたします。 記 1.当社株式の売出し（引受人の買取引受による売出し） (1) 売 出 価 格 1株につき 2,402円 (2) 売 出 価 格 の 総 額 1,046,551,400",
+        "pricing_date_raw": "売出価格未定（日本証券業協会の定める有価証券の引受け等に関する規則第25条に規定される方式により、2026年8月31日(月)から2026年9月2日(水)までの間のいずれかの日（以下「売出価格等決定日」という。）の株式会社東京証券取引所における当社普通株式の普通取引の終値（当日に終値のない場合は、その日に先立つ直近日の終値）に0.90～1.00を乗じた価格（1",
         "pricing_date_confirmed": true,
         "pricing_date_status": "confirmed",
-        "settlement_date": "2026-08-31",
+        "settlement_date": "2026-09-07",
         "settlement_date_end": null,
-        "settlement_date_raw": null,
-        "settlement_estimated": true,
-        "settlement_date_status": "estimated",
+        "settlement_date_raw": "受渡期日2026年9月7日(月)（注）引受人は引受価額で買取引受けを行い、売出価格で売出しを行います。2.当社株式の売出し（オーバーアロットメントによる売出し）(1)売出株式数65,300株(2)売出価格1株につき2,402円(3)売出価格の総額156,850,600円(4)申込期間2026年9月1日(火)～2026年9月2日(水)(5)受渡期日2026年9",
+        "settlement_estimated": false,
+        "settlement_date_status": "confirmed",
         "parse_warnings": [],
         "missing_fields": [
           "dilution_pct"
         ],
-        "latest_source_stage": "announcement",
-        "secondary_sale_shares": 134700,
+        "latest_source_stage": "pricing",
+        "secondary_sale_shares": 435700,
         "oa_shares": 65300,
-        "total_offered_shares": 200000,
+        "total_offered_shares": 501000,
         "share_breakdown_complete": true,
         "oa_marker_present": true,
         "po_threshold_ever_met": false,
@@ -3959,9 +3872,10 @@
         "reference_close_date": "2026-08-21",
         "reference_close_source": "Yahoo Finance chart (raw close)",
         "reference_close_kind": "announcement_close",
-        "confirmed_size_yen": 480400000,
-        "confirmed_size_oku": 4.804,
-        "effective_size_yen": 480400000
+        "confirmed_size_yen": 1203402000,
+        "confirmed_size_oku": 12.03402,
+        "effective_size_yen": 1203402000,
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524159.pdf",
@@ -4228,8 +4142,9 @@
         {
           "date": "2026-09-09",
           "label": "settlement",
-          "sent": false,
-          "action_cutoff_jst": "09:00"
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-09-09T00:03:06.536417+09:00"
         },
         {
           "date": "2026-10-13",
@@ -4291,21 +4206,21 @@
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": "2026-08-24",
-        "pricing_date_end": "2026-08-26",
-        "pricing_date_raw": "発行価格等の決定に関するお知らせ 当社は、2026 年8月 24 日付の取締役会において決議いたしました海外募集による新株式発行（以下 「本海外募集」といいます。）に関し、2026年8月25日に、下記のとおり、発行価格等を決定いたしま したので、お知らせいたします。 記 (1) 発 行 新 株 式 数 (注)1. 4,180,000株 (2) 発行価格（募集",
+        "pricing_date": "2026-08-25",
+        "pricing_date_end": "2026-08-25",
+        "pricing_date_raw": "発行価格等決定日 2026年8月25日（火）～ 2026年8月26日（水） 払込期日 2026年9月8日（火） 受渡期日 2026年9月9日（水） ロックアップ条項 当社及び当社代表取締役Co-CEO早川 研介:180日間 ブックランナー兼主幹事会社 BofA証券株式会社 1:最終的な募集株式の数は、4,800,000株を上限として、引受人が、投資家からの当",
         "pricing_date_confirmed": true,
         "pricing_date_status": "confirmed",
-        "settlement_date": "2026-09-01",
+        "settlement_date": "2026-09-09",
         "settlement_date_end": null,
-        "settlement_date_raw": "受渡期日 2026年9月9日（水） ロックアップ条項 当社及び当社代表取締役Co-CEO早川 研介:180日間 ブックランナー兼主幹事会社 BofA証券株式会社 1:最終的な募集株式の数は、4,800,000株を上限として、引受人が、投資家からの当社普通株式に対する需要状況及び市場環境等を勘案した上で発行価格等決定日に決定します。 CONFIDENTIAL ",
-        "settlement_estimated": true,
-        "settlement_date_status": "estimated",
+        "settlement_date_raw": "受渡期日2026年9月9日（水）(注)1.2026年8月24日付の取締役会決議における会社法第199条第1項の決議に基づく募集株式の種類及び数は当社普通株式4,800,000株（①引受人の買取引受けの対象株式として3,800,000株及び②引受人の追加的な買取引受けの対象株式の上限として1,000,000株の合計）となっておりましたが、引受人が上記募集株式の",
+        "settlement_estimated": false,
+        "settlement_date_status": "confirmed",
         "parse_warnings": [],
         "missing_fields": [
           "dilution_pct"
         ],
-        "latest_source_stage": "announcement",
+        "latest_source_stage": "pricing",
         "oa_shares": 0,
         "share_breakdown_complete": true,
         "oa_marker_present": false,
@@ -4318,7 +4233,8 @@
         "reference_close_kind": "announcement_close",
         "estimated_size_yen": 6662920000,
         "estimated_size_oku": 66.6292,
-        "effective_size_yen": 6662920000
+        "effective_size_yen": 6662920000,
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525276.pdf",
@@ -4357,7 +4273,8 @@
       "margin": "対象外",
       "announced_at": "2026-08-25T07:45:06.105683+09:00",
       "detail": {
-        "listing_date": "2026-09-25"
+        "listing_date": "2026-09-25",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -4680,21 +4597,21 @@
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": "2026-08-25",
+        "pricing_date": "2026-09-01",
         "pricing_date_end": "2026-09-01",
         "pricing_date_raw": "発行価格及び売出価格等の決定に関するお知らせ 2026 年8月 25 日開催の当社取締役会において決議いたしました新株式発行及び当社株式の売出しに関 し、発行価格及び売出価格等が下記のとおり決定されましたので、お知らせいたします。 記 1.公募による新株式発行（一般募集） (1) 発 行 価 格 1株につき 2,592円 (2) 発 行 価 格 の 総 額 ",
         "pricing_date_confirmed": true,
         "pricing_date_status": "confirmed",
-        "settlement_date": "2026-09-02",
+        "settlement_date": "2026-09-10",
         "settlement_date_end": null,
-        "settlement_date_raw": null,
-        "settlement_estimated": true,
-        "settlement_date_status": "estimated",
+        "settlement_date_raw": "受渡期日2026年9月10日(木)ご注意:この文書は、いかなる証券についての投資募集行為の一部をなすものでもありません。この文書は、当社の新株式発行及び株式売出しに関して一般に公表することのみを目的とする記者発表文であり、日本国内外を問わず投資勧誘等を目的として作成されたものではありません。当社普通株式に投資を行う際は、必ず当社が作成する新株式発行並びに株式",
+        "settlement_estimated": false,
+        "settlement_date_status": "confirmed",
         "parse_warnings": [],
         "missing_fields": [
           "dilution_pct"
         ],
-        "latest_source_stage": "announcement",
+        "latest_source_stage": "pricing",
         "public_offering_shares": 1,
         "secondary_sale_shares": 1050000,
         "oa_shares": 1050000,
@@ -4711,7 +4628,8 @@
         "reference_close_kind": "announcement_close",
         "confirmed_size_yen": 5443202592,
         "confirmed_size_oku": 54.43202592,
-        "effective_size_yen": 5443202592
+        "effective_size_yen": 5443202592,
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525282.pdf",
@@ -5011,7 +4929,7 @@
         "pricing_date_raw": "売出価格 1株につき、取引日の直前2ヶ月間の各日の終値の平均に120% を乗じた価格（韓国の関連法令に基づく最大株主に係る割増評価 を反映したもの）。本公表時点では確定していないため計算方法に より記載しており、価格の確定後、有価証券通知書の変更通知書及 び訂正目論見書を提出する予定です。なお、取引日の前後各2ヶ 月間（2026年7月3日～2026年11月3",
         "pricing_date_confirmed": false,
         "pricing_date_status": "provisional",
-        "settlement_date": "2026-07-13",
+        "settlement_date": "2026-07-10",
         "settlement_date_end": null,
         "settlement_date_raw": null,
         "settlement_estimated": true,
@@ -5031,7 +4949,8 @@
         "reference_close_kind": "announcement_close",
         "estimated_size_yen": 908107362,
         "estimated_size_oku": 9.08107362,
-        "effective_size_yen": 908107362
+        "effective_size_yen": 908107362,
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260827527416.pdf",
@@ -5130,14 +5049,16 @@
         {
           "date": "2026-09-09",
           "label": "pricing_day+2",
-          "sent": false,
-          "action_cutoff_jst": "09:00"
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-09-09T00:03:06.536417+09:00"
         },
         {
           "date": "2026-09-14",
           "label": "settlement",
-          "sent": false,
-          "action_cutoff_jst": "09:00"
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-09-14T07:35:02.535404+09:00"
         },
         {
           "date": "2026-10-16",
@@ -5249,20 +5170,18 @@
         "price_max_yen": null,
         "dilution_pct": 22.93,
         "dilution_status": "confirmed",
-        "pricing_date": null,
+        "pricing_date": "2026-08-28",
         "pricing_date_end": null,
-        "pricing_date_raw": null,
+        "pricing_date_raw": "売出価格売出価格については、売買当事者間において協議の上、決定されております。（3）売出価格の総額28,635,502,500円売出株式の所有者（4）SONFinancial合同会社12,006,500株及び売出株式数SONFinancial合同会社によるSMEに対する市場外での相対取引に（5）売出方法よる譲渡（6）申込期間2026年8月28日（7）受渡期日",
         "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
+        "pricing_date_status": "provisional",
         "settlement_date": "2026-12-30",
         "settlement_date_end": null,
         "settlement_date_raw": "受渡期日 2026年12月30日（予定） （8） 申込証拠金 該当事項はありません。 （9） 申込株式数単位 100株 上記については、金融商品取引法に定める有価証券通知書を関東財 （10） その他 務局長に提出しております。 2.売出しの目的 SMEとSON Financial合同会社との間で、SON Financial合同会社が本クロージング時点で保有す",
         "settlement_estimated": false,
         "settlement_date_status": "provisional",
         "parse_warnings": [],
-        "missing_fields": [
-          "pricing_date"
-        ],
+        "missing_fields": [],
         "secondary_sale_shares": 100,
         "oa_shares": 0,
         "total_offered_shares": 100,
@@ -5276,7 +5195,8 @@
         "reference_close_kind": "announcement_close",
         "estimated_size_yen": 247300,
         "estimated_size_oku": 0.002473,
-        "effective_size_yen": 247300
+        "effective_size_yen": 247300,
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260828527929.pdf",
@@ -5515,51 +5435,96 @@
       "detail": {
         "po_kind": "secondary",
         "source_stage": "announcement",
-        "size_oku": 52.683294,
+        "size_oku": 14.71032862,
         "size_oku_min": null,
         "size_oku_max": null,
-        "size_status": "estimated",
-        "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+        "size_status": "confirmed",
+        "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
         "share_count": null,
         "oa_share_count": null,
         "price_min_yen": null,
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": null,
+        "pricing_date": "2026-09-09",
+        "pricing_date_end": "2026-09-09",
+        "pricing_date_raw": "売出価格未定（日本証券業協会の定める有価証券の引受け等に関する規則第25条に規定される方式により、2026年9月9日（水）から2026年9月14日（月）までの間のいずれかの日（以下、「売出価格等決定日」という。）の株式会社東京証券取引所における当社普通株式の普通取引の終値（当日に終値のない場合は、その日に先立つ直近日の終値）に0.90～1.00を乗じた価格（",
+        "pricing_date_confirmed": true,
+        "pricing_date_status": "confirmed",
+        "settlement_date": "2026-09-16",
         "settlement_date_end": null,
-        "settlement_date_raw": null,
+        "settlement_date_raw": "受渡期日2026年9月16日（水）（注）引受人は、引受価額で買取引受けを行い、売出価格で売出しを行います。2.当社株式の売出し（オーバーアロットメントによる売出し）（1）売出株式数713,400株（2）売出価格1株につき2,062円（3）売出価格の総額1,471,030,800円（4）申込期間2026年9月10日（木）～2026年9月11日（金）（5）受渡期",
         "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
+        "settlement_date_status": "confirmed",
         "parse_warnings": [],
         "missing_fields": [
-          "dilution_pct",
-          "pricing_date",
-          "settlement_date"
+          "dilution_pct"
         ],
-        "secondary_sale_shares": 1490000,
+        "secondary_sale_shares": 1,
         "oa_shares": 713400,
-        "total_offered_shares": 2203400,
+        "total_offered_shares": 713401,
         "share_breakdown_complete": true,
         "oa_marker_present": true,
-        "latest_source_stage": "announcement",
-        "po_threshold_ever_met": false,
+        "latest_source_stage": "pricing",
+        "po_threshold_ever_met": true,
         "reference_close_yen": 2391.0,
         "reference_close_date": "2026-09-01",
         "reference_close_source": "Yahoo Finance chart (raw close)",
         "reference_close_kind": "announcement_close",
-        "estimated_size_yen": 5268329400,
-        "estimated_size_oku": 52.683294,
-        "effective_size_yen": 5268329400
+        "estimated_size_yen": 13077335400,
+        "estimated_size_oku": 130.773354,
+        "effective_size_yen": 1471032862,
+        "parser_version": 2,
+        "issue_price_yen": 2062.0,
+        "sale_price_yen": 2062.0,
+        "offer_price_yen": 2062.0,
+        "notification_tracking_started": true,
+        "confirmed_size_yen": 1471032862,
+        "confirmed_size_oku": 14.71032862,
+        "eligible_notified": true
       },
-      "schedule": [],
+      "schedule": [
+        {
+          "date": "2026-09-09",
+          "label": "pricing_day",
+          "sent": true,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-09-10",
+          "label": "pricing_day+1",
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-09-10T00:05:11.328003+09:00"
+        },
+        {
+          "date": "2026-09-11",
+          "label": "pricing_day+2",
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-09-11T07:45:12.928975+09:00"
+        },
+        {
+          "date": "2026-09-16",
+          "label": "settlement",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-10-20",
+          "label": "pricing_day+25bd",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-10-21",
+          "label": "pricing_day+26bd",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        }
+      ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260901529515.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260901529515.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260909533713.pdf",
       "source_title": "株式の売出しに関するお知らせ",
       "related_disclosures": [
         {
@@ -5569,13 +5534,19 @@
           "announced_at": "2026-09-01T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260901529515.pdf",
           "market": "東証"
+        },
+        {
+          "id": "140120260909533713",
+          "relation": "pricing",
+          "title": "売出価格等の決定に関するお知らせ",
+          "announced_at": "2026-09-09T17:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260909533713.pdf",
+          "market": "東証"
         }
       ],
       "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "吸収規模80億円未満"
-        ]
+        "status": "eligible",
+        "reasons": []
       }
     },
     {
@@ -5587,7 +5558,8 @@
       "margin": "対象外",
       "announced_at": "2026-09-02T09:15:32.360160+09:00",
       "detail": {
-        "listing_date": "2026-10-01"
+        "listing_date": "2026-10-01",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -5616,7 +5588,8 @@
       "margin": "対象外",
       "announced_at": "2026-09-02T09:15:32.360709+09:00",
       "detail": {
-        "listing_date": "2026-10-01"
+        "listing_date": "2026-10-01",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -5645,7 +5618,8 @@
       "margin": "対象外",
       "announced_at": "2026-09-02T09:15:32.360736+09:00",
       "detail": {
-        "listing_date": "2026-10-01"
+        "listing_date": "2026-10-01",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -5676,51 +5650,56 @@
       "detail": {
         "po_kind": "secondary",
         "source_stage": "announcement",
-        "size_oku": 29.32176,
+        "size_oku": 54.654156,
         "size_oku_min": null,
         "size_oku_max": null,
-        "size_status": "estimated",
-        "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+        "size_status": "confirmed",
+        "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
         "share_count": null,
         "oa_share_count": null,
         "price_min_yen": null,
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": null,
+        "pricing_date": "2026-09-09",
+        "pricing_date_end": "2026-09-09",
+        "pricing_date_raw": "売出価格未定（日本証券業協会の定める有価証券の引受け等に関する規則第25条に規定される方式により、2026年9月9日(水)から2026年9月14日(月)までの間のいずれかの日（以下「売出価格等決定日」という。）の株式会社東京証券取引所における当社普通株式の普通取引の終値（当日に終値のない場合は、その日に先立つ直近日の終値）に0.90～1.00を乗じた価格（1",
+        "pricing_date_confirmed": true,
+        "pricing_date_status": "confirmed",
+        "settlement_date": "2026-09-16",
         "settlement_date_end": null,
-        "settlement_date_raw": null,
+        "settlement_date_raw": "受渡期日2026年9月16日(水)(注)引受人は引受価額で買取引受けを行い、売出価格で売出しを行います。2.株式売出し（オーバーアロットメントによる売出し）(1)売出株式数398,000株(2)売出価格1株につき1,791円(3)売出価格の総額712,818,000円(4)申込期間2026年9月10日(木)～2026年9月11日(金)(5)受渡期日2026年",
         "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
+        "settlement_date_status": "confirmed",
         "parse_warnings": [],
         "missing_fields": [
-          "dilution_pct",
-          "pricing_date",
-          "settlement_date"
+          "dilution_pct"
         ],
-        "secondary_sale_shares": 1011700,
+        "secondary_sale_shares": 2653600,
         "oa_shares": 398000,
-        "total_offered_shares": 1409700,
+        "total_offered_shares": 3051600,
         "share_breakdown_complete": true,
         "oa_marker_present": true,
-        "latest_source_stage": "announcement",
+        "latest_source_stage": "pricing",
         "po_threshold_ever_met": false,
         "reference_close_yen": 2080.0,
         "reference_close_date": "2026-09-02",
         "reference_close_source": "Yahoo Finance chart (raw close)",
         "reference_close_kind": "announcement_close",
-        "estimated_size_yen": 2932176000,
-        "estimated_size_oku": 29.32176,
-        "effective_size_yen": 2932176000
+        "estimated_size_yen": 6347328000,
+        "estimated_size_oku": 63.47328,
+        "effective_size_yen": 5465415600,
+        "parser_version": 2,
+        "issue_price_yen": 1791.0,
+        "sale_price_yen": 1791.0,
+        "offer_price_yen": 1791.0,
+        "notification_tracking_started": true,
+        "confirmed_size_yen": 5465415600,
+        "confirmed_size_oku": 54.654156
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260902530592.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260902530592.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260909533735.pdf",
       "source_title": "株式の売出し及び主要株主の異動に関するお知らせ",
       "related_disclosures": [
         {
@@ -5730,6 +5709,13 @@
           "announced_at": "2026-09-02T16:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260902530592.pdf",
           "market": "東証"
+        },
+        {
+          "id": "140120260909533735",
+          "relation": "pricing",
+          "title": "売出価格等の決定に関するお知らせ",
+          "announced_at": "2026-09-09T17:15:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260909533735.pdf"
         }
       ],
       "eligibility": {
@@ -5761,24 +5747,22 @@
         "price_max_yen": null,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
+        "pricing_date": "2026-10-02",
+        "pricing_date_end": "2026-10-05",
+        "pricing_date_raw": "価格決定日2026年10月2日（金曜日）（発行価格及び売出価格は、募集株式の払込金額以上の価格で、仮条件における需要状況等を勘案した上で決定する。（4）募集・売出期間2026年10月5日（月曜日）から2026年10月8日（木曜日）まで（5）払込期日2026年10月9日（金曜日）（※）上記のオーバーアロットメントによる株式売出しは、公募による募集株式発行に伴い",
         "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": null,
+        "pricing_date_status": "provisional",
+        "settlement_date": "2026-10-13",
         "settlement_date_end": null,
-        "settlement_date_raw": null,
+        "settlement_date_raw": "受渡期日2026年10月13日（火曜日）（10）引受人の対価引受手数料は支払わず、これに代わるものとして一般募集における発行価格から引受価額を差し引いた額の総額を引受人の手取金とする。（11）払込取扱場所株式会社三十三銀行今池支店（12）前記各項を除くほか、この募集株式発行に関し取締役会の承認を要する事項は、今後開催予定の取締役会において決定し、その他必要な",
         "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
+        "settlement_date_status": "provisional",
         "parse_warnings": [
           "⚠️ Yahoo終値取得失敗 (RuntimeError)"
         ],
         "missing_fields": [
           "size",
-          "dilution_pct",
-          "pricing_date",
-          "settlement_date"
+          "dilution_pct"
         ],
         "public_offering_shares": 200000,
         "secondary_sale_shares": 30000,
@@ -5789,7 +5773,8 @@
         "latest_source_stage": "announcement",
         "po_threshold_ever_met": false,
         "effective_size_yen": null,
-        "reference_close_failure_key": "2026-09-07:RuntimeError"
+        "reference_close_failure_key": "2026-09-07:RuntimeError",
+        "parser_version": 2
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260907532411.pdf",
@@ -5821,7 +5806,8 @@
       "margin": "対象外",
       "announced_at": "2026-09-08T09:26:01.801379+09:00",
       "detail": {
-        "listing_date": "2026-09-29"
+        "listing_date": "2026-09-29",
+        "eligible_notified": true
       },
       "schedule": [
         {
@@ -5840,30 +5826,381 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "ipo-648A-2026-10-15",
+      "type": "ipo",
+      "code": "648A",
+      "name": "（株）ルクレ",
+      "market": "グロース",
+      "margin": "対象外",
+      "announced_at": "2026-09-09T07:57:28.799378+09:00",
+      "detail": {
+        "listing_date": "2026-10-15",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-10-14",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-10-15",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
+    },
+    {
+      "id": "split-4374-2026-09-09",
+      "type": "split",
+      "code": "4374",
+      "name": "ＲＯＢＯＴ　ＰＡＹＭＥＮＴ",
+      "market": "グロース",
+      "margin": "信用",
+      "announced_at": "2026-09-09T15:30:00+09:00",
+      "detail": {
+        "ratio": "2",
+        "record_date": "2026-09-15",
+        "record_date_raw": "分割基準日までの間に増加する可能性があります。 （3）分割の日程 （1） 基準日公告日 2026年9月15日（予定） （2） 基 準 日 2026年9月30日（予定） （3） 効 力 発 生 日 2026年10月1日（予定） 3.株式分割に伴う定款の一部変更について （1）変更の理由 今回の株式分割に伴い、会社法第184 条第2項の規定に基づき、2026年1",
+        "rights_final_date": "2026-09-28",
+        "rights_final_date_raw": null,
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_confirmed": true,
+        "rights_final_status": "confirmed",
+        "rights_date_conflict": false,
+        "ex_right_date": "2026-09-14",
+        "effective_date": "2026-10-01",
+        "effective_date_raw": "効力発生日 2026年10月1日 4.配当予想の修正について（実質的な変更なし） 今回の株式分割に伴い、2026年2月12日に公表いたしました2026年12月期の期末配当予想額を以 下のとおり修正いたします。なお、本修正は分割比率に合わせて実施するものであり、実質的な変更はあ りません。 第2四半期 期末 合計 前回予想 - 31円00銭 31円00銭 （2",
+        "traders_rights_final_date": "2026-09-28",
+        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split"
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260909533522.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260909533522.pdf",
+      "source_title": "株式分割、株式分割に伴う定款の一部変更および配当予想の修正ならびに株主優待制度の修正に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260909533522",
+          "relation": "source",
+          "title": "株式分割、株式分割に伴う定款の一部変更および配当予想の修正ならびに株主優待制度の修正に関するお知らせ",
+          "announced_at": "2026-09-09T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260909533522.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "東証Prime・Standard以外"
+        ]
+      }
+    },
+    {
+      "id": "bunbai-7682-2026-09-10",
+      "type": "bunbai",
+      "code": "7682",
+      "name": "浜木綿",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-09-10T15:30:00+09:00",
+      "detail": {
+        "execution_date": null,
+        "execution_date_raw": null,
+        "execution_date_confirmed": false,
+        "notification_tracking_started": true,
+        "pending_notified": true
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260909533574.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260909533574.pdf",
+      "source_title": "株式の立会外分売に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260909533574",
+          "relation": "source",
+          "title": "株式の立会外分売に関するお知らせ",
+          "announced_at": "2026-09-10T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260909533574.pdf",
+          "market": "東証・名証"
+        }
+      ],
+      "eligibility": {
+        "status": "pending",
+        "reasons": [
+          "分売実施日未取得"
+        ]
+      }
+    },
+    {
+      "id": "bunbai-6225-2026-09-11",
+      "type": "bunbai",
+      "code": "6225",
+      "name": "エコム",
+      "market": "名証",
+      "margin": "対象外",
+      "announced_at": "2026-09-11T15:30:00+09:00",
+      "detail": {
+        "execution_date": "2026-09-25",
+        "execution_date_raw": "分売予定期間2026年9月25日（金）～2026年9月29日（火）3.分売値段分売実施日前日の終値もしくは最終気配値を基準として決定する予定です。4.買付申込数量の限度買付顧客1人につき500株（売買単位:100株）5.実施取引所名古屋証券取引所6.実施の目的当社株式の分布状況の改善及び流動性の向上を図ることを目的として行うものであります。なお、株式市場の急",
+        "execution_date_confirmed": false,
+        "notification_tracking_started": true
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260911534756.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260911534756.pdf",
+      "source_title": "株式の立会外分売に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260911534756",
+          "relation": "source",
+          "title": "株式の立会外分売に関するお知らせ",
+          "announced_at": "2026-09-11T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260911534756.pdf",
+          "market": "名証"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "東証以外"
+        ]
+      }
+    },
+    {
+      "id": "bunbai-5071-2026-09-14",
+      "type": "bunbai",
+      "code": "5071",
+      "name": "ヴィス",
+      "market": "スタンダード",
+      "margin": "貸借",
+      "announced_at": "2026-09-14T15:31:00+09:00",
+      "detail": {
+        "execution_date": "2026-09-25",
+        "execution_date_raw": "分売予定期間2026年9月25日（金）3.分売値段分売の値段については、分売実施日の前日の終値もしくは最終気配値を基準として決定いたします。4.買付申込数量の限度買付顧客1人につき5,000株（売買単位:100株）5.実施取引所東京証券取引所6.実施の目的当社株式の分布状況を改善し、より多くの個人投資家の皆様に当社株式を保有いただくことで、株式の流動性向上を",
+        "execution_date_confirmed": false,
+        "notification_tracking_started": true,
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-09-24",
+          "label": "execution-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-09-25",
+          "label": "execution_day",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-10-02",
+          "label": "execution+5bd",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260914536075.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260914536075.pdf",
+      "source_title": "株式の立会外分売に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260914536075",
+          "relation": "source",
+          "title": "株式の立会外分売に関するお知らせ",
+          "announced_at": "2026-09-14T15:31:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260914536075.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
+    },
+    {
+      "id": "po-212A-2026-09-14",
+      "type": "po",
+      "code": "212A",
+      "name": "フィットイージー",
+      "market": "プライム",
+      "margin": "信用",
+      "announced_at": "2026-09-14T16:00:00+09:00",
+      "detail": {
+        "parser_version": 2,
+        "po_kind": "secondary",
+        "source_stage": "announcement",
+        "size_oku": 63.687,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "estimated",
+        "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "public_offering_shares": null,
+        "secondary_sale_shares": 2000000,
+        "oa_shares": 300000,
+        "total_offered_shares": 2300000,
+        "share_breakdown_complete": true,
+        "oa_marker_present": true,
+        "issue_price_yen": null,
+        "sale_price_yen": null,
+        "offer_price_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": "2026-09-28",
+        "pricing_date_end": "2026-10-01",
+        "pricing_date_raw": "売出価格未定（日本証券業協会の定める有価証券の引受け等に関する規則第25条に規定される方式により、2026年9月28日（月）から2026年10月1日（木）までの間のいずれかの日（以下「売出価格等決定日」という。）の株式会社東京証券取引所における当社普通株式の普通取引の終値（当日に終値のない場合は、その日に先立つ直近日の終値）に0.90～1.00を乗じた価格（",
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "provisional",
+        "settlement_date": "2026-10-05",
+        "settlement_date_end": null,
+        "settlement_date_raw": null,
+        "settlement_estimated": true,
+        "settlement_date_status": "estimated",
+        "parse_warnings": [],
+        "missing_fields": [
+          "dilution_pct"
+        ],
+        "notification_tracking_started": true,
+        "reference_close_yen": 2769.0,
+        "reference_close_date": "2026-09-14",
+        "reference_close_source": "Yahoo Finance chart (raw close)",
+        "reference_close_kind": "announcement_close",
+        "estimated_size_yen": 6368700000,
+        "estimated_size_oku": 63.687,
+        "effective_size_yen": 6368700000
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260914535618.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260914535618.pdf",
+      "source_title": "株式の売出し及び親会社以外の支配株主の異動に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260914535618",
+          "relation": "source",
+          "title": "株式の売出し及び親会社以外の支配株主の異動に関するお知らせ",
+          "announced_at": "2026-09-14T16:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260914535618.pdf",
+          "market": "東証・名証"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "吸収規模80億円未満"
+        ]
+      }
+    },
+    {
+      "id": "split-6036-2026-09-15",
+      "type": "split",
+      "code": "6036",
+      "name": "ＫｅｅＰｅｒ技研",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-09-15T16:40:00+09:00",
+      "detail": {
+        "ratio": "2",
+        "record_date": "2026-10-30",
+        "record_date_raw": "基準日（実質10月30日（金））として、同日最終の株主名簿に記載または記録 された株主の所有する当社普通株式1株につき、2株の割合をもって分割いたします。 ② 分割により増加する株式数 株式分割前の発行済株式総数 28,280,840株 今回の分割により増加する株式数 28,280,840株 株式分割後の発行済株式総数 56,561,680株 株式分割後の発",
+        "rights_final_date": "2026-10-28",
+        "rights_final_date_raw": null,
+        "rights_final_source": "record_date_t_plus_2",
+        "rights_final_calculation_basis": "record_date_t_plus_2",
+        "rights_final_confirmed": false,
+        "rights_final_status": "provisional",
+        "rights_date_conflict": false,
+        "ex_right_date": "2026-10-29",
+        "effective_date": "2026-11-01",
+        "effective_date_raw": "効力発生日 2026年11月 1日（日） ④ 定款及び資本金の額の変更について 当社の定款に定める発行可能株式総数の範囲内での株式分割であるため、今回の株式分割に伴う定款 の変更はありません。また、今回の株式分割に際して、資本金の額の変更はありません。 1 2.株主優待制度の一部変更について (1) 株主優待制度の一部変更の理由 当社は、株主の皆様の日頃のご",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-10-28",
+          "label": "rights_final+0_after_close",
+          "sent": false,
+          "not_before_jst": "19:00"
+        },
+        {
+          "date": "2026-10-29",
+          "label": "rights_final+1_noon",
+          "sent": false,
+          "not_before_jst": "12:00",
+          "action_cutoff_jst": "15:30"
+        },
+        {
+          "date": "2026-11-05",
+          "label": "rights_final+5_preopen",
+          "sent": false,
+          "not_before_jst": "08:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260915536785.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260915536785.pdf",
+      "source_title": "株式分割、株主優待制度の一部変更及び配当予想の修正に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260915536785",
+          "relation": "source",
+          "title": "株式分割、株主優待制度の一部変更及び配当予想の修正に関するお知らせ",
+          "announced_at": "2026-09-15T16:40:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260915536785.pdf",
+          "market": "東証・名証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
     "tdnet": {
-      "last_checked_date": "2026-09-08",
-      "last_success_date": "2026-09-08",
+      "last_checked_date": "2026-09-15",
+      "last_success_date": "2026-09-15",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-08T21:55:42.792917+09:00"
+      "last_success_at": "2026-09-15T17:59:35.883533+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
       "last_success_at": "2026-08-24T22:45:04.932305+00:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-09-08",
-      "last_success_at": "2026-09-08T00:26:01.577756+00:00"
+      "last_success_date": "2026-09-14",
+      "last_success_at": "2026-09-14T23:24:53.701259+00:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-09-08",
-      "last_success_at": "2026-09-08T01:06:19.772523+00:00"
+      "last_success_date": "2026-09-14",
+      "last_success_at": "2026-09-14T23:24:56.466195+00:00"
     },
     "yahoo_price": {
-      "last_success_date": "2026-09-08",
-      "last_success_at": "2026-09-08T17:17:21.903685+09:00"
+      "last_success_date": "2026-09-14",
+      "last_success_at": "2026-09-14T18:17:08.503025+09:00"
+    },
+    "traders_split": {
+      "last_success_date": "2026-09-15",
+      "last_success_at": "2026-09-15T08:59:18.053045+00:00"
+    },
+    "jpx_ipo": {
+      "last_success_date": "2026-09-14",
+      "last_success_at": "2026-09-14T23:24:56.825704+00:00"
+    },
+    "jpx_bunbai": {
+      "last_success_date": "2026-09-14",
+      "last_success_at": "2026-09-14T23:24:57.226603+00:00"
     }
   },
   "schema_version": 2,
@@ -5871,10 +6208,38 @@
     "2026-09-08": {
       "success": 64,
       "failure": 0
+    },
+    "2026-09-09": {
+      "success": 9,
+      "failure": 0
+    },
+    "2026-09-10": {
+      "success": 6,
+      "failure": 0
+    },
+    "2026-09-11": {
+      "success": 4,
+      "failure": 0
+    },
+    "2026-09-12": {
+      "success": 1,
+      "failure": 0
+    },
+    "2026-09-13": {
+      "success": 1,
+      "failure": 0
+    },
+    "2026-09-14": {
+      "success": 3,
+      "failure": 0
+    },
+    "2026-09-15": {
+      "success": 4,
+      "failure": 0
     }
   },
   "daily_system_summary": {
-    "last_sent_date": "2026-09-08",
-    "last_sent_at": "2026-09-08T22:55:23.815525+09:00"
+    "last_sent_date": "2026-09-13",
+    "last_sent_at": "2026-09-13T07:31:20.775987+09:00"
   }
 }
