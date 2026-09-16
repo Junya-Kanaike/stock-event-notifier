@@ -1345,7 +1345,14 @@
     "140120260915536456",
     "140120260915536520",
     "140120260915536324",
-    "140120260915536785"
+    "140120260915536785",
+    "140120260915536793",
+    "140120260916537012",
+    "140120260916537112",
+    "140120260916537265",
+    "140120260916536923",
+    "140120260908532830",
+    "140120260908533185"
   ],
   "events": [
     {
@@ -3239,8 +3246,7 @@
         {
           "date": "2026-09-16",
           "label": "listing_day",
-          "sent": true,
-          "sent_at": "2026-09-16T00:32:14.231641+09:00"
+          "sent": true
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -3385,8 +3391,7 @@
         {
           "date": "2026-09-16",
           "label": "listing_day",
-          "sent": true,
-          "sent_at": "2026-09-16T00:32:14.231641+09:00"
+          "sent": true
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -3497,8 +3502,7 @@
         {
           "date": "2026-09-16",
           "label": "listing-1bd",
-          "sent": true,
-          "sent_at": "2026-09-16T00:32:14.231641+09:00"
+          "sent": true
         },
         {
           "date": "2026-09-17",
@@ -6120,15 +6124,17 @@
         "record_date_raw": "基準日（実質10月30日（金））として、同日最終の株主名簿に記載または記録 された株主の所有する当社普通株式1株につき、2株の割合をもって分割いたします。 ② 分割により増加する株式数 株式分割前の発行済株式総数 28,280,840株 今回の分割により増加する株式数 28,280,840株 株式分割後の発行済株式総数 56,561,680株 株式分割後の発",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "record_date_t_plus_2",
-        "rights_final_calculation_basis": "record_date_t_plus_2",
-        "rights_final_confirmed": false,
-        "rights_final_status": "provisional",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_confirmed": true,
+        "rights_final_status": "confirmed",
         "rights_date_conflict": false,
         "ex_right_date": "2026-10-29",
         "effective_date": "2026-11-01",
         "effective_date_raw": "効力発生日 2026年11月 1日（日） ④ 定款及び資本金の額の変更について 当社の定款に定める発行可能株式総数の範囲内での株式分割であるため、今回の株式分割に伴う定款 の変更はありません。また、今回の株式分割に際して、資本金の額の変更はありません。 1 2.株主優待制度の一部変更について (1) 株主優待制度の一部変更の理由 当社は、株主の皆様の日頃のご",
-        "eligible_notified": true
+        "eligible_notified": true,
+        "traders_rights_final_date": "2026-10-28",
+        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split"
       },
       "schedule": [
         {
@@ -6173,38 +6179,38 @@
   ],
   "source_health": {
     "tdnet": {
-      "last_checked_date": "2026-09-15",
-      "last_success_date": "2026-09-15",
+      "last_checked_date": "2026-09-16",
+      "last_success_date": "2026-09-16",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-15T23:13:47.956479+09:00"
+      "last_success_at": "2026-09-16T22:46:37.446250+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
       "last_success_at": "2026-08-24T22:45:04.932305+00:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-09-14",
-      "last_success_at": "2026-09-14T23:24:53.701259+00:00"
+      "last_success_date": "2026-09-15",
+      "last_success_at": "2026-09-15T23:09:25.670582+00:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-09-14",
-      "last_success_at": "2026-09-14T23:24:56.466195+00:00"
+      "last_success_date": "2026-09-15",
+      "last_success_at": "2026-09-15T23:09:28.453822+00:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-09-14",
       "last_success_at": "2026-09-14T18:17:08.503025+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-09-15",
-      "last_success_at": "2026-09-15T08:59:18.053045+00:00"
+      "last_success_date": "2026-09-16",
+      "last_success_at": "2026-09-16T08:50:50.315545+00:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-09-14",
-      "last_success_at": "2026-09-14T23:24:56.825704+00:00"
+      "last_success_date": "2026-09-15",
+      "last_success_at": "2026-09-15T23:09:28.701693+00:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-09-14",
-      "last_success_at": "2026-09-14T23:24:57.226603+00:00"
+      "last_success_date": "2026-09-15",
+      "last_success_at": "2026-09-15T23:09:29.019349+00:00"
     }
   },
   "schema_version": 2,
@@ -6242,12 +6248,12 @@
       "failure": 0
     },
     "2026-09-16": {
-      "success": 4,
+      "success": 6,
       "failure": 0
     }
   },
   "daily_system_summary": {
-    "last_sent_date": "2026-09-15",
-    "last_sent_at": "2026-09-15T23:30:12.137875+09:00"
+    "last_sent_date": "2026-09-16",
+    "last_sent_at": "2026-09-16T23:23:26.535452+09:00"
   }
 }

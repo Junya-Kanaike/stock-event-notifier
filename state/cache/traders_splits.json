@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-09-15T08:59:18.053045+00:00",
+  "fetched_at": "2026-09-16T08:50:50.315545+00:00",
   "data": {
     "1570": [
       {
@@ -82,6 +82,16 @@
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
+    "6036": [
+      {
+        "code": "6036",
+        "name": "ＫｅｅＰｅｒ技",
+        "rights_final_date": "2026-10-28",
+        "ratio": "2",
+        "effective_date": "2026-11-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
     "1321": [
       {
         "code": "1321",
@@ -89,6 +99,16 @@
         "rights_final_date": "2026-10-02",
         "ratio": "100",
         "effective_date": "2026-10-07",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9027": [
+      {
+        "code": "9027",
+        "name": "ロジネットＪ",
+        "rights_final_date": "2026-09-28",
+        "ratio": "4",
+        "effective_date": "2026-10-01",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
