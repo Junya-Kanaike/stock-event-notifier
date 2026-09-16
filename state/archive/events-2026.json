@@ -209,5 +209,91 @@
         "貸借対象外"
       ]
     }
+  },
+  {
+    "id": "split-249A-2026-08-17",
+    "type": "split",
+    "code": "249A",
+    "name": "ヒューマンアジャスト",
+    "market": "PRO Market",
+    "margin": "対象外",
+    "announced_at": "2026-08-17T17:00:00+09:00",
+    "detail": {
+      "ratio": "5",
+      "effective_date": "2026-09-03",
+      "effective_date_raw": null,
+      "review_notified": true,
+      "pending_notified": true,
+      "record_date": null,
+      "ex_right_date": null,
+      "rights_final_date": "2026-08-31",
+      "rights_final_calculation_basis": "traders_web_rights_final_date",
+      "rights_final_status": "confirmed",
+      "traders_rights_final_date": "2026-08-31",
+      "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
+      "rights_final_source": "traders_web",
+      "rights_final_confirmed": true,
+      "rights_date_conflict": false,
+      "ratio_source": "traders_web"
+    },
+    "schedule": [],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260814521420.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260814521420.pdf",
+    "source_title": "株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120260814521420",
+        "relation": "source",
+        "title": "株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
+        "announced_at": "2026-08-17T17:00:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260814521420.pdf"
+      }
+    ],
+    "eligibility": {
+      "status": "excluded",
+      "reasons": [
+        "PRO Market"
+      ]
+    }
+  },
+  {
+    "id": "bunbai-9170-2026-08-17",
+    "type": "bunbai",
+    "code": "9170",
+    "name": "成友興業",
+    "market": "名証",
+    "margin": "対象外",
+    "announced_at": "2026-08-17T17:00:00+09:00",
+    "detail": {
+      "execution_date": null,
+      "execution_date_raw": null,
+      "execution_date_confirmed": true
+    },
+    "schedule": [],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260817521974.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824525247.pdf",
+    "source_title": "株式の立会外分売に関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120260817521974",
+        "relation": "source",
+        "title": "株式の立会外分売に関するお知らせ",
+        "announced_at": "2026-08-17T17:00:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260817521974.pdf"
+      },
+      {
+        "id": "140120260824525247",
+        "relation": "source",
+        "title": "株式の立会外分売実施に関するお知らせ",
+        "announced_at": "2026-08-24T16:30:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525247.pdf"
+      }
+    ],
+    "eligibility": {
+      "status": "excluded",
+      "reasons": [
+        "東証以外"
+      ]
+    }
   }
 ]
