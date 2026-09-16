@@ -1975,8 +1975,8 @@
         "ratio": "2",
         "effective_date": "2026-10-01",
         "effective_date_raw": "効力発生日 2026年10月1日 （3）その他 今回の分割に際して、資本金の額の変更はありません。 （以下余白） 2.株式分割に伴う定款の一部変更について （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年10月1日をもって、当 社定款第6条の発行可能株式総数を変更いたします。 （2）変更の内容 変更の内容は以下のとおり",
-        "record_date": "2026-09-07",
-        "ex_right_date": "2026-09-04",
+        "record_date": "2026-09-30",
+        "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
         "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_status": "confirmed",
@@ -2001,9 +2001,10 @@
         {
           "date": "2026-09-29",
           "label": "rights_final+1_noon",
-          "sent": true,
+          "sent": false,
           "not_before_jst": "12:00",
-          "action_cutoff_jst": "15:30"
+          "action_cutoff_jst": "15:30",
+          "repair_reason": "unattributed_future_sent_flag"
         },
         {
           "date": "2026-10-05",
@@ -2028,7 +2029,25 @@
       "eligibility": {
         "status": "eligible",
         "reasons": []
-      }
+      },
+      "repair_history": [
+        {
+          "repair": "record-date-not-announcement-date",
+          "previous_record_date": "2026-09-07",
+          "source_excerpt": "基準日公告日 2026年9月7日（予定） 基準日 2026年9月30日 効力発生日 2026年10月1日 （3）その他 今回の分割に際して、資本金の額の変更はありません。 （以下余白） 2.株式分割に伴う定款の一部変更について （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年10月1日をもって、当 社定款第6条の発行可"
+        }
+      ],
+      "schedule_history": [
+        {
+          "date": "2026-09-29",
+          "label": "rights_final+1_noon",
+          "sent": true,
+          "not_before_jst": "12:00",
+          "action_cutoff_jst": "15:30",
+          "repair_reason": "unattributed_future_sent_flag",
+          "repaired_on": "2026-09-17"
+        }
+      ]
     },
     {
       "id": "split-6135-2026-07-31",
@@ -2109,8 +2128,8 @@
         "ratio": "3",
         "effective_date": "2026-10-01",
         "effective_date_raw": "効力発生日 2026年10月1日（木） 2.定款の一部変更について （1）変更理由 今回の株式分割に伴い、会社法第 184 条第2項の規定に基づき、2026 年10 月1日をもって当社の定款第6 条の発行可能株式総数を変更いたします。 （2）変更内容 (下線は変更箇所を示しております。) 現行定款 変更後 第6条 （発行可能株式総数） 第6条 （発行可能株式",
-        "record_date": "2026-09-10",
-        "ex_right_date": "2026-09-09",
+        "record_date": "2026-09-30",
+        "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
         "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_status": "confirmed",
@@ -2159,7 +2178,14 @@
       "eligibility": {
         "status": "eligible",
         "reasons": []
-      }
+      },
+      "repair_history": [
+        {
+          "repair": "record-date-not-announcement-date",
+          "previous_record_date": "2026-09-10",
+          "source_excerpt": "株式分割の基準日までの 間に新株予約権の行使等により変動する可能性があります。 （3）日程 基準日公告日 2026年9月10日（木） 基準日 2026年9月30日（水） 効力発生日 2026年10月1日（木） 2.定款の一部変更について （1）変更理由 今回の株式分割に伴い、会社法第 184 条第2項の規定に基づき、2026 年10 月1日をもって当社の定款"
+        }
+      ]
     },
     {
       "id": "split-5334-2026-07-31",
@@ -2511,8 +2537,8 @@
         "ratio": "2",
         "effective_date": "2026-10-01",
         "effective_date_raw": "効力発生日 2026年10月1日（木曜日） 2. 株式分割に伴う定款の一部変更について (1) 定款変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年10月1日（木曜日）をもって、 当社定款第6条の発行可能株式総数を分割比率に合わせて変更いたします。 (2) 定款変更の内容 変更の内容は以下のとおりです。 （下線は変更部分を示",
-        "record_date": "2026-09-10",
-        "ex_right_date": "2026-09-09",
+        "record_date": "2026-09-30",
+        "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
         "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_status": "confirmed",
@@ -2528,8 +2554,9 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": true,
-          "not_before_jst": "19:00"
+          "sent": false,
+          "not_before_jst": "19:00",
+          "repair_reason": "unattributed_future_sent_flag"
         },
         {
           "date": "2026-09-29",
@@ -2561,7 +2588,24 @@
       "eligibility": {
         "status": "eligible",
         "reasons": []
-      }
+      },
+      "repair_history": [
+        {
+          "repair": "record-date-not-announcement-date",
+          "previous_record_date": "2026-09-10",
+          "source_excerpt": "株式分割の基準日までの間に新株予約権の行使 等により変動する可能性があります。 ③ 分割の日程 基準日公告日（予定） 2026年9月10日（木曜日） 基準日 2026年9月30日（水曜日） 効力発生日 2026年10月1日（木曜日） 2. 株式分割に伴う定款の一部変更について (1) 定款変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき"
+        }
+      ],
+      "schedule_history": [
+        {
+          "date": "2026-09-28",
+          "label": "rights_final+0_after_close",
+          "sent": true,
+          "not_before_jst": "19:00",
+          "repair_reason": "unattributed_future_sent_flag",
+          "repaired_on": "2026-09-17"
+        }
+      ]
     },
     {
       "id": "split-6622-2026-08-04",
@@ -2844,8 +2888,8 @@
         "ratio": "2",
         "effective_date": "2026-10-01",
         "effective_date_raw": "効力発生日 2026年10月1日（木曜日） ④ 新株予約権の行使価額の調整 今回の株式分割に際して、当社発行の新株予約権の1株当たりの権利行使価額は1円から変更あ りません。 ⑤ その他 今回の株式分割に際しては当社の資本金の額の増減はありません。 2. 定款の一部変更について (1) 定款変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づ",
-        "record_date": "2026-09-14",
-        "ex_right_date": "2026-09-11",
+        "record_date": "2026-09-30",
+        "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
         "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_status": "confirmed",
@@ -2894,7 +2938,14 @@
       "eligibility": {
         "status": "eligible",
         "reasons": []
-      }
+      },
+      "repair_history": [
+        {
+          "repair": "record-date-not-announcement-date",
+          "previous_record_date": "2026-09-14",
+          "source_excerpt": "株式分割の基準日までの間に新株予約権の行使により増加する可能性があります。 ③ 分割の日程 基準日公告日（予定） 2026年9月14日（月曜日） 基準日 2026年9月30日（水曜日） 効力発生日 2026年10月1日（木曜日） ④ 新株予約権の行使価額の調整 今回の株式分割に際して、当社発行の新株予約権の1株当たりの権利行使価額は1円から変更あ りません。"
+        }
+      ]
     },
     {
       "id": "split-5706-2026-08-07",
@@ -3455,13 +3506,13 @@
       "margin": "対象外",
       "announced_at": "2026-08-17T17:00:00+09:00",
       "detail": {
-        "execution_date": null,
-        "execution_date_raw": null,
+        "execution_date": "2026-08-25",
+        "execution_date_raw": "分売実施日 分売株式数 分売の値段 買付申込数量の限度 2026年8月25日（火） 78,200株 1,843円 3,000株 （ご参考）2026年8月24日にお知らせいたしました内容は、以下のとおりです。 1.分 売 予 定 株 式 数 168,000株 2. 分 売 実 施 日 2026年8月25日（火） 3. 分 売 の 値 段 1,843円 4. 買",
         "execution_date_confirmed": true
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260817521974.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824525247.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260825525700.pdf",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -3477,6 +3528,14 @@
           "title": "株式の立会外分売実施に関するお知らせ",
           "announced_at": "2026-08-24T16:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525247.pdf"
+        },
+        {
+          "id": "140120260825525700",
+          "relation": "source",
+          "title": "株式の立会外分売終了に関するお知らせ",
+          "announced_at": "2026-08-25T12:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525700.pdf",
+          "market": "名証"
         }
       ],
       "eligibility": {
@@ -3557,11 +3616,11 @@
       "detail": {
         "po_kind": "both",
         "source_stage": "announcement",
-        "size_oku": 4.42,
+        "size_oku": 92.781,
         "size_oku_min": null,
         "size_oku_max": null,
-        "size_status": "unavailable",
-        "size_basis": "開示資料記載額",
+        "size_status": "confirmed",
+        "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
         "share_count": null,
         "oa_share_count": null,
         "price_min_yen": null,
@@ -3583,20 +3642,65 @@
           "dilution_pct"
         ],
         "latest_source_stage": "pricing",
-        "share_breakdown_complete": false,
+        "share_breakdown_complete": true,
         "oa_marker_present": true,
-        "po_threshold_ever_met": false,
-        "issue_price_yen": 8836367280.0,
-        "sale_price_yen": 8836367280.0,
-        "offer_price_yen": 8836367280.0,
+        "po_threshold_ever_met": true,
+        "issue_price_yen": 95160,
+        "sale_price_yen": 95160,
+        "offer_price_yen": 95160,
         "reference_close_yen": 103100.0,
         "reference_close_date": "2026-08-19",
         "reference_close_source": "Yahoo Finance chart (raw close)",
         "reference_close_kind": "announcement_close",
-        "effective_size_yen": null,
-        "parser_version": 2
+        "effective_size_yen": 9278100000,
+        "parser_version": 3,
+        "public_offering_shares": 92858,
+        "secondary_sale_shares": 0,
+        "oa_shares": 4642,
+        "total_offered_shares": 97500,
+        "verified_calculation_source": "https://www.release.tdnet.info/inbs/140120260826526681.pdf",
+        "confirmed_size_yen": 9278100000,
+        "confirmed_size_oku": 92.781,
+        "calculation_missing_fields": []
       },
-      "schedule": [],
+      "schedule": [
+        {
+          "date": "2026-08-26",
+          "label": "pricing_day",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-08-27",
+          "label": "pricing_day+1",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-08-28",
+          "label": "pricing_day+2",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-09-02",
+          "label": "settlement",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-10-05",
+          "label": "pricing_day+25bd",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-10-06",
+          "label": "pricing_day+26bd",
+          "sent": false,
+          "action_cutoff_jst": "09:00"
+        }
+      ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260818522647.pdf",
       "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260826526681.pdf",
       "source_title": "新投資口発行及び投資口売出しに関するお知らせ",
@@ -3618,11 +3722,58 @@
         }
       ],
       "eligibility": {
-        "status": "pending",
-        "reasons": [
-          "吸収規模未確定"
-        ]
-      }
+        "status": "eligible",
+        "reasons": []
+      },
+      "repair_history": [
+        {
+          "repair": "2026-09-hcm-unit-price",
+          "source": "https://www.release.tdnet.info/inbs/140120260826526681.pdf",
+          "previous_detail": {
+            "po_kind": "both",
+            "source_stage": "announcement",
+            "size_oku": 4.42,
+            "size_oku_min": null,
+            "size_oku_max": null,
+            "size_status": "unavailable",
+            "size_basis": "開示資料記載額",
+            "share_count": null,
+            "oa_share_count": null,
+            "price_min_yen": null,
+            "price_max_yen": null,
+            "dilution_pct": null,
+            "dilution_status": "unavailable",
+            "pricing_date": "2026-08-26",
+            "pricing_date_end": "2026-08-26",
+            "pricing_date_raw": null,
+            "pricing_date_confirmed": true,
+            "pricing_date_status": "confirmed",
+            "settlement_date": "2026-09-02",
+            "settlement_date_end": null,
+            "settlement_date_raw": "受渡期日2026年9月2日（水）（注）引受人は払込金額（発行価額）で買取引受けを行い、発行価格（募集価格）で募集を行います。2.投資口売出し（オーバーアロットメントによる売出し）(1)売出投資口数4,642口(2)売出価格1口当たり金95,160円(3)売出価額の総額441,732,720円(4)申込期間2026年8月27日（木）(5)申込証拠金の入金期間2",
+            "settlement_estimated": false,
+            "settlement_date_status": "confirmed",
+            "parse_warnings": [],
+            "missing_fields": [
+              "dilution_pct"
+            ],
+            "latest_source_stage": "pricing",
+            "share_breakdown_complete": false,
+            "oa_marker_present": true,
+            "po_threshold_ever_met": false,
+            "issue_price_yen": 8836367280.0,
+            "sale_price_yen": 8836367280.0,
+            "offer_price_yen": 8836367280.0,
+            "reference_close_yen": 103100.0,
+            "reference_close_date": "2026-08-19",
+            "reference_close_source": "Yahoo Finance chart (raw close)",
+            "reference_close_kind": "announcement_close",
+            "effective_size_yen": null,
+            "parser_version": 2
+          },
+          "previous_schedule": []
+        }
+      ]
     },
     {
       "id": "po-7966-2026-08-20",
@@ -4370,40 +4521,6 @@
       }
     },
     {
-      "id": "bunbai-9170-2026-08-25",
-      "type": "bunbai",
-      "code": "9170",
-      "name": "成友興業",
-      "market": "名証",
-      "margin": "対象外",
-      "announced_at": "2026-08-25T12:30:00+09:00",
-      "detail": {
-        "execution_date": "2026-08-25",
-        "execution_date_raw": "分売実施日 分売株式数 分売の値段 買付申込数量の限度 2026年8月25日（火） 78,200株 1,843円 3,000株 （ご参考）2026年8月24日にお知らせいたしました内容は、以下のとおりです。 1.分 売 予 定 株 式 数 168,000株 2. 分 売 実 施 日 2026年8月25日（火） 3. 分 売 の 値 段 1,843円 4. 買",
-        "execution_date_confirmed": true
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525700.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260825525700.pdf",
-      "source_title": "株式の立会外分売終了に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260825525700",
-          "relation": "source",
-          "title": "株式の立会外分売終了に関するお知らせ",
-          "announced_at": "2026-08-25T12:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525700.pdf",
-          "market": "名証"
-        }
-      ],
-      "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "東証以外"
-        ]
-      }
-    },
-    {
       "id": "split-8388-2026-08-25",
       "type": "split",
       "code": "8388",
@@ -4481,13 +4598,31 @@
       "margin": "貸借",
       "announced_at": "2026-08-25T15:30:00+09:00",
       "detail": {
-        "execution_date": null,
-        "execution_date_raw": null,
+        "execution_date": "2026-09-01",
+        "execution_date_raw": "分売実施日 株数 分売値段 買付申込数量の限度 2026年9月1日 380,100株 953円 2,000株 （ご参考）2026年8月31日（月）にお知らせいたしました内容は次のとおりであります。 1.分 売 予 定 株 式 数 380,100株 2.分 売 実 施 予 定 日 2026年9月1日（火） 3.分 売 値 段 953円 4.買付申込数量の限度 ",
         "execution_date_confirmed": true
       },
-      "schedule": [],
+      "schedule": [
+        {
+          "date": "2026-08-31",
+          "label": "execution-1bd",
+          "sent": true
+        },
+        {
+          "date": "2026-09-01",
+          "label": "execution_day",
+          "sent": true,
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-09-08",
+          "label": "execution+5bd",
+          "sent": true,
+          "action_cutoff_jst": "09:00"
+        }
+      ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260825525454.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260831528929.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260831528976.pdf",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -4505,13 +4640,19 @@
           "announced_at": "2026-08-31T16:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260831528929.pdf",
           "market": "東証"
+        },
+        {
+          "id": "140120260831528976",
+          "relation": "completion",
+          "title": "株式の立会外分売終了に関するお知らせ",
+          "announced_at": "2026-09-01T10:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260831528976.pdf",
+          "market": "東証"
         }
       ],
       "eligibility": {
-        "status": "pending",
-        "reasons": [
-          "分売実施日未取得"
-        ]
+        "status": "eligible",
+        "reasons": []
       }
     },
     {
@@ -4856,8 +4997,8 @@
         "ratio": "3",
         "effective_date": "2026-10-01",
         "effective_date_raw": "効力発生日 2026年10月1日(木) (3)その他 ①資本金の額の変更 今回の株式分割に際しまして、資本金の額の変更はありません。 2.株式分割に伴う定款の一部変更 (1) 定款変更の理由 今回の株式分割に伴い、会社法第 184 条第2項の規定に基づき、株式分割と同日付で当社定款第5条を 次のとおり変更いたします。 (2) 定款変更の内容 変更の内容は以下",
-        "record_date": "2026-09-15",
-        "ex_right_date": "2026-09-14",
+        "record_date": "2026-09-30",
+        "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
         "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_status": "confirmed",
@@ -4907,7 +5048,14 @@
       "eligibility": {
         "status": "eligible",
         "reasons": []
-      }
+      },
+      "repair_history": [
+        {
+          "repair": "record-date-not-announcement-date",
+          "previous_record_date": "2026-09-15",
+          "source_excerpt": "基準日公告日 2026年9月15日(火) 基準日 2026年9月30日(水) 効力発生日 2026年10月1日(木) (3)その他 ①資本金の額の変更 今回の株式分割に際しまして、資本金の額の変更はありません。 2.株式分割に伴う定款の一部変更 (1) 定款変更の理由 今回の株式分割に伴い、会社法第 184 条第2項の規定に基づき、株式分割と同日付で当社定款"
+        }
+      ]
     },
     {
       "id": "po-4777-2026-08-28",
@@ -5385,53 +5533,6 @@
       }
     },
     {
-      "id": "bunbai-9959-2026-09-01",
-      "type": "bunbai",
-      "code": "9959",
-      "name": "アシードホールディングス",
-      "market": "スタンダード",
-      "margin": "貸借",
-      "announced_at": "2026-09-01T10:18:36.147928+09:00",
-      "detail": {
-        "execution_date": "2026-09-01",
-        "execution_date_confirmed": true,
-        "execution_date_raw": "分売実施日 株数 分売値段 買付申込数量の限度 2026年9月1日 380,100株 953円 2,000株 （ご参考）2026年8月31日（月）にお知らせいたしました内容は次のとおりであります。 1.分 売 予 定 株 式 数 380,100株 2.分 売 実 施 予 定 日 2026年9月1日（火） 3.分 売 値 段 953円 4.買付申込数量の限度 "
-      },
-      "schedule": [
-        {
-          "date": "2026-08-31",
-          "label": "execution-1bd",
-          "sent": true
-        },
-        {
-          "date": "2026-09-01",
-          "label": "execution_day",
-          "sent": true
-        },
-        {
-          "date": "2026-09-08",
-          "label": "execution+5bd",
-          "sent": true
-        }
-      ],
-      "pdf_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260831528976.pdf",
-      "related_disclosures": [
-        {
-          "id": "140120260831528976",
-          "relation": "completion",
-          "title": "株式の立会外分売終了に関するお知らせ",
-          "announced_at": "2026-09-01T10:00:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260831528976.pdf",
-          "market": "東証"
-        }
-      ],
-      "eligibility": {
-        "status": "eligible",
-        "reasons": []
-      }
-    },
-    {
       "id": "po-4099-2026-09-01",
       "type": "po",
       "code": "4099",
@@ -5875,7 +5976,7 @@
       "announced_at": "2026-09-09T15:30:00+09:00",
       "detail": {
         "ratio": "2",
-        "record_date": "2026-09-15",
+        "record_date": "2026-09-30",
         "record_date_raw": "分割基準日までの間に増加する可能性があります。 （3）分割の日程 （1） 基準日公告日 2026年9月15日（予定） （2） 基 準 日 2026年9月30日（予定） （3） 効 力 発 生 日 2026年10月1日（予定） 3.株式分割に伴う定款の一部変更について （1）変更の理由 今回の株式分割に伴い、会社法第184 条第2項の規定に基づき、2026年1",
         "rights_final_date": "2026-09-28",
         "rights_final_date_raw": null,
@@ -5884,7 +5985,7 @@
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
-        "ex_right_date": "2026-09-14",
+        "ex_right_date": "2026-09-29",
         "effective_date": "2026-10-01",
         "effective_date_raw": "効力発生日 2026年10月1日 4.配当予想の修正について（実質的な変更なし） 今回の株式分割に伴い、2026年2月12日に公表いたしました2026年12月期の期末配当予想額を以 下のとおり修正いたします。なお、本修正は分割比率に合わせて実施するものであり、実質的な変更はあ りません。 第2四半期 期末 合計 前回予想 - 31円00銭 31円00銭 （2",
         "traders_rights_final_date": "2026-09-28",
@@ -5909,7 +6010,14 @@
         "reasons": [
           "東証Prime・Standard以外"
         ]
-      }
+      },
+      "repair_history": [
+        {
+          "repair": "record-date-not-announcement-date",
+          "previous_record_date": "2026-09-15",
+          "source_excerpt": "分割基準日までの間に増加する可能性があります。 （3）分割の日程 （1） 基準日公告日 2026年9月15日（予定） （2） 基 準 日 2026年9月30日（予定） （3） 効 力 発 生 日 2026年10月1日（予定） 3.株式分割に伴う定款の一部変更について （1）変更の理由 今回の株式分割に伴い、会社法第184 条第2項の規定に基づき、2026年1"
+        }
+      ]
     },
     {
       "id": "bunbai-7682-2026-09-10",

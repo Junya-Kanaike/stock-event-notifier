@@ -75,6 +75,12 @@ def merge_po_details(current: dict[str, Any], incoming: dict[str, Any]) -> dict[
 
 def refresh_po_missing_fields(detail: dict[str, Any]) -> None:
     missing: list[str] = []
+    calculation_missing = []
+    if detail.get("total_offered_shares") is None:
+        calculation_missing.append("total_offered_shares")
+    if detail.get("effective_size_yen") is None:
+        calculation_missing.append("effective_size_yen")
+    detail["calculation_missing_fields"] = calculation_missing
     if detail.get("size_oku") is None and not (
         detail.get("size_oku_min") is not None and detail.get("size_oku_max") is not None
     ):

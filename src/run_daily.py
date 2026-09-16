@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import argparse
 from copy import deepcopy
-from datetime import date, datetime, time
+from datetime import date, datetime, time, timedelta
 import os
 from typing import Any
 
@@ -15,6 +15,7 @@ from src.collectors.traders_split import CACHE_NAME as TRADERS_SPLIT_CACHE_NAME,
 from src.collectors.utils import cache_fetched_at
 from src.core.bizday import add_business_days, as_date, is_business_day, now_jst, today_jst
 from src.core.eligibility import ELIGIBLE, PENDING
+from src.core.operations import record_delivery, record_run
 from src.core.reconcile import reconcile_event_state
 from src.core.scheduler import build_bunbai_schedule, build_ipo_schedule, due_notifications
 from src.core.store import (
@@ -52,7 +53,7 @@ def main(argv: list[str] | None = None) -> int:
         state = load_state()
         if args.dry_run:
             state = deepcopy(state)
-        changed = reconcile_event_state(state)
+        changed = reconcile_event_state(state, as_of=target_date)
     except Exception as exc:
         notify_system_safely(notifier, f"state整合性エラー: {type(exc).__name__}: {exc}")
         raise
@@ -61,32 +62,33 @@ def main(argv: list[str] | None = None) -> int:
     failures: list[str] = []
 
     if not is_business_day(target_date):
-        if not args.notifications_only:
-            changed |= send_daily_system_summary(state, notifier, current, failures=[])
-            changed |= record_notification_counts(
-                state,
-                target_date,
-                success_count=notifier.success_count,
-                failure_count=notifier.failure_count,
-            )
-            if changed and not args.dry_run:
-                save_state(state)
+        send_pending_system_summaries(state, notifier, current, failures=[])
+        record_notification_counts(state, target_date, success_count=notifier.success_count,
+                                   failure_count=notifier.failure_count)
+        record_run(state, "timed_notifications" if args.notifications_only else "daily_morning",
+                   current, now_jst(), failed=bool(notifier.failure_count))
+        if not args.dry_run:
+            save_state(state)
         print(f"{target_date.isoformat()} is not a business day; event notifications skipped.")
+        if notifier.failure_count:
+            raise RuntimeError("Slack通知に失敗しました。保存済みの未送信予定を次回再試行します")
         return 0
 
     if args.notifications_only:
         sent_count = send_due_notifications(state, notifier, current, dry_run=args.dry_run)
-        changed = bool(sent_count)
-        if current.time().replace(tzinfo=None) >= SYSTEM_SUMMARY_AFTER:
-            changed |= send_daily_system_summary(state, notifier, current, failures=[])
+        changed |= bool(sent_count)
+        changed |= send_pending_system_summaries(state, notifier, current, failures=[])
         changed |= record_notification_counts(
             state,
             target_date,
             success_count=notifier.success_count,
             failure_count=notifier.failure_count,
         )
-        if changed and not args.dry_run:
+        record_run(state, "timed_notifications", current, now_jst(), failed=bool(notifier.failure_count))
+        if not args.dry_run:
             save_state(state)
+        if notifier.failure_count:
+            raise RuntimeError("Slack通知に失敗しました。保存済みの未送信予定を次回再試行します")
         return 0
 
     master_cache_before = cache_fetched_at(MASTER_CACHE_NAME)
@@ -171,8 +173,7 @@ def main(argv: list[str] | None = None) -> int:
 
     sent_count = send_due_notifications(state, notifier, current, dry_run=args.dry_run)
     changed |= bool(sent_count)
-    if current.time().replace(tzinfo=None) >= SYSTEM_SUMMARY_AFTER:
-        changed |= send_daily_system_summary(state, notifier, current, failures=failures)
+    changed |= send_pending_system_summaries(state, notifier, current, failures=failures)
     changed |= record_notification_counts(
         state,
         target_date,
@@ -180,7 +181,8 @@ def main(argv: list[str] | None = None) -> int:
         failure_count=notifier.failure_count,
     )
 
-    if changed and not args.dry_run:
+    record_run(state, "daily_morning", current, now_jst(), failed=bool(failures or notifier.failure_count))
+    if not args.dry_run:
         save_state(state)
     if not args.dry_run:
         archived = archive_completed_events(state, target_date)
@@ -188,6 +190,8 @@ def main(argv: list[str] | None = None) -> int:
             save_state(state)
     if failures:
         raise RuntimeError("; ".join(failures))
+    if notifier.failure_count:
+        raise RuntimeError("Slack通知に失敗しました。保存済みの未送信予定を次回再試行します")
     return 0
 
 
@@ -437,14 +441,37 @@ def send_due_notifications(
     state: dict[str, Any], notifier: SlackNotifier, current: datetime, *, dry_run: bool
 ) -> int:
     sent_count = 0
-    for due in due_notifications(state, current):
+    dispatch_now = current if dry_run else now_jst()
+    for planned in due_notifications(state, dispatch_now):
+        # Data collection and Slack retries can cross 09:00/15:30. Recheck the
+        # cutoff immediately before each send, not only when the job starts.
+        attempted_at = current if dry_run else now_jst()
+        due = next((candidate for candidate in due_notifications({"events": [planned.event]}, attempted_at)
+                    if candidate.schedule_item is planned.schedule_item), None)
+        if due is None:
+            continue
+        def refresh_text() -> str:
+            nonlocal due, attempted_at
+            attempted_at = now_jst()
+            refreshed = next((candidate for candidate in due_notifications({"events": [planned.event]}, attempted_at)
+                              if candidate.schedule_item is planned.schedule_item), None)
+            if refreshed is None:
+                raise RuntimeError("通知の送信可能期間外です")
+            due = refreshed
+            return due.text
+
         try:
             notifier.send(
                 due.event.get("type", "system"),
                 due.text,
                 pdf_url=due.event.get("latest_pdf_url") or due.event.get("pdf_url"),
+                text_factory=None if dry_run else refresh_text,
             )
         except Exception as exc:
+            record_delivery(state, due.event, due.schedule_item, attempted_at, success=False,
+                            reference_only=due.reference_only, error_type=type(exc).__name__)
+            if not dry_run:
+                save_state(state)
             notify_system_safely(
                 notifier,
                 f"予定通知送信失敗: {due.event.get('type')}:{due.event.get('code')} "
@@ -452,11 +479,38 @@ def send_due_notifications(
             )
             continue
         due.schedule_item["sent"] = True
-        due.schedule_item["sent_at"] = current.isoformat()
+        due.schedule_item["sent_at"] = attempted_at.isoformat()
+        due.schedule_item["sent_by"] = os.getenv("GITHUB_RUN_ID", "local")
+        due.schedule_item["reference_only"] = due.reference_only
+        record_delivery(state, due.event, due.schedule_item, attempted_at, success=True,
+                        reference_only=due.reference_only)
         sent_count += 1
         if not dry_run:
             save_state(state)
     return sent_count
+
+
+def send_pending_system_summaries(
+    state: dict[str, Any], notifier: SlackNotifier, current: datetime, *, failures: list[str]
+) -> bool:
+    """Recover missed reports across midnight; never synthesize historical state."""
+    summary = state.setdefault("daily_system_summary", {})
+    today = current.date()
+    last_due = today if (not is_business_day(today) or
+                         current.time().replace(tzinfo=None) >= SYSTEM_SUMMARY_AFTER) else today - timedelta(days=1)
+    last_sent = summary.get("last_sent_date")
+    first = max(date.fromisoformat(last_sent) + timedelta(days=1), today - timedelta(days=7)) if last_sent else today
+    changed = False
+    day = first
+    while day <= last_due:
+        try:
+            changed |= send_daily_system_summary(state, notifier, current, failures=failures, for_day=day)
+            summary.pop("last_error", None)
+        except Exception as exc:
+            summary["last_error"] = {"at": current.isoformat(), "type": type(exc).__name__, "for_day": day.isoformat()}
+            return True
+        day += timedelta(days=1)
+    return changed
 
 
 def send_daily_system_summary(
@@ -465,8 +519,9 @@ def send_daily_system_summary(
     current: datetime,
     *,
     failures: list[str],
+    for_day: date | None = None,
 ) -> bool:
-    day = current.date().isoformat()
+    day = (for_day or current.date()).isoformat()
     summary = state.setdefault("daily_system_summary", {})
     if summary.get("last_sent_date") == day:
         return False
@@ -508,14 +563,17 @@ def send_daily_system_summary(
                 split_missing.append(f"{code}({','.join(missing_fields)})")
                 unresolved.setdefault(event_type, set()).add(code)
     previous_stats = state.get("notification_stats", {}).get(day, {})
-    success_count = int(previous_stats.get("success", 0)) + notifier.success_count
-    failure_count = int(previous_stats.get("failure", 0)) + notifier.failure_count
+    is_today = day == current.date().isoformat()
+    success_count = int(previous_stats.get("success", 0)) + (notifier.success_count if is_today else 0)
+    failure_count = int(previous_stats.get("failure", 0)) + (notifier.failure_count if is_today else 0)
     lines = [
         f"[日次システム集約] {day}",
         f"当日の通知成功: {success_count}件",
         f"当日の通知失敗: {failure_count}件",
-        f"当日の処理失敗: {len(failures)}件",
+        f"今回の処理失敗: {len(failures)}件",
     ]
+    if not is_today:
+        lines.append(f"[遅延集約] {current.isoformat()}時点の状態を表示。通知件数は対象日の保存済み記録。")
     lines.append(
         "イベント別未解決: "
         + (
@@ -532,6 +590,18 @@ def send_daily_system_summary(
     lines.append("株式分割未確定: " + (" / ".join(split_missing[:20]) if split_missing else "0件"))
     lines.append("8日以上の未送信予定: " + (", ".join(overdue[:20]) if overdue else "0件"))
     health = state.get("source_health", {})
+    incomplete_dates = [day for day, result in health.get("tdnet", {}).get("by_date", {}).items()
+                        if result.get("status") != "success"]
+    lines.append("TDnet取得未完了日: " + (", ".join(sorted(incomplete_dates)) if incomplete_dates else "0件"))
+    disclosure_failures = state.get("disclosure_failures", {})
+    if disclosure_failures:
+        abandoned = sum(bool(item.get("abandoned")) for item in disclosure_failures.values())
+        lines.append(f"TDnet開示処理失敗: {len(disclosure_failures)}件（自動再試行打切り・要確認: {abandoned}件）")
+    stale_pending = [str(event.get("code")) for event in state.get("events", [])
+                     if event.get("eligibility", {}).get("status") == PENDING
+                     and str(event.get("announced_at", ""))[:10] < (current.date() - timedelta(days=30)).isoformat()]
+    if stale_pending:
+        lines.append("30日超の判定待ち・元資料の再確認が必要: " + ", ".join(stale_pending))
     if health:
         lines.append(
             "データソース最終成功: "
@@ -543,6 +613,10 @@ def send_daily_system_summary(
     notifier.system("\n".join(lines))
     summary["last_sent_date"] = day
     summary["last_sent_at"] = current.isoformat()
+    history = summary.setdefault("sent_dates", {})
+    history[day] = current.isoformat()
+    for old_day in sorted(history)[:-90]:
+        del history[old_day]
     return True
 
 

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from copy import deepcopy
 from datetime import date, datetime, time
 from typing import Any
 
@@ -16,6 +17,7 @@ class DueNotification:
     text: str
     scheduled_for: date
     overdue: bool = False
+    reference_only: bool = False
 
 
 def _entry(
@@ -35,16 +37,17 @@ def _entry(
 
 
 def _merge_sent(old: list[dict[str, Any]] | None, new: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    sent_by_key = {
-        (item.get("date"), item.get("label")): bool(item.get("sent"))
+    previous_by_key = {
+        (item.get("date"), item.get("label")): item
         for item in old or []
     }
-    sent_labels = {item.get("label") for item in old or [] if item.get("sent")}
     for item in new:
-        item["sent"] = sent_by_key.get(
-            (item.get("date"), item.get("label")),
-            item.get("label") in sent_labels,
-        )
+        previous = previous_by_key.get((item.get("date"), item.get("label")), {})
+        # Corrected dates are distinct notifications. Preserve delivery evidence
+        # only for the exact date/label, keeping the freshly built time gates.
+        for key, value in previous.items():
+            if key not in {"date", "label", "not_before_jst", "action_cutoff_jst"}:
+                item[key] = deepcopy(value)
     return new
 
 
@@ -187,7 +190,7 @@ def due_notifications(state: dict[str, Any], now: date | datetime | str) -> list
         if isinstance(event.get("eligibility"), dict) and not is_eligible(event):
             continue
         for item in event.get("schedule", []):
-            if item.get("sent") or not item.get("date"):
+            if item.get("sent") or item.get("resolution") or not item.get("date"):
                 continue
             scheduled_for = as_date(item["date"])
             if scheduled_for > target_date:
@@ -208,7 +211,7 @@ def due_notifications(state: dict[str, Any], now: date | datetime | str) -> list
                     f"{text}\n"
                     "※以下の日時表現と売買指示は本来の通知日時点の内容で、現在時点の指示ではありません。"
                 )
-            due.append(DueNotification(event, item, text, scheduled_for, overdue))
+            due.append(DueNotification(event, item, text, scheduled_for, overdue, reference_only))
     return sorted(due, key=lambda item: (item.scheduled_for, item.event.get("id", ""), item.schedule_item.get("label", "")))
 
 

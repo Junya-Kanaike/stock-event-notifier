@@ -102,7 +102,7 @@ class ParserTest(unittest.TestCase):
         detail = parse_po_details(title, text, date(2026, 7, 14))
 
         self.assertEqual(detail["po_kind"], "secondary")
-        self.assertEqual(detail["size_oku"], 231.35)
+        self.assertEqual(detail["size_oku"], 231.35435)
         self.assertEqual(detail["size_status"], "confirmed")
         self.assertEqual(detail["dilution_pct"], 16.29)
         self.assertEqual(detail["pricing_date"], "2026-07-14")
@@ -130,7 +130,7 @@ class ParserTest(unittest.TestCase):
     def test_japan_airport_pricing_uses_explicit_settlement_date(self):
         text = (FIXTURE_DIR / "9706_pricing_20260902.txt").read_text(encoding="utf-8")
         detail = parse_po_details("売出価格等の決定に関するお知らせ", text, date(2026, 9, 2))
-        self.assertEqual(detail["size_oku"], 643.17)
+        self.assertEqual(detail["size_oku"], 643.173102)
         self.assertEqual(detail["secondary_sale_shares"], 10_028_400)
         self.assertEqual(detail["oa_shares"], 1_504_200)
         self.assertEqual(detail["settlement_date"], "2026-09-09")

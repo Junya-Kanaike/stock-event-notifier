@@ -8,17 +8,31 @@ from src.collectors.tdnet import classify_title
 from src.core.po import merge_po_details, refresh_po_missing_fields
 from src.core.eligibility import apply_eligibility
 from src.core.scheduler import build_bunbai_schedule, build_po_schedule, build_split_schedule
+from src.core.bizday import today_jst
 from src.parsers.po_pdf import has_ambiguous_settlement_reference
+from src.core.verified_repairs import repair_verified_event
 
 
 UPDATE_MARKERS = ("訂正", "変更", "終了", "条件決定", "実施に関する")
 
 
-def reconcile_event_state(state: dict[str, Any]) -> bool:
+def reconcile_event_state(state: dict[str, Any], *, as_of: date | None = None) -> bool:
     """Remove known false positives and consolidate follow-up disclosures."""
     before = deepcopy(state.get("events", []))
     previous_schema_version = state.get("schema_version", 1)
     events = [_sanitize_event(_reclassify_event(event)) for event in state.setdefault("events", [])]
+    repair_day = as_of or today_jst()
+    for event in events:
+        for item in event.get("schedule", []):
+            if (item.get("sent") and not item.get("sent_at")
+                    and not item.get("suppressed_reason")
+                    and str(item.get("date", "")) > repair_day.isoformat()):
+                event.setdefault("schedule_history", []).append({
+                    **deepcopy(item), "repair_reason": "unattributed_future_sent_flag",
+                    "repaired_on": repair_day.isoformat(),
+                })
+                item["sent"] = False
+                item["repair_reason"] = "unattributed_future_sent_flag"
     events = [event for event in events if _is_supported_event(event)]
     events = _merge_bunbai_duplicates(events)
     events = _merge_update_duplicates(events, "po")
@@ -58,6 +72,7 @@ def _reclassify_event(event: dict[str, Any]) -> dict[str, Any]:
 
 def _sanitize_event(event: dict[str, Any]) -> dict[str, Any]:
     event = deepcopy(event)
+    repair_verified_event(event)
     detail = event.setdefault("detail", {})
     if event.get("type") == "split" and str(detail.get("ratio") or "") == "1":
         detail["ratio"] = None
@@ -135,8 +150,7 @@ def _same_bunbai_cycle(first: dict[str, Any], second: dict[str, Any]) -> bool:
     second_date = second_detail.get("execution_date")
     if first_date and second_date:
         return first_date == second_date
-    if first_detail.get("execution_date_confirmed") and second_detail.get("execution_date_confirmed"):
-        return False
+    # A confirmed flag without a date is not evidence of a distinct offering.
     try:
         first_announced = date.fromisoformat(str(first.get("announced_at", ""))[:10])
         second_announced = date.fromisoformat(str(second.get("announced_at", ""))[:10])
@@ -230,7 +244,10 @@ def _combined_schedule(*schedules: list[dict[str, Any]]) -> list[dict[str, Any]]
         for item in schedule:
             key = (item.get("date"), item.get("label"))
             merged = by_key.setdefault(key, dict(item))
-            merged["sent"] = bool(merged.get("sent")) or bool(item.get("sent"))
+            sent = bool(merged.get("sent")) or bool(item.get("sent"))
+            if item.get("sent_at"):
+                merged.update(item)
+            merged["sent"] = sent
     return list(by_key.values())
 
 

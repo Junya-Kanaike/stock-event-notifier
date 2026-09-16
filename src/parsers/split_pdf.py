@@ -5,7 +5,7 @@ from datetime import date
 from typing import Any
 
 from src.core.bizday import add_business_days, is_business_day, prev_business_day
-from src.core.dateparse import clean_text, first_date_near_keywords
+from src.core.dateparse import DATE_PATTERN, clean_text, first_date_near_keywords, parse_date_token
 
 
 def extract_split_ratio(text: str) -> str | None:
@@ -30,12 +30,7 @@ def parse_split_details(text: str, disclosure_date: date) -> dict[str, Any]:
         default_year=disclosure_date.year,
         fallback_any=False,
     )
-    record_date, record_raw = first_date_near_keywords(
-        text,
-        ["株式分割の基準日", "分割基準日", "基準日"],
-        default_year=disclosure_date.year,
-        fallback_any=False,
-    )
+    record_date, record_raw = extract_record_date(text, disclosure_date.year)
     effective_date, effective_raw = first_date_near_keywords(
         text,
         ["効力発生日", "効力発生予定日"],
@@ -69,3 +64,17 @@ def parse_split_details(text: str, disclosure_date: date) -> dict[str, Any]:
         "effective_date": effective_date.isoformat() if effective_date else None,
         "effective_date_raw": effective_raw,
     }
+
+
+def extract_record_date(text: str, year: int) -> tuple[date | None, str | None]:
+    compact = re.sub(r"\s+", "", clean_text(text))
+    # 基準日公告日 is the announcement of the record date, not the record date.
+    pattern = rf"(?:株式分割の基準日|分割基準日|基準日)(?!公告)(?:[（(]予定[）)]|[:：はを、])*({DATE_PATTERN.pattern})"
+    match = re.search(pattern, compact)
+    if match:
+        return parse_date_token(match.group(1), default_year=year), match.group(0)
+    # A narrative can specify the date before the record-date label.
+    match = re.search(rf"({DATE_PATTERN.pattern})(?:[（(][^）)]*[）)])?を基準日", compact)
+    if match:
+        return parse_date_token(match.group(1), default_year=year), match.group(0)
+    return None, None
