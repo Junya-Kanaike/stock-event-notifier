@@ -1348,7 +1348,11 @@
     "140120260915536785",
     "140120260915536793",
     "140120260916537012",
-    "140120260916537112"
+    "140120260916537112",
+    "140120260916537265",
+    "140120260916536923",
+    "140120260908532830",
+    "140120260908533185"
   ],
   "events": [
     {
@@ -6120,15 +6124,17 @@
         "record_date_raw": "基準日（実質10月30日（金））として、同日最終の株主名簿に記載または記録 された株主の所有する当社普通株式1株につき、2株の割合をもって分割いたします。 ② 分割により増加する株式数 株式分割前の発行済株式総数 28,280,840株 今回の分割により増加する株式数 28,280,840株 株式分割後の発行済株式総数 56,561,680株 株式分割後の発",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "record_date_t_plus_2",
-        "rights_final_calculation_basis": "record_date_t_plus_2",
-        "rights_final_confirmed": false,
-        "rights_final_status": "provisional",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_confirmed": true,
+        "rights_final_status": "confirmed",
         "rights_date_conflict": false,
         "ex_right_date": "2026-10-29",
         "effective_date": "2026-11-01",
         "effective_date_raw": "効力発生日 2026年11月 1日（日） ④ 定款及び資本金の額の変更について 当社の定款に定める発行可能株式総数の範囲内での株式分割であるため、今回の株式分割に伴う定款 の変更はありません。また、今回の株式分割に際して、資本金の額の変更はありません。 1 2.株主優待制度の一部変更について (1) 株主優待制度の一部変更の理由 当社は、株主の皆様の日頃のご",
-        "eligible_notified": true
+        "eligible_notified": true,
+        "traders_rights_final_date": "2026-10-28",
+        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split"
       },
       "schedule": [
         {
@@ -6176,7 +6182,7 @@
       "last_checked_date": "2026-09-16",
       "last_success_date": "2026-09-16",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-16T12:43:09.647348+09:00"
+      "last_success_at": "2026-09-16T17:51:10.543943+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -6195,8 +6201,8 @@
       "last_success_at": "2026-09-14T18:17:08.503025+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-09-15",
-      "last_success_at": "2026-09-15T23:09:27.864691+00:00"
+      "last_success_date": "2026-09-16",
+      "last_success_at": "2026-09-16T08:50:50.315545+00:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-09-15",
