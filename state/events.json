@@ -3377,7 +3377,8 @@
         {
           "date": "2026-09-17",
           "label": "listing-1bd",
-          "sent": false
+          "sent": true,
+          "sent_at": "2026-09-17T00:24:28.066518+09:00"
         },
         {
           "date": "2026-09-18",
@@ -3407,7 +3408,8 @@
         {
           "date": "2026-09-17",
           "label": "listing-1bd",
-          "sent": false
+          "sent": true,
+          "sent_at": "2026-09-17T00:24:28.066518+09:00"
         },
         {
           "date": "2026-09-18",
@@ -3566,7 +3568,8 @@
         {
           "date": "2026-09-17",
           "label": "listing_day",
-          "sent": false
+          "sent": true,
+          "sent_at": "2026-09-17T00:24:28.066518+09:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -3591,7 +3594,8 @@
         {
           "date": "2026-09-17",
           "label": "listing-1bd",
-          "sent": false
+          "sent": true,
+          "sent_at": "2026-09-17T00:24:28.066518+09:00"
         },
         {
           "date": "2026-09-18",
@@ -6357,6 +6361,10 @@
     },
     "2026-09-16": {
       "success": 6,
+      "failure": 0
+    },
+    "2026-09-17": {
+      "success": 4,
       "failure": 0
     }
   },
