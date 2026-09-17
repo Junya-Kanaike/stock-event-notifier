@@ -3635,25 +3635,29 @@
           "date": "2026-08-26",
           "label": "pricing_day",
           "sent": false,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "overdue_unresolved": true
         },
         {
           "date": "2026-08-27",
           "label": "pricing_day+1",
           "sent": false,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "overdue_unresolved": true
         },
         {
           "date": "2026-08-28",
           "label": "pricing_day+2",
           "sent": false,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "overdue_unresolved": true
         },
         {
           "date": "2026-09-02",
           "label": "settlement",
           "sent": false,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "overdue_unresolved": true
         },
         {
           "date": "2026-10-05",
@@ -6373,5 +6377,14 @@
   "daily_system_summary": {
     "last_sent_date": "2026-09-16",
     "last_sent_at": "2026-09-16T23:23:26.535452+09:00"
+  },
+  "workflow_health": {
+    "timed_notifications": {
+      "last_started_at": "2026-09-17T10:49:40.795747+09:00",
+      "last_finished_at": "2026-09-17T10:49:40.812830+09:00",
+      "status": "success",
+      "run_id": "35172032586",
+      "last_success_at": "2026-09-17T10:49:40.812830+09:00"
+    }
   }
 }
