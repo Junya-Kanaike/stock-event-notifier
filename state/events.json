@@ -1354,7 +1354,11 @@
     "140120260908532830",
     "140120260908533185",
     "140120260917537633",
-    "140120260917537787"
+    "140120260917537787",
+    "140120260917537952",
+    "140120260917537996",
+    "140120260917538024",
+    "140120260917538105"
   ],
   "events": [
     {
@@ -6358,6 +6362,81 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "po-4436-2026-09-17",
+      "type": "po",
+      "code": "4436",
+      "name": "ミンカブ・ジ・インフォノイド",
+      "market": "グロース",
+      "margin": "貸借",
+      "announced_at": "2026-09-17T17:00:00+09:00",
+      "detail": {
+        "parser_version": 3,
+        "po_kind": "secondary",
+        "source_stage": "announcement",
+        "size_oku": 8.137,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "estimated",
+        "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "public_offering_shares": null,
+        "secondary_sale_shares": 1627400,
+        "oa_shares": 0,
+        "total_offered_shares": 1627400,
+        "share_breakdown_complete": true,
+        "oa_marker_present": false,
+        "issue_price_yen": null,
+        "sale_price_yen": null,
+        "offer_price_yen": null,
+        "dilution_pct": 10.59,
+        "dilution_status": "confirmed",
+        "pricing_date": "2026-09-17",
+        "pricing_date_end": null,
+        "pricing_date_raw": "売出価格については、売買当事者間における協議の上、決定 されております。 （3） 売 出 価 格 の 総 額 1,464,660,000円 （4） 売出人及び売出株式数 瓜生 憲 1,627,400株 （5） 売 出 方 法 市場外の相対取引による当社株式の譲渡 （6） 申 込 期 間 2026年9月17日 （7） 受 渡 期 日 2026年12月下旬（予定",
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "provisional",
+        "settlement_date": "2026-09-29",
+        "settlement_date_end": null,
+        "settlement_date_raw": null,
+        "settlement_estimated": true,
+        "settlement_date_status": "estimated",
+        "parse_warnings": [],
+        "missing_fields": [],
+        "notification_tracking_started": true,
+        "reference_close_yen": 500.0,
+        "reference_close_date": "2026-09-17",
+        "reference_close_source": "Yahoo Finance chart (raw close)",
+        "reference_close_kind": "announcement_close",
+        "estimated_size_yen": 813700000,
+        "estimated_size_oku": 8.137,
+        "effective_size_yen": 813700000,
+        "calculation_missing_fields": []
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260917538024.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260917538024.pdf",
+      "source_title": "株式会社NTTデータとの資本業務提携契約の締結、株式の売出し並びに主要株主及び主要株主である筆頭株主の異動に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260917538024",
+          "relation": "source",
+          "title": "株式会社NTTデータとの資本業務提携契約の締結、株式の売出し並びに主要株主及び主要株主である筆頭株主の異動に関するお知らせ",
+          "announced_at": "2026-09-17T17:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260917538024.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "吸収規模80億円未満"
+        ]
+      }
     }
   ],
   "source_health": {
@@ -6365,23 +6444,23 @@
       "last_checked_date": "2026-09-17",
       "last_success_date": "2026-09-17",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-17T12:47:29.208865+09:00",
+      "last_success_at": "2026-09-17T17:56:04.134600+09:00",
       "by_date": {
         "2026-09-16": {
-          "checked_at": "2026-09-17T12:47:28.089333+09:00",
+          "checked_at": "2026-09-17T17:56:02.720121+09:00",
           "count": 120,
           "status": "success",
-          "last_success_at": "2026-09-17T12:47:28.089333+09:00"
+          "last_success_at": "2026-09-17T17:56:02.720121+09:00"
         },
         "2026-09-17": {
-          "checked_at": "2026-09-17T12:47:29.208699+09:00",
-          "count": 31,
+          "checked_at": "2026-09-17T17:56:04.134365+09:00",
+          "count": 177,
           "status": "success",
-          "last_success_at": "2026-09-17T12:47:29.208699+09:00"
+          "last_success_at": "2026-09-17T17:56:04.134365+09:00"
         }
       },
-      "last_checked_at": "2026-09-17T12:47:29.208699+09:00",
-      "last_complete_poll_at": "2026-09-17T12:47:29.208872+09:00"
+      "last_checked_at": "2026-09-17T17:56:04.134365+09:00",
+      "last_complete_poll_at": "2026-09-17T17:56:04.134607+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -6396,12 +6475,12 @@
       "last_success_at": "2026-09-17T01:52:10.647512+00:00"
     },
     "yahoo_price": {
-      "last_success_date": "2026-09-14",
-      "last_success_at": "2026-09-14T18:17:08.503025+09:00"
+      "last_success_date": "2026-09-17",
+      "last_success_at": "2026-09-17T17:56:04.837093+09:00"
     },
     "traders_split": {
       "last_success_date": "2026-09-17",
-      "last_success_at": "2026-09-17T01:52:09.857859+00:00"
+      "last_success_at": "2026-09-17T08:56:00.202012+00:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-09-17",
@@ -6475,11 +6554,11 @@
       "last_success_at": "2026-09-17T10:52:11.331803+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-09-17T12:47:25.526364+09:00",
-      "last_finished_at": "2026-09-17T12:47:29.226309+09:00",
+      "last_started_at": "2026-09-17T17:55:57.962916+09:00",
+      "last_finished_at": "2026-09-17T17:56:04.910480+09:00",
       "status": "success",
-      "run_id": "35179465040",
-      "last_success_at": "2026-09-17T12:47:29.226309+09:00"
+      "run_id": "35202339641",
+      "last_success_at": "2026-09-17T17:56:04.910480+09:00"
     }
   }
 }
