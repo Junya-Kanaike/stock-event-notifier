@@ -1,14 +1,482 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-09-15T23:09:28.453822+00:00",
+  "fetched_at": "2026-09-16T23:13:30.596578+00:00",
   "data": {
-    "2814": {
-      "code": "2814",
-      "name": "佐藤食品",
+    "1718": {
+      "code": "1718",
+      "name": "美樹工業",
       "market": "スタンダード市場",
-      "ex_right_date": "2026-09-14",
-      "record_date": "2026-09-15",
-      "rights_final_date": "2026-09-11",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "1815": {
+      "code": "1815",
+      "name": "鉄建建設",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "1904": {
+      "code": "1904",
+      "name": "大成温調",
+      "market": "スタンダード市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "1925": {
+      "code": "1925",
+      "name": "大和ハウス",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "1926": {
+      "code": "1926",
+      "name": "ライト工",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "1965": {
+      "code": "1965",
+      "name": "テクノ菱和",
+      "market": "スタンダード市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "2108": {
+      "code": "2108",
+      "name": "甜菜糖",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "2282": {
+      "code": "2282",
+      "name": "日ハム",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "2469": {
+      "code": "2469",
+      "name": "ヒビノ",
+      "market": "スタンダード市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "278A": {
+      "code": "278A",
+      "name": "Ｇ－テラドローン",
+      "market": "グロース市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "285A": {
+      "code": "285A",
+      "name": "キオクシアＨＤ",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "3099": {
+      "code": "3099",
+      "name": "ミツコシイセタン",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "3106": {
+      "code": "3106",
+      "name": "クラボウ",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "3932": {
+      "code": "3932",
+      "name": "アカツキ",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "4062": {
+      "code": "4062",
+      "name": "イビデン",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "4374": {
+      "code": "4374",
+      "name": "Ｇ－ロボペイ",
+      "market": "グロース市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "4471": {
+      "code": "4471",
+      "name": "三洋化成",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "4667": {
+      "code": "4667",
+      "name": "アイサンテクノロ",
+      "market": "スタンダード市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "4746": {
+      "code": "4746",
+      "name": "東計電算",
+      "market": "スタンダード市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "4762": {
+      "code": "4762",
+      "name": "ＸＮＥＴ",
+      "market": "スタンダード市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "5232": {
+      "code": "5232",
+      "name": "住友大阪",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "5334": {
+      "code": "5334",
+      "name": "日特殊陶",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "5706": {
+      "code": "5706",
+      "name": "三井金属",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "5805": {
+      "code": "5805",
+      "name": "ＳＷＣＣ",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "6135": {
+      "code": "6135",
+      "name": "牧野フライス",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "6368": {
+      "code": "6368",
+      "name": "オルガノ",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "6379": {
+      "code": "6379",
+      "name": "レイズネクスト",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "6622": {
+      "code": "6622",
+      "name": "ダイヘン",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "6627": {
+      "code": "6627",
+      "name": "テラプローブ",
+      "market": "スタンダード市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "7242": {
+      "code": "7242",
+      "name": "カヤバ",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "7282": {
+      "code": "7282",
+      "name": "豊田合",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "7433": {
+      "code": "7433",
+      "name": "伯東",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "7716": {
+      "code": "7716",
+      "name": "ナカニシ",
+      "market": "スタンダード市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "7911": {
+      "code": "7911",
+      "name": "ＴＯＰＰＡＮ　ＨＤ",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "7988": {
+      "code": "7988",
+      "name": "ニフコ",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "8035": {
+      "code": "8035",
+      "name": "東エレク",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "8084": {
+      "code": "8084",
+      "name": "ＲＹＯＤＥＮ",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "8174": {
+      "code": "8174",
+      "name": "日瓦斯",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "8316": {
+      "code": "8316",
+      "name": "三井住友",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "8343": {
+      "code": "8343",
+      "name": "秋田銀",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "8360": {
+      "code": "8360",
+      "name": "山梨中銀",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "8361": {
+      "code": "8361",
+      "name": "大垣銀",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "8370": {
+      "code": "8370",
+      "name": "紀陽銀行",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "8377": {
+      "code": "8377",
+      "name": "ほくほく",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "8388": {
+      "code": "8388",
+      "name": "阿波銀",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "8551": {
+      "code": "8551",
+      "name": "北日本銀",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "8766": {
+      "code": "8766",
+      "name": "東京海上",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "9065": {
+      "code": "9065",
+      "name": "山九",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "9068": {
+      "code": "9068",
+      "name": "丸全運",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "9074": {
+      "code": "9074",
+      "name": "日石輸",
+      "market": "スタンダード市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "9687": {
+      "code": "9687",
+      "name": "ＫＳＫ",
+      "market": "スタンダード市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "9956": {
+      "code": "9956",
+      "name": "バローＨＤ",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "9987": {
+      "code": "9987",
+      "name": "スズケン",
+      "market": "プライム市場",
+      "ex_right_date": "2026-09-29",
+      "record_date": "2026-09-30",
+      "rights_final_date": "2026-09-28",
       "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
     }
   }
