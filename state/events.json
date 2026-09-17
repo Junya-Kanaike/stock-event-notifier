@@ -6530,21 +6530,24 @@
       "failure": 0
     },
     "2026-09-17": {
-      "success": 6,
+      "success": 7,
       "failure": 0
     }
   },
   "daily_system_summary": {
-    "last_sent_date": "2026-09-16",
-    "last_sent_at": "2026-09-16T23:23:26.535452+09:00"
+    "last_sent_date": "2026-09-17",
+    "last_sent_at": "2026-09-17T23:28:45.250409+09:00",
+    "sent_dates": {
+      "2026-09-17": "2026-09-17T23:28:45.250409+09:00"
+    }
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-09-17T19:52:09.251519+09:00",
-      "last_finished_at": "2026-09-17T19:52:09.274341+09:00",
+      "last_started_at": "2026-09-17T23:28:45.250409+09:00",
+      "last_finished_at": "2026-09-17T23:28:45.502269+09:00",
       "status": "success",
-      "run_id": "35212700393",
-      "last_success_at": "2026-09-17T19:52:09.274341+09:00"
+      "run_id": "35233809868",
+      "last_success_at": "2026-09-17T23:28:45.502269+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-09-17T10:52:03.816586+09:00",
