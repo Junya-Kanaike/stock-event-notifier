@@ -69,6 +69,14 @@ class DisclosureBatch(list[Disclosure]):
         self.total_count = total_count
 
 
+class PartialDisclosureError(RuntimeError):
+    """The available rows are usable, but the requested date is incomplete."""
+
+    def __init__(self, message: str, disclosures: list[Disclosure]):
+        super().__init__(message)
+        self.disclosures = list({item.id: item for item in disclosures}.values())
+
+
 def classify_title(title: str) -> set[str]:
     normalized = re.sub(r"\s+", "", title or "")
     classes: set[str] = set()
@@ -185,7 +193,11 @@ def fetch_disclosures(target_date: date | None = None) -> list[Disclosure]:
             return disclosures
     except Exception:
         return fetch_tdnet_html_disclosures(yyyymmdd)
-    html_disclosures = fetch_tdnet_html_disclosures(yyyymmdd)
+    try:
+        html_disclosures = fetch_tdnet_html_disclosures(yyyymmdd)
+    except Exception as exc:
+        available = list(getattr(exc, "disclosures", [])) + list(disclosures)
+        raise PartialDisclosureError(str(exc), available) from exc
     if not disclosures:
         return html_disclosures
     # Prefer Yanoshin rows because they also carry the source exchange.
@@ -295,11 +307,23 @@ def fetch_tdnet_html_disclosures(yyyymmdd: str) -> list[Disclosure]:
     html = request_get(url).decode("utf-8", errors="ignore")
     soup = BeautifulSoup(html, "html.parser")
     page_urls = _tdnet_page_urls(soup, url, yyyymmdd)
-    disclosures = _parse_tdnet_html_page(soup, url, yyyymmdd)
+    disclosures: list[Disclosure] = []
+    errors: list[str] = []
+    try:
+        disclosures.extend(_parse_tdnet_html_page(soup, url, yyyymmdd))
+    except Exception as exc:
+        errors.append(f"page 001: {exc}")
     for page_url in page_urls[: max(0, MAX_TDNET_PAGES - 1)]:
-        page_html = request_get(page_url).decode("utf-8", errors="ignore")
-        page_soup = BeautifulSoup(page_html, "html.parser")
-        disclosures.extend(_parse_tdnet_html_page(page_soup, page_url, yyyymmdd))
+        try:
+            page_html = request_get(page_url).decode("utf-8", errors="ignore")
+            page_soup = BeautifulSoup(page_html, "html.parser")
+            disclosures.extend(_parse_tdnet_html_page(page_soup, page_url, yyyymmdd))
+        except Exception as exc:
+            errors.append(f"{page_url.rsplit('/', 1)[-1]}: {exc}")
+    if len(page_urls) + 1 > MAX_TDNET_PAGES:
+        errors.append("TDnet pagination limit exceeded")
+    if errors:
+        raise PartialDisclosureError("; ".join(errors), disclosures)
 
     by_id = {item.id: item for item in disclosures}
     return list(by_id.values())
@@ -346,7 +370,7 @@ def _parse_tdnet_html_page(soup: Any, url: str, yyyymmdd: str) -> list[Disclosur
                 source_url=url,
             )
         )
-    if not header_found:
+    if not header_found and not disclosures:
         raise RuntimeError("TDnet fallback page schema is unrecognized")
     return disclosures
 
@@ -356,8 +380,8 @@ def _tdnet_page_urls(soup: Any, base_url: str, yyyymmdd: str) -> list[str]:
 
     filenames: set[str] = set()
     pattern = re.compile(rf"I_list_(\d{{3}})_{re.escape(yyyymmdd)}\.html")
-    for node in soup.find_all(attrs={"onclick": True}):
-        match = pattern.search(str(node.get("onclick", "")))
+    for node in soup.find_all(True):
+        match = pattern.search(str(node.get("onclick", "")) + " " + str(node.get("href", "")))
         if match and match.group(1) != "001":
             filenames.add(match.group(0))
     return [absolute_url(base_url, name) for name in sorted(filenames)]

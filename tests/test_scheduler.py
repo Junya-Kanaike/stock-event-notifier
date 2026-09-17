@@ -63,11 +63,11 @@ class SchedulerTest(unittest.TestCase):
         self.assertNotIn("寄り付きで買い戻し", late)
         self.assertIn("参考通知", late)
 
-    def test_schedule_date_change_preserves_already_sent_labels(self):
+    def test_schedule_date_change_does_not_inherit_already_sent_labels(self):
         old = build_po_schedule(date(2026, 9, 7), date(2026, 9, 15))
         next(item for item in old if item["label"] == "pricing_day")["sent"] = True
         rebuilt = build_po_schedule(date(2026, 9, 8), date(2026, 9, 16), old_schedule=old)
-        self.assertTrue(next(item for item in rebuilt if item["label"] == "pricing_day")["sent"])
+        self.assertFalse(next(item for item in rebuilt if item["label"] == "pricing_day")["sent"])
 
     def test_po_25_and_26_business_days_use_identical_action(self):
         event = {"type": "po", "code": "7203", "name": "テスト", "detail": {}}

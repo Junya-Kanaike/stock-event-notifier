@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import os
 import time
-from typing import Any
+from typing import Any, Callable
 
 
 WEBHOOK_ENV_BY_TYPE = {
@@ -30,6 +30,7 @@ class SlackNotifier:
         header: str | None = None,
         fields: list[str] | None = None,
         pdf_url: str | None = None,
+        text_factory: Callable[[], str] | None = None,
     ) -> None:
         payload = build_payload(text, header=header, fields=fields, pdf_url=pdf_url)
         self.sent_messages.append({"type": event_type, "payload": payload})
@@ -44,17 +45,18 @@ class SlackNotifier:
             self.failure_count += 1
             raise RuntimeError(f"Missing Slack webhook secret: {env_name}")
         try:
-            post_payload(webhook_url, payload)
+            def current_payload() -> dict[str, Any]:
+                if text_factory is not None:
+                    payload.update(build_payload(text_factory(), header=header, fields=fields, pdf_url=pdf_url))
+                return payload
+
+            post_payload(webhook_url, payload, payload_factory=current_payload)
         except Exception:
             self.failure_count += 1
             raise
         self.success_count += 1
 
     def system(self, text: str) -> None:
-        system_url = os.getenv("SLACK_WEBHOOK_SYSTEM")
-        if not system_url and not self.dry_run:
-            print(f"[SYSTEM] {text}")
-            return
         self.send("system", text, header="システム通知")
 
 
@@ -76,13 +78,15 @@ def build_payload(
     return {"text": text, "blocks": blocks}
 
 
-def post_payload(webhook_url: str, payload: dict[str, Any]) -> None:
+def post_payload(webhook_url: str, payload: dict[str, Any], *,
+                 payload_factory: Callable[[], dict[str, Any]] | None = None) -> None:
     import requests
 
     last_error: Exception | None = None
     for attempt in range(3):
         try:
-            response = requests.post(webhook_url, json=payload, timeout=15)
+            current = payload_factory() if payload_factory is not None else payload
+            response = requests.post(webhook_url, json=current, timeout=15)
             response.raise_for_status()
             return
         except Exception as exc:  # pragma: no cover - network dependent

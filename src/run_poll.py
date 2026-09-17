@@ -23,6 +23,7 @@ from src.core.po import (
     refresh_calculated_po_size,
 )
 from src.core.reconcile import reconcile_event_state
+from src.core.operations import record_tdnet_date, record_run
 from src.core.scheduler import build_bunbai_schedule, build_po_schedule, build_split_schedule
 from src.core.split import apply_jpx_ex_right, apply_traders_split
 from src.core.store import (
@@ -41,7 +42,7 @@ from src.core.store import (
 )
 from src.notifiers.slack import SlackNotifier
 from src.core.transitions import eligibility_transition, mark_transition_notified
-from src.parsers.po_pdf import parse_po_details
+from src.parsers.po_pdf import PO_PARSER_VERSION, parse_po_details
 from src.parsers.bunbai_pdf import parse_bunbai_details
 from src.parsers.split_pdf import parse_split_details
 
@@ -51,6 +52,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--date", help="JST date to poll, YYYY-MM-DD")
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args(argv)
+    started_at = datetime.now(JST)
 
     target_date = date.fromisoformat(args.date) if args.date else today_jst()
     if not is_business_day(target_date):
@@ -63,7 +65,7 @@ def main(argv: list[str] | None = None) -> int:
         state = load_state()
         if args.dry_run:
             state = deepcopy(state)
-        changed = reconcile_event_state(state)
+        changed = reconcile_event_state(state, as_of=target_date)
     except Exception as exc:
         notify_system_safely(notifier, f"state整合性エラー: {type(exc).__name__}: {exc}")
         raise
@@ -110,13 +112,22 @@ def main(argv: list[str] | None = None) -> int:
         save_state(state)
 
     target_dates = poll_target_dates(target_date, explicit_date=bool(args.date))
-    disclosures, source_failures = fetch_poll_disclosures(target_dates, notifier)
+    if not args.date:
+        failed_dates = state.get("source_health", {}).get("tdnet", {}).get("by_date", {})
+        target_dates = sorted(set(target_dates) | {
+            date.fromisoformat(day) for day, result in failed_dates.items()
+            if result.get("status") != "success" and 0 <= (target_date - date.fromisoformat(day)).days <= 7
+        })
+    disclosures, source_failures = fetch_poll_disclosures(target_dates, notifier, state=state)
+    changed = True
     changed |= recover_missing_event_markets(state, disclosures)
 
-    if len(source_failures) < len(target_dates):
+    if not source_failures:
         health_changed, should_alert = record_source_result(state, "tdnet", target_date, len(disclosures))
         changed |= health_changed
         changed |= record_source_success(state, "tdnet", datetime.now(JST))
+        state["source_health"]["tdnet"]["last_success_date"] = target_date.isoformat()
+        state["source_health"]["tdnet"]["last_complete_poll_at"] = datetime.now(JST).isoformat()
         if should_alert:
             notify_system_safely(notifier, "TDnet取得件数が3営業日以上連続で0件です。取得元の仕様変更を確認してください")
         if health_changed and not args.dry_run:
@@ -139,10 +150,13 @@ def main(argv: list[str] | None = None) -> int:
         success_count=notifier.success_count,
         failure_count=notifier.failure_count,
     )
+    record_run(state, "poll_tdnet", started_at, datetime.now(JST), failed=bool(source_failures or notifier.failure_count))
     if changed and not args.dry_run:
         save_state(state)
     if source_failures:
         raise RuntimeError("; ".join(source_failures))
+    if notifier.failure_count:
+        raise RuntimeError("Slack通知に失敗しました。保存済みstateを確認してください")
     return 0
 
 
@@ -153,18 +167,25 @@ def poll_target_dates(target_date: date, *, explicit_date: bool) -> list[date]:
 
 
 def fetch_poll_disclosures(
-    target_dates: list[date], notifier: SlackNotifier
+    target_dates: list[date], notifier: SlackNotifier, *, state: dict[str, Any] | None = None
 ) -> tuple[list[Disclosure], list[str]]:
     by_id: dict[str, Disclosure] = {}
     failures: list[str] = []
     for target_date in target_dates:
+        rows: list[Disclosure] = []
+        error = None
         try:
-            for disclosure in fetch_disclosures(target_date):
-                by_id[disclosure.id] = disclosure
+            rows = fetch_disclosures(target_date)
         except Exception as exc:
+            rows = getattr(exc, "disclosures", [])
+            error = str(exc)
             message = f"TDnet取得失敗 ({target_date.isoformat()}): {exc}"
             failures.append(message)
             notify_system_safely(notifier, message)
+        for disclosure in rows:
+            by_id[disclosure.id] = disclosure
+        if state is not None:
+            record_tdnet_date(state, target_date, datetime.now(JST), len(rows), error)
     return sorted(by_id.values(), key=lambda item: (item.announced_at, item.id)), failures
 
 
@@ -374,7 +395,8 @@ def recover_po_calculations(
     for event in find_events(
         state,
         event_type="po",
-        predicate=lambda item: item.get("detail", {}).get("parser_version") != 2
+        predicate=lambda item: item.get("detail", {}).get("parser_version") != PO_PARSER_VERSION
+        or bool(item.get("detail", {}).get("calculation_recovery_last_error"))
         or not item.get("detail", {}).get("total_offered_shares")
         or item.get("detail", {}).get("effective_size_yen") is None,
     ):
@@ -400,11 +422,23 @@ def recover_po_calculations(
                 "title": event.get("source_title") or "PO更新",
                 "announced_at": event.get("announced_at"),
             }
+        recovery_key = f"{PO_PARSER_VERSION}:" + "|".join(sorted(by_url))
+        if (detail.get("calculation_recovery_last_error")
+                and detail.get("calculation_recovery_key") == recovery_key
+                and detail.get("calculation_recovery_attempt_date") == now.date().isoformat()):
+            continue
+        detail["calculation_recovery_key"] = recovery_key
+        detail["calculation_recovery_attempt_date"] = now.date().isoformat()
         try:
+            source_errors = []
             for source in by_url.values():
-                disclosure_date = date.fromisoformat(str(source.get("announced_at", ""))[:10])
-                text = fetch_pdf_text(str(source["pdf_url"]))
-                parsed = parse_po_details(str(source.get("title") or "PO発表"), text, disclosure_date)
+                try:
+                    disclosure_date = date.fromisoformat(str(source.get("announced_at", ""))[:10])
+                    text = fetch_pdf_text(str(source["pdf_url"]))
+                    parsed = parse_po_details(str(source.get("title") or "PO発表"), text, disclosure_date)
+                except Exception as exc:
+                    source_errors.append(f"{source['pdf_url']}: {type(exc).__name__}")
+                    continue
                 detail = merge_po_details(detail, parsed)
                 if parsed.get("source_stage") == "pricing":
                     pricing_date = disclosure_date.isoformat()
@@ -421,9 +455,12 @@ def recover_po_calculations(
                 event["schedule"] = build_po_schedule(
                     detail["pricing_date"], detail.get("settlement_date"), old_schedule=event.get("schedule", [])
                 )
+            if source_errors:
+                raise RuntimeError("; ".join(source_errors))
             detail.pop("calculation_recovery_last_error", None)
             detail.pop("calculation_recovery_alerted", None)
         except Exception as exc:
+            event["detail"] = detail
             error = f"{type(exc).__name__}: {exc}"
             detail["calculation_recovery_last_error"] = error
             if not detail.get("calculation_recovery_alerted"):
