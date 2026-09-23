@@ -303,5 +303,264 @@
         "東証以外"
       ]
     }
+  },
+  {
+    "id": "po-9322-2026-08-21",
+    "type": "po",
+    "code": "9322",
+    "name": "川西倉庫",
+    "market": "スタンダード",
+    "margin": "信用",
+    "announced_at": "2026-08-21T15:30:00+09:00",
+    "detail": {
+      "po_kind": "secondary",
+      "source_stage": "announcement",
+      "size_oku": 12.03402,
+      "size_oku_min": null,
+      "size_oku_max": null,
+      "size_status": "confirmed",
+      "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
+      "share_count": null,
+      "oa_share_count": null,
+      "price_min_yen": null,
+      "price_max_yen": null,
+      "dilution_pct": null,
+      "dilution_status": "unavailable",
+      "pricing_date": "2026-08-31",
+      "pricing_date_end": "2026-08-31",
+      "pricing_date_raw": "売出価格未定（日本証券業協会の定める有価証券の引受け等に関する規則第25条に規定される方式により、2026年8月31日(月)から2026年9月2日(水)までの間のいずれかの日（以下「売出価格等決定日」という。）の株式会社東京証券取引所における当社普通株式の普通取引の終値（当日に終値のない場合は、その日に先立つ直近日の終値）に0.90～1.00を乗じた価格（1",
+      "pricing_date_confirmed": true,
+      "pricing_date_status": "confirmed",
+      "settlement_date": "2026-09-07",
+      "settlement_date_end": null,
+      "settlement_date_raw": "受渡期日2026年9月7日(月)（注）引受人は引受価額で買取引受けを行い、売出価格で売出しを行います。2.当社株式の売出し（オーバーアロットメントによる売出し）(1)売出株式数65,300株(2)売出価格1株につき2,402円(3)売出価格の総額156,850,600円(4)申込期間2026年9月1日(火)～2026年9月2日(水)(5)受渡期日2026年9",
+      "settlement_estimated": false,
+      "settlement_date_status": "confirmed",
+      "parse_warnings": [],
+      "missing_fields": [
+        "dilution_pct"
+      ],
+      "latest_source_stage": "pricing",
+      "secondary_sale_shares": 435700,
+      "oa_shares": 65300,
+      "total_offered_shares": 501000,
+      "share_breakdown_complete": true,
+      "oa_marker_present": true,
+      "po_threshold_ever_met": false,
+      "issue_price_yen": 2402.0,
+      "sale_price_yen": 2402.0,
+      "offer_price_yen": 2402.0,
+      "reference_close_yen": 2475.0,
+      "reference_close_date": "2026-08-21",
+      "reference_close_source": "Yahoo Finance chart (raw close)",
+      "reference_close_kind": "announcement_close",
+      "confirmed_size_yen": 1203402000,
+      "confirmed_size_oku": 12.03402,
+      "effective_size_yen": 1203402000,
+      "parser_version": 3,
+      "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260821524159.pdf|https://www.release.tdnet.info/inbs/140120260831528420.pdf",
+      "calculation_recovery_attempt_date": "2026-09-17",
+      "calculation_missing_fields": []
+    },
+    "schedule": [],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524159.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260831528420.pdf",
+    "source_title": "株式の売出しに関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120260821524159",
+        "relation": "source",
+        "title": "株式の売出しに関するお知らせ",
+        "announced_at": "2026-08-21T15:30:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524159.pdf"
+      },
+      {
+        "id": "140120260831528420",
+        "relation": "pricing",
+        "title": "売出価格等の決定に関するお知らせ",
+        "announced_at": "2026-08-31T17:00:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260831528420.pdf",
+        "market": "東証"
+      }
+    ],
+    "eligibility": {
+      "status": "excluded",
+      "reasons": [
+        "吸収規模80億円未満"
+      ]
+    }
+  },
+  {
+    "id": "split-4762-2026-08-21",
+    "type": "split",
+    "code": "4762",
+    "name": "エックスネット",
+    "market": "スタンダード",
+    "margin": "信用",
+    "announced_at": "2026-08-21T16:00:00+09:00",
+    "detail": {
+      "ratio": "2",
+      "effective_date": "2026-10-01",
+      "effective_date_raw": "効力発生日 2026年10月1日（木曜日） （4） その他 今回の株式分割に際して、資本金の額に変更はありません。 2. 株式分割に伴う定款の一部変更について （1） 変更の理由 上記株式分割の割合に応じた発行可能株式総数の増加に伴い、会社法第184条第2項に 基づき、2026年10月1日（木曜日）を効力発生日として、当社定款の一部を変更いたし ます。 （2",
+      "record_date": null,
+      "ex_right_date": "2026-09-29",
+      "rights_final_date": "2026-09-28",
+      "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+      "rights_final_status": "confirmed",
+      "traders_rights_final_date": "2026-09-28",
+      "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
+      "rights_final_source": "jpx_ex_rights",
+      "rights_final_confirmed": true,
+      "rights_date_conflict": false,
+      "jpx_ex_right_date": "2026-09-29",
+      "jpx_rights_final_date": "2026-09-28",
+      "jpx_ex_rights_source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "schedule": [],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524566.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260821524566.pdf",
+    "source_title": "「株式分割」、株式分割に伴う「定款の一部変更」、「配当予想の修正」および「株主優待制度の変更」に関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120260821524566",
+        "relation": "source",
+        "title": "「株式分割」、株式分割に伴う「定款の一部変更」、「配当予想の修正」および「株主優待制度の変更」に関するお知らせ",
+        "announced_at": "2026-08-21T16:00:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524566.pdf"
+      }
+    ],
+    "eligibility": {
+      "status": "excluded",
+      "reasons": [
+        "貸借対象外"
+      ]
+    }
+  },
+  {
+    "id": "split-5979-2026-08-24",
+    "type": "split",
+    "code": "5979",
+    "name": "カネソウ",
+    "market": "名証",
+    "margin": "対象外",
+    "announced_at": "2026-08-24T14:00:00+09:00",
+    "detail": {
+      "ratio": "2",
+      "effective_date": "2026-10-01",
+      "effective_date_raw": "効力発生日 2026年10月1日（木曜日） 3.定款の一部変更 （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年10月1日をもって、当 社定款第6条で定める発行可能株式総数を変更いたします。 （2）定款変更の内容 （下線は変更部分を示しております。） 現行定款 変更後定款 （発行可能株式総数） （発行可能株式総数） 第",
+      "record_date": null,
+      "ex_right_date": null,
+      "rights_final_date": "2026-09-28",
+      "rights_final_calculation_basis": "traders_web_rights_final_date",
+      "rights_final_status": "confirmed",
+      "traders_rights_final_date": "2026-09-28",
+      "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
+      "rights_final_source": "traders_web",
+      "rights_final_confirmed": true,
+      "rights_date_conflict": false,
+      "ratio_source": "traders_web"
+    },
+    "schedule": [],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260819523040.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260819523040.pdf",
+    "source_title": "株式分割、株式分割に伴う定款の一部変更及び配当予想の修正に関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120260819523040",
+        "relation": "source",
+        "title": "株式分割、株式分割に伴う定款の一部変更及び配当予想の修正に関するお知らせ",
+        "announced_at": "2026-08-24T14:00:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260819523040.pdf"
+      }
+    ],
+    "eligibility": {
+      "status": "excluded",
+      "reasons": [
+        "東証Prime・Standard以外"
+      ]
+    }
+  },
+  {
+    "id": "po-6232-2026-08-24",
+    "type": "po",
+    "code": "6232",
+    "name": "ＡＣＳＬ",
+    "market": "グロース",
+    "margin": "貸借",
+    "announced_at": "2026-08-24T17:00:00+09:00",
+    "detail": {
+      "po_kind": "offering",
+      "source_stage": "announcement",
+      "size_oku": 66.6292,
+      "size_oku_min": null,
+      "size_oku_max": null,
+      "size_status": "estimated",
+      "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+      "share_count": null,
+      "oa_share_count": null,
+      "price_min_yen": null,
+      "price_max_yen": null,
+      "dilution_pct": null,
+      "dilution_status": "unavailable",
+      "pricing_date": "2026-08-25",
+      "pricing_date_end": "2026-08-25",
+      "pricing_date_raw": "発行価格等決定日 2026年8月25日（火）～ 2026年8月26日（水） 払込期日 2026年9月8日（火） 受渡期日 2026年9月9日（水） ロックアップ条項 当社及び当社代表取締役Co-CEO早川 研介:180日間 ブックランナー兼主幹事会社 BofA証券株式会社 1:最終的な募集株式の数は、4,800,000株を上限として、引受人が、投資家からの当",
+      "pricing_date_confirmed": true,
+      "pricing_date_status": "confirmed",
+      "settlement_date": "2026-09-09",
+      "settlement_date_end": null,
+      "settlement_date_raw": "受渡期日2026年9月9日（水）(注)1.2026年8月24日付の取締役会決議における会社法第199条第1項の決議に基づく募集株式の種類及び数は当社普通株式4,800,000株（①引受人の買取引受けの対象株式として3,800,000株及び②引受人の追加的な買取引受けの対象株式の上限として1,000,000株の合計）となっておりましたが、引受人が上記募集株式の",
+      "settlement_estimated": false,
+      "settlement_date_status": "confirmed",
+      "parse_warnings": [],
+      "missing_fields": [
+        "dilution_pct"
+      ],
+      "latest_source_stage": "pricing",
+      "oa_shares": 0,
+      "share_breakdown_complete": true,
+      "oa_marker_present": false,
+      "po_threshold_ever_met": false,
+      "public_offering_shares": 4180000,
+      "total_offered_shares": 4180000,
+      "reference_close_yen": 1594.0,
+      "reference_close_date": "2026-08-24",
+      "reference_close_source": "Yahoo Finance chart (raw close)",
+      "reference_close_kind": "announcement_close",
+      "estimated_size_yen": 6662920000,
+      "estimated_size_oku": 66.6292,
+      "effective_size_yen": 6662920000,
+      "parser_version": 3,
+      "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260824525276.pdf|https://www.release.tdnet.info/inbs/140120260825526021.pdf",
+      "calculation_recovery_attempt_date": "2026-09-17",
+      "calculation_missing_fields": []
+    },
+    "schedule": [],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525276.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260825526021.pdf",
+    "source_title": "海外募集による新株式発行に関する補足説明資料",
+    "related_disclosures": [
+      {
+        "id": "140120260824525276",
+        "relation": "source",
+        "title": "海外募集による新株式発行に関する補足説明資料",
+        "announced_at": "2026-08-24T17:00:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525276.pdf"
+      },
+      {
+        "id": "140120260825526021",
+        "relation": "pricing",
+        "title": "海外募集による新株式発行に係る発行価格等の決定に関するお知らせ",
+        "announced_at": "2026-08-25T18:00:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260825526021.pdf",
+        "market": "東証"
+      }
+    ],
+    "eligibility": {
+      "status": "excluded",
+      "reasons": [
+        "吸収規模80億円未満"
+      ]
+    }
   }
 ]
