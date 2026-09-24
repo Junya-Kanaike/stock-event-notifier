@@ -4539,94 +4539,6 @@
       }
     },
     {
-      "id": "po-5726-2026-08-25",
-      "type": "po",
-      "code": "5726",
-      "name": "大阪チタニウムテクノロジーズ",
-      "market": "プライム",
-      "margin": "貸借",
-      "announced_at": "2026-08-25T16:00:00+09:00",
-      "detail": {
-        "po_kind": "both",
-        "source_stage": "announcement",
-        "size_oku": 54.43202592,
-        "size_oku_min": null,
-        "size_oku_max": null,
-        "size_status": "confirmed",
-        "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
-        "share_count": null,
-        "oa_share_count": null,
-        "price_min_yen": null,
-        "price_max_yen": null,
-        "dilution_pct": null,
-        "dilution_status": "unavailable",
-        "pricing_date": "2026-09-01",
-        "pricing_date_end": "2026-09-01",
-        "pricing_date_raw": "発行価格及び売出価格等の決定に関するお知らせ 2026 年8月 25 日開催の当社取締役会において決議いたしました新株式発行及び当社株式の売出しに関 し、発行価格及び売出価格等が下記のとおり決定されましたので、お知らせいたします。 記 1.公募による新株式発行（一般募集） (1) 発 行 価 格 1株につき 2,592円 (2) 発 行 価 格 の 総 額 ",
-        "pricing_date_confirmed": true,
-        "pricing_date_status": "confirmed",
-        "settlement_date": "2026-09-10",
-        "settlement_date_end": null,
-        "settlement_date_raw": "受渡期日2026年9月10日(木)ご注意:この文書は、いかなる証券についての投資募集行為の一部をなすものでもありません。この文書は、当社の新株式発行及び株式売出しに関して一般に公表することのみを目的とする記者発表文であり、日本国内外を問わず投資勧誘等を目的として作成されたものではありません。当社普通株式に投資を行う際は、必ず当社が作成する新株式発行並びに株式",
-        "settlement_estimated": false,
-        "settlement_date_status": "confirmed",
-        "parse_warnings": [],
-        "missing_fields": [
-          "dilution_pct"
-        ],
-        "latest_source_stage": "pricing",
-        "public_offering_shares": 1,
-        "secondary_sale_shares": 1050000,
-        "oa_shares": 1050000,
-        "total_offered_shares": 9100000,
-        "share_breakdown_complete": true,
-        "oa_marker_present": true,
-        "po_threshold_ever_met": false,
-        "issue_price_yen": 2592.0,
-        "sale_price_yen": 2592.0,
-        "offer_price_yen": 2592.0,
-        "reference_close_yen": 2851.0,
-        "reference_close_date": "2026-08-25",
-        "reference_close_source": "Yahoo Finance chart (raw close)",
-        "reference_close_kind": "announcement_close",
-        "confirmed_size_yen": 5443202592,
-        "confirmed_size_oku": 54.43202592,
-        "effective_size_yen": 5443202592,
-        "parser_version": 3,
-        "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260824525282.pdf|https://www.release.tdnet.info/inbs/140120260827527443.pdf",
-        "calculation_recovery_attempt_date": "2026-09-17",
-        "calculation_missing_fields": []
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525282.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260827527443.pdf",
-      "source_title": "新株式発行及び株式売出しに関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260824525282",
-          "relation": "source",
-          "title": "新株式発行及び株式売出しに関するお知らせ",
-          "announced_at": "2026-08-25T16:00:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260824525282.pdf",
-          "market": "東証"
-        },
-        {
-          "id": "140120260827527443",
-          "relation": "pricing",
-          "title": "発行価格及び売出価格等の決定に関するお知らせ",
-          "announced_at": "2026-09-01T17:15:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260827527443.pdf",
-          "market": "東証"
-        }
-      ],
-      "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "吸収規模80億円未満"
-        ]
-      }
-    },
-    {
       "id": "split-278A-2026-08-27",
       "type": "split",
       "code": "278A",
@@ -6416,11 +6328,11 @@
     },
     "jpx_margin": {
       "last_success_date": "2026-09-24",
-      "last_success_at": "2026-09-24T14:24:50.079587+00:00"
+      "last_success_at": "2026-09-24T23:24:42.801682+00:00"
     },
     "jpx_ex_rights": {
       "last_success_date": "2026-09-24",
-      "last_success_at": "2026-09-24T14:24:53.037940+00:00"
+      "last_success_at": "2026-09-24T23:24:45.208212+00:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-09-17",
@@ -6428,15 +6340,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-09-24",
-      "last_success_at": "2026-09-24T14:24:52.339484+00:00"
+      "last_success_at": "2026-09-24T23:24:44.169949+00:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-09-24",
-      "last_success_at": "2026-09-24T14:24:53.411069+00:00"
+      "last_success_at": "2026-09-24T23:24:45.513627+00:00"
     },
     "jpx_bunbai": {
       "last_success_date": "2026-09-24",
-      "last_success_at": "2026-09-24T14:24:53.925976+00:00"
+      "last_success_at": "2026-09-24T23:24:45.985647+00:00"
     }
   },
   "schema_version": 2,
@@ -6510,7 +6422,7 @@
       "failure": 0
     },
     "2026-09-25": {
-      "success": 3,
+      "success": 4,
       "failure": 0
     }
   },
@@ -6537,11 +6449,11 @@
       "last_success_at": "2026-09-25T00:48:02.293544+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-09-24T23:24:45.092816+09:00",
-      "last_finished_at": "2026-09-24T23:24:54.020856+09:00",
+      "last_started_at": "2026-09-25T08:24:36.943866+09:00",
+      "last_finished_at": "2026-09-25T08:24:45.987049+09:00",
       "status": "success",
-      "run_id": "36012581793",
-      "last_success_at": "2026-09-24T23:24:54.020856+09:00"
+      "run_id": "36072556685",
+      "last_success_at": "2026-09-25T08:24:45.987049+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-09-24T22:47:38.284771+09:00",
