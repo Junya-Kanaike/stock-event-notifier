@@ -6339,10 +6339,8 @@
         }
       ],
       "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "自社株買い同時発表"
-        ]
+        "status": "eligible",
+        "reasons": []
       }
     }
   ],
@@ -6351,7 +6349,7 @@
       "last_checked_date": "2026-09-24",
       "last_success_date": "2026-09-24",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-24T17:42:53.128421+09:00",
+      "last_success_at": "2026-09-24T22:47:49.771462+09:00",
       "by_date": {
         "2026-09-16": {
           "checked_at": "2026-09-17T23:08:31.664911+09:00",
@@ -6366,20 +6364,20 @@
           "last_success_at": "2026-09-18T22:05:28.449311+09:00"
         },
         "2026-09-18": {
-          "checked_at": "2026-09-24T17:42:51.651560+09:00",
+          "checked_at": "2026-09-24T22:47:47.944294+09:00",
           "count": 228,
           "status": "success",
-          "last_success_at": "2026-09-24T17:42:51.651560+09:00"
+          "last_success_at": "2026-09-24T22:47:47.944294+09:00"
         },
         "2026-09-24": {
-          "checked_at": "2026-09-24T17:42:53.128206+09:00",
-          "count": 173,
+          "checked_at": "2026-09-24T22:47:49.771100+09:00",
+          "count": 192,
           "status": "success",
-          "last_success_at": "2026-09-24T17:42:53.128206+09:00"
+          "last_success_at": "2026-09-24T22:47:49.771100+09:00"
         }
       },
-      "last_checked_at": "2026-09-24T17:42:53.128206+09:00",
-      "last_complete_poll_at": "2026-09-24T17:42:53.128427+09:00"
+      "last_checked_at": "2026-09-24T22:47:49.771100+09:00",
+      "last_complete_poll_at": "2026-09-24T22:47:49.771472+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -6510,11 +6508,11 @@
       "last_success_at": "2026-09-24T08:06:50.135498+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-09-24T17:42:39.717243+09:00",
-      "last_finished_at": "2026-09-24T17:42:57.871654+09:00",
+      "last_started_at": "2026-09-24T22:47:38.284771+09:00",
+      "last_finished_at": "2026-09-24T22:47:49.800527+09:00",
       "status": "success",
-      "run_id": "35976820176",
-      "last_success_at": "2026-09-24T17:42:57.871654+09:00"
+      "run_id": "36008102051",
+      "last_success_at": "2026-09-24T22:47:49.800527+09:00"
     }
   },
   "notification_log": [
