@@ -1370,7 +1370,24 @@
     "140120260918538949",
     "140120260918538918",
     "140120260915536375",
-    "140120260917538128"
+    "140120260917538128",
+    "140120260916537070",
+    "140120260924539179",
+    "140120260918538573",
+    "140120260924539146",
+    "140120260924539341",
+    "140120260924539384",
+    "140120260918538643",
+    "140120260924539247",
+    "140120260924539404",
+    "140120260924539561",
+    "140120260924539615",
+    "140120260924539650",
+    "140120260924539666",
+    "140120260918538663",
+    "140120260924539326",
+    "140120260924539335",
+    "140120260924539671"
   ],
   "events": [
     {
@@ -5869,13 +5886,13 @@
       "detail": {
         "execution_date": null,
         "execution_date_raw": null,
-        "execution_date_confirmed": false,
+        "execution_date_confirmed": true,
         "notification_tracking_started": true,
         "pending_notified": true
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260909533574.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260909533574.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260924539650.pdf",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -5884,6 +5901,14 @@
           "title": "株式の立会外分売に関するお知らせ",
           "announced_at": "2026-09-10T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260909533574.pdf",
+          "market": "東証・名証"
+        },
+        {
+          "id": "140120260924539650",
+          "relation": "execution",
+          "title": "株式の立会外分売実施に関するお知らせ",
+          "announced_at": "2026-09-24T16:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260924539650.pdf",
           "market": "東証・名証"
         }
       ],
@@ -5904,13 +5929,13 @@
       "announced_at": "2026-09-11T15:30:00+09:00",
       "detail": {
         "execution_date": "2026-09-25",
-        "execution_date_raw": "分売予定期間2026年9月25日（金）～2026年9月29日（火）3.分売値段分売実施日前日の終値もしくは最終気配値を基準として決定する予定です。4.買付申込数量の限度買付顧客1人につき500株（売買単位:100株）5.実施取引所名古屋証券取引所6.実施の目的当社株式の分布状況の改善及び流動性の向上を図ることを目的として行うものであります。なお、株式市場の急",
-        "execution_date_confirmed": false,
+        "execution_date_raw": "分売実施日2026年9月25日（金）3.分売値段1,883円4.買付申込数量の限度買付顧客1人につき500株（売買単位:100株）5.実施取引所名古屋証券取引所6.実施の目的当社株式の分布状況の改善及び流動性の向上を図ることを目的として行うものであります。（ご参考）分売の算定基準日及びその価格2026年9月24日（木）終値1,941円ディスカウント率2.99",
+        "execution_date_confirmed": true,
         "notification_tracking_started": true
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260911534756.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260911534756.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260924539666.pdf",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -5919,6 +5944,14 @@
           "title": "株式の立会外分売に関するお知らせ",
           "announced_at": "2026-09-11T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260911534756.pdf",
+          "market": "名証"
+        },
+        {
+          "id": "140120260924539666",
+          "relation": "execution",
+          "title": "株式の立会外分売実施に関するお知らせ",
+          "announced_at": "2026-09-24T16:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260924539666.pdf",
           "market": "名証"
         }
       ],
@@ -5939,8 +5972,8 @@
       "announced_at": "2026-09-14T15:31:00+09:00",
       "detail": {
         "execution_date": "2026-09-25",
-        "execution_date_raw": "分売予定期間2026年9月25日（金）3.分売値段分売の値段については、分売実施日の前日の終値もしくは最終気配値を基準として決定いたします。4.買付申込数量の限度買付顧客1人につき5,000株（売買単位:100株）5.実施取引所東京証券取引所6.実施の目的当社株式の分布状況を改善し、より多くの個人投資家の皆様に当社株式を保有いただくことで、株式の流動性向上を",
-        "execution_date_confirmed": false,
+        "execution_date_raw": "分売実施日2026年9月25日（金）3.分売値段1,373円4.買付申込数量の限度買付顧客1人につき5,000株（売買単位:100株）5.実施取引所東京証券取引所6.実施の目的当社株式の分布状況を改善し、より多くの個人投資家の皆様に当社株式を保有いただくことで、株式の流動性向上を図ることを主たる目的としております。（ご参考）分売値段の算定①算定基準日及びその",
+        "execution_date_confirmed": true,
         "notification_tracking_started": true,
         "eligible_notified": true
       },
@@ -5967,7 +6000,7 @@
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260914536075.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260914536075.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260918538663.pdf",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -5976,6 +6009,14 @@
           "title": "株式の立会外分売に関するお知らせ",
           "announced_at": "2026-09-14T15:31:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120260914536075.pdf",
+          "market": "東証"
+        },
+        {
+          "id": "140120260918538663",
+          "relation": "execution",
+          "title": "株式の立会外分売実施に関するお知らせ",
+          "announced_at": "2026-09-24T16:40:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260918538663.pdf",
           "market": "東証"
         }
       ],
@@ -6205,6 +6246,104 @@
           "吸収規模80億円未満"
         ]
       }
+    },
+    {
+      "id": "split-2207-2026-09-24",
+      "type": "split",
+      "code": "2207",
+      "name": "ｍｅｉｔｏ",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-09-24T16:00:00+09:00",
+      "detail": {
+        "ratio": "2",
+        "record_date": "2026-12-31",
+        "record_date_raw": "基準日2026年12月31日",
+        "rights_final_date": "2026-12-28",
+        "rights_final_date_raw": null,
+        "rights_final_source": "record_date_t_plus_2",
+        "rights_final_calculation_basis": "record_date_t_plus_2",
+        "rights_final_confirmed": false,
+        "rights_final_status": "provisional",
+        "rights_date_conflict": false,
+        "ex_right_date": "2026-12-29",
+        "effective_date": "2027-01-01",
+        "effective_date_raw": "効力発生日 2027年1月1日(金) （注）同日は株主名簿管理人の休業日のため、実質的には2026年12月30日(水)となります。 （3） その他 ①資本金の額の変更 今回の株式分割に際しまして、資本金の額の変更はありません。 ②当社取締役（監査等委員である取締役および社外取締役を除く。）に対して割り当てる譲渡制限 付株式の総数の調整 2022年6月28日開",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-12-28",
+          "label": "rights_final+0_after_close",
+          "sent": false,
+          "not_before_jst": "19:00"
+        },
+        {
+          "date": "2026-12-29",
+          "label": "rights_final+1_noon",
+          "sent": false,
+          "not_before_jst": "12:00",
+          "action_cutoff_jst": "15:30"
+        },
+        {
+          "date": "2027-01-06",
+          "label": "rights_final+5_preopen",
+          "sent": false,
+          "not_before_jst": "08:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260918538643.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260918538643.pdf",
+      "source_title": "株式分割、定款の一部変更、自己株式取得に係る事項の一部変更、配当予想の修正および株主優待制度に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260918538643",
+          "relation": "source",
+          "title": "株式分割、定款の一部変更、自己株式取得に係る事項の一部変更、配当予想の修正および株主優待制度に関するお知らせ",
+          "announced_at": "2026-09-24T16:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260918538643.pdf",
+          "market": "東証・名証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
+    },
+    {
+      "id": "cb-1803-2026-09-24",
+      "type": "cb",
+      "code": "1803",
+      "name": "清水建設",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-09-24T16:50:00+09:00",
+      "detail": {
+        "amount": "3,600億円",
+        "canceled": true,
+        "cancel_reason": "自社株買い同時発表を確認"
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120260924539326.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260924539326.pdf",
+      "source_title": "2031年満期ユーロ円建取得条項付転換社債型新株予約権付社債及び2033年満期ユーロ円建取得条項付転換社債型新株予約権付社債の発行に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120260924539326",
+          "relation": "source",
+          "title": "2031年満期ユーロ円建取得条項付転換社債型新株予約権付社債及び2033年満期ユーロ円建取得条項付転換社債型新株予約権付社債の発行に関するお知らせ",
+          "announced_at": "2026-09-24T16:50:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120260924539326.pdf",
+          "market": "東証・名証"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "自社株買い同時発表"
+        ]
+      }
     }
   ],
   "source_health": {
@@ -6212,7 +6351,7 @@
       "last_checked_date": "2026-09-24",
       "last_success_date": "2026-09-24",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-09-24T12:31:33.573445+09:00",
+      "last_success_at": "2026-09-24T17:42:53.128421+09:00",
       "by_date": {
         "2026-09-16": {
           "checked_at": "2026-09-17T23:08:31.664911+09:00",
@@ -6227,20 +6366,20 @@
           "last_success_at": "2026-09-18T22:05:28.449311+09:00"
         },
         "2026-09-18": {
-          "checked_at": "2026-09-24T12:31:32.728244+09:00",
+          "checked_at": "2026-09-24T17:42:51.651560+09:00",
           "count": 228,
           "status": "success",
-          "last_success_at": "2026-09-24T12:31:32.728244+09:00"
+          "last_success_at": "2026-09-24T17:42:51.651560+09:00"
         },
         "2026-09-24": {
-          "checked_at": "2026-09-24T12:31:33.573203+09:00",
-          "count": 29,
+          "checked_at": "2026-09-24T17:42:53.128206+09:00",
+          "count": 173,
           "status": "success",
-          "last_success_at": "2026-09-24T12:31:33.573203+09:00"
+          "last_success_at": "2026-09-24T17:42:53.128206+09:00"
         }
       },
-      "last_checked_at": "2026-09-24T12:31:33.573203+09:00",
-      "last_complete_poll_at": "2026-09-24T12:31:33.573451+09:00"
+      "last_checked_at": "2026-09-24T17:42:53.128206+09:00",
+      "last_complete_poll_at": "2026-09-24T17:42:53.128427+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -6259,8 +6398,8 @@
       "last_success_at": "2026-09-17T17:56:04.837093+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-09-23",
-      "last_success_at": "2026-09-23T23:06:48.936012+00:00"
+      "last_success_date": "2026-09-24",
+      "last_success_at": "2026-09-24T08:42:41.996995+00:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-09-23",
@@ -6338,7 +6477,7 @@
       "failure": 0
     },
     "2026-09-24": {
-      "success": 3,
+      "success": 5,
       "failure": 0
     }
   },
@@ -6371,11 +6510,11 @@
       "last_success_at": "2026-09-24T08:06:50.135498+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-09-24T12:31:23.182790+09:00",
-      "last_finished_at": "2026-09-24T12:31:33.597276+09:00",
+      "last_started_at": "2026-09-24T17:42:39.717243+09:00",
+      "last_finished_at": "2026-09-24T17:42:57.871654+09:00",
       "status": "success",
-      "run_id": "35951784778",
-      "last_success_at": "2026-09-24T12:31:33.597276+09:00"
+      "run_id": "35976820176",
+      "last_success_at": "2026-09-24T17:42:57.871654+09:00"
     }
   },
   "notification_log": [
