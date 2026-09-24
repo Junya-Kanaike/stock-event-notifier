@@ -4246,7 +4246,10 @@
         {
           "date": "2026-09-25",
           "label": "listing_day",
-          "sent": false
+          "sent": true,
+          "sent_at": "2026-09-25T00:48:02.034216+09:00",
+          "sent_by": "36022791201",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -5903,8 +5906,11 @@
         {
           "date": "2026-09-25",
           "label": "execution_day",
-          "sent": false,
-          "action_cutoff_jst": "09:00"
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-09-25T00:48:01.792107+09:00",
+          "sent_by": "36022791201",
+          "reference_only": false
         },
         {
           "date": "2026-10-02",
@@ -6010,8 +6016,11 @@
         {
           "date": "2026-09-25",
           "label": "execution_day",
-          "sent": false,
-          "action_cutoff_jst": "09:00"
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-09-25T00:48:01.515191+09:00",
+          "sent_by": "36022791201",
+          "reference_only": false
         },
         {
           "date": "2026-10-02",
@@ -6499,6 +6508,10 @@
     "2026-09-24": {
       "success": 10,
       "failure": 0
+    },
+    "2026-09-25": {
+      "success": 3,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -6517,11 +6530,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-09-24T23:49:24.542641+09:00",
-      "last_finished_at": "2026-09-24T23:49:24.557655+09:00",
+      "last_started_at": "2026-09-25T00:48:01.437860+09:00",
+      "last_finished_at": "2026-09-25T00:48:02.293544+09:00",
       "status": "success",
-      "run_id": "36015571944",
-      "last_success_at": "2026-09-24T23:49:24.557655+09:00"
+      "run_id": "36022791201",
+      "last_success_at": "2026-09-25T00:48:02.293544+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-09-24T23:24:45.092816+09:00",
@@ -6604,6 +6617,39 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "36010845314"
+    },
+    {
+      "event_id": "bunbai-5071-2026-09-14",
+      "channel": "bunbai",
+      "scheduled_for": "2026-09-25",
+      "label": "execution_day",
+      "attempted_at": "2026-09-25T00:48:01.515191+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "36022791201"
+    },
+    {
+      "event_id": "bunbai-7682-2026-09-10",
+      "channel": "bunbai",
+      "scheduled_for": "2026-09-25",
+      "label": "execution_day",
+      "attempted_at": "2026-09-25T00:48:01.792107+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "36022791201"
+    },
+    {
+      "event_id": "ipo-634A-2026-09-25",
+      "channel": "ipo",
+      "scheduled_for": "2026-09-25",
+      "label": "listing_day",
+      "attempted_at": "2026-09-25T00:48:02.034216+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "36022791201"
     }
   ]
 }
