@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-09-24T23:24:44.169949+00:00",
+  "fetched_at": "2026-09-25T03:23:12.073131+00:00",
   "data": {
     "1570": [
       {
@@ -36,6 +36,16 @@
       {
         "code": "6465",
         "name": "ホシザキ",
+        "rights_final_date": "2026-12-28",
+        "ratio": "2",
+        "effective_date": "2027-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2207": [
+      {
+        "code": "2207",
+        "name": "ｍｅｉｔｏ",
         "rights_final_date": "2026-12-28",
         "ratio": "2",
         "effective_date": "2027-01-01",
