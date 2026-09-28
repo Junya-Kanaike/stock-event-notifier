@@ -1455,7 +1455,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260714593697.pdf|https://www.release.tdnet.info/inbs/140120260722597166.pdf",
-        "calculation_recovery_attempt_date": "2026-09-28",
+        "calculation_recovery_attempt_date": "2026-09-29",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -1531,7 +1531,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260714592985.pdf|https://www.release.tdnet.info/inbs/140120260715594785.pdf",
-        "calculation_recovery_attempt_date": "2026-09-28",
+        "calculation_recovery_attempt_date": "2026-09-29",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -1607,7 +1607,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260715594693.pdf",
-        "calculation_recovery_attempt_date": "2026-09-28",
+        "calculation_recovery_attempt_date": "2026-09-29",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -1878,7 +1878,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260723598739.pdf|https://www.release.tdnet.info/inbs/140120260804508094.pdf",
-        "calculation_recovery_attempt_date": "2026-09-28",
+        "calculation_recovery_attempt_date": "2026-09-29",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -5414,7 +5414,7 @@
         "reference_close_failure_key": "2026-09-07:RuntimeError",
         "parser_version": 3,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260907532411.pdf",
-        "calculation_recovery_attempt_date": "2026-09-28",
+        "calculation_recovery_attempt_date": "2026-09-29",
         "calculation_missing_fields": [
           "effective_size_yen"
         ]
@@ -6409,13 +6409,19 @@
           "last_success_at": "2026-09-28T19:49:43.108155+09:00"
         },
         "2026-09-28": {
-          "checked_at": "2026-09-28T19:49:44.938357+09:00",
+          "checked_at": "2026-09-29T03:17:10.641936+09:00",
           "count": 206,
           "status": "success",
-          "last_success_at": "2026-09-28T19:49:44.938357+09:00"
+          "last_success_at": "2026-09-29T03:17:10.641936+09:00"
+        },
+        "2026-09-29": {
+          "checked_at": "2026-09-29T03:17:11.907244+09:00",
+          "count": 0,
+          "status": "failed",
+          "error": "page 001: TDnet fallback page schema is unrecognized"
         }
       },
-      "last_checked_at": "2026-09-28T19:49:44.938357+09:00",
+      "last_checked_at": "2026-09-29T03:17:11.907244+09:00",
       "last_complete_poll_at": "2026-09-28T19:49:44.938733+09:00"
     },
     "jpx_master": {
@@ -6436,7 +6442,7 @@
     },
     "traders_split": {
       "last_success_date": "2026-09-28",
-      "last_success_at": "2026-09-28T09:55:06.921782+00:00"
+      "last_success_at": "2026-09-28T18:16:34.048475+00:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-09-28",
@@ -6534,7 +6540,7 @@
       "failure": 0
     },
     "2026-09-29": {
-      "success": 31,
+      "success": 32,
       "failure": 0
     }
   },
@@ -6572,10 +6578,10 @@
       "last_success_at": "2026-09-28T18:55:08.418248+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-09-28T19:49:33.763627+09:00",
-      "last_finished_at": "2026-09-28T19:49:44.965621+09:00",
-      "status": "success",
-      "run_id": "36411967112",
+      "last_started_at": "2026-09-29T03:16:32.131977+09:00",
+      "last_finished_at": "2026-09-29T03:17:11.923884+09:00",
+      "status": "failed",
+      "run_id": "36464013161",
       "last_success_at": "2026-09-28T19:49:44.965621+09:00"
     }
   },
