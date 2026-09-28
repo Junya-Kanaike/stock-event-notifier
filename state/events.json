@@ -1726,8 +1726,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:50:01.226165+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -1944,8 +1947,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:59.896581+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -2015,8 +2021,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:59.569968+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -2085,8 +2094,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:50:00.384662+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -2174,8 +2186,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:59.405621+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -2241,8 +2256,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:57.948178+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -2318,8 +2336,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:58.924618+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -2389,8 +2410,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:50:01.055898+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -2460,8 +2484,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:58.598428+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -2531,8 +2558,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:50:00.723255+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -2601,8 +2631,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:58.757885+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -2668,9 +2701,12 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "19:00",
-          "repair_reason": "unattributed_future_sent_flag"
+          "repair_reason": "unattributed_future_sent_flag",
+          "sent_at": "2026-09-29T02:49:58.273972+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -2756,8 +2792,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:59.734234+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -2826,8 +2865,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:57.624829+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -2896,8 +2938,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:57.446947+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -2967,8 +3012,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:58.438634+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -3034,8 +3082,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:50:00.061906+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -3111,8 +3162,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:59.083540+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -3182,8 +3236,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:50:01.873118+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -3252,8 +3309,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:58.112805+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -3905,8 +3965,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:57.783609+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -3983,8 +4046,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:50:00.888002+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -4216,8 +4282,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:50:02.207329+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -4288,8 +4357,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:50:01.537430+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -4425,8 +4497,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:50:01.714122+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -4496,8 +4571,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:50:00.221737+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -4564,8 +4642,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:50:02.041798+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -4632,8 +4713,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:50:00.554166+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -4888,8 +4972,11 @@
         {
           "date": "2026-09-28",
           "label": "rights_final+0_after_close",
-          "sent": false,
-          "not_before_jst": "19:00"
+          "sent": true,
+          "not_before_jst": "19:00",
+          "sent_at": "2026-09-29T02:49:59.238641+09:00",
+          "sent_by": "36460896445",
+          "reference_only": true
         },
         {
           "date": "2026-09-29",
@@ -5377,7 +5464,10 @@
         {
           "date": "2026-09-29",
           "label": "listing_day",
-          "sent": false
+          "sent": true,
+          "sent_at": "2026-09-29T02:50:02.368993+09:00",
+          "sent_by": "36460896445",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -6442,11 +6532,15 @@
     "2026-09-28": {
       "success": 9,
       "failure": 0
+    },
+    "2026-09-29": {
+      "success": 31,
+      "failure": 0
     }
   },
   "daily_system_summary": {
-    "last_sent_date": "2026-09-27",
-    "last_sent_at": "2026-09-27T08:07:54.574339+09:00",
+    "last_sent_date": "2026-09-28",
+    "last_sent_at": "2026-09-29T02:49:57.371414+09:00",
     "sent_dates": {
       "2026-09-17": "2026-09-17T23:28:45.250409+09:00",
       "2026-09-18": "2026-09-18T21:35:33.323989+09:00",
@@ -6458,16 +6552,17 @@
       "2026-09-24": "2026-09-24T23:10:34.855102+09:00",
       "2026-09-25": "2026-09-25T23:46:44.686903+09:00",
       "2026-09-26": "2026-09-26T00:06:14.655469+09:00",
-      "2026-09-27": "2026-09-27T08:07:54.574339+09:00"
+      "2026-09-27": "2026-09-27T08:07:54.574339+09:00",
+      "2026-09-28": "2026-09-29T02:49:57.371414+09:00"
     }
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-09-28T18:57:17.358294+09:00",
-      "last_finished_at": "2026-09-28T18:57:17.380610+09:00",
+      "last_started_at": "2026-09-29T02:49:57.371414+09:00",
+      "last_finished_at": "2026-09-29T02:50:02.697890+09:00",
       "status": "success",
-      "run_id": "36406699454",
-      "last_success_at": "2026-09-28T18:57:17.380610+09:00"
+      "run_id": "36460896445",
+      "last_success_at": "2026-09-29T02:50:02.697890+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-09-28T18:54:59.690993+09:00",
@@ -6594,6 +6689,336 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "36358484146"
+    },
+    {
+      "event_id": "split-1926-2026-08-05",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:57.446947+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-1965-2026-08-05",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:57.624829+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-2108-2026-08-21",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:57.783609+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-285A-2026-07-31",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:57.948178+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-3932-2026-08-12",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:58.112805+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-4062-2026-08-04",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:58.273972+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-4471-2026-08-05",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:58.438634+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-4746-2026-08-03",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:58.598428+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-5232-2026-08-04",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:58.757885+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-5334-2026-07-31",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:58.924618+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-5706-2026-08-07",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:59.083540+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-5805-2026-08-31",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:59.238641+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-6135-2026-07-31",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:59.405621+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-6379-2026-07-30",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:59.569968+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-6622-2026-08-04",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:59.734234+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-7433-2026-07-29",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:49:59.896581+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-7716-2026-08-07",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:50:00.061906+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-7911-2026-08-27",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:50:00.221737+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-8084-2026-07-31",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:50:00.384662+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-8174-2026-08-28",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:50:00.554166+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-8316-2026-08-03",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:50:00.723255+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-8343-2026-08-24",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:50:00.888002+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-8360-2026-07-31",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:50:01.055898+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-8377-2026-07-24",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:50:01.226165+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-8388-2026-08-25",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:50:01.537430+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-8766-2026-08-25",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:50:01.714122+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-9068-2026-08-10",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:50:01.873118+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-9074-2026-08-28",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:50:02.041798+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "split-9687-2026-08-25",
+      "channel": "split",
+      "scheduled_for": "2026-09-28",
+      "label": "rights_final+0_after_close",
+      "attempted_at": "2026-09-29T02:50:02.207329+09:00",
+      "outcome": "accepted",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "36460896445"
+    },
+    {
+      "event_id": "ipo-646A-2026-09-29",
+      "channel": "ipo",
+      "scheduled_for": "2026-09-29",
+      "label": "listing_day",
+      "attempted_at": "2026-09-29T02:50:02.368993+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "36460896445"
     }
   ]
 }
