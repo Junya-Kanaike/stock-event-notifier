@@ -1,7 +1,21 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-09-28T03:00:41.083633+00:00",
+  "fetched_at": "2026-09-28T09:15:10.125583+00:00",
   "data": [
+    {
+      "code": "653A",
+      "name": "MabGenesis（株）",
+      "market": "グロース",
+      "listing_date": "2026-11-02",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "code": "652A",
+      "name": "トグルホールディングス（株）",
+      "market": "グロース",
+      "listing_date": "2026-10-30",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
     {
       "code": "648A",
       "name": "（株）ルクレ",
