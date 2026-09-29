@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-09-28T18:16:34.048475+00:00",
+  "fetched_at": "2026-09-29T00:30:59.424691+00:00",
   "data": {
     "1570": [
       {
@@ -88,6 +88,16 @@
         "name": "ＮＦ金価格",
         "rights_final_date": "2026-10-28",
         "ratio": "50",
+        "effective_date": "2026-11-02",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6787": [
+      {
+        "code": "6787",
+        "name": "メイコー",
+        "rights_final_date": "2026-10-28",
+        "ratio": "2",
         "effective_date": "2026-11-02",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
