@@ -990,5 +990,152 @@
         "吸収規模80億円未満"
       ]
     }
+  },
+  {
+    "id": "bunbai-4073-2026-08-14",
+    "type": "bunbai",
+    "code": "4073",
+    "name": "ジィ・シィ企画",
+    "market": "グロース",
+    "margin": "信用",
+    "announced_at": "2026-08-14T15:30:00+09:00",
+    "detail": {
+      "execution_date": "2026-08-24",
+      "execution_date_raw": "分売実施日 株数 分売値段 買付申込数量の限度 2026年8月24日（月） 60,000株 468円 1,000株 （ご参考） 2026年8月21日（金）にお知らせいたしました内容は以下のとおりです。 1. 分売予定株式数 60,000株 2. 分売実施日 2026年8月24日（月） 3. 分売値段 468円 4. 買付申込数量の限度 買付顧客1人につき1,",
+      "execution_date_confirmed": true
+    },
+    "schedule": [
+      {
+        "date": "2026-08-21",
+        "label": "execution-1bd",
+        "sent": true
+      },
+      {
+        "date": "2026-08-24",
+        "label": "execution_day",
+        "sent": true
+      },
+      {
+        "date": "2026-08-31",
+        "label": "execution+5bd",
+        "sent": true
+      }
+    ],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260814520282.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824524831.pdf",
+    "source_title": "株式の立会外分売に関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120260814520282",
+        "relation": "source",
+        "title": "株式の立会外分売に関するお知らせ",
+        "announced_at": "2026-08-14T15:30:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260814520282.pdf"
+      },
+      {
+        "id": "140120260824524831",
+        "relation": "source",
+        "title": "株式の立会外分売終了および主要株主の異動に関するお知らせ",
+        "announced_at": "2026-08-24T10:00:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260824524831.pdf"
+      }
+    ],
+    "jpx_source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
+    "eligibility": {
+      "status": "eligible",
+      "reasons": []
+    }
+  },
+  {
+    "id": "split-1718-2026-08-31",
+    "type": "split",
+    "code": "1718",
+    "name": "美樹工業",
+    "market": "スタンダード",
+    "margin": "信用",
+    "announced_at": "2026-08-31T15:30:00+09:00",
+    "detail": {
+      "ratio": "3",
+      "effective_date": "2026-10-01",
+      "effective_date_raw": "効力発生日 2026年10月1日 2. 株式分割に伴う定款の一部変更について (1) 定款変更の理由 今回の株式分割に伴い、会社法第 184 条第2項の規定に基づき、取締役会決議により 2026 年 10 月1日をもって当社定款第6条に定める発行可能株式総数を変更いたします。 (2) 定款変更の内容 （下線部分は変更箇所を示しております。） 現行定款 変更後",
+      "record_date": null,
+      "ex_right_date": "2026-09-29",
+      "rights_final_date": "2026-09-28",
+      "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+      "rights_final_status": "confirmed",
+      "traders_rights_final_date": "2026-09-28",
+      "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
+      "rights_final_source": "jpx_ex_rights",
+      "rights_final_confirmed": true,
+      "rights_date_conflict": false,
+      "ratio_source": "traders_web",
+      "jpx_ex_right_date": "2026-09-29",
+      "jpx_rights_final_date": "2026-09-28",
+      "jpx_ex_rights_source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "schedule": [],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260820523541.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260820523541.pdf",
+    "source_title": "株式分割及び定款の一部変更並びに配当予想の修正に関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120260820523541",
+        "relation": "source",
+        "title": "株式分割及び定款の一部変更並びに配当予想の修正に関するお知らせ",
+        "announced_at": "2026-08-31T15:30:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260820523541.pdf",
+        "market": "東証"
+      }
+    ],
+    "eligibility": {
+      "status": "excluded",
+      "reasons": [
+        "貸借対象外"
+      ]
+    }
+  },
+  {
+    "id": "split-4616-2026-08-31",
+    "type": "split",
+    "code": "4616",
+    "name": "川上塗料",
+    "market": "スタンダード",
+    "margin": "信用",
+    "announced_at": "2026-08-31T16:00:00+09:00",
+    "detail": {
+      "ratio": "3",
+      "effective_date": "2026-12-01",
+      "effective_date_raw": "効力発生日（予定） 2026年 12月 1日（火曜日） 1 (3)その他 ①資本金の額について 今回の株式分割に際しまして、資本金の額の変更はありません。 ②2026年11月期の期末配当金について 株式分割の効力発生日は2026年12月1日であるため、2026年11月末日を基準日とする 2026年11月期の期末配当金につきましては、株式分割前の株式数を基準に",
+      "record_date": null,
+      "ex_right_date": null,
+      "rights_final_date": "2026-11-26",
+      "rights_final_calculation_basis": "traders_web_rights_final_date",
+      "rights_final_status": "confirmed",
+      "traders_rights_final_date": "2026-11-26",
+      "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
+      "rights_final_source": "traders_web",
+      "rights_final_confirmed": true,
+      "rights_date_conflict": false
+    },
+    "schedule": [],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260831528550.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260831528550.pdf",
+    "source_title": "株式分割、株式分割に伴う定款の一部変更および株主優待制度の変更（拡充）に関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120260831528550",
+        "relation": "source",
+        "title": "株式分割、株式分割に伴う定款の一部変更および株主優待制度の変更（拡充）に関するお知らせ",
+        "announced_at": "2026-08-31T16:00:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260831528550.pdf",
+        "market": "東証・名証"
+      }
+    ],
+    "eligibility": {
+      "status": "excluded",
+      "reasons": [
+        "貸借対象外"
+      ]
+    }
   }
 ]

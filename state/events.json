@@ -1722,7 +1722,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "recovery_last_error": "RuntimeError: GET failed: https://www.release.tdnet.info/inbs/140120260723598198.pdf",
         "recovery_alerted": true,
@@ -1730,7 +1730,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "eligible_notified": true,
@@ -1945,7 +1945,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "recovery_last_error": "RuntimeError: GET failed: https://www.release.tdnet.info/inbs/140120260728501193.pdf",
         "recovery_alerted": true,
@@ -1953,7 +1953,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "ratio_source": "traders_web",
@@ -2022,7 +2022,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "recovery_last_error": "RuntimeError: GET failed: https://www.release.tdnet.info/inbs/140120260730503915.pdf",
         "recovery_alerted": true,
@@ -2030,7 +2030,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "ratio_source": "traders_web",
@@ -2099,10 +2099,10 @@
         "record_date": "2026-09-30",
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "record_date_raw": "基準日公告日 2026年9月7日（予定） 基準日 2026年9月30日 効力発生日 2026年10月1日 （3）その他 今回の分割に際して、資本金の額の変更はありません。 （以下余白） 2.株式分割に伴う定款の一部変更について （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年10月1日をもって、当 社定款第6条の発行可",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "recovery_last_error": "ValueError: 分割比率または権利付最終日を抽出できません",
@@ -2194,7 +2194,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -2204,7 +2204,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
         "jpx_rights_final_date": "2026-09-28",
@@ -2270,10 +2270,10 @@
         "record_date": "2026-09-30",
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "record_date_raw": "株式分割の基準日までの 間に新株予約権の行使等により変動する可能性があります。 （3）日程 基準日公告日 2026年9月10日（木） 基準日 2026年9月30日（水） 効力発生日 2026年10月1日（木） 2.定款の一部変更について （1）変更理由 今回の株式分割に伴い、会社法第 184 条第2項の規定に基づき、2026 年10 月1日をもって当社の定款",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "traders_rights_final_date": "2026-09-28",
@@ -2350,7 +2350,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -2360,7 +2360,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
         "jpx_rights_final_date": "2026-09-28",
@@ -2426,7 +2426,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -2436,7 +2436,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "ratio_source": "traders_web",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
@@ -2503,7 +2503,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -2513,7 +2513,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "ratio_source": "traders_web",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
@@ -2582,7 +2582,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -2590,7 +2590,7 @@
         "recovery_alerted": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "ratio_source": "traders_web",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
@@ -2657,7 +2657,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -2667,7 +2667,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
         "jpx_rights_final_date": "2026-09-28",
@@ -2733,10 +2733,10 @@
         "record_date": "2026-09-30",
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "record_date_raw": "株式分割の基準日までの間に新株予約権の行使 等により変動する可能性があります。 ③ 分割の日程 基準日公告日（予定） 2026年9月10日（木曜日） 基準日 2026年9月30日（水曜日） 効力発生日 2026年10月1日（木曜日） 2. 株式分割に伴う定款の一部変更について (1) 定款変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "traders_rights_final_date": "2026-09-28",
@@ -2824,7 +2824,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -2834,7 +2834,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
         "jpx_rights_final_date": "2026-09-28",
@@ -2900,7 +2900,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -2910,7 +2910,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
         "jpx_rights_final_date": "2026-09-28",
@@ -2976,7 +2976,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -2986,7 +2986,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
         "jpx_rights_final_date": "2026-09-28",
@@ -3052,7 +3052,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -3062,7 +3062,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "ratio_source": "traders_web",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
@@ -3129,10 +3129,10 @@
         "record_date": "2026-09-30",
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "record_date_raw": "株式分割の基準日までの間に新株予約権の行使により増加する可能性があります。 ③ 分割の日程 基準日公告日（予定） 2026年9月14日（月曜日） 基準日 2026年9月30日（水曜日） 効力発生日 2026年10月1日（木曜日） ④ 新株予約権の行使価額の調整 今回の株式分割に際して、当社発行の新株予約権の1株当たりの権利行使価額は1円から変更あ りません。",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "traders_rights_final_date": "2026-09-28",
@@ -3209,7 +3209,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -3219,7 +3219,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
         "jpx_rights_final_date": "2026-09-28",
@@ -3285,7 +3285,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -3295,7 +3295,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "ratio_source": "traders_web",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
@@ -3362,7 +3362,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -3372,7 +3372,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
         "jpx_rights_final_date": "2026-09-28",
@@ -3479,61 +3479,6 @@
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
-      "eligibility": {
-        "status": "eligible",
-        "reasons": []
-      }
-    },
-    {
-      "id": "bunbai-4073-2026-08-14",
-      "type": "bunbai",
-      "code": "4073",
-      "name": "ジィ・シィ企画",
-      "market": "グロース",
-      "margin": "信用",
-      "announced_at": "2026-08-14T15:30:00+09:00",
-      "detail": {
-        "execution_date": "2026-08-24",
-        "execution_date_raw": "分売実施日 株数 分売値段 買付申込数量の限度 2026年8月24日（月） 60,000株 468円 1,000株 （ご参考） 2026年8月21日（金）にお知らせいたしました内容は以下のとおりです。 1. 分売予定株式数 60,000株 2. 分売実施日 2026年8月24日（月） 3. 分売値段 468円 4. 買付申込数量の限度 買付顧客1人につき1,",
-        "execution_date_confirmed": true
-      },
-      "schedule": [
-        {
-          "date": "2026-08-21",
-          "label": "execution-1bd",
-          "sent": true
-        },
-        {
-          "date": "2026-08-24",
-          "label": "execution_day",
-          "sent": true
-        },
-        {
-          "date": "2026-08-31",
-          "label": "execution+5bd",
-          "sent": true
-        }
-      ],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260814520282.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260824524831.pdf",
-      "source_title": "株式の立会外分売に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260814520282",
-          "relation": "source",
-          "title": "株式の立会外分売に関するお知らせ",
-          "announced_at": "2026-08-14T15:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260814520282.pdf"
-        },
-        {
-          "id": "140120260824524831",
-          "relation": "source",
-          "title": "株式の立会外分売終了および主要株主の異動に関するお知らせ",
-          "announced_at": "2026-08-24T10:00:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260824524831.pdf"
-        }
-      ],
-      "jpx_source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
       "eligibility": {
         "status": "eligible",
         "reasons": []
@@ -4021,7 +3966,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -4031,7 +3976,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
         "jpx_rights_final_date": "2026-09-28",
@@ -4104,7 +4049,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -4114,7 +4059,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "ratio_source": "traders_web",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
@@ -4344,7 +4289,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -4354,7 +4299,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
         "jpx_rights_final_date": "2026-09-28",
@@ -4421,7 +4366,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -4431,7 +4376,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "ratio_source": "traders_web",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
@@ -4565,7 +4510,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -4575,7 +4520,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
         "jpx_rights_final_date": "2026-09-28",
@@ -4642,7 +4587,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -4652,7 +4597,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
         "jpx_rights_final_date": "2026-09-28",
@@ -4719,10 +4664,10 @@
         "record_date": "2026-10-01",
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "record_date_raw": "株式分割の基準日 2026年10月1日（木）株式分割の効力発生日 2026年10月下旬 株主さまへ「株式の分割に伴う増加株式数のご通知」を発送 ◆株式分割に関するお問い合わせ先◆ 株式分割に関しましてご不明な点は、お取引の証券会社または下記株主名簿管理人までお問い合わせくださ い。 ＜株主名簿管理人・特別口座の口座管理機関＞ 三井住友信託銀行株式会社 証券代",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "traders_rights_final_date": "2026-09-28",
@@ -4793,10 +4738,10 @@
         "record_date": "2026-09-30",
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "record_date_raw": "基準日公告日 2026年9月15日(火) 基準日 2026年9月30日(水) 効力発生日 2026年10月1日(木) (3)その他 ①資本金の額の変更 今回の株式分割に際しまして、資本金の額の変更はありません。 2.株式分割に伴う定款の一部変更 (1) 定款変更の理由 今回の株式分割に伴い、会社法第 184 条第2項の規定に基づき、株式分割と同日付で当社定款",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
         "traders_rights_final_date": "2026-09-28",
@@ -4989,54 +4934,6 @@
       }
     },
     {
-      "id": "split-1718-2026-08-31",
-      "type": "split",
-      "code": "1718",
-      "name": "美樹工業",
-      "market": "スタンダード",
-      "margin": "信用",
-      "announced_at": "2026-08-31T15:30:00+09:00",
-      "detail": {
-        "ratio": "3",
-        "effective_date": "2026-10-01",
-        "effective_date_raw": "効力発生日 2026年10月1日 2. 株式分割に伴う定款の一部変更について (1) 定款変更の理由 今回の株式分割に伴い、会社法第 184 条第2項の規定に基づき、取締役会決議により 2026 年 10 月1日をもって当社定款第6条に定める発行可能株式総数を変更いたします。 (2) 定款変更の内容 （下線部分は変更箇所を示しております。） 現行定款 変更後",
-        "record_date": null,
-        "ex_right_date": "2026-09-29",
-        "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
-        "rights_final_status": "confirmed",
-        "traders_rights_final_date": "2026-09-28",
-        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
-        "rights_final_confirmed": true,
-        "rights_date_conflict": false,
-        "ratio_source": "traders_web",
-        "jpx_ex_right_date": "2026-09-29",
-        "jpx_rights_final_date": "2026-09-28",
-        "jpx_ex_rights_source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260820523541.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260820523541.pdf",
-      "source_title": "株式分割及び定款の一部変更並びに配当予想の修正に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260820523541",
-          "relation": "source",
-          "title": "株式分割及び定款の一部変更並びに配当予想の修正に関するお知らせ",
-          "announced_at": "2026-08-31T15:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260820523541.pdf",
-          "market": "東証"
-        }
-      ],
-      "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "貸借対象外"
-        ]
-      }
-    },
-    {
       "id": "split-5805-2026-08-31",
       "type": "split",
       "code": "5805",
@@ -5051,7 +4948,7 @@
         "record_date": null,
         "ex_right_date": "2026-09-29",
         "rights_final_date": "2026-09-28",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_status": "confirmed",
         "rights_final_confirmed": true,
         "rights_date_conflict": false,
@@ -5061,7 +4958,7 @@
         "pending_notified": true,
         "traders_rights_final_date": "2026-09-28",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
+        "rights_final_source": "jpx_ex_rights",
         "ratio_source": "traders_web",
         "eligible_notified": true,
         "jpx_ex_right_date": "2026-09-29",
@@ -5112,50 +5009,6 @@
       "eligibility": {
         "status": "eligible",
         "reasons": []
-      }
-    },
-    {
-      "id": "split-4616-2026-08-31",
-      "type": "split",
-      "code": "4616",
-      "name": "川上塗料",
-      "market": "スタンダード",
-      "margin": "信用",
-      "announced_at": "2026-08-31T16:00:00+09:00",
-      "detail": {
-        "ratio": "3",
-        "effective_date": "2026-12-01",
-        "effective_date_raw": "効力発生日（予定） 2026年 12月 1日（火曜日） 1 (3)その他 ①資本金の額について 今回の株式分割に際しまして、資本金の額の変更はありません。 ②2026年11月期の期末配当金について 株式分割の効力発生日は2026年12月1日であるため、2026年11月末日を基準日とする 2026年11月期の期末配当金につきましては、株式分割前の株式数を基準に",
-        "record_date": null,
-        "ex_right_date": null,
-        "rights_final_date": "2026-11-26",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
-        "rights_final_status": "confirmed",
-        "traders_rights_final_date": "2026-11-26",
-        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "rights_final_source": "traders_web",
-        "rights_final_confirmed": true,
-        "rights_date_conflict": false
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260831528550.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260831528550.pdf",
-      "source_title": "株式分割、株式分割に伴う定款の一部変更および株主優待制度の変更（拡充）に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260831528550",
-          "relation": "source",
-          "title": "株式分割、株式分割に伴う定款の一部変更および株主優待制度の変更（拡充）に関するお知らせ",
-          "announced_at": "2026-08-31T16:00:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260831528550.pdf",
-          "market": "東証・名証"
-        }
-      ],
-      "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "貸借対象外"
-        ]
       }
     },
     {
@@ -5641,8 +5494,8 @@
         "record_date_raw": "分割基準日までの間に増加する可能性があります。 （3）分割の日程 （1） 基準日公告日 2026年9月15日（予定） （2） 基 準 日 2026年9月30日（予定） （3） 効 力 発 生 日 2026年10月1日（予定） 3.株式分割に伴う定款の一部変更について （1）変更の理由 今回の株式分割に伴い、会社法第184 条第2項の規定に基づき、2026年1",
         "rights_final_date": "2026-09-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -6639,6 +6492,36 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "ipo-656A-2026-11-04",
+      "type": "ipo",
+      "code": "656A",
+      "name": "Allganize Holdings（株）",
+      "market": "グロース",
+      "margin": "対象外",
+      "announced_at": "2026-10-01T09:09:28.592622+09:00",
+      "detail": {
+        "listing_date": "2026-11-04",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-11-02",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-11-04",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
@@ -6711,28 +6594,28 @@
       "last_success_at": "2026-08-24T22:45:04.932305+00:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-09-29",
-      "last_success_at": "2026-09-29T23:56:36.530320+00:00"
+      "last_success_date": "2026-10-01",
+      "last_success_at": "2026-10-01T00:09:26.101836+00:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-09-29",
-      "last_success_at": "2026-09-29T23:56:39.455466+00:00"
+      "last_success_date": "2026-10-01",
+      "last_success_at": "2026-10-01T00:09:28.317797+00:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-09-30",
       "last_success_at": "2026-09-30T19:35:15.252379+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-09-30",
-      "last_success_at": "2026-09-30T10:35:02.990904+00:00"
+      "last_success_date": "2026-10-01",
+      "last_success_at": "2026-10-01T00:09:27.538269+00:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-09-29",
-      "last_success_at": "2026-09-29T23:56:39.757829+00:00"
+      "last_success_date": "2026-10-01",
+      "last_success_at": "2026-10-01T00:09:28.592032+00:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-09-29",
-      "last_success_at": "2026-09-29T23:56:40.004214+00:00"
+      "last_success_date": "2026-10-01",
+      "last_success_at": "2026-10-01T00:09:28.900593+00:00"
     }
   },
   "schema_version": 2,
@@ -6830,7 +6713,7 @@
       "failure": 0
     },
     "2026-10-01": {
-      "success": 5,
+      "success": 6,
       "failure": 0
     }
   },
@@ -6863,11 +6746,11 @@
       "last_success_at": "2026-10-01T01:48:05.864117+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-09-30T08:56:31.456396+09:00",
-      "last_finished_at": "2026-09-30T08:56:40.005474+09:00",
+      "last_started_at": "2026-10-01T09:09:21.469757+09:00",
+      "last_finished_at": "2026-10-01T09:09:28.901821+09:00",
       "status": "success",
-      "run_id": "36647785428",
-      "last_success_at": "2026-09-30T08:56:40.005474+09:00"
+      "run_id": "36794705328",
+      "last_success_at": "2026-10-01T09:09:28.901821+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-10-01T01:29:53.425201+09:00",

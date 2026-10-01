@@ -1,7 +1,14 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-09-29T23:56:39.757829+00:00",
+  "fetched_at": "2026-10-01T00:09:28.592032+00:00",
   "data": [
+    {
+      "code": "656A",
+      "name": "Allganize Holdings（株）",
+      "market": "グロース",
+      "listing_date": "2026-11-04",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
     {
       "code": "653A",
       "name": "MabGenesis（株）",
@@ -46,7 +53,7 @@
     },
     {
       "code": "646A",
-      "name": "クラサスケミカル（株）",
+      "name": "クラサスケミカル（株） 代表者インタビュー",
       "market": "スタンダード",
       "listing_date": "2026-09-29",
       "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
@@ -116,7 +123,7 @@
     },
     {
       "code": "603A",
-      "name": "（株）アイ・グリッド・ソリューションズ",
+      "name": "（株）アイ・グリッド・ソリューションズ 代表者インタビュー",
       "market": "グロース",
       "listing_date": "2026-07-29",
       "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
