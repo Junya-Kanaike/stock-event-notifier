@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-10-01T11:09:48.831346+00:00",
+  "fetched_at": "2026-10-02T08:40:43.038220+00:00",
   "data": {
     "9235:2026-07-31": {
       "code": "9235",
@@ -177,6 +177,22 @@
       "close_yen": 1048.0,
       "source": "Yahoo Finance chart (raw close)",
       "requested_date": "2026-10-01"
+    },
+    "5076:2026-10-02": {
+      "code": "5076",
+      "symbol": "5076.T",
+      "date": "2026-10-02",
+      "close_yen": 2695.5,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-10-02"
+    },
+    "4475:2026-10-02": {
+      "code": "4475",
+      "symbol": "4475.T",
+      "date": "2026-10-02",
+      "close_yen": 1760.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-10-02"
     }
   }
 }
