@@ -1,7 +1,14 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-10-01T00:09:28.592032+00:00",
+  "fetched_at": "2026-10-02T00:09:27.881959+00:00",
   "data": [
+    {
+      "code": "658A",
+      "name": "（株）estie",
+      "market": "グロース",
+      "listing_date": "2026-11-06",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
     {
       "code": "656A",
       "name": "Allganize Holdings（株）",

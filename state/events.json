@@ -6772,6 +6772,36 @@
           "吸収規模80億円未満"
         ]
       }
+    },
+    {
+      "id": "ipo-658A-2026-11-06",
+      "type": "ipo",
+      "code": "658A",
+      "name": "（株）estie",
+      "market": "グロース",
+      "margin": "対象外",
+      "announced_at": "2026-10-02T09:09:27.882428+09:00",
+      "detail": {
+        "listing_date": "2026-11-06",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-11-05",
+          "label": "listing-1bd",
+          "sent": false
+        },
+        {
+          "date": "2026-11-06",
+          "label": "listing_day",
+          "sent": false
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
@@ -6844,28 +6874,28 @@
       "last_success_at": "2026-08-24T22:45:04.932305+00:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-10-01",
-      "last_success_at": "2026-10-01T00:09:26.101836+00:00"
+      "last_success_date": "2026-10-02",
+      "last_success_at": "2026-10-02T00:09:25.400335+00:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-10-01",
-      "last_success_at": "2026-10-01T00:09:28.317797+00:00"
+      "last_success_date": "2026-10-02",
+      "last_success_at": "2026-10-02T00:09:27.533631+00:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-10-01",
       "last_success_at": "2026-10-01T20:09:48.744653+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-10-01",
-      "last_success_at": "2026-10-01T11:09:38.898885+00:00"
+      "last_success_date": "2026-10-02",
+      "last_success_at": "2026-10-02T00:09:26.960248+00:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-10-01",
-      "last_success_at": "2026-10-01T00:09:28.592032+00:00"
+      "last_success_date": "2026-10-02",
+      "last_success_at": "2026-10-02T00:09:27.881959+00:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-10-01",
-      "last_success_at": "2026-10-01T00:09:28.900593+00:00"
+      "last_success_date": "2026-10-02",
+      "last_success_at": "2026-10-02T00:09:28.334513+00:00"
     }
   },
   "schema_version": 2,
@@ -6967,7 +6997,7 @@
       "failure": 0
     },
     "2026-10-02": {
-      "success": 3,
+      "success": 4,
       "failure": 0
     }
   },
@@ -7001,11 +7031,11 @@
       "last_success_at": "2026-10-02T02:20:40.148913+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-10-01T09:09:21.469757+09:00",
-      "last_finished_at": "2026-10-01T09:09:28.901821+09:00",
+      "last_started_at": "2026-10-02T09:09:20.359047+09:00",
+      "last_finished_at": "2026-10-02T09:09:28.335943+09:00",
       "status": "success",
-      "run_id": "36794705328",
-      "last_success_at": "2026-10-01T09:09:28.901821+09:00"
+      "run_id": "36944530268",
+      "last_success_at": "2026-10-02T09:09:28.335943+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-10-01T20:09:37.432291+09:00",
