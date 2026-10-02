@@ -1588,7 +1588,13 @@
     "140120261001544744",
     "140120261001544757",
     "140120261001544282",
-    "140120261001544840"
+    "140120261001544840",
+    "140120261001544948",
+    "140120261001544464",
+    "140120261002545007",
+    "140120261001543976",
+    "140120260930543188",
+    "140120260930543196"
   ],
   "events": [
     {
@@ -1637,7 +1643,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260714593697.pdf|https://www.release.tdnet.info/inbs/140120260722597166.pdf",
-        "calculation_recovery_attempt_date": "2026-10-01",
+        "calculation_recovery_attempt_date": "2026-10-02",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -1713,7 +1719,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260714592985.pdf|https://www.release.tdnet.info/inbs/140120260715594785.pdf",
-        "calculation_recovery_attempt_date": "2026-10-01",
+        "calculation_recovery_attempt_date": "2026-10-02",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -1789,7 +1795,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260715594693.pdf",
-        "calculation_recovery_attempt_date": "2026-10-01",
+        "calculation_recovery_attempt_date": "2026-10-02",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -2063,7 +2069,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260723598739.pdf|https://www.release.tdnet.info/inbs/140120260804508094.pdf",
-        "calculation_recovery_attempt_date": "2026-10-01",
+        "calculation_recovery_attempt_date": "2026-10-02",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -3595,7 +3601,7 @@
       "code": "618A",
       "name": "（株）KOMPEITO",
       "market": "グロース",
-      "margin": "対象外",
+      "margin": "信用",
       "announced_at": "2026-08-13T08:02:19.286867+09:00",
       "detail": {
         "listing_date": "2026-09-11",
@@ -3626,7 +3632,7 @@
       "code": "619A",
       "name": "（株）オリバー",
       "market": "スタンダード",
-      "margin": "対象外",
+      "margin": "信用",
       "announced_at": "2026-08-14T08:03:42.740531+09:00",
       "detail": {
         "listing_date": "2026-09-16",
@@ -3656,7 +3662,7 @@
       "code": "622A",
       "name": "（株）テクノクラフト",
       "market": "スタンダード",
-      "margin": "対象外",
+      "margin": "信用",
       "announced_at": "2026-08-17T07:37:03.759035+09:00",
       "detail": {
         "listing_date": "2026-09-18",
@@ -3689,7 +3695,7 @@
       "code": "623A",
       "name": "（株）ベルテックス",
       "market": "スタンダード",
-      "margin": "対象外",
+      "margin": "信用",
       "announced_at": "2026-08-17T07:37:03.759712+09:00",
       "detail": {
         "listing_date": "2026-09-18",
@@ -3722,7 +3728,7 @@
       "code": "621A",
       "name": "（株）オーディオストック",
       "market": "グロース",
-      "margin": "対象外",
+      "margin": "信用",
       "announced_at": "2026-08-17T07:37:03.760169+09:00",
       "detail": {
         "listing_date": "2026-09-16",
@@ -3752,7 +3758,7 @@
       "code": "625A",
       "name": "（株）Skyfall",
       "market": "グロース",
-      "margin": "対象外",
+      "margin": "信用",
       "announced_at": "2026-08-18T07:41:52.051008+09:00",
       "detail": {
         "listing_date": "2026-09-17",
@@ -3782,7 +3788,7 @@
       "code": "627A",
       "name": "akippa（株）",
       "market": "スタンダード",
-      "margin": "対象外",
+      "margin": "信用",
       "announced_at": "2026-08-19T07:42:25.340591+09:00",
       "detail": {
         "listing_date": "2026-09-18",
@@ -4410,7 +4416,7 @@
       "code": "634A",
       "name": "（株）レイヤード",
       "market": "スタンダード",
-      "margin": "対象外",
+      "margin": "信用",
       "announced_at": "2026-08-25T07:45:06.105683+09:00",
       "detail": {
         "listing_date": "2026-09-25",
@@ -5312,7 +5318,7 @@
       "code": "640A",
       "name": "（株）ASNOVA Companies *",
       "market": "グロース",
-      "margin": "対象外",
+      "margin": "信用",
       "announced_at": "2026-09-02T09:15:32.360160+09:00",
       "detail": {
         "listing_date": "2026-10-01",
@@ -5348,7 +5354,7 @@
       "code": "641A",
       "name": "NOK Group（株） *",
       "market": "プライム",
-      "margin": "対象外",
+      "margin": "貸借",
       "announced_at": "2026-09-02T09:15:32.360709+09:00",
       "detail": {
         "listing_date": "2026-10-01",
@@ -5384,7 +5390,7 @@
       "code": "642A",
       "name": "キューデンホールディングス（株） *",
       "market": "プライム",
-      "margin": "対象外",
+      "margin": "貸借",
       "announced_at": "2026-09-02T09:15:32.360736+09:00",
       "detail": {
         "listing_date": "2026-10-01",
@@ -5554,7 +5560,7 @@
         "reference_close_failure_key": "2026-09-07:RuntimeError",
         "parser_version": 3,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260907532411.pdf",
-        "calculation_recovery_attempt_date": "2026-10-01",
+        "calculation_recovery_attempt_date": "2026-10-02",
         "calculation_missing_fields": [
           "effective_size_yen"
         ]
@@ -5586,7 +5592,7 @@
       "code": "646A",
       "name": "クラサスケミカル（株）",
       "market": "スタンダード",
-      "margin": "対象外",
+      "margin": "信用",
       "announced_at": "2026-09-08T09:26:01.801379+09:00",
       "detail": {
         "listing_date": "2026-09-29",
@@ -6806,10 +6812,10 @@
   ],
   "source_health": {
     "tdnet": {
-      "last_checked_date": "2026-10-01",
-      "last_success_date": "2026-10-01",
+      "last_checked_date": "2026-10-02",
+      "last_success_date": "2026-10-02",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-01T20:09:47.957986+09:00",
+      "last_success_at": "2026-10-02T11:07:50.303333+09:00",
       "by_date": {
         "2026-09-16": {
           "checked_at": "2026-09-17T23:08:31.664911+09:00",
@@ -6860,14 +6866,20 @@
           "last_success_at": "2026-10-01T20:09:47.079555+09:00"
         },
         "2026-10-01": {
-          "checked_at": "2026-10-01T20:09:47.957555+09:00",
+          "checked_at": "2026-10-02T11:07:49.200893+09:00",
           "count": 300,
           "status": "success",
-          "last_success_at": "2026-10-01T20:09:47.957555+09:00"
+          "last_success_at": "2026-10-02T11:07:49.200893+09:00"
+        },
+        "2026-10-02": {
+          "checked_at": "2026-10-02T11:07:50.303072+09:00",
+          "count": 24,
+          "status": "success",
+          "last_success_at": "2026-10-02T11:07:50.303072+09:00"
         }
       },
-      "last_checked_at": "2026-10-01T20:09:47.957555+09:00",
-      "last_complete_poll_at": "2026-10-01T20:09:47.957992+09:00"
+      "last_checked_at": "2026-10-02T11:07:50.303072+09:00",
+      "last_complete_poll_at": "2026-10-02T11:07:50.303339+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -7038,11 +7050,11 @@
       "last_success_at": "2026-10-02T09:09:28.335943+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-01T20:09:37.432291+09:00",
-      "last_finished_at": "2026-10-01T20:09:49.526065+09:00",
+      "last_started_at": "2026-10-02T11:07:15.433660+09:00",
+      "last_finished_at": "2026-10-02T11:07:50.375367+09:00",
       "status": "success",
-      "run_id": "36853580260",
-      "last_success_at": "2026-10-01T20:09:49.526065+09:00"
+      "run_id": "36954129294",
+      "last_success_at": "2026-10-02T11:07:50.375367+09:00"
     }
   },
   "notification_log": [
