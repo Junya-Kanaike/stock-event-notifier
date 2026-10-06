@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-10-05T14:47:32.333560+00:00",
+  "fetched_at": "2026-10-06T01:25:09.183654+00:00",
   "data": {
     "1570": [
       {
@@ -62,6 +62,16 @@
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
+    "6474": [
+      {
+        "code": "6474",
+        "name": "不二越",
+        "rights_final_date": "2026-11-26",
+        "ratio": "5",
+        "effective_date": "2026-12-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
     "4616": [
       {
         "code": "4616",
@@ -109,6 +119,16 @@
         "rights_final_date": "2026-10-28",
         "ratio": "2",
         "effective_date": "2026-11-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9146": [
+      {
+        "code": "9146",
+        "name": "五健堂ＨＤ",
+        "rights_final_date": "2026-10-19",
+        "ratio": "3",
+        "effective_date": "2026-10-22",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
