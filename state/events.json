@@ -5537,92 +5537,6 @@
       }
     },
     {
-      "id": "po-9334-2026-09-07",
-      "type": "po",
-      "code": "9334",
-      "name": "アイビスホールディングス",
-      "market": "PRO Market",
-      "margin": "対象外",
-      "announced_at": "2026-09-07T16:15:00+09:00",
-      "detail": {
-        "po_kind": "both",
-        "source_stage": "announcement",
-        "size_oku": null,
-        "size_oku_min": null,
-        "size_oku_max": null,
-        "size_status": "unavailable",
-        "size_basis": null,
-        "share_count": null,
-        "oa_share_count": null,
-        "price_min_yen": null,
-        "price_max_yen": null,
-        "dilution_pct": null,
-        "dilution_status": "unavailable",
-        "pricing_date": "2026-10-02",
-        "pricing_date_end": "2026-10-02",
-        "pricing_date_raw": "価格決定日2026年10月2日（金曜日）（発行価格及び売出価格は、募集株式の払込金額以上の価格で、仮条件における需要状況等を勘案した上で決定する。（4）募集・売出期間2026年10月5日（月曜日）から2026年10月8日（木曜日）まで（5）払込期日2026年10月9日（金曜日）（※）上記のオーバーアロットメントによる株式売出しは、公募による募集株式発行に伴い",
-        "pricing_date_confirmed": true,
-        "pricing_date_status": "confirmed",
-        "settlement_date": "2026-10-13",
-        "settlement_date_end": null,
-        "settlement_date_raw": "受渡期日2026年10月13日（火曜日）2.ロックアップについて（1）TOKYOPROMarket及びFukuokaPROMarketにおける当社普通株式の取引(気配表記を含む。)がブックビルディング方式による発行価格及び売出価格の決定に影響を及ぼすおそれを可及的に排除する観点から、本募集に関連して、当社株主かつ貸株人である株式会社旺司ライフワーク、当社株主",
-        "settlement_estimated": false,
-        "settlement_date_status": "confirmed",
-        "parse_warnings": [
-          "⚠️ Yahoo終値取得失敗 (RuntimeError)"
-        ],
-        "missing_fields": [
-          "size",
-          "dilution_pct"
-        ],
-        "public_offering_shares": 1,
-        "secondary_sale_shares": 30000,
-        "oa_shares": 1,
-        "total_offered_shares": 260000,
-        "share_breakdown_complete": true,
-        "oa_marker_present": true,
-        "latest_source_stage": "pricing",
-        "po_threshold_ever_met": false,
-        "effective_size_yen": null,
-        "reference_close_failure_key": "2026-09-07:RuntimeError",
-        "parser_version": 3,
-        "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260907532411.pdf|https://www.release.tdnet.info/inbs/140120261002545413.pdf",
-        "calculation_recovery_attempt_date": "2026-10-07",
-        "calculation_missing_fields": [
-          "effective_size_yen"
-        ],
-        "notification_tracking_started": true
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260907532411.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261002545413.pdf",
-      "source_title": "募集株式発行及び株式売出しに関する取締役会決議のお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260907532411",
-          "relation": "source",
-          "title": "募集株式発行及び株式売出しに関する取締役会決議のお知らせ",
-          "announced_at": "2026-09-07T16:15:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260907532411.pdf",
-          "market": "東証・福証"
-        },
-        {
-          "id": "140120261002545413",
-          "relation": "pricing",
-          "title": "発行価格等の決定及びオーバーアロットメントによる売出しの売出株式数決定のお知らせ",
-          "announced_at": "2026-10-02T15:45:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120261002545413.pdf",
-          "market": "東証・福証"
-        }
-      ],
-      "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "PRO Market"
-        ]
-      }
-    },
-    {
       "id": "ipo-646A-2026-09-29",
       "type": "ipo",
       "code": "646A",
@@ -7199,8 +7113,8 @@
         "record_date_raw": "基準日2026年10月21日",
         "rights_final_date": "2026-10-19",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7209,7 +7123,10 @@
         "effective_date_raw": "効力発生日における発行可能株式総数 4,240,000株 （注）1.株式分割前の発行済株式総数は、本日現在の数値であります。 2.今回の株式分割に際して、発行可能株式総数の変更は行いません。株式分割の割合に応じた発行可能株 式総数の変更（定款第6条の変更）は、2026年11月17日開催予定の臨時株主総会に付議する予定であ り、付議議案の詳細は決定次第お知らせ",
         "traders_rights_final_date": "2026-10-19",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "ratio_source": "traders_web"
+        "ratio_source": "traders_web",
+        "jpx_ex_right_date": "2026-10-20",
+        "jpx_rights_final_date": "2026-10-19",
+        "jpx_ex_rights_source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261005545612.pdf",
@@ -7546,28 +7463,28 @@
       "last_success_at": "2026-08-24T22:45:04.932305+00:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-10-07",
-      "last_success_at": "2026-10-07T00:04:36.576371+00:00"
+      "last_success_date": "2026-10-08",
+      "last_success_at": "2026-10-08T00:22:58.870580+00:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-10-07",
-      "last_success_at": "2026-10-07T00:04:39.008825+00:00"
+      "last_success_date": "2026-10-08",
+      "last_success_at": "2026-10-08T00:23:02.788446+00:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-10-07",
       "last_success_at": "2026-10-07T20:21:52.015140+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-10-07",
-      "last_success_at": "2026-10-07T11:21:40.891897+00:00"
+      "last_success_date": "2026-10-08",
+      "last_success_at": "2026-10-08T00:23:02.209198+00:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-10-07",
-      "last_success_at": "2026-10-07T00:04:39.318728+00:00"
+      "last_success_date": "2026-10-08",
+      "last_success_at": "2026-10-08T00:23:03.133203+00:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-10-07",
-      "last_success_at": "2026-10-07T00:04:39.688067+00:00"
+      "last_success_date": "2026-10-08",
+      "last_success_at": "2026-10-08T00:23:03.487053+00:00"
     }
   },
   "schema_version": 2,
@@ -7693,7 +7610,7 @@
       "failure": 0
     },
     "2026-10-08": {
-      "success": 3,
+      "success": 4,
       "failure": 0
     }
   },
@@ -7733,11 +7650,11 @@
       "last_success_at": "2026-10-08T02:46:43.352880+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-10-07T09:04:31.295507+09:00",
-      "last_finished_at": "2026-10-07T09:04:39.688875+09:00",
+      "last_started_at": "2026-10-08T09:22:53.721432+09:00",
+      "last_finished_at": "2026-10-08T09:23:03.487867+09:00",
       "status": "success",
-      "run_id": "37549988060",
-      "last_success_at": "2026-10-07T09:04:39.688875+09:00"
+      "run_id": "37707442379",
+      "last_success_at": "2026-10-08T09:23:03.487867+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-10-07T20:21:34.359700+09:00",
