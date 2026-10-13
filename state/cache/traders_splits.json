@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-10-09T11:41:18.583066+00:00",
+  "fetched_at": "2026-10-13T02:13:22.025766+00:00",
   "data": {
     "1570": [
       {
@@ -770,16 +770,6 @@
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
-    "9334": [
-      {
-        "code": "9334",
-        "name": "アイビスＨＤ",
-        "rights_final_date": "2026-07-29",
-        "ratio": "2",
-        "effective_date": "2026-08-01",
-        "source_url": "https://www.traders.co.jp/stock_data/split"
-      }
-    ],
     "4380": [
       {
         "code": "4380",
@@ -854,6 +844,16 @@
       {
         "code": "9388",
         "name": "パパネッツ",
+        "rights_final_date": "2026-07-29",
+        "ratio": "2",
+        "effective_date": "2026-08-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9334": [
+      {
+        "code": "9334",
+        "name": "アイビスＨＤ",
         "rights_final_date": "2026-07-29",
         "ratio": "2",
         "effective_date": "2026-08-01",
