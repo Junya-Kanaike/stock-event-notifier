@@ -4495,8 +4495,11 @@
         {
           "date": "2026-10-14",
           "label": "pricing_day+26bd",
-          "sent": false,
-          "action_cutoff_jst": "09:00"
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-10-14T02:10:17.132062+09:00",
+          "sent_by": "38436453484",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524618.pdf",
@@ -5541,7 +5544,10 @@
         {
           "date": "2026-10-14",
           "label": "listing-1bd",
-          "sent": false
+          "sent": true,
+          "sent_at": "2026-10-14T02:10:16.608202+09:00",
+          "sent_by": "38436453484",
+          "reference_only": false
         },
         {
           "date": "2026-10-15",
@@ -6271,8 +6277,11 @@
         {
           "date": "2026-10-14",
           "label": "settlement",
-          "sent": false,
-          "action_cutoff_jst": "09:00"
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-10-14T02:10:16.872307+09:00",
+          "sent_by": "38436453484",
+          "reference_only": false
         },
         {
           "date": "2026-11-12",
@@ -7334,7 +7343,7 @@
       "eligibility": {
         "status": "excluded",
         "reasons": [
-          "自社株買い同時発表"
+          "貸借対象外"
         ]
       }
     }
@@ -7620,11 +7629,15 @@
     "2026-10-13": {
       "success": 3,
       "failure": 0
+    },
+    "2026-10-14": {
+      "success": 4,
+      "failure": 0
     }
   },
   "daily_system_summary": {
-    "last_sent_date": "2026-10-12",
-    "last_sent_at": "2026-10-12T08:23:05.715574+09:00",
+    "last_sent_date": "2026-10-13",
+    "last_sent_at": "2026-10-14T02:10:16.516258+09:00",
     "sent_dates": {
       "2026-09-17": "2026-09-17T23:28:45.250409+09:00",
       "2026-09-18": "2026-09-18T21:35:33.323989+09:00",
@@ -7651,16 +7664,17 @@
       "2026-10-09": "2026-10-10T01:38:36.758189+09:00",
       "2026-10-10": "2026-10-10T01:38:36.758189+09:00",
       "2026-10-11": "2026-10-11T08:28:57.764046+09:00",
-      "2026-10-12": "2026-10-12T08:23:05.715574+09:00"
+      "2026-10-12": "2026-10-12T08:23:05.715574+09:00",
+      "2026-10-13": "2026-10-14T02:10:16.516258+09:00"
     }
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-10-13T19:11:42.416304+09:00",
-      "last_finished_at": "2026-10-13T19:11:42.430877+09:00",
+      "last_started_at": "2026-10-14T02:10:16.516258+09:00",
+      "last_finished_at": "2026-10-14T02:10:17.591817+09:00",
       "status": "success",
-      "run_id": "38381658225",
-      "last_success_at": "2026-10-13T19:11:42.430877+09:00"
+      "run_id": "38436453484",
+      "last_success_at": "2026-10-14T02:10:17.591817+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-10-13T11:13:14.654836+09:00",
@@ -8964,6 +8978,39 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "38297420855"
+    },
+    {
+      "event_id": "ipo-648A-2026-10-15",
+      "channel": "ipo",
+      "scheduled_for": "2026-10-14",
+      "label": "listing-1bd",
+      "attempted_at": "2026-10-14T02:10:16.608202+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "38436453484"
+    },
+    {
+      "event_id": "po-1723-2026-09-28",
+      "channel": "po",
+      "scheduled_for": "2026-10-14",
+      "label": "settlement",
+      "attempted_at": "2026-10-14T02:10:16.872307+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "38436453484"
+    },
+    {
+      "event_id": "po-9706-2026-08-24",
+      "channel": "po",
+      "scheduled_for": "2026-10-14",
+      "label": "pricing_day+26bd",
+      "attempted_at": "2026-10-14T02:10:17.132062+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "38436453484"
     }
   ]
 }
