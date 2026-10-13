@@ -1771,7 +1771,19 @@
     "140120261012549115",
     "140120261013549248",
     "140120261013549313",
-    "140120261013549351"
+    "140120261013549351",
+    "140120261006546516",
+    "140120261009548920",
+    "140120261013549249",
+    "140120261013549318",
+    "140120261013549659",
+    "140120261013549663",
+    "140120261013549764",
+    "140120261013549669",
+    "140120261009549028",
+    "140120261013549590",
+    "140120261013549598",
+    "140120261013550032"
   ],
   "events": [
     {
@@ -6727,40 +6739,38 @@
         "parser_version": 3,
         "po_kind": "both",
         "source_stage": "announcement",
-        "size_oku": 50.1952,
+        "size_oku": 32.07913831,
         "size_oku_min": null,
         "size_oku_max": null,
-        "size_status": "estimated",
-        "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+        "size_status": "confirmed",
+        "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
         "share_count": null,
         "oa_share_count": null,
         "price_min_yen": null,
         "price_max_yen": null,
-        "public_offering_shares": 1100000,
+        "public_offering_shares": 1,
         "secondary_sale_shares": 1380000,
         "oa_shares": 372000,
         "total_offered_shares": 2852000,
         "share_breakdown_complete": true,
         "oa_marker_present": true,
-        "issue_price_yen": null,
-        "sale_price_yen": null,
-        "offer_price_yen": null,
+        "issue_price_yen": 1831.0,
+        "sale_price_yen": 1831.0,
+        "offer_price_yen": 1831.0,
         "dilution_pct": 2.51,
         "dilution_status": "confirmed",
-        "pricing_date": null,
-        "pricing_date_end": null,
+        "pricing_date": "2026-10-13",
+        "pricing_date_end": "2026-10-13",
         "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": "2026-10-19",
+        "pricing_date_confirmed": true,
+        "pricing_date_status": "confirmed",
+        "settlement_date": "2026-10-20",
         "settlement_date_end": "2026-10-21",
-        "settlement_date_raw": "払込期日 2026年10月19日（月）から2026年10月21日（水）までの間の いずれかの日。ただし、発行価格等決定日の4営業日後の日とす る。 （8） 申込株数単位 100株 （9） 払込金額、増加する資本金及び資本準備金の額、その他一般募集に必要な一切の事項の決 定については、代表取締役社長小椋一宏に一任する。 （10） 上記各号については、金融商品取",
+        "settlement_date_raw": "受渡期日2026年10月20日（火）（注）引受人は引受価額で買取引受けを行い、売出価格で売出しを行います。ご注意:この文書は、いかなる証券についての投資募集行為の一部をなすものでもありません。この文書は、当社の新株式発行及び株式売出しに関して一般に公表するための記者発表文であり、日本国内外を問わず投資勧誘を目的として作成されたものではありません。当社普通株式",
         "settlement_estimated": false,
-        "settlement_date_status": "provisional",
+        "settlement_date_status": "confirmed",
         "parse_warnings": [],
-        "missing_fields": [
-          "pricing_date"
-        ],
+        "missing_fields": [],
         "notification_tracking_started": true,
         "reference_close_yen": 1760.0,
         "reference_close_date": "2026-10-02",
@@ -6768,12 +6778,16 @@
         "reference_close_kind": "announcement_close",
         "estimated_size_yen": 5019520000,
         "estimated_size_oku": 50.1952,
-        "effective_size_yen": 5019520000,
-        "calculation_missing_fields": []
+        "effective_size_yen": 3207913831,
+        "calculation_missing_fields": [],
+        "latest_source_stage": "pricing",
+        "po_threshold_ever_met": false,
+        "confirmed_size_yen": 3207913831,
+        "confirmed_size_oku": 32.07913831
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261002545271.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261002545271.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261009549028.pdf",
       "source_title": "新株式発行及び株式売出しに関するお知らせ",
       "related_disclosures": [
         {
@@ -6782,6 +6796,14 @@
           "title": "新株式発行及び株式売出しに関するお知らせ",
           "announced_at": "2026-10-02T16:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261002545271.pdf",
+          "market": "東証"
+        },
+        {
+          "id": "140120261009549028",
+          "relation": "pricing",
+          "title": "発行価格及び売出価格等の決定に関するお知らせ",
+          "announced_at": "2026-10-13T18:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261009549028.pdf",
           "market": "東証"
         }
       ],
@@ -7281,6 +7303,40 @@
           "吸収規模80億円未満"
         ]
       }
+    },
+    {
+      "id": "cb-3350-2026-10-13",
+      "type": "cb",
+      "code": "3350",
+      "name": "メタプラネット",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-10-13T18:00:00+09:00",
+      "detail": {
+        "amount": "519億円",
+        "canceled": true,
+        "cancel_reason": "自社株買い同時発表を確認"
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261013549590.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261013549590.pdf",
+      "source_title": "ゼロ・クーポン2031年満期ユーロ円建転換社債型新株予約権付社債の発行に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261013549590",
+          "relation": "source",
+          "title": "ゼロ・クーポン2031年満期ユーロ円建転換社債型新株予約権付社債の発行に関するお知らせ",
+          "announced_at": "2026-10-13T18:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261013549590.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "自社株買い同時発表"
+        ]
+      }
     }
   ],
   "source_health": {
@@ -7288,7 +7344,7 @@
       "last_checked_date": "2026-10-13",
       "last_success_date": "2026-10-13",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-13T14:47:44.733303+09:00",
+      "last_success_at": "2026-10-13T21:58:38.515899+09:00",
       "by_date": {
         "2026-09-16": {
           "checked_at": "2026-09-17T23:08:31.664911+09:00",
@@ -7375,20 +7431,20 @@
           "last_success_at": "2026-10-09T20:41:20.680014+09:00"
         },
         "2026-10-09": {
-          "checked_at": "2026-10-13T14:47:43.807490+09:00",
+          "checked_at": "2026-10-13T21:58:36.217656+09:00",
           "count": 255,
           "status": "success",
-          "last_success_at": "2026-10-13T14:47:43.807490+09:00"
+          "last_success_at": "2026-10-13T21:58:36.217656+09:00"
         },
         "2026-10-13": {
-          "checked_at": "2026-10-13T14:47:44.733078+09:00",
-          "count": 86,
+          "checked_at": "2026-10-13T21:58:38.514838+09:00",
+          "count": 303,
           "status": "success",
-          "last_success_at": "2026-10-13T14:47:44.733078+09:00"
+          "last_success_at": "2026-10-13T21:58:38.514838+09:00"
         }
       },
-      "last_checked_at": "2026-10-13T14:47:44.733078+09:00",
-      "last_complete_poll_at": "2026-10-13T14:47:44.733307+09:00"
+      "last_checked_at": "2026-10-13T21:58:38.514838+09:00",
+      "last_complete_poll_at": "2026-10-13T21:58:38.515909+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -7408,7 +7464,7 @@
     },
     "traders_split": {
       "last_success_date": "2026-10-13",
-      "last_success_at": "2026-10-13T02:13:22.025766+00:00"
+      "last_success_at": "2026-10-13T12:58:34.193945+00:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-10-13",
@@ -7614,11 +7670,11 @@
       "last_success_at": "2026-10-13T11:13:23.373488+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-13T14:47:38.342047+09:00",
-      "last_finished_at": "2026-10-13T14:47:44.750722+09:00",
+      "last_started_at": "2026-10-13T21:58:27.744910+09:00",
+      "last_finished_at": "2026-10-13T21:58:41.308679+09:00",
       "status": "success",
-      "run_id": "38353204671",
-      "last_success_at": "2026-10-13T14:47:44.750722+09:00"
+      "run_id": "38401281636",
+      "last_success_at": "2026-10-13T21:58:41.308679+09:00"
     }
   },
   "notification_log": [
