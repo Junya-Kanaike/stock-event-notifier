@@ -5745,105 +5745,6 @@
       }
     },
     {
-      "id": "po-212A-2026-09-14",
-      "type": "po",
-      "code": "212A",
-      "name": "フィットイージー",
-      "market": "プライム",
-      "margin": "信用",
-      "announced_at": "2026-09-14T16:00:00+09:00",
-      "detail": {
-        "parser_version": 3,
-        "po_kind": "both",
-        "source_stage": "announcement",
-        "size_oku": 62.514,
-        "size_oku_min": null,
-        "size_oku_max": null,
-        "size_status": "confirmed",
-        "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
-        "share_count": null,
-        "oa_share_count": null,
-        "price_min_yen": null,
-        "price_max_yen": null,
-        "public_offering_shares": null,
-        "secondary_sale_shares": 2000000,
-        "oa_shares": 300000,
-        "total_offered_shares": 2300000,
-        "share_breakdown_complete": true,
-        "oa_marker_present": true,
-        "issue_price_yen": 2718.0,
-        "sale_price_yen": 2718.0,
-        "offer_price_yen": 2718.0,
-        "dilution_pct": null,
-        "dilution_status": "unavailable",
-        "pricing_date": "2026-09-28",
-        "pricing_date_end": "2026-09-28",
-        "pricing_date_raw": "売出価格未定（日本証券業協会の定める有価証券の引受け等に関する規則第25条に規定される方式により、2026年9月28日（月）から2026年10月1日（木）までの間のいずれかの日（以下「売出価格等決定日」という。）の株式会社東京証券取引所における当社普通株式の普通取引の終値（当日に終値のない場合は、その日に先立つ直近日の終値）に0.90～1.00を乗じた価格（",
-        "pricing_date_confirmed": true,
-        "pricing_date_status": "confirmed",
-        "settlement_date": "2026-10-05",
-        "settlement_date_end": null,
-        "settlement_date_raw": "受渡期日2026年10月5日（月）(注)引受人は引受価額で買取引受けを行い、売出価格で売出しを行います。2.株式売出し（オーバーアロットメントによる売出し）(1)売出株式数300,000株(2)売出価格1株につき2,718円(3)売出価格の総額815,400,000円(4)申込期間2026年9月29日（火）～2026年9月30日（水）(5)受渡期日2026年",
-        "settlement_estimated": false,
-        "settlement_date_status": "confirmed",
-        "parse_warnings": [],
-        "missing_fields": [
-          "dilution_pct"
-        ],
-        "notification_tracking_started": true,
-        "reference_close_yen": 2769.0,
-        "reference_close_date": "2026-09-14",
-        "reference_close_source": "Yahoo Finance chart (raw close)",
-        "reference_close_kind": "announcement_close",
-        "estimated_size_yen": 6368700000,
-        "estimated_size_oku": 63.687,
-        "effective_size_yen": 6251400000,
-        "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260914535618.pdf",
-        "calculation_recovery_attempt_date": "2026-09-17",
-        "latest_source_stage": "pricing",
-        "po_threshold_ever_met": false,
-        "calculation_missing_fields": [],
-        "confirmed_size_yen": 6251400000,
-        "confirmed_size_oku": 62.514
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260914535618.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260928540908.pdf",
-      "source_title": "株式の売出し及び親会社以外の支配株主の異動に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260914535618",
-          "relation": "source",
-          "title": "株式の売出し及び親会社以外の支配株主の異動に関するお知らせ",
-          "announced_at": "2026-09-14T16:00:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260914535618.pdf",
-          "market": "東証・名証"
-        },
-        {
-          "id": "140120260916537415",
-          "relation": "correction",
-          "title": "（訂正）「新株式発行及び株式売出し並びに主要株主及び親会社以外の支配株主の異動に関するお知らせ」の一部訂正について",
-          "announced_at": "2026-09-25T16:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260916537415.pdf",
-          "market": "東証・名証"
-        },
-        {
-          "id": "140120260928540908",
-          "relation": "pricing",
-          "title": "売出価格等の決定に関するお知らせ",
-          "announced_at": "2026-09-28T17:20:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260928540908.pdf",
-          "market": "東証・名証"
-        }
-      ],
-      "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "吸収規模80億円未満"
-        ]
-      }
-    },
-    {
       "id": "split-6036-2026-09-15",
       "type": "split",
       "code": "6036",
@@ -7022,8 +6923,8 @@
         "record_date_raw": "基準日2026年10月21日",
         "rights_final_date": "2026-10-19",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7763,12 +7664,12 @@
       "last_success_at": "2026-08-24T22:45:04.932305+00:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-10-13",
-      "last_success_at": "2026-10-13T23:50:41.361834+00:00"
+      "last_success_date": "2026-10-14",
+      "last_success_at": "2026-10-14T23:24:43.442437+00:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-10-13",
-      "last_success_at": "2026-10-13T23:50:43.946886+00:00"
+      "last_success_date": "2026-10-14",
+      "last_success_at": "2026-10-14T23:24:45.561366+00:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-10-09",
@@ -7776,15 +7677,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-10-14",
-      "last_success_at": "2026-10-14T09:03:27.411823+00:00"
+      "last_success_at": "2026-10-14T23:24:44.869875+00:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-10-13",
-      "last_success_at": "2026-10-13T23:50:44.307968+00:00"
+      "last_success_date": "2026-10-14",
+      "last_success_at": "2026-10-14T23:24:45.988922+00:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-10-13",
-      "last_success_at": "2026-10-13T23:50:44.614616+00:00"
+      "last_success_date": "2026-10-14",
+      "last_success_at": "2026-10-14T23:24:46.339943+00:00"
     }
   },
   "schema_version": 2,
@@ -7938,7 +7839,7 @@
       "failure": 0
     },
     "2026-10-15": {
-      "success": 2,
+      "success": 3,
       "failure": 0
     }
   },
@@ -7985,11 +7886,11 @@
       "last_success_at": "2026-10-15T00:48:03.423646+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-10-14T08:50:36.435676+09:00",
-      "last_finished_at": "2026-10-14T08:50:44.615656+09:00",
+      "last_started_at": "2026-10-15T08:24:38.296668+09:00",
+      "last_finished_at": "2026-10-15T08:24:46.340936+09:00",
       "status": "success",
-      "run_id": "38486655890",
-      "last_success_at": "2026-10-14T08:50:44.615656+09:00"
+      "run_id": "38653879186",
+      "last_success_at": "2026-10-15T08:24:46.340936+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-10-14T23:28:32.786116+09:00",
