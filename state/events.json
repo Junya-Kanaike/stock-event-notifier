@@ -5575,7 +5575,10 @@
         {
           "date": "2026-10-15",
           "label": "listing_day",
-          "sent": false
+          "sent": true,
+          "sent_at": "2026-10-15T00:48:03.248202+09:00",
+          "sent_by": "38592483853",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -6502,8 +6505,11 @@
         {
           "date": "2026-10-15",
           "label": "settlement",
-          "sent": false,
-          "action_cutoff_jst": "09:00"
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-10-15T00:48:03.341662+09:00",
+          "sent_by": "38592483853",
+          "reference_only": false
         },
         {
           "date": "2026-11-13",
@@ -7930,6 +7936,10 @@
     "2026-10-14": {
       "success": 8,
       "failure": 0
+    },
+    "2026-10-15": {
+      "success": 2,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -7968,11 +7978,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-10-14T23:58:04.605041+09:00",
-      "last_finished_at": "2026-10-14T23:58:04.618268+09:00",
+      "last_started_at": "2026-10-15T00:48:03.162922+09:00",
+      "last_finished_at": "2026-10-15T00:48:03.423646+09:00",
       "status": "success",
-      "run_id": "38585204228",
-      "last_success_at": "2026-10-14T23:58:04.618268+09:00"
+      "run_id": "38592483853",
+      "last_success_at": "2026-10-15T00:48:03.423646+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-10-14T08:50:36.435676+09:00",
@@ -9309,6 +9319,28 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "38436453484"
+    },
+    {
+      "event_id": "ipo-648A-2026-10-15",
+      "channel": "ipo",
+      "scheduled_for": "2026-10-15",
+      "label": "listing_day",
+      "attempted_at": "2026-10-15T00:48:03.248202+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "38592483853"
+    },
+    {
+      "event_id": "po-4221-2026-09-30",
+      "channel": "po",
+      "scheduled_for": "2026-10-15",
+      "label": "settlement",
+      "attempted_at": "2026-10-15T00:48:03.341662+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "38592483853"
     }
   ]
 }
