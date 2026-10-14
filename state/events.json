@@ -1783,7 +1783,13 @@
     "140120261009549028",
     "140120261013549590",
     "140120261013549598",
-    "140120261013550032"
+    "140120261013550032",
+    "140120261013550091",
+    "140120261013550102",
+    "140120261014550198",
+    "140120261012549105",
+    "140120261014550175",
+    "140120261013550092"
   ],
   "events": [
     {
@@ -1832,7 +1838,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260714593697.pdf|https://www.release.tdnet.info/inbs/140120260722597166.pdf",
-        "calculation_recovery_attempt_date": "2026-10-13",
+        "calculation_recovery_attempt_date": "2026-10-14",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -1908,7 +1914,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260714592985.pdf|https://www.release.tdnet.info/inbs/140120260715594785.pdf",
-        "calculation_recovery_attempt_date": "2026-10-13",
+        "calculation_recovery_attempt_date": "2026-10-14",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -1984,7 +1990,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260715594693.pdf",
-        "calculation_recovery_attempt_date": "2026-10-13",
+        "calculation_recovery_attempt_date": "2026-10-14",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -2136,7 +2142,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260723598739.pdf|https://www.release.tdnet.info/inbs/140120260804508094.pdf",
-        "calculation_recovery_attempt_date": "2026-10-13",
+        "calculation_recovery_attempt_date": "2026-10-14",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -6981,8 +6987,8 @@
         "record_date_raw": "基準日2026年10月21日",
         "rights_final_date": "2026-10-19",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7346,14 +7352,48 @@
           "貸借対象外"
         ]
       }
+    },
+    {
+      "id": "cb-3350-2026-10-14",
+      "type": "cb",
+      "code": "3350",
+      "name": "メタプラネット",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-10-14T04:10:00+09:00",
+      "detail": {
+        "amount": null,
+        "canceled": true,
+        "cancel_reason": "自社株買い同時発表を確認"
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261013550102.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261013550102.pdf",
+      "source_title": "（訂正）「ゼロ・クーポン2031年満期ユーロ円建転換社債型新株予約権付社債の発行に関するお知らせ」の一部訂正について",
+      "related_disclosures": [
+        {
+          "id": "140120261013550102",
+          "relation": "source",
+          "title": "（訂正）「ゼロ・クーポン2031年満期ユーロ円建転換社債型新株予約権付社債の発行に関するお知らせ」の一部訂正について",
+          "announced_at": "2026-10-14T04:10:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261013550102.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "自社株買い同時発表"
+        ]
+      }
     }
   ],
   "source_health": {
     "tdnet": {
-      "last_checked_date": "2026-10-13",
-      "last_success_date": "2026-10-13",
+      "last_checked_date": "2026-10-14",
+      "last_success_date": "2026-10-14",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-13T21:58:38.515899+09:00",
+      "last_success_at": "2026-10-14T10:47:27.697790+09:00",
       "by_date": {
         "2026-09-16": {
           "checked_at": "2026-09-17T23:08:31.664911+09:00",
@@ -7446,14 +7486,20 @@
           "last_success_at": "2026-10-13T21:58:36.217656+09:00"
         },
         "2026-10-13": {
-          "checked_at": "2026-10-13T21:58:38.514838+09:00",
+          "checked_at": "2026-10-14T10:47:25.390853+09:00",
           "count": 303,
           "status": "success",
-          "last_success_at": "2026-10-13T21:58:38.514838+09:00"
+          "last_success_at": "2026-10-14T10:47:25.390853+09:00"
+        },
+        "2026-10-14": {
+          "checked_at": "2026-10-14T10:47:27.697437+09:00",
+          "count": 11,
+          "status": "success",
+          "last_success_at": "2026-10-14T10:47:27.697437+09:00"
         }
       },
-      "last_checked_at": "2026-10-13T21:58:38.514838+09:00",
-      "last_complete_poll_at": "2026-10-13T21:58:38.515909+09:00"
+      "last_checked_at": "2026-10-14T10:47:27.697437+09:00",
+      "last_complete_poll_at": "2026-10-14T10:47:27.697796+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -7684,11 +7730,11 @@
       "last_success_at": "2026-10-14T08:50:44.615656+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-13T21:58:27.744910+09:00",
-      "last_finished_at": "2026-10-13T21:58:41.308679+09:00",
+      "last_started_at": "2026-10-14T10:46:54.087819+09:00",
+      "last_finished_at": "2026-10-14T10:47:28.531098+09:00",
       "status": "success",
-      "run_id": "38401281636",
-      "last_success_at": "2026-10-13T21:58:41.308679+09:00"
+      "run_id": "38497530399",
+      "last_success_at": "2026-10-14T10:47:28.531098+09:00"
     }
   },
   "notification_log": [
