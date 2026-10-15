@@ -6933,8 +6933,8 @@
         "record_date_raw": "基準日2026年10月21日",
         "rights_final_date": "2026-10-19",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7806,12 +7806,12 @@
       "last_success_at": "2026-08-24T22:45:04.932305+00:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-10-14",
-      "last_success_at": "2026-10-14T23:24:43.442437+00:00"
+      "last_success_date": "2026-10-15",
+      "last_success_at": "2026-10-15T23:15:20.140894+00:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-10-14",
-      "last_success_at": "2026-10-14T23:24:45.561366+00:00"
+      "last_success_date": "2026-10-15",
+      "last_success_at": "2026-10-15T23:15:22.775595+00:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-10-15",
@@ -7819,15 +7819,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-10-15",
-      "last_success_at": "2026-10-15T08:33:20.154810+00:00"
+      "last_success_at": "2026-10-15T23:15:21.993119+00:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-10-14",
-      "last_success_at": "2026-10-14T23:24:45.988922+00:00"
+      "last_success_date": "2026-10-15",
+      "last_success_at": "2026-10-15T23:15:23.072085+00:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-10-14",
-      "last_success_at": "2026-10-14T23:24:46.339943+00:00"
+      "last_success_date": "2026-10-15",
+      "last_success_at": "2026-10-15T23:15:23.452243+00:00"
     }
   },
   "schema_version": 2,
@@ -7985,7 +7985,7 @@
       "failure": 0
     },
     "2026-10-16": {
-      "success": 1,
+      "success": 2,
       "failure": 0
     }
   },
@@ -8033,11 +8033,11 @@
       "last_success_at": "2026-10-16T00:34:10.075989+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-10-15T08:24:38.296668+09:00",
-      "last_finished_at": "2026-10-15T08:24:46.340936+09:00",
+      "last_started_at": "2026-10-16T08:15:14.268256+09:00",
+      "last_finished_at": "2026-10-16T08:15:23.453393+09:00",
       "status": "success",
-      "run_id": "38653879186",
-      "last_success_at": "2026-10-15T08:24:46.340936+09:00"
+      "run_id": "38822422461",
+      "last_success_at": "2026-10-16T08:15:23.453393+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-10-15T22:40:38.668271+09:00",
