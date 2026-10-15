@@ -5168,8 +5168,11 @@
         {
           "date": "2026-10-16",
           "label": "pricing_day+25bd",
-          "sent": false,
-          "action_cutoff_jst": "09:00"
+          "sent": true,
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-10-16T00:34:09.862289+09:00",
+          "sent_by": "38761439458",
+          "reference_only": false
         },
         {
           "date": "2026-10-19",
@@ -7980,6 +7983,10 @@
     "2026-10-15": {
       "success": 5,
       "failure": 0
+    },
+    "2026-10-16": {
+      "success": 1,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -8019,11 +8026,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-10-15T23:47:44.086421+09:00",
-      "last_finished_at": "2026-10-15T23:47:44.111013+09:00",
+      "last_started_at": "2026-10-16T00:34:09.784262+09:00",
+      "last_finished_at": "2026-10-16T00:34:10.075989+09:00",
       "status": "success",
-      "run_id": "38754557057",
-      "last_success_at": "2026-10-15T23:47:44.111013+09:00"
+      "run_id": "38761439458",
+      "last_success_at": "2026-10-16T00:34:10.075989+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-10-15T08:24:38.296668+09:00",
@@ -9382,6 +9389,17 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "38592483853"
+    },
+    {
+      "event_id": "po-8117-2026-08-28",
+      "channel": "po",
+      "scheduled_for": "2026-10-16",
+      "label": "pricing_day+25bd",
+      "attempted_at": "2026-10-16T00:34:09.862289+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "38761439458"
     }
   ]
 }
