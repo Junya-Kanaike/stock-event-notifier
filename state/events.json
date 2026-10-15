@@ -1807,7 +1807,12 @@
     "140120260925540418",
     "140120261005546022",
     "140120261014550124",
-    "140120261015550985"
+    "140120261015550985",
+    "140120261015551026",
+    "140120261015551569",
+    "140120261015551674",
+    "140120261015551693",
+    "140120261015551795"
   ],
   "events": [
     {
@@ -7348,15 +7353,17 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "record_date_t_plus_2",
-        "rights_final_calculation_basis": "record_date_t_plus_2",
-        "rights_final_confirmed": false,
-        "rights_final_status": "provisional",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_confirmed": true,
+        "rights_final_status": "confirmed",
         "rights_date_conflict": false,
         "ex_right_date": "2026-11-27",
         "effective_date": "2026-12-01",
         "effective_date_raw": "効力発生日 2026 年12月 1日（火） （5） その他 今回の株式分割に際しまして、資本金の額に変更はありません。 2.定款の一部変更 （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年12月1日をもって当社定款第6条 に定める発行可能株式総数を変更いたします。 （2）変更の内容 （下線は変更部分を示しております。）",
-        "eligible_notified": true
+        "eligible_notified": true,
+        "traders_rights_final_date": "2026-11-26",
+        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split"
       },
       "schedule": [
         {
@@ -7412,14 +7419,16 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "record_date_t_plus_2",
-        "rights_final_calculation_basis": "record_date_t_plus_2",
-        "rights_final_confirmed": false,
-        "rights_final_status": "provisional",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_confirmed": true,
+        "rights_final_status": "confirmed",
         "rights_date_conflict": false,
         "ex_right_date": "2026-11-27",
         "effective_date": "2026-12-01",
-        "effective_date_raw": "効力発生日 2026年12月1日 本文 2026/10/13 15:02:44 / SB055049_光フードサービス株式会社_適時開示書類 （5）その他 今回の株式分割に際して、資本金の額の変更はありません。また、本株式分割は2026年12 月1日を効力発生日としているため、2026年11月30日を基準日とする2026年11月期の期末配 当予想につきまして"
+        "effective_date_raw": "効力発生日 2026年12月1日 本文 2026/10/13 15:02:44 / SB055049_光フードサービス株式会社_適時開示書類 （5）その他 今回の株式分割に際して、資本金の額の変更はありません。また、本株式分割は2026年12 月1日を効力発生日としているため、2026年11月30日を基準日とする2026年11月期の期末配 当予想につきまして",
+        "traders_rights_final_date": "2026-11-26",
+        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split"
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261009548538.pdf",
@@ -7545,6 +7554,84 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "po-367A-2026-10-15",
+      "type": "po",
+      "code": "367A",
+      "name": "プリモグローバルホールディングス",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-10-15T16:00:00+09:00",
+      "detail": {
+        "parser_version": 3,
+        "po_kind": "secondary",
+        "source_stage": "announcement",
+        "size_oku": 8.042887,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "confirmed",
+        "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "public_offering_shares": null,
+        "secondary_sale_shares": 283300,
+        "oa_shares": 0,
+        "total_offered_shares": 283300,
+        "share_breakdown_complete": true,
+        "oa_marker_present": false,
+        "issue_price_yen": 2839.0,
+        "sale_price_yen": 2839.0,
+        "offer_price_yen": 2839.0,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": null,
+        "pricing_date_end": null,
+        "pricing_date_raw": null,
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "unavailable",
+        "settlement_date": "2026-10-16",
+        "settlement_date_end": null,
+        "settlement_date_raw": "受渡期日 2026年10月16日 ⑨ 申込証拠金 該当事項はありません。 ⑩ 申込単位 1株 ⑪ その他 上記については、金融商品取引法に基づく有価証券通知書を提 出しております。 (2). 売出の目的 本売出しは、売出人による投資回収の一環として実施されるものです。 なお、本売出しは既発行株式の売出しであり、当社による新株発行又は資金調達を伴うものではあ ",
+        "settlement_estimated": false,
+        "settlement_date_status": "confirmed",
+        "parse_warnings": [],
+        "missing_fields": [
+          "dilution_pct",
+          "pricing_date"
+        ],
+        "notification_tracking_started": true,
+        "reference_close_yen": 2762.0,
+        "reference_close_date": "2026-10-15",
+        "reference_close_source": "Yahoo Finance chart (raw close)",
+        "reference_close_kind": "announcement_close",
+        "confirmed_size_yen": 804288700,
+        "confirmed_size_oku": 8.042887,
+        "effective_size_yen": 804288700,
+        "calculation_missing_fields": []
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261015551026.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261015551026.pdf",
+      "source_title": "株式の売出しに関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261015551026",
+          "relation": "source",
+          "title": "株式の売出しに関するお知らせ",
+          "announced_at": "2026-10-15T16:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261015551026.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "吸収規模80億円未満"
+        ]
+      }
     }
   ],
   "source_health": {
@@ -7552,7 +7639,7 @@
       "last_checked_date": "2026-10-15",
       "last_success_date": "2026-10-15",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-15T12:32:37.413255+09:00",
+      "last_success_at": "2026-10-15T17:33:22.250354+09:00",
       "by_date": {
         "2026-09-16": {
           "checked_at": "2026-09-17T23:08:31.664911+09:00",
@@ -7651,20 +7738,20 @@
           "last_success_at": "2026-10-14T23:28:38.580745+09:00"
         },
         "2026-10-14": {
-          "checked_at": "2026-10-15T12:32:36.250278+09:00",
+          "checked_at": "2026-10-15T17:33:21.472892+09:00",
           "count": 300,
           "status": "success",
-          "last_success_at": "2026-10-15T12:32:36.250278+09:00"
+          "last_success_at": "2026-10-15T17:33:21.472892+09:00"
         },
         "2026-10-15": {
-          "checked_at": "2026-10-15T12:32:37.412960+09:00",
-          "count": 29,
+          "checked_at": "2026-10-15T17:33:22.249951+09:00",
+          "count": 300,
           "status": "success",
-          "last_success_at": "2026-10-15T12:32:37.412960+09:00"
+          "last_success_at": "2026-10-15T17:33:22.249951+09:00"
         }
       },
-      "last_checked_at": "2026-10-15T12:32:37.412960+09:00",
-      "last_complete_poll_at": "2026-10-15T12:32:37.413262+09:00"
+      "last_checked_at": "2026-10-15T17:33:22.249951+09:00",
+      "last_complete_poll_at": "2026-10-15T17:33:22.250361+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -7679,12 +7766,12 @@
       "last_success_at": "2026-10-14T23:24:45.561366+00:00"
     },
     "yahoo_price": {
-      "last_success_date": "2026-10-09",
-      "last_success_at": "2026-10-09T20:41:22.688817+09:00"
+      "last_success_date": "2026-10-15",
+      "last_success_at": "2026-10-15T17:33:22.650075+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-10-14",
-      "last_success_at": "2026-10-14T23:24:44.869875+00:00"
+      "last_success_date": "2026-10-15",
+      "last_success_at": "2026-10-15T08:33:20.154810+00:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-10-14",
@@ -7846,7 +7933,7 @@
       "failure": 0
     },
     "2026-10-15": {
-      "success": 3,
+      "success": 4,
       "failure": 0
     }
   },
@@ -7900,11 +7987,11 @@
       "last_success_at": "2026-10-15T08:24:46.340936+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-15T12:32:31.224624+09:00",
-      "last_finished_at": "2026-10-15T12:32:37.436616+09:00",
+      "last_started_at": "2026-10-15T17:33:14.794568+09:00",
+      "last_finished_at": "2026-10-15T17:33:23.299706+09:00",
       "status": "success",
-      "run_id": "38676779906",
-      "last_success_at": "2026-10-15T12:32:37.436616+09:00"
+      "run_id": "38706461647",
+      "last_success_at": "2026-10-15T17:33:23.299706+09:00"
     }
   },
   "notification_log": [

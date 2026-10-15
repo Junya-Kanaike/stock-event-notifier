@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-10-14T23:24:44.869875+00:00",
+  "fetched_at": "2026-10-15T08:33:20.154810+00:00",
   "data": {
     "1570": [
       {
@@ -62,6 +62,16 @@
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
+    "138A": [
+      {
+        "code": "138A",
+        "name": "光フード",
+        "rights_final_date": "2026-11-26",
+        "ratio": "2",
+        "effective_date": "2026-12-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
     "6474": [
       {
         "code": "6474",
@@ -78,6 +88,16 @@
         "name": "川上塗",
         "rights_final_date": "2026-11-26",
         "ratio": "3",
+        "effective_date": "2026-12-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3374": [
+      {
+        "code": "3374",
+        "name": "内外テック",
+        "rights_final_date": "2026-11-26",
+        "ratio": "2",
         "effective_date": "2026-12-01",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
