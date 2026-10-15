@@ -1812,7 +1812,8 @@
     "140120261015551569",
     "140120261015551674",
     "140120261015551693",
-    "140120261015551795"
+    "140120261015551795",
+    "140120261015550994"
   ],
   "events": [
     {
@@ -7632,6 +7633,50 @@
           "吸収規模80億円未満"
         ]
       }
+    },
+    {
+      "id": "split-362A-2026-10-15",
+      "type": "split",
+      "code": "362A",
+      "name": "エクシオホールディングス",
+      "market": "PRO Market",
+      "margin": "対象外",
+      "announced_at": "2026-10-15T18:00:00+09:00",
+      "detail": {
+        "ratio": null,
+        "record_date": "2026-10-31",
+        "record_date_raw": "基準日2026年10月31日",
+        "rights_final_date": "2026-10-28",
+        "rights_final_date_raw": null,
+        "rights_final_source": "record_date_t_plus_2",
+        "rights_final_calculation_basis": "record_date_t_plus_2",
+        "rights_final_confirmed": false,
+        "rights_final_status": "provisional",
+        "rights_date_conflict": false,
+        "ex_right_date": "2026-10-29",
+        "effective_date": "2026-10-15",
+        "effective_date_raw": "効力発生日における発行可能株式総数 8,400,000株 （注）株式分割前の発行済株式総数は、本日現在の数値であります。 ③分割の日程 基準日公告日 2026年10月15日（木曜日） 基準日 2026年10月31日（土曜日） 効力発生日 2026年11月2日（月曜日） （注）基準日公告は、電子公告により行います。 （3）資本金の額の変更 今回の株式分割に際し"
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261015550994.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261015550994.pdf",
+      "source_title": "株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261015550994",
+          "relation": "source",
+          "title": "株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
+          "announced_at": "2026-10-15T18:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261015550994.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "PRO Market"
+        ]
+      }
     }
   ],
   "source_health": {
@@ -7639,7 +7684,7 @@
       "last_checked_date": "2026-10-15",
       "last_success_date": "2026-10-15",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-15T17:33:22.250354+09:00",
+      "last_success_at": "2026-10-15T22:40:44.162415+09:00",
       "by_date": {
         "2026-09-16": {
           "checked_at": "2026-09-17T23:08:31.664911+09:00",
@@ -7738,20 +7783,20 @@
           "last_success_at": "2026-10-14T23:28:38.580745+09:00"
         },
         "2026-10-14": {
-          "checked_at": "2026-10-15T17:33:21.472892+09:00",
+          "checked_at": "2026-10-15T22:40:43.370413+09:00",
           "count": 300,
           "status": "success",
-          "last_success_at": "2026-10-15T17:33:21.472892+09:00"
+          "last_success_at": "2026-10-15T22:40:43.370413+09:00"
         },
         "2026-10-15": {
-          "checked_at": "2026-10-15T17:33:22.249951+09:00",
+          "checked_at": "2026-10-15T22:40:44.162079+09:00",
           "count": 300,
           "status": "success",
-          "last_success_at": "2026-10-15T17:33:22.249951+09:00"
+          "last_success_at": "2026-10-15T22:40:44.162079+09:00"
         }
       },
-      "last_checked_at": "2026-10-15T17:33:22.249951+09:00",
-      "last_complete_poll_at": "2026-10-15T17:33:22.250361+09:00"
+      "last_checked_at": "2026-10-15T22:40:44.162079+09:00",
+      "last_complete_poll_at": "2026-10-15T22:40:44.162421+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -7987,11 +8032,11 @@
       "last_success_at": "2026-10-15T08:24:46.340936+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-15T17:33:14.794568+09:00",
-      "last_finished_at": "2026-10-15T17:33:23.299706+09:00",
+      "last_started_at": "2026-10-15T22:40:38.668271+09:00",
+      "last_finished_at": "2026-10-15T22:40:44.613553+09:00",
       "status": "success",
-      "run_id": "38706461647",
-      "last_success_at": "2026-10-15T17:33:23.299706+09:00"
+      "run_id": "38744695682",
+      "last_success_at": "2026-10-15T22:40:44.613553+09:00"
     }
   },
   "notification_log": [
