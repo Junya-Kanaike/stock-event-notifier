@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-10-15T23:15:21.993119+00:00",
+  "fetched_at": "2026-10-16T08:25:10.145747+00:00",
   "data": {
     "1570": [
       {
@@ -129,6 +129,16 @@
         "rights_final_date": "2026-10-28",
         "ratio": "2",
         "effective_date": "2026-11-02",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "362A": [
+      {
+        "code": "362A",
+        "name": "エクシオＨＤ",
+        "rights_final_date": "2026-10-28",
+        "ratio": "10",
+        "effective_date": "2026-11-01",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],

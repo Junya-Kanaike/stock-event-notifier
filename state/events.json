@@ -1815,7 +1815,10 @@
     "140120261015551795",
     "140120261015550994",
     "140120261015551660",
-    "140120261016551985"
+    "140120261016551985",
+    "140120261016552294",
+    "140120261014550765",
+    "140120261016552037"
   ],
   "events": [
     {
@@ -7648,23 +7651,26 @@
       "margin": "対象外",
       "announced_at": "2026-10-15T18:00:00+09:00",
       "detail": {
-        "ratio": null,
+        "ratio": "10",
         "record_date": "2026-10-31",
         "record_date_raw": "基準日2026年10月31日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "record_date_t_plus_2",
-        "rights_final_calculation_basis": "record_date_t_plus_2",
-        "rights_final_confirmed": false,
-        "rights_final_status": "provisional",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_confirmed": true,
+        "rights_final_status": "confirmed",
         "rights_date_conflict": false,
         "ex_right_date": "2026-10-29",
-        "effective_date": "2026-10-15",
-        "effective_date_raw": "効力発生日における発行可能株式総数 8,400,000株 （注）株式分割前の発行済株式総数は、本日現在の数値であります。 ③分割の日程 基準日公告日 2026年10月15日（木曜日） 基準日 2026年10月31日（土曜日） 効力発生日 2026年11月2日（月曜日） （注）基準日公告は、電子公告により行います。 （3）資本金の額の変更 今回の株式分割に際し"
+        "effective_date": "2026-11-02",
+        "effective_date_raw": "効力発生日 2026年11月2日（月曜日） （注）基準日公告は、電子公告により行います。 （訂正後） 基準日公告日 2026年10月15日（木曜日） 基準日 2026年10月31日（土曜日） 効力発生日 2026年11月1日（日曜日） （注）基準日公告は、電子公告により行います。 - 1 - 1.株式分割について （4）その他 ①新株予約権の目的となる株式の",
+        "traders_rights_final_date": "2026-10-28",
+        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
+        "ratio_source": "traders_web"
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261015550994.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261015550994.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261016552294.pdf",
       "source_title": "株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
       "related_disclosures": [
         {
@@ -7673,6 +7679,14 @@
           "title": "株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
           "announced_at": "2026-10-15T18:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261015550994.pdf",
+          "market": "東証"
+        },
+        {
+          "id": "140120261016552294",
+          "relation": "correction",
+          "title": "（訂正）株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
+          "announced_at": "2026-10-16T15:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261016552294.pdf",
           "market": "東証"
         }
       ],
@@ -7689,7 +7703,7 @@
       "last_checked_date": "2026-10-16",
       "last_success_date": "2026-10-16",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-16T12:28:14.062955+09:00",
+      "last_success_at": "2026-10-16T17:25:12.932324+09:00",
       "by_date": {
         "2026-09-16": {
           "checked_at": "2026-09-17T23:08:31.664911+09:00",
@@ -7794,20 +7808,20 @@
           "last_success_at": "2026-10-15T22:40:43.370413+09:00"
         },
         "2026-10-15": {
-          "checked_at": "2026-10-16T12:28:12.914825+09:00",
+          "checked_at": "2026-10-16T17:25:11.170588+09:00",
           "count": 300,
           "status": "success",
-          "last_success_at": "2026-10-16T12:28:12.914825+09:00"
+          "last_success_at": "2026-10-16T17:25:11.170588+09:00"
         },
         "2026-10-16": {
-          "checked_at": "2026-10-16T12:28:14.062673+09:00",
-          "count": 33,
+          "checked_at": "2026-10-16T17:25:12.932077+09:00",
+          "count": 187,
           "status": "success",
-          "last_success_at": "2026-10-16T12:28:14.062673+09:00"
+          "last_success_at": "2026-10-16T17:25:12.932077+09:00"
         }
       },
-      "last_checked_at": "2026-10-16T12:28:14.062673+09:00",
-      "last_complete_poll_at": "2026-10-16T12:28:14.062962+09:00"
+      "last_checked_at": "2026-10-16T17:25:12.932077+09:00",
+      "last_complete_poll_at": "2026-10-16T17:25:12.932329+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-08-24",
@@ -7826,8 +7840,8 @@
       "last_success_at": "2026-10-15T17:33:22.650075+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-10-15",
-      "last_success_at": "2026-10-15T23:15:21.993119+00:00"
+      "last_success_date": "2026-10-16",
+      "last_success_at": "2026-10-16T08:25:10.145747+00:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-10-15",
@@ -8048,11 +8062,11 @@
       "last_success_at": "2026-10-16T08:15:23.453393+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-16T12:28:07.883647+09:00",
-      "last_finished_at": "2026-10-16T12:28:14.097598+09:00",
+      "last_started_at": "2026-10-16T17:25:04.085711+09:00",
+      "last_finished_at": "2026-10-16T17:25:13.423658+09:00",
       "status": "success",
-      "run_id": "38845647578",
-      "last_success_at": "2026-10-16T12:28:14.097598+09:00"
+      "run_id": "38873522933",
+      "last_success_at": "2026-10-16T17:25:13.423658+09:00"
     }
   },
   "notification_log": [
