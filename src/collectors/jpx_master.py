@@ -7,7 +7,7 @@ from typing import Any
 from src.collectors.utils import load_json_cache, normalize_code, request_get, save_json_cache, workbook_rows
 
 
-MASTER_URL = os.getenv("JPX_MASTER_URL", "https://www.jpx.co.jp/markets/statistics-equities/misc/tvdivq0000001vg2-att/data_j.xls")
+MASTER_URL = os.getenv("JPX_MASTER_URL", "https://www.jpx.co.jp/markets/statistics-equities/misc/tvdivq0000001vg2-att/data_j.xlsx")
 CACHE_NAME = "jpx_master.json"
 
 

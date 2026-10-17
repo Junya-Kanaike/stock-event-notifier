@@ -36,6 +36,10 @@ def _entry(
     return item
 
 
+def _morning_entry(day: date, label: str, *, action_cutoff_jst: str | None = None) -> dict[str, Any]:
+    return _entry(day, label, not_before_jst="06:00", action_cutoff_jst=action_cutoff_jst)
+
+
 def _merge_sent(old: list[dict[str, Any]] | None, new: list[dict[str, Any]]) -> list[dict[str, Any]]:
     previous_by_key = {
         (item.get("date"), item.get("label")): item
@@ -58,16 +62,16 @@ def build_po_schedule(
 ) -> list[dict[str, Any]]:
     pricing = as_date(pricing_date)
     schedule = [
-        _entry(pricing, "pricing_day", action_cutoff_jst="09:00"),
-        _entry(add_business_days(pricing, 1), "pricing_day+1", action_cutoff_jst="09:00"),
-        _entry(add_business_days(pricing, 2), "pricing_day+2", action_cutoff_jst="09:00"),
+        _morning_entry(pricing, "pricing_day", action_cutoff_jst="09:00"),
+        _morning_entry(add_business_days(pricing, 1), "pricing_day+1", action_cutoff_jst="09:00"),
+        _morning_entry(add_business_days(pricing, 2), "pricing_day+2", action_cutoff_jst="09:00"),
     ]
     if settlement_date:
-        schedule.append(_entry(as_date(settlement_date), "settlement", action_cutoff_jst="09:00"))
+        schedule.append(_morning_entry(as_date(settlement_date), "settlement", action_cutoff_jst="09:00"))
     schedule.extend(
         [
-            _entry(add_business_days(pricing, 25), "pricing_day+25bd", action_cutoff_jst="09:00"),
-            _entry(add_business_days(pricing, 26), "pricing_day+26bd", action_cutoff_jst="09:00"),
+            _morning_entry(add_business_days(pricing, 25), "pricing_day+25bd", action_cutoff_jst="09:00"),
+            _morning_entry(add_business_days(pricing, 26), "pricing_day+26bd", action_cutoff_jst="09:00"),
         ]
     )
     return _merge_sent(old_schedule, schedule)
@@ -75,7 +79,7 @@ def build_po_schedule(
 
 def build_ipo_schedule(listing_date: date | str, old_schedule: list[dict[str, Any]] | None = None) -> list[dict[str, Any]]:
     listing = as_date(listing_date)
-    return _merge_sent(old_schedule, [_entry(prev_business_day(listing), "listing-1bd"), _entry(listing, "listing_day")])
+    return _merge_sent(old_schedule, [_morning_entry(prev_business_day(listing), "listing-1bd"), _morning_entry(listing, "listing_day")])
 
 
 def build_bunbai_schedule(
@@ -86,9 +90,9 @@ def build_bunbai_schedule(
     return _merge_sent(
         old_schedule,
         [
-            _entry(prev_business_day(execution), "execution-1bd"),
-            _entry(execution, "execution_day", action_cutoff_jst="09:00"),
-            _entry(add_business_days(execution, 5), "execution+5bd", action_cutoff_jst="09:00"),
+            _morning_entry(prev_business_day(execution), "execution-1bd"),
+            _morning_entry(execution, "execution_day", action_cutoff_jst="09:00"),
+            _morning_entry(add_business_days(execution, 5), "execution+5bd", action_cutoff_jst="09:00"),
         ],
     )
 
@@ -185,6 +189,8 @@ def due_notifications(state: dict[str, Any], now: date | datetime | str) -> list
     target_date, target_time = _target_date_time(now)
     due: list[DueNotification] = []
     for event in state.get("events", []):
+        if event.get("type") in {"po", "ipo", "bunbai"} and target_time < time(6):
+            continue
         if event.get("detail", {}).get("canceled"):
             continue
         if isinstance(event.get("eligibility"), dict) and not is_eligible(event):

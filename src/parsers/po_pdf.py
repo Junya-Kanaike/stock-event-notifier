@@ -24,7 +24,7 @@ SIZE_LABELS = [
     "売出価格総額",
 ]
 SHARE_PATTERN = re.compile(r"([0-9][0-9,]*)\s*(?:株|口)")
-PO_PARSER_VERSION = 3
+PO_PARSER_VERSION = 4
 
 
 def classify_po_kind(title: str, text: str = "") -> str:
@@ -78,7 +78,7 @@ def extract_dilution_pct(text: str) -> float | None:
     normalized = clean_text(text)
     patterns = [
         r"希薄化率[^0-9]{0,20}([0-9]+(?:\.[0-9]+)?)\s*%",
-        r"発行済株式(?:総数)?[^%]{0,80}?([0-9]+(?:\.[0-9]+)?)\s*%",
+        r"発行済株式(?:総数)?(?:に対する割合|比)(?:[（(]自己株式を除く[）)])?[:：\s]*([0-9]+(?:\.[0-9]+)?)\s*%",
         r"発行済比[^0-9]{0,20}([0-9]+(?:\.[0-9]+)?)\s*%",
     ]
     for pattern in patterns:
@@ -139,6 +139,11 @@ def extract_share_breakdown(text: str, po_kind: str) -> dict[str, Any]:
     secondary = _secondary_sale_shares(compact)
     oa_marker_present = any(marker in compact for marker in ["オーバーアロットメント", "ＯＡによる売出し", "OAによる売出し"])
     oa = _oa_shares(compact) if oa_marker_present else 0
+    # An offering whose only secondary section is OA has no ordinary sale.
+    # In particular, a public-offering total must never be counted twice.
+    sale_headings = re.findall(r"(?:\d+[.．])?株式(?:の)?売出し[（(]([^）)]+)[）)]", compact)
+    if public is not None and sale_headings and all("オーバーアロットメント" in h for h in sale_headings):
+        secondary = 0
     # A REIT offering with OA has no separate secondary tranche. Do not count
     # the same OA units again as secondary units.
     if (secondary is None and public is not None and oa is not None
@@ -194,6 +199,11 @@ def _shares_after_labels(compact: str, labels: list[str], *, window: int = 220) 
 
 
 def _secondary_sale_shares(compact: str) -> int | None:
+    # Prefer the explicitly labelled total over seller-by-seller quantities.
+    # A seller table also contains the substring 売出株式数.
+    for match in re.finditer(r"売出株式の種類及び数(?:当社)?(?:普通)?株式([0-9][0-9,]*)株", compact):
+        if "オーバーアロットメント" not in compact[max(0, match.start() - 100):match.start()]:
+            return int(match.group(1).replace(",", ""))
     # pdfplumber may emit a two-column heading as
     # "売出株式の <value> 種類及び数".  Capture that total before
     # scanning shareholder rows, whose first value is not the offering total.
@@ -218,14 +228,69 @@ def _secondary_sale_shares(compact: str) -> int | None:
             if position < 0:
                 break
             prefix = compact[max(0, position - 100) : position]
-            if "オーバーアロットメント" not in prefix:
+            if "オーバーアロットメント" not in prefix and not prefix.endswith("売出人及び"):
                 snippet = compact[position + len(label) : position + len(label) + 260]
+                # A pricing-only document need not repeat the tranche count.
+                # The unit-price prefix 1株につき is never an offering count.
+                snippet = re.split(r"売出価格|売出価額|引受価額", snippet)[0]
                 match = SHARE_PATTERN.search(snippet)
                 if match:
                     return int(match.group(1).replace(",", ""))
             start = position + len(label)
-    combined = re.search(r"合計による(?:当社)?(?:普通)?株式([0-9][0-9,]*)株", compact)
-    return int(combined.group(1).replace(",", "")) if combined else None
+    return None
+
+
+def _po_dates(text: str, year: int) -> tuple[date | None, str | None, date | None, str | None]:
+    """Read labelled date fields, without crossing into unrelated paragraphs."""
+    compact = re.sub(r"\s+", "", normalize_digits(text))
+    # The date range may precede the definition of 発行価格等決定日.
+    pricing_pattern = re.compile(
+        r"(20\d{2}年\d{1,2}月\d{1,2}日.{0,15}?から.{0,8}?"
+        r"(?:20\d{2}年)?\d{1,2}月\d{1,2}日.{0,35}?"
+        r"(?:発行価格等決定日|売出価格等決定日))"
+    )
+    match = pricing_pattern.search(compact)
+    if match:
+        pricing_raw = match.group(1)
+        dates = find_dates(pricing_raw, default_year=year)
+        pricing_date = dates[0] if dates else None
+    else:
+        pricing_date, pricing_raw = first_date_near_keywords(
+            text, ["発行価格等決定日", "発行価格等の決定日", "価格決定日", "発行価格", "売出価格"],
+            default_year=year, fallback_any=False,
+        )
+    settlement_date = settlement_raw = None
+    payment_date = payment_raw = None
+    # Demand a date immediately after the field, rather than the next date
+    # anywhere in a 180-character window (e.g. a buyback's end date).
+    for label in ["受渡期日", "受渡日", "払込期日", "払込日"]:
+        pattern = rf"{label}(?:は|[:：])?((?:20\d{{2}}年)?\d{{1,2}}月\d{{1,2}}日[^。]{{0,85}})"
+        for found in re.finditer(pattern, compact):
+            dates = find_dates(found.group(1), default_year=year)
+            if not dates:
+                continue
+            if label.startswith("払込"):
+                if payment_date is None:
+                    payment_date, payment_raw = dates[0], label + found.group(1)
+            elif settlement_date is None:
+                settlement_date, settlement_raw = dates[0], label + found.group(1)
+    if settlement_date is None and payment_date is not None:
+        if re.search(r"受渡(?:期日|日)(?:は)?上記払込期日の翌営業日", compact):
+            settlement_date = add_business_days(payment_date, 1)
+            end = _range_end(payment_raw, payment_date, year)
+            settlement_raw = "受渡期日" + settlement_date.isoformat()
+            if end:
+                settlement_raw += "から" + add_business_days(end, 1).isoformat()
+            settlement_raw += "（払込期日の翌営業日から計算）"
+        # A payment date alone is not proof of a settlement date. Leave the
+        # latter unknown unless the document supplies an explicit relationship.
+    if settlement_date is None:
+        # Retain a reference-only field so it is not replaced by a guessed
+        # date. A pricing-date + 5 business day expression is provisional.
+        match = re.search(r"受渡(?:期日|日)([^。]{0,80})", compact)
+        if match:
+            settlement_raw = match.group(0)
+    return pricing_date, pricing_raw, settlement_date, settlement_raw
 
 
 def _oa_shares(compact: str) -> int | None:
@@ -325,23 +390,12 @@ def parse_po_details(
 ) -> dict[str, Any]:
     default_year = disclosure_date.year
     source_stage = classify_source_stage(title)
-    pricing_date, pricing_raw = first_date_near_keywords(
-        text,
-        ["発行価格等決定日", "発行価格等の決定日", "価格決定日", "発行価格", "売出価格"],
-        default_year=default_year,
-        fallback_any=False,
-    )
+    pricing_date, pricing_raw, settlement_date, settlement_raw = _po_dates(text, default_year)
     if source_stage == "pricing":
         # 価格決定資料の本文には決定日が明記されないことが多い。
         # 開示日時を確定日として扱うのは呼び出し側の責務とする。
         pricing_date = None
         pricing_raw = None
-    settlement_date, settlement_raw = first_date_near_keywords(
-        text,
-        ["受渡期日", "受渡日", "払込期日", "払込日"],
-        default_year=default_year,
-        fallback_any=False,
-    )
     settlement_reference_only = has_ambiguous_settlement_reference(settlement_raw)
     if settlement_reference_only:
         settlement_date = None
@@ -389,7 +443,7 @@ def parse_po_details(
     pricing_confirmed = bool(pricing_date and has_confirmed_price(text))
     settlement_is_provisional = bool(settlement_date_end or (settlement_raw and "予定" in settlement_raw))
 
-    dilution_pct = extract_dilution_pct(text)
+    dilution_pct = extract_dilution_pct(text) if po_kind != "secondary" else None
     details: dict[str, Any] = {
         "parser_version": PO_PARSER_VERSION,
         "po_kind": po_kind,

@@ -23,7 +23,7 @@ from src.core.po import (
     refresh_calculated_po_size,
 )
 from src.core.reconcile import reconcile_event_state
-from src.core.operations import record_tdnet_date, record_run
+from src.core.operations import record_tdnet_date, record_run, stale_sources
 from src.core.scheduler import build_bunbai_schedule, build_po_schedule, build_split_schedule
 from src.core.split import apply_jpx_ex_right, apply_traders_split
 from src.core.store import (
@@ -150,11 +150,14 @@ def main(argv: list[str] | None = None) -> int:
         success_count=notifier.success_count,
         failure_count=notifier.failure_count,
     )
-    record_run(state, "poll_tdnet", started_at, datetime.now(JST), failed=bool(source_failures or notifier.failure_count))
+    stale = stale_sources(state, datetime.now(JST))
+    record_run(state, "poll_tdnet", started_at, datetime.now(JST), failed=bool(source_failures or stale or notifier.failure_count))
     if changed and not args.dry_run:
         save_state(state)
     if source_failures:
         raise RuntimeError("; ".join(source_failures))
+    if stale:
+        raise RuntimeError("データ鮮度の上限超過: " + "; ".join(stale))
     if notifier.failure_count:
         raise RuntimeError("Slack通知に失敗しました。保存済みstateを確認してください")
     return 0

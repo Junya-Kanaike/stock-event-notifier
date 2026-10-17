@@ -17,6 +17,7 @@ HCM_SOURCE = "https://www.release.tdnet.info/inbs/140120260826526681.pdf"
 
 
 def repair_verified_event(event: dict[str, Any]) -> None:
+    _repair_october_po(event)
     detail = event.setdefault("detail", {})
     if (event.get("id") == "po-3455-2026-08-19"
             and detail.get("pricing_date") == "2026-08-26"
@@ -64,3 +65,54 @@ def repair_verified_event(event: dict[str, Any]) -> None:
             detail["record_date"] = record_date.isoformat()
             if detail.get("rights_final_confirmed") and detail.get("rights_final_date"):
                 detail["ex_right_date"] = add_business_days(detail["rights_final_date"], 1).isoformat()
+
+
+def _repair_october_po(event: dict[str, Any]) -> None:
+    """Repair only audited disclosures, never a later pricing/correction PDF."""
+    audited = {
+        "po-6407-2026-10-07": ("140120261007547282", {
+            "public_offering_shares": None, "secondary_sale_shares": 3570800,
+            "oa_shares": 535500, "total_offered_shares": 4106300,
+            "pricing_date": "2026-10-19", "pricing_date_end": "2026-10-22",
+            "pricing_date_raw": "2026年10月19日から2026年10月22日までの売出価格等決定日",
+            "pricing_date_confirmed": False, "pricing_date_status": "provisional",
+            "settlement_date": "2026-10-26", "settlement_date_end": "2026-10-29",
+            "settlement_date_raw": "受渡期日2026年10月26日から2026年10月29日（売出価格等決定日の5営業日後）",
+            "settlement_date_status": "provisional", "settlement_estimated": False,
+        }),
+        "po-5076-2026-10-02": ("140120261001544031", {
+            "public_offering_shares": 47826100, "secondary_sale_shares": 0,
+            "oa_shares": 7173900, "total_offered_shares": 55000000,
+            "pricing_date": "2026-10-21", "pricing_date_end": "2026-10-26",
+            "pricing_date_raw": "2026年10月21日から2026年10月26日までの発行価格等決定日",
+            "pricing_date_confirmed": False, "pricing_date_status": "provisional",
+            "settlement_date": "2026-10-28", "settlement_date_end": "2026-11-02",
+            "settlement_date_raw": "受渡期日2026年10月28日から2026年11月2日（払込期日の翌営業日から計算）",
+            "settlement_date_status": "provisional", "settlement_estimated": False,
+        }),
+        "po-4099-2026-09-01": ("140120260909533713", {
+            # 9,806,872,000 / 2,062 = 4,756,000 ordinary-sale shares.
+            "public_offering_shares": None, "secondary_sale_shares": 4756000,
+            "oa_shares": 713400, "total_offered_shares": 5469400,
+        }),
+    }
+    record = audited.get(event.get("id"))
+    detail = event.setdefault("detail", {})
+    if not record or detail.get("canceled") or detail.get("parser_version", 0) >= 4:
+        return
+    disclosure_id, fields = record
+    source = "https://www.release.tdnet.info/inbs/" + disclosure_id + ".pdf"
+    if (event.get("latest_pdf_url") or event.get("pdf_url")) != source:
+        return
+    event.setdefault("repair_history", []).append({
+        "repair": "2026-10-17-po-table-fields", "source": source,
+        "previous_detail": deepcopy(detail), "previous_schedule": deepcopy(event.get("schedule", [])),
+    })
+    detail.update(fields)
+    detail.update(parser_version=4, share_breakdown_complete=True, oa_marker_present=True,
+                  dilution_pct=None, dilution_status="unavailable", verified_calculation_source=source)
+    refresh_calculated_po_size(detail)
+    apply_eligibility(event)
+    if detail.get("pricing_date") and event.get("eligibility", {}).get("status") == "eligible":
+        event["schedule"] = build_po_schedule(detail["pricing_date"], detail.get("settlement_date"),
+                                             old_schedule=event.get("schedule", []))

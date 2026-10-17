@@ -6,6 +6,20 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
 class WorkflowConfigTest(unittest.TestCase):
+    def test_production_jobs_load_latest_main_after_waiting_for_state_lock(self):
+        for name in ["poll_tdnet", "daily_morning", "timed_notifications"]:
+            workflow = (REPO_ROOT / ".github/workflows" / (name + ".yml")).read_text()
+            self.assertIn("ref: main", workflow)
+            self.assertIn("if: github.ref == 'refs/heads/main'", workflow)
+
+    def test_continuous_dispatcher_is_opt_in_and_has_a_separate_lock(self):
+        workflow = (REPO_ROOT / ".github/workflows/continuous_dispatcher.yml").read_text()
+        self.assertIn("vars.NOTIFIER_CONTINUOUS_DISPATCHER == 'true'", workflow)
+        self.assertIn("!github.event.repository.private", workflow)
+        self.assertIn("group: notifier-continuous-dispatcher", workflow)
+        self.assertNotIn("group: event-state-", workflow)
+        self.assertIn("timeout-minutes: 180", workflow)
+
     def test_poll_schedule_uses_off_peak_ten_minute_offsets(self):
         workflow = (REPO_ROOT / ".github" / "workflows" / "poll_tdnet.yml").read_text(encoding="utf-8")
 
