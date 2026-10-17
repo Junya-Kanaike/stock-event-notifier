@@ -104,7 +104,8 @@ class ParserTest(unittest.TestCase):
         self.assertEqual(detail["po_kind"], "secondary")
         self.assertEqual(detail["size_oku"], 231.35435)
         self.assertEqual(detail["size_status"], "confirmed")
-        self.assertEqual(detail["dilution_pct"], 16.29)
+        # The 16.29% is a secondary-sale ownership ratio, not new dilution.
+        self.assertIsNone(detail["dilution_pct"])
         self.assertEqual(detail["pricing_date"], "2026-07-14")
         self.assertTrue(detail["pricing_date_confirmed"])
         self.assertEqual(detail["pricing_date_status"], "confirmed")

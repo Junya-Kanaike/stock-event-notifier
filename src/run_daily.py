@@ -15,7 +15,7 @@ from src.collectors.traders_split import CACHE_NAME as TRADERS_SPLIT_CACHE_NAME,
 from src.collectors.utils import cache_fetched_at
 from src.core.bizday import add_business_days, as_date, is_business_day, now_jst, today_jst
 from src.core.eligibility import ELIGIBLE, PENDING
-from src.core.operations import record_delivery, record_run
+from src.core.operations import record_delivery, record_run, stale_sources
 from src.core.reconcile import reconcile_event_state
 from src.core.scheduler import build_bunbai_schedule, build_ipo_schedule, due_notifications
 from src.core.store import (
@@ -95,7 +95,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         master = fetch_master(force=True)
         changed |= record_cached_source_success(state, "jpx_master", MASTER_CACHE_NAME)
-        report_cache_refresh(notifier, "JPX銘柄マスター", MASTER_CACHE_NAME, master_cache_before, dry_run=args.dry_run)
+        report_cache_refresh(notifier, "JPX銘柄マスター", MASTER_CACHE_NAME, master_cache_before, dry_run=args.dry_run, failures=failures)
     except Exception as exc:
         master = {}
         failures.append(f"JPX銘柄マスター取得失敗: {exc}")
@@ -105,7 +105,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         margin = fetch_margin(force=True)
         changed |= record_cached_source_success(state, "jpx_margin", MARGIN_CACHE_NAME)
-        report_cache_refresh(notifier, "JPX信用区分", MARGIN_CACHE_NAME, margin_cache_before, dry_run=args.dry_run)
+        report_cache_refresh(notifier, "JPX信用区分", MARGIN_CACHE_NAME, margin_cache_before, dry_run=args.dry_run, failures=failures)
     except Exception as exc:
         margin = {}
         failures.append(f"JPX信用区分取得失敗: {exc}")
@@ -121,6 +121,7 @@ def main(argv: list[str] | None = None) -> int:
             TRADERS_SPLIT_CACHE_NAME,
             traders_cache_before,
             dry_run=args.dry_run,
+            failures=failures,
         )
         changed |= reconcile_split_traders(state, traders_splits, notifier, as_of=target_date)
     except Exception as exc:
@@ -137,6 +138,7 @@ def main(argv: list[str] | None = None) -> int:
             EX_RIGHTS_CACHE_NAME,
             ex_rights_cache_before,
             dry_run=args.dry_run,
+            failures=failures,
         )
         changed |= reconcile_split_ex_rights(state, ex_rights, notifier)
     except Exception as exc:
@@ -149,7 +151,7 @@ def main(argv: list[str] | None = None) -> int:
             state, master, margin, as_of=target_date, force_refresh=True, notifier=notifier
         )
         changed |= record_cached_source_success(state, "jpx_ipo", IPO_CACHE_NAME)
-        report_cache_refresh(notifier, "JPX IPO", IPO_CACHE_NAME, ipo_cache_before, dry_run=args.dry_run)
+        report_cache_refresh(notifier, "JPX IPO", IPO_CACHE_NAME, ipo_cache_before, dry_run=args.dry_run, failures=failures)
         changed |= did_change
         if did_change and not args.dry_run:
             save_state(state)
@@ -163,7 +165,7 @@ def main(argv: list[str] | None = None) -> int:
             state, master, margin, as_of=target_date, force_refresh=True, notifier=notifier
         )
         changed |= record_cached_source_success(state, "jpx_bunbai", BUNBAI_CACHE_NAME)
-        report_cache_refresh(notifier, "JPX立会外分売", BUNBAI_CACHE_NAME, bunbai_cache_before, dry_run=args.dry_run)
+        report_cache_refresh(notifier, "JPX立会外分売", BUNBAI_CACHE_NAME, bunbai_cache_before, dry_run=args.dry_run, failures=failures)
         changed |= did_change
         if did_change and not args.dry_run:
             save_state(state)
@@ -530,15 +532,25 @@ def send_daily_system_summary(
     unresolved: dict[str, set[str]] = {}
     po_missing: list[str] = []
     split_missing: list[str] = []
+    completed_metadata = 0
+    urgent: list[str] = []
     for event in state.get("events", []):
         event_type = str(event.get("type") or "event")
         code = str(event.get("code") or "不明")
         if event.get("detail", {}).get("canceled") or event.get("eligibility", {}).get("status") == "excluded":
             continue
+        schedule = event.get("schedule", [])
+        completed = bool(schedule) and all(item.get("sent") or item.get("resolution") for item in schedule)
+        if completed and max(str(item.get("date", "")) for item in schedule) < current.date().isoformat():
+            if event_type == "split" and not event.get("detail", {}).get("record_date"):
+                completed_metadata += 1
+            continue
+        if event.get("eligibility", {}).get("status") == ELIGIBLE and event_type == "po" and not schedule:
+            urgent.append(f"PO {code}: 対象確定だが予定0件（価格決定日等を確認）")
         if event.get("eligibility", {}).get("status") == PENDING:
             pending.setdefault(event_type, []).append(code)
             unresolved.setdefault(event_type, set()).add(code)
-        if any(item.get("overdue_unresolved") for item in event.get("schedule", [])):
+        if any(item.get("overdue_unresolved") and not item.get("resolution") for item in event.get("schedule", [])):
             overdue.append(f"{event_type}:{code}")
             unresolved.setdefault(event_type, set()).add(code)
         detail = event.get("detail", {})
@@ -572,6 +584,13 @@ def send_daily_system_summary(
         f"当日の通知失敗: {failure_count}件",
         f"今回の処理失敗: {len(failures)}件",
     ]
+    if urgent:
+        lines[1:1] = ["要対応: " + " / ".join(urgent[:10])]
+    stale = stale_sources(state, current)
+    if stale:
+        lines[1:1] = ["データ鮮度の問題: " + " / ".join(stale)]
+    if completed_metadata:
+        lines.append(f"完了済み案件の補足情報不足: 分割 {completed_metadata}件（通知の未解決件数には含めない）")
     if not is_today:
         lines.append(f"[遅延集約] {current.isoformat()}時点の状態を表示。通知件数は対象日の保存済み記録。")
     lines.append(
@@ -647,6 +666,7 @@ def report_cache_refresh(
     previous_fetched_at: Any,
     *,
     dry_run: bool,
+    failures: list[str] | None = None,
 ) -> None:
     if dry_run:
         return
@@ -654,7 +674,10 @@ def report_cache_refresh(
     if current_fetched_at is not None and current_fetched_at != previous_fetched_at:
         return
     timestamp = previous_fetched_at.isoformat() if previous_fetched_at is not None else "不明"
-    notify_system_safely(notifier, f"{label}の日次更新に失敗し、既存キャッシュを使用しました（取得日時: {timestamp}）")
+    message = f"{label}の日次更新に失敗し、既存キャッシュを使用しました（取得日時: {timestamp}）"
+    if failures is not None:
+        failures.append(message)
+    notify_system_safely(notifier, message)
 
 
 def record_cached_source_success(state: dict[str, Any], source: str, cache_name: str) -> bool:

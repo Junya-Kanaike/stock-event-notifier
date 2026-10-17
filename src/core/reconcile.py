@@ -24,6 +24,8 @@ def reconcile_event_state(state: dict[str, Any], *, as_of: date | None = None) -
     repair_day = as_of or today_jst()
     for event in events:
         for item in event.get("schedule", []):
+            if event.get("type") in {"po", "ipo", "bunbai"}:
+                item.setdefault("not_before_jst", "06:00")
             if (item.get("sent") and not item.get("sent_at")
                     and not item.get("suppressed_reason")
                     and str(item.get("date", "")) > repair_day.isoformat()):

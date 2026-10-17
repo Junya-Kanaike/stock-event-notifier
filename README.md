@@ -72,9 +72,12 @@ python -m src.run_daily --date 2026-07-16 --dry-run
 - `.github/workflows/timed_notifications.yml`: 時刻指定通知と日次system集約
 - `.github/workflows/test_notify.yml`: Webhook疎通確認
 - `.github/workflows/ci.yml`: 単体テスト、構文確認、依存関係監査
+- `.github/workflows/continuous_dispatcher.yml`: 明示有効化した場合のみ、GitHub上で継続的に不足した起動を補う。[設定・停止・制約](docs/CONTINUOUS_DISPATCHER.md)
 
 状態変更は `scripts/commit_state.sh` がcommitし、競合時はrebaseして最大3回pushを試行します。
 単体テストはコード変更時のCIへ集約し、定期通知workflowではデータ取得と通知だけを実行します。
+
+PO・IPO・分売の予定通知は深夜送信を避け、06:00 JST以降に送信します。日次の取得失敗で古いキャッシュを使った場合は、警告・失敗記録を残して他の処理を続けます。終了済み分割の補足情報不足は、未解決の通知予定と区別して表示します。
 
 標準cronはTDnetをJST平日08:03から19:53まで10分間隔、日次処理を05:37に設定しています。寄り付き向け通知は06:03から08:43まで20分ごとに再試行し、`not_before_jst`を満たした最初の実行だけが送信します。GitHub Actionsはscheduled eventの実行時刻を保証しないため、長い事前バッファと複数回の再試行を使います。
 

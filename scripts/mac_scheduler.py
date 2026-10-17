@@ -18,6 +18,16 @@ import sys
 from zoneinfo import ZoneInfo
 import jpholiday
 
+
+def health_warnings(state, now):
+    # The installed Mac helper can run without the source checkout. Keep its
+    # original standalone operation; the cloud controller has the full module.
+    try:
+        from src.core.operations import stale_sources, late_delivery_warnings
+    except ImportError:
+        return []
+    return stale_sources(state, now) + late_delivery_warnings(state, now)
+
 JST = ZoneInfo("Asia/Tokyo")
 REPOSITORY = "Junya-Kanaike/stock-event-notifier"
 LABEL = "jp.stock-event-notifier.watchdog"
@@ -107,6 +117,7 @@ def inspect_remote(gh, repo, now, local):
                     if data.get("status") != "success"]
     if failed_dates:
         plan["warnings"].append("TDnet取得未完了日: " + ", ".join(sorted(failed_dates)))
+    plan["warnings"].extend(health_warnings(state, now))
     return plan
 
 

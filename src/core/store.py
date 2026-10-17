@@ -215,7 +215,7 @@ def archive_completed_events(
         except ValueError:
             announced = None
         terminal = event.get("eligibility", {}).get("status") == "excluded" or event.get("detail", {}).get("canceled")
-        if (dates and all(item.get("sent") for item in schedule) and max(dates) < cutoff) or (
+        if (dates and all(item.get("sent") or item.get("resolution") for item in schedule) and max(dates) < cutoff) or (
             terminal and announced and announced < cutoff
         ):
             completed.append(event)

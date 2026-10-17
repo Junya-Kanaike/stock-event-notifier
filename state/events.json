@@ -3758,7 +3758,7 @@
       "id": "ipo-619A-2026-09-16",
       "type": "ipo",
       "code": "619A",
-      "name": "（株）オリバー",
+      "name": "オリバー",
       "market": "スタンダード",
       "margin": "信用",
       "announced_at": "2026-08-14T08:03:42.740531+09:00",
@@ -3770,12 +3770,14 @@
         {
           "date": "2026-09-15",
           "label": "listing-1bd",
-          "sent": true
+          "sent": true,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-16",
           "label": "listing_day",
-          "sent": true
+          "sent": true,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -3788,7 +3790,7 @@
       "id": "ipo-622A-2026-09-18",
       "type": "ipo",
       "code": "622A",
-      "name": "（株）テクノクラフト",
+      "name": "テクノクラフト",
       "market": "スタンダード",
       "margin": "信用",
       "announced_at": "2026-08-17T07:37:03.759035+09:00",
@@ -3800,7 +3802,8 @@
         {
           "date": "2026-09-17",
           "label": "listing-1bd",
-          "sent": true
+          "sent": true,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-18",
@@ -3808,7 +3811,8 @@
           "sent": true,
           "sent_at": "2026-09-18T00:31:21.924869+09:00",
           "sent_by": "35240753311",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -3821,7 +3825,7 @@
       "id": "ipo-623A-2026-09-18",
       "type": "ipo",
       "code": "623A",
-      "name": "（株）ベルテックス",
+      "name": "ベルテックス",
       "market": "スタンダード",
       "margin": "信用",
       "announced_at": "2026-08-17T07:37:03.759712+09:00",
@@ -3833,7 +3837,8 @@
         {
           "date": "2026-09-17",
           "label": "listing-1bd",
-          "sent": true
+          "sent": true,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-18",
@@ -3841,7 +3846,8 @@
           "sent": true,
           "sent_at": "2026-09-18T00:31:22.119742+09:00",
           "sent_by": "35240753311",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -3854,7 +3860,7 @@
       "id": "ipo-621A-2026-09-16",
       "type": "ipo",
       "code": "621A",
-      "name": "（株）オーディオストック",
+      "name": "オーディオストック",
       "market": "グロース",
       "margin": "信用",
       "announced_at": "2026-08-17T07:37:03.760169+09:00",
@@ -3866,12 +3872,14 @@
         {
           "date": "2026-09-15",
           "label": "listing-1bd",
-          "sent": true
+          "sent": true,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-16",
           "label": "listing_day",
-          "sent": true
+          "sent": true,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -3884,7 +3892,7 @@
       "id": "ipo-625A-2026-09-17",
       "type": "ipo",
       "code": "625A",
-      "name": "（株）Skyfall",
+      "name": "Ｓｋｙｆａｌｌ",
       "market": "グロース",
       "margin": "信用",
       "announced_at": "2026-08-18T07:41:52.051008+09:00",
@@ -3896,12 +3904,14 @@
         {
           "date": "2026-09-16",
           "label": "listing-1bd",
-          "sent": true
+          "sent": true,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-17",
           "label": "listing_day",
-          "sent": true
+          "sent": true,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -3914,7 +3924,7 @@
       "id": "ipo-627A-2026-09-18",
       "type": "ipo",
       "code": "627A",
-      "name": "akippa（株）",
+      "name": "ａｋｉｐｐａ",
       "market": "スタンダード",
       "margin": "信用",
       "announced_at": "2026-08-19T07:42:25.340591+09:00",
@@ -3926,7 +3936,8 @@
         {
           "date": "2026-09-17",
           "label": "listing-1bd",
-          "sent": true
+          "sent": true,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-18",
@@ -3934,7 +3945,8 @@
           "sent": true,
           "sent_at": "2026-09-18T00:31:22.314160+09:00",
           "sent_by": "35240753311",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -4007,28 +4019,48 @@
           "label": "pricing_day",
           "sent": false,
           "action_cutoff_jst": "09:00",
-          "overdue_unresolved": true
+          "not_before_jst": "06:00",
+          "resolution": {
+            "status": "missed_reviewed",
+            "at": "2026-10-17T17:21:25.265000+09:00",
+            "reason": "2026-10-17監査で未送信を確認。回収期限を超過したため、過去の売買指示を再送せず確認済みとして保管。"
+          }
         },
         {
           "date": "2026-08-27",
           "label": "pricing_day+1",
           "sent": false,
           "action_cutoff_jst": "09:00",
-          "overdue_unresolved": true
+          "not_before_jst": "06:00",
+          "resolution": {
+            "status": "missed_reviewed",
+            "at": "2026-10-17T17:21:25.265131+09:00",
+            "reason": "2026-10-17監査で未送信を確認。回収期限を超過したため、過去の売買指示を再送せず確認済みとして保管。"
+          }
         },
         {
           "date": "2026-08-28",
           "label": "pricing_day+2",
           "sent": false,
           "action_cutoff_jst": "09:00",
-          "overdue_unresolved": true
+          "not_before_jst": "06:00",
+          "resolution": {
+            "status": "missed_reviewed",
+            "at": "2026-10-17T17:21:25.265133+09:00",
+            "reason": "2026-10-17監査で未送信を確認。回収期限を超過したため、過去の売買指示を再送せず確認済みとして保管。"
+          }
         },
         {
           "date": "2026-09-02",
           "label": "settlement",
           "sent": false,
           "action_cutoff_jst": "09:00",
-          "overdue_unresolved": true
+          "not_before_jst": "06:00",
+          "resolution": {
+            "status": "missed_reviewed",
+            "at": "2026-10-17T17:21:25.265135+09:00",
+            "reason": "2026-10-17監査で未送信を確認。回収期限を超過したため、過去の売買指示を再送せず確認済みとして保管。"
+          }
         },
         {
           "date": "2026-10-05",
@@ -4037,7 +4069,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-05T08:34:12.355299+09:00",
           "sent_by": "37244210426",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-06",
@@ -4046,7 +4079,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-06T03:52:40.059500+09:00",
           "sent_by": "37359241265",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260818522647.pdf",
@@ -4189,28 +4223,36 @@
           "label": "pricing_day",
           "sent": false,
           "action_cutoff_jst": "09:00",
-          "overdue_unresolved": true
+          "not_before_jst": "06:00",
+          "resolution": {
+            "status": "missed_reviewed",
+            "at": "2026-10-17T17:21:25.265137+09:00",
+            "reason": "2026-10-17監査で未送信を確認。回収期限を超過したため、過去の売買指示を再送せず確認済みとして保管。"
+          }
         },
         {
           "date": "2026-09-02",
           "label": "pricing_day+1",
           "sent": true,
           "action_cutoff_jst": "09:00",
-          "sent_at": "2026-09-09T10:18:15.108559+09:00"
+          "sent_at": "2026-09-09T10:18:15.108559+09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-03",
           "label": "pricing_day+2",
           "sent": true,
           "action_cutoff_jst": "09:00",
-          "sent_at": "2026-09-09T10:18:15.108559+09:00"
+          "sent_at": "2026-09-09T10:18:15.108559+09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-08",
           "label": "settlement",
           "sent": true,
           "action_cutoff_jst": "09:00",
-          "sent_at": "2026-09-09T10:18:15.108559+09:00"
+          "sent_at": "2026-09-09T10:18:15.108559+09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-09",
@@ -4219,7 +4261,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-09T01:59:47.357440+09:00",
           "sent_by": "37813083933",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-13",
@@ -4228,7 +4271,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-13T04:24:31.424342+09:00",
           "sent_by": "38297420855",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260819523356.pdf",
@@ -4497,26 +4541,30 @@
           "date": "2026-09-02",
           "label": "pricing_day",
           "sent": true,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-03",
           "label": "pricing_day+1",
           "sent": true,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-04",
           "label": "pricing_day+2",
           "sent": true,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-09",
           "label": "settlement",
           "sent": true,
           "action_cutoff_jst": "09:00",
-          "sent_at": "2026-09-09T00:03:06.536417+09:00"
+          "sent_at": "2026-09-09T00:03:06.536417+09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-13",
@@ -4525,7 +4573,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-13T04:24:31.668593+09:00",
           "sent_by": "38297420855",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-14",
@@ -4534,7 +4583,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-14T02:10:17.132062+09:00",
           "sent_by": "38436453484",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260821524618.pdf",
@@ -4566,7 +4616,7 @@
       "id": "ipo-634A-2026-09-25",
       "type": "ipo",
       "code": "634A",
-      "name": "（株）レイヤード",
+      "name": "レイヤード",
       "market": "スタンダード",
       "margin": "信用",
       "announced_at": "2026-08-25T07:45:06.105683+09:00",
@@ -4581,7 +4631,8 @@
           "sent": true,
           "sent_at": "2026-09-24T00:25:49.733564+09:00",
           "sent_by": "35881461582",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-25",
@@ -4589,7 +4640,8 @@
           "sent": true,
           "sent_at": "2026-09-25T00:48:02.034216+09:00",
           "sent_by": "36022791201",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -5148,27 +5200,31 @@
           "date": "2026-09-07",
           "label": "pricing_day",
           "sent": true,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-08",
           "label": "pricing_day+1",
           "sent": true,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-09",
           "label": "pricing_day+2",
           "sent": true,
           "action_cutoff_jst": "09:00",
-          "sent_at": "2026-09-09T00:03:06.536417+09:00"
+          "sent_at": "2026-09-09T00:03:06.536417+09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-14",
           "label": "settlement",
           "sent": true,
           "action_cutoff_jst": "09:00",
-          "sent_at": "2026-09-14T07:35:02.535404+09:00"
+          "sent_at": "2026-09-14T07:35:02.535404+09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-16",
@@ -5177,13 +5233,15 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-16T00:34:09.862289+09:00",
           "sent_by": "38761439458",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-19",
           "label": "pricing_day+26bd",
           "sent": false,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260827527452.pdf",
@@ -5304,7 +5362,7 @@
       "detail": {
         "po_kind": "secondary",
         "source_stage": "announcement",
-        "size_oku": 14.71032862,
+        "size_oku": 112.779028,
         "size_oku_min": null,
         "size_oku_max": null,
         "size_status": "confirmed",
@@ -5329,9 +5387,9 @@
         "missing_fields": [
           "dilution_pct"
         ],
-        "secondary_sale_shares": 1,
+        "secondary_sale_shares": 4756000,
         "oa_shares": 713400,
-        "total_offered_shares": 713401,
+        "total_offered_shares": 5469400,
         "share_breakdown_complete": true,
         "oa_marker_present": true,
         "latest_source_stage": "pricing",
@@ -5342,30 +5400,34 @@
         "reference_close_kind": "announcement_close",
         "estimated_size_yen": 13077335400,
         "estimated_size_oku": 130.773354,
-        "effective_size_yen": 1471032862,
-        "parser_version": 3,
+        "effective_size_yen": 11277902800,
+        "parser_version": 4,
         "issue_price_yen": 2062.0,
         "sale_price_yen": 2062.0,
         "offer_price_yen": 2062.0,
         "notification_tracking_started": true,
-        "confirmed_size_yen": 1471032862,
-        "confirmed_size_oku": 14.71032862,
+        "confirmed_size_yen": 11277902800,
+        "confirmed_size_oku": 112.779028,
         "eligible_notified": true,
         "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260901529515.pdf|https://www.release.tdnet.info/inbs/140120260909533713.pdf",
         "calculation_recovery_attempt_date": "2026-09-17",
-        "calculation_missing_fields": []
+        "calculation_missing_fields": [],
+        "public_offering_shares": null,
+        "verified_calculation_source": "https://www.release.tdnet.info/inbs/140120260909533713.pdf"
       },
       "schedule": [
         {
           "date": "2026-09-09",
           "label": "pricing_day",
           "sent": true,
+          "not_before_jst": "06:00",
           "action_cutoff_jst": "09:00"
         },
         {
           "date": "2026-09-10",
           "label": "pricing_day+1",
           "sent": true,
+          "not_before_jst": "06:00",
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-09-10T00:05:11.328003+09:00"
         },
@@ -5373,6 +5435,7 @@
           "date": "2026-09-11",
           "label": "pricing_day+2",
           "sent": true,
+          "not_before_jst": "06:00",
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-09-11T07:45:12.928975+09:00"
         },
@@ -5380,6 +5443,7 @@
           "date": "2026-09-16",
           "label": "settlement",
           "sent": true,
+          "not_before_jst": "06:00",
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-09-16T00:32:14.231641+09:00"
         },
@@ -5387,12 +5451,14 @@
           "date": "2026-10-20",
           "label": "pricing_day+25bd",
           "sent": false,
+          "not_before_jst": "06:00",
           "action_cutoff_jst": "09:00"
         },
         {
           "date": "2026-10-21",
           "label": "pricing_day+26bd",
           "sent": false,
+          "not_before_jst": "06:00",
           "action_cutoff_jst": "09:00"
         }
       ],
@@ -5420,7 +5486,108 @@
       "eligibility": {
         "status": "eligible",
         "reasons": []
-      }
+      },
+      "repair_history": [
+        {
+          "repair": "2026-10-17-po-table-fields",
+          "source": "https://www.release.tdnet.info/inbs/140120260909533713.pdf",
+          "previous_detail": {
+            "po_kind": "secondary",
+            "source_stage": "announcement",
+            "size_oku": 14.71032862,
+            "size_oku_min": null,
+            "size_oku_max": null,
+            "size_status": "confirmed",
+            "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
+            "share_count": null,
+            "oa_share_count": null,
+            "price_min_yen": null,
+            "price_max_yen": null,
+            "dilution_pct": null,
+            "dilution_status": "unavailable",
+            "pricing_date": "2026-09-09",
+            "pricing_date_end": "2026-09-09",
+            "pricing_date_raw": "売出価格未定（日本証券業協会の定める有価証券の引受け等に関する規則第25条に規定される方式により、2026年9月9日（水）から2026年9月14日（月）までの間のいずれかの日（以下、「売出価格等決定日」という。）の株式会社東京証券取引所における当社普通株式の普通取引の終値（当日に終値のない場合は、その日に先立つ直近日の終値）に0.90～1.00を乗じた価格（",
+            "pricing_date_confirmed": true,
+            "pricing_date_status": "confirmed",
+            "settlement_date": "2026-09-16",
+            "settlement_date_end": null,
+            "settlement_date_raw": "受渡期日2026年9月16日（水）（注）引受人は、引受価額で買取引受けを行い、売出価格で売出しを行います。2.当社株式の売出し（オーバーアロットメントによる売出し）（1）売出株式数713,400株（2）売出価格1株につき2,062円（3）売出価格の総額1,471,030,800円（4）申込期間2026年9月10日（木）～2026年9月11日（金）（5）受渡期",
+            "settlement_estimated": false,
+            "settlement_date_status": "confirmed",
+            "parse_warnings": [],
+            "missing_fields": [
+              "dilution_pct"
+            ],
+            "secondary_sale_shares": 1,
+            "oa_shares": 713400,
+            "total_offered_shares": 713401,
+            "share_breakdown_complete": true,
+            "oa_marker_present": true,
+            "latest_source_stage": "pricing",
+            "po_threshold_ever_met": true,
+            "reference_close_yen": 2391.0,
+            "reference_close_date": "2026-09-01",
+            "reference_close_source": "Yahoo Finance chart (raw close)",
+            "reference_close_kind": "announcement_close",
+            "estimated_size_yen": 13077335400,
+            "estimated_size_oku": 130.773354,
+            "effective_size_yen": 1471032862,
+            "parser_version": 3,
+            "issue_price_yen": 2062.0,
+            "sale_price_yen": 2062.0,
+            "offer_price_yen": 2062.0,
+            "notification_tracking_started": true,
+            "confirmed_size_yen": 1471032862,
+            "confirmed_size_oku": 14.71032862,
+            "eligible_notified": true,
+            "calculation_recovery_key": "3:https://www.release.tdnet.info/inbs/140120260901529515.pdf|https://www.release.tdnet.info/inbs/140120260909533713.pdf",
+            "calculation_recovery_attempt_date": "2026-09-17",
+            "calculation_missing_fields": []
+          },
+          "previous_schedule": [
+            {
+              "date": "2026-09-09",
+              "label": "pricing_day",
+              "sent": true,
+              "action_cutoff_jst": "09:00"
+            },
+            {
+              "date": "2026-09-10",
+              "label": "pricing_day+1",
+              "sent": true,
+              "action_cutoff_jst": "09:00",
+              "sent_at": "2026-09-10T00:05:11.328003+09:00"
+            },
+            {
+              "date": "2026-09-11",
+              "label": "pricing_day+2",
+              "sent": true,
+              "action_cutoff_jst": "09:00",
+              "sent_at": "2026-09-11T07:45:12.928975+09:00"
+            },
+            {
+              "date": "2026-09-16",
+              "label": "settlement",
+              "sent": true,
+              "action_cutoff_jst": "09:00",
+              "sent_at": "2026-09-16T00:32:14.231641+09:00"
+            },
+            {
+              "date": "2026-10-20",
+              "label": "pricing_day+25bd",
+              "sent": false,
+              "action_cutoff_jst": "09:00"
+            },
+            {
+              "date": "2026-10-21",
+              "label": "pricing_day+26bd",
+              "sent": false,
+              "action_cutoff_jst": "09:00"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "ipo-640A-2026-10-01",
@@ -5441,7 +5608,8 @@
           "sent": true,
           "sent_at": "2026-09-30T01:09:55.664790+09:00",
           "sent_by": "36595667297",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-01",
@@ -5449,7 +5617,8 @@
           "sent": true,
           "sent_at": "2026-10-01T01:06:55.992145+09:00",
           "sent_by": "36741802256",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -5477,7 +5646,8 @@
           "sent": true,
           "sent_at": "2026-09-30T01:09:55.873167+09:00",
           "sent_by": "36595667297",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-01",
@@ -5485,7 +5655,8 @@
           "sent": true,
           "sent_at": "2026-10-01T01:06:56.097699+09:00",
           "sent_by": "36741802256",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -5513,7 +5684,8 @@
           "sent": true,
           "sent_at": "2026-09-30T01:09:56.059841+09:00",
           "sent_by": "36595667297",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-01",
@@ -5521,7 +5693,8 @@
           "sent": true,
           "sent_at": "2026-10-01T01:06:56.190583+09:00",
           "sent_by": "36741802256",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -5534,7 +5707,7 @@
       "id": "ipo-646A-2026-09-29",
       "type": "ipo",
       "code": "646A",
-      "name": "クラサスケミカル（株）",
+      "name": "クラサスケミカル",
       "market": "スタンダード",
       "margin": "信用",
       "announced_at": "2026-09-08T09:26:01.801379+09:00",
@@ -5549,7 +5722,8 @@
           "sent": true,
           "sent_at": "2026-09-28T08:23:00.341686+09:00",
           "sent_by": "36358484146",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-29",
@@ -5557,7 +5731,8 @@
           "sent": true,
           "sent_at": "2026-09-29T02:50:02.368993+09:00",
           "sent_by": "36460896445",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -5585,7 +5760,8 @@
           "sent": true,
           "sent_at": "2026-10-14T02:10:16.608202+09:00",
           "sent_by": "38436453484",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-15",
@@ -5593,7 +5769,8 @@
           "sent": true,
           "sent_at": "2026-10-15T00:48:03.248202+09:00",
           "sent_by": "38592483853",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -5625,7 +5802,8 @@
           "sent": true,
           "sent_at": "2026-09-24T23:10:43.210781+09:00",
           "sent_by": "36010845314",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-25",
@@ -5634,7 +5812,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-09-25T00:48:01.792107+09:00",
           "sent_by": "36022791201",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-02",
@@ -5643,7 +5822,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-02T01:42:43.117262+09:00",
           "sent_by": "36894016955",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260909533574.pdf",
@@ -5703,7 +5883,8 @@
           "sent": true,
           "sent_at": "2026-09-24T00:25:49.520932+09:00",
           "sent_by": "35881461582",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-09-25",
@@ -5712,7 +5893,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-09-25T00:48:01.515191+09:00",
           "sent_by": "36022791201",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-02",
@@ -5721,7 +5903,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-02T01:42:43.002482+09:00",
           "sent_by": "36894016955",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260914536075.pdf",
@@ -6014,12 +6197,14 @@
         {
           "date": "2026-10-30",
           "label": "listing-1bd",
-          "sent": false
+          "sent": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-11-02",
           "label": "listing_day",
-          "sent": false
+          "sent": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -6044,12 +6229,14 @@
         {
           "date": "2026-10-29",
           "label": "listing-1bd",
-          "sent": false
+          "sent": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-30",
           "label": "listing_day",
-          "sent": false
+          "sent": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -6196,7 +6383,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-06T03:52:39.968243+09:00",
           "sent_by": "37359241265",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-07",
@@ -6205,7 +6393,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-07T01:18:07.717467+09:00",
           "sent_by": "37494590588",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-08",
@@ -6214,7 +6403,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-08T02:03:31.744807+09:00",
           "sent_by": "37655704685",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-14",
@@ -6223,19 +6413,22 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-14T02:10:16.872307+09:00",
           "sent_by": "38436453484",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-11-12",
           "label": "pricing_day+25bd",
           "sent": false,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-11-13",
           "label": "pricing_day+26bd",
           "sent": false,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260924539460.pdf",
@@ -6398,7 +6591,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-07T01:18:07.959256+09:00",
           "sent_by": "37494590588",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-08",
@@ -6407,7 +6601,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-08T02:03:31.941307+09:00",
           "sent_by": "37655704685",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-09",
@@ -6416,7 +6611,8 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-09T01:59:47.142856+09:00",
           "sent_by": "37813083933",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-15",
@@ -6425,19 +6621,22 @@
           "action_cutoff_jst": "09:00",
           "sent_at": "2026-10-15T00:48:03.341662+09:00",
           "sent_by": "38592483853",
-          "reference_only": false
+          "reference_only": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-11-13",
           "label": "pricing_day+25bd",
           "sent": false,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-11-16",
           "label": "pricing_day+26bd",
           "sent": false,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260928540928.pdf",
@@ -6482,12 +6681,14 @@
         {
           "date": "2026-11-02",
           "label": "listing-1bd",
-          "sent": false
+          "sent": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-11-04",
           "label": "listing_day",
-          "sent": false
+          "sent": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -6590,12 +6791,14 @@
         {
           "date": "2026-11-05",
           "label": "listing-1bd",
-          "sent": false
+          "sent": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-11-06",
           "label": "listing_day",
-          "sent": false
+          "sent": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -6613,10 +6816,10 @@
       "margin": "貸借",
       "announced_at": "2026-10-02T16:00:00+09:00",
       "detail": {
-        "parser_version": 3,
+        "parser_version": 4,
         "po_kind": "both",
         "source_stage": "announcement",
-        "size_oku": 2771.6775255,
+        "size_oku": 1482.525,
         "size_oku_min": null,
         "size_oku_max": null,
         "size_status": "estimated",
@@ -6626,43 +6829,87 @@
         "price_min_yen": null,
         "price_max_yen": null,
         "public_offering_shares": 47826100,
-        "secondary_sale_shares": 47826100,
+        "secondary_sale_shares": 0,
         "oa_shares": 7173900,
-        "total_offered_shares": 102826100,
+        "total_offered_shares": 55000000,
         "share_breakdown_complete": true,
         "oa_marker_present": true,
         "issue_price_yen": null,
         "sale_price_yen": null,
         "offer_price_yen": null,
-        "dilution_pct": 80.61,
-        "dilution_status": "confirmed",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": "2026-10-21",
+        "pricing_date_end": "2026-10-26",
+        "pricing_date_raw": "2026年10月21日から2026年10月26日までの発行価格等決定日",
         "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": "2026-10-27",
-        "settlement_date_end": "2026-10-30",
-        "settlement_date_raw": "払込期日2026年10月27日（火）から2026年10月30日（金）までの間のいずれかの日。ただし、発行価格等決定日の4営業日後の日とする。(8)受渡期日上記払込期日の翌営業日とする。(9)申込証拠金1株につき発行価格（募集価格）と同一の金額とする。(10)申込株数単位100株(11)払込金額、増加する資本金及び資本準備金の額、発行価格（募集価格）、その他公",
+        "pricing_date_status": "provisional",
+        "settlement_date": "2026-10-28",
+        "settlement_date_end": "2026-11-02",
+        "settlement_date_raw": "受渡期日2026年10月28日から2026年11月2日（払込期日の翌営業日から計算）",
         "settlement_estimated": false,
         "settlement_date_status": "provisional",
         "parse_warnings": [],
         "missing_fields": [
-          "pricing_date"
+          "dilution_pct"
         ],
         "notification_tracking_started": true,
         "reference_close_yen": 2695.5,
         "reference_close_date": "2026-10-02",
         "reference_close_source": "Yahoo Finance chart (raw close)",
         "reference_close_kind": "announcement_close",
-        "estimated_size_yen": 277167752550,
-        "estimated_size_oku": 2771.6775255,
-        "effective_size_yen": 277167752550,
+        "estimated_size_yen": 148252500000,
+        "estimated_size_oku": 1482.525,
+        "effective_size_yen": 148252500000,
         "po_threshold_ever_met": true,
         "calculation_missing_fields": [],
-        "eligible_notified": true
+        "eligible_notified": true,
+        "verified_calculation_source": "https://www.release.tdnet.info/inbs/140120261001544031.pdf"
       },
-      "schedule": [],
+      "schedule": [
+        {
+          "date": "2026-10-21",
+          "label": "pricing_day",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-10-22",
+          "label": "pricing_day+1",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-10-23",
+          "label": "pricing_day+2",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-10-28",
+          "label": "settlement",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-11-27",
+          "label": "pricing_day+25bd",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-11-30",
+          "label": "pricing_day+26bd",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261001544031.pdf",
       "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261001544031.pdf",
       "source_title": "新株式発行及び株式の売出しに関するお知らせ",
@@ -6679,7 +6926,64 @@
       "eligibility": {
         "status": "eligible",
         "reasons": []
-      }
+      },
+      "repair_history": [
+        {
+          "repair": "2026-10-17-po-table-fields",
+          "source": "https://www.release.tdnet.info/inbs/140120261001544031.pdf",
+          "previous_detail": {
+            "parser_version": 3,
+            "po_kind": "both",
+            "source_stage": "announcement",
+            "size_oku": 2771.6775255,
+            "size_oku_min": null,
+            "size_oku_max": null,
+            "size_status": "estimated",
+            "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+            "share_count": null,
+            "oa_share_count": null,
+            "price_min_yen": null,
+            "price_max_yen": null,
+            "public_offering_shares": 47826100,
+            "secondary_sale_shares": 47826100,
+            "oa_shares": 7173900,
+            "total_offered_shares": 102826100,
+            "share_breakdown_complete": true,
+            "oa_marker_present": true,
+            "issue_price_yen": null,
+            "sale_price_yen": null,
+            "offer_price_yen": null,
+            "dilution_pct": 80.61,
+            "dilution_status": "confirmed",
+            "pricing_date": null,
+            "pricing_date_end": null,
+            "pricing_date_raw": null,
+            "pricing_date_confirmed": false,
+            "pricing_date_status": "unavailable",
+            "settlement_date": "2026-10-27",
+            "settlement_date_end": "2026-10-30",
+            "settlement_date_raw": "払込期日2026年10月27日（火）から2026年10月30日（金）までの間のいずれかの日。ただし、発行価格等決定日の4営業日後の日とする。(8)受渡期日上記払込期日の翌営業日とする。(9)申込証拠金1株につき発行価格（募集価格）と同一の金額とする。(10)申込株数単位100株(11)払込金額、増加する資本金及び資本準備金の額、発行価格（募集価格）、その他公",
+            "settlement_estimated": false,
+            "settlement_date_status": "provisional",
+            "parse_warnings": [],
+            "missing_fields": [
+              "pricing_date"
+            ],
+            "notification_tracking_started": true,
+            "reference_close_yen": 2695.5,
+            "reference_close_date": "2026-10-02",
+            "reference_close_source": "Yahoo Finance chart (raw close)",
+            "reference_close_kind": "announcement_close",
+            "estimated_size_yen": 277167752550,
+            "estimated_size_oku": 2771.6775255,
+            "effective_size_yen": 277167752550,
+            "po_threshold_ever_met": true,
+            "calculation_missing_fields": [],
+            "eligible_notified": true
+          },
+          "previous_schedule": []
+        }
+      ]
     },
     {
       "id": "po-4475-2026-10-02",
@@ -7077,12 +7381,14 @@
         {
           "date": "2026-11-09",
           "label": "listing-1bd",
-          "sent": false
+          "sent": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-11-10",
           "label": "listing_day",
-          "sent": false
+          "sent": false,
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -7100,10 +7406,10 @@
       "margin": "貸借",
       "announced_at": "2026-10-07T16:00:00+09:00",
       "detail": {
-        "parser_version": 3,
+        "parser_version": 4,
         "po_kind": "secondary",
         "source_stage": "announcement",
-        "size_oku": 91.05515,
+        "size_oku": 243.50359,
         "size_oku_min": null,
         "size_oku_max": null,
         "size_status": "estimated",
@@ -7113,75 +7419,84 @@
         "price_min_yen": null,
         "price_max_yen": null,
         "public_offering_shares": null,
-        "secondary_sale_shares": 1000000,
+        "secondary_sale_shares": 3570800,
         "oa_shares": 535500,
-        "total_offered_shares": 1535500,
+        "total_offered_shares": 4106300,
         "share_breakdown_complete": true,
         "oa_marker_present": true,
         "issue_price_yen": null,
         "sale_price_yen": null,
         "offer_price_yen": null,
-        "dilution_pct": 1.0,
-        "dilution_status": "confirmed",
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
         "pricing_date": "2026-10-19",
         "pricing_date_end": "2026-10-22",
-        "pricing_date_raw": "売出価格 未定（日本証券業協会の定める有価証券の引受け等に関する 規則第25条に規定される方式により、2026年10月19日（月） から2026年10月22日（木）までの間のいずれかの日（以下「売 出価格等決定日」という。）の株式会社東京証券取引所におけ る当社普通株式の終値（当日に終値のない場合は、その日に 先立つ直近日の終値）に0.90～1.00を乗じた",
+        "pricing_date_raw": "2026年10月19日から2026年10月22日までの売出価格等決定日",
         "pricing_date_confirmed": false,
         "pricing_date_status": "provisional",
-        "settlement_date": "2026-12-30",
-        "settlement_date_end": null,
-        "settlement_date_raw": "受渡期日の翌営業日から2026年12月30 日までの期間において、取得株式の総数 130 万株、取得価額の総額 50 億円をそれぞれ上限とする自己 株式取得を実施することを決定いたしました。自己株式の取得については、本日公表の「自己株式取得 に係る事項の決定に関するお知らせ（会社法第459条第1項の規定による定款の定めに基づく自己株式 の取得）」をご参照くだ",
+        "settlement_date": "2026-10-26",
+        "settlement_date_end": "2026-10-29",
+        "settlement_date_raw": "受渡期日2026年10月26日から2026年10月29日（売出価格等決定日の5営業日後）",
         "settlement_estimated": false,
-        "settlement_date_status": "confirmed",
+        "settlement_date_status": "provisional",
         "parse_warnings": [],
-        "missing_fields": [],
+        "missing_fields": [
+          "dilution_pct"
+        ],
         "notification_tracking_started": true,
         "reference_close_yen": 5930.0,
         "reference_close_date": "2026-10-07",
         "reference_close_source": "Yahoo Finance chart (raw close)",
         "reference_close_kind": "announcement_close",
-        "estimated_size_yen": 9105515000,
-        "estimated_size_oku": 91.05515,
-        "effective_size_yen": 9105515000,
+        "estimated_size_yen": 24350359000,
+        "estimated_size_oku": 243.50359,
+        "effective_size_yen": 24350359000,
         "po_threshold_ever_met": true,
         "calculation_missing_fields": [],
-        "eligible_notified": true
+        "eligible_notified": true,
+        "verified_calculation_source": "https://www.release.tdnet.info/inbs/140120261007547282.pdf"
       },
       "schedule": [
         {
           "date": "2026-10-19",
           "label": "pricing_day",
           "sent": false,
+          "not_before_jst": "06:00",
           "action_cutoff_jst": "09:00"
         },
         {
           "date": "2026-10-20",
           "label": "pricing_day+1",
           "sent": false,
+          "not_before_jst": "06:00",
           "action_cutoff_jst": "09:00"
         },
         {
           "date": "2026-10-21",
           "label": "pricing_day+2",
           "sent": false,
+          "not_before_jst": "06:00",
           "action_cutoff_jst": "09:00"
         },
         {
-          "date": "2026-12-30",
+          "date": "2026-10-26",
           "label": "settlement",
           "sent": false,
+          "not_before_jst": "06:00",
           "action_cutoff_jst": "09:00"
         },
         {
           "date": "2026-11-25",
           "label": "pricing_day+25bd",
           "sent": false,
+          "not_before_jst": "06:00",
           "action_cutoff_jst": "09:00"
         },
         {
           "date": "2026-11-26",
           "label": "pricing_day+26bd",
           "sent": false,
+          "not_before_jst": "06:00",
           "action_cutoff_jst": "09:00"
         }
       ],
@@ -7201,7 +7516,99 @@
       "eligibility": {
         "status": "eligible",
         "reasons": []
-      }
+      },
+      "repair_history": [
+        {
+          "repair": "2026-10-17-po-table-fields",
+          "source": "https://www.release.tdnet.info/inbs/140120261007547282.pdf",
+          "previous_detail": {
+            "parser_version": 3,
+            "po_kind": "secondary",
+            "source_stage": "announcement",
+            "size_oku": 91.05515,
+            "size_oku_min": null,
+            "size_oku_max": null,
+            "size_status": "estimated",
+            "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+            "share_count": null,
+            "oa_share_count": null,
+            "price_min_yen": null,
+            "price_max_yen": null,
+            "public_offering_shares": null,
+            "secondary_sale_shares": 1000000,
+            "oa_shares": 535500,
+            "total_offered_shares": 1535500,
+            "share_breakdown_complete": true,
+            "oa_marker_present": true,
+            "issue_price_yen": null,
+            "sale_price_yen": null,
+            "offer_price_yen": null,
+            "dilution_pct": 1.0,
+            "dilution_status": "confirmed",
+            "pricing_date": "2026-10-19",
+            "pricing_date_end": "2026-10-22",
+            "pricing_date_raw": "売出価格 未定（日本証券業協会の定める有価証券の引受け等に関する 規則第25条に規定される方式により、2026年10月19日（月） から2026年10月22日（木）までの間のいずれかの日（以下「売 出価格等決定日」という。）の株式会社東京証券取引所におけ る当社普通株式の終値（当日に終値のない場合は、その日に 先立つ直近日の終値）に0.90～1.00を乗じた",
+            "pricing_date_confirmed": false,
+            "pricing_date_status": "provisional",
+            "settlement_date": "2026-12-30",
+            "settlement_date_end": null,
+            "settlement_date_raw": "受渡期日の翌営業日から2026年12月30 日までの期間において、取得株式の総数 130 万株、取得価額の総額 50 億円をそれぞれ上限とする自己 株式取得を実施することを決定いたしました。自己株式の取得については、本日公表の「自己株式取得 に係る事項の決定に関するお知らせ（会社法第459条第1項の規定による定款の定めに基づく自己株式 の取得）」をご参照くだ",
+            "settlement_estimated": false,
+            "settlement_date_status": "confirmed",
+            "parse_warnings": [],
+            "missing_fields": [],
+            "notification_tracking_started": true,
+            "reference_close_yen": 5930.0,
+            "reference_close_date": "2026-10-07",
+            "reference_close_source": "Yahoo Finance chart (raw close)",
+            "reference_close_kind": "announcement_close",
+            "estimated_size_yen": 9105515000,
+            "estimated_size_oku": 91.05515,
+            "effective_size_yen": 9105515000,
+            "po_threshold_ever_met": true,
+            "calculation_missing_fields": [],
+            "eligible_notified": true
+          },
+          "previous_schedule": [
+            {
+              "date": "2026-10-19",
+              "label": "pricing_day",
+              "sent": false,
+              "action_cutoff_jst": "09:00"
+            },
+            {
+              "date": "2026-10-20",
+              "label": "pricing_day+1",
+              "sent": false,
+              "action_cutoff_jst": "09:00"
+            },
+            {
+              "date": "2026-10-21",
+              "label": "pricing_day+2",
+              "sent": false,
+              "action_cutoff_jst": "09:00"
+            },
+            {
+              "date": "2026-12-30",
+              "label": "settlement",
+              "sent": false,
+              "action_cutoff_jst": "09:00"
+            },
+            {
+              "date": "2026-11-25",
+              "label": "pricing_day+25bd",
+              "sent": false,
+              "action_cutoff_jst": "09:00"
+            },
+            {
+              "date": "2026-11-26",
+              "label": "pricing_day+26bd",
+              "sent": false,
+              "action_cutoff_jst": "09:00"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "po-6310-2026-10-09",
@@ -7479,19 +7886,22 @@
         {
           "date": "2026-10-21",
           "label": "execution-1bd",
-          "sent": false
+          "sent": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-22",
           "label": "execution_day",
           "sent": false,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-29",
           "label": "execution+5bd",
           "sent": false,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261009548539.pdf",
@@ -7531,19 +7941,22 @@
         {
           "date": "2026-10-26",
           "label": "execution-1bd",
-          "sent": false
+          "sent": false,
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-10-27",
           "label": "execution_day",
           "sent": false,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "not_before_jst": "06:00"
         },
         {
           "date": "2026-11-04",
           "label": "execution+5bd",
           "sent": false,
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "not_before_jst": "06:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261013549202.pdf",
@@ -7824,8 +8237,8 @@
       "last_complete_poll_at": "2026-10-16T22:26:40.361904+09:00"
     },
     "jpx_master": {
-      "last_success_date": "2026-08-24",
-      "last_success_at": "2026-08-24T22:45:04.932305+00:00"
+      "last_success_date": "2026-10-17",
+      "last_success_at": "2026-10-17T08:21:28.854517+00:00"
     },
     "jpx_margin": {
       "last_success_date": "2026-10-15",
