@@ -5038,9 +5038,12 @@
         {
           "date": "2026-10-19",
           "label": "pricing_day+26bd",
-          "sent": false,
+          "sent": true,
           "action_cutoff_jst": "09:00",
-          "not_before_jst": "06:00"
+          "not_before_jst": "06:00",
+          "sent_at": "2026-10-19T06:01:11.957793+09:00",
+          "sent_by": "39165919621",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260827527452.pdf",
@@ -7190,9 +7193,12 @@
         {
           "date": "2026-10-19",
           "label": "pricing_day",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-10-19T06:01:11.613596+09:00",
+          "sent_by": "39165919621",
+          "reference_only": false
         },
         {
           "date": "2026-10-20",
@@ -8192,6 +8198,10 @@
     "2026-10-18": {
       "success": 1,
       "failure": 0
+    },
+    "2026-10-19": {
+      "success": 2,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -8234,11 +8244,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-10-17T00:21:13.095155+09:00",
-      "last_finished_at": "2026-10-17T00:21:13.340227+09:00",
+      "last_started_at": "2026-10-19T06:01:11.532057+09:00",
+      "last_finished_at": "2026-10-19T06:01:12.567210+09:00",
       "status": "success",
-      "run_id": "38923201675",
-      "last_success_at": "2026-10-17T00:21:13.340227+09:00"
+      "run_id": "39165919621",
+      "last_success_at": "2026-10-19T06:01:12.567210+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-10-19T05:41:24.751002+09:00",
@@ -9608,6 +9618,28 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "38761439458"
+    },
+    {
+      "event_id": "po-6407-2026-10-07",
+      "channel": "po",
+      "scheduled_for": "2026-10-19",
+      "label": "pricing_day",
+      "attempted_at": "2026-10-19T06:01:11.613596+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "39165919621"
+    },
+    {
+      "event_id": "po-8117-2026-08-28",
+      "channel": "po",
+      "scheduled_for": "2026-10-19",
+      "label": "pricing_day+26bd",
+      "attempted_at": "2026-10-19T06:01:11.957793+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "39165919621"
     }
   ]
 }
