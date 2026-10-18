@@ -1,7 +1,14 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-10-15T23:15:23.072085+00:00",
+  "fetched_at": "2026-10-18T20:41:10.019677+00:00",
   "data": [
+    {
+      "code": "664A",
+      "name": "（株）TOKIUM",
+      "market": "グロース",
+      "listing_date": "2026-11-25",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
     {
       "code": "660A",
       "name": "（株）RECEPTIONIST",
@@ -39,7 +46,7 @@
     },
     {
       "code": "648A",
-      "name": "（株）ルクレ",
+      "name": "（株）ルクレ 代表者インタビュー",
       "market": "グロース",
       "listing_date": "2026-10-15",
       "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
