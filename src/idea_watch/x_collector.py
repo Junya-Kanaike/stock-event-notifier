@@ -66,10 +66,46 @@ class XCollector:
             start = (now - self.initial_lookback).astimezone(timezone.utc)
             params["start_time"] = start.strftime("%Y-%m-%dT%H:%M:%SZ")
 
+        posts, newest_id = self._paginate(f"/users/{user_id}/tweets", params, limit)
+        items = [self._to_item(source, post) for post in posts[:limit]]
+        if newest_id is None and items:
+            newest_id = max(items, key=lambda it: int(it.item_id)).item_id
+        return items, newest_id
+
+    def fetch_search(self, source: Source, *, now: datetime) -> tuple[list[ContentItem], str | None]:
+        """キーワード検索（直近7日分）。ハンドル欄のクエリをそのまま使う。
+
+        投稿者のプロフィール展開（expansions）は1件$0.010の追加課金になるため使わない。
+        """
+        if self.remaining_budget <= 0:
+            return [], None
+        query = source.handle
+        if "is:retweet" not in query:
+            query += " -is:retweet"
+        limit = min(self.max_posts_per_source, self.remaining_budget)
+        params: dict[str, Any] = {
+            "query": query,
+            "max_results": max(10, min(100, limit)),
+            "tweet.fields": "created_at,note_tweet,author_id",
+        }
+        if source.cursor:
+            params["since_id"] = source.cursor
+        else:
+            start = (now - self.initial_lookback).astimezone(timezone.utc)
+            params["start_time"] = start.strftime("%Y-%m-%dT%H:%M:%SZ")
+        posts, newest_id = self._paginate("/tweets/search/recent", params, limit, min_page=10)
+        items = [self._to_search_item(source, post) for post in posts[:limit]]
+        if newest_id is None and items:
+            newest_id = max(items, key=lambda it: int(it.item_id)).item_id
+        return items, newest_id
+
+    def _paginate(
+        self, path: str, params: dict[str, Any], limit: int, *, min_page: int = 5
+    ) -> tuple[list[dict[str, Any]], str | None]:
         posts: list[dict[str, Any]] = []
         newest_id: str | None = None
         while len(posts) < limit:
-            data = self._get(f"/users/{user_id}/tweets", params)
+            data = self._get(path, params)
             batch = data.get("data") or []
             meta = data.get("meta") or {}
             self.posts_read += len(batch)
@@ -80,13 +116,16 @@ class XCollector:
             next_token = meta.get("next_token")
             if not next_token or not batch or self.remaining_budget <= 0:
                 break
-            params["pagination_token"] = next_token
-            params["max_results"] = max(5, min(100, limit - len(posts)))
+            params["pagination_token" if "/users/" in path else "next_token"] = next_token
+            params["max_results"] = max(min_page, min(100, limit - len(posts)))
+        return posts, newest_id
 
-        items = [self._to_item(source, post) for post in posts[:limit]]
-        if newest_id is None and items:
-            newest_id = max(items, key=lambda it: int(it.item_id)).item_id
-        return items, newest_id
+    @staticmethod
+    def _to_search_item(source: Source, post: dict[str, Any]) -> ContentItem:
+        item = XCollector._to_item(source, post)
+        item.author = f"X検索「{source.name}」"
+        item.url = f"https://x.com/i/web/status/{item.item_id}"
+        return item
 
     @staticmethod
     def _to_item(source: Source, post: dict[str, Any]) -> ContentItem:

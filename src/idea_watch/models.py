@@ -1,17 +1,27 @@
 from __future__ import annotations
 
+import hashlib
 from dataclasses import dataclass, field
-from datetime import datetime
+from datetime import date, datetime
 from typing import Any
 
 
 PLATFORM_X = "X"
+PLATFORM_X_SEARCH = "X検索"
 PLATFORM_YOUTUBE = "YouTube"
+X_PLATFORMS = (PLATFORM_X, PLATFORM_X_SEARCH)
 
-DIRECTIONS = ("ロング", "ショート", "ウォッチ")
-MARKETS = ("日本株", "米国株", "その他")
-HORIZONS = ("短期", "中期", "長期")
-EVIDENCE_LEVELS = ("高", "中", "低")
+STRATEGY_TYPES = (
+    "需給イベント",
+    "指数・リバランス",
+    "ペア・相対価値",
+    "市場構造・アノマリー",
+    "定量シグナル",
+    "テーマ資金循環",
+)
+DIRECTIONS = ("ロング", "ショート", "ロングショート", "ウォッチ")
+HORIZONS = ("日計り", "数日", "数週間", "数ヶ月")
+REPRODUCIBILITY = ("高", "中", "低")
 
 
 @dataclass
@@ -21,7 +31,7 @@ class Source:
     page_id: str
     name: str
     platform: str
-    handle: str
+    handle: str  # Xはユーザー名、X検索はクエリ、YouTubeはチャンネルID
     internal_id: str | None = None
     cursor: str | None = None
 
@@ -30,29 +40,36 @@ class Source:
 class ContentItem:
     """1件の投稿または動画。"""
 
-    platform: str
+    platform: str  # X / YouTube（X検索で取れた投稿も X）
     item_id: str
     author: str
     url: str
     published_at: datetime
     text: str
-    text_origin: str  # "投稿" / "字幕" / "概要欄のみ"
+    text_origin: str  # "投稿" / "動画(Gemini)" / "字幕" / "概要欄のみ"
     title: str | None = None
 
 
 @dataclass
 class Idea:
+    """イベントドリブン型の戦略アイデア（1投稿から複数出ることもある）。"""
+
     item: ContentItem
     headline: str
-    ticker: str
-    company: str
-    market: str
+    strategy_type: str
     direction: str
-    themes: list[str]
-    thesis: str
-    catalyst: str
+    long_leg: str
+    short_leg: str
+    tickers: list[str]
+    trigger: str
+    event_date: date | None
+    entry: str
+    exit: str
+    mechanism: str
+    validation: str
+    reproducibility: str
     horizon: str
-    evidence: str
+    caveats: str
     summary: str
     holding_related: bool = False
     extra: dict[str, Any] = field(default_factory=dict)
@@ -60,5 +77,6 @@ class Idea:
     @property
     def source_key(self) -> str:
         prefix = "x" if self.item.platform == PLATFORM_X else "yt"
-        ticker = self.ticker or self.company or "unknown"
-        return f"{prefix}:{self.item.item_id}:{ticker}"
+        basis = ",".join(sorted(self.tickers)) or self.headline
+        digest = hashlib.sha1(f"{self.strategy_type}|{basis}".encode("utf-8")).hexdigest()[:10]
+        return f"{prefix}:{self.item.item_id}:{digest}"

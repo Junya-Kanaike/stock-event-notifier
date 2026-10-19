@@ -1,4 +1,4 @@
-from datetime import datetime, timedelta, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 import unittest
 
@@ -9,7 +9,7 @@ from src.idea_watch.models import ContentItem, Idea, PLATFORM_X, PLATFORM_YOUTUB
 from src.idea_watch.notion_store import NotionStore, build_idea_page, parse_source
 from src.idea_watch.pipeline import run_pipeline
 from src.idea_watch.x_collector import XCollector
-from src.idea_watch.youtube_collector import YouTubeCollector, parse_feed
+from src.idea_watch.youtube_collector import GeminiVideoDigester, YouTubeCollector, parse_feed
 
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -47,6 +47,51 @@ def _item(platform=PLATFORM_X, item_id="1", author="A (@a)", text="text"):
         text=text,
         text_origin="投稿",
     )
+
+
+def _idea(item=None, tickers=("285A", "000660.KS"), **overrides):
+    values = dict(
+        item=item or _item(),
+        headline="寄り付き乖離のペア",
+        strategy_type="ペア・相対価値",
+        direction="ロングショート",
+        long_leg="キオクシア 285A",
+        short_leg="SKハイニックス 000660.KS",
+        tickers=list(tickers),
+        trigger="寄り付き時点の騰落率乖離",
+        event_date=date(2026, 10, 20),
+        entry="寄り付き",
+        exit="大引け",
+        mechanism="連動銘柄の一時的な乖離が引けにかけて縮小",
+        validation="過去1年の乖離上位日で寄り→引けのペアリターンを集計",
+        reproducibility="高",
+        horizon="日計り",
+        caveats="キオクシアは貸借銘柄か確認",
+        summary="要約",
+    )
+    values.update(overrides)
+    return Idea(**values)
+
+
+SAMPLE_RAW = {
+    "source_index": 0,
+    "headline": "h",
+    "strategy_type": "指数・リバランス",
+    "direction": "ショート",
+    "long_leg": "",
+    "short_leg": "キオクシア",
+    "tickers": ["285a"],
+    "trigger": "TOPIXウエイト低減",
+    "event_date": "2027-01-29",
+    "entry": "発表翌日寄り付き",
+    "exit": "実施日大引け",
+    "mechanism": "m",
+    "validation": "v",
+    "reproducibility": "超高",
+    "horizon": "数週間",
+    "caveats": "c",
+    "summary": "s",
+}
 
 
 class FakeTranscripts:
@@ -92,26 +137,31 @@ class NotionTest(unittest.TestCase):
         self.assertIsNone(parse_source(page))
 
     def test_idea_page_uses_data_source_parent_and_dedupe_key(self):
-        idea = Idea(
-            item=_item(item_id="999"),
-            headline="見出し",
-            ticker="6857",
-            company="アドバンテスト",
-            market="日本株",
-            direction="ロング",
-            themes=["AI半導体", "テスタ,需要"],
-            thesis="根拠",
-            catalyst="決算",
-            horizon="中期",
-            evidence="高",
-            summary="要約",
-            holding_related=True,
-        )
+        idea = _idea(item=_item(item_id="999"), holding_related=True)
         page = build_idea_page("ds-ideas", idea)
+        props = page["properties"]
         self.assertEqual(page["parent"], {"type": "data_source_id", "data_source_id": "ds-ideas"})
-        self.assertEqual(page["properties"]["ソースID"]["rich_text"][0]["text"]["content"], "x:999:6857")
-        self.assertEqual(page["properties"]["テーマ"]["multi_select"][1]["name"], "テスタ・需要")
-        self.assertTrue(page["properties"]["保有銘柄関連"]["checkbox"])
+        key = props["ソースID"]["rich_text"][0]["text"]["content"]
+        self.assertTrue(key.startswith("x:999:"))
+        # 同じ投稿・同じ組み合わせなら同じキー（重複防止）、銘柄が違えば別キー
+        self.assertEqual(key, _idea(item=_item(item_id="999"), tickers=("000660.KS", "285A")).source_key)
+        self.assertNotEqual(key, _idea(item=_item(item_id="999"), tickers=("6857",)).source_key)
+        self.assertEqual(props["戦略タイプ"], {"select": {"name": "ペア・相対価値"}})
+        self.assertEqual(props["予定日"], {"date": {"start": "2026-10-20"}})
+        self.assertEqual(props["銘柄コード"]["rich_text"][0]["text"]["content"], "285A, 000660.KS")
+        self.assertTrue(props["保有銘柄関連"]["checkbox"])
+        self.assertEqual(build_idea_page("d", _idea(event_date=None))["properties"]["予定日"], {"date": None})
+
+    def test_parse_source_accepts_search_query_with_at_sign(self):
+        page = {
+            "id": "p2",
+            "properties": {
+                "名前": {"type": "title", "title": [{"plain_text": "リバランス"}]},
+                "プラットフォーム": {"type": "select", "select": {"name": "X検索"}},
+                "ハンドル": {"type": "rich_text", "rich_text": [{"plain_text": "リバランス 空売り from:@x"}]},
+            },
+        }
+        self.assertEqual(parse_source(page).handle, "リバランス 空売り from:@x")
 
     def test_store_queries_data_source_endpoint_with_version_header(self):
         calls = []
@@ -172,6 +222,28 @@ class XCollectorTest(unittest.TestCase):
         collector = XCollector("tok", max_posts_per_run=0, requester=requester)
         self.assertEqual(collector.fetch(Source("p", "n", "X", "h", internal_id="1"), now=NOW), ([], None))
 
+    def test_search_uses_recent_endpoint_without_user_expansion(self):
+        calls = []
+
+        def requester(method, url, **kwargs):
+            calls.append((url, kwargs["params"].copy()))
+            if len(calls) == 1:
+                return {"data": [{"id": "900", "text": "a"}], "meta": {"newest_id": "900", "next_token": "nt"}}
+            return {"data": [{"id": "899", "text": "b"}], "meta": {}}
+
+        collector = XCollector("tok", requester=requester)
+        items, cursor = collector.fetch_search(Source("p", "リバランス", "X検索", "リバランス 空売り"), now=NOW)
+        url, params = calls[0]
+        self.assertTrue(url.endswith("/tweets/search/recent"))
+        self.assertEqual(params["query"], "リバランス 空売り -is:retweet")
+        self.assertNotIn("expansions", params)
+        self.assertGreaterEqual(params["max_results"], 10)
+        self.assertEqual(calls[1][1]["next_token"], "nt")
+        self.assertEqual(cursor, "900")
+        self.assertEqual(items[0].platform, "X")
+        self.assertEqual(items[0].url, "https://x.com/i/web/status/900")
+        self.assertEqual(items[0].author, "X検索「リバランス」")
+
 
 class YouTubeCollectorTest(unittest.TestCase):
     def test_parse_feed(self):
@@ -197,6 +269,38 @@ class YouTubeCollectorTest(unittest.TestCase):
         )
         self.assertEqual((items, cursor), ([], None))
 
+    def test_gemini_is_preferred_and_falls_back_on_failure(self):
+        sent = []
+
+        def ok(method, url, **kwargs):
+            sent.append((url, kwargs))
+            return {
+                "candidates": [{"content": {"parts": [{"text": "動画の要約"}]}}],
+                "usageMetadata": {"promptTokenCount": 1234},
+            }
+
+        gemini = GeminiVideoDigester("gkey", "gemini-test", requester=ok)
+        collector = YouTubeCollector(
+            transcript_fetcher=FakeTranscripts("字幕"), gemini=gemini, feed_fetcher=lambda cid: FEED
+        )
+        items, _ = collector.fetch(Source("p", "ch", "YouTube", "UCxxx"), now=NOW)
+        self.assertEqual((items[0].text, items[0].text_origin), ("動画の要約", "動画(Gemini)"))
+        url, kwargs = sent[0]
+        self.assertIn("/models/gemini-test:generateContent", url)
+        self.assertEqual(kwargs["headers"]["x-goog-api-key"], "gkey")
+        parts = kwargs["json_body"]["contents"][0]["parts"]
+        self.assertEqual(parts[1], {"file_data": {"file_uri": "https://www.youtube.com/watch?v=new1"}})
+        self.assertEqual(gemini.input_tokens, 1234)
+
+        def fail(*args, **kwargs):
+            raise ApiError("Gemini", 400)
+
+        broken = GeminiVideoDigester("gkey", requester=fail)
+        collector = YouTubeCollector(transcript_fetcher=FakeTranscripts("字幕"), gemini=broken, feed_fetcher=lambda cid: FEED)
+        items, _ = collector.fetch(Source("p", "ch", "YouTube", "UCxxx"), now=NOW)
+        self.assertEqual(items[0].text_origin, "字幕")
+        self.assertEqual(broken.failures, 1)
+
 
 class ExtractorTest(unittest.TestCase):
     def test_batches_x_by_author_and_videos_individually(self):
@@ -207,7 +311,7 @@ class ExtractorTest(unittest.TestCase):
         sizes = sorted(len(b) for b in batched(items))
         self.assertEqual(sizes, [1, 1, 5, 20])
 
-    def test_tool_output_is_normalized_and_holdings_flagged(self):
+    def test_tool_output_is_normalized_filtered_and_holdings_flagged(self):
         response = {
             "usage": {"input_tokens": 10, "output_tokens": 5},
             "content": [
@@ -216,22 +320,11 @@ class ExtractorTest(unittest.TestCase):
                     "name": "record_ideas",
                     "input": {
                         "ideas": [
-                            {
-                                "source_index": 0,
-                                "headline": "h",
-                                "ticker": "285a",
-                                "company": "キオクシア",
-                                "market": "日本株",
-                                "direction": "強気",
-                                "themes": ["NAND"],
-                                "thesis": "t",
-                                "catalyst": "",
-                                "horizon": "短期",
-                                "evidence": "中",
-                                "summary": "s",
-                            },
-                            {"source_index": 9, "ticker": "7203", "company": "トヨタ"},
-                            {"source_index": 0, "ticker": "", "company": ""},
+                            dict(SAMPLE_RAW),
+                            dict(SAMPLE_RAW, source_index=9),  # 範囲外
+                            dict(SAMPLE_RAW, strategy_type="業績予想"),  # やり方に合わない分類
+                            dict(SAMPLE_RAW, trigger=""),  # トリガーなし
+                            dict(SAMPLE_RAW, long_leg="", short_leg="", tickers=[]),  # 対象なし
                         ]
                     },
                 }
@@ -246,12 +339,20 @@ class ExtractorTest(unittest.TestCase):
         extractor = IdeaExtractor("key", "model-x", holdings=[("285A", "キオクシア")], requester=requester)
         ideas = extractor.extract([_item()])
         self.assertEqual(len(ideas), 1)
-        self.assertEqual(ideas[0].ticker, "285A")
-        self.assertEqual(ideas[0].direction, "ウォッチ")  # enum外は既定値
-        self.assertTrue(ideas[0].holding_related)
+        idea = ideas[0]
+        self.assertEqual(idea.tickers, ["285A"])
+        self.assertEqual(idea.event_date, date(2027, 1, 29))
+        self.assertEqual(idea.reproducibility, "低")  # enum外は既定値
+        self.assertTrue(idea.holding_related)
         self.assertEqual(sent[0]["tool_choice"], {"type": "tool", "name": "record_ideas"})
         self.assertEqual(sent[0]["model"], "model-x")
         self.assertEqual(extractor.input_tokens, 10)
+
+    def test_prompt_encodes_the_investors_style(self):
+        from src.idea_watch.extractor import SYSTEM_PROMPT
+
+        for phrase in ["受注残", "決算プレー", "ロングショート", "寄り付き", "日経VI", "過去の同種事例"]:
+            self.assertIn(phrase, SYSTEM_PROMPT)
 
     def test_parse_tool_output_without_tool_block(self):
         self.assertEqual(parse_tool_output({"content": [{"type": "text", "text": "x"}]}), [])
@@ -286,10 +387,7 @@ class FakeStore:
 
 class FakeExtractor:
     def extract(self, items):
-        return [
-            Idea(item, "h", "6857", "c", "日本株", "ロング", [], "t", "", "中期", "中", "s")
-            for item in items
-        ]
+        return [_idea(item=item, tickers=("6857",)) for item in items]
 
 
 class FakeCollector:
@@ -312,12 +410,12 @@ class FakeCollector:
 class PipelineTest(unittest.TestCase):
     def test_writes_new_ideas_skips_duplicates_and_advances_cursor(self):
         src = Source("p1", "n", "X", "h")
-        store = FakeStore([src], existing={"x:2:6857"})
+        store = FakeStore([src], existing={_idea(item=_item(item_id="2"), tickers=("6857",)).source_key})
         x = FakeCollector([_item(item_id="1"), _item(item_id="2")], cursor="2")
         report = run_pipeline(
             store=store, extractor=FakeExtractor(), x_collector=x, youtube_collector=FakeCollector(), now=NOW
         )
-        self.assertEqual(store.created, ["x:1:6857"])
+        self.assertEqual(store.created, [_idea(item=_item(item_id="1"), tickers=("6857",)).source_key])
         self.assertEqual(report.duplicates, 1)
         self.assertEqual(x.resolved, ["h"])
         self.assertEqual(store.updates[0], ("p1", {"internal_id": "uid"}))
@@ -383,6 +481,24 @@ class IdeaWorkflowTest(unittest.TestCase):
         self.assertNotIn("commit_state", workflow)
         self.assertIn("python -m src.run_ideas\n", workflow)
         self.assertNotIn("run: python -m src.run_ideas --dry-run", workflow)
+
+
+class PipelineSearchTest(unittest.TestCase):
+    def test_x_search_source_routes_to_search_without_user_lookup(self):
+        class SearchCollector(FakeCollector):
+            def __init__(self):
+                super().__init__()
+                self.searched = []
+
+            def fetch_search(self, source, *, now):
+                self.searched.append(source.handle)
+                return [_item(item_id="s1")], "s1"
+
+        x = SearchCollector()
+        store = FakeStore([Source("p1", "q", "X検索", "TOPIX 除外")])
+        run_pipeline(store=store, extractor=FakeExtractor(), x_collector=x, youtube_collector=FakeCollector(), now=NOW)
+        self.assertEqual((x.searched, x.resolved), (["TOPIX 除外"], []))
+        self.assertEqual(store.updates, [("p1", {"cursor": "s1", "fetched_at": NOW})])
 
 
 if __name__ == "__main__":

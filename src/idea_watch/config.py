@@ -54,6 +54,8 @@ class Settings:
     youtube_max_videos_per_source: int = 3
     transcript_max_chars: int = 60000
     youtube_proxy_url: str | None = None
+    gemini_api_key: str | None = None
+    gemini_model: str = "gemini-3.8-flash"
     holdings: list[tuple[str, str]] = field(default_factory=list)
 
     @classmethod
@@ -84,5 +86,7 @@ class Settings:
             youtube_max_videos_per_source=_int_env("IDEA_YT_MAX_VIDEOS_PER_SOURCE", 3),
             transcript_max_chars=_int_env("IDEA_TRANSCRIPT_MAX_CHARS", 60000),
             youtube_proxy_url=os.getenv("IDEA_YT_PROXY_URL", "").strip() or None,
+            gemini_api_key=os.getenv("GEMINI_API_KEY", "").strip() or None,
+            gemini_model=os.getenv("IDEA_GEMINI_MODEL", "").strip() or "gemini-3.8-flash",
             holdings=parse_holdings(os.getenv("IDEA_HOLDINGS")),
         )

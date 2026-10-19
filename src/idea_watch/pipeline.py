@@ -4,7 +4,7 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Protocol
 
-from src.idea_watch.models import ContentItem, Idea, PLATFORM_X, PLATFORM_YOUTUBE, Source
+from src.idea_watch.models import ContentItem, Idea, PLATFORM_X, PLATFORM_X_SEARCH, PLATFORM_YOUTUBE, Source
 
 
 class Collector(Protocol):
@@ -47,23 +47,25 @@ def run_pipeline(
     for index, source in enumerate(sources):
         label = f"{source.platform}#{index + 1}"  # 名前はログに出さない
         try:
+            if source.platform in (PLATFORM_X, PLATFORM_X_SEARCH) and x_collector is None:
+                report.skipped.append(f"{label}: X_BEARER_TOKEN未設定")
+                continue
             if source.platform == PLATFORM_X:
-                if x_collector is None:
-                    report.skipped.append(f"{label}: X_BEARER_TOKEN未設定")
-                    continue
                 if not source.internal_id:
                     user_id = x_collector.resolve_user_id(source.handle)
                     if dry_run:
                         source.internal_id = user_id
                     else:
                         store.update_source(source, internal_id=user_id)
-                collector = x_collector
+                fetch = x_collector.fetch
+            elif source.platform == PLATFORM_X_SEARCH:
+                fetch = x_collector.fetch_search
             elif source.platform == PLATFORM_YOUTUBE:
-                collector = youtube_collector
+                fetch = youtube_collector.fetch
             else:  # pragma: no cover - parse_sourceで弾いている
                 continue
 
-            items, next_cursor = collector.fetch(source, now=now)
+            items, next_cursor = fetch(source, now=now)
             report.items += len(items)
             ideas = extractor.extract(items) if items else []
             report.ideas_found += len(ideas)

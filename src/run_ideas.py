@@ -15,7 +15,7 @@ from src.idea_watch.extractor import IdeaExtractor
 from src.idea_watch.notion_store import NotionStore
 from src.idea_watch.pipeline import RunReport, run_pipeline
 from src.idea_watch.x_collector import XCollector
-from src.idea_watch.youtube_collector import TranscriptFetcher, YouTubeCollector
+from src.idea_watch.youtube_collector import GeminiVideoDigester, TranscriptFetcher, YouTubeCollector
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -39,11 +39,15 @@ def main(argv: list[str] | None = None) -> int:
         if settings.x_bearer_token
         else None
     )
+    gemini = (
+        GeminiVideoDigester(settings.gemini_api_key, settings.gemini_model) if settings.gemini_api_key else None
+    )
     youtube_collector = YouTubeCollector(
         max_videos_per_source=settings.youtube_max_videos_per_source,
         initial_lookback_hours=settings.initial_lookback_hours,
         transcript_max_chars=settings.transcript_max_chars,
         transcript_fetcher=TranscriptFetcher(settings.youtube_proxy_url),
+        gemini=gemini,
     )
 
     report = run_pipeline(
@@ -58,6 +62,8 @@ def main(argv: list[str] | None = None) -> int:
     print(report.summary_line())
     if x_collector is not None:
         print(f"x_posts_read={x_collector.posts_read} (est. ${x_collector.posts_read * 0.005:.2f})")
+    if gemini is not None:
+        print(f"youtube_gemini ok={youtube_collector.gemini_hits} failed={gemini.failures} tokens={gemini.input_tokens}")
     print(
         f"youtube_transcripts ok={youtube_collector.transcript_hits} "
         f"fallback={youtube_collector.transcript_misses} blocked={youtube_collector.transcripts.blocked}"
@@ -77,10 +83,13 @@ def main(argv: list[str] | None = None) -> int:
 def _print_ideas(report: RunReport) -> None:
     for idea in report.printed:
         print("-" * 60)
-        print(f"{idea.headline} | {idea.ticker} {idea.company} | {idea.direction} / {idea.horizon} / 具体性{idea.evidence}")
-        print(f"  {idea.thesis}")
-        if idea.catalyst:
-            print(f"  カタリスト: {idea.catalyst}")
+        print(f"[{idea.strategy_type}] {idea.headline} | {idea.direction} / {idea.horizon} / 再現性{idea.reproducibility}")
+        if idea.long_leg or idea.short_leg:
+            print(f"  ロング: {idea.long_leg or '-'}  ショート: {idea.short_leg or '-'}")
+        print(f"  トリガー: {idea.trigger}" + (f"（{idea.event_date}）" if idea.event_date else ""))
+        print(f"  入: {idea.entry}  出: {idea.exit}")
+        print(f"  なぜ: {idea.mechanism}")
+        print(f"  検証: {idea.validation}")
         print(f"  {idea.item.url} ({idea.item.text_origin})")
 
 

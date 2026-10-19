@@ -4,7 +4,7 @@ from datetime import datetime, timezone
 from typing import Any, Callable
 
 from src.idea_watch.http import request_json
-from src.idea_watch.models import Idea, PLATFORM_X, PLATFORM_YOUTUBE, Source
+from src.idea_watch.models import Idea, PLATFORM_X, PLATFORM_X_SEARCH, PLATFORM_YOUTUBE, Source
 
 
 NOTION_API = "https://api.notion.com/v1"
@@ -104,8 +104,10 @@ class NotionStore:
 def parse_source(page: dict[str, Any]) -> Source | None:
     props = page.get("properties", {})
     platform = ((props.get(P_PLATFORM) or {}).get("select") or {}).get("name")
-    handle = plain_text(props.get(P_HANDLE)).strip().lstrip("@")
-    if platform not in (PLATFORM_X, PLATFORM_YOUTUBE) or not handle:
+    handle = plain_text(props.get(P_HANDLE)).strip()
+    if platform == PLATFORM_X:
+        handle = handle.lstrip("@")
+    if platform not in (PLATFORM_X, PLATFORM_X_SEARCH, PLATFORM_YOUTUBE) or not handle:
         return None
     name = plain_text(props.get(P_NAME)).strip() or handle
     return Source(
@@ -156,18 +158,22 @@ def build_idea_page(ideas_data_source_id: str, idea: Idea) -> dict[str, Any]:
     published = item.published_at
     if published.tzinfo is None:
         published = published.replace(tzinfo=timezone.utc)
-    themes = [{"name": t[:100].replace(",", "・")} for t in idea.themes[:5] if t.strip()]
     properties: dict[str, Any] = {
         "見出し": {"title": _chunks(idea.headline[:200])},
-        "銘柄コード": rich_text(idea.ticker),
-        "銘柄名": rich_text(idea.company),
-        "市場": _select(idea.market),
+        "戦略タイプ": _select(idea.strategy_type),
         "方向": _select(idea.direction),
-        "テーマ": {"multi_select": themes},
-        "根拠": rich_text(idea.thesis),
-        "カタリスト": rich_text(idea.catalyst),
+        "ロング側": rich_text(idea.long_leg),
+        "ショート側": rich_text(idea.short_leg),
+        "銘柄コード": rich_text(", ".join(idea.tickers)),
+        "トリガー": rich_text(idea.trigger),
+        "予定日": {"date": {"start": idea.event_date.isoformat()} if idea.event_date else None},
+        "エントリー": rich_text(idea.entry),
+        "エグジット": rich_text(idea.exit),
+        "需給メカニズム": rich_text(idea.mechanism),
+        "検証方法": rich_text(idea.validation),
+        "再現性": _select(idea.reproducibility),
         "時間軸": _select(idea.horizon),
-        "根拠の具体性": _select(idea.evidence),
+        "注意点": rich_text(idea.caveats),
         "保有銘柄関連": {"checkbox": bool(idea.holding_related)},
         "発信者": rich_text(item.author),
         "プラットフォーム": _select(item.platform),
@@ -178,13 +184,16 @@ def build_idea_page(ideas_data_source_id: str, idea: Idea) -> dict[str, Any]:
     }
     children = [
         _heading("要約"),
-        _paragraph(idea.summary or idea.thesis),
+        _paragraph(idea.summary or idea.mechanism),
         _heading("抽出元"),
         _paragraph(
             f"{item.platform} / {item.author} / 抽出元: {item.text_origin}"
             + (f"\n動画タイトル: {item.title}" if item.title else "")
         ),
-        _paragraph("AIによる要約。発信者の主張の整理であり、売買判断の前に開示・決算などの一次情報で確認すること。"),
+        _paragraph(
+            "AIによる整理。「（補足）」は発信者ではなくAIが補った案。採用前に過去の同種事例で検証し、"
+            "日程・空売り可否は開示や証券会社で確認すること。"
+        ),
     ]
     return {
         "parent": {"type": "data_source_id", "data_source_id": ideas_data_source_id},

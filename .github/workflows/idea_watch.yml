@@ -27,6 +27,8 @@ jobs:
       X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
       IDEA_HOLDINGS: ${{ secrets.IDEA_HOLDINGS }}
       IDEA_YT_PROXY_URL: ${{ secrets.IDEA_YT_PROXY_URL }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      IDEA_GEMINI_MODEL: ${{ vars.IDEA_GEMINI_MODEL }}
       IDEA_SOURCES_DATA_SOURCE_ID: ${{ vars.IDEA_SOURCES_DATA_SOURCE_ID }}
       IDEA_IDEAS_DATA_SOURCE_ID: ${{ vars.IDEA_IDEAS_DATA_SOURCE_ID }}
       IDEA_MODEL: ${{ vars.IDEA_MODEL }}
