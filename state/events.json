@@ -1821,7 +1821,8 @@
     "140120261016552037",
     "140120261019552727",
     "140120261009548324",
-    "140120261019552629"
+    "140120261019552629",
+    "140120261019552942"
   ],
   "events": [
     {
@@ -7833,7 +7834,7 @@
         "pricing_date_status": "unavailable",
         "settlement_date": "2026-10-16",
         "settlement_date_end": null,
-        "settlement_date_raw": "受渡期日2026年10月16日⑨申込証拠金該当事項はありません",
+        "settlement_date_raw": "受渡期日2026年10月16日【訂正後】⑧受渡期日第1回受渡期日:2026年10月16日第2回受渡期日:2026年10月19日3.今後の見通し今回の受渡期日の変更による当社連結業績への影響はありません",
         "settlement_estimated": false,
         "settlement_date_status": "confirmed",
         "parse_warnings": [],
@@ -7857,7 +7858,7 @@
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261015551026.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261015551026.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261019552942.pdf",
       "source_title": "株式の売出しに関するお知らせ",
       "related_disclosures": [
         {
@@ -7867,6 +7868,13 @@
           "announced_at": "2026-10-15T16:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261015551026.pdf",
           "market": "東証"
+        },
+        {
+          "id": "140120261019552942",
+          "relation": "correction",
+          "title": "（開示事項の変更）株式の売出しに関するお知らせ",
+          "announced_at": "2026-10-19T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261019552942.pdf"
         }
       ],
       "eligibility": {
@@ -7969,7 +7977,7 @@
       "last_checked_date": "2026-10-19",
       "last_success_date": "2026-10-19",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-19T15:26:08.320462+09:00",
+      "last_success_at": "2026-10-19T15:36:35.485648+09:00",
       "by_date": {
         "2026-09-24": {
           "checked_at": "2026-09-25T23:34:30.990166+09:00",
@@ -8062,20 +8070,20 @@
           "last_success_at": "2026-10-16T22:26:38.212252+09:00"
         },
         "2026-10-16": {
-          "checked_at": "2026-10-19T15:26:07.464843+09:00",
+          "checked_at": "2026-10-19T15:36:34.338647+09:00",
           "count": 202,
           "status": "success",
-          "last_success_at": "2026-10-19T15:26:07.464843+09:00"
+          "last_success_at": "2026-10-19T15:36:34.338647+09:00"
         },
         "2026-10-19": {
-          "checked_at": "2026-10-19T15:26:08.320290+09:00",
-          "count": 49,
+          "checked_at": "2026-10-19T15:36:35.485394+09:00",
+          "count": 84,
           "status": "success",
-          "last_success_at": "2026-10-19T15:26:08.320290+09:00"
+          "last_success_at": "2026-10-19T15:36:35.485394+09:00"
         }
       },
-      "last_checked_at": "2026-10-19T15:26:08.320290+09:00",
-      "last_complete_poll_at": "2026-10-19T15:26:08.320466+09:00"
+      "last_checked_at": "2026-10-19T15:36:35.485394+09:00",
+      "last_complete_poll_at": "2026-10-19T15:36:35.485655+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-10-18",
@@ -8331,11 +8339,11 @@
       "last_success_at": "2026-10-19T07:34:30.568691+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-19T15:26:05.882805+09:00",
-      "last_finished_at": "2026-10-19T15:26:08.330204+09:00",
+      "last_started_at": "2026-10-19T15:36:32.365454+09:00",
+      "last_finished_at": "2026-10-19T15:36:35.704508+09:00",
       "status": "success",
-      "run_id": "39209864730",
-      "last_success_at": "2026-10-19T15:26:08.330204+09:00"
+      "run_id": "39210883056",
+      "last_success_at": "2026-10-19T15:36:35.704508+09:00"
     }
   },
   "notification_log": [
