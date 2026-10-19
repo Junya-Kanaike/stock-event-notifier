@@ -100,6 +100,43 @@ class NotionStore:
     def create_idea(self, idea: Idea) -> None:
         self._call("POST", "/pages", build_idea_page(self.ideas_ds, idea))
 
+    # --- アイデア受信箱 -----------------------------------------------------
+
+    def list_inbox(self, inbox_data_source_id: str, limit: int = 50) -> list["InboxEntry"]:
+        body = {
+            "filter": {
+                "or": [
+                    {"property": "処理状況", "select": {"is_empty": True}},
+                    {"property": "処理状況", "select": {"equals": "未処理"}},
+                ]
+            },
+            "sorts": [{"timestamp": "created_time", "direction": "ascending"}],
+            "page_size": min(100, limit),
+        }
+        data = self._call("POST", f"/data_sources/{inbox_data_source_id}/query", body)
+        return [parse_inbox_entry(page) for page in data.get("results", [])][:limit]
+
+    def mark_inbox(self, page_id: str, status: str, result: str) -> None:
+        self._call(
+            "PATCH",
+            f"/pages/{page_id}",
+            {"properties": {"処理状況": {"select": {"name": status}}, "結果": rich_text(result)}},
+        )
+
+
+def parse_inbox_entry(page: dict[str, Any]) -> "InboxEntry":
+    from src.idea_watch.inbox import InboxEntry
+
+    props = page.get("properties", {})
+    created = page.get("created_time") or datetime.now(timezone.utc).isoformat()
+    return InboxEntry(
+        page_id=page["id"],
+        title=plain_text(props.get("タイトル")).strip(),
+        url=((props.get("URL") or {}).get("url") or None),
+        memo=plain_text(props.get("メモ")).strip(),
+        created_at=datetime.fromisoformat(created.replace("Z", "+00:00")),
+    )
+
 
 def parse_source(page: dict[str, Any]) -> Source | None:
     props = page.get("properties", {})

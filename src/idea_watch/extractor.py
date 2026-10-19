@@ -206,40 +206,14 @@ class IdeaExtractor:
         return [idea for raw in parse_tool_output(data) if (idea := self._to_idea(raw, batch)) is not None]
 
     def _to_idea(self, raw: dict[str, Any], batch: list[ContentItem]) -> Idea | None:
-        try:
-            item = batch[int(raw.get("source_index", -1))]
-        except (TypeError, ValueError, IndexError):
-            return None
-        strategy_type = str(raw.get("strategy_type") or "").strip()
-        if strategy_type not in STRATEGY_TYPES:
-            # 想定外の分類は「やり方に合わない」とみなして捨てる
-            return None
-        trigger = _s(raw.get("trigger"))
-        long_leg, short_leg = _s(raw.get("long_leg")), _s(raw.get("short_leg"))
-        if not trigger or not (long_leg or short_leg or raw.get("tickers")):
-            return None
-        tickers = [_s(t).upper() for t in (raw.get("tickers") or []) if _s(t)][:6]
-        idea = Idea(
-            item=item,
-            headline=_s(raw.get("headline")) or trigger[:40],
-            strategy_type=strategy_type,
-            direction=_enum(raw.get("direction"), DIRECTIONS, "ウォッチ"),
-            long_leg=long_leg,
-            short_leg=short_leg,
-            tickers=tickers,
-            trigger=trigger,
-            event_date=_parse_date(raw.get("event_date")),
-            entry=_s(raw.get("entry")),
-            exit=_s(raw.get("exit")),
-            mechanism=_s(raw.get("mechanism")),
-            validation=_s(raw.get("validation")),
-            reproducibility=_enum(raw.get("reproducibility"), REPRODUCIBILITY, "低"),
-            horizon=_enum(raw.get("horizon"), HORIZONS, "数日"),
-            caveats=_s(raw.get("caveats")),
-            summary=_s(raw.get("summary")),
-        )
-        idea.holding_related = is_holding(idea, self.holdings)
-        return idea
+        return raw_to_idea(raw, batch, self.holdings)
+
+    # Claude APIは従量課金で回数上限を設けない
+    remaining_requests: int | None = None
+
+    @staticmethod
+    def requests_needed(items: list[ContentItem]) -> int:
+        return len([b for b in batched(items) if any(i.text.strip() or i.title for i in b)])
 
 
 def batched(items: list[ContentItem]) -> list[list[ContentItem]]:
@@ -255,6 +229,43 @@ def batched(items: list[ContentItem]) -> list[list[ContentItem]]:
         for i in range(0, len(posts), X_BATCH_SIZE):
             batches.append(posts[i : i + X_BATCH_SIZE])
     return batches
+
+
+def raw_to_idea(raw: dict[str, Any], batch: list[ContentItem], holdings: list[tuple[str, str]]) -> Idea | None:
+    try:
+        item = batch[int(raw.get("source_index", -1))]
+    except (TypeError, ValueError, IndexError):
+        return None
+    strategy_type = str(raw.get("strategy_type") or "").strip()
+    if strategy_type not in STRATEGY_TYPES:
+        # 想定外の分類は「やり方に合わない」とみなして捨てる
+        return None
+    trigger = _s(raw.get("trigger"))
+    long_leg, short_leg = _s(raw.get("long_leg")), _s(raw.get("short_leg"))
+    if not trigger or not (long_leg or short_leg or raw.get("tickers")):
+        return None
+    tickers = [_s(t).upper() for t in (raw.get("tickers") or []) if _s(t)][:6]
+    idea = Idea(
+        item=item,
+        headline=_s(raw.get("headline")) or trigger[:40],
+        strategy_type=strategy_type,
+        direction=_enum(raw.get("direction"), DIRECTIONS, "ウォッチ"),
+        long_leg=long_leg,
+        short_leg=short_leg,
+        tickers=tickers,
+        trigger=trigger,
+        event_date=_parse_date(raw.get("event_date")),
+        entry=_s(raw.get("entry")),
+        exit=_s(raw.get("exit")),
+        mechanism=_s(raw.get("mechanism")),
+        validation=_s(raw.get("validation")),
+        reproducibility=_enum(raw.get("reproducibility"), REPRODUCIBILITY, "低"),
+        horizon=_enum(raw.get("horizon"), HORIZONS, "数日"),
+        caveats=_s(raw.get("caveats")),
+        summary=_s(raw.get("summary")),
+    )
+    idea.holding_related = is_holding(idea, holdings)
+    return idea
 
 
 def parse_tool_output(data: dict[str, Any]) -> list[dict[str, Any]]:

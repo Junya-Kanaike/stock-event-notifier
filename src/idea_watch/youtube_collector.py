@@ -180,6 +180,7 @@ class YouTubeCollector:
         transcript_max_chars: int = 60000,
         transcript_fetcher: TranscriptFetcher | None = None,
         gemini: GeminiVideoDigester | None = None,
+        defer_video_to_extractor: bool = False,
         feed_fetcher: Callable[[str], bytes] = fetch_feed_xml,
     ) -> None:
         self.max_videos = max(1, max_videos_per_source)
@@ -187,6 +188,8 @@ class YouTubeCollector:
         self.transcript_max_chars = transcript_max_chars
         self.transcripts = transcript_fetcher or TranscriptFetcher()
         self.gemini = gemini
+        # Trueなら動画URLを抽出器（Gemini）にそのまま渡し、ここでは字幕も要約も取らない
+        self.defer_video_to_extractor = defer_video_to_extractor
         self._feed = feed_fetcher
         self.gemini_hits = 0
         self.transcript_hits = 0
@@ -211,8 +214,13 @@ class YouTubeCollector:
         return items, newest.isoformat()
 
     def _to_item(self, source: Source, entry: dict[str, Any]) -> ContentItem:
+        watch_url = f"https://www.youtube.com/watch?v={entry['video_id']}"
+        if self.defer_video_to_extractor:
+            item = self._make_item(source, entry, entry["description"] or "", "動画(Gemini)")
+            item.video_url = watch_url
+            return item
         # 優先順: Gemini（動画を直接視聴）→ 字幕 → 概要欄
-        digest = self.gemini.digest(f"https://www.youtube.com/watch?v={entry['video_id']}") if self.gemini else None
+        digest = self.gemini.digest(watch_url) if self.gemini else None
         if digest:
             self.gemini_hits += 1
             text, origin = digest[: self.transcript_max_chars], "動画(Gemini)"

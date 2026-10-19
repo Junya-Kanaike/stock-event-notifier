@@ -1,4 +1,4 @@
-"""YouTube / X の指定ソースから投資アイデアを抽出し Notion に書き込む。
+"""YouTube / X の指定ソースとNotionの受信箱から投資アイデアを抽出し Notion に書き込む。
 
 python -m src.run_ideas            # 本番（Notionへ書き込み・カーソル更新）
 python -m src.run_ideas --dry-run  # 抽出結果を標準出力に表示（ローカル確認用。Actionsでは使わない）
@@ -12,6 +12,9 @@ import sys
 from src.core.bizday import now_jst
 from src.idea_watch.config import Settings
 from src.idea_watch.extractor import IdeaExtractor
+from src.idea_watch.gemini_extractor import GeminiIdeaExtractor
+from src.idea_watch.inbox import InboxEntry, InboxItemBuilder
+from src.idea_watch.models import Source
 from src.idea_watch.notion_store import NotionStore
 from src.idea_watch.pipeline import RunReport, run_pipeline
 from src.idea_watch.x_collector import XCollector
@@ -27,7 +30,17 @@ def main(argv: list[str] | None = None) -> int:
     now = now_jst()
 
     store = NotionStore(settings.notion_token, settings.sources_data_source_id, settings.ideas_data_source_id)
-    extractor = IdeaExtractor(settings.anthropic_api_key, settings.model, holdings=settings.holdings)
+    use_gemini = settings.llm == "gemini"
+    if use_gemini:
+        extractor = GeminiIdeaExtractor(
+            settings.gemini_api_key,
+            settings.gemini_model,
+            holdings=settings.holdings,
+            max_requests=settings.gemini_max_requests,
+            min_interval_sec=settings.gemini_min_interval_sec,
+        )
+    else:
+        extractor = IdeaExtractor(settings.anthropic_api_key, settings.model, holdings=settings.holdings)
     x_collector = (
         XCollector(
             settings.x_bearer_token,
@@ -39,8 +52,12 @@ def main(argv: list[str] | None = None) -> int:
         if settings.x_bearer_token
         else None
     )
+    # Geminiで抽出する構成では、動画URLを抽出器に直接渡す（視聴＋抽出を1リクエスト）。
+    # Claudeで抽出する構成では、Geminiキーがあれば動画の要約だけGeminiに任せる。
     gemini = (
-        GeminiVideoDigester(settings.gemini_api_key, settings.gemini_model) if settings.gemini_api_key else None
+        GeminiVideoDigester(settings.gemini_api_key, settings.gemini_model)
+        if settings.gemini_api_key and not use_gemini
+        else None
     )
     youtube_collector = YouTubeCollector(
         max_videos_per_source=settings.youtube_max_videos_per_source,
@@ -48,7 +65,24 @@ def main(argv: list[str] | None = None) -> int:
         transcript_max_chars=settings.transcript_max_chars,
         transcript_fetcher=TranscriptFetcher(settings.youtube_proxy_url),
         gemini=gemini,
+        defer_video_to_extractor=use_gemini,
     )
+
+    def youtube_from_inbox(video_id: str, entry: InboxEntry):
+        meta = {
+            "video_id": video_id,
+            "title": entry.title,
+            "published_at": entry.created_at,
+            "url": f"https://www.youtube.com/watch?v={video_id}",
+            "description": entry.memo,
+            "author": "YouTube（受信箱）",
+        }
+        item = youtube_collector._to_item(Source("inbox", "YouTube（受信箱）", "YouTube", video_id), meta)
+        if entry.memo:
+            item.text = (item.text + f"\n\n保存者のメモ: {entry.memo}").strip()
+        return item
+
+    inbox_builder = InboxItemBuilder(youtube_item_factory=youtube_from_inbox)
 
     report = run_pipeline(
         store=store,
@@ -57,6 +91,8 @@ def main(argv: list[str] | None = None) -> int:
         youtube_collector=youtube_collector,
         now=now,
         dry_run=args.dry_run,
+        inbox_builder=inbox_builder if settings.inbox_data_source_id else None,
+        inbox_data_source_id=settings.inbox_data_source_id,
     )
 
     print(report.summary_line())
@@ -68,7 +104,13 @@ def main(argv: list[str] | None = None) -> int:
         f"youtube_transcripts ok={youtube_collector.transcript_hits} "
         f"fallback={youtube_collector.transcript_misses} blocked={youtube_collector.transcripts.blocked}"
     )
-    print(f"claude_tokens in={extractor.input_tokens} out={extractor.output_tokens}")
+    if use_gemini:
+        print(
+            f"gemini requests={extractor.requests_made} remaining={extractor.remaining_requests} "
+            f"tokens in={extractor.input_tokens} out={extractor.output_tokens}"
+        )
+    else:
+        print(f"claude_tokens in={extractor.input_tokens} out={extractor.output_tokens}")
 
     if args.dry_run:
         _print_ideas(report)
@@ -77,7 +119,7 @@ def main(argv: list[str] | None = None) -> int:
     for line in report.failures:
         print(f"FAILED {line}", file=sys.stderr)
     # 全ソース失敗のときだけ非ゼロ終了（部分失敗はSlack通知で知らせる）
-    return 1 if report.sources and len(report.failures) == report.sources else 0
+    return 1 if report.sources and len(report.failures) >= report.sources else 0
 
 
 def _print_ideas(report: RunReport) -> None:

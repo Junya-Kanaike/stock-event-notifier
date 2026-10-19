@@ -9,6 +9,7 @@ from typing import Any
 PLATFORM_X = "X"
 PLATFORM_X_SEARCH = "X検索"
 PLATFORM_YOUTUBE = "YouTube"
+PLATFORM_MEMO = "メモ"
 X_PLATFORMS = (PLATFORM_X, PLATFORM_X_SEARCH)
 
 STRATEGY_TYPES = (
@@ -46,8 +47,10 @@ class ContentItem:
     url: str
     published_at: datetime
     text: str
-    text_origin: str  # "投稿" / "動画(Gemini)" / "字幕" / "概要欄のみ"
+    text_origin: str  # "投稿" / "動画(Gemini)" / "字幕" / "概要欄のみ" / "受信箱"
     title: str | None = None
+    # 抽出器に動画そのものを渡す場合のURL（Geminiで抽出する構成のみ）
+    video_url: str | None = None
 
 
 @dataclass
@@ -76,7 +79,7 @@ class Idea:
 
     @property
     def source_key(self) -> str:
-        prefix = "x" if self.item.platform == PLATFORM_X else "yt"
+        prefix = {PLATFORM_X: "x", PLATFORM_YOUTUBE: "yt"}.get(self.item.platform, "memo")
         basis = ",".join(sorted(self.tickers)) or self.headline
         digest = hashlib.sha1(f"{self.strategy_type}|{basis}".encode("utf-8")).hexdigest()[:10]
         return f"{prefix}:{self.item.item_id}:{digest}"
