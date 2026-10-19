@@ -1824,7 +1824,8 @@
     "140120261019552629",
     "140120261019552942",
     "140120261019552889",
-    "140120261019553087"
+    "140120261019553087",
+    "140120261014550573"
   ],
   "events": [
     {
@@ -8026,6 +8027,38 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "cb-4572-2026-10-19",
+      "type": "cb",
+      "code": "4572",
+      "name": "カルナバイオサイエンス",
+      "market": "グロース",
+      "margin": "信用",
+      "announced_at": "2026-10-19T17:15:00+09:00",
+      "detail": {
+        "amount": null,
+        "canceled": false
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261014550573.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261014550573.pdf",
+      "source_title": "新株予約権付社債発行プログラム設定契約に基づく第三者割当による第５回無担保転換社債型新株予約権付社債の発行に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261014550573",
+          "relation": "source",
+          "title": "新株予約権付社債発行プログラム設定契約に基づく第三者割当による第５回無担保転換社債型新株予約権付社債の発行に関するお知らせ",
+          "announced_at": "2026-10-19T17:15:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261014550573.pdf"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "貸借対象外"
+        ]
+      }
     }
   ],
   "source_health": {
@@ -8033,7 +8066,7 @@
       "last_checked_date": "2026-10-19",
       "last_success_date": "2026-10-19",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-19T17:14:01.238790+09:00",
+      "last_success_at": "2026-10-19T17:24:46.659465+09:00",
       "by_date": {
         "2026-09-24": {
           "checked_at": "2026-09-25T23:34:30.990166+09:00",
@@ -8126,20 +8159,20 @@
           "last_success_at": "2026-10-16T22:26:38.212252+09:00"
         },
         "2026-10-16": {
-          "checked_at": "2026-10-19T17:13:59.929935+09:00",
+          "checked_at": "2026-10-19T17:24:45.423815+09:00",
           "count": 202,
           "status": "success",
-          "last_success_at": "2026-10-19T17:13:59.929935+09:00"
+          "last_success_at": "2026-10-19T17:24:45.423815+09:00"
         },
         "2026-10-19": {
-          "checked_at": "2026-10-19T17:14:01.238505+09:00",
-          "count": 127,
+          "checked_at": "2026-10-19T17:24:46.659198+09:00",
+          "count": 128,
           "status": "success",
-          "last_success_at": "2026-10-19T17:14:01.238505+09:00"
+          "last_success_at": "2026-10-19T17:24:46.659198+09:00"
         }
       },
-      "last_checked_at": "2026-10-19T17:14:01.238505+09:00",
-      "last_complete_poll_at": "2026-10-19T17:14:01.238798+09:00"
+      "last_checked_at": "2026-10-19T17:24:46.659198+09:00",
+      "last_complete_poll_at": "2026-10-19T17:24:46.659470+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-10-18",
@@ -8395,11 +8428,11 @@
       "last_success_at": "2026-10-19T07:34:30.568691+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-19T17:13:57.831627+09:00",
-      "last_finished_at": "2026-10-19T17:14:01.262749+09:00",
+      "last_started_at": "2026-10-19T17:24:43.397759+09:00",
+      "last_finished_at": "2026-10-19T17:24:47.666799+09:00",
       "status": "success",
-      "run_id": "39221275901",
-      "last_success_at": "2026-10-19T17:14:01.262749+09:00"
+      "run_id": "39222546784",
+      "last_success_at": "2026-10-19T17:24:47.666799+09:00"
     }
   },
   "notification_log": [
