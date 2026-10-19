@@ -1823,7 +1823,8 @@
     "140120261009548324",
     "140120261019552629",
     "140120261019552942",
-    "140120261019552889"
+    "140120261019552889",
+    "140120261019553087"
   ],
   "events": [
     {
@@ -7971,6 +7972,60 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "bunbai-7050-2026-10-19",
+      "type": "bunbai",
+      "code": "7050",
+      "name": "フロンティアインターナショナル",
+      "market": "グロース",
+      "margin": "信用",
+      "announced_at": "2026-10-19T17:00:00+09:00",
+      "detail": {
+        "execution_date": "2026-10-27",
+        "execution_date_raw": "分売予定期間2026年10月27日（火）～2026年10月29日（木）分売実施日前日の終値もしくは最終気配値を基準として決3分売の値段定する予定です。4買付申込数量の限度買付顧客一人につき5,000株（売買単位:100株）5実施取引所東京証券取引所一定数量の売却意向があり、当社として検討した結果、当6実施の目的社株式の分布状況の改善及び流動性の向上を図るため",
+        "execution_date_confirmed": false,
+        "notification_tracking_started": true,
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-10-26",
+          "label": "execution-1bd",
+          "sent": false,
+          "not_before_jst": "06:00"
+        },
+        {
+          "date": "2026-10-27",
+          "label": "execution_day",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-11-04",
+          "label": "execution+5bd",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261019553087.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261019553087.pdf",
+      "source_title": "株式の立会外分売に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261019553087",
+          "relation": "source",
+          "title": "株式の立会外分売に関するお知らせ",
+          "announced_at": "2026-10-19T17:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261019553087.pdf"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
@@ -7978,7 +8033,7 @@
       "last_checked_date": "2026-10-19",
       "last_success_date": "2026-10-19",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-19T16:52:29.590622+09:00",
+      "last_success_at": "2026-10-19T17:03:19.108382+09:00",
       "by_date": {
         "2026-09-24": {
           "checked_at": "2026-09-25T23:34:30.990166+09:00",
@@ -8071,20 +8126,20 @@
           "last_success_at": "2026-10-16T22:26:38.212252+09:00"
         },
         "2026-10-16": {
-          "checked_at": "2026-10-19T16:52:28.247454+09:00",
+          "checked_at": "2026-10-19T17:03:17.981232+09:00",
           "count": 202,
           "status": "success",
-          "last_success_at": "2026-10-19T16:52:28.247454+09:00"
+          "last_success_at": "2026-10-19T17:03:17.981232+09:00"
         },
         "2026-10-19": {
-          "checked_at": "2026-10-19T16:52:29.590386+09:00",
-          "count": 116,
+          "checked_at": "2026-10-19T17:03:19.108117+09:00",
+          "count": 126,
           "status": "success",
-          "last_success_at": "2026-10-19T16:52:29.590386+09:00"
+          "last_success_at": "2026-10-19T17:03:19.108117+09:00"
         }
       },
-      "last_checked_at": "2026-10-19T16:52:29.590386+09:00",
-      "last_complete_poll_at": "2026-10-19T16:52:29.590628+09:00"
+      "last_checked_at": "2026-10-19T17:03:19.108117+09:00",
+      "last_complete_poll_at": "2026-10-19T17:03:19.108389+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-10-18",
@@ -8282,7 +8337,7 @@
       "failure": 0
     },
     "2026-10-19": {
-      "success": 9,
+      "success": 10,
       "failure": 0
     }
   },
@@ -8340,11 +8395,11 @@
       "last_success_at": "2026-10-19T07:34:30.568691+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-19T16:52:26.124847+09:00",
-      "last_finished_at": "2026-10-19T16:52:29.603311+09:00",
+      "last_started_at": "2026-10-19T17:03:16.280655+09:00",
+      "last_finished_at": "2026-10-19T17:03:19.633053+09:00",
       "status": "success",
-      "run_id": "39218790160",
-      "last_success_at": "2026-10-19T16:52:29.603311+09:00"
+      "run_id": "39220009289",
+      "last_success_at": "2026-10-19T17:03:19.633053+09:00"
     }
   },
   "notification_log": [
