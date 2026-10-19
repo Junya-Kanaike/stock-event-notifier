@@ -73,6 +73,7 @@ python -m src.run_daily --date 2026-07-16 --dry-run
 - `.github/workflows/test_notify.yml`: Webhook疎通確認
 - `.github/workflows/ci.yml`: 単体テスト、構文確認、依存関係監査
 - `.github/workflows/continuous_dispatcher.yml`: 明示有効化した場合のみ、GitHub上で継続的に不足した起動を補う。[設定・停止・制約](docs/CONTINUOUS_DISPATCHER.md)
+- `.github/workflows/idea_watch.yml`: 明示有効化した場合のみ、YouTube・Xの指定ソースから投資アイデアを1日2回抽出してNotionへ蓄積する。イベント通知とは状態・実行枠を共有しない。[設定・コスト・制約](docs/IDEA_WATCH.md)
 
 状態変更は `scripts/commit_state.sh` がcommitし、競合時はrebaseして最大3回pushを試行します。
 単体テストはコード変更時のCIへ集約し、定期通知workflowではデータ取得と通知だけを実行します。

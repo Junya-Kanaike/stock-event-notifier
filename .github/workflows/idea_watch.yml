@@ -1,0 +1,48 @@
+name: idea_watch
+
+on:
+  schedule:
+    # JST 07:13（寄り前）と 16:13（大引け後）。毎日。
+    - cron: "13 22 * * *"
+    - cron: "13 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# イベント通知の state lock（event-state-*）とは別枠。stateをcommitしない。
+concurrency:
+  group: idea-watch
+  cancel-in-progress: false
+
+jobs:
+  ideas:
+    if: github.ref == 'refs/heads/main' && vars.IDEA_WATCH_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      TZ: Asia/Tokyo
+      NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+      IDEA_HOLDINGS: ${{ secrets.IDEA_HOLDINGS }}
+      IDEA_YT_PROXY_URL: ${{ secrets.IDEA_YT_PROXY_URL }}
+      IDEA_SOURCES_DATA_SOURCE_ID: ${{ vars.IDEA_SOURCES_DATA_SOURCE_ID }}
+      IDEA_IDEAS_DATA_SOURCE_ID: ${{ vars.IDEA_IDEAS_DATA_SOURCE_ID }}
+      IDEA_MODEL: ${{ vars.IDEA_MODEL }}
+      IDEA_X_MAX_POSTS_PER_RUN: ${{ vars.IDEA_X_MAX_POSTS_PER_RUN }}
+      SLACK_WEBHOOK_SYSTEM: ${{ secrets.SLACK_WEBHOOK_SYSTEM }}
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check -r requirements.txt
+      # このリポジトリはpublicでログも公開される。--dry-runは使わない（抽出内容が出力されるため）。
+      - name: Collect ideas into Notion
+        run: python -m src.run_ideas
