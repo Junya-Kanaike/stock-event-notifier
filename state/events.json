@@ -5271,9 +5271,12 @@
         {
           "date": "2026-10-20",
           "label": "pricing_day+25bd",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-10-20T06:00:20.333749+09:00",
+          "sent_by": "39323973755",
+          "reference_only": false
         },
         {
           "date": "2026-10-21",
@@ -7289,9 +7292,12 @@
         {
           "date": "2026-10-20",
           "label": "pricing_day+1",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-10-20T06:00:20.536976+09:00",
+          "sent_by": "39323973755",
+          "reference_only": false
         },
         {
           "date": "2026-10-21",
@@ -8392,7 +8398,7 @@
       "failure": 0
     },
     "2026-10-20": {
-      "success": 1,
+      "success": 3,
       "failure": 0
     }
   },
@@ -8437,11 +8443,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-10-20T02:26:07.600238+09:00",
-      "last_finished_at": "2026-10-20T02:26:07.614178+09:00",
+      "last_started_at": "2026-10-20T06:00:20.286034+09:00",
+      "last_finished_at": "2026-10-20T06:00:20.729675+09:00",
       "status": "success",
-      "run_id": "39294051866",
-      "last_success_at": "2026-10-20T02:26:07.614178+09:00"
+      "run_id": "39323973755",
+      "last_success_at": "2026-10-20T06:00:20.729675+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-10-20T05:40:20.560215+09:00",
@@ -9866,6 +9872,28 @@
       "reference_only": true,
       "error_type": null,
       "run_id": "39175102384"
+    },
+    {
+      "event_id": "po-4099-2026-09-01",
+      "channel": "po",
+      "scheduled_for": "2026-10-20",
+      "label": "pricing_day+25bd",
+      "attempted_at": "2026-10-20T06:00:20.333749+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "39323973755"
+    },
+    {
+      "event_id": "po-6407-2026-10-07",
+      "channel": "po",
+      "scheduled_for": "2026-10-20",
+      "label": "pricing_day+1",
+      "attempted_at": "2026-10-20T06:00:20.536976+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "39323973755"
     }
   ]
 }
