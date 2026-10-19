@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-10-18T22:34:29.284330+00:00",
+  "fetched_at": "2026-10-19T04:38:58.675299+00:00",
   "data": {
     "1570": [
       {
@@ -9,6 +9,26 @@
         "rights_final_date": "2027-02-24",
         "ratio": "50",
         "effective_date": "2027-03-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2526": [
+      {
+        "code": "2526",
+        "name": "ＮＺＡＭ　４００",
+        "rights_final_date": "2027-02-10",
+        "ratio": "10",
+        "effective_date": "2027-02-16",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2525": [
+      {
+        "code": "2525",
+        "name": "ＮＺＡＭ　２２５",
+        "rights_final_date": "2027-02-10",
+        "ratio": "10",
+        "effective_date": "2027-02-16",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
