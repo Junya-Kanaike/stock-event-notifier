@@ -1880,7 +1880,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260714593697.pdf|https://www.release.tdnet.info/inbs/140120260722597166.pdf",
-        "calculation_recovery_attempt_date": "2026-10-20",
+        "calculation_recovery_attempt_date": "2026-10-21",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -1956,7 +1956,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260714592985.pdf|https://www.release.tdnet.info/inbs/140120260715594785.pdf",
-        "calculation_recovery_attempt_date": "2026-10-20",
+        "calculation_recovery_attempt_date": "2026-10-21",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -2032,7 +2032,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260715594693.pdf",
-        "calculation_recovery_attempt_date": "2026-10-20",
+        "calculation_recovery_attempt_date": "2026-10-21",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -2184,7 +2184,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260723598739.pdf|https://www.release.tdnet.info/inbs/140120260804508094.pdf",
-        "calculation_recovery_attempt_date": "2026-10-20",
+        "calculation_recovery_attempt_date": "2026-10-21",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -3825,7 +3825,7 @@
         "confirmed_size_oku": 92.781,
         "calculation_missing_fields": [],
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260818522647.pdf|https://www.release.tdnet.info/inbs/140120260826526681.pdf",
-        "calculation_recovery_attempt_date": "2026-10-20",
+        "calculation_recovery_attempt_date": "2026-10-21",
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260818522647.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260826526681.pdf: RuntimeError",
         "calculation_recovery_alerted": true
       },
@@ -4030,7 +4030,7 @@
         "effective_size_yen": 76301170000,
         "parser_version": 3,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260819523356.pdf|https://www.release.tdnet.info/inbs/140120260824525134.pdf|https://www.release.tdnet.info/inbs/140120260831528884.pdf",
-        "calculation_recovery_attempt_date": "2026-10-20",
+        "calculation_recovery_attempt_date": "2026-10-21",
         "calculation_missing_fields": [],
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260819523356.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260824525134.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260831528884.pdf: RuntimeError",
         "calculation_recovery_alerted": true
@@ -4351,7 +4351,7 @@
         "confirmed_size_yen": 64317310200,
         "confirmed_size_oku": 643.173102,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260821524618.pdf|https://www.release.tdnet.info/inbs/140120260831529202.pdf",
-        "calculation_recovery_attempt_date": "2026-10-20",
+        "calculation_recovery_attempt_date": "2026-10-21",
         "calculation_missing_fields": [],
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260821524618.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260831529202.pdf: RuntimeError",
         "calculation_recovery_alerted": true
@@ -5012,7 +5012,7 @@
         "confirmed_size_yen": 8708427200,
         "confirmed_size_oku": 87.084272,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260827527452.pdf|https://www.release.tdnet.info/inbs/140120260907532664.pdf",
-        "calculation_recovery_attempt_date": "2026-10-20",
+        "calculation_recovery_attempt_date": "2026-10-21",
         "calculation_missing_fields": [],
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260827527452.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260907532664.pdf: RuntimeError",
         "calculation_recovery_alerted": true
@@ -5787,8 +5787,8 @@
         "record_date_raw": "基準日（実質10月30日（金））として、同日最終の株主名簿に記載または記録 された株主の所有する当社普通株式1株につき、2株の割合をもって分割いたします。 ② 分割により増加する株式数 株式分割前の発行済株式総数 28,280,840株 今回の分割により増加する株式数 28,280,840株 株式分割後の発行済株式総数 56,561,680株 株式分割後の発",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -6018,8 +6018,8 @@
         "record_date_raw": "基準日2026年11月1日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7072,8 +7072,8 @@
         "record_date_raw": "基準日2026年10月21日",
         "rights_final_date": "2026-10-19",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7947,8 +7947,8 @@
         "record_date_raw": "基準日2026年10月31日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -8220,13 +8220,19 @@
           "last_success_at": "2026-10-20T23:08:41.259688+09:00"
         },
         "2026-10-20": {
-          "checked_at": "2026-10-20T23:08:42.468119+09:00",
+          "checked_at": "2026-10-21T08:02:14.512922+09:00",
           "count": 122,
           "status": "success",
-          "last_success_at": "2026-10-20T23:08:42.468119+09:00"
+          "last_success_at": "2026-10-21T08:02:14.512922+09:00"
+        },
+        "2026-10-21": {
+          "checked_at": "2026-10-21T08:02:15.748522+09:00",
+          "count": 0,
+          "status": "failed",
+          "error": "page 001: TDnet fallback page schema is unrecognized"
         }
       },
-      "last_checked_at": "2026-10-20T23:08:42.468119+09:00",
+      "last_checked_at": "2026-10-21T08:02:15.748522+09:00",
       "last_complete_poll_at": "2026-10-20T23:08:42.468338+09:00"
     },
     "jpx_master": {
@@ -8433,7 +8439,7 @@
       "failure": 0
     },
     "2026-10-21": {
-      "success": 5,
+      "success": 6,
       "failure": 0
     }
   },
@@ -8493,10 +8499,10 @@
       "last_success_at": "2026-10-21T05:40:44.872926+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-20T23:08:38.209370+09:00",
-      "last_finished_at": "2026-10-20T23:08:42.492247+09:00",
-      "status": "success",
-      "run_id": "39436536637",
+      "last_started_at": "2026-10-21T08:01:17.188713+09:00",
+      "last_finished_at": "2026-10-21T08:02:15.759508+09:00",
+      "status": "failed",
+      "run_id": "39512165174",
       "last_success_at": "2026-10-20T23:08:42.492247+09:00"
     }
   },
