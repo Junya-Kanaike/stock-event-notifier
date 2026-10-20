@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-10-19T23:55:05.810503+00:00",
+  "fetched_at": "2026-10-20T20:40:44.090802+00:00",
   "data": {
     "9146": {
       "code": "9146",
@@ -9,6 +9,15 @@
       "ex_right_date": "2026-10-20",
       "record_date": "2026-10-21",
       "rights_final_date": "2026-10-19",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "362A": {
+      "code": "362A",
+      "name": "Ｐ－エクシオＨＤ",
+      "market": "TOKYO PRO Market",
+      "ex_right_date": "2026-10-29",
+      "record_date": "2026-10-31",
+      "rights_final_date": "2026-10-28",
       "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
     },
     "6036": {
