@@ -5787,8 +5787,8 @@
         "record_date_raw": "基準日（実質10月30日（金））として、同日最終の株主名簿に記載または記録 された株主の所有する当社普通株式1株につき、2株の割合をもって分割いたします。 ② 分割により増加する株式数 株式分割前の発行済株式総数 28,280,840株 今回の分割により増加する株式数 28,280,840株 株式分割後の発行済株式総数 56,561,680株 株式分割後の発",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -6018,8 +6018,8 @@
         "record_date_raw": "基準日2026年11月1日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7072,8 +7072,8 @@
         "record_date_raw": "基準日2026年10月21日",
         "rights_final_date": "2026-10-19",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7947,8 +7947,8 @@
         "record_date_raw": "基準日2026年10月31日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -8237,15 +8237,15 @@
     },
     "jpx_master": {
       "last_success_date": "2026-10-20",
-      "last_success_at": "2026-10-20T20:40:40.028977+00:00"
+      "last_success_at": "2026-10-20T23:22:21.740672+00:00"
     },
     "jpx_margin": {
       "last_success_date": "2026-10-20",
-      "last_success_at": "2026-10-20T20:40:41.023949+00:00"
+      "last_success_at": "2026-10-20T23:22:22.537787+00:00"
     },
     "jpx_ex_rights": {
       "last_success_date": "2026-10-20",
-      "last_success_at": "2026-10-20T20:40:44.090802+00:00"
+      "last_success_at": "2026-10-20T23:22:24.623932+00:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-10-15",
@@ -8253,15 +8253,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-10-20",
-      "last_success_at": "2026-10-20T20:40:43.249121+00:00"
+      "last_success_at": "2026-10-20T23:22:23.986764+00:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-10-20",
-      "last_success_at": "2026-10-20T20:40:44.481577+00:00"
+      "last_success_at": "2026-10-20T23:22:25.017210+00:00"
     },
     "jpx_bunbai": {
       "last_success_date": "2026-10-20",
-      "last_success_at": "2026-10-20T20:40:44.842162+00:00"
+      "last_success_at": "2026-10-20T23:22:25.195500+00:00"
     }
   },
   "schema_version": 2,
@@ -8492,11 +8492,11 @@
       "last_success_at": "2026-10-21T08:18:19.645630+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-10-21T05:40:39.146547+09:00",
-      "last_finished_at": "2026-10-21T05:40:44.872926+09:00",
+      "last_started_at": "2026-10-21T08:22:20.983247+09:00",
+      "last_finished_at": "2026-10-21T08:22:25.196478+09:00",
       "status": "success",
-      "run_id": "39493973956",
-      "last_success_at": "2026-10-21T05:40:44.872926+09:00"
+      "run_id": "39514544450",
+      "last_success_at": "2026-10-21T08:22:25.196478+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-10-21T08:12:02.104944+09:00",
