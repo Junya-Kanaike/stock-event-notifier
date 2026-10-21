@@ -1836,7 +1836,8 @@
     "140120261021553869",
     "140120261021553917",
     "140120261020553617",
-    "140120261016552258"
+    "140120261016552258",
+    "140120261020553408"
   ],
   "events": [
     {
@@ -6594,11 +6595,11 @@
         "parser_version": 4,
         "po_kind": "both",
         "source_stage": "announcement",
-        "size_oku": 1482.525,
+        "size_oku": 1198.725,
         "size_oku_min": null,
         "size_oku_max": null,
-        "size_status": "estimated",
-        "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+        "size_status": "confirmed",
+        "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
         "share_count": null,
         "oa_share_count": null,
         "price_min_yen": null,
@@ -6609,21 +6610,21 @@
         "total_offered_shares": 55000000,
         "share_breakdown_complete": true,
         "oa_marker_present": true,
-        "issue_price_yen": null,
-        "sale_price_yen": null,
-        "offer_price_yen": null,
+        "issue_price_yen": 2179.5,
+        "sale_price_yen": 2179.5,
+        "offer_price_yen": 2179.5,
         "dilution_pct": null,
         "dilution_status": "unavailable",
         "pricing_date": "2026-10-21",
-        "pricing_date_end": "2026-10-26",
+        "pricing_date_end": "2026-10-21",
         "pricing_date_raw": "2026年10月21日から2026年10月26日までの発行価格等決定日",
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "provisional",
+        "pricing_date_confirmed": true,
+        "pricing_date_status": "confirmed",
         "settlement_date": "2026-10-28",
         "settlement_date_end": "2026-11-02",
-        "settlement_date_raw": "受渡期日2026年10月28日から2026年11月2日（払込期日の翌営業日から計算）",
+        "settlement_date_raw": "受渡期日2026年10月28日（水）(注)引受人は払込金額で買取引受けを行い、発行価格（募集価格）で募集を行います",
         "settlement_estimated": false,
-        "settlement_date_status": "provisional",
+        "settlement_date_status": "confirmed",
         "parse_warnings": [],
         "missing_fields": [
           "dilution_pct"
@@ -6635,11 +6636,14 @@
         "reference_close_kind": "announcement_close",
         "estimated_size_yen": 148252500000,
         "estimated_size_oku": 1482.525,
-        "effective_size_yen": 148252500000,
+        "effective_size_yen": 119872500000,
         "po_threshold_ever_met": true,
         "calculation_missing_fields": [],
         "eligible_notified": true,
-        "verified_calculation_source": "https://www.release.tdnet.info/inbs/140120261001544031.pdf"
+        "verified_calculation_source": "https://www.release.tdnet.info/inbs/140120261001544031.pdf",
+        "latest_source_stage": "pricing",
+        "confirmed_size_yen": 119872500000,
+        "confirmed_size_oku": 1198.725
       },
       "schedule": [
         {
@@ -6689,7 +6693,7 @@
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261001544031.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261001544031.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261020553408.pdf",
       "source_title": "新株式発行及び株式の売出しに関するお知らせ",
       "related_disclosures": [
         {
@@ -6699,6 +6703,13 @@
           "announced_at": "2026-10-02T16:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261001544031.pdf",
           "market": "東証"
+        },
+        {
+          "id": "140120261020553408",
+          "relation": "pricing",
+          "title": "発行価格及び売出価格等の決定に関するお知らせ",
+          "announced_at": "2026-10-21T17:15:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261020553408.pdf"
         }
       ],
       "eligibility": {
@@ -8127,7 +8138,7 @@
       "last_checked_date": "2026-10-21",
       "last_success_date": "2026-10-21",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-21T17:05:17.614211+09:00",
+      "last_success_at": "2026-10-21T17:15:59.808478+09:00",
       "by_date": {
         "2026-09-24": {
           "checked_at": "2026-09-25T23:34:30.990166+09:00",
@@ -8232,20 +8243,20 @@
           "last_success_at": "2026-10-20T23:08:41.259688+09:00"
         },
         "2026-10-20": {
-          "checked_at": "2026-10-21T17:05:15.538416+09:00",
+          "checked_at": "2026-10-21T17:15:58.753726+09:00",
           "count": 122,
           "status": "success",
-          "last_success_at": "2026-10-21T17:05:15.538416+09:00"
+          "last_success_at": "2026-10-21T17:15:58.753726+09:00"
         },
         "2026-10-21": {
-          "checked_at": "2026-10-21T17:05:17.613993+09:00",
-          "count": 103,
+          "checked_at": "2026-10-21T17:15:59.808267+09:00",
+          "count": 108,
           "status": "success",
-          "last_success_at": "2026-10-21T17:05:17.613993+09:00"
+          "last_success_at": "2026-10-21T17:15:59.808267+09:00"
         }
       },
-      "last_checked_at": "2026-10-21T17:05:17.613993+09:00",
-      "last_complete_poll_at": "2026-10-21T17:05:17.614217+09:00"
+      "last_checked_at": "2026-10-21T17:15:59.808267+09:00",
+      "last_complete_poll_at": "2026-10-21T17:15:59.808485+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-10-20",
@@ -8511,11 +8522,11 @@
       "last_success_at": "2026-10-21T08:22:25.196478+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-21T17:05:13.966308+09:00",
-      "last_finished_at": "2026-10-21T17:05:17.634039+09:00",
+      "last_started_at": "2026-10-21T17:15:57.463476+09:00",
+      "last_finished_at": "2026-10-21T17:16:00.305321+09:00",
       "status": "success",
-      "run_id": "39566597264",
-      "last_success_at": "2026-10-21T17:05:17.634039+09:00"
+      "run_id": "39567933866",
+      "last_success_at": "2026-10-21T17:16:00.305321+09:00"
     }
   },
   "notification_log": [
