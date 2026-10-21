@@ -1835,7 +1835,8 @@
     "140120261021553878",
     "140120261021553869",
     "140120261021553917",
-    "140120261020553617"
+    "140120261020553617",
+    "140120261016552258"
   ],
   "events": [
     {
@@ -7745,8 +7746,8 @@
       "announced_at": "2026-10-14T15:30:00+09:00",
       "detail": {
         "execution_date": "2026-10-22",
-        "execution_date_raw": "分売予定期間 2026年10月22日（木）～ 2026年10月26日（月） 3. 分売値段 分売実施日前日の終値もしくは最終気配値を基準として決定する予定です。 4. 買付申込数量の限度 買付顧客1人につき500株（売買単位:100株） 5. 実施取引所 東京証券取引所 6. 実施の目的 一定数量の売却意向があり、発行会社として検討した結果、株式の分布状況 ",
-        "execution_date_confirmed": false,
+        "execution_date_raw": "分売実施日 2026年10月22日（木） 3. 分売値段 2,867円 4. 買付申込数量の限度 買付顧客1人につき500株（売買単位:100株） 5. 実施取引所 東京証券取引所 6. 実施の目的 一定数量の売却意向があり、発行会社として検討した結果、株式の分布状況 の改善及び流動性の向上を図るため。 （ご参考） 分売の算定基準日及びその価格 2026年1",
+        "execution_date_confirmed": true,
         "notification_tracking_started": true,
         "eligible_notified": true
       },
@@ -7764,19 +7765,19 @@
           "date": "2026-10-22",
           "label": "execution_day",
           "sent": false,
-          "action_cutoff_jst": "09:00",
-          "not_before_jst": "06:00"
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
         },
         {
           "date": "2026-10-29",
           "label": "execution+5bd",
           "sent": false,
-          "action_cutoff_jst": "09:00",
-          "not_before_jst": "06:00"
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261009548539.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261009548539.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261016552258.pdf",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -7786,6 +7787,13 @@
           "announced_at": "2026-10-14T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261009548539.pdf",
           "market": "東証・名証"
+        },
+        {
+          "id": "140120261016552258",
+          "relation": "execution",
+          "title": "株式の立会外分売実施に関するお知らせ",
+          "announced_at": "2026-10-21T16:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261016552258.pdf"
         }
       ],
       "eligibility": {
@@ -8119,7 +8127,7 @@
       "last_checked_date": "2026-10-21",
       "last_success_date": "2026-10-21",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-21T16:22:20.341877+09:00",
+      "last_success_at": "2026-10-21T16:33:02.868382+09:00",
       "by_date": {
         "2026-09-24": {
           "checked_at": "2026-09-25T23:34:30.990166+09:00",
@@ -8224,20 +8232,20 @@
           "last_success_at": "2026-10-20T23:08:41.259688+09:00"
         },
         "2026-10-20": {
-          "checked_at": "2026-10-21T16:22:19.037537+09:00",
+          "checked_at": "2026-10-21T16:33:01.582827+09:00",
           "count": 122,
           "status": "success",
-          "last_success_at": "2026-10-21T16:22:19.037537+09:00"
+          "last_success_at": "2026-10-21T16:33:01.582827+09:00"
         },
         "2026-10-21": {
-          "checked_at": "2026-10-21T16:22:20.341713+09:00",
-          "count": 94,
+          "checked_at": "2026-10-21T16:33:02.868205+09:00",
+          "count": 98,
           "status": "success",
-          "last_success_at": "2026-10-21T16:22:20.341713+09:00"
+          "last_success_at": "2026-10-21T16:33:02.868205+09:00"
         }
       },
-      "last_checked_at": "2026-10-21T16:22:20.341713+09:00",
-      "last_complete_poll_at": "2026-10-21T16:22:20.341881+09:00"
+      "last_checked_at": "2026-10-21T16:33:02.868205+09:00",
+      "last_complete_poll_at": "2026-10-21T16:33:02.868386+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-10-20",
@@ -8443,7 +8451,7 @@
       "failure": 0
     },
     "2026-10-21": {
-      "success": 8,
+      "success": 9,
       "failure": 0
     }
   },
@@ -8503,11 +8511,11 @@
       "last_success_at": "2026-10-21T08:22:25.196478+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-21T16:22:17.429280+09:00",
-      "last_finished_at": "2026-10-21T16:22:20.350857+09:00",
+      "last_started_at": "2026-10-21T16:32:59.997000+09:00",
+      "last_finished_at": "2026-10-21T16:33:03.279104+09:00",
       "status": "success",
-      "run_id": "39561475320",
-      "last_success_at": "2026-10-21T16:22:20.350857+09:00"
+      "run_id": "39562742040",
+      "last_success_at": "2026-10-21T16:33:03.279104+09:00"
     }
   },
   "notification_log": [
