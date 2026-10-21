@@ -5793,8 +5793,8 @@
         "record_date_raw": "基準日（実質10月30日（金））として、同日最終の株主名簿に記載または記録 された株主の所有する当社普通株式1株につき、2株の割合をもって分割いたします。 ② 分割により増加する株式数 株式分割前の発行済株式総数 28,280,840株 今回の分割により増加する株式数 28,280,840株 株式分割後の発行済株式総数 56,561,680株 株式分割後の発",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -6024,8 +6024,8 @@
         "record_date_raw": "基準日2026年11月1日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7088,8 +7088,8 @@
         "record_date_raw": "基準日2026年10月21日",
         "rights_final_date": "2026-10-19",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7807,6 +7807,7 @@
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261016552258.pdf"
         }
       ],
+      "jpx_source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
       "eligibility": {
         "status": "eligible",
         "reasons": []
@@ -7970,8 +7971,8 @@
         "record_date_raw": "基準日2026年10月31日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -8259,16 +8260,16 @@
       "last_complete_poll_at": "2026-10-21T23:10:15.116616+09:00"
     },
     "jpx_master": {
-      "last_success_date": "2026-10-20",
-      "last_success_at": "2026-10-20T23:22:21.740672+00:00"
+      "last_success_date": "2026-10-21",
+      "last_success_at": "2026-10-21T20:41:04.817053+00:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-10-20",
-      "last_success_at": "2026-10-20T23:22:22.537787+00:00"
+      "last_success_date": "2026-10-21",
+      "last_success_at": "2026-10-21T20:41:05.817351+00:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-10-20",
-      "last_success_at": "2026-10-20T23:22:24.623932+00:00"
+      "last_success_date": "2026-10-21",
+      "last_success_at": "2026-10-21T20:41:08.501420+00:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-10-15",
@@ -8276,15 +8277,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-10-21",
-      "last_success_at": "2026-10-21T14:10:12.192319+00:00"
+      "last_success_at": "2026-10-21T20:41:07.778975+00:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-10-20",
-      "last_success_at": "2026-10-20T23:22:25.017210+00:00"
+      "last_success_date": "2026-10-21",
+      "last_success_at": "2026-10-21T20:41:08.804585+00:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-10-20",
-      "last_success_at": "2026-10-20T23:22:25.195500+00:00"
+      "last_success_date": "2026-10-21",
+      "last_success_at": "2026-10-21T20:41:09.189656+00:00"
     }
   },
   "schema_version": 2,
@@ -8516,11 +8517,11 @@
       "last_success_at": "2026-10-22T00:55:16.583215+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-10-21T08:22:20.983247+09:00",
-      "last_finished_at": "2026-10-21T08:22:25.196478+09:00",
+      "last_started_at": "2026-10-22T05:41:03.859754+09:00",
+      "last_finished_at": "2026-10-22T05:41:09.268676+09:00",
       "status": "success",
-      "run_id": "39514544450",
-      "last_success_at": "2026-10-21T08:22:25.196478+09:00"
+      "run_id": "39672392792",
+      "last_success_at": "2026-10-22T05:41:09.268676+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-10-21T23:10:09.647619+09:00",

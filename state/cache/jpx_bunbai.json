@@ -1,17 +1,11 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-10-20T23:22:25.195500+00:00",
+  "fetched_at": "2026-10-21T20:41:09.189656+00:00",
   "data": [
     {
-      "code": "5071",
-      "name": "ヴィス",
-      "execution_date": "2026-09-25",
-      "source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
-    },
-    {
-      "code": "7682",
-      "name": "浜木綿",
-      "execution_date": "2026-09-25",
+      "code": "138A",
+      "name": "光フードサービス（株）",
+      "execution_date": "2026-10-22",
       "source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
     }
   ]
