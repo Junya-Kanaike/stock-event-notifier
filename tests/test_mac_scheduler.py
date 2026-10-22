@@ -1,7 +1,12 @@
 from datetime import datetime, timedelta
+import json
 from pathlib import Path
 import plistlib
+import subprocess
 import unittest
+from unittest.mock import patch
+
+from scripts import mac_scheduler
 from scripts.mac_scheduler import JST, WORKFLOWS, freshness_requirement, plan_dispatch, launchd_config
 
 NOW = datetime(2026, 9, 16, 8, 30, tzinfo=JST)
@@ -82,6 +87,24 @@ class MacSchedulerTest(unittest.TestCase):
         self.assertEqual(parsed["ProgramArguments"][0], "/path with spaces/python")
         self.assertEqual(parsed["StartInterval"], 60)
         self.assertNotIn("EnvironmentVariables", parsed)
+
+    def test_state_over_one_megabyte_is_read_with_raw_media_type(self):
+        _, health = self.fresh()
+        state = {"workflow_health": health, "notification_log": ["x" * 1024] * 1200}
+        calls = []
+
+        def fake_run(args, **kwargs):
+            calls.append(args)
+            body = state if args[-1].startswith("repos/owner/repo/contents/") else {"workflow_runs": []}
+            return subprocess.CompletedProcess(args, 0, stdout=json.dumps(body), stderr="")
+
+        with patch.object(mac_scheduler.subprocess, "run", side_effect=fake_run):
+            plan = mac_scheduler.inspect_remote("gh", "owner/repo", NOW, {})
+
+        contents_call = next(args for args in calls if "contents/state/events.json" in args[-1])
+        self.assertIn("Accept: application/vnd.github.raw+json", contents_call)
+        self.assertGreater(len(json.dumps(state)), 1024 * 1024)
+        self.assertIn("dispatch", plan)
 
 
 if __name__ == "__main__":

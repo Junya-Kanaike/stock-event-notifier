@@ -26,6 +26,15 @@ class StoreTest(unittest.TestCase):
         self.assertTrue(record_notification_counts(state, stamp.date(), success_count=2, failure_count=1))
         self.assertTrue(record_notification_counts(state, stamp.date(), success_count=3, failure_count=0))
         self.assertEqual(state["notification_stats"]["2026-09-08"], {"success": 5, "failure": 1})
+
+    def test_source_success_from_utc_cache_is_recorded_in_jst(self):
+        state = {"events": []}
+        # 05:40 JST morning refresh, stamped in UTC on the previous calendar day.
+        record_source_success(state, "jpx_master", datetime.fromisoformat("2026-10-21T20:40:00+00:00"))
+        record = state["source_health"]["jpx_master"]
+        self.assertEqual(record["last_success_date"], "2026-10-22")
+        self.assertEqual(record["last_success_at"], "2026-10-22T05:40:00+09:00")
+
     def test_disclosure_failure_is_counted_and_can_be_cleared(self):
         state = {"events": []}
         for expected in range(1, 6):

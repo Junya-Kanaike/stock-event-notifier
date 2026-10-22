@@ -5,7 +5,6 @@ check is read-only. tick dispatches at most one workflow. install is explicit.
 from __future__ import annotations
 
 import argparse
-import base64
 from datetime import datetime, time, timedelta
 import fcntl
 import json
@@ -98,8 +97,11 @@ def plan_dispatch(now, runs, health, local):
             "due": due, "active_runs": [r.get("id") for r in busy]}
 
 
-def gh_json(gh, endpoint):
-    completed = subprocess.run([gh, "api", endpoint], check=True, capture_output=True, text=True, timeout=30)
+def gh_json(gh, endpoint, *, raw=False):
+    # The contents API omits base64 content for files over 1 MB; the raw media
+    # type returns the file body itself up to 100 MB.
+    headers = ["-H", "Accept: application/vnd.github.raw+json"] if raw else []
+    completed = subprocess.run([gh, "api", *headers, endpoint], check=True, capture_output=True, text=True, timeout=30)
     return json.loads(completed.stdout)
 
 
@@ -110,8 +112,7 @@ def inspect_remote(gh, repo, now, local):
         runs[name] = [r for r in payload["workflow_runs"]
                       if r.get("head_branch") == "main"
                       and r.get("event") in {"schedule", "workflow_dispatch"}]
-    content = gh_json(gh, f"repos/{repo}/contents/state/events.json?ref=main")
-    state = json.loads(base64.b64decode(content["content"]))
+    state = gh_json(gh, f"repos/{repo}/contents/state/events.json?ref=main", raw=True)
     plan = plan_dispatch(now, runs, state.get("workflow_health", {}), local)
     failed_dates = [day for day, data in state.get("source_health", {}).get("tdnet", {}).get("by_date", {}).items()
                     if data.get("status") != "success"]

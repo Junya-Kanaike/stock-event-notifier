@@ -105,7 +105,7 @@ class TdnetKeywordTest(unittest.TestCase):
         self.assertEqual(normalize.call_count, 1)
 
     def test_real_yanoshin_shape_uses_pdf_id_and_direct_url(self):
-        payload = b'''{
+        payload = rb'''{
           "total_count": 1,
           "items": [{"Tdnet": {
             "id": "1265391",
@@ -164,6 +164,68 @@ class TdnetKeywordTest(unittest.TestCase):
 
         self.assertEqual([item.id for item in disclosures], ["api-1", "html-1"])
         fallback.assert_called_once_with("20260715")
+
+    def test_yanoshin_requests_every_row_of_the_day(self):
+        with patch("src.collectors.tdnet.request_get", return_value=b'{"total_count": 0, "items": []}') as get:
+            tdnet.fetch_yanoshin_disclosures("20261015")
+        self.assertIn(f"limit={tdnet.YANOSHIN_RESULT_CAP}", get.call_args.args[0])
+
+    def test_full_yanoshin_page_is_truncated_even_when_total_count_matches(self):
+        # Yanoshin reports the returned size as total_count (300 by default),
+        # so a full page must be completed from TDnet.
+        api_item = self._disclosure("api-1", "7203", "202610151530")
+        html_item = self._disclosure("html-1", "6758", "202610150900")
+        truncated = tdnet.DisclosureBatch(
+            [api_item], total_count=tdnet.YANOSHIN_RESULT_CAP, raw_count=tdnet.YANOSHIN_RESULT_CAP
+        )
+        with patch("src.collectors.tdnet.fetch_yanoshin_disclosures", return_value=truncated), patch(
+            "src.collectors.tdnet.fetch_tdnet_html_disclosures", return_value=[html_item]
+        ) as fallback:
+            disclosures = tdnet.fetch_disclosures(date(2026, 10, 15))
+        self.assertEqual(sorted(item.id for item in disclosures), ["api-1", "html-1"])
+        fallback.assert_called_once_with("20261015")
+
+    def test_dropped_etf_rows_do_not_force_html_fallback(self):
+        complete = tdnet.DisclosureBatch([self._disclosure("api-1", "7203", "202610211500")], total_count=3, raw_count=3)
+        with patch("src.collectors.tdnet.fetch_yanoshin_disclosures", return_value=complete), patch(
+            "src.collectors.tdnet.fetch_tdnet_html_disclosures"
+        ) as fallback:
+            self.assertIs(tdnet.fetch_disclosures(date(2026, 10, 21)), complete)
+        fallback.assert_not_called()
+
+    def test_unpublished_list_page_is_empty_today_but_failed_for_past_days(self):
+        import requests
+
+        response = requests.Response()
+        response.status_code = 404
+        not_found = RuntimeError("GET failed")
+        not_found.__cause__ = requests.HTTPError(response=response)
+        empty = tdnet.DisclosureBatch([], total_count=0, raw_count=0)
+        with patch("src.collectors.tdnet.fetch_yanoshin_disclosures", return_value=empty), patch(
+            "src.collectors.tdnet.request_get", side_effect=not_found
+        ), patch("src.collectors.tdnet.today_jst", return_value=date(2026, 10, 23)):
+            self.assertEqual(tdnet.fetch_disclosures(date(2026, 10, 23)), [])
+            with self.assertRaises(tdnet.PartialDisclosureError):
+                tdnet.fetch_disclosures(date(2026, 10, 22))
+
+    def test_html_server_error_is_not_mistaken_for_an_empty_day(self):
+        import requests
+
+        response = requests.Response()
+        response.status_code = 503
+        unavailable = RuntimeError("GET failed")
+        unavailable.__cause__ = requests.HTTPError(response=response)
+        with patch("src.collectors.tdnet.fetch_yanoshin_disclosures", side_effect=ValueError("down")), patch(
+            "src.collectors.tdnet.request_get", side_effect=unavailable
+        ), patch("src.collectors.tdnet.today_jst", return_value=date(2026, 10, 23)):
+            with self.assertRaises(RuntimeError):
+                tdnet.fetch_disclosures(date(2026, 10, 23))
+
+    @staticmethod
+    def _disclosure(disclosure_id: str, code: str, stamp: str) -> tdnet.Disclosure:
+        return tdnet.Disclosure(
+            id=disclosure_id, code=code, name="A", title="株式分割", announced_at=tdnet._parse_datetime(stamp)
+        )
 
     def test_html_fallback_ignores_outer_rows_and_preserves_time(self):
         html = b"""
