@@ -1,16 +1,7 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-10-21T23:35:36.737572+00:00",
+  "fetched_at": "2026-10-22T13:57:57.945806+00:00",
   "data": {
-    "9146": {
-      "code": "9146",
-      "name": "Ｐ－五健堂ＨＤ",
-      "market": "TOKYO PRO Market",
-      "ex_right_date": "2026-10-20",
-      "record_date": "2026-10-21",
-      "rights_final_date": "2026-10-19",
-      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
-    },
     "362A": {
       "code": "362A",
       "name": "Ｐ－エクシオＨＤ",
@@ -45,6 +36,15 @@
       "ex_right_date": "2026-10-29",
       "record_date": "2026-11-01",
       "rights_final_date": "2026-10-28",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "1546": {
+      "code": "1546",
+      "name": "ダウヘッジ無",
+      "market": "その他",
+      "ex_right_date": "2026-11-04",
+      "record_date": "2026-11-05",
+      "rights_final_date": "2026-11-02",
       "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
     }
   }
