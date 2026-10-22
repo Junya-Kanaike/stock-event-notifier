@@ -1837,7 +1837,8 @@
     "140120261021553917",
     "140120261020553617",
     "140120261016552258",
-    "140120261020553408"
+    "140120261020553408",
+    "140120261016552304"
   ],
   "events": [
     {
@@ -7760,7 +7761,7 @@
       "announced_at": "2026-10-14T15:30:00+09:00",
       "detail": {
         "execution_date": "2026-10-22",
-        "execution_date_raw": "分売実施日 2026年10月22日（木） 3. 分売値段 2,867円 4. 買付申込数量の限度 買付顧客1人につき500株（売買単位:100株） 5. 実施取引所 東京証券取引所 6. 実施の目的 一定数量の売却意向があり、発行会社として検討した結果、株式の分布状況 の改善及び流動性の向上を図るため。 （ご参考） 分売の算定基準日及びその価格 2026年1",
+        "execution_date_raw": "分売実施日 株数 分売値段 買付申込数量の限度 2026年10月22日（木） 40,000株 2,867円 500株 （ご参考）2026年10月21日（水）にお知らせいたしました内容は、以下のとおりです。 1. 分 売 予 定 株 式 数 40,000株 2. 分 売 実 施 日 2026年10月22日（木） 3. 分 売 値 段 2,867円 4. 買付申",
         "execution_date_confirmed": true,
         "notification_tracking_started": true,
         "eligible_notified": true
@@ -7794,7 +7795,7 @@
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261009548539.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261016552258.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261016552304.pdf",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -7811,6 +7812,13 @@
           "title": "株式の立会外分売実施に関するお知らせ",
           "announced_at": "2026-10-21T16:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261016552258.pdf"
+        },
+        {
+          "id": "140120261016552304",
+          "relation": "completion",
+          "title": "株式の立会外分売終了に関するお知らせ",
+          "announced_at": "2026-10-22T10:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261016552304.pdf"
         }
       ],
       "jpx_source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
@@ -8145,7 +8153,7 @@
       "last_checked_date": "2026-10-22",
       "last_success_date": "2026-10-22",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-22T09:58:30.873910+09:00",
+      "last_success_at": "2026-10-22T10:09:08.876844+09:00",
       "by_date": {
         "2026-09-24": {
           "checked_at": "2026-09-25T23:34:30.990166+09:00",
@@ -8256,20 +8264,20 @@
           "last_success_at": "2026-10-21T23:10:13.768583+09:00"
         },
         "2026-10-21": {
-          "checked_at": "2026-10-22T09:58:29.911002+09:00",
+          "checked_at": "2026-10-22T10:09:07.622216+09:00",
           "count": 112,
           "status": "success",
-          "last_success_at": "2026-10-22T09:58:29.911002+09:00"
+          "last_success_at": "2026-10-22T10:09:07.622216+09:00"
         },
         "2026-10-22": {
-          "checked_at": "2026-10-22T09:58:30.873739+09:00",
-          "count": 2,
+          "checked_at": "2026-10-22T10:09:08.876692+09:00",
+          "count": 6,
           "status": "success",
-          "last_success_at": "2026-10-22T09:58:30.873739+09:00"
+          "last_success_at": "2026-10-22T10:09:08.876692+09:00"
         }
       },
-      "last_checked_at": "2026-10-22T09:58:30.873739+09:00",
-      "last_complete_poll_at": "2026-10-22T09:58:30.873917+09:00"
+      "last_checked_at": "2026-10-22T10:09:08.876692+09:00",
+      "last_complete_poll_at": "2026-10-22T10:09:08.876850+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-10-21",
@@ -8479,7 +8487,7 @@
       "failure": 0
     },
     "2026-10-22": {
-      "success": 2,
+      "success": 3,
       "failure": 0
     }
   },
@@ -8540,11 +8548,11 @@
       "last_success_at": "2026-10-22T08:35:37.502055+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-22T09:58:28.298171+09:00",
-      "last_finished_at": "2026-10-22T09:58:30.884323+09:00",
+      "last_started_at": "2026-10-22T10:09:05.088870+09:00",
+      "last_finished_at": "2026-10-22T10:09:09.957380+09:00",
       "status": "success",
-      "run_id": "39702892606",
-      "last_success_at": "2026-10-22T09:58:30.884323+09:00"
+      "run_id": "39703978445",
+      "last_success_at": "2026-10-22T10:09:09.957380+09:00"
     }
   },
   "notification_log": [
