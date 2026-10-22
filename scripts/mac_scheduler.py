@@ -41,24 +41,53 @@ def parse_time(value):
     return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(JST)
 
 
+def _at(now, hour, minute=0):
+    return now.replace(hour=hour, minute=minute, second=0, microsecond=0)
+
+
+def _notice_gate(clock):
+    """Gate hour of the time-gated notice window containing clock, if any."""
+    if time(6) <= clock < time(9, 10) or time(12) <= clock < time(12, 25) or time(19) <= clock < time(19, 25):
+        return 19 if clock >= time(19) else 12 if clock >= time(12) else 8 if clock >= time(8) else 6
+    return None
+
+
 def freshness_requirement(name, now):
     clock = now.time().replace(tzinfo=None)
     if name == "daily_morning":
-        return now.replace(hour=5, minute=30, second=0, microsecond=0) if clock >= time(5, 40) else None
+        return _at(now, 5, 30) if clock >= time(5, 40) else None
     if now.weekday() >= 5 or jpholiday.is_holiday(now.date()) or (now.month, now.day) in {(12, 31), (1, 1), (1, 2), (1, 3)}:
         return None
     if name == "poll_tdnet" and time(8) <= clock < time(20):
         return now - timedelta(minutes=10)
     if name == "timed_notifications":
-        if (time(6) <= clock < time(9, 10) or time(12) <= clock < time(12, 25)
-                or time(19) <= clock < time(19, 25)):
-            gate_hour = 19 if clock >= time(19) else 12 if clock >= time(12) else 8 if clock >= time(8) else 6
-            return max(now - timedelta(minutes=5), now.replace(hour=gate_hour, minute=0, second=0, microsecond=0))
+        gate = _notice_gate(clock)
+        if gate is not None:
+            return max(now - timedelta(minutes=5), _at(now, gate))
         if time(20, 10) <= clock < time(20, 45):
             return now - timedelta(minutes=10)
         if time(9, 10) <= clock < time(20):
             return now - timedelta(minutes=30)
     return None
+
+
+def overdue_since(name, now, saved_success):
+    """When a due job should have saved a success: its expected time, or the
+    end of the allowed gap after the last saved success. Lateness for alerts
+    is measured from here, not from the age of the last success."""
+    clock = now.time().replace(tzinfo=None)
+    gate = _notice_gate(clock)
+    if name == "daily_morning":
+        return _at(now, 5, 30)
+    if name == "poll_tdnet":
+        start, gap = _at(now, 8), timedelta(minutes=10)
+    elif gate is not None:
+        start, gap = _at(now, gate), timedelta(minutes=5)
+    elif clock >= time(20):
+        start, gap = _at(now, 20), timedelta(minutes=10)
+    else:
+        start, gap = _at(now, 9, 10), timedelta(minutes=30)
+    return start if saved_success is None else max(start, saved_success + gap)
 
 
 def plan_dispatch(now, runs, health, local):
@@ -77,20 +106,19 @@ def plan_dispatch(now, runs, health, local):
         required = freshness_requirement(name, now)
         if required is None:
             continue
-        successful = [parse_time(r.get("created_at")) for r in runs.get(name, [])
-                      if r.get("conclusion") == "success"]
+        # Saved processing evidence is authoritative. The run list is eventually
+        # consistent and came back incomplete during GitHub incidents, so it is
+        # used only to find active runs.
         saved_success = parse_time(health.get(name, {}).get("last_success_at"))
-        # A job success alone is insufficient: processing evidence must be saved.
-        fresh_job = any(stamp and required <= stamp <= now for stamp in successful)
-        fresh_state = saved_success is not None and required <= saved_success <= now
-        if fresh_job and fresh_state:
+        if saved_success is not None and required <= saved_success <= now:
             continue
         previous_request = parse_time(local.get("dispatches", {}).get(name))
         if previous_request and now - previous_request < timedelta(minutes=10):
             continue
         due.append(name)
-        if not saved_success or now - saved_success > timedelta(minutes=30):
-            warnings.append(f"{name}: 保存済み処理成功が30分以上古い、または未確認")
+        late = now - overdue_since(name, now, saved_success)
+        if late >= timedelta(minutes=30):
+            warnings.append(f"{name}: 予定時刻から{int(late.total_seconds() // 60)}分経っても処理成功が保存されていません")
     # All production jobs share a concurrency group. Never replace its pending
     # workflow by submitting another watchdog request.
     return {"dispatch": due[0] if due and not busy else None, "warnings": warnings,
