@@ -17,8 +17,11 @@ YANOSHIN_LIST_URL = os.getenv(
     "YANOSHIN_TDNET_LIST_URL", "https://webapi.yanoshin.jp/webapi/tdnet/list/{yyyymmdd}.json"
 )
 TDNET_HTML_URL = os.getenv("TDNET_HTML_URL", "https://www.release.tdnet.info/inbs/I_list_001_{yyyymmdd}.html")
-MAX_TDNET_PAGES = int(os.getenv("TDNET_MAX_PAGES", "10"))
-YANOSHIN_RESULT_CAP = int(os.getenv("YANOSHIN_RESULT_CAP", "300"))
+# Peak earnings days exceed 2,500 disclosures (100 rows per TDnet page).
+MAX_TDNET_PAGES = int(os.getenv("TDNET_MAX_PAGES", "40"))
+# Yanoshin returns only the newest 300 rows unless a limit is requested, and it
+# reports the truncated size as total_count. Request every row of the day.
+YANOSHIN_RESULT_CAP = int(os.getenv("YANOSHIN_RESULT_CAP", "10000"))
 
 PO_INCLUDE_KEYWORDS = [
     "公募増資",
@@ -64,9 +67,12 @@ class Disclosure:
 
 
 class DisclosureBatch(list[Disclosure]):
-    def __init__(self, values: list[Disclosure], total_count: int | None = None):
+    def __init__(self, values: list[Disclosure], total_count: int | None = None, raw_count: int | None = None):
         super().__init__(values)
         self.total_count = total_count
+        # Rows received before normalization. ETF/ETN rows without a stock code
+        # are dropped, so completeness is judged on the received count.
+        self.raw_count = len(values) if raw_count is None else raw_count
 
 
 class PartialDisclosureError(RuntimeError):
@@ -75,6 +81,10 @@ class PartialDisclosureError(RuntimeError):
     def __init__(self, message: str, disclosures: list[Disclosure]):
         super().__init__(message)
         self.disclosures = list({item.id: item for item in disclosures}.values())
+
+
+class TdnetListNotFound(RuntimeError):
+    """TDnet has not published a list page for the date."""
 
 
 def classify_title(title: str) -> set[str]:
@@ -185,16 +195,12 @@ def fetch_disclosures(target_date: date | None = None) -> list[Disclosure]:
     yyyymmdd = day.strftime("%Y%m%d")
     try:
         disclosures = fetch_yanoshin_disclosures(yyyymmdd)
-        total_count = getattr(disclosures, "total_count", None)
-        if disclosures and (
-            (total_count is not None and len(disclosures) >= total_count)
-            or (total_count is None and len(disclosures) < YANOSHIN_RESULT_CAP)
-        ):
+        if disclosures and _is_complete_yanoshin_batch(disclosures):
             return disclosures
     except Exception:
-        return fetch_tdnet_html_disclosures(yyyymmdd)
+        return _fetch_tdnet_html_or_empty(day, yyyymmdd)
     try:
-        html_disclosures = fetch_tdnet_html_disclosures(yyyymmdd)
+        html_disclosures = _fetch_tdnet_html_or_empty(day, yyyymmdd)
     except Exception as exc:
         available = list(getattr(exc, "disclosures", [])) + list(disclosures)
         raise PartialDisclosureError(str(exc), available) from exc
@@ -206,8 +212,30 @@ def fetch_disclosures(target_date: date | None = None) -> list[Disclosure]:
     return list(by_id.values())
 
 
+def _is_complete_yanoshin_batch(batch: list[Disclosure]) -> bool:
+    raw_count = getattr(batch, "raw_count", len(batch))
+    total_count = getattr(batch, "total_count", None)
+    # A full page may be truncated: Yanoshin's total_count is the returned size.
+    if raw_count >= YANOSHIN_RESULT_CAP:
+        return False
+    return total_count is None or raw_count >= total_count
+
+
+def _fetch_tdnet_html_or_empty(day: date, yyyymmdd: str) -> list[Disclosure]:
+    try:
+        return fetch_tdnet_html_disclosures(yyyymmdd)
+    except TdnetListNotFound:
+        # TDnet creates the day's list page with its first disclosure. Before
+        # that (early morning, delayed overnight runs) the day is empty, not
+        # failed. Past business days always have a page, so 404 stays an error.
+        if day >= today_jst():
+            return []
+        raise
+
+
 def fetch_yanoshin_disclosures(yyyymmdd: str) -> list[Disclosure]:
     url = YANOSHIN_LIST_URL.format(yyyymmdd=yyyymmdd)
+    url += ("&" if "?" in url else "?") + f"limit={YANOSHIN_RESULT_CAP}"
     payload = json.loads(request_get(url).decode("utf-8"))
     if isinstance(payload, list):
         rows = payload
@@ -237,7 +265,7 @@ def fetch_yanoshin_disclosures(yyyymmdd: str) -> list[Disclosure]:
         normalized = _normalize_json_disclosure(payload)
         if normalized:
             disclosures.append(normalized)
-    return DisclosureBatch(disclosures, total_count=total_count)
+    return DisclosureBatch(disclosures, total_count=total_count, raw_count=len(rows))
 
 
 def _normalize_json_disclosure(row: dict[str, Any]) -> Disclosure | None:
@@ -304,7 +332,13 @@ def fetch_tdnet_html_disclosures(yyyymmdd: str) -> list[Disclosure]:
     from bs4 import BeautifulSoup
 
     url = TDNET_HTML_URL.format(yyyymmdd=yyyymmdd)
-    html = request_get(url).decode("utf-8", errors="ignore")
+    try:
+        html = request_get(url).decode("utf-8", errors="ignore")
+    except RuntimeError as exc:
+        response = getattr(exc.__cause__, "response", None)
+        if getattr(response, "status_code", None) == 404:
+            raise TdnetListNotFound(f"TDnet list page not published: {url}") from exc
+        raise
     soup = BeautifulSoup(html, "html.parser")
     page_urls = _tdnet_page_urls(soup, url, yyyymmdd)
     disclosures: list[Disclosure] = []

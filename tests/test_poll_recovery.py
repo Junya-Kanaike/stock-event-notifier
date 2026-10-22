@@ -2,7 +2,7 @@ from datetime import date, datetime
 import unittest
 from unittest.mock import patch
 
-from src.collectors.tdnet import Disclosure
+from src.collectors.tdnet import Disclosure, classify_title
 from src.core.bizday import JST
 from src.notifiers.slack import SlackNotifier
 from src.run_poll import (
@@ -150,7 +150,10 @@ class PollRecoveryTest(unittest.TestCase):
         state = {"events": []}
         notifier = SlackNotifier(dry_run=True)
 
-        with patch("src.run_poll.fetch_pdf_text", side_effect=RuntimeError("404")):
+        price = {"code": "7203", "date": "2026-08-21", "close_yen": 3000.0, "source": "test"}
+        with patch("src.run_poll.fetch_pdf_text", side_effect=RuntimeError("404")), patch(
+            "src.run_poll.fetch_close_on_or_before", return_value=price
+        ):
             changed = handle_po(disclosure, state, notifier, {}, {})
 
         self.assertTrue(changed)
@@ -184,6 +187,39 @@ class PollRecoveryTest(unittest.TestCase):
         notifier = SlackNotifier(dry_run=True)
 
         self.assertTrue(handle_po(disclosure, state, notifier, {}, {}))
+
+        event = state["events"][0]
+        self.assertTrue(event["detail"]["canceled"])
+        self.assertEqual(event["schedule"], [])
+        self.assertEqual(notifier.sent_messages, [])
+
+    def test_po_cancellation_with_change_title_is_not_sent_to_po_channel(self):
+        title = "新株式発行及び株式売出しの中止及び日程変更に関するお知らせ"
+        self.assertEqual(classify_title(title), {"po_correction"})
+        disclosure = Disclosure(
+            id="po-cancel-change",
+            code="7203",
+            name="テスト",
+            title=title,
+            announced_at=datetime(2026, 9, 8, 16, 0, tzinfo=JST),
+            pdf_url="https://example.test/cancel.pdf",
+        )
+        state = {
+            "events": [
+                {
+                    "id": "po-7203-2026-09-01",
+                    "type": "po",
+                    "code": "7203",
+                    "name": "テスト",
+                    "announced_at": "2026-09-01T15:00:00+09:00",
+                    "detail": {},
+                    "schedule": [{"date": "2026-09-09", "label": "pricing_day+2", "sent": False}],
+                }
+            ]
+        }
+        notifier = SlackNotifier(dry_run=True)
+
+        self.assertTrue(handle_po_correction(disclosure, state, notifier, {}, {}))
 
         event = state["events"][0]
         self.assertTrue(event["detail"]["canceled"])

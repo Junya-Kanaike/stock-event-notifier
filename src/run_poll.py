@@ -631,7 +631,7 @@ def handle_po_correction(
     margin: dict[str, str],
 ) -> bool:
     if is_cancellation_title(disclosure.title):
-        return cancel_matching_event(state, notifier, "po", disclosure, "PO")
+        return cancel_matching_event(state, notifier, "po", disclosure, "PO", notify=False)
     text, pdf_warning = fetch_disclosure_text_safely(disclosure, notifier)
     parsed_detail = parse_po_details(disclosure.title, text, disclosure.announced_at.date())
     add_parse_warning(parsed_detail, pdf_warning)

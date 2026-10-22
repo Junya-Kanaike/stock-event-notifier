@@ -6,6 +6,8 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any, Callable
 
+from src.core.bizday import JST
+
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 STATE_PATH = REPO_ROOT / "state" / "events.json"
@@ -170,6 +172,10 @@ def record_source_success(state: dict[str, Any], source: str, succeeded_at: date
     health = state.setdefault("source_health", {})
     previous = health.get(source, {})
     current = dict(previous)
+    # Cache files stamp fetches in UTC. Keep the state in JST so the date
+    # matches the market calendar and the daily summary is not mixed.
+    if succeeded_at.tzinfo is not None:
+        succeeded_at = succeeded_at.astimezone(JST)
     current["last_success_date"] = succeeded_at.date().isoformat()
     current["last_success_at"] = succeeded_at.isoformat()
     if current == previous:
