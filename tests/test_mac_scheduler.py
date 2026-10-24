@@ -40,6 +40,19 @@ class MacSchedulerTest(unittest.TestCase):
         self.assertEqual(result["due"], ["timed_notifications"])
         self.assertIsNone(result["dispatch"])
 
+    def test_run_stuck_in_queue_for_hours_does_not_block_dispatch(self):
+        # 2026-10-23: a daily_morning run stayed queued for 39 hours and both
+        # helpers stopped dispatching; the morning notice went out at 08:33.
+        now = datetime(2026, 10, 23, 6, 5, tzinfo=JST)
+        stuck = {"id": 39800624291, "status": "queued", "created_at": "2026-10-22T14:59:42Z"}
+        health = {name: {"last_success_at": "2026-10-22T23:58:38+09:00"} for name in WORKFLOWS}
+        runs = {name: [] for name in WORKFLOWS}
+        runs["daily_morning"] = [stuck]
+        result = plan_dispatch(now, runs, health, {})
+        self.assertEqual(result["dispatch"], "daily_morning")
+        self.assertEqual(result["active_runs"], [])
+        self.assertTrue(any("365分止まっている実行を無視" in x and "39800624291" in x for x in result["warnings"]))
+
     def test_saved_success_is_enough_when_run_list_is_incomplete(self):
         # 2026-10-22 22:57: during a GitHub incident the run list lacked the
         # morning run, and the daily sync was requested again although its

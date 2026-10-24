@@ -31,6 +31,7 @@ JST = ZoneInfo("Asia/Tokyo")
 REPOSITORY = "Junya-Kanaike/stock-event-notifier"
 LABEL = "jp.stock-event-notifier.watchdog"
 WORKFLOWS = ("daily_morning", "timed_notifications", "poll_tdnet")
+STALE_RUN = timedelta(minutes=60)
 SUPPORT = Path.home() / "Library/Application Support/stock-event-notifier"
 PLIST = Path.home() / "Library/LaunchAgents" / (LABEL + ".plist")
 
@@ -97,11 +98,20 @@ def plan_dispatch(now, runs, health, local):
         return {"dispatch": None, "warnings": ["本番にworkflow_healthがありません。先に改善コードのmain反映と実行を確認してください。"]}
     busy = []
     for name in WORKFLOWS:
-        active = [r for r in runs.get(name, []) if r.get("status") != "completed"]
-        busy.extend(active)
-        for run in active:
+        for run in runs.get(name, []):
+            if run.get("status") == "completed":
+                continue
             created = parse_time(run.get("created_at"))
-            if created and now - created > timedelta(minutes=20):
+            age = now - created if created else timedelta(0)
+            if age > STALE_RUN:
+                # A run left queued for 39 hours by a GitHub incident
+                # (2026-10-22 to 10-24) blocked every dispatch. Jobs time out
+                # after 15 minutes, so a run this old is not holding the slot.
+                warnings.append(f"{name}: GitHub上で{int(age.total_seconds() // 60)}分止まっている実行を無視して判定"
+                                f" (run {run.get('id')})。Actions画面でキャンセルしてください")
+                continue
+            busy.append(run)
+            if age > timedelta(minutes=20):
                 warnings.append(f"{name}: GitHub上で20分以上待機・実行中 (run {run.get('id')})")
         required = freshness_requirement(name, now)
         if required is None:
