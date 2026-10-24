@@ -28,15 +28,66 @@ class MacSchedulerTest(unittest.TestCase):
 
     def test_missing_timed_run_is_dispatched_before_poll(self):
         runs, health = self.fresh()
-        runs["timed_notifications"] = []
-        runs["poll_tdnet"] = []
+        health["timed_notifications"] = {}
+        health["poll_tdnet"] = {}
         self.assertEqual(plan_dispatch(NOW, runs, health, {})["dispatch"], "timed_notifications")
 
     def test_active_shared_concurrency_job_prevents_dispatch(self):
         runs, health = self.fresh()
-        runs["timed_notifications"] = []
+        health["timed_notifications"] = {}
         runs["poll_tdnet"].append({"id": 22, "status": "queued", "created_at": NOW.isoformat()})
-        self.assertIsNone(plan_dispatch(NOW, runs, health, {})["dispatch"])
+        result = plan_dispatch(NOW, runs, health, {})
+        self.assertEqual(result["due"], ["timed_notifications"])
+        self.assertIsNone(result["dispatch"])
+
+    def test_run_stuck_in_queue_for_hours_does_not_block_dispatch(self):
+        # 2026-10-23: a daily_morning run stayed queued for 39 hours and both
+        # helpers stopped dispatching; the morning notice went out at 08:33.
+        now = datetime(2026, 10, 23, 6, 5, tzinfo=JST)
+        stuck = {"id": 39800624291, "status": "queued", "created_at": "2026-10-22T14:59:42Z"}
+        health = {name: {"last_success_at": "2026-10-22T23:58:38+09:00"} for name in WORKFLOWS}
+        runs = {name: [] for name in WORKFLOWS}
+        runs["daily_morning"] = [stuck]
+        result = plan_dispatch(now, runs, health, {})
+        self.assertEqual(result["dispatch"], "daily_morning")
+        self.assertEqual(result["active_runs"], [])
+        self.assertTrue(any("365分止まっている実行を無視" in x and "39800624291" in x for x in result["warnings"]))
+
+    def test_saved_success_is_enough_when_run_list_is_incomplete(self):
+        # 2026-10-22 22:57: during a GitHub incident the run list lacked the
+        # morning run, and the daily sync was requested again although its
+        # 08:35 success was saved.
+        now = datetime(2026, 10, 22, 22, 57, tzinfo=JST)
+        health = {name: {"last_success_at": "2026-10-22T08:35:37+09:00"} for name in WORKFLOWS}
+        result = plan_dispatch(now, {name: [] for name in WORKFLOWS}, health, {})
+        self.assertIsNone(result["dispatch"])
+        self.assertEqual(result["due"], [])
+        self.assertEqual(result["warnings"], [])
+
+    def test_alert_measures_delay_from_expected_time(self):
+        yesterday = {"last_success_at": "2026-09-15T08:35:00+09:00"}
+        runs = {name: [] for name in WORKFLOWS}
+
+        early = plan_dispatch(NOW.replace(hour=5, minute=50), runs, {"daily_morning": yesterday}, {})
+        self.assertEqual(early["dispatch"], "daily_morning")
+        self.assertEqual(early["warnings"], [])
+
+        late = plan_dispatch(NOW.replace(hour=6, minute=5), runs, {"daily_morning": yesterday}, {})
+        self.assertEqual(late["warnings"], ["daily_morning: 予定時刻から35分経っても処理成功が保存されていません"])
+
+    def test_first_poll_of_the_day_is_not_alerted_for_overnight_age(self):
+        now = NOW.replace(hour=8, minute=1)
+        health = {name: {"last_success_at": now.isoformat()} for name in WORKFLOWS}
+        health["poll_tdnet"] = {"last_success_at": "2026-09-15T19:52:00+09:00"}
+        result = plan_dispatch(now, {name: [] for name in WORKFLOWS}, health, {})
+        self.assertEqual(result["dispatch"], "poll_tdnet")
+        self.assertEqual(result["warnings"], [])
+
+        later = now.replace(hour=10, minute=0)
+        health = {name: {"last_success_at": later.isoformat()} for name in WORKFLOWS}
+        health["poll_tdnet"] = {"last_success_at": later.replace(hour=9, minute=15).isoformat()}
+        stalled = plan_dispatch(later, {name: [] for name in WORKFLOWS}, health, {})
+        self.assertEqual(stalled["warnings"], ["poll_tdnet: 予定時刻から35分経っても処理成功が保存されていません"])
 
     def test_long_queued_job_alerts_without_cancelling_it(self):
         runs, health = self.fresh()
@@ -47,7 +98,7 @@ class MacSchedulerTest(unittest.TestCase):
 
     def test_recent_dispatch_waits_for_api_visibility(self):
         runs, health = self.fresh()
-        runs["timed_notifications"] = []
+        health["timed_notifications"] = {}
         local = {"dispatches": {"timed_notifications": NOW.isoformat()}}
         self.assertIsNone(plan_dispatch(NOW, runs, health, local)["dispatch"])
 
