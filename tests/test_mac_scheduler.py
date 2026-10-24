@@ -53,6 +53,21 @@ class MacSchedulerTest(unittest.TestCase):
         self.assertEqual(result["active_runs"], [])
         self.assertTrue(any("365分止まっている実行を無視" in x and "39800624291" in x for x in result["warnings"]))
 
+    def test_stuck_run_is_reported_once_per_run_id(self):
+        now = datetime(2026, 10, 24, 15, 5, tzinfo=JST)
+        stuck = {"id": 39800624291, "status": "queued", "created_at": "2026-10-22T14:59:42Z"}
+        health = {name: {"last_success_at": now.isoformat()} for name in WORKFLOWS}
+        runs = {name: [] for name in WORKFLOWS}
+        runs["daily_morning"] = [stuck]
+        local = {}
+        first = plan_dispatch(now, runs, health, local)
+        second = plan_dispatch(now + timedelta(minutes=1), runs, health, local)
+        self.assertEqual(len(first["warnings"]), 1)
+        self.assertEqual(second["warnings"], [])
+        self.assertEqual(second["active_runs"], [])
+        runs["daily_morning"].append(dict(stuck, id=1))
+        self.assertEqual(len(plan_dispatch(now, runs, health, local)["warnings"]), 1)
+
     def test_saved_success_is_enough_when_run_list_is_incomplete(self):
         # 2026-10-22 22:57: during a GitHub incident the run list lacked the
         # morning run, and the daily sync was requested again although its
