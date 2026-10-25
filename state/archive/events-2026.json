@@ -2016,5 +2016,75 @@
         "吸収規模80億円未満"
       ]
     }
+  },
+  {
+    "id": "ipo-634A-2026-09-25",
+    "type": "ipo",
+    "code": "634A",
+    "name": "レイヤード",
+    "market": "スタンダード",
+    "margin": "信用",
+    "announced_at": "2026-08-25T07:45:06.105683+09:00",
+    "detail": {
+      "listing_date": "2026-09-25",
+      "eligible_notified": true
+    },
+    "schedule": [
+      {
+        "date": "2026-09-24",
+        "label": "listing-1bd",
+        "sent": true,
+        "sent_at": "2026-09-24T00:25:49.733564+09:00",
+        "sent_by": "35881461582",
+        "reference_only": false,
+        "not_before_jst": "06:00"
+      },
+      {
+        "date": "2026-09-25",
+        "label": "listing_day",
+        "sent": true,
+        "sent_at": "2026-09-25T00:48:02.034216+09:00",
+        "sent_by": "36022791201",
+        "reference_only": false,
+        "not_before_jst": "06:00"
+      }
+    ],
+    "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+    "eligibility": {
+      "status": "eligible",
+      "reasons": []
+    }
+  },
+  {
+    "id": "cb-1803-2026-09-24",
+    "type": "cb",
+    "code": "1803",
+    "name": "清水建設",
+    "market": "プライム",
+    "margin": "貸借",
+    "announced_at": "2026-09-24T23:30:00+09:00",
+    "detail": {
+      "amount": "500億円",
+      "canceled": true,
+      "cancel_reason": "自社株買い同時発表を確認"
+    },
+    "schedule": [],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260924539842.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260924539842.pdf",
+    "source_title": "2031年満期ユーロ円建取得条項付転換社債型新株予約権付社債及び2033年満期ユーロ円建取得条項付転換社債型新株予約権付社債の発行条件等の決定に関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120260924539842",
+        "relation": "source",
+        "title": "2031年満期ユーロ円建取得条項付転換社債型新株予約権付社債及び2033年満期ユーロ円建取得条項付転換社債型新株予約権付社債の発行条件等の決定に関するお知らせ",
+        "announced_at": "2026-09-24T23:30:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260924539842.pdf",
+        "market": "東証・名証"
+      }
+    ],
+    "eligibility": {
+      "status": "eligible",
+      "reasons": []
+    }
   }
 ]
