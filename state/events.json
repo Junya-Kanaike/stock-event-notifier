@@ -8491,11 +8491,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-10-26T10:08:41.617713+09:00",
-      "last_finished_at": "2026-10-26T10:08:41.631141+09:00",
+      "last_started_at": "2026-10-26T10:21:40.326065+09:00",
+      "last_finished_at": "2026-10-26T10:21:40.351515+09:00",
       "status": "success",
-      "run_id": "40252735343",
-      "last_success_at": "2026-10-26T10:08:41.631141+09:00"
+      "run_id": "40253818735",
+      "last_success_at": "2026-10-26T10:21:40.351515+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-10-26T07:47:02.286786+09:00",
