@@ -5768,8 +5768,8 @@
         "record_date_raw": "基準日（実質10月30日（金））として、同日最終の株主名簿に記載または記録 された株主の所有する当社普通株式1株につき、2株の割合をもって分割いたします。 ② 分割により増加する株式数 株式分割前の発行済株式総数 28,280,840株 今回の分割により増加する株式数 28,280,840株 株式分割後の発行済株式総数 56,561,680株 株式分割後の発",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -5967,8 +5967,8 @@
         "record_date_raw": "基準日2026年11月1日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7786,7 +7786,7 @@
       "detail": {
         "execution_date": "2026-10-27",
         "execution_date_raw": "分売予定期間 2026年10月27日（火）～2026年10月30日（金） 3.分売値段 分売実施日の前営業日の終値もしくは最終気配値を基準として決定いたし ます。 4.買付申込数量の限度 買付顧客1人につき3,000株（売買単位:100株） 5.実施取引所 東京証券取引所 6.実施の目的 当社株式について一定数量の売却意向があり、当社として検討した結果、株 ",
-        "execution_date_confirmed": false,
+        "execution_date_confirmed": true,
         "notification_tracking_started": true,
         "eligible_notified": true
       },
@@ -7804,15 +7804,15 @@
           "date": "2026-10-27",
           "label": "execution_day",
           "sent": false,
-          "action_cutoff_jst": "09:00",
-          "not_before_jst": "06:00"
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
         },
         {
           "date": "2026-11-04",
           "label": "execution+5bd",
           "sent": false,
-          "action_cutoff_jst": "09:00",
-          "not_before_jst": "06:00"
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261013549202.pdf",
@@ -7828,6 +7828,7 @@
           "market": "東証"
         }
       ],
+      "jpx_source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
       "eligibility": {
         "status": "eligible",
         "reasons": []
@@ -7936,8 +7937,8 @@
         "record_date_raw": "基準日2026年10月31日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -8023,7 +8024,7 @@
       "detail": {
         "execution_date": "2026-10-27",
         "execution_date_raw": "分売予定期間2026年10月27日（火）～2026年10月29日（木）分売実施日前日の終値もしくは最終気配値を基準として決3分売の値段定する予定です。4買付申込数量の限度買付顧客一人につき5,000株（売買単位:100株）5実施取引所東京証券取引所一定数量の売却意向があり、当社として検討した結果、当6実施の目的社株式の分布状況の改善及び流動性の向上を図るため",
-        "execution_date_confirmed": false,
+        "execution_date_confirmed": true,
         "notification_tracking_started": true,
         "eligible_notified": true
       },
@@ -8064,6 +8065,7 @@
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261019553087.pdf"
         }
       ],
+      "jpx_source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
       "eligibility": {
         "status": "eligible",
         "reasons": []
@@ -8099,6 +8101,70 @@
         "reasons": [
           "貸借対象外"
         ]
+      }
+    },
+    {
+      "id": "ipo-667A-2026-11-30",
+      "type": "ipo",
+      "code": "667A",
+      "name": "ジャパンホームシールド（株）",
+      "market": "スタンダード",
+      "margin": "対象外",
+      "announced_at": "2026-10-27T05:41:13.435573+09:00",
+      "detail": {
+        "listing_date": "2026-11-30",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-11-27",
+          "label": "listing-1bd",
+          "sent": false,
+          "not_before_jst": "06:00"
+        },
+        {
+          "date": "2026-11-30",
+          "label": "listing_day",
+          "sent": false,
+          "not_before_jst": "06:00"
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
+    },
+    {
+      "id": "ipo-657A-2026-11-20",
+      "type": "ipo",
+      "code": "657A",
+      "name": "HiJoJo Partners（株）",
+      "market": "グロース",
+      "margin": "対象外",
+      "announced_at": "2026-10-27T05:41:13.436005+09:00",
+      "detail": {
+        "listing_date": "2026-11-20",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-11-19",
+          "label": "listing-1bd",
+          "sent": false,
+          "not_before_jst": "06:00"
+        },
+        {
+          "date": "2026-11-20",
+          "label": "listing_day",
+          "sent": false,
+          "not_before_jst": "06:00"
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
       }
     }
   ],
@@ -8240,32 +8306,32 @@
       "last_complete_poll_at": "2026-10-26T19:58:29.426429+09:00"
     },
     "jpx_master": {
-      "last_success_date": "2026-10-26",
-      "last_success_at": "2026-10-26T07:47:03.198802+09:00"
+      "last_success_date": "2026-10-27",
+      "last_success_at": "2026-10-27T05:41:10.073539+09:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-10-26",
-      "last_success_at": "2026-10-26T07:47:03.812302+09:00"
+      "last_success_date": "2026-10-27",
+      "last_success_at": "2026-10-27T05:41:10.867692+09:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-10-26",
-      "last_success_at": "2026-10-26T07:47:06.158977+09:00"
+      "last_success_date": "2026-10-27",
+      "last_success_at": "2026-10-27T05:41:13.201326+09:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-10-15",
       "last_success_at": "2026-10-15T17:33:22.650075+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-10-26",
-      "last_success_at": "2026-10-26T19:58:27.495059+09:00"
+      "last_success_date": "2026-10-27",
+      "last_success_at": "2026-10-27T05:41:12.537711+09:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-10-26",
-      "last_success_at": "2026-10-26T07:47:06.480897+09:00"
+      "last_success_date": "2026-10-27",
+      "last_success_at": "2026-10-27T05:41:13.434838+09:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-10-26",
-      "last_success_at": "2026-10-26T07:47:06.758685+09:00"
+      "last_success_date": "2026-10-27",
+      "last_success_at": "2026-10-27T05:41:13.654690+09:00"
     }
   },
   "schema_version": 2,
@@ -8506,11 +8572,11 @@
       "last_success_at": "2026-10-27T02:17:58.242126+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-10-26T07:47:02.286786+09:00",
-      "last_finished_at": "2026-10-26T07:47:06.759528+09:00",
+      "last_started_at": "2026-10-27T05:41:09.189862+09:00",
+      "last_finished_at": "2026-10-27T05:41:13.665453+09:00",
       "status": "success",
-      "run_id": "40241775346",
-      "last_success_at": "2026-10-26T07:47:06.759528+09:00"
+      "run_id": "40397801437",
+      "last_success_at": "2026-10-27T05:41:13.665453+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-10-27T01:12:22.248247+09:00",

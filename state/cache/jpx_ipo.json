@@ -1,12 +1,26 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-10-25T22:47:06.480897+00:00",
+  "fetched_at": "2026-10-26T20:41:13.434838+00:00",
   "data": [
+    {
+      "code": "667A",
+      "name": "ジャパンホームシールド（株）",
+      "market": "スタンダード",
+      "listing_date": "2026-11-30",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
     {
       "code": "664A",
       "name": "（株）TOKIUM",
       "market": "グロース",
       "listing_date": "2026-11-25",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "code": "657A",
+      "name": "HiJoJo Partners（株）",
+      "market": "グロース",
+      "listing_date": "2026-11-20",
       "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
     },
     {

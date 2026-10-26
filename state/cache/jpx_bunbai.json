@@ -1,7 +1,19 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-10-25T22:47:06.758685+00:00",
+  "fetched_at": "2026-10-26T20:41:13.654690+00:00",
   "data": [
+    {
+      "code": "4076",
+      "name": "（株）シイエヌエス",
+      "execution_date": "2026-10-27",
+      "source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
+    },
+    {
+      "code": "7050",
+      "name": "（株）フロンティアインターナショナル",
+      "execution_date": "2026-10-27",
+      "source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
+    },
     {
       "code": "138A",
       "name": "光フードサービス（株）",
