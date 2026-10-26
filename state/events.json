@@ -7803,9 +7803,12 @@
         {
           "date": "2026-10-27",
           "label": "execution_day",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-10-27T06:00:28.926649+09:00",
+          "sent_by": "40400609475",
+          "reference_only": false
         },
         {
           "date": "2026-11-04",
@@ -8041,9 +8044,12 @@
         {
           "date": "2026-10-27",
           "label": "execution_day",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-10-27T06:00:29.044017+09:00",
+          "sent_by": "40400609475",
+          "reference_only": false
         },
         {
           "date": "2026-11-04",
@@ -8513,7 +8519,7 @@
       "failure": 0
     },
     "2026-10-27": {
-      "success": 1,
+      "success": 3,
       "failure": 0
     }
   },
@@ -8565,11 +8571,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-10-27T02:17:58.216587+09:00",
-      "last_finished_at": "2026-10-27T02:17:58.242126+09:00",
+      "last_started_at": "2026-10-27T06:00:28.845035+09:00",
+      "last_finished_at": "2026-10-27T06:00:29.152658+09:00",
       "status": "success",
-      "run_id": "40367274679",
-      "last_success_at": "2026-10-27T02:17:58.242126+09:00"
+      "run_id": "40400609475",
+      "last_success_at": "2026-10-27T06:00:29.152658+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-10-27T05:41:09.189862+09:00",
@@ -10137,6 +10143,28 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "40233456572"
+    },
+    {
+      "event_id": "bunbai-4076-2026-10-14",
+      "channel": "bunbai",
+      "scheduled_for": "2026-10-27",
+      "label": "execution_day",
+      "attempted_at": "2026-10-27T06:00:28.926649+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "40400609475"
+    },
+    {
+      "event_id": "bunbai-7050-2026-10-19",
+      "channel": "bunbai",
+      "scheduled_for": "2026-10-27",
+      "label": "execution_day",
+      "attempted_at": "2026-10-27T06:00:29.044017+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "40400609475"
     }
   ]
 }
