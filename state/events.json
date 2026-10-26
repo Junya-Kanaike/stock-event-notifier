@@ -8176,10 +8176,10 @@
   ],
   "source_health": {
     "tdnet": {
-      "last_checked_date": "2026-10-26",
-      "last_success_date": "2026-10-26",
+      "last_checked_date": "2026-10-27",
+      "last_success_date": "2026-10-27",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-26T19:58:29.426420+09:00",
+      "last_success_at": "2026-10-27T08:30:32.224125+09:00",
       "by_date": {
         "2026-09-28": {
           "checked_at": "2026-09-29T19:53:37.841162+09:00",
@@ -8296,20 +8296,20 @@
           "last_success_at": "2026-10-26T19:58:28.596054+09:00"
         },
         "2026-10-26": {
-          "checked_at": "2026-10-27T08:19:45.557827+09:00",
+          "checked_at": "2026-10-27T08:30:30.701879+09:00",
           "count": 19,
           "status": "success",
-          "last_success_at": "2026-10-27T08:19:45.557827+09:00"
+          "last_success_at": "2026-10-27T08:30:30.701879+09:00"
         },
         "2026-10-27": {
-          "checked_at": "2026-10-27T08:19:46.925047+09:00",
-          "count": 0,
-          "status": "failed",
-          "error": "page 001: TDnet fallback page schema is unrecognized"
+          "checked_at": "2026-10-27T08:30:32.224011+09:00",
+          "count": 1,
+          "status": "success",
+          "last_success_at": "2026-10-27T08:30:32.224011+09:00"
         }
       },
-      "last_checked_at": "2026-10-27T08:19:46.925047+09:00",
-      "last_complete_poll_at": "2026-10-26T19:58:29.426429+09:00"
+      "last_checked_at": "2026-10-27T08:30:32.224011+09:00",
+      "last_complete_poll_at": "2026-10-27T08:30:32.224131+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-10-27",
@@ -8585,11 +8585,11 @@
       "last_success_at": "2026-10-27T05:41:13.665453+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-27T08:19:44.710482+09:00",
-      "last_finished_at": "2026-10-27T08:19:46.929636+09:00",
-      "status": "failed",
-      "run_id": "40418959169",
-      "last_success_at": "2026-10-26T19:58:29.443744+09:00"
+      "last_started_at": "2026-10-27T08:30:29.613895+09:00",
+      "last_finished_at": "2026-10-27T08:30:32.235016+09:00",
+      "status": "success",
+      "run_id": "40420197821",
+      "last_success_at": "2026-10-27T08:30:32.235016+09:00"
     }
   },
   "notification_log": [
