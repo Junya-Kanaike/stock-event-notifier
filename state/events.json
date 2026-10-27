@@ -1916,7 +1916,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260714593697.pdf|https://www.release.tdnet.info/inbs/140120260722597166.pdf",
-        "calculation_recovery_attempt_date": "2026-10-27",
+        "calculation_recovery_attempt_date": "2026-10-28",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -1992,7 +1992,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260714592985.pdf|https://www.release.tdnet.info/inbs/140120260715594785.pdf",
-        "calculation_recovery_attempt_date": "2026-10-27",
+        "calculation_recovery_attempt_date": "2026-10-28",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -2068,7 +2068,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260715594693.pdf",
-        "calculation_recovery_attempt_date": "2026-10-27",
+        "calculation_recovery_attempt_date": "2026-10-28",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -2220,7 +2220,7 @@
         "effective_size_yen": null,
         "po_threshold_ever_met": false,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260723598739.pdf|https://www.release.tdnet.info/inbs/140120260804508094.pdf",
-        "calculation_recovery_attempt_date": "2026-10-27",
+        "calculation_recovery_attempt_date": "2026-10-28",
         "calculation_missing_fields": [
           "total_offered_shares",
           "effective_size_yen"
@@ -3861,7 +3861,7 @@
         "confirmed_size_oku": 92.781,
         "calculation_missing_fields": [],
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260818522647.pdf|https://www.release.tdnet.info/inbs/140120260826526681.pdf",
-        "calculation_recovery_attempt_date": "2026-10-27",
+        "calculation_recovery_attempt_date": "2026-10-28",
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260818522647.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260826526681.pdf: RuntimeError",
         "calculation_recovery_alerted": true
       },
@@ -4066,7 +4066,7 @@
         "effective_size_yen": 76301170000,
         "parser_version": 3,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260819523356.pdf|https://www.release.tdnet.info/inbs/140120260824525134.pdf|https://www.release.tdnet.info/inbs/140120260831528884.pdf",
-        "calculation_recovery_attempt_date": "2026-10-27",
+        "calculation_recovery_attempt_date": "2026-10-28",
         "calculation_missing_fields": [],
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260819523356.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260824525134.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260831528884.pdf: RuntimeError",
         "calculation_recovery_alerted": true
@@ -4387,7 +4387,7 @@
         "confirmed_size_yen": 64317310200,
         "confirmed_size_oku": 643.173102,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260821524618.pdf|https://www.release.tdnet.info/inbs/140120260831529202.pdf",
-        "calculation_recovery_attempt_date": "2026-10-27",
+        "calculation_recovery_attempt_date": "2026-10-28",
         "calculation_missing_fields": [],
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260821524618.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260831529202.pdf: RuntimeError",
         "calculation_recovery_alerted": true
@@ -5010,7 +5010,7 @@
         "confirmed_size_yen": 8708427200,
         "confirmed_size_oku": 87.084272,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260827527452.pdf|https://www.release.tdnet.info/inbs/140120260907532664.pdf",
-        "calculation_recovery_attempt_date": "2026-10-27",
+        "calculation_recovery_attempt_date": "2026-10-28",
         "calculation_missing_fields": [],
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260827527452.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260907532664.pdf: RuntimeError",
         "calculation_recovery_alerted": true
@@ -8600,13 +8600,19 @@
           "last_success_at": "2026-10-27T19:58:38.834825+09:00"
         },
         "2026-10-27": {
-          "checked_at": "2026-10-27T19:58:40.432596+09:00",
+          "checked_at": "2026-10-28T00:33:44.606603+09:00",
           "count": 209,
           "status": "success",
-          "last_success_at": "2026-10-27T19:58:40.432596+09:00"
+          "last_success_at": "2026-10-28T00:33:44.606603+09:00"
+        },
+        "2026-10-28": {
+          "checked_at": "2026-10-28T00:33:45.783716+09:00",
+          "count": 0,
+          "status": "failed",
+          "error": "page 001: TDnet fallback page schema is unrecognized"
         }
       },
-      "last_checked_at": "2026-10-27T19:58:40.432596+09:00",
+      "last_checked_at": "2026-10-28T00:33:45.783716+09:00",
       "last_complete_poll_at": "2026-10-27T19:58:40.432904+09:00"
     },
     "jpx_master": {
@@ -8626,8 +8632,8 @@
       "last_success_at": "2026-10-27T15:08:19.212268+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-10-27",
-      "last_success_at": "2026-10-27T15:08:15.888369+09:00"
+      "last_success_date": "2026-10-28",
+      "last_success_at": "2026-10-28T00:32:45.471274+09:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-10-27",
@@ -8640,10 +8646,6 @@
   },
   "schema_version": 2,
   "notification_stats": {
-    "2026-09-13": {
-      "success": 1,
-      "failure": 0
-    },
     "2026-09-14": {
       "success": 3,
       "failure": 0
@@ -8819,6 +8821,10 @@
     "2026-10-27": {
       "success": 12,
       "failure": 0
+    },
+    "2026-10-28": {
+      "success": 1,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -8884,10 +8890,10 @@
       "last_success_at": "2026-10-27T09:03:15.893913+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-27T19:58:38.029120+09:00",
-      "last_finished_at": "2026-10-27T19:58:40.458921+09:00",
-      "status": "success",
-      "run_id": "40492587668",
+      "last_started_at": "2026-10-28T00:32:43.156576+09:00",
+      "last_finished_at": "2026-10-28T00:33:45.800761+09:00",
+      "status": "failed",
+      "run_id": "40531988457",
       "last_success_at": "2026-10-27T19:58:40.458921+09:00"
     }
   },
