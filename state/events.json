@@ -5768,8 +5768,8 @@
         "record_date_raw": "基準日（実質10月30日（金））として、同日最終の株主名簿に記載または記録 された株主の所有する当社普通株式1株につき、2株の割合をもって分割いたします。 ② 分割により増加する株式数 株式分割前の発行済株式総数 28,280,840株 今回の分割により増加する株式数 28,280,840株 株式分割後の発行済株式総数 56,561,680株 株式分割後の発",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -5967,8 +5967,8 @@
         "record_date_raw": "基準日2026年11月1日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7940,8 +7940,8 @@
         "record_date_raw": "基準日2026年10月31日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -8313,15 +8313,15 @@
     },
     "jpx_master": {
       "last_success_date": "2026-10-27",
-      "last_success_at": "2026-10-27T05:41:10.073539+09:00"
+      "last_success_at": "2026-10-27T09:03:11.740548+09:00"
     },
     "jpx_margin": {
       "last_success_date": "2026-10-27",
-      "last_success_at": "2026-10-27T05:41:10.867692+09:00"
+      "last_success_at": "2026-10-27T09:03:12.705019+09:00"
     },
     "jpx_ex_rights": {
       "last_success_date": "2026-10-27",
-      "last_success_at": "2026-10-27T05:41:13.201326+09:00"
+      "last_success_at": "2026-10-27T09:03:15.117097+09:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-10-15",
@@ -8329,15 +8329,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-10-27",
-      "last_success_at": "2026-10-27T05:41:12.537711+09:00"
+      "last_success_at": "2026-10-27T09:03:14.528752+09:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-10-27",
-      "last_success_at": "2026-10-27T05:41:13.434838+09:00"
+      "last_success_at": "2026-10-27T09:03:15.549932+09:00"
     },
     "jpx_bunbai": {
       "last_success_date": "2026-10-27",
-      "last_success_at": "2026-10-27T05:41:13.654690+09:00"
+      "last_success_at": "2026-10-27T09:03:15.892869+09:00"
     }
   },
   "schema_version": 2,
@@ -8578,11 +8578,11 @@
       "last_success_at": "2026-10-27T08:53:02.110313+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-10-27T05:41:09.189862+09:00",
-      "last_finished_at": "2026-10-27T05:41:13.665453+09:00",
+      "last_started_at": "2026-10-27T09:03:10.897544+09:00",
+      "last_finished_at": "2026-10-27T09:03:15.893913+09:00",
       "status": "success",
-      "run_id": "40397801437",
-      "last_success_at": "2026-10-27T05:41:13.665453+09:00"
+      "run_id": "40423840547",
+      "last_success_at": "2026-10-27T09:03:15.893913+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-10-27T09:02:42.722769+09:00",
