@@ -1850,7 +1850,8 @@
     "140120261022554767",
     "140120261023555506",
     "140120261023555558",
-    "140120261023555535"
+    "140120261023555535",
+    "140120261026556298"
   ],
   "events": [
     {
@@ -7785,7 +7786,7 @@
       "announced_at": "2026-10-14T15:30:00+09:00",
       "detail": {
         "execution_date": "2026-10-27",
-        "execution_date_raw": "分売予定期間 2026年10月27日（火）～2026年10月30日（金） 3.分売値段 分売実施日の前営業日の終値もしくは最終気配値を基準として決定いたし ます。 4.買付申込数量の限度 買付顧客1人につき3,000株（売買単位:100株） 5.実施取引所 東京証券取引所 6.実施の目的 当社株式について一定数量の売却意向があり、当社として検討した結果、株 ",
+        "execution_date_raw": "分売実施日 株数 分売値段 買付申込数量の限度 2026年10月27日 100,000株 1,712円 3,000株 （ご参考） 2026年10月26日にお知らせいたしました内容は以下のとおりです。 1.分売予定株式数 100,000株 2.分売実施日 2026年10月27日（火） 3.分売値段 1,712円 4.買付申込数量の限度 買付顧客1人につき3,0",
         "execution_date_confirmed": true,
         "notification_tracking_started": true,
         "eligible_notified": true
@@ -7819,7 +7820,7 @@
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261013549202.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261013549202.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261026556298.pdf",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -7829,6 +7830,13 @@
           "announced_at": "2026-10-14T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261013549202.pdf",
           "market": "東証"
+        },
+        {
+          "id": "140120261026556298",
+          "relation": "completion",
+          "title": "株式の立会外分売終了に関するお知らせ",
+          "announced_at": "2026-10-27T10:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261026556298.pdf"
         }
       ],
       "jpx_source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
@@ -8179,7 +8187,7 @@
       "last_checked_date": "2026-10-27",
       "last_success_date": "2026-10-27",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-27T09:56:28.309609+09:00",
+      "last_success_at": "2026-10-27T10:07:16.366093+09:00",
       "by_date": {
         "2026-09-28": {
           "checked_at": "2026-09-29T19:53:37.841162+09:00",
@@ -8296,20 +8304,20 @@
           "last_success_at": "2026-10-26T19:58:28.596054+09:00"
         },
         "2026-10-26": {
-          "checked_at": "2026-10-27T09:56:27.013136+09:00",
+          "checked_at": "2026-10-27T10:07:15.186720+09:00",
           "count": 19,
           "status": "success",
-          "last_success_at": "2026-10-27T09:56:27.013136+09:00"
+          "last_success_at": "2026-10-27T10:07:15.186720+09:00"
         },
         "2026-10-27": {
-          "checked_at": "2026-10-27T09:56:28.309470+09:00",
-          "count": 3,
+          "checked_at": "2026-10-27T10:07:16.365957+09:00",
+          "count": 4,
           "status": "success",
-          "last_success_at": "2026-10-27T09:56:28.309470+09:00"
+          "last_success_at": "2026-10-27T10:07:16.365957+09:00"
         }
       },
-      "last_checked_at": "2026-10-27T09:56:28.309470+09:00",
-      "last_complete_poll_at": "2026-10-27T09:56:28.309618+09:00"
+      "last_checked_at": "2026-10-27T10:07:16.365957+09:00",
+      "last_complete_poll_at": "2026-10-27T10:07:16.366101+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-10-27",
@@ -8519,7 +8527,7 @@
       "failure": 0
     },
     "2026-10-27": {
-      "success": 6,
+      "success": 7,
       "failure": 0
     }
   },
@@ -8585,11 +8593,11 @@
       "last_success_at": "2026-10-27T09:03:15.893913+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-27T09:56:26.024862+09:00",
-      "last_finished_at": "2026-10-27T09:56:28.314191+09:00",
+      "last_started_at": "2026-10-27T10:07:14.133433+09:00",
+      "last_finished_at": "2026-10-27T10:07:16.629779+09:00",
       "status": "success",
-      "run_id": "40429518054",
-      "last_success_at": "2026-10-27T09:56:28.314191+09:00"
+      "run_id": "40430632181",
+      "last_success_at": "2026-10-27T10:07:16.629779+09:00"
     }
   },
   "notification_log": [
