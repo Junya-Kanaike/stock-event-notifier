@@ -5785,8 +5785,8 @@
         "record_date_raw": "基準日（実質10月30日（金））として、同日最終の株主名簿に記載または記録 された株主の所有する当社普通株式1株につき、2株の割合をもって分割いたします。 ② 分割により増加する株式数 株式分割前の発行済株式総数 28,280,840株 今回の分割により増加する株式数 28,280,840株 株式分割後の発行済株式総数 56,561,680株 株式分割後の発",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -5984,8 +5984,8 @@
         "record_date_raw": "基準日2026年11月1日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7975,8 +7975,8 @@
         "record_date_raw": "基準日2026年10月31日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -8603,19 +8603,19 @@
           "last_success_at": "2026-10-27T19:58:38.834825+09:00"
         },
         "2026-10-27": {
-          "checked_at": "2026-10-28T00:33:44.606603+09:00",
+          "checked_at": "2026-10-28T08:01:14.133050+09:00",
           "count": 209,
           "status": "success",
-          "last_success_at": "2026-10-28T00:33:44.606603+09:00"
+          "last_success_at": "2026-10-28T08:01:14.133050+09:00"
         },
         "2026-10-28": {
-          "checked_at": "2026-10-28T00:33:45.783716+09:00",
+          "checked_at": "2026-10-28T08:01:15.313846+09:00",
           "count": 0,
           "status": "failed",
           "error": "page 001: TDnet fallback page schema is unrecognized"
         }
       },
-      "last_checked_at": "2026-10-28T00:33:45.783716+09:00",
+      "last_checked_at": "2026-10-28T08:01:15.313846+09:00",
       "last_complete_poll_at": "2026-10-27T19:58:40.432904+09:00"
     },
     "jpx_master": {
@@ -8826,7 +8826,7 @@
       "failure": 0
     },
     "2026-10-28": {
-      "success": 2,
+      "success": 3,
       "failure": 0
     }
   },
@@ -8893,10 +8893,10 @@
       "last_success_at": "2026-10-28T05:40:45.544774+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-28T00:32:43.156576+09:00",
-      "last_finished_at": "2026-10-28T00:33:45.800761+09:00",
+      "last_started_at": "2026-10-28T08:01:12.151558+09:00",
+      "last_finished_at": "2026-10-28T08:01:15.330680+09:00",
       "status": "failed",
-      "run_id": "40531988457",
+      "run_id": "40599084774",
       "last_success_at": "2026-10-27T19:58:40.458921+09:00"
     }
   },
