@@ -227,6 +227,19 @@ class TdnetKeywordTest(unittest.TestCase):
             id=disclosure_id, code=code, name="A", title="株式分割", announced_at=tdnet._parse_datetime(stamp)
         )
 
+    def test_no_disclosure_page_is_an_empty_day_not_a_failure(self):
+        # TDnet's page for 2026-10-25 (and for today before the first
+        # disclosure) is HTTP 200 with this notice and no table.
+        page = """
+        <table><tr><td>適時開示情報閲覧サービス - 開示情報一覧</td></tr></table>
+        <table><tr><td>2026年10月28日 に開示された情報はありません。</td></tr></table>
+        """.encode("utf-8")
+        empty = tdnet.DisclosureBatch([], total_count=0, raw_count=0)
+        with patch("src.collectors.tdnet.fetch_yanoshin_disclosures", return_value=empty), patch(
+            "src.collectors.tdnet.request_get", return_value=page
+        ):
+            self.assertEqual(tdnet.fetch_disclosures(date(2026, 10, 28)), [])
+
     def test_html_fallback_ignores_outer_rows_and_preserves_time(self):
         html = b"""
         <table><tr><td><table>
