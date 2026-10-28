@@ -5963,8 +5963,11 @@
         {
           "date": "2026-10-29",
           "label": "listing-1bd",
-          "sent": false,
-          "not_before_jst": "06:00"
+          "sent": true,
+          "not_before_jst": "06:00",
+          "sent_at": "2026-10-29T06:00:47.268934+09:00",
+          "sent_by": "40768242231",
+          "reference_only": false
         },
         {
           "date": "2026-10-30",
@@ -7736,9 +7739,12 @@
         {
           "date": "2026-10-29",
           "label": "execution+5bd",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-10-29T06:00:47.132532+09:00",
+          "sent_by": "40768242231",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261009548539.pdf",
@@ -8633,10 +8639,6 @@
   },
   "schema_version": 2,
   "notification_stats": {
-    "2026-09-14": {
-      "success": 3,
-      "failure": 0
-    },
     "2026-09-15": {
       "success": 5,
       "failure": 0
@@ -8812,6 +8814,10 @@
     "2026-10-28": {
       "success": 8,
       "failure": 0
+    },
+    "2026-10-29": {
+      "success": 2,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -8864,11 +8870,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-10-29T02:08:13.451672+09:00",
-      "last_finished_at": "2026-10-29T02:08:13.479641+09:00",
+      "last_started_at": "2026-10-29T06:00:47.066315+09:00",
+      "last_finished_at": "2026-10-29T06:00:47.440760+09:00",
       "status": "success",
-      "run_id": "40732740479",
-      "last_success_at": "2026-10-29T02:08:13.479641+09:00"
+      "run_id": "40768242231",
+      "last_success_at": "2026-10-29T06:00:47.440760+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-10-29T05:40:31.464020+09:00",
@@ -10491,6 +10497,28 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "40669081300"
+    },
+    {
+      "event_id": "bunbai-138A-2026-10-14",
+      "channel": "bunbai",
+      "scheduled_for": "2026-10-29",
+      "label": "execution+5bd",
+      "attempted_at": "2026-10-29T06:00:47.132532+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "40768242231"
+    },
+    {
+      "event_id": "ipo-652A-2026-10-30",
+      "channel": "ipo",
+      "scheduled_for": "2026-10-29",
+      "label": "listing-1bd",
+      "attempted_at": "2026-10-29T06:00:47.268934+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "40768242231"
     }
   ]
 }
