@@ -8243,15 +8243,17 @@
         "record_date_raw": "基準日2027年3月31日",
         "rights_final_date": "2027-03-29",
         "rights_final_date_raw": null,
-        "rights_final_source": "record_date_t_plus_2",
-        "rights_final_calculation_basis": "record_date_t_plus_2",
-        "rights_final_confirmed": false,
-        "rights_final_status": "provisional",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_confirmed": true,
+        "rights_final_status": "confirmed",
         "rights_date_conflict": false,
         "ex_right_date": "2027-03-30",
         "effective_date": "2027-04-01",
         "effective_date_raw": "効力発生日 2027年4月1日（木曜日） 2. 定款の一部変更について (1) 変更の理由 今回の株式分割に伴い、会社法第 184 条第2項の規定に基づき、2027 年4月1日をもって当社の 定款第7条の発行可能株式総数を変更いたします。 (2) 変更の内容 現行定款 変更案 （発行可能株式総数） （発行可能株式総数） 第7条 当会社の発行可能株式総数は、4",
-        "eligible_notified": true
+        "eligible_notified": true,
+        "traders_rights_final_date": "2027-03-29",
+        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split"
       },
       "schedule": [
         {
@@ -8426,20 +8428,23 @@
       "margin": "貸借",
       "announced_at": "2026-10-27T15:00:00+09:00",
       "detail": {
-        "ratio": null,
+        "ratio": "3",
         "record_date": "2026-11-30",
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "record_date_t_plus_2",
-        "rights_final_calculation_basis": "record_date_t_plus_2",
-        "rights_final_confirmed": false,
-        "rights_final_status": "provisional",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_confirmed": true,
+        "rights_final_status": "confirmed",
         "rights_date_conflict": false,
         "ex_right_date": "2026-11-27",
         "effective_date": "2026-12-01",
         "effective_date_raw": "効力発生日 2026年12月 1日 （火曜日） 1 2.定款の一部変更について （1）定款変更の理由 今回の株式分割に伴い、会社法第 184 条第2項の規定に基づき、取締役会決議により、 2026年12月1日（火曜日）を効力発生日として、当社定款の一部を変更いたします。 （2）定款変更の内容 変更内容は次のとおりです。 （下線は変更箇所を示しています。） 現",
-        "eligible_notified": true
+        "eligible_notified": true,
+        "traders_rights_final_date": "2026-11-26",
+        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
+        "ratio_source": "traders_web"
       },
       "schedule": [
         {
@@ -8486,7 +8491,7 @@
       "last_checked_date": "2026-10-28",
       "last_success_date": "2026-10-28",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-28T14:51:24.559338+09:00",
+      "last_success_at": "2026-10-28T15:02:12.606703+09:00",
       "by_date": {
         "2026-09-28": {
           "checked_at": "2026-09-29T19:53:37.841162+09:00",
@@ -8609,20 +8614,20 @@
           "last_success_at": "2026-10-27T19:58:38.834825+09:00"
         },
         "2026-10-27": {
-          "checked_at": "2026-10-28T14:51:23.442829+09:00",
-          "count": 209,
+          "checked_at": "2026-10-28T15:02:11.218055+09:00",
+          "count": 108,
           "status": "success",
-          "last_success_at": "2026-10-28T14:51:23.442829+09:00"
+          "last_success_at": "2026-10-28T15:02:11.218055+09:00"
         },
         "2026-10-28": {
-          "checked_at": "2026-10-28T14:51:24.559086+09:00",
-          "count": 80,
+          "checked_at": "2026-10-28T15:02:12.606519+09:00",
+          "count": 94,
           "status": "success",
-          "last_success_at": "2026-10-28T14:51:24.559086+09:00"
+          "last_success_at": "2026-10-28T15:02:12.606519+09:00"
         }
       },
-      "last_checked_at": "2026-10-28T14:51:24.559086+09:00",
-      "last_complete_poll_at": "2026-10-28T14:51:24.559346+09:00"
+      "last_checked_at": "2026-10-28T15:02:12.606519+09:00",
+      "last_complete_poll_at": "2026-10-28T15:02:12.606710+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-10-28",
@@ -8642,7 +8647,7 @@
     },
     "traders_split": {
       "last_success_date": "2026-10-28",
-      "last_success_at": "2026-10-28T08:57:43.113665+09:00"
+      "last_success_at": "2026-10-28T15:02:09.013681+09:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-10-28",
@@ -8899,11 +8904,11 @@
       "last_success_at": "2026-10-28T08:57:44.059653+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-28T14:51:21.420232+09:00",
-      "last_finished_at": "2026-10-28T14:51:24.581168+09:00",
+      "last_started_at": "2026-10-28T15:02:04.462238+09:00",
+      "last_finished_at": "2026-10-28T15:02:12.618834+09:00",
       "status": "success",
-      "run_id": "40640376111",
-      "last_success_at": "2026-10-28T14:51:24.581168+09:00"
+      "run_id": "40641393181",
+      "last_success_at": "2026-10-28T15:02:12.618834+09:00"
     }
   },
   "notification_log": [
