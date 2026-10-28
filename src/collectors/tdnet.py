@@ -405,6 +405,10 @@ def _parse_tdnet_html_page(soup: Any, url: str, yyyymmdd: str) -> list[Disclosur
             )
         )
     if not header_found and not disclosures:
+        # A day without disclosures (early morning, weekends) is served as
+        # HTTP 200 with "…に開示された情報はありません。" and no table.
+        if "開示された情報はありません" in re.sub(r"\s+", "", soup.get_text()):
+            return []
         raise RuntimeError("TDnet fallback page schema is unrecognized")
     return disclosures
 
