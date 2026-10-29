@@ -5827,9 +5827,12 @@
         {
           "date": "2026-10-29",
           "label": "rights_final+1_noon",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "12:00",
-          "action_cutoff_jst": "15:30"
+          "action_cutoff_jst": "15:30",
+          "sent_at": "2026-10-29T12:01:06.940322+09:00",
+          "sent_by": "40809699453",
+          "reference_only": false
         },
         {
           "date": "2026-11-05",
@@ -6033,9 +6036,12 @@
         {
           "date": "2026-10-29",
           "label": "rights_final+1_noon",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "12:00",
-          "action_cutoff_jst": "15:30"
+          "action_cutoff_jst": "15:30",
+          "sent_at": "2026-10-29T12:01:07.223046+09:00",
+          "sent_by": "40809699453",
+          "reference_only": false
         },
         {
           "date": "2026-11-05",
@@ -8824,7 +8830,7 @@
       "failure": 0
     },
     "2026-10-29": {
-      "success": 2,
+      "success": 4,
       "failure": 0
     }
   },
@@ -8878,11 +8884,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-10-29T11:49:25.647911+09:00",
-      "last_finished_at": "2026-10-29T11:49:25.675867+09:00",
+      "last_started_at": "2026-10-29T12:01:06.865551+09:00",
+      "last_finished_at": "2026-10-29T12:01:07.488199+09:00",
       "status": "success",
-      "run_id": "40808603267",
-      "last_success_at": "2026-10-29T11:49:25.675867+09:00"
+      "run_id": "40809699453",
+      "last_success_at": "2026-10-29T12:01:07.488199+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-10-29T09:21:25.672250+09:00",
@@ -10527,6 +10533,28 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "40768242231"
+    },
+    {
+      "event_id": "split-6036-2026-09-15",
+      "channel": "split",
+      "scheduled_for": "2026-10-29",
+      "label": "rights_final+1_noon",
+      "attempted_at": "2026-10-29T12:01:06.940322+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "40809699453"
+    },
+    {
+      "event_id": "split-6787-2026-09-28",
+      "channel": "split",
+      "scheduled_for": "2026-10-29",
+      "label": "rights_final+1_noon",
+      "attempted_at": "2026-10-29T12:01:07.223046+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "40809699453"
     }
   ]
 }
