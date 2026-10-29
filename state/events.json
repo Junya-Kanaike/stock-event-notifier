@@ -5914,8 +5914,11 @@
         {
           "date": "2026-10-30",
           "label": "listing-1bd",
-          "sent": false,
-          "not_before_jst": "06:00"
+          "sent": true,
+          "not_before_jst": "06:00",
+          "sent_at": "2026-10-30T06:01:06.319155+09:00",
+          "sent_by": "40954070310",
+          "reference_only": false
         },
         {
           "date": "2026-11-02",
@@ -5955,8 +5958,11 @@
         {
           "date": "2026-10-30",
           "label": "listing_day",
-          "sent": false,
-          "not_before_jst": "06:00"
+          "sent": true,
+          "not_before_jst": "06:00",
+          "sent_at": "2026-10-30T06:01:06.230265+09:00",
+          "sent_by": "40954070310",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -8625,10 +8631,6 @@
   },
   "schema_version": 2,
   "notification_stats": {
-    "2026-09-15": {
-      "success": 5,
-      "failure": 0
-    },
     "2026-09-16": {
       "success": 6,
       "failure": 0
@@ -8804,6 +8806,10 @@
     "2026-10-29": {
       "success": 5,
       "failure": 0
+    },
+    "2026-10-30": {
+      "success": 2,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -8857,11 +8863,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-10-30T02:23:37.930891+09:00",
-      "last_finished_at": "2026-10-30T02:23:37.961649+09:00",
+      "last_started_at": "2026-10-30T06:01:06.148797+09:00",
+      "last_finished_at": "2026-10-30T06:01:06.419276+09:00",
       "status": "success",
-      "run_id": "40920857548",
-      "last_success_at": "2026-10-30T02:23:37.961649+09:00"
+      "run_id": "40954070310",
+      "last_success_at": "2026-10-30T06:01:06.419276+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-10-30T05:40:51.679780+09:00",
@@ -10528,6 +10534,28 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "40809699453"
+    },
+    {
+      "event_id": "ipo-652A-2026-10-30",
+      "channel": "ipo",
+      "scheduled_for": "2026-10-30",
+      "label": "listing_day",
+      "attempted_at": "2026-10-30T06:01:06.230265+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "40954070310"
+    },
+    {
+      "event_id": "ipo-653A-2026-11-02",
+      "channel": "ipo",
+      "scheduled_for": "2026-10-30",
+      "label": "listing-1bd",
+      "attempted_at": "2026-10-30T06:01:06.319155+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "40954070310"
     }
   ]
 }
