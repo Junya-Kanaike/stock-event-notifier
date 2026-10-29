@@ -2119,5 +2119,75 @@
         "貸借対象外"
       ]
     }
+  },
+  {
+    "id": "ipo-646A-2026-09-29",
+    "type": "ipo",
+    "code": "646A",
+    "name": "クラサスケミカル",
+    "market": "スタンダード",
+    "margin": "信用",
+    "announced_at": "2026-09-08T09:26:01.801379+09:00",
+    "detail": {
+      "listing_date": "2026-09-29",
+      "eligible_notified": true
+    },
+    "schedule": [
+      {
+        "date": "2026-09-28",
+        "label": "listing-1bd",
+        "sent": true,
+        "sent_at": "2026-09-28T08:23:00.341686+09:00",
+        "sent_by": "36358484146",
+        "reference_only": false,
+        "not_before_jst": "06:00"
+      },
+      {
+        "date": "2026-09-29",
+        "label": "listing_day",
+        "sent": true,
+        "sent_at": "2026-09-29T02:50:02.368993+09:00",
+        "sent_by": "36460896445",
+        "reference_only": false,
+        "not_before_jst": "06:00"
+      }
+    ],
+    "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+    "eligibility": {
+      "status": "eligible",
+      "reasons": []
+    }
+  },
+  {
+    "id": "cb-3038-2026-09-29",
+    "type": "cb",
+    "code": "3038",
+    "name": "神戸物産",
+    "market": "プライム",
+    "margin": "貸借",
+    "announced_at": "2026-09-29T23:30:00+09:00",
+    "detail": {
+      "amount": "600億円",
+      "canceled": true,
+      "cancel_reason": "自社株買い同時発表を確認"
+    },
+    "schedule": [],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260929542470.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260929542470.pdf",
+    "source_title": "2033年満期ユーロ円建取得条項付転換社債型新株予約権付社債の発行条件等の決定に関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120260929542470",
+        "relation": "source",
+        "title": "2033年満期ユーロ円建取得条項付転換社債型新株予約権付社債の発行条件等の決定に関するお知らせ",
+        "announced_at": "2026-09-29T23:30:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260929542470.pdf",
+        "market": "東証"
+      }
+    ],
+    "eligibility": {
+      "status": "eligible",
+      "reasons": []
+    }
   }
 ]

@@ -5557,44 +5557,6 @@
       }
     },
     {
-      "id": "ipo-646A-2026-09-29",
-      "type": "ipo",
-      "code": "646A",
-      "name": "クラサスケミカル",
-      "market": "スタンダード",
-      "margin": "信用",
-      "announced_at": "2026-09-08T09:26:01.801379+09:00",
-      "detail": {
-        "listing_date": "2026-09-29",
-        "eligible_notified": true
-      },
-      "schedule": [
-        {
-          "date": "2026-09-28",
-          "label": "listing-1bd",
-          "sent": true,
-          "sent_at": "2026-09-28T08:23:00.341686+09:00",
-          "sent_by": "36358484146",
-          "reference_only": false,
-          "not_before_jst": "06:00"
-        },
-        {
-          "date": "2026-09-29",
-          "label": "listing_day",
-          "sent": true,
-          "sent_at": "2026-09-29T02:50:02.368993+09:00",
-          "sent_by": "36460896445",
-          "reference_only": false,
-          "not_before_jst": "06:00"
-        }
-      ],
-      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
-      "eligibility": {
-        "status": "eligible",
-        "reasons": []
-      }
-    },
-    {
       "id": "ipo-648A-2026-10-15",
       "type": "ipo",
       "code": "648A",
@@ -5809,8 +5771,8 @@
         "record_date_raw": "基準日（実質10月30日（金））として、同日最終の株主名簿に記載または記録 された株主の所有する当社普通株式1株につき、2株の割合をもって分割いたします。 ② 分割により増加する株式数 株式分割前の発行済株式総数 28,280,840株 今回の分割により増加する株式数 28,280,840株 株式分割後の発行済株式総数 56,561,680株 株式分割後の発",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -6017,8 +5979,8 @@
         "record_date_raw": "基準日2026年11月1日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -6218,38 +6180,6 @@
           "title": "売出価格等の決定に関するお知らせ",
           "announced_at": "2026-10-06T17:15:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261006546804.pdf",
-          "market": "東証"
-        }
-      ],
-      "eligibility": {
-        "status": "eligible",
-        "reasons": []
-      }
-    },
-    {
-      "id": "cb-3038-2026-09-29",
-      "type": "cb",
-      "code": "3038",
-      "name": "神戸物産",
-      "market": "プライム",
-      "margin": "貸借",
-      "announced_at": "2026-09-29T23:30:00+09:00",
-      "detail": {
-        "amount": "600億円",
-        "canceled": true,
-        "cancel_reason": "自社株買い同時発表を確認"
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260929542470.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260929542470.pdf",
-      "source_title": "2033年満期ユーロ円建取得条項付転換社債型新株予約権付社債の発行条件等の決定に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260929542470",
-          "relation": "source",
-          "title": "2033年満期ユーロ円建取得条項付転換社債型新株予約権付社債の発行条件等の決定に関するお知らせ",
-          "announced_at": "2026-09-29T23:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260929542470.pdf",
           "market": "東証"
         }
       ],
@@ -7984,8 +7914,8 @@
         "record_date_raw": "基準日2026年10月31日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -8487,6 +8417,38 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "ipo-669A-2026-12-03",
+      "type": "ipo",
+      "code": "669A",
+      "name": "Ｍ＆Ａロイヤルアドバイザリー（株）",
+      "market": "グロース",
+      "margin": "対象外",
+      "announced_at": "2026-10-30T05:40:55.686842+09:00",
+      "detail": {
+        "listing_date": "2026-12-03",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-12-02",
+          "label": "listing-1bd",
+          "sent": false,
+          "not_before_jst": "06:00"
+        },
+        {
+          "date": "2026-12-03",
+          "label": "listing_day",
+          "sent": false,
+          "not_before_jst": "06:00"
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
@@ -8633,32 +8595,32 @@
       "last_complete_poll_at": "2026-10-29T20:06:52.599115+09:00"
     },
     "jpx_master": {
-      "last_success_date": "2026-10-29",
-      "last_success_at": "2026-10-29T09:21:26.322689+09:00"
+      "last_success_date": "2026-10-30",
+      "last_success_at": "2026-10-30T05:40:52.367396+09:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-10-29",
-      "last_success_at": "2026-10-29T09:21:27.073814+09:00"
+      "last_success_date": "2026-10-30",
+      "last_success_at": "2026-10-30T05:40:53.078249+09:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-10-29",
-      "last_success_at": "2026-10-29T09:21:29.198407+09:00"
+      "last_success_date": "2026-10-30",
+      "last_success_at": "2026-10-30T05:40:55.473857+09:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-10-27",
       "last_success_at": "2026-10-27T15:08:19.212268+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-10-29",
-      "last_success_at": "2026-10-29T15:31:48.423607+09:00"
+      "last_success_date": "2026-10-30",
+      "last_success_at": "2026-10-30T05:40:54.757001+09:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-10-29",
-      "last_success_at": "2026-10-29T09:21:29.514163+09:00"
+      "last_success_date": "2026-10-30",
+      "last_success_at": "2026-10-30T05:40:55.686344+09:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-10-29",
-      "last_success_at": "2026-10-29T09:21:29.831289+09:00"
+      "last_success_date": "2026-10-30",
+      "last_success_at": "2026-10-30T05:40:55.961158+09:00"
     }
   },
   "schema_version": 2,
@@ -8902,11 +8864,11 @@
       "last_success_at": "2026-10-30T02:23:37.961649+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-10-29T09:21:25.672250+09:00",
-      "last_finished_at": "2026-10-29T09:21:29.832170+09:00",
+      "last_started_at": "2026-10-30T05:40:51.679780+09:00",
+      "last_finished_at": "2026-10-30T05:40:55.962290+09:00",
       "status": "success",
-      "run_id": "40793494426",
-      "last_success_at": "2026-10-29T09:21:29.832170+09:00"
+      "run_id": "40951149467",
+      "last_success_at": "2026-10-30T05:40:55.962290+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-10-29T20:06:51.001931+09:00",
