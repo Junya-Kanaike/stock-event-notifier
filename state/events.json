@@ -1901,7 +1901,15 @@
     "140120261029558792",
     "140120261029558859",
     "140120261029559636",
-    "140120261030560572"
+    "140120261030560572",
+    "140120261028558622",
+    "140120261029558729",
+    "140120261029558892",
+    "140120261028557317",
+    "140120261028558318",
+    "140120261028558389",
+    "140120261028558066",
+    "140120261029559577"
   ],
   "events": [
     {
@@ -8465,6 +8473,70 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "split-6861-2026-10-29",
+      "type": "split",
+      "code": "6861",
+      "name": "キーエンス",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-10-29T16:00:00+09:00",
+      "detail": {
+        "ratio": "5",
+        "record_date": "2026-11-20",
+        "record_date_raw": "基準日:2026年11月20日",
+        "rights_final_date": "2026-11-18",
+        "rights_final_date_raw": null,
+        "rights_final_source": "record_date_t_plus_2",
+        "rights_final_calculation_basis": "record_date_t_plus_2",
+        "rights_final_confirmed": false,
+        "rights_final_status": "provisional",
+        "rights_date_conflict": false,
+        "ex_right_date": "2026-11-19",
+        "effective_date": "2026-11-21",
+        "effective_date_raw": "効力発生日 : 2026年11月21日 (土) (4)その他 今回の株式分割に際して、資本金の額の変更はありません。 -1- 3.株式分割に伴う定款の一部変更 (1)変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年11月21日（土）をもって 当社定款の一部を変更いたします。 (2)変更の内容 (下線部分は変更箇所) 現行定款",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-11-18",
+          "label": "rights_final+0_after_close",
+          "sent": false,
+          "not_before_jst": "19:00"
+        },
+        {
+          "date": "2026-11-19",
+          "label": "rights_final+1_noon",
+          "sent": false,
+          "not_before_jst": "12:00",
+          "action_cutoff_jst": "15:30"
+        },
+        {
+          "date": "2026-11-26",
+          "label": "rights_final+5_preopen",
+          "sent": false,
+          "not_before_jst": "08:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261028557317.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261028557317.pdf",
+      "source_title": "株式分割及び定款の一部変更に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261028557317",
+          "relation": "source",
+          "title": "株式分割及び定款の一部変更に関するお知らせ",
+          "announced_at": "2026-10-29T16:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261028557317.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
@@ -8472,7 +8544,7 @@
       "last_checked_date": "2026-10-30",
       "last_success_date": "2026-10-30",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-10-30T14:58:46.561901+09:00",
+      "last_success_at": "2026-10-30T15:09:29.803952+09:00",
       "by_date": {
         "2026-09-30": {
           "checked_at": "2026-10-01T20:09:47.079555+09:00",
@@ -8595,20 +8667,20 @@
           "last_success_at": "2026-10-29T20:06:51.934128+09:00"
         },
         "2026-10-29": {
-          "checked_at": "2026-10-30T14:58:44.614439+09:00",
-          "count": 157,
+          "checked_at": "2026-10-30T15:09:28.972381+09:00",
+          "count": 428,
           "status": "success",
-          "last_success_at": "2026-10-30T14:58:44.614439+09:00"
+          "last_success_at": "2026-10-30T15:09:28.972381+09:00"
         },
         "2026-10-30": {
-          "checked_at": "2026-10-30T14:58:46.561629+09:00",
-          "count": 225,
+          "checked_at": "2026-10-30T15:09:29.803568+09:00",
+          "count": 287,
           "status": "success",
-          "last_success_at": "2026-10-30T14:58:46.561629+09:00"
+          "last_success_at": "2026-10-30T15:09:29.803568+09:00"
         }
       },
-      "last_checked_at": "2026-10-30T14:58:46.561629+09:00",
-      "last_complete_poll_at": "2026-10-30T14:58:46.561908+09:00"
+      "last_checked_at": "2026-10-30T15:09:29.803568+09:00",
+      "last_complete_poll_at": "2026-10-30T15:09:29.803959+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-10-30",
@@ -8887,11 +8959,11 @@
       "last_success_at": "2026-10-30T09:16:49.345654+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-10-30T14:58:43.592623+09:00",
-      "last_finished_at": "2026-10-30T14:58:46.582812+09:00",
+      "last_started_at": "2026-10-30T15:09:27.927738+09:00",
+      "last_finished_at": "2026-10-30T15:09:30.518834+09:00",
       "status": "success",
-      "run_id": "41011383647",
-      "last_success_at": "2026-10-30T14:58:46.582812+09:00"
+      "run_id": "41012412818",
+      "last_success_at": "2026-10-30T15:09:30.518834+09:00"
     }
   },
   "notification_log": [
