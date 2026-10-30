@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-10-30T00:16:48.015264+00:00",
+  "fetched_at": "2026-10-30T06:20:12.353232+00:00",
   "data": {
     "8697": [
       {
@@ -149,6 +149,16 @@
         "rights_final_date": "2026-11-26",
         "ratio": "2",
         "effective_date": "2026-12-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "6861": [
+      {
+        "code": "6861",
+        "name": "キーエンス",
+        "rights_final_date": "2026-11-18",
+        "ratio": "5",
+        "effective_date": "2026-11-21",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
