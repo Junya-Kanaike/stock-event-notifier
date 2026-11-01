@@ -1929,7 +1929,8 @@
     "140120261029559178",
     "140120261030561149",
     "140120261031561997",
-    "140120261102562019"
+    "140120261102562019",
+    "140120261102562062"
   ],
   "events": [
     {
@@ -5532,8 +5533,8 @@
         "record_date_raw": "基準日（実質10月30日（金））として、同日最終の株主名簿に記載または記録 された株主の所有する当社普通株式1株につき、2株の割合をもって分割いたします。 ② 分割により増加する株式数 株式分割前の発行済株式総数 28,280,840株 今回の分割により増加する株式数 28,280,840株 株式分割後の発行済株式総数 56,561,680株 株式分割後の発",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -5749,8 +5750,8 @@
         "record_date_raw": "基準日2026年11月1日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7516,8 +7517,8 @@
         "record_date_raw": "基準日2026年10月31日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -8201,7 +8202,7 @@
       "last_checked_date": "2026-11-02",
       "last_success_date": "2026-11-02",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-02T08:45:04.779425+09:00",
+      "last_success_at": "2026-11-02T08:55:47.845947+09:00",
       "by_date": {
         "2026-10-05": {
           "checked_at": "2026-10-06T21:05:54.077651+09:00",
@@ -8312,20 +8313,20 @@
           "last_success_at": "2026-10-30T20:01:33.877559+09:00"
         },
         "2026-10-30": {
-          "checked_at": "2026-11-02T08:45:02.444341+09:00",
+          "checked_at": "2026-11-02T08:55:46.392322+09:00",
           "count": 822,
           "status": "success",
-          "last_success_at": "2026-11-02T08:45:02.444341+09:00"
+          "last_success_at": "2026-11-02T08:55:46.392322+09:00"
         },
         "2026-11-02": {
-          "checked_at": "2026-11-02T08:45:04.778873+09:00",
-          "count": 9,
+          "checked_at": "2026-11-02T08:55:47.845336+09:00",
+          "count": 12,
           "status": "success",
-          "last_success_at": "2026-11-02T08:45:04.778873+09:00"
+          "last_success_at": "2026-11-02T08:55:47.845336+09:00"
         }
       },
-      "last_checked_at": "2026-11-02T08:45:04.778873+09:00",
-      "last_complete_poll_at": "2026-11-02T08:45:04.779435+09:00"
+      "last_checked_at": "2026-11-02T08:55:47.845336+09:00",
+      "last_complete_poll_at": "2026-11-02T08:55:47.845957+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-02",
@@ -8607,11 +8608,11 @@
       "last_success_at": "2026-11-02T08:51:23.181648+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-02T08:45:00.400065+09:00",
-      "last_finished_at": "2026-11-02T08:45:04.863042+09:00",
+      "last_started_at": "2026-11-02T08:55:44.954697+09:00",
+      "last_finished_at": "2026-11-02T08:55:47.913030+09:00",
       "status": "success",
-      "run_id": "41363588328",
-      "last_success_at": "2026-11-02T08:45:04.863042+09:00"
+      "run_id": "41364452826",
+      "last_success_at": "2026-11-02T08:55:47.913030+09:00"
     }
   },
   "notification_log": [
