@@ -5461,120 +5461,6 @@
       ]
     },
     {
-      "id": "ipo-640A-2026-10-01",
-      "type": "ipo",
-      "code": "640A",
-      "name": "（株）ASNOVA Companies *",
-      "market": "グロース",
-      "margin": "信用",
-      "announced_at": "2026-09-02T09:15:32.360160+09:00",
-      "detail": {
-        "listing_date": "2026-10-01",
-        "eligible_notified": true
-      },
-      "schedule": [
-        {
-          "date": "2026-09-30",
-          "label": "listing-1bd",
-          "sent": true,
-          "sent_at": "2026-09-30T01:09:55.664790+09:00",
-          "sent_by": "36595667297",
-          "reference_only": false,
-          "not_before_jst": "06:00"
-        },
-        {
-          "date": "2026-10-01",
-          "label": "listing_day",
-          "sent": true,
-          "sent_at": "2026-10-01T01:06:55.992145+09:00",
-          "sent_by": "36741802256",
-          "reference_only": false,
-          "not_before_jst": "06:00"
-        }
-      ],
-      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
-      "eligibility": {
-        "status": "eligible",
-        "reasons": []
-      }
-    },
-    {
-      "id": "ipo-641A-2026-10-01",
-      "type": "ipo",
-      "code": "641A",
-      "name": "NOK Group（株） *",
-      "market": "プライム",
-      "margin": "貸借",
-      "announced_at": "2026-09-02T09:15:32.360709+09:00",
-      "detail": {
-        "listing_date": "2026-10-01",
-        "eligible_notified": true
-      },
-      "schedule": [
-        {
-          "date": "2026-09-30",
-          "label": "listing-1bd",
-          "sent": true,
-          "sent_at": "2026-09-30T01:09:55.873167+09:00",
-          "sent_by": "36595667297",
-          "reference_only": false,
-          "not_before_jst": "06:00"
-        },
-        {
-          "date": "2026-10-01",
-          "label": "listing_day",
-          "sent": true,
-          "sent_at": "2026-10-01T01:06:56.097699+09:00",
-          "sent_by": "36741802256",
-          "reference_only": false,
-          "not_before_jst": "06:00"
-        }
-      ],
-      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
-      "eligibility": {
-        "status": "eligible",
-        "reasons": []
-      }
-    },
-    {
-      "id": "ipo-642A-2026-10-01",
-      "type": "ipo",
-      "code": "642A",
-      "name": "キューデンホールディングス（株） *",
-      "market": "プライム",
-      "margin": "貸借",
-      "announced_at": "2026-09-02T09:15:32.360736+09:00",
-      "detail": {
-        "listing_date": "2026-10-01",
-        "eligible_notified": true
-      },
-      "schedule": [
-        {
-          "date": "2026-09-30",
-          "label": "listing-1bd",
-          "sent": true,
-          "sent_at": "2026-09-30T01:09:56.059841+09:00",
-          "sent_by": "36595667297",
-          "reference_only": false,
-          "not_before_jst": "06:00"
-        },
-        {
-          "date": "2026-10-01",
-          "label": "listing_day",
-          "sent": true,
-          "sent_at": "2026-10-01T01:06:56.190583+09:00",
-          "sent_by": "36741802256",
-          "reference_only": false,
-          "not_before_jst": "06:00"
-        }
-      ],
-      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
-      "eligibility": {
-        "status": "eligible",
-        "reasons": []
-      }
-    },
-    {
       "id": "ipo-648A-2026-10-15",
       "type": "ipo",
       "code": "648A",
@@ -5613,169 +5499,6 @@
       }
     },
     {
-      "id": "bunbai-7682-2026-09-10",
-      "type": "bunbai",
-      "code": "7682",
-      "name": "浜木綿",
-      "market": "スタンダード",
-      "margin": "信用",
-      "announced_at": "2026-09-10T15:30:00+09:00",
-      "detail": {
-        "execution_date": "2026-09-25",
-        "execution_date_raw": null,
-        "execution_date_confirmed": true,
-        "notification_tracking_started": true,
-        "pending_notified": true,
-        "eligible_notified": true
-      },
-      "schedule": [
-        {
-          "date": "2026-09-24",
-          "label": "execution-1bd",
-          "sent": true,
-          "sent_at": "2026-09-24T23:10:43.210781+09:00",
-          "sent_by": "36010845314",
-          "reference_only": false,
-          "not_before_jst": "06:00"
-        },
-        {
-          "date": "2026-09-25",
-          "label": "execution_day",
-          "sent": true,
-          "action_cutoff_jst": "09:00",
-          "sent_at": "2026-09-25T00:48:01.792107+09:00",
-          "sent_by": "36022791201",
-          "reference_only": false,
-          "not_before_jst": "06:00"
-        },
-        {
-          "date": "2026-10-02",
-          "label": "execution+5bd",
-          "sent": true,
-          "action_cutoff_jst": "09:00",
-          "sent_at": "2026-10-02T01:42:43.117262+09:00",
-          "sent_by": "36894016955",
-          "reference_only": false,
-          "not_before_jst": "06:00"
-        }
-      ],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260909533574.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260925540046.pdf",
-      "source_title": "株式の立会外分売に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260909533574",
-          "relation": "source",
-          "title": "株式の立会外分売に関するお知らせ",
-          "announced_at": "2026-09-10T15:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260909533574.pdf",
-          "market": "東証・名証"
-        },
-        {
-          "id": "140120260924539650",
-          "relation": "execution",
-          "title": "株式の立会外分売実施に関するお知らせ",
-          "announced_at": "2026-09-24T16:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260924539650.pdf",
-          "market": "東証・名証"
-        },
-        {
-          "id": "140120260925540046",
-          "relation": "completion",
-          "title": "株式の立会外分売終了に関するお知らせ",
-          "announced_at": "2026-09-25T10:45:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260925540046.pdf",
-          "market": "東証・名証"
-        }
-      ],
-      "jpx_source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
-      "eligibility": {
-        "status": "eligible",
-        "reasons": []
-      }
-    },
-    {
-      "id": "bunbai-5071-2026-09-14",
-      "type": "bunbai",
-      "code": "5071",
-      "name": "ヴィス",
-      "market": "スタンダード",
-      "margin": "貸借",
-      "announced_at": "2026-09-14T15:31:00+09:00",
-      "detail": {
-        "execution_date": "2026-09-25",
-        "execution_date_raw": "分売実施日 株数 分売値段 買付申込数量の限度 2026年9月25日 400,000株 1,373円 5,000株 （ご参考） 2026年9月24日にお知らせいたしました内容は以下の通りです。 1.分 売 予 定 株 式 数 400,000株 2.分 売 実 施 日 2026年9月25日（金） 3.分 売 値 段 1,373円 4.買付申込数量の限度 買付顧",
-        "execution_date_confirmed": true,
-        "notification_tracking_started": true,
-        "eligible_notified": true
-      },
-      "schedule": [
-        {
-          "date": "2026-09-24",
-          "label": "execution-1bd",
-          "sent": true,
-          "sent_at": "2026-09-24T00:25:49.520932+09:00",
-          "sent_by": "35881461582",
-          "reference_only": false,
-          "not_before_jst": "06:00"
-        },
-        {
-          "date": "2026-09-25",
-          "label": "execution_day",
-          "sent": true,
-          "action_cutoff_jst": "09:00",
-          "sent_at": "2026-09-25T00:48:01.515191+09:00",
-          "sent_by": "36022791201",
-          "reference_only": false,
-          "not_before_jst": "06:00"
-        },
-        {
-          "date": "2026-10-02",
-          "label": "execution+5bd",
-          "sent": true,
-          "action_cutoff_jst": "09:00",
-          "sent_at": "2026-10-02T01:42:43.002482+09:00",
-          "sent_by": "36894016955",
-          "reference_only": false,
-          "not_before_jst": "06:00"
-        }
-      ],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120260914536075.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260918538664.pdf",
-      "source_title": "株式の立会外分売に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120260914536075",
-          "relation": "source",
-          "title": "株式の立会外分売に関するお知らせ",
-          "announced_at": "2026-09-14T15:31:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260914536075.pdf",
-          "market": "東証"
-        },
-        {
-          "id": "140120260918538663",
-          "relation": "execution",
-          "title": "株式の立会外分売実施に関するお知らせ",
-          "announced_at": "2026-09-24T16:40:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260918538663.pdf",
-          "market": "東証"
-        },
-        {
-          "id": "140120260918538664",
-          "relation": "completion",
-          "title": "株式の立会外分売終了に関するお知らせ",
-          "announced_at": "2026-09-25T10:10:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120260918538664.pdf",
-          "market": "東証"
-        }
-      ],
-      "jpx_source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
-      "eligibility": {
-        "status": "eligible",
-        "reasons": []
-      }
-    },
-    {
       "id": "split-6036-2026-09-15",
       "type": "split",
       "code": "6036",
@@ -5789,8 +5512,8 @@
         "record_date_raw": "基準日（実質10月30日（金））として、同日最終の株主名簿に記載または記録 された株主の所有する当社普通株式1株につき、2株の割合をもって分割いたします。 ② 分割により増加する株式数 株式分割前の発行済株式総数 28,280,840株 今回の分割により増加する株式数 28,280,840株 株式分割後の発行済株式総数 56,561,680株 株式分割後の発",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -6003,8 +5726,8 @@
         "record_date_raw": "基準日2026年11月1日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -6390,88 +6113,6 @@
       }
     },
     {
-      "id": "po-2449-2026-10-01",
-      "type": "po",
-      "code": "2449",
-      "name": "プラップジャパン",
-      "market": "スタンダード",
-      "margin": "信用",
-      "announced_at": "2026-10-01T15:30:00+09:00",
-      "detail": {
-        "parser_version": 4,
-        "po_kind": "secondary",
-        "source_stage": "announcement",
-        "size_oku": 9.807184,
-        "size_oku_min": null,
-        "size_oku_max": null,
-        "size_status": "estimated",
-        "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
-        "share_count": null,
-        "oa_share_count": null,
-        "price_min_yen": null,
-        "price_max_yen": null,
-        "public_offering_shares": null,
-        "secondary_sale_shares": 935800,
-        "oa_shares": 0,
-        "total_offered_shares": 935800,
-        "share_breakdown_complete": true,
-        "oa_marker_present": false,
-        "issue_price_yen": null,
-        "sale_price_yen": null,
-        "offer_price_yen": null,
-        "dilution_pct": null,
-        "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
-        "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": "2026-10-30",
-        "settlement_date_end": null,
-        "settlement_date_raw": "受渡期日2026年10月30日（8）申込証拠金該当事項はありません（9）申込単位該当事項はありません（2）売出しの目的CavendishSquareHoldingBVとDanielJ.Edelman,",
-        "settlement_estimated": false,
-        "settlement_date_status": "confirmed",
-        "parse_warnings": [],
-        "missing_fields": [
-          "dilution_pct",
-          "pricing_date"
-        ],
-        "notification_tracking_started": true,
-        "reference_close_yen": 1048.0,
-        "reference_close_date": "2026-10-01",
-        "reference_close_source": "Yahoo Finance chart (raw close)",
-        "reference_close_kind": "announcement_close",
-        "estimated_size_yen": 980718400,
-        "estimated_size_oku": 9.807184,
-        "effective_size_yen": 980718400,
-        "calculation_missing_fields": [],
-        "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120261001544032.pdf",
-        "calculation_recovery_attempt_date": "2026-10-19",
-        "latest_source_stage": "announcement",
-        "po_threshold_ever_met": false
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120261001544032.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261001544032.pdf",
-      "source_title": "株式の売出しならびに主要株主、主要株主である筆頭株主及びその他関係会社の異動に関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120261001544032",
-          "relation": "source",
-          "title": "株式の売出しならびに主要株主、主要株主である筆頭株主及びその他関係会社の異動に関するお知らせ",
-          "announced_at": "2026-10-01T15:30:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120261001544032.pdf",
-          "market": "東証"
-        }
-      ],
-      "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "吸収規模80億円未満"
-        ]
-      }
-    },
-    {
       "id": "ipo-658A-2026-11-06",
       "type": "ipo",
       "code": "658A",
@@ -6702,95 +6343,6 @@
           "previous_schedule": []
         }
       ]
-    },
-    {
-      "id": "po-4475-2026-10-02",
-      "type": "po",
-      "code": "4475",
-      "name": "ＨＥＮＮＧＥ",
-      "market": "グロース",
-      "margin": "貸借",
-      "announced_at": "2026-10-02T16:00:00+09:00",
-      "detail": {
-        "parser_version": 4,
-        "po_kind": "both",
-        "source_stage": "announcement",
-        "size_oku": 32.07913831,
-        "size_oku_min": null,
-        "size_oku_max": null,
-        "size_status": "confirmed",
-        "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
-        "share_count": null,
-        "oa_share_count": null,
-        "price_min_yen": null,
-        "price_max_yen": null,
-        "public_offering_shares": 1,
-        "secondary_sale_shares": 1380000,
-        "oa_shares": 372000,
-        "total_offered_shares": 2852000,
-        "share_breakdown_complete": true,
-        "oa_marker_present": true,
-        "issue_price_yen": 1831.0,
-        "sale_price_yen": 1831.0,
-        "offer_price_yen": 1831.0,
-        "dilution_pct": 2.51,
-        "dilution_status": "confirmed",
-        "pricing_date": "2026-10-13",
-        "pricing_date_end": "2026-10-13",
-        "pricing_date_raw": "2026年10月13日（火）から2026年10月15日（木）までの間のいずれかの日（以下「発行価格等決定日",
-        "pricing_date_confirmed": true,
-        "pricing_date_status": "confirmed",
-        "settlement_date": "2026-10-20",
-        "settlement_date_end": "2026-10-21",
-        "settlement_date_raw": "受渡期日2026年10月20日（火）（注）引受人は引受価額で買取引受けを行い、売出価格で売出しを行います",
-        "settlement_estimated": false,
-        "settlement_date_status": "confirmed",
-        "parse_warnings": [],
-        "missing_fields": [],
-        "notification_tracking_started": true,
-        "reference_close_yen": 1760.0,
-        "reference_close_date": "2026-10-02",
-        "reference_close_source": "Yahoo Finance chart (raw close)",
-        "reference_close_kind": "announcement_close",
-        "estimated_size_yen": 5019520000,
-        "estimated_size_oku": 50.1952,
-        "effective_size_yen": 3207913831,
-        "calculation_missing_fields": [],
-        "latest_source_stage": "pricing",
-        "po_threshold_ever_met": false,
-        "confirmed_size_yen": 3207913831,
-        "confirmed_size_oku": 32.07913831,
-        "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120261002545271.pdf|https://www.release.tdnet.info/inbs/140120261009549028.pdf",
-        "calculation_recovery_attempt_date": "2026-10-19"
-      },
-      "schedule": [],
-      "pdf_url": "https://www.release.tdnet.info/inbs/140120261002545271.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261009549028.pdf",
-      "source_title": "新株式発行及び株式売出しに関するお知らせ",
-      "related_disclosures": [
-        {
-          "id": "140120261002545271",
-          "relation": "source",
-          "title": "新株式発行及び株式売出しに関するお知らせ",
-          "announced_at": "2026-10-02T16:00:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120261002545271.pdf",
-          "market": "東証"
-        },
-        {
-          "id": "140120261009549028",
-          "relation": "pricing",
-          "title": "発行価格及び売出価格等の決定に関するお知らせ",
-          "announced_at": "2026-10-13T18:00:00+09:00",
-          "pdf_url": "https://www.release.tdnet.info/inbs/140120261009549028.pdf",
-          "market": "東証"
-        }
-      ],
-      "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "吸収規模80億円未満"
-        ]
-      }
     },
     {
       "id": "po-6143-2026-10-05",
@@ -7938,8 +7490,8 @@
         "record_date_raw": "基準日2026年10月31日",
         "rights_final_date": "2026-10-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -8685,32 +8237,32 @@
       "last_complete_poll_at": "2026-10-30T20:01:34.774876+09:00"
     },
     "jpx_master": {
-      "last_success_date": "2026-10-30",
-      "last_success_at": "2026-10-30T09:16:44.245257+09:00"
+      "last_success_date": "2026-11-02",
+      "last_success_at": "2026-11-02T05:40:38.706904+09:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-10-30",
-      "last_success_at": "2026-10-30T09:16:45.675764+09:00"
+      "last_success_date": "2026-11-02",
+      "last_success_at": "2026-11-02T05:40:39.556880+09:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-10-30",
-      "last_success_at": "2026-10-30T09:16:48.690863+09:00"
+      "last_success_date": "2026-11-02",
+      "last_success_at": "2026-11-02T05:40:42.754307+09:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-10-27",
       "last_success_at": "2026-10-27T15:08:19.212268+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-10-30",
-      "last_success_at": "2026-10-30T15:20:12.353232+09:00"
+      "last_success_date": "2026-11-02",
+      "last_success_at": "2026-11-02T05:40:42.110214+09:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-10-30",
-      "last_success_at": "2026-10-30T09:16:49.110183+09:00"
+      "last_success_date": "2026-11-02",
+      "last_success_at": "2026-11-02T05:40:43.019991+09:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-10-30",
-      "last_success_at": "2026-10-30T09:16:49.344706+09:00"
+      "last_success_date": "2026-11-02",
+      "last_success_at": "2026-11-02T05:40:43.317469+09:00"
     }
   },
   "schema_version": 2,
@@ -8957,11 +8509,11 @@
       "last_success_at": "2026-10-31T01:59:26.723330+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-11-01T08:40:17.655282+09:00",
-      "last_finished_at": "2026-11-01T08:40:17.684111+09:00",
+      "last_started_at": "2026-11-02T05:40:37.921802+09:00",
+      "last_finished_at": "2026-11-02T05:40:43.318625+09:00",
       "status": "success",
-      "run_id": "41253477626",
-      "last_success_at": "2026-11-01T08:40:17.684111+09:00"
+      "run_id": "41348059186",
+      "last_success_at": "2026-11-02T05:40:43.318625+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-10-30T20:01:32.878598+09:00",
