@@ -6343,8 +6343,12 @@
         {
           "date": "2026-11-04",
           "label": "listing_day",
-          "sent": false,
-          "not_before_jst": "06:00"
+          "sent": true,
+          "not_before_jst": "06:00",
+          "notification_id": "be32a37c2379da5f24db2e2af2f22236c1c9f1a2d76bb15b15be614943cac2fa",
+          "sent_at": "2026-11-04T06:01:07.342036+09:00",
+          "sent_by": "41717846091",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -7589,9 +7593,13 @@
         {
           "date": "2026-11-04",
           "label": "execution+5bd",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "974f892fc84090d543c6f5633629bdb0555ae02310e071cd66401d035f8ef502",
+          "sent_at": "2026-11-04T06:01:07.105770+09:00",
+          "sent_by": "41717846091",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261013549202.pdf",
@@ -7845,9 +7853,13 @@
         {
           "date": "2026-11-04",
           "label": "execution+5bd",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "bfb890c25e02c0ad5348f016076410af99a6faecfb118cee5023da6bb2fe8126",
+          "sent_at": "2026-11-04T06:01:07.252832+09:00",
+          "sent_by": "41717846091",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261019553087.pdf",
@@ -8627,10 +8639,6 @@
   },
   "schema_version": 2,
   "notification_stats": {
-    "2026-09-20": {
-      "success": 1,
-      "failure": 0
-    },
     "2026-09-21": {
       "success": 1,
       "failure": 0
@@ -8806,6 +8814,10 @@
     "2026-11-03": {
       "success": 1,
       "failure": 0
+    },
+    "2026-11-04": {
+      "success": 3,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -8864,11 +8876,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-04T03:22:34.212627+09:00",
-      "last_finished_at": "2026-11-04T03:22:34.241058+09:00",
+      "last_started_at": "2026-11-04T06:01:07.019096+09:00",
+      "last_finished_at": "2026-11-04T06:01:07.440839+09:00",
       "status": "success",
-      "run_id": "41693127113",
-      "last_success_at": "2026-11-04T03:22:34.241058+09:00"
+      "run_id": "41717846091",
+      "last_success_at": "2026-11-04T06:01:07.440839+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-04T05:40:36.491126+09:00",
@@ -10579,6 +10591,42 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "41349744176"
+    },
+    {
+      "event_id": "bunbai-4076-2026-10-14",
+      "channel": "bunbai",
+      "scheduled_for": "2026-11-04",
+      "label": "execution+5bd",
+      "attempted_at": "2026-11-04T06:01:07.105770+09:00",
+      "outcome": "accepted",
+      "notification_id": "974f892fc84090d543c6f5633629bdb0555ae02310e071cd66401d035f8ef502",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "41717846091"
+    },
+    {
+      "event_id": "bunbai-7050-2026-10-19",
+      "channel": "bunbai",
+      "scheduled_for": "2026-11-04",
+      "label": "execution+5bd",
+      "attempted_at": "2026-11-04T06:01:07.252832+09:00",
+      "outcome": "accepted",
+      "notification_id": "bfb890c25e02c0ad5348f016076410af99a6faecfb118cee5023da6bb2fe8126",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "41717846091"
+    },
+    {
+      "event_id": "ipo-656A-2026-11-04",
+      "channel": "ipo",
+      "scheduled_for": "2026-11-04",
+      "label": "listing_day",
+      "attempted_at": "2026-11-04T06:01:07.342036+09:00",
+      "outcome": "accepted",
+      "notification_id": "be32a37c2379da5f24db2e2af2f22236c1c9f1a2d76bb15b15be614943cac2fa",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "41717846091"
     }
   ]
 }
