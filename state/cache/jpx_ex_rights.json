@@ -1,43 +1,7 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-01T23:51:22.537062+00:00",
+  "fetched_at": "2026-11-03T20:40:40.968009+00:00",
   "data": {
-    "362A": {
-      "code": "362A",
-      "name": "Ｐ－エクシオＨＤ",
-      "market": "TOKYO PRO Market",
-      "ex_right_date": "2026-10-29",
-      "record_date": "2026-10-31",
-      "rights_final_date": "2026-10-28",
-      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
-    },
-    "6036": {
-      "code": "6036",
-      "name": "ＫｅｅＰｅｒ技研",
-      "market": "プライム市場",
-      "ex_right_date": "2026-10-29",
-      "record_date": "2026-10-31",
-      "rights_final_date": "2026-10-28",
-      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
-    },
-    "1328": {
-      "code": "1328",
-      "name": "ＮＦ金価格",
-      "market": "その他",
-      "ex_right_date": "2026-10-29",
-      "record_date": "2026-11-01",
-      "rights_final_date": "2026-10-28",
-      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
-    },
-    "6787": {
-      "code": "6787",
-      "name": "メイコー",
-      "market": "プライム市場",
-      "ex_right_date": "2026-10-29",
-      "record_date": "2026-11-01",
-      "rights_final_date": "2026-10-28",
-      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
-    },
     "1546": {
       "code": "1546",
       "name": "ダウヘッジ無",

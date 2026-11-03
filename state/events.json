@@ -8597,32 +8597,32 @@
       "last_complete_poll_at": "2026-11-02T21:54:06.785451+09:00"
     },
     "jpx_master": {
-      "last_success_date": "2026-11-02",
-      "last_success_at": "2026-11-02T08:51:18.923674+09:00"
+      "last_success_date": "2026-11-04",
+      "last_success_at": "2026-11-04T05:40:37.356544+09:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-11-02",
-      "last_success_at": "2026-11-02T08:51:19.704180+09:00"
+      "last_success_date": "2026-11-04",
+      "last_success_at": "2026-11-04T05:40:38.161032+09:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-11-02",
-      "last_success_at": "2026-11-02T08:51:22.537062+09:00"
+      "last_success_date": "2026-11-04",
+      "last_success_at": "2026-11-04T05:40:40.968009+09:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-11-02",
       "last_success_at": "2026-11-02T08:01:47.223526+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-11-02",
-      "last_success_at": "2026-11-02T21:54:04.818022+09:00"
+      "last_success_date": "2026-11-04",
+      "last_success_at": "2026-11-04T05:40:40.353797+09:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-11-02",
-      "last_success_at": "2026-11-02T08:51:22.860371+09:00"
+      "last_success_date": "2026-11-04",
+      "last_success_at": "2026-11-04T05:40:41.377135+09:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-11-02",
-      "last_success_at": "2026-11-02T08:51:23.180439+09:00"
+      "last_success_date": "2026-11-04",
+      "last_success_at": "2026-11-04T05:40:41.706938+09:00"
     }
   },
   "schema_version": 2,
@@ -8871,11 +8871,11 @@
       "last_success_at": "2026-11-04T03:22:34.241058+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-11-03T11:37:23.583840+09:00",
-      "last_finished_at": "2026-11-03T11:37:23.605380+09:00",
+      "last_started_at": "2026-11-04T05:40:36.491126+09:00",
+      "last_finished_at": "2026-11-04T05:40:41.708304+09:00",
       "status": "success",
-      "run_id": "41567242950",
-      "last_success_at": "2026-11-03T11:37:23.605380+09:00"
+      "run_id": "41714685126",
+      "last_success_at": "2026-11-04T05:40:41.708304+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-11-02T21:54:03.124618+09:00",
