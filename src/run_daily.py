@@ -478,7 +478,8 @@ def send_due_notifications(
             if uncertain:
                 due.schedule_item["delivery_hold"] = {"status": "unknown",
                     "notification_id": notification_id(due.event, due.schedule_item),
-                    "attempted_at": attempted_at.isoformat(), "run_id": os.getenv("GITHUB_RUN_ID", "local")}
+                    "attempted_at": attempted_at.isoformat(), "run_id": os.getenv("GITHUB_RUN_ID", "local"),
+                    "reference_only": due.reference_only}
             if not dry_run:
                 write_receipt(due.event, due.schedule_item, attempted_at, "unknown" if uncertain else "failed",
                               reference_only=due.reference_only)

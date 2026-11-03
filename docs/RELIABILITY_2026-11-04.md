@@ -15,7 +15,7 @@
 
 ## 検証
 
-- Python 3.12のunittest 228件成功。GitHub Actionsと同じ `GITHUB_ACTIONS=true` の条件でも成功。
+- Python 3.12のunittest 229件成功。GitHub Actionsと同じ `GITHUB_ACTIONS=true` の条件でも成功。
 - 通知マトリクス34パターン成功。
 - Python 3.12の構文確認、導入済みMac runtimeのPython 3.9による補助2ファイルの構文確認、actionlint 1.7.12、YAML解析、shell構文、`git diff --check` が成功。
 - 導入先と同じ単体配置で、34日古い信用区分データと4時間遅れの予定の2警告を検出した。共通モジュールがない場合は起動失敗することを確認。

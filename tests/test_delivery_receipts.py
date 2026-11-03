@@ -79,6 +79,15 @@ class DeliveryReceiptsTest(unittest.TestCase):
         apply_receipts(state, [self.receipt(event, "started"), self.receipt(event, "failed")], "123")
         self.assertEqual(len(due_notifications(state, NOW)), 1)
 
+    def test_manual_delivery_confirmation_preserves_reference_only_status(self):
+        event = self.event()
+        record = dict(self.receipt(event, "unknown"), reference_only=True)
+        state = {"events": [event]}
+        apply_receipts(state, [record], "123")
+        resolve_delivery_hold(state, record["notification_id"], "sent", "Reference notice found in Slack", NOW + timedelta(minutes=1))
+        self.assertTrue(event["schedule"][0]["sent"])
+        self.assertTrue(event["schedule"][0]["reference_only"])
+
     def test_accepted_result_cannot_be_overwritten_by_a_later_failed_attempt(self):
         event = self.event()
         state = {"events": [event]}

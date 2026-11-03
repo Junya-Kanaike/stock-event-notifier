@@ -77,7 +77,8 @@ def apply_receipts(state: dict[str, Any], records: list[dict[str, Any]], run_id:
                 stats["success"] = int(stats.get("success", 0)) + 1
         else:
             item["delivery_hold"] = {"status": "unknown", "notification_id": identity,
-                                     "attempted_at": record["attempted_at"], "run_id": str(run_id)}
+                                     "attempted_at": record["attempted_at"], "run_id": str(run_id),
+                                     "reference_only": record.get("reference_only", False)}
         restored += 1
     return restored
 
@@ -94,7 +95,8 @@ def resolve_delivery_hold(state: dict[str, Any], identity: str, outcome: str,
             item["delivery_review"] = {"outcome": outcome, "reason": reason,
                                        "reviewed_at": current.isoformat(), "notification_id": identity}
             if outcome == "sent":
-                item.update(sent=True, sent_at=hold["attempted_at"], sent_by=hold["run_id"], notification_id=identity)
+                item.update(sent=True, sent_at=hold["attempted_at"], sent_by=hold["run_id"], notification_id=identity,
+                            reference_only=hold.get("reference_only", False))
             item.pop("delivery_hold")
             return
     raise ValueError("No held schedule matches this notification ID")
