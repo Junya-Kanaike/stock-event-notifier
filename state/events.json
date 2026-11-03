@@ -2169,6 +2169,20 @@
         "reasons": [
           "吸収規模未確定"
         ]
+      },
+      "historical_review": {
+        "status": "source_unavailable",
+        "reviewed_on": "2026-11-04",
+        "reason": "発表から90日以上、既知の日程から30日超経過。元資料を回復できず履歴保留（対象外・送信済みとはしない）",
+        "missing_fields": [
+          "total_offered_shares",
+          "effective_size_yen"
+        ],
+        "source_urls": [
+          "https://www.release.tdnet.info/inbs/140120260714593697.pdf",
+          "https://www.release.tdnet.info/inbs/140120260722597166.pdf"
+        ],
+        "automatic_recovery_paused": true
       }
     },
     {
@@ -2245,6 +2259,20 @@
         "reasons": [
           "吸収規模未確定"
         ]
+      },
+      "historical_review": {
+        "status": "source_unavailable",
+        "reviewed_on": "2026-11-04",
+        "reason": "発表から90日以上、既知の日程から30日超経過。元資料を回復できず履歴保留（対象外・送信済みとはしない）",
+        "missing_fields": [
+          "total_offered_shares",
+          "effective_size_yen"
+        ],
+        "source_urls": [
+          "https://www.release.tdnet.info/inbs/140120260714592985.pdf",
+          "https://www.release.tdnet.info/inbs/140120260715594785.pdf"
+        ],
+        "automatic_recovery_paused": true
       }
     },
     {
@@ -2314,6 +2342,19 @@
         "reasons": [
           "吸収規模未確定"
         ]
+      },
+      "historical_review": {
+        "status": "source_unavailable",
+        "reviewed_on": "2026-11-04",
+        "reason": "発表から90日以上、既知の日程から30日超経過。元資料を回復できず履歴保留（対象外・送信済みとはしない）",
+        "missing_fields": [
+          "total_offered_shares",
+          "effective_size_yen"
+        ],
+        "source_urls": [
+          "https://www.release.tdnet.info/inbs/140120260715594693.pdf"
+        ],
+        "automatic_recovery_paused": true
       }
     },
     {
@@ -2473,6 +2514,20 @@
         "reasons": [
           "吸収規模未確定"
         ]
+      },
+      "historical_review": {
+        "status": "source_unavailable",
+        "reviewed_on": "2026-11-04",
+        "reason": "発表から90日以上、既知の日程から30日超経過。元資料を回復できず履歴保留（対象外・送信済みとはしない）",
+        "missing_fields": [
+          "total_offered_shares",
+          "effective_size_yen"
+        ],
+        "source_urls": [
+          "https://www.release.tdnet.info/inbs/140120260723598739.pdf",
+          "https://www.release.tdnet.info/inbs/140120260804508094.pdf"
+        ],
+        "automatic_recovery_paused": true
       }
     },
     {
@@ -8809,11 +8864,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-03T19:30:22.091431+09:00",
-      "last_finished_at": "2026-11-03T19:30:22.120339+09:00",
+      "last_started_at": "2026-11-04T01:35:06.991564+09:00",
+      "last_finished_at": "2026-11-04T01:35:07.029154+09:00",
       "status": "success",
-      "run_id": "41619781179",
-      "last_success_at": "2026-11-03T19:30:22.120339+09:00"
+      "run_id": "41675648218",
+      "last_success_at": "2026-11-04T01:35:07.029154+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-03T11:37:23.583840+09:00",
