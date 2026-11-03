@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from src.core.historical import is_historical_po
+
 from dataclasses import dataclass
 from copy import deepcopy
 from datetime import date, datetime, time
@@ -189,6 +191,8 @@ def due_notifications(state: dict[str, Any], now: date | datetime | str) -> list
     target_date, target_time = _target_date_time(now)
     due: list[DueNotification] = []
     for event in state.get("events", []):
+        if is_historical_po(event):
+            continue
         if event.get("type") in {"po", "ipo", "bunbai"} and target_time < time(6):
             continue
         if event.get("detail", {}).get("canceled"):
@@ -196,7 +200,7 @@ def due_notifications(state: dict[str, Any], now: date | datetime | str) -> list
         if isinstance(event.get("eligibility"), dict) and not is_eligible(event):
             continue
         for item in event.get("schedule", []):
-            if item.get("sent") or item.get("resolution") or not item.get("date"):
+            if item.get("sent") or item.get("resolution") or item.get("delivery_hold") or not item.get("date"):
                 continue
             scheduled_for = as_date(item["date"])
             if scheduled_for > target_date:

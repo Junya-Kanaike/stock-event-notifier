@@ -16,6 +16,7 @@ from src.collectors.utils import cache_fetched_at
 from src.core.bizday import JST, is_business_day, prev_business_day, today_jst
 from src.core.dateparse import clean_text, find_dates
 from src.core.eligibility import ELIGIBLE, EXCLUDED, PENDING, apply_eligibility
+from src.core.historical import is_historical_po
 from src.core.po import (
     apply_reference_close,
     format_po_message,
@@ -371,6 +372,8 @@ def refresh_po_reference_prices(
     changed = False
     yahoo_succeeded = False
     for event in find_events(state, event_type="po"):
+        if is_historical_po(event):
+            continue
         detail = event.setdefault("detail", {})
         if detail.get("size_status") == "confirmed" and detail.get("confirmed_size_yen") is not None:
             continue
@@ -403,6 +406,8 @@ def recover_po_calculations(
         or not item.get("detail", {}).get("total_offered_shares")
         or item.get("detail", {}).get("effective_size_yen") is None,
     ):
+        if is_historical_po(event):
+            continue
         before = deepcopy(event)
         detail = event.setdefault("detail", {})
         sources: list[dict[str, Any]] = [
@@ -679,6 +684,8 @@ def notify_po_state(
     event: dict[str, Any],
     transition: str | None,
 ) -> None:
+    if is_historical_po(event):
+        return
     if transition == "pending":
         mark_transition_notified(event, transition)
         return

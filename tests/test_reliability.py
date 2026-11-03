@@ -3,6 +3,7 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 import unittest
 from unittest.mock import Mock, patch
+import requests
 
 from src.collectors import tdnet
 from src.core.bizday import JST
@@ -32,12 +33,12 @@ class ReliabilityTest(unittest.TestCase):
         def post(url, *, json, timeout):
             payloads.append(json["text"])
             if len(payloads) == 1:
-                raise RuntimeError("temporary")
+                raise requests.ConnectTimeout("temporary")
             return Mock()
         state = {"events": [event]}
         with patch.dict("os.environ", {"SLACK_WEBHOOK_PO": "https://example.test/mock"}), patch(
             "src.run_daily.now_jst", side_effect=[before, before, before, after]
-        ), patch("src.run_daily.save_state"), patch("requests.post", side_effect=post), patch("src.notifiers.slack.time.sleep"):
+        ), patch("src.run_daily.save_state"), patch("src.run_daily.write_receipt"), patch("requests.post", side_effect=post), patch("src.notifiers.slack.time.sleep"):
             self.assertEqual(send_due_notifications(state, SlackNotifier(dry_run=False), before, dry_run=False), 1)
         self.assertIn("寄り付きで買う", payloads[0])
         self.assertNotIn("寄り付きで買う", payloads[1])
@@ -51,7 +52,7 @@ class ReliabilityTest(unittest.TestCase):
         before = NOW.replace(hour=8, minute=59)
         after = NOW.replace(hour=9, minute=0)
         notifier = Mock()
-        with patch("src.run_daily.now_jst", side_effect=[before, after]), patch("src.run_daily.save_state"):
+        with patch("src.run_daily.now_jst", side_effect=[before, after]), patch("src.run_daily.save_state"), patch("src.run_daily.write_receipt"):
             send_due_notifications({"events": [event]}, notifier, before, dry_run=False)
         message = notifier.send.call_args.args[1]
         self.assertIn("参考通知", message)

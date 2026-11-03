@@ -13,7 +13,7 @@ import shutil
 import subprocess
 import time
 
-from scripts.mac_scheduler import JST, REPOSITORY, gh_json, inspect_remote, parse_time
+from scripts.mac_scheduler import JST, REPOSITORY, gh_json, inspect_remote, inspect_safely, parse_time
 from src.notifiers.slack import SlackNotifier
 
 
@@ -27,10 +27,7 @@ def request_workflow(gh, repo, workflow):
 
 
 def dispatch_cycle(gh, repo, current, local, *, live=False, notifier=None):
-    try:
-        plan = inspect_remote(gh, repo, current, local)
-    except (subprocess.SubprocessError, OSError, ValueError, KeyError) as exc:
-        plan = {"dispatch": None, "warnings": [f"GitHub確認失敗 ({type(exc).__name__})"]}
+    plan = inspect_safely(gh, repo, current, local, inspector=inspect_remote)
     name = plan.get("dispatch")
     if live and name:
         # Reserve before POST, even if the response is lost.
@@ -77,6 +74,9 @@ def run_loop(gh, repo, *, seconds=RUN_SECONDS, monotonic=time.monotonic,
     while monotonic() < deadline:
         plan = dispatch_cycle(gh, repo, now(), local, live=True, notifier=notifier)
         summary = {k: plan.get(k) for k in ("request_accepted", "warnings")}
+        health = plan.get("github_check", {})
+        if health.get("status") == "failed" or health.get("last_success_at") == health.get("recovered_at"):
+            summary["github_check"] = health
         if summary != last_summary:
             print(json.dumps({"checked_at": now().isoformat(), **summary}, ensure_ascii=False), flush=True)
             last_summary = summary
@@ -109,7 +109,7 @@ def main(argv=None):
     if not args.live:
         plan = dispatch_cycle(args.gh, args.repo, datetime.now(JST), {})
         print(json.dumps(plan, ensure_ascii=False, indent=2))
-        return 1 if plan.get("warnings") else 0
+        return 1 if plan.get("warnings") or plan.get("github_check", {}).get("status") == "failed" else 0
     validate_live_environment(args.gh, args.repo)
     return run_loop(args.gh, args.repo, notifier=SlackNotifier(dry_run=False))
 

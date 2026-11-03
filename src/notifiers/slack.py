@@ -15,6 +15,10 @@ WEBHOOK_ENV_BY_TYPE = {
 }
 
 
+class SlackDeliveryUncertain(RuntimeError):
+    """The request may have reached Slack; do not automatically repeat it."""
+
+
 class SlackNotifier:
     def __init__(self, dry_run: bool | None = None) -> None:
         self.dry_run = dry_run if dry_run is not None else os.getenv("SLACK_DRY_RUN") == "1"
@@ -82,15 +86,35 @@ def post_payload(webhook_url: str, payload: dict[str, Any], *,
                  payload_factory: Callable[[], dict[str, Any]] | None = None) -> None:
     import requests
 
-    last_error: Exception | None = None
     for attempt in range(3):
+        retry_after = 2**attempt
+        current = payload_factory() if payload_factory is not None else payload
         try:
-            current = payload_factory() if payload_factory is not None else payload
             response = requests.post(webhook_url, json=current, timeout=15)
             response.raise_for_status()
             return
-        except Exception as exc:  # pragma: no cover - network dependent
-            last_error = exc
-            if attempt < 2:
-                time.sleep(2**attempt)
-    raise RuntimeError("Slack notification failed after retries") from last_error
+        except requests.ConnectTimeout:
+            # requests documents ConnectTimeout as safe to retry: no request
+            # has reached Slack yet. ReadTimeout/ConnectionError are ambiguous.
+            pass
+        except (requests.ReadTimeout, requests.ConnectionError):
+            raise SlackDeliveryUncertain("Slack response was lost; verify the message before retrying") from None
+        except requests.HTTPError as exc:
+            status = exc.response.status_code if exc.response is not None else None
+            if status is None or status >= 500:
+                raise SlackDeliveryUncertain("Slack returned a server error; verify delivery before retrying") from None
+            if status != 429:
+                raise RuntimeError("Slack rejected the notification") from None
+            try:
+                retry_after = max(retry_after, float(exc.response.headers.get("Retry-After", retry_after)))
+            except (TypeError, ValueError):
+                pass
+            if retry_after > 30:
+                raise RuntimeError("Slack rate limit requires a later workflow retry") from None
+        except requests.RequestException:
+            raise SlackDeliveryUncertain("Slack request failed with an uncertain delivery result") from None
+        except Exception:  # pragma: no cover - unexpected transport failure
+            raise SlackDeliveryUncertain("Slack delivery could not be confirmed") from None
+        if attempt < 2:
+            time.sleep(retry_after)
+    raise RuntimeError("Slack notification failed after retries") from None

@@ -7,10 +7,12 @@ from __future__ import annotations
 import argparse
 from datetime import datetime, time, timedelta
 import fcntl
+import hashlib
 import json
 import os
 from pathlib import Path
 import plistlib
+import re
 import shutil
 import subprocess
 import sys
@@ -18,13 +20,15 @@ from zoneinfo import ZoneInfo
 import jpholiday
 
 
+try:
+    from scripts.monitor_health import stale_sources, late_delivery_warnings
+except ModuleNotFoundError as exc:
+    if exc.name not in {"scripts", "scripts.monitor_health"}:
+        raise
+    from monitor_health import stale_sources, late_delivery_warnings
+
+
 def health_warnings(state, now):
-    # The installed Mac helper can run without the source checkout. Keep its
-    # original standalone operation; the cloud controller has the full module.
-    try:
-        from src.core.operations import stale_sources, late_delivery_warnings
-    except ImportError:
-        return []
     return stale_sources(state, now) + late_delivery_warnings(state, now)
 
 JST = ZoneInfo("Asia/Tokyo")
@@ -32,6 +36,7 @@ REPOSITORY = "Junya-Kanaike/stock-event-notifier"
 LABEL = "jp.stock-event-notifier.watchdog"
 WORKFLOWS = ("daily_morning", "timed_notifications", "poll_tdnet")
 STALE_RUN = timedelta(minutes=60)
+READ_FAILURE_ALERT_AFTER = 3
 SUPPORT = Path.home() / "Library/Application Support/stock-event-notifier"
 PLIST = Path.home() / "Library/LaunchAgents" / (LABEL + ".plist")
 
@@ -141,12 +146,33 @@ def plan_dispatch(now, runs, health, local):
             "due": due, "active_runs": [r.get("id") for r in busy]}
 
 
+class GitHubReadError(subprocess.SubprocessError):
+    """Sanitized API diagnostics, never CLI stderr, URLs or credentials."""
+
+    def __init__(self, operation, kind, http_status=None):
+        self.details = {"operation": operation, "kind": kind, "http_status": http_status}
+        super().__init__(f"{operation}: {kind}" + (f" HTTP {http_status}" if http_status else ""))
+
+
 def gh_json(gh, endpoint, *, raw=False):
     # The contents API omits base64 content for files over 1 MB; the raw media
     # type returns the file body itself up to 100 MB.
     headers = ["-H", "Accept: application/vnd.github.raw+json"] if raw else []
-    completed = subprocess.run([gh, "api", *headers, endpoint], check=True, capture_output=True, text=True, timeout=30)
-    return json.loads(completed.stdout)
+    operation = "github_api"
+    if "/contents/state/events.json" in endpoint:
+        operation = "state"
+    else:
+        match = re.search(r"/actions/workflows/(daily_morning|poll_tdnet|timed_notifications|continuous_dispatcher)\.yml/runs", endpoint)
+        if match:
+            operation = "workflow_runs:" + match.group(1)
+    try:
+        completed = subprocess.run([gh, "api", *headers, endpoint], check=True, capture_output=True, text=True, timeout=30)
+        return json.loads(completed.stdout)
+    except (subprocess.SubprocessError, OSError, ValueError) as exc:
+        # Extract only the status code from gh's diagnostics. Never retain the
+        # rest: authentication and connection errors may contain secret values.
+        match = re.search(r"\(HTTP ([1-5][0-9]{2})\)", str(getattr(exc, "stderr", "")))
+        raise GitHubReadError(operation, type(exc).__name__, int(match.group(1)) if match else None) from None
 
 
 def inspect_remote(gh, repo, now, local):
@@ -166,6 +192,35 @@ def inspect_remote(gh, repo, now, local):
     return plan
 
 
+def inspect_safely(gh, repo, now, local, *, inspector=None):
+    previous = local.get("github_health", {})
+    try:
+        plan = (inspector or inspect_remote)(gh, repo, now, local)
+    except (subprocess.SubprocessError, OSError, ValueError, KeyError) as exc:
+        count = int(previous.get("consecutive_failures", 0)) + 1
+        details = getattr(exc, "details", {"operation": "remote_inspection", "kind": type(exc).__name__, "http_status": None})
+        health = {**previous, **details, "status": "failed", "consecutive_failures": count,
+                  "first_failed_at": previous.get("first_failed_at") or now.isoformat(),
+                  "last_failed_at": now.isoformat()}
+        local["github_health"] = health
+        label = f"GitHub確認失敗 {details['operation']} ({details['kind']}"
+        if details.get("http_status"):
+            label += f", HTTP {details['http_status']}"
+        label += f") 連続{count}回"
+        return {"dispatch": None, "warnings": [label] if count >= READ_FAILURE_ALERT_AFTER else [],
+                "github_check": health.copy()}
+    health = {"status": "success", "consecutive_failures": 0, "last_success_at": now.isoformat()}
+    if previous.get("consecutive_failures"):
+        health["recovered_at"] = now.isoformat()
+        health["previous_failures"] = previous["consecutive_failures"]
+        health["last_failed_at"] = previous.get("last_failed_at")
+    elif previous.get("recovered_at"):
+        health.update({key: previous[key] for key in ("recovered_at", "previous_failures", "last_failed_at") if key in previous})
+    local["github_health"] = health
+    plan["github_check"] = health.copy()
+    return plan
+
+
 def save_local(data, path):
     temporary = path.with_suffix(".tmp")
     temporary.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
@@ -176,11 +231,7 @@ def check(gh, repo, *, live=False, support=SUPPORT):
     now = datetime.now(JST)
     state_path = support / "watchdog-state.json"
     local = json.loads(state_path.read_text()) if state_path.exists() else {}
-    try:
-        plan = inspect_remote(gh, repo, now, local)
-    except (subprocess.SubprocessError, OSError, ValueError, KeyError) as exc:
-        # Never log gh stderr: authentication errors can contain sensitive data.
-        plan = {"dispatch": None, "warnings": [f"GitHub確認失敗 ({type(exc).__name__})"]}
+    plan = inspect_safely(gh, repo, now, local)
     if live:
         name = plan.get("dispatch")
         if name:
@@ -209,7 +260,7 @@ def check(gh, repo, *, live=False, support=SUPPORT):
         save_local(local, state_path)
     print(json.dumps({"checked_at": now.isoformat(), "mode": "live" if live else "read-only", **plan},
                      ensure_ascii=False, indent=2))
-    return 1 if plan["warnings"] else 0
+    return 1 if plan["warnings"] or plan.get("github_check", {}).get("status") == "failed" else 0
 
 
 def launchd_config(python, script, gh, repo, support):
@@ -219,6 +270,46 @@ def launchd_config(python, script, gh, repo, support):
             "ProcessType": "Background",
             "StandardOutPath": str(support / "watchdog.log"),
             "StandardErrorPath": str(support / "watchdog-error.log")}
+
+
+def deploy_helper(support, *, update=False):
+    """Publish the health module first, then the entrypoint, under tick's lock."""
+    script = support / "mac_scheduler.py"
+    if script.exists() and not update:
+        raise RuntimeError(f"Existing helper retained: {script}")
+    support.mkdir(parents=True, exist_ok=True)
+    stamp = datetime.now(JST).strftime("%Y%m%d-%H%M%S-%f")
+    files = {}
+    with (support / "watchdog.lock").open("a") as lock:
+        fcntl.flock(lock.fileno(), fcntl.LOCK_EX)
+        for name in ("monitor_health.py", "mac_scheduler.py"):
+            source = Path(__file__).resolve().with_name(name)
+            target = support / name
+            if target.exists():
+                shutil.copy2(target, support / (name + "." + stamp + ".bak"))
+            temporary = target.with_suffix(".new")
+            shutil.copy2(source, temporary)
+            temporary.replace(target)
+            files[name] = hashlib.sha256(source.read_bytes()).hexdigest()
+        save_local({"installed_at": datetime.now(JST).isoformat(), "sha256": files},
+                   support / "installed-version.json")
+
+
+def update_helper(gh, repo):
+    if sys.platform != "darwin":
+        raise RuntimeError("This updater is for macOS")
+    if not PLIST.exists():
+        raise RuntimeError("No registered helper; use install instead")
+    with PLIST.open("rb") as stream:
+        config = plistlib.load(stream)
+    arguments = config.get("ProgramArguments", [])
+    if len(arguments) < 2 or arguments[1] != str(SUPPORT / "mac_scheduler.py"):
+        raise RuntimeError("Registered helper has a different path; retained without changes")
+    plan = inspect_remote(gh, repo, datetime.now(JST), {})
+    if any("workflow_healthがありません" in warning for warning in plan["warnings"]):
+        raise RuntimeError(plan["warnings"][0])
+    deploy_helper(SUPPORT, update=True)
+    print("Updated helper and shared health checks. The next tick loads them; logs and state retained.")
 
 
 def install(gh, repo, *, start=False):
@@ -236,7 +327,7 @@ def install(gh, repo, *, start=False):
     script = SUPPORT / "mac_scheduler.py"
     if script.exists():
         raise RuntimeError(f"Existing helper retained: {script}")
-    shutil.copy2(Path(__file__).resolve(), script)
+    deploy_helper(SUPPORT)
     config = launchd_config(sys.executable, script, gh, repo, SUPPORT)
     with PLIST.open("xb") as stream:
         plistlib.dump(config, stream)
@@ -248,7 +339,7 @@ def install(gh, repo, *, start=False):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("check", "tick", "install", "status"), nargs="?", default="check")
+    parser.add_argument("command", choices=("check", "tick", "install", "update", "status"), nargs="?", default="check")
     parser.add_argument("--gh", default=shutil.which("gh"))
     parser.add_argument("--repo", default=REPOSITORY)
     parser.add_argument("--start", action="store_true", help="Start launchd after explicit installation")
@@ -262,6 +353,9 @@ def main(argv=None):
         parser.error("GitHub CLI (gh) is required; run gh auth login first.")
     if args.command == "install":
         install(args.gh, args.repo, start=args.start)
+        return 0
+    if args.command == "update":
+        update_helper(args.gh, args.repo)
         return 0
     if args.command == "tick":
         SUPPORT.mkdir(parents=True, exist_ok=True)
