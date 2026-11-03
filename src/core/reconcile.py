@@ -11,6 +11,7 @@ from src.core.scheduler import build_bunbai_schedule, build_po_schedule, build_s
 from src.core.bizday import today_jst
 from src.parsers.po_pdf import has_ambiguous_settlement_reference
 from src.core.verified_repairs import repair_verified_event
+from src.core.historical import hold_historical_po, is_historical_po
 
 
 UPDATE_MARKERS = ("訂正", "変更", "終了", "条件決定", "実施に関する")
@@ -41,7 +42,8 @@ def reconcile_event_state(state: dict[str, Any], *, as_of: date | None = None) -
     events = _merge_update_duplicates(events, "split")
     for event in events:
         apply_eligibility(event)
-        if event.get("eligibility", {}).get("status") != "eligible":
+        hold_historical_po(event, repair_day)
+        if event.get("eligibility", {}).get("status") != "eligible" or is_historical_po(event):
             event["schedule"] = []
     state["events"] = events
     state["schema_version"] = 2

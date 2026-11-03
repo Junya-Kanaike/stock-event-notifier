@@ -15,6 +15,8 @@ from src.collectors.traders_split import CACHE_NAME as TRADERS_SPLIT_CACHE_NAME,
 from src.collectors.utils import cache_fetched_at
 from src.core.bizday import add_business_days, as_date, is_business_day, now_jst, today_jst
 from src.core.eligibility import ELIGIBLE, PENDING
+from src.core.historical import is_historical_po
+from src.core.delivery import notification_id, write_receipt
 from src.core.operations import record_delivery, record_run, stale_sources
 from src.core.reconcile import reconcile_event_state
 from src.core.scheduler import build_bunbai_schedule, build_ipo_schedule, due_notifications
@@ -27,7 +29,7 @@ from src.core.store import (
     upsert_event,
 )
 from src.core.transitions import eligibility_transition, mark_transition_notified
-from src.notifiers.slack import SlackNotifier
+from src.notifiers.slack import SlackNotifier, SlackDeliveryUncertain
 from src.run_poll import reconcile_split_ex_rights, reconcile_split_traders
 
 
@@ -462,6 +464,8 @@ def send_due_notifications(
             due = refreshed
             return due.text
 
+        if not dry_run:
+            write_receipt(due.event, due.schedule_item, attempted_at, "started", reference_only=due.reference_only)
         try:
             notifier.send(
                 due.event.get("type", "system"),
@@ -470,17 +474,30 @@ def send_due_notifications(
                 text_factory=None if dry_run else refresh_text,
             )
         except Exception as exc:
+            uncertain = isinstance(exc, SlackDeliveryUncertain)
+            if uncertain:
+                due.schedule_item["delivery_hold"] = {"status": "unknown",
+                    "notification_id": notification_id(due.event, due.schedule_item),
+                    "attempted_at": attempted_at.isoformat(), "run_id": os.getenv("GITHUB_RUN_ID", "local"),
+                    "reference_only": due.reference_only}
+            if not dry_run:
+                write_receipt(due.event, due.schedule_item, attempted_at, "unknown" if uncertain else "failed",
+                              reference_only=due.reference_only)
             record_delivery(state, due.event, due.schedule_item, attempted_at, success=False,
-                            reference_only=due.reference_only, error_type=type(exc).__name__)
+                            reference_only=due.reference_only, error_type=type(exc).__name__,
+                            outcome="unknown" if uncertain else "failed")
             if not dry_run:
                 save_state(state)
             notify_system_safely(
                 notifier,
-                f"予定通知送信失敗: {due.event.get('type')}:{due.event.get('code')} "
+                f"予定通知{'結果不明・自動再送停止' if uncertain else '送信失敗'}: {due.event.get('type')}:{due.event.get('code')} "
                 f"{due.schedule_item.get('label')} {type(exc).__name__}",
             )
             continue
+        if not dry_run:
+            write_receipt(due.event, due.schedule_item, attempted_at, "accepted", reference_only=due.reference_only)
         due.schedule_item["sent"] = True
+        due.schedule_item["notification_id"] = notification_id(due.event, due.schedule_item)
         due.schedule_item["sent_at"] = attempted_at.isoformat()
         due.schedule_item["sent_by"] = os.getenv("GITHUB_RUN_ID", "local")
         due.schedule_item["reference_only"] = due.reference_only
@@ -534,12 +551,19 @@ def send_daily_system_summary(
     split_missing: list[str] = []
     completed_metadata = 0
     urgent: list[str] = []
+    historical: list[str] = []
     for event in state.get("events", []):
         event_type = str(event.get("type") or "event")
         code = str(event.get("code") or "不明")
         if event.get("detail", {}).get("canceled") or event.get("eligibility", {}).get("status") == "excluded":
             continue
+        if is_historical_po(event):
+            historical.append(code)
+            continue
         schedule = event.get("schedule", [])
+        for item in schedule:
+            if item.get("delivery_hold") and not item.get("sent") and not item.get("resolution"):
+                urgent.append(f"{event_type} {code} {item.get('label')}: 送信結果不明・自動再送停止（Slack照合が必要）")
         completed = bool(schedule) and all(item.get("sent") or item.get("resolution") for item in schedule)
         if completed and max(str(item.get("date", "")) for item in schedule) < current.date().isoformat():
             if event_type == "split" and not event.get("detail", {}).get("record_date"):
@@ -606,6 +630,8 @@ def send_daily_system_summary(
     else:
         lines.append("判定待ち: 0件")
     lines.append("PO未取得: " + (" / ".join(po_missing[:20]) if po_missing else "0件"))
+    if historical:
+        lines.append(f"過去POの履歴保留: {len(historical)}件 ({', '.join(historical)})。元資料未回復・自動再取得停止（未確定のまま保持）")
     lines.append("株式分割未確定: " + (" / ".join(split_missing[:20]) if split_missing else "0件"))
     lines.append("8日以上の未送信予定: " + (", ".join(overdue[:20]) if overdue else "0件"))
     health = state.get("source_health", {})
@@ -618,6 +644,7 @@ def send_daily_system_summary(
         lines.append(f"TDnet開示処理失敗: {len(disclosure_failures)}件（自動再試行打切り・要確認: {abandoned}件）")
     stale_pending = [str(event.get("code")) for event in state.get("events", [])
                      if event.get("eligibility", {}).get("status") == PENDING
+                     and not is_historical_po(event)
                      and str(event.get("announced_at", ""))[:10] < (current.date() - timedelta(days=30)).isoformat()]
     if stale_pending:
         lines.append("30日超の判定待ち・元資料の再確認が必要: " + ", ".join(stale_pending))

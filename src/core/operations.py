@@ -4,45 +4,10 @@ from __future__ import annotations
 from datetime import date, datetime, timedelta
 import os
 from typing import Any
+from src.core.delivery import notification_id
 
 
-def stale_sources(state: dict[str, Any], current: datetime) -> list[str]:
-    """Cache age is independent of whether a job returned successfully."""
-    limits = {"jpx_master": 40, "jpx_margin": 7, "jpx_ipo": 7,
-              "jpx_bunbai": 7, "jpx_ex_rights": 7, "traders_split": 7}
-    result = []
-    for source, limit in limits.items():
-        record = state.get("source_health", {}).get(source, {})
-        stamp = record.get("last_success_at")
-        if not stamp:
-            continue
-        try:
-            last = datetime.fromisoformat(stamp.replace("Z", "+00:00"))
-            if last.tzinfo is None:
-                last = last.replace(tzinfo=current.tzinfo)
-            age = (current - last).days
-        except (ValueError, TypeError):
-            result.append(source + ": 最終取得日時が不正")
-            continue
-        if age > limit:
-            result.append(f"{source}: 最終取得から{age}日（上限{limit}日）")
-    return result
-
-
-def late_delivery_warnings(state: dict[str, Any], current: datetime) -> list[str]:
-    result = []
-    for event in state.get("events", []):
-        if event.get("detail", {}).get("canceled") or event.get("eligibility", {}).get("status") != "eligible":
-            continue
-        for item in event.get("schedule", []):
-            if item.get("sent") or item.get("resolution") or item.get("date") != current.date().isoformat():
-                continue
-            gate = item.get("not_before_jst", "06:00")
-            hour, minute = map(int, gate.split(":"))
-            due_at = current.replace(hour=hour, minute=minute, second=0, microsecond=0)
-            if current - due_at >= timedelta(minutes=15):
-                result.append(f"{event.get('type')} {event.get('code')} {item.get('label')}: 予定時刻から15分以上未送信")
-    return result
+from scripts.monitor_health import stale_sources, late_delivery_warnings
 
 
 def record_tdnet_date(state: dict[str, Any], day: date, checked_at: datetime,
@@ -82,11 +47,12 @@ def record_run(state: dict[str, Any], name: str, started_at: datetime,
 
 def record_delivery(state: dict[str, Any], event: dict[str, Any], item: dict[str, Any],
                     current: datetime, *, success: bool, reference_only: bool = False,
-                    error_type: str | None = None) -> None:
+                    error_type: str | None = None, outcome: str | None = None) -> None:
     records = state.setdefault("notification_log", [])
     records.append({"event_id": event.get("id"), "channel": event.get("type"),
                     "scheduled_for": item.get("date"), "label": item.get("label"),
-                    "attempted_at": current.isoformat(), "outcome": "accepted" if success else "failed",
+                    "attempted_at": current.isoformat(), "outcome": outcome or ("accepted" if success else "failed"),
+                    "notification_id": notification_id(event, item),
                     "reference_only": reference_only, "error_type": error_type,
                     "run_id": os.getenv("GITHUB_RUN_ID", "local")})
     del records[:-2000]
