@@ -4138,7 +4138,7 @@
         "confirmed_size_oku": 92.781,
         "calculation_missing_fields": [],
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260818522647.pdf|https://www.release.tdnet.info/inbs/140120260826526681.pdf",
-        "calculation_recovery_attempt_date": "2026-11-02",
+        "calculation_recovery_attempt_date": "2026-11-04",
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260818522647.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260826526681.pdf: RuntimeError",
         "calculation_recovery_alerted": true
       },
@@ -4343,7 +4343,7 @@
         "effective_size_yen": 76301170000,
         "parser_version": 3,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260819523356.pdf|https://www.release.tdnet.info/inbs/140120260824525134.pdf|https://www.release.tdnet.info/inbs/140120260831528884.pdf",
-        "calculation_recovery_attempt_date": "2026-11-02",
+        "calculation_recovery_attempt_date": "2026-11-04",
         "calculation_missing_fields": [],
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260819523356.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260824525134.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260831528884.pdf: RuntimeError",
         "calculation_recovery_alerted": true
@@ -4664,7 +4664,7 @@
         "confirmed_size_yen": 64317310200,
         "confirmed_size_oku": 643.173102,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260821524618.pdf|https://www.release.tdnet.info/inbs/140120260831529202.pdf",
-        "calculation_recovery_attempt_date": "2026-11-02",
+        "calculation_recovery_attempt_date": "2026-11-04",
         "calculation_missing_fields": [],
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260821524618.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260831529202.pdf: RuntimeError",
         "calculation_recovery_alerted": true
@@ -5287,7 +5287,7 @@
         "confirmed_size_yen": 8708427200,
         "confirmed_size_oku": 87.084272,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260827527452.pdf|https://www.release.tdnet.info/inbs/140120260907532664.pdf",
-        "calculation_recovery_attempt_date": "2026-11-02",
+        "calculation_recovery_attempt_date": "2026-11-04",
         "calculation_missing_fields": [],
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260827527452.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260907532664.pdf: RuntimeError",
         "calculation_recovery_alerted": true
@@ -5701,7 +5701,7 @@
       "code": "648A",
       "name": "（株）ルクレ",
       "market": "グロース",
-      "margin": "対象外",
+      "margin": "信用",
       "announced_at": "2026-09-09T07:57:28.799378+09:00",
       "detail": {
         "listing_date": "2026-10-15",
@@ -5880,7 +5880,7 @@
       "code": "653A",
       "name": "MabGenesis（株）",
       "market": "グロース",
-      "margin": "対象外",
+      "margin": "信用",
       "announced_at": "2026-09-28T18:15:10.126251+09:00",
       "detail": {
         "listing_date": "2026-11-02",
@@ -5918,7 +5918,7 @@
       "code": "652A",
       "name": "トグルホールディングス（株）",
       "market": "グロース",
-      "margin": "対象外",
+      "margin": "信用",
       "announced_at": "2026-09-28T18:15:10.126337+09:00",
       "detail": {
         "listing_date": "2026-10-30",
@@ -8479,10 +8479,10 @@
   ],
   "source_health": {
     "tdnet": {
-      "last_checked_date": "2026-11-02",
-      "last_success_date": "2026-11-02",
+      "last_checked_date": "2026-11-04",
+      "last_success_date": "2026-11-04",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-02T21:54:06.785442+09:00",
+      "last_success_at": "2026-11-04T08:01:15.525351+09:00",
       "by_date": {
         "2026-10-05": {
           "checked_at": "2026-10-06T21:05:54.077651+09:00",
@@ -8599,14 +8599,20 @@
           "last_success_at": "2026-11-02T21:54:06.002288+09:00"
         },
         "2026-11-02": {
-          "checked_at": "2026-11-02T21:54:06.784617+09:00",
+          "checked_at": "2026-11-04T08:01:14.678589+09:00",
           "count": 430,
           "status": "success",
-          "last_success_at": "2026-11-02T21:54:06.784617+09:00"
+          "last_success_at": "2026-11-04T08:01:14.678589+09:00"
+        },
+        "2026-11-04": {
+          "checked_at": "2026-11-04T08:01:15.525069+09:00",
+          "count": 3,
+          "status": "success",
+          "last_success_at": "2026-11-04T08:01:15.525069+09:00"
         }
       },
-      "last_checked_at": "2026-11-02T21:54:06.784617+09:00",
-      "last_complete_poll_at": "2026-11-02T21:54:06.785451+09:00"
+      "last_checked_at": "2026-11-04T08:01:15.525069+09:00",
+      "last_complete_poll_at": "2026-11-04T08:01:15.525357+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-04",
@@ -8890,11 +8896,11 @@
       "last_success_at": "2026-11-04T05:40:41.708304+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-02T21:54:03.124618+09:00",
-      "last_finished_at": "2026-11-02T21:54:06.874571+09:00",
+      "last_started_at": "2026-11-04T08:00:41.763551+09:00",
+      "last_finished_at": "2026-11-04T08:01:15.561192+09:00",
       "status": "success",
-      "run_id": "41448398489",
-      "last_success_at": "2026-11-02T21:54:06.874571+09:00"
+      "run_id": "41735578014",
+      "last_success_at": "2026-11-04T08:01:15.561192+09:00"
     }
   },
   "notification_log": [
