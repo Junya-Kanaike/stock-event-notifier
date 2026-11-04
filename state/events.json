@@ -2130,7 +2130,16 @@
     "140120261104563979",
     "140120261104564034",
     "140120261104564131",
-    "140120261104564142"
+    "140120261104564142",
+    "140120261030561868",
+    "140120261102563319",
+    "140120261104563451",
+    "140120261104563476",
+    "140120261104563597",
+    "140120261104563747",
+    "140120261104563798",
+    "140120261104563800",
+    "140120261104564175"
   ],
   "events": [
     {
@@ -8516,6 +8525,87 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "po-428A-2026-11-04",
+      "type": "po",
+      "code": "428A",
+      "name": "サイプレス・ホールディングス",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-11-04T16:00:00+09:00",
+      "detail": {
+        "parser_version": 4,
+        "po_kind": "secondary",
+        "source_stage": "announcement",
+        "size_oku": 35.36,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "unavailable",
+        "size_basis": "開示資料記載額",
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "public_offering_shares": null,
+        "secondary_sale_shares": null,
+        "oa_shares": 276800,
+        "total_offered_shares": null,
+        "share_breakdown_complete": false,
+        "oa_marker_present": true,
+        "issue_price_yen": null,
+        "sale_price_yen": null,
+        "offer_price_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": null,
+        "pricing_date_end": null,
+        "pricing_date_raw": null,
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "unavailable",
+        "settlement_date": "2026-11-18",
+        "settlement_date_end": null,
+        "settlement_date_raw": "受渡期日2026年11月18日（最短で条件決定の場合）発行会社、株式会社EAM、東稔哉（代表取締役）180日、◼ロックアップ丸の内キャピタル第二号投資事業有限責任組合、MarunouchiGlobal",
+        "settlement_estimated": false,
+        "settlement_date_status": "confirmed",
+        "parse_warnings": [],
+        "missing_fields": [
+          "dilution_pct",
+          "pricing_date"
+        ],
+        "notification_tracking_started": true,
+        "reference_close_yen": 1653.0,
+        "reference_close_date": "2026-11-04",
+        "reference_close_source": "Yahoo Finance chart (raw close)",
+        "reference_close_kind": "announcement_close",
+        "effective_size_yen": null,
+        "po_threshold_ever_met": false,
+        "calculation_missing_fields": [
+          "total_offered_shares",
+          "effective_size_yen"
+        ],
+        "pending_notified": true
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261104563800.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261104563800.pdf",
+      "source_title": "株式売出し及び自己株式取得に関する補足説明資料",
+      "related_disclosures": [
+        {
+          "id": "140120261104563800",
+          "relation": "source",
+          "title": "株式売出し及び自己株式取得に関する補足説明資料",
+          "announced_at": "2026-11-04T16:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261104563800.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "pending",
+        "reasons": [
+          "吸収規模未確定"
+        ]
+      }
     }
   ],
   "source_health": {
@@ -8523,7 +8613,7 @@
       "last_checked_date": "2026-11-04",
       "last_success_date": "2026-11-04",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-04T16:06:17.478481+09:00",
+      "last_success_at": "2026-11-04T16:17:01.977350+09:00",
       "by_date": {
         "2026-10-05": {
           "checked_at": "2026-10-06T21:05:54.077651+09:00",
@@ -8640,20 +8730,20 @@
           "last_success_at": "2026-11-02T21:54:06.002288+09:00"
         },
         "2026-11-02": {
-          "checked_at": "2026-11-04T16:06:16.457121+09:00",
+          "checked_at": "2026-11-04T16:17:00.931433+09:00",
           "count": 430,
           "status": "success",
-          "last_success_at": "2026-11-04T16:06:16.457121+09:00"
+          "last_success_at": "2026-11-04T16:17:00.931433+09:00"
         },
         "2026-11-04": {
-          "checked_at": "2026-11-04T16:06:17.478087+09:00",
-          "count": 289,
+          "checked_at": "2026-11-04T16:17:01.976825+09:00",
+          "count": 328,
           "status": "success",
-          "last_success_at": "2026-11-04T16:06:17.478087+09:00"
+          "last_success_at": "2026-11-04T16:17:01.976825+09:00"
         }
       },
-      "last_checked_at": "2026-11-04T16:06:17.478087+09:00",
-      "last_complete_poll_at": "2026-11-04T16:06:17.478489+09:00"
+      "last_checked_at": "2026-11-04T16:17:01.976825+09:00",
+      "last_complete_poll_at": "2026-11-04T16:17:01.977358+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-04",
@@ -8668,8 +8758,8 @@
       "last_success_at": "2026-11-04T09:51:47.974460+09:00"
     },
     "yahoo_price": {
-      "last_success_date": "2026-11-02",
-      "last_success_at": "2026-11-02T08:01:47.223526+09:00"
+      "last_success_date": "2026-11-04",
+      "last_success_at": "2026-11-04T16:17:04.974552+09:00"
     },
     "traders_split": {
       "last_success_date": "2026-11-04",
@@ -8863,7 +8953,7 @@
       "failure": 0
     },
     "2026-11-04": {
-      "success": 3,
+      "success": 4,
       "failure": 0
     }
   },
@@ -8937,11 +9027,11 @@
       "last_success_at": "2026-11-04T09:51:48.545885+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-04T16:06:15.271314+09:00",
-      "last_finished_at": "2026-11-04T16:06:17.516677+09:00",
+      "last_started_at": "2026-11-04T16:16:59.754971+09:00",
+      "last_finished_at": "2026-11-04T16:17:05.261130+09:00",
       "status": "success",
-      "run_id": "41789913354",
-      "last_success_at": "2026-11-04T16:06:17.516677+09:00"
+      "run_id": "41791141244",
+      "last_success_at": "2026-11-04T16:17:05.261130+09:00"
     }
   },
   "notification_log": [

@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-01T23:01:47.421640+00:00",
+  "fetched_at": "2026-11-04T07:17:03.748795+00:00",
   "data": {
     "9235:2026-07-31": {
       "code": "9235",
@@ -249,6 +249,14 @@
       "close_yen": 1667.0,
       "source": "Yahoo Finance chart (raw close)",
       "requested_date": "2026-10-30"
+    },
+    "428A:2026-11-04": {
+      "code": "428A",
+      "symbol": "428A.T",
+      "date": "2026-11-04",
+      "close_yen": 1653.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-11-04"
     }
   }
 }
