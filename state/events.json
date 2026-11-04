@@ -8584,7 +8584,10 @@
           "total_offered_shares",
           "effective_size_yen"
         ],
-        "pending_notified": true
+        "pending_notified": true,
+        "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120261104563800.pdf",
+        "calculation_recovery_attempt_date": "2026-11-04",
+        "latest_source_stage": "announcement"
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261104563800.pdf",
@@ -8613,7 +8616,7 @@
       "last_checked_date": "2026-11-04",
       "last_success_date": "2026-11-04",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-04T16:17:01.977350+09:00",
+      "last_success_at": "2026-11-04T16:27:42.369354+09:00",
       "by_date": {
         "2026-10-05": {
           "checked_at": "2026-10-06T21:05:54.077651+09:00",
@@ -8730,20 +8733,20 @@
           "last_success_at": "2026-11-02T21:54:06.002288+09:00"
         },
         "2026-11-02": {
-          "checked_at": "2026-11-04T16:17:00.931433+09:00",
+          "checked_at": "2026-11-04T16:27:41.486593+09:00",
           "count": 430,
           "status": "success",
-          "last_success_at": "2026-11-04T16:17:00.931433+09:00"
+          "last_success_at": "2026-11-04T16:27:41.486593+09:00"
         },
         "2026-11-04": {
-          "checked_at": "2026-11-04T16:17:01.976825+09:00",
+          "checked_at": "2026-11-04T16:27:42.368863+09:00",
           "count": 328,
           "status": "success",
-          "last_success_at": "2026-11-04T16:17:01.976825+09:00"
+          "last_success_at": "2026-11-04T16:27:42.368863+09:00"
         }
       },
-      "last_checked_at": "2026-11-04T16:17:01.976825+09:00",
-      "last_complete_poll_at": "2026-11-04T16:17:01.977358+09:00"
+      "last_checked_at": "2026-11-04T16:27:42.368863+09:00",
+      "last_complete_poll_at": "2026-11-04T16:27:42.369363+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-04",
@@ -9027,11 +9030,11 @@
       "last_success_at": "2026-11-04T09:51:48.545885+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-04T16:16:59.754971+09:00",
-      "last_finished_at": "2026-11-04T16:17:05.261130+09:00",
+      "last_started_at": "2026-11-04T16:27:39.229573+09:00",
+      "last_finished_at": "2026-11-04T16:27:42.424935+09:00",
       "status": "success",
-      "run_id": "41791141244",
-      "last_success_at": "2026-11-04T16:17:05.261130+09:00"
+      "run_id": "41792387073",
+      "last_success_at": "2026-11-04T16:27:42.424935+09:00"
     }
   },
   "notification_log": [
