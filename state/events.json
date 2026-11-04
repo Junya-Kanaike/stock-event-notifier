@@ -9021,11 +9021,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-04T20:42:31.760117+09:00",
-      "last_finished_at": "2026-11-04T20:42:31.789699+09:00",
+      "last_started_at": "2026-11-05T02:36:31.547827+09:00",
+      "last_finished_at": "2026-11-05T02:36:31.576767+09:00",
       "status": "success",
-      "run_id": "41823084872",
-      "last_success_at": "2026-11-04T20:42:31.789699+09:00"
+      "run_id": "41878901910",
+      "last_success_at": "2026-11-05T02:36:31.576767+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-04T09:51:43.877954+09:00",
