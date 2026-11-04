@@ -3481,9 +3481,13 @@
         {
           "date": "2026-11-05",
           "label": "rights_final+5_preopen",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "08:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "e29e5a1885c709d5477c1f124c543c289b22e94596e4c9b9cf4c0cfff151425e",
+          "sent_at": "2026-11-05T08:04:46.077241+09:00",
+          "sent_by": "41930734808",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260915536785.pdf",
@@ -3699,9 +3703,13 @@
         {
           "date": "2026-11-05",
           "label": "rights_final+5_preopen",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "08:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "1616c19eed5db6dc1be8ce5c102caa10a805346c965aaaf6866d9605ef98417e",
+          "sent_at": "2026-11-05T08:04:46.280488+09:00",
+          "sent_by": "41930734808",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260928540934.pdf",
@@ -6467,7 +6475,7 @@
       "failure": 0
     },
     "2026-11-05": {
-      "success": 1,
+      "success": 3,
       "failure": 0
     }
   },
@@ -6528,11 +6536,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-05T07:54:02.439982+09:00",
-      "last_finished_at": "2026-11-05T07:54:02.449867+09:00",
+      "last_started_at": "2026-11-05T08:04:46.031039+09:00",
+      "last_finished_at": "2026-11-05T08:04:46.441436+09:00",
       "status": "success",
-      "run_id": "41929217351",
-      "last_success_at": "2026-11-05T07:54:02.449867+09:00"
+      "run_id": "41930734808",
+      "last_success_at": "2026-11-05T08:04:46.441436+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-05T05:41:01.221893+09:00",
@@ -8291,6 +8299,30 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "41912039219"
+    },
+    {
+      "event_id": "split-6036-2026-09-15",
+      "channel": "split",
+      "scheduled_for": "2026-11-05",
+      "label": "rights_final+5_preopen",
+      "attempted_at": "2026-11-05T08:04:46.077241+09:00",
+      "outcome": "accepted",
+      "notification_id": "e29e5a1885c709d5477c1f124c543c289b22e94596e4c9b9cf4c0cfff151425e",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "41930734808"
+    },
+    {
+      "event_id": "split-6787-2026-09-28",
+      "channel": "split",
+      "scheduled_for": "2026-11-05",
+      "label": "rights_final+5_preopen",
+      "attempted_at": "2026-11-05T08:04:46.280488+09:00",
+      "outcome": "accepted",
+      "notification_id": "1616c19eed5db6dc1be8ce5c102caa10a805346c965aaaf6866d9605ef98417e",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "41930734808"
     }
   ],
   "delivery_receipt_artifacts": [
