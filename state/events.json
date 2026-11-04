@@ -2563,7 +2563,7 @@
         "confirmed_size_oku": 92.781,
         "calculation_missing_fields": [],
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260818522647.pdf|https://www.release.tdnet.info/inbs/140120260826526681.pdf",
-        "calculation_recovery_attempt_date": "2026-11-04",
+        "calculation_recovery_attempt_date": "2026-11-05",
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260818522647.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260826526681.pdf: RuntimeError",
         "calculation_recovery_alerted": true
       },
@@ -2768,7 +2768,7 @@
         "effective_size_yen": 76301170000,
         "parser_version": 3,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260819523356.pdf|https://www.release.tdnet.info/inbs/140120260824525134.pdf|https://www.release.tdnet.info/inbs/140120260831528884.pdf",
-        "calculation_recovery_attempt_date": "2026-11-04",
+        "calculation_recovery_attempt_date": "2026-11-05",
         "calculation_missing_fields": [],
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260819523356.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260824525134.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260831528884.pdf: RuntimeError",
         "calculation_recovery_alerted": true
@@ -2923,7 +2923,7 @@
         "confirmed_size_yen": 64317310200,
         "confirmed_size_oku": 643.173102,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260821524618.pdf|https://www.release.tdnet.info/inbs/140120260831529202.pdf",
-        "calculation_recovery_attempt_date": "2026-11-04",
+        "calculation_recovery_attempt_date": "2026-11-05",
         "calculation_missing_fields": [],
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260821524618.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260831529202.pdf: RuntimeError",
         "calculation_recovery_alerted": true
@@ -3064,7 +3064,7 @@
         "confirmed_size_yen": 8708427200,
         "confirmed_size_oku": 87.084272,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260827527452.pdf|https://www.release.tdnet.info/inbs/140120260907532664.pdf",
-        "calculation_recovery_attempt_date": "2026-11-04",
+        "calculation_recovery_attempt_date": "2026-11-05",
         "calculation_missing_fields": [],
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260827527452.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260907532664.pdf: RuntimeError",
         "calculation_recovery_alerted": true
@@ -6097,7 +6097,7 @@
         ],
         "pending_notified": true,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120261104563800.pdf",
-        "calculation_recovery_attempt_date": "2026-11-04",
+        "calculation_recovery_attempt_date": "2026-11-05",
         "latest_source_stage": "announcement"
       },
       "schedule": [],
@@ -6124,17 +6124,11 @@
   ],
   "source_health": {
     "tdnet": {
-      "last_checked_date": "2026-11-04",
-      "last_success_date": "2026-11-04",
+      "last_checked_date": "2026-11-05",
+      "last_success_date": "2026-11-05",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-04T21:57:01.438730+09:00",
+      "last_success_at": "2026-11-05T08:01:03.089580+09:00",
       "by_date": {
-        "2026-10-05": {
-          "checked_at": "2026-10-06T21:05:54.077651+09:00",
-          "count": 188,
-          "status": "success",
-          "last_success_at": "2026-10-06T21:05:54.077651+09:00"
-        },
         "2026-10-06": {
           "checked_at": "2026-10-07T20:21:50.194171+09:00",
           "count": 136,
@@ -6250,14 +6244,20 @@
           "last_success_at": "2026-11-04T21:57:00.622342+09:00"
         },
         "2026-11-04": {
-          "checked_at": "2026-11-04T21:57:01.438165+09:00",
+          "checked_at": "2026-11-05T08:01:01.454454+09:00",
           "count": 358,
           "status": "success",
-          "last_success_at": "2026-11-04T21:57:01.438165+09:00"
+          "last_success_at": "2026-11-05T08:01:01.454454+09:00"
+        },
+        "2026-11-05": {
+          "checked_at": "2026-11-05T08:01:03.089349+09:00",
+          "count": 3,
+          "status": "success",
+          "last_success_at": "2026-11-05T08:01:03.089349+09:00"
         }
       },
-      "last_checked_at": "2026-11-04T21:57:01.438165+09:00",
-      "last_complete_poll_at": "2026-11-04T21:57:01.438741+09:00"
+      "last_checked_at": "2026-11-05T08:01:03.089349+09:00",
+      "last_complete_poll_at": "2026-11-05T08:01:03.089585+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-05",
@@ -6542,11 +6542,11 @@
       "last_success_at": "2026-11-05T05:41:05.425730+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-04T21:56:56.615238+09:00",
-      "last_finished_at": "2026-11-04T21:57:01.495581+09:00",
+      "last_started_at": "2026-11-05T08:00:28.564478+09:00",
+      "last_finished_at": "2026-11-05T08:01:03.106875+09:00",
       "status": "success",
-      "run_id": "41833638292",
-      "last_success_at": "2026-11-04T21:57:01.495581+09:00"
+      "run_id": "41930113800",
+      "last_success_at": "2026-11-05T08:01:03.106875+09:00"
     }
   },
   "notification_log": [
