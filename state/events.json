@@ -8618,15 +8618,15 @@
     },
     "jpx_master": {
       "last_success_date": "2026-11-04",
-      "last_success_at": "2026-11-04T05:40:37.356544+09:00"
+      "last_success_at": "2026-11-04T09:51:44.745392+09:00"
     },
     "jpx_margin": {
       "last_success_date": "2026-11-04",
-      "last_success_at": "2026-11-04T05:40:38.161032+09:00"
+      "last_success_at": "2026-11-04T09:51:45.594000+09:00"
     },
     "jpx_ex_rights": {
       "last_success_date": "2026-11-04",
-      "last_success_at": "2026-11-04T05:40:40.968009+09:00"
+      "last_success_at": "2026-11-04T09:51:47.974460+09:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-11-02",
@@ -8634,15 +8634,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-11-04",
-      "last_success_at": "2026-11-04T05:40:40.353797+09:00"
+      "last_success_at": "2026-11-04T09:51:47.329732+09:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-11-04",
-      "last_success_at": "2026-11-04T05:40:41.377135+09:00"
+      "last_success_at": "2026-11-04T09:51:48.216567+09:00"
     },
     "jpx_bunbai": {
       "last_success_date": "2026-11-04",
-      "last_success_at": "2026-11-04T05:40:41.706938+09:00"
+      "last_success_at": "2026-11-04T09:51:48.544512+09:00"
     }
   },
   "schema_version": 2,
@@ -8891,11 +8891,11 @@
       "last_success_at": "2026-11-04T09:33:18.415038+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-11-04T05:40:36.491126+09:00",
-      "last_finished_at": "2026-11-04T05:40:41.708304+09:00",
+      "last_started_at": "2026-11-04T09:51:43.877954+09:00",
+      "last_finished_at": "2026-11-04T09:51:48.545885+09:00",
       "status": "success",
-      "run_id": "41714685126",
-      "last_success_at": "2026-11-04T05:40:41.708304+09:00"
+      "run_id": "41749936310",
+      "last_success_at": "2026-11-04T09:51:48.545885+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-11-04T09:48:29.485208+09:00",
