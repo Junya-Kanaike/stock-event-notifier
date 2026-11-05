@@ -2166,7 +2166,10 @@
     "140120261105565485",
     "140120261105565545",
     "140120261105565605",
-    "140120261105565663"
+    "140120261105565663",
+    "140120261022554479",
+    "140120261105565772",
+    "140120261105565945"
   ],
   "events": [
     {
@@ -6151,6 +6154,70 @@
           "吸収規模未確定"
         ]
       }
+    },
+    {
+      "id": "split-9324-2026-11-05",
+      "type": "split",
+      "code": "9324",
+      "name": "安田倉庫",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-11-05T15:00:00+09:00",
+      "detail": {
+        "ratio": "2",
+        "record_date": "2026-12-31",
+        "record_date_raw": "基準日2026年12月31日",
+        "rights_final_date": "2026-12-28",
+        "rights_final_date_raw": null,
+        "rights_final_source": "record_date_t_plus_2",
+        "rights_final_calculation_basis": "record_date_t_plus_2",
+        "rights_final_confirmed": false,
+        "rights_final_status": "provisional",
+        "rights_date_conflict": false,
+        "ex_right_date": "2026-12-29",
+        "effective_date": "2027-01-01",
+        "effective_date_raw": "効力発生日 2027年 1月 1日（金） （5）資本金の額の変更 今回の株式分割に際して、資本金の額の変更はありません。 1 2.配当予想の修正（増配） 中期経営計画に掲げる配当の基本方針に基づき、本日上方修正した通期連結業績予想を踏まえ、中間 配当金を直近の配当予想から 2 円増配し、1株当たり 39 円といたします。また、今回の株式分割に伴 い、2027",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-12-28",
+          "label": "rights_final+0_after_close",
+          "sent": false,
+          "not_before_jst": "19:00"
+        },
+        {
+          "date": "2026-12-29",
+          "label": "rights_final+1_noon",
+          "sent": false,
+          "not_before_jst": "12:00",
+          "action_cutoff_jst": "15:30"
+        },
+        {
+          "date": "2027-01-06",
+          "label": "rights_final+5_preopen",
+          "sent": false,
+          "not_before_jst": "08:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261105565945.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261105565945.pdf",
+      "source_title": "株式分割、配当予想の修正（増配）及び株主優待品贈呈基準の修正に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261105565945",
+          "relation": "source",
+          "title": "株式分割、配当予想の修正（増配）及び株主優待品贈呈基準の修正に関するお知らせ",
+          "announced_at": "2026-11-05T15:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261105565945.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
@@ -6158,7 +6225,7 @@
       "last_checked_date": "2026-11-05",
       "last_success_date": "2026-11-05",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-05T14:51:29.182494+09:00",
+      "last_success_at": "2026-11-05T15:02:22.858962+09:00",
       "by_date": {
         "2026-10-06": {
           "checked_at": "2026-10-07T20:21:50.194171+09:00",
@@ -6275,20 +6342,20 @@
           "last_success_at": "2026-11-04T21:57:00.622342+09:00"
         },
         "2026-11-04": {
-          "checked_at": "2026-11-05T14:51:28.543550+09:00",
+          "checked_at": "2026-11-05T15:02:17.870264+09:00",
           "count": 358,
           "status": "success",
-          "last_success_at": "2026-11-05T14:51:28.543550+09:00"
+          "last_success_at": "2026-11-05T15:02:17.870264+09:00"
         },
         "2026-11-05": {
-          "checked_at": "2026-11-05T14:51:29.182139+09:00",
-          "count": 160,
+          "checked_at": "2026-11-05T15:02:22.858574+09:00",
+          "count": 204,
           "status": "success",
-          "last_success_at": "2026-11-05T14:51:29.182139+09:00"
+          "last_success_at": "2026-11-05T15:02:22.858574+09:00"
         }
       },
-      "last_checked_at": "2026-11-05T14:51:29.182139+09:00",
-      "last_complete_poll_at": "2026-11-05T14:51:29.182503+09:00"
+      "last_checked_at": "2026-11-05T15:02:22.858574+09:00",
+      "last_complete_poll_at": "2026-11-05T15:02:22.858971+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-05",
@@ -6573,11 +6640,11 @@
       "last_success_at": "2026-11-05T10:01:48.433092+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-05T14:51:26.229941+09:00",
-      "last_finished_at": "2026-11-05T14:51:29.216728+09:00",
+      "last_started_at": "2026-11-05T15:01:59.807410+09:00",
+      "last_finished_at": "2026-11-05T15:02:23.310008+09:00",
       "status": "success",
-      "run_id": "41976599727",
-      "last_success_at": "2026-11-05T14:51:29.216728+09:00"
+      "run_id": "41977696206",
+      "last_success_at": "2026-11-05T15:02:23.310008+09:00"
     }
   },
   "notification_log": [
