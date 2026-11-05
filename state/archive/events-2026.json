@@ -5134,5 +5134,211 @@
         "吸収規模80億円未満"
       ]
     }
+  },
+  {
+    "id": "po-3455-2026-08-19",
+    "type": "po",
+    "code": "3455",
+    "name": "ヘルスケア＆メディカル投資法人",
+    "market": "REIT・ベンチャーファンド・カントリーファンド・インフラファンド",
+    "margin": "貸借",
+    "announced_at": "2026-08-19T15:45:00+09:00",
+    "detail": {
+      "po_kind": "both",
+      "source_stage": "announcement",
+      "size_oku": 92.781,
+      "size_oku_min": null,
+      "size_oku_max": null,
+      "size_status": "confirmed",
+      "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
+      "share_count": null,
+      "oa_share_count": null,
+      "price_min_yen": null,
+      "price_max_yen": null,
+      "dilution_pct": null,
+      "dilution_status": "unavailable",
+      "pricing_date": "2026-08-26",
+      "pricing_date_end": "2026-08-26",
+      "pricing_date_raw": null,
+      "pricing_date_confirmed": true,
+      "pricing_date_status": "confirmed",
+      "settlement_date": "2026-09-02",
+      "settlement_date_end": null,
+      "settlement_date_raw": "受渡期日2026年9月2日（水）（注）引受人は払込金額（発行価額）で買取引受けを行い、発行価格（募集価格）で募集を行います。2.投資口売出し（オーバーアロットメントによる売出し）(1)売出投資口数4,642口(2)売出価格1口当たり金95,160円(3)売出価額の総額441,732,720円(4)申込期間2026年8月27日（木）(5)申込証拠金の入金期間2",
+      "settlement_estimated": false,
+      "settlement_date_status": "confirmed",
+      "parse_warnings": [],
+      "missing_fields": [
+        "dilution_pct"
+      ],
+      "latest_source_stage": "pricing",
+      "share_breakdown_complete": true,
+      "oa_marker_present": true,
+      "po_threshold_ever_met": true,
+      "issue_price_yen": 95160,
+      "sale_price_yen": 95160,
+      "offer_price_yen": 95160,
+      "reference_close_yen": 103100.0,
+      "reference_close_date": "2026-08-19",
+      "reference_close_source": "Yahoo Finance chart (raw close)",
+      "reference_close_kind": "announcement_close",
+      "effective_size_yen": 9278100000,
+      "parser_version": 3,
+      "public_offering_shares": 92858,
+      "secondary_sale_shares": 0,
+      "oa_shares": 4642,
+      "total_offered_shares": 97500,
+      "verified_calculation_source": "https://www.release.tdnet.info/inbs/140120260826526681.pdf",
+      "confirmed_size_yen": 9278100000,
+      "confirmed_size_oku": 92.781,
+      "calculation_missing_fields": [],
+      "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260818522647.pdf|https://www.release.tdnet.info/inbs/140120260826526681.pdf",
+      "calculation_recovery_attempt_date": "2026-11-05",
+      "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260818522647.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260826526681.pdf: RuntimeError",
+      "calculation_recovery_alerted": true
+    },
+    "schedule": [
+      {
+        "date": "2026-08-26",
+        "label": "pricing_day",
+        "sent": false,
+        "not_before_jst": "06:00",
+        "action_cutoff_jst": "09:00",
+        "resolution": {
+          "status": "missed_reviewed",
+          "at": "2026-10-17T17:21:25.265000+09:00",
+          "reason": "2026-10-17監査で未送信を確認。回収期限を超過したため、過去の売買指示を再送せず確認済みとして保管。"
+        }
+      },
+      {
+        "date": "2026-08-27",
+        "label": "pricing_day+1",
+        "sent": false,
+        "not_before_jst": "06:00",
+        "action_cutoff_jst": "09:00",
+        "resolution": {
+          "status": "missed_reviewed",
+          "at": "2026-10-17T17:21:25.265131+09:00",
+          "reason": "2026-10-17監査で未送信を確認。回収期限を超過したため、過去の売買指示を再送せず確認済みとして保管。"
+        }
+      },
+      {
+        "date": "2026-08-28",
+        "label": "pricing_day+2",
+        "sent": false,
+        "not_before_jst": "06:00",
+        "action_cutoff_jst": "09:00",
+        "resolution": {
+          "status": "missed_reviewed",
+          "at": "2026-10-17T17:21:25.265133+09:00",
+          "reason": "2026-10-17監査で未送信を確認。回収期限を超過したため、過去の売買指示を再送せず確認済みとして保管。"
+        }
+      },
+      {
+        "date": "2026-09-02",
+        "label": "settlement",
+        "sent": false,
+        "not_before_jst": "06:00",
+        "action_cutoff_jst": "09:00",
+        "resolution": {
+          "status": "missed_reviewed",
+          "at": "2026-10-17T17:21:25.265135+09:00",
+          "reason": "2026-10-17監査で未送信を確認。回収期限を超過したため、過去の売買指示を再送せず確認済みとして保管。"
+        }
+      },
+      {
+        "date": "2026-10-05",
+        "label": "pricing_day+25bd",
+        "sent": true,
+        "not_before_jst": "06:00",
+        "action_cutoff_jst": "09:00",
+        "sent_at": "2026-10-05T08:34:12.355299+09:00",
+        "sent_by": "37244210426",
+        "reference_only": false
+      },
+      {
+        "date": "2026-10-06",
+        "label": "pricing_day+26bd",
+        "sent": true,
+        "not_before_jst": "06:00",
+        "action_cutoff_jst": "09:00",
+        "sent_at": "2026-10-06T03:52:40.059500+09:00",
+        "sent_by": "37359241265",
+        "reference_only": false
+      }
+    ],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260818522647.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260826526681.pdf",
+    "source_title": "新投資口発行及び投資口売出しに関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120260818522647",
+        "relation": "source",
+        "title": "新投資口発行及び投資口売出しに関するお知らせ",
+        "announced_at": "2026-08-19T15:45:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260818522647.pdf"
+      },
+      {
+        "id": "140120260826526681",
+        "relation": "pricing",
+        "title": "新投資口発行及び投資口売出しに係る価格等の決定に関するお知らせ",
+        "announced_at": "2026-08-26T17:00:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260826526681.pdf",
+        "market": "東証"
+      }
+    ],
+    "eligibility": {
+      "status": "eligible",
+      "reasons": []
+    },
+    "repair_history": [
+      {
+        "repair": "2026-09-hcm-unit-price",
+        "source": "https://www.release.tdnet.info/inbs/140120260826526681.pdf",
+        "previous_detail": {
+          "po_kind": "both",
+          "source_stage": "announcement",
+          "size_oku": 4.42,
+          "size_oku_min": null,
+          "size_oku_max": null,
+          "size_status": "unavailable",
+          "size_basis": "開示資料記載額",
+          "share_count": null,
+          "oa_share_count": null,
+          "price_min_yen": null,
+          "price_max_yen": null,
+          "dilution_pct": null,
+          "dilution_status": "unavailable",
+          "pricing_date": "2026-08-26",
+          "pricing_date_end": "2026-08-26",
+          "pricing_date_raw": null,
+          "pricing_date_confirmed": true,
+          "pricing_date_status": "confirmed",
+          "settlement_date": "2026-09-02",
+          "settlement_date_end": null,
+          "settlement_date_raw": "受渡期日2026年9月2日（水）（注）引受人は払込金額（発行価額）で買取引受けを行い、発行価格（募集価格）で募集を行います。2.投資口売出し（オーバーアロットメントによる売出し）(1)売出投資口数4,642口(2)売出価格1口当たり金95,160円(3)売出価額の総額441,732,720円(4)申込期間2026年8月27日（木）(5)申込証拠金の入金期間2",
+          "settlement_estimated": false,
+          "settlement_date_status": "confirmed",
+          "parse_warnings": [],
+          "missing_fields": [
+            "dilution_pct"
+          ],
+          "latest_source_stage": "pricing",
+          "share_breakdown_complete": false,
+          "oa_marker_present": true,
+          "po_threshold_ever_met": false,
+          "issue_price_yen": 8836367280.0,
+          "sale_price_yen": 8836367280.0,
+          "offer_price_yen": 8836367280.0,
+          "reference_close_yen": 103100.0,
+          "reference_close_date": "2026-08-19",
+          "reference_close_source": "Yahoo Finance chart (raw close)",
+          "reference_close_kind": "announcement_close",
+          "effective_size_yen": null,
+          "parser_version": 2
+        },
+        "previous_schedule": []
+      }
+    ]
   }
 ]
