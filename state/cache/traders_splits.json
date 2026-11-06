@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-05T20:40:44.256657+00:00",
+  "fetched_at": "2026-11-06T01:05:58.659615+00:00",
   "data": {
     "8697": [
       {
@@ -59,6 +59,16 @@
         "rights_final_date": "2027-01-27",
         "ratio": "200",
         "effective_date": "2027-02-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9324": [
+      {
+        "code": "9324",
+        "name": "安田倉庫",
+        "rights_final_date": "2026-12-28",
+        "ratio": "2",
+        "effective_date": "2027-01-01",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
