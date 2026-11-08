@@ -1,14 +1,14 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-06T01:05:59.069491+00:00",
+  "fetched_at": "2026-11-08T20:41:04.213725+00:00",
   "data": {
-    "1546": {
-      "code": "1546",
-      "name": "ダウヘッジ無",
-      "market": "その他",
-      "ex_right_date": "2026-11-04",
-      "record_date": "2026-11-05",
-      "rights_final_date": "2026-11-02",
+    "6861": {
+      "code": "6861",
+      "name": "キーエンス",
+      "market": "プライム市場",
+      "ex_right_date": "2026-11-19",
+      "record_date": "2026-11-20",
+      "rights_final_date": "2026-11-18",
       "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
     }
   }
