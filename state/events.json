@@ -5699,8 +5699,8 @@
         "record_date_raw": "基準日:2026年11月20日",
         "rights_final_date": "2026-11-18",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -6407,15 +6407,15 @@
     },
     "jpx_master": {
       "last_success_date": "2026-11-09",
-      "last_success_at": "2026-11-09T05:41:00.200117+09:00"
+      "last_success_at": "2026-11-09T08:58:24.792775+09:00"
     },
     "jpx_margin": {
       "last_success_date": "2026-11-09",
-      "last_success_at": "2026-11-09T05:41:01.402618+09:00"
+      "last_success_at": "2026-11-09T08:58:25.588374+09:00"
     },
     "jpx_ex_rights": {
       "last_success_date": "2026-11-09",
-      "last_success_at": "2026-11-09T05:41:04.213725+09:00"
+      "last_success_at": "2026-11-09T08:58:27.949199+09:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-11-05",
@@ -6423,15 +6423,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-11-09",
-      "last_success_at": "2026-11-09T05:41:03.615482+09:00"
+      "last_success_at": "2026-11-09T08:58:26.991679+09:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-11-09",
-      "last_success_at": "2026-11-09T05:41:04.605579+09:00"
+      "last_success_at": "2026-11-09T08:58:28.343593+09:00"
     },
     "jpx_bunbai": {
       "last_success_date": "2026-11-09",
-      "last_success_at": "2026-11-09T05:41:04.842401+09:00"
+      "last_success_at": "2026-11-09T08:58:28.721028+09:00"
     }
   },
   "schema_version": 2,
@@ -6685,11 +6685,11 @@
       "last_success_at": "2026-11-09T08:56:23.503284+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-11-09T05:40:59.324056+09:00",
-      "last_finished_at": "2026-11-09T05:41:04.843950+09:00",
+      "last_started_at": "2026-11-09T08:58:24.107561+09:00",
+      "last_finished_at": "2026-11-09T08:58:28.721980+09:00",
       "status": "success",
-      "run_id": "42521345317",
-      "last_success_at": "2026-11-09T05:41:04.843950+09:00"
+      "run_id": "42537691250",
+      "last_success_at": "2026-11-09T08:58:28.721980+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-11-09T08:54:51.953000+09:00",
