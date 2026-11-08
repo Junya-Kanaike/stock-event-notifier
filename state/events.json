@@ -4447,8 +4447,12 @@
         {
           "date": "2026-11-09",
           "label": "listing-1bd",
-          "sent": false,
-          "not_before_jst": "06:00"
+          "sent": true,
+          "not_before_jst": "06:00",
+          "notification_id": "0267172941cd846f4e1f0fea40bd62542c733aaa6d64a6c0193250ea5a3be05d",
+          "sent_at": "2026-11-09T06:01:10.221875+09:00",
+          "sent_by": "42523006958",
+          "reference_only": false
         },
         {
           "date": "2026-11-10",
@@ -6444,10 +6448,6 @@
   },
   "schema_version": 2,
   "notification_stats": {
-    "2026-09-25": {
-      "success": 8,
-      "failure": 0
-    },
     "2026-09-26": {
       "success": 1,
       "failure": 0
@@ -6623,6 +6623,10 @@
     "2026-11-08": {
       "success": 1,
       "failure": 0
+    },
+    "2026-11-09": {
+      "success": 1,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -6686,11 +6690,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-07T02:54:30.401762+09:00",
-      "last_finished_at": "2026-11-07T02:54:30.418374+09:00",
+      "last_started_at": "2026-11-09T06:01:10.159921+09:00",
+      "last_finished_at": "2026-11-09T06:01:10.529549+09:00",
       "status": "success",
-      "run_id": "42265844782",
-      "last_success_at": "2026-11-07T02:54:30.418374+09:00"
+      "run_id": "42523006958",
+      "last_success_at": "2026-11-09T06:01:10.529549+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-09T05:40:59.324056+09:00",
@@ -8485,6 +8489,18 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "42108640071"
+    },
+    {
+      "event_id": "ipo-660A-2026-11-10",
+      "channel": "ipo",
+      "scheduled_for": "2026-11-09",
+      "label": "listing-1bd",
+      "attempted_at": "2026-11-09T06:01:10.221875+09:00",
+      "outcome": "accepted",
+      "notification_id": "0267172941cd846f4e1f0fea40bd62542c733aaa6d64a6c0193250ea5a3be05d",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "42523006958"
     }
   ],
   "delivery_receipt_artifacts": [
