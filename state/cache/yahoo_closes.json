@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-09T07:29:08.976250+00:00",
+  "fetched_at": "2026-11-09T23:01:13.515930+00:00",
   "data": {
     "9235:2026-07-31": {
       "code": "9235",
@@ -271,6 +271,14 @@
       "symbol": "446A.T",
       "date": "2026-11-09",
       "close_yen": 2639.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-11-09"
+    },
+    "5840:2026-11-09": {
+      "code": "5840",
+      "symbol": "5840.T",
+      "date": "2026-11-09",
+      "close_yen": 505.0,
       "source": "Yahoo Finance chart (raw close)",
       "requested_date": "2026-11-09"
     }
