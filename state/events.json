@@ -2314,7 +2314,8 @@
     "140120261026556167",
     "140120261102562971",
     "140120261109569629",
-    "140120261109569677"
+    "140120261109569677",
+    "140120261105566382"
   ],
   "events": [
     {
@@ -6594,6 +6595,39 @@
           "PRO Market"
         ]
       }
+    },
+    {
+      "id": "cb-4572-2026-11-09",
+      "type": "cb",
+      "code": "4572",
+      "name": "カルナバイオサイエンス",
+      "market": "グロース",
+      "margin": "信用",
+      "announced_at": "2026-11-09T16:45:00+09:00",
+      "detail": {
+        "amount": null,
+        "canceled": false
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261105566382.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261105566382.pdf",
+      "source_title": "新株予約権付社債発行プログラム設定契約に基づく第三者割当による第６回無担保転換社債型新株予約権付社債の発行に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261105566382",
+          "relation": "source",
+          "title": "新株予約権付社債発行プログラム設定契約に基づく第三者割当による第６回無担保転換社債型新株予約権付社債の発行に関するお知らせ",
+          "announced_at": "2026-11-09T16:45:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261105566382.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "貸借対象外"
+        ]
+      }
     }
   ],
   "source_health": {
@@ -6601,7 +6635,7 @@
       "last_checked_date": "2026-11-09",
       "last_success_date": "2026-11-09",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-09T16:50:30.316103+09:00",
+      "last_success_at": "2026-11-09T17:01:13.641027+09:00",
       "by_date": {
         "2026-10-13": {
           "checked_at": "2026-10-14T23:28:38.580745+09:00",
@@ -6706,20 +6740,20 @@
           "last_success_at": "2026-11-06T22:08:11.669285+09:00"
         },
         "2026-11-06": {
-          "checked_at": "2026-11-09T16:50:29.292724+09:00",
+          "checked_at": "2026-11-09T17:01:12.732387+09:00",
           "count": 756,
           "status": "success",
-          "last_success_at": "2026-11-09T16:50:29.292724+09:00"
+          "last_success_at": "2026-11-09T17:01:12.732387+09:00"
         },
         "2026-11-09": {
-          "checked_at": "2026-11-09T16:50:30.315408+09:00",
-          "count": 537,
+          "checked_at": "2026-11-09T17:01:13.640252+09:00",
+          "count": 542,
           "status": "success",
-          "last_success_at": "2026-11-09T16:50:30.315408+09:00"
+          "last_success_at": "2026-11-09T17:01:13.640252+09:00"
         }
       },
-      "last_checked_at": "2026-11-09T16:50:30.315408+09:00",
-      "last_complete_poll_at": "2026-11-09T16:50:30.316111+09:00"
+      "last_checked_at": "2026-11-09T17:01:13.640252+09:00",
+      "last_complete_poll_at": "2026-11-09T17:01:13.641037+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-09",
@@ -7008,11 +7042,11 @@
       "last_success_at": "2026-11-09T08:58:28.721980+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-09T16:50:26.031718+09:00",
-      "last_finished_at": "2026-11-09T16:50:30.404106+09:00",
+      "last_started_at": "2026-11-09T17:01:08.855011+09:00",
+      "last_finished_at": "2026-11-09T17:01:14.879468+09:00",
       "status": "success",
-      "run_id": "42581818941",
-      "last_success_at": "2026-11-09T16:50:30.404106+09:00"
+      "run_id": "42582945174",
+      "last_success_at": "2026-11-09T17:01:14.879468+09:00"
     }
   },
   "notification_log": [
