@@ -4507,8 +4507,12 @@
         {
           "date": "2026-11-10",
           "label": "listing_day",
-          "sent": false,
-          "not_before_jst": "06:00"
+          "sent": true,
+          "not_before_jst": "06:00",
+          "notification_id": "a906aa0248cce166e40c7aa54eb7f0ade96ba10506296feddf600cdc74d59e3a",
+          "sent_at": "2026-11-10T06:00:24.455499+09:00",
+          "sent_by": "42698289831",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -5900,8 +5904,12 @@
         {
           "date": "2026-11-10",
           "label": "execution-1bd",
-          "sent": false,
-          "not_before_jst": "06:00"
+          "sent": true,
+          "not_before_jst": "06:00",
+          "notification_id": "523f9e442efbf950984d4c2b0b469e0735682cf5d4daa1dbd2734b8c832a86f5",
+          "sent_at": "2026-11-10T06:00:24.342803+09:00",
+          "sent_by": "42698289831",
+          "reference_only": false
         },
         {
           "date": "2026-11-11",
@@ -6789,10 +6797,6 @@
   },
   "schema_version": 2,
   "notification_stats": {
-    "2026-09-26": {
-      "success": 1,
-      "failure": 0
-    },
     "2026-09-27": {
       "success": 1,
       "failure": 0
@@ -6968,6 +6972,10 @@
     "2026-11-09": {
       "success": 4,
       "failure": 0
+    },
+    "2026-11-10": {
+      "success": 2,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -7032,11 +7040,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-10T05:35:47.089233+09:00",
-      "last_finished_at": "2026-11-10T05:35:47.103494+09:00",
+      "last_started_at": "2026-11-10T06:00:24.284854+09:00",
+      "last_finished_at": "2026-11-10T06:00:24.548150+09:00",
       "status": "success",
-      "run_id": "42694440008",
-      "last_success_at": "2026-11-10T05:35:47.103494+09:00"
+      "run_id": "42698289831",
+      "last_success_at": "2026-11-10T06:00:24.548150+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-10T05:41:18.656631+09:00",
@@ -8843,6 +8851,30 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "42523006958"
+    },
+    {
+      "event_id": "bunbai-3371-2026-11-02",
+      "channel": "bunbai",
+      "scheduled_for": "2026-11-10",
+      "label": "execution-1bd",
+      "attempted_at": "2026-11-10T06:00:24.342803+09:00",
+      "outcome": "accepted",
+      "notification_id": "523f9e442efbf950984d4c2b0b469e0735682cf5d4daa1dbd2734b8c832a86f5",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "42698289831"
+    },
+    {
+      "event_id": "ipo-660A-2026-11-10",
+      "channel": "ipo",
+      "scheduled_for": "2026-11-10",
+      "label": "listing_day",
+      "attempted_at": "2026-11-10T06:00:24.455499+09:00",
+      "outcome": "accepted",
+      "notification_id": "a906aa0248cce166e40c7aa54eb7f0ade96ba10506296feddf600cdc74d59e3a",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "42698289831"
     }
   ],
   "delivery_receipt_artifacts": [
