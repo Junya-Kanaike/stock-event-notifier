@@ -5928,7 +5928,7 @@
       "eligibility": {
         "status": "excluded",
         "reasons": [
-          "イベント中止"
+          "吸収規模80億円未満"
         ]
       }
     },
@@ -7153,11 +7153,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-10T15:58:44.346210+09:00",
-      "last_finished_at": "2026-11-10T15:58:44.356069+09:00",
+      "last_started_at": "2026-11-10T16:29:21.415840+09:00",
+      "last_finished_at": "2026-11-10T16:29:21.436585+09:00",
       "status": "success",
-      "run_id": "42772069490",
-      "last_success_at": "2026-11-10T15:58:44.356069+09:00"
+      "run_id": "42775603018",
+      "last_success_at": "2026-11-10T16:29:21.436585+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-10T11:53:32.904906+09:00",
