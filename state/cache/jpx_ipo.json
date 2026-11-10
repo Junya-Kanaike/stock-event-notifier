@@ -1,7 +1,14 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-10T02:53:36.939616+00:00",
+  "fetched_at": "2026-11-10T20:40:53.927734+00:00",
   "data": [
+    {
+      "code": "674A",
+      "name": "（株）Ｂｅｙｏｎｔ",
+      "market": "グロース",
+      "listing_date": "2026-12-11",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
     {
       "code": "673A",
       "name": "ＮＯＴＡ（株）",

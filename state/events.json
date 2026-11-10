@@ -5796,8 +5796,8 @@
         "record_date_raw": "基準日:2026年11月20日",
         "rights_final_date": "2026-11-18",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -5999,6 +5999,7 @@
           "market": "東証"
         }
       ],
+      "jpx_source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
       "eligibility": {
         "status": "eligible",
         "reasons": []
@@ -6903,6 +6904,38 @@
           "吸収規模80億円未満"
         ]
       }
+    },
+    {
+      "id": "ipo-674A-2026-12-11",
+      "type": "ipo",
+      "code": "674A",
+      "name": "（株）Ｂｅｙｏｎｔ",
+      "market": "グロース",
+      "margin": "対象外",
+      "announced_at": "2026-11-11T05:40:53.928219+09:00",
+      "detail": {
+        "listing_date": "2026-12-11",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-12-10",
+          "label": "listing-1bd",
+          "sent": false,
+          "not_before_jst": "06:00"
+        },
+        {
+          "date": "2026-12-11",
+          "label": "listing_day",
+          "sent": false,
+          "not_before_jst": "06:00"
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
@@ -7043,16 +7076,16 @@
       "last_complete_poll_at": "2026-11-11T00:01:31.903747+09:00"
     },
     "jpx_master": {
-      "last_success_date": "2026-11-10",
-      "last_success_at": "2026-11-10T11:53:33.672472+09:00"
+      "last_success_date": "2026-11-11",
+      "last_success_at": "2026-11-11T05:40:51.351146+09:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-11-10",
-      "last_success_at": "2026-11-10T11:53:34.364536+09:00"
+      "last_success_date": "2026-11-11",
+      "last_success_at": "2026-11-11T05:40:52.044555+09:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-11-10",
-      "last_success_at": "2026-11-10T11:53:36.623699+09:00"
+      "last_success_date": "2026-11-11",
+      "last_success_at": "2026-11-11T05:40:53.710161+09:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-11-10",
@@ -7060,15 +7093,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-11-11",
-      "last_success_at": "2026-11-11T00:01:03.283778+09:00"
+      "last_success_at": "2026-11-11T05:40:53.205441+09:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-11-10",
-      "last_success_at": "2026-11-10T11:53:36.939616+09:00"
+      "last_success_date": "2026-11-11",
+      "last_success_at": "2026-11-11T05:40:53.927734+09:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-11-10",
-      "last_success_at": "2026-11-10T11:53:37.221245+09:00"
+      "last_success_date": "2026-11-11",
+      "last_success_at": "2026-11-11T05:40:54.174606+09:00"
     }
   },
   "schema_version": 2,
@@ -7324,11 +7357,11 @@
       "last_success_at": "2026-11-11T03:38:16.848250+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-11-10T11:53:32.904906+09:00",
-      "last_finished_at": "2026-11-10T11:53:37.222435+09:00",
+      "last_started_at": "2026-11-11T05:40:50.599159+09:00",
+      "last_finished_at": "2026-11-11T05:40:54.181736+09:00",
       "status": "success",
-      "run_id": "42745788933",
-      "last_success_at": "2026-11-10T11:53:37.222435+09:00"
+      "run_id": "42897594494",
+      "last_success_at": "2026-11-11T05:40:54.181736+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-11-11T00:01:01.493524+09:00",
