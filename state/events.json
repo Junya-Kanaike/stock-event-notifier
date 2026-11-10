@@ -2355,7 +2355,12 @@
     "140120261110570919",
     "140120261110571142",
     "140120261110571206",
-    "140120261110571517"
+    "140120261110571517",
+    "140120261106568273",
+    "140120261110570764",
+    "140120261110570831",
+    "140120261110571659",
+    "140120261110571915"
   ],
   "events": [
     {
@@ -5942,8 +5947,8 @@
       "announced_at": "2026-11-02T15:30:00+09:00",
       "detail": {
         "execution_date": "2026-11-11",
-        "execution_date_raw": "分売予定期間 2026年11月11日（水）～2026年11月13日（金） 3.分売値段 分売実施日前日の終値もしくは最終気配値を基準として決定する予定です。 4.買付申込数量の限度 買付顧客1人につき10,000株（売買単位:100 株） 5.実施取引所 東京証券取引所 6.実施の目的 当社株主より一定数量の売却意向があり、当社として検討した結果、当社株 式",
-        "execution_date_confirmed": false,
+        "execution_date_raw": "分売予定期間 2026年11月11日（水） 3.分売値段 1,929円 4.買付申込数量の限度 買付顧客1人につき10,000株（売買単位:100 株） 5.実施取引所 東京証券取引所 6.実施の目的 当社株主より一定数量の売却意向があり、当社として検討した結果、当社株 式の分布状況改善および流動性の向上に寄与すると判断したため、分売を実 施いたします。 （",
+        "execution_date_confirmed": true,
         "notification_tracking_started": true,
         "eligible_notified": true
       },
@@ -5974,7 +5979,7 @@
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261029559957.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261029559957.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261110571915.pdf",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -5983,6 +5988,14 @@
           "title": "株式の立会外分売に関するお知らせ",
           "announced_at": "2026-11-02T15:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261029559957.pdf"
+        },
+        {
+          "id": "140120261110571915",
+          "relation": "execution",
+          "title": "株式の立会外分売実施に関するお知らせ",
+          "announced_at": "2026-11-10T16:40:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261110571915.pdf",
+          "market": "東証"
         }
       ],
       "eligibility": {
@@ -6746,6 +6759,149 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "split-7189-2026-11-10",
+      "type": "split",
+      "code": "7189",
+      "name": "西日本フィナンシャルホールディングス",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-11-10T16:30:00+09:00",
+      "detail": {
+        "ratio": "3",
+        "record_date": "2027-03-31",
+        "record_date_raw": "基準日2027年3月31日",
+        "rights_final_date": "2027-03-29",
+        "rights_final_date_raw": null,
+        "rights_final_source": "record_date_t_plus_2",
+        "rights_final_calculation_basis": "record_date_t_plus_2",
+        "rights_final_confirmed": false,
+        "rights_final_status": "provisional",
+        "rights_date_conflict": false,
+        "ex_right_date": "2027-03-30",
+        "effective_date": "2027-04-01",
+        "effective_date_raw": "効力発生日 2027年4月 1日（木） （5）配当について 今回の株式分割は、2027年4月1日（木）を効力発生日としますので、2027年3月31 日（水）を基準日とする2027年3月期の期末配当は、株式分割前の株式数を基準に実施 します。 2.株式分割に伴う定款の一部変更 （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、202",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2027-03-29",
+          "label": "rights_final+0_after_close",
+          "sent": false,
+          "not_before_jst": "19:00"
+        },
+        {
+          "date": "2027-03-30",
+          "label": "rights_final+1_noon",
+          "sent": false,
+          "not_before_jst": "12:00",
+          "action_cutoff_jst": "15:30"
+        },
+        {
+          "date": "2027-04-05",
+          "label": "rights_final+5_preopen",
+          "sent": false,
+          "not_before_jst": "08:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261110570831.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261110570831.pdf",
+      "source_title": "株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261110570831",
+          "relation": "source",
+          "title": "株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
+          "announced_at": "2026-11-10T16:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261110570831.pdf",
+          "market": "東証・福証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
+    },
+    {
+      "id": "po-9639-2026-11-10",
+      "type": "po",
+      "code": "9639",
+      "name": "三協フロンテア",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-11-10T16:30:00+09:00",
+      "detail": {
+        "parser_version": 4,
+        "po_kind": "secondary",
+        "source_stage": "announcement",
+        "size_oku": 3.4785,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "estimated",
+        "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "public_offering_shares": null,
+        "secondary_sale_shares": 75000,
+        "oa_shares": 75000,
+        "total_offered_shares": 150000,
+        "share_breakdown_complete": true,
+        "oa_marker_present": true,
+        "issue_price_yen": null,
+        "sale_price_yen": null,
+        "offer_price_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": null,
+        "pricing_date_end": null,
+        "pricing_date_raw": null,
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "unavailable",
+        "settlement_date": null,
+        "settlement_date_end": null,
+        "settlement_date_raw": "受渡期日一般募集における払込期日の翌営業日とする",
+        "settlement_estimated": false,
+        "settlement_date_status": "unavailable",
+        "parse_warnings": [],
+        "missing_fields": [
+          "dilution_pct",
+          "pricing_date",
+          "settlement_date"
+        ],
+        "notification_tracking_started": true,
+        "reference_close_yen": 2319.0,
+        "reference_close_date": "2026-11-10",
+        "reference_close_source": "Yahoo Finance chart (raw close)",
+        "reference_close_kind": "announcement_close",
+        "estimated_size_yen": 347850000,
+        "estimated_size_oku": 3.4785,
+        "effective_size_yen": 347850000,
+        "calculation_missing_fields": []
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261110571659.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261110571659.pdf",
+      "source_title": "自己株式の処分及び株式売出し並びに親会社及びその他の関係会社の異動に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261110571659",
+          "relation": "source",
+          "title": "自己株式の処分及び株式売出し並びに親会社及びその他の関係会社の異動に関するお知らせ",
+          "announced_at": "2026-11-10T16:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261110571659.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "吸収規模80億円未満"
+        ]
+      }
     }
   ],
   "source_health": {
@@ -6753,7 +6909,7 @@
       "last_checked_date": "2026-11-10",
       "last_success_date": "2026-11-10",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-10T16:52:42.735596+09:00",
+      "last_success_at": "2026-11-10T17:03:18.811468+09:00",
       "by_date": {
         "2026-10-13": {
           "checked_at": "2026-10-14T23:28:38.580745+09:00",
@@ -6864,20 +7020,20 @@
           "last_success_at": "2026-11-09T22:39:32.531088+09:00"
         },
         "2026-11-09": {
-          "checked_at": "2026-11-10T16:52:41.547143+09:00",
+          "checked_at": "2026-11-10T17:03:17.763787+09:00",
           "count": 581,
           "status": "success",
-          "last_success_at": "2026-11-10T16:52:41.547143+09:00"
+          "last_success_at": "2026-11-10T17:03:17.763787+09:00"
         },
         "2026-11-10": {
-          "checked_at": "2026-11-10T16:52:42.734708+09:00",
-          "count": 657,
+          "checked_at": "2026-11-10T17:03:18.810542+09:00",
+          "count": 687,
           "status": "success",
-          "last_success_at": "2026-11-10T16:52:42.734708+09:00"
+          "last_success_at": "2026-11-10T17:03:18.810542+09:00"
         }
       },
-      "last_checked_at": "2026-11-10T16:52:42.734708+09:00",
-      "last_complete_poll_at": "2026-11-10T16:52:42.735605+09:00"
+      "last_checked_at": "2026-11-10T17:03:18.810542+09:00",
+      "last_complete_poll_at": "2026-11-10T17:03:18.811479+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-10",
@@ -6893,7 +7049,7 @@
     },
     "yahoo_price": {
       "last_success_date": "2026-11-10",
-      "last_success_at": "2026-11-10T08:00:48.046160+09:00"
+      "last_success_at": "2026-11-10T17:03:20.382412+09:00"
     },
     "traders_split": {
       "last_success_date": "2026-11-10",
@@ -7087,7 +7243,7 @@
       "failure": 0
     },
     "2026-11-10": {
-      "success": 3,
+      "success": 5,
       "failure": 0
     }
   },
@@ -7167,11 +7323,11 @@
       "last_success_at": "2026-11-10T11:53:37.222435+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-10T16:52:38.715869+09:00",
-      "last_finished_at": "2026-11-10T16:52:42.816345+09:00",
+      "last_started_at": "2026-11-10T17:03:14.701732+09:00",
+      "last_finished_at": "2026-11-10T17:03:21.349358+09:00",
       "status": "success",
-      "run_id": "42778338126",
-      "last_success_at": "2026-11-10T16:52:42.816345+09:00"
+      "run_id": "42779613118",
+      "last_success_at": "2026-11-10T17:03:21.349358+09:00"
     }
   },
   "notification_log": [
