@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-09T20:41:22.155698+00:00",
+  "fetched_at": "2026-11-10T02:44:12.355666+00:00",
   "data": {
     "9706": [
       {
@@ -78,6 +78,16 @@
         "name": "安田倉庫",
         "rights_final_date": "2026-12-28",
         "ratio": "2",
+        "effective_date": "2027-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "9104": [
+      {
+        "code": "9104",
+        "name": "商船三井",
+        "rights_final_date": "2026-12-28",
+        "ratio": "3",
         "effective_date": "2027-01-01",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
