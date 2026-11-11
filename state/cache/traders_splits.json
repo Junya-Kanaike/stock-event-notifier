@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-10T20:40:53.205441+00:00",
+  "fetched_at": "2026-11-11T00:52:16.873909+00:00",
   "data": {
     "9706": [
       {
@@ -18,6 +18,16 @@
         "name": "ＪＰＸ",
         "rights_final_date": "2027-03-29",
         "ratio": "2",
+        "effective_date": "2027-04-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7189": [
+      {
+        "code": "7189",
+        "name": "西日本ＦＨ",
+        "rights_final_date": "2027-03-29",
+        "ratio": "3",
         "effective_date": "2027-04-01",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
