@@ -3889,9 +3889,13 @@
         {
           "date": "2026-11-12",
           "label": "pricing_day+25bd",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "009ec18925ca04a4dd1dc419f2081c4f864e45d25278ab5dc6948eae35eef6b9",
+          "sent_at": "2026-11-12T06:03:05.654889+09:00",
+          "sent_by": "43099724675",
+          "reference_only": false
         },
         {
           "date": "2026-11-13",
@@ -7309,10 +7313,6 @@
   },
   "schema_version": 2,
   "notification_stats": {
-    "2026-09-28": {
-      "success": 9,
-      "failure": 0
-    },
     "2026-09-29": {
       "success": 63,
       "failure": 0
@@ -7488,6 +7488,10 @@
     "2026-11-11": {
       "success": 5,
       "failure": 0
+    },
+    "2026-11-12": {
+      "success": 1,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -7554,11 +7558,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-12T03:37:44.989821+09:00",
-      "last_finished_at": "2026-11-12T03:37:45.014484+09:00",
+      "last_started_at": "2026-11-12T06:03:05.604586+09:00",
+      "last_finished_at": "2026-11-12T06:03:05.855074+09:00",
       "status": "success",
-      "run_id": "43079553031",
-      "last_success_at": "2026-11-12T03:37:45.014484+09:00"
+      "run_id": "43099724675",
+      "last_success_at": "2026-11-12T06:03:05.855074+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-12T05:57:14.053465+09:00",
@@ -9401,6 +9405,18 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "42900786778"
+    },
+    {
+      "event_id": "po-1723-2026-09-28",
+      "channel": "po",
+      "scheduled_for": "2026-11-12",
+      "label": "pricing_day+25bd",
+      "attempted_at": "2026-11-12T06:03:05.654889+09:00",
+      "outcome": "accepted",
+      "notification_id": "009ec18925ca04a4dd1dc419f2081c4f864e45d25278ab5dc6948eae35eef6b9",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "43099724675"
     }
   ],
   "delivery_receipt_artifacts": [
