@@ -5834,8 +5834,8 @@
         "record_date_raw": "基準日:2026年11月20日",
         "rights_final_date": "2026-11-18",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7279,32 +7279,32 @@
       "last_complete_poll_at": "2026-11-11T21:31:19.447610+09:00"
     },
     "jpx_master": {
-      "last_success_date": "2026-11-11",
-      "last_success_at": "2026-11-11T09:52:14.931775+09:00"
+      "last_success_date": "2026-11-12",
+      "last_success_at": "2026-11-12T05:57:14.836526+09:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-11-11",
-      "last_success_at": "2026-11-11T09:52:15.593854+09:00"
+      "last_success_date": "2026-11-12",
+      "last_success_at": "2026-11-12T05:57:15.697184+09:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-11-11",
-      "last_success_at": "2026-11-11T09:52:17.311978+09:00"
+      "last_success_date": "2026-11-12",
+      "last_success_at": "2026-11-12T05:57:18.714879+09:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-11-10",
       "last_success_at": "2026-11-10T17:03:20.382412+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-11-11",
-      "last_success_at": "2026-11-11T15:56:53.491116+09:00"
+      "last_success_date": "2026-11-12",
+      "last_success_at": "2026-11-12T05:57:18.127511+09:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-11-11",
-      "last_success_at": "2026-11-11T09:52:17.535599+09:00"
+      "last_success_date": "2026-11-12",
+      "last_success_at": "2026-11-12T05:57:19.035773+09:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-11-11",
-      "last_success_at": "2026-11-11T09:52:17.686412+09:00"
+      "last_success_date": "2026-11-12",
+      "last_success_at": "2026-11-12T05:57:19.333313+09:00"
     }
   },
   "schema_version": 2,
@@ -7561,11 +7561,11 @@
       "last_success_at": "2026-11-12T03:37:45.014484+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-11-11T09:52:14.091785+09:00",
-      "last_finished_at": "2026-11-11T09:52:17.687864+09:00",
+      "last_started_at": "2026-11-12T05:57:14.053465+09:00",
+      "last_finished_at": "2026-11-12T05:57:19.334629+09:00",
       "status": "success",
-      "run_id": "42934677774",
-      "last_success_at": "2026-11-11T09:52:17.687864+09:00"
+      "run_id": "43098502346",
+      "last_success_at": "2026-11-12T05:57:19.334629+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-11-11T21:31:14.975133+09:00",
