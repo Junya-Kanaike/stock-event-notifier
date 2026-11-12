@@ -3793,9 +3793,13 @@
         {
           "date": "2026-11-13",
           "label": "pricing_day+26bd",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "951fa620508108c8745eb1ee11b588f11255a6a9c3915eadac1477d0dc061122",
+          "sent_at": "2026-11-13T06:01:19.979350+09:00",
+          "sent_by": "43306000965",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260924539460.pdf",
@@ -3931,9 +3935,13 @@
         {
           "date": "2026-11-13",
           "label": "pricing_day+25bd",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "16f797408d5e4ba200e10584468046a4e7dd459df571106a9d880b50c4a00150",
+          "sent_at": "2026-11-13T06:01:20.049943+09:00",
+          "sent_by": "43306000965",
+          "reference_only": false
         },
         {
           "date": "2026-11-16",
@@ -7504,10 +7512,6 @@
   },
   "schema_version": 2,
   "notification_stats": {
-    "2026-09-29": {
-      "success": 63,
-      "failure": 0
-    },
     "2026-09-30": {
       "success": 6,
       "failure": 0
@@ -7683,6 +7687,10 @@
     "2026-11-12": {
       "success": 4,
       "failure": 0
+    },
+    "2026-11-13": {
+      "success": 2,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -7750,11 +7758,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-13T03:50:45.002295+09:00",
-      "last_finished_at": "2026-11-13T03:50:45.025827+09:00",
+      "last_started_at": "2026-11-13T06:01:19.899262+09:00",
+      "last_finished_at": "2026-11-13T06:01:20.113219+09:00",
       "status": "success",
-      "run_id": "43284007422",
-      "last_success_at": "2026-11-13T03:50:45.025827+09:00"
+      "run_id": "43306000965",
+      "last_success_at": "2026-11-13T06:01:20.113219+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-13T05:41:06.138678+09:00",
@@ -9609,6 +9617,30 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "43099724675"
+    },
+    {
+      "event_id": "po-1723-2026-09-28",
+      "channel": "po",
+      "scheduled_for": "2026-11-13",
+      "label": "pricing_day+26bd",
+      "attempted_at": "2026-11-13T06:01:19.979350+09:00",
+      "outcome": "accepted",
+      "notification_id": "951fa620508108c8745eb1ee11b588f11255a6a9c3915eadac1477d0dc061122",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "43306000965"
+    },
+    {
+      "event_id": "po-4221-2026-09-30",
+      "channel": "po",
+      "scheduled_for": "2026-11-13",
+      "label": "pricing_day+25bd",
+      "attempted_at": "2026-11-13T06:01:20.049943+09:00",
+      "outcome": "accepted",
+      "notification_id": "16f797408d5e4ba200e10584468046a4e7dd459df571106a9d880b50c4a00150",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "43306000965"
     }
   ],
   "delivery_receipt_artifacts": [
