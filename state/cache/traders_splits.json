@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-11T20:57:18.127511+00:00",
+  "fetched_at": "2026-11-12T01:59:28.138162+00:00",
   "data": {
     "9706": [
       {
@@ -122,6 +122,16 @@
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
+    "4971": [
+      {
+        "code": "4971",
+        "name": "メック",
+        "rights_final_date": "2026-12-28",
+        "ratio": "3",
+        "effective_date": "2027-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
     "2207": [
       {
         "code": "2207",
@@ -138,6 +148,26 @@
         "name": "西川計測",
         "rights_final_date": "2026-12-28",
         "ratio": "10",
+        "effective_date": "2027-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7087": [
+      {
+        "code": "7087",
+        "name": "ウイルテック",
+        "rights_final_date": "2026-12-28",
+        "ratio": "2",
+        "effective_date": "2027-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "2820": [
+      {
+        "code": "2820",
+        "name": "やまみ",
+        "rights_final_date": "2026-12-28",
+        "ratio": "2",
         "effective_date": "2027-01-01",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
