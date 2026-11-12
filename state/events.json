@@ -2407,7 +2407,28 @@
     "140120261112575510",
     "140120261111573535",
     "140120261112575901",
-    "140120261112574920"
+    "140120261112574920",
+    "140120261015551092",
+    "140120261104564734",
+    "140120261109569810",
+    "140120261110572343",
+    "140120261110572390",
+    "140120261111572676",
+    "140120261111573202",
+    "140120261111574256",
+    "140120261111574561",
+    "140120261111574636",
+    "140120261112574671",
+    "140120261112574945",
+    "140120261112574954",
+    "140120261112575632",
+    "140120261112575703",
+    "140120261112576184",
+    "140120261112576323",
+    "140120261112576391",
+    "140120261112576409",
+    "140120261112576466",
+    "140120261112575071"
   ],
   "events": [
     {
@@ -6686,7 +6707,7 @@
         "oa_shares": 20000,
         "total_offered_shares": 190000,
         "share_breakdown_complete": true,
-        "oa_marker_present": true,
+        "oa_marker_present": false,
         "issue_price_yen": null,
         "sale_price_yen": null,
         "offer_price_yen": null,
@@ -6699,7 +6720,7 @@
         "pricing_date_status": "provisional",
         "settlement_date": "2026-12-11",
         "settlement_date_end": null,
-        "settlement_date_raw": "受渡期日2026年12月11日（金曜日）（10）引受人の対価引受手数料は支払わず、これに代わるものとして一般募集における発行価格から引受価額を差し引いた額の総額を引受人の手取金とする",
+        "settlement_date_raw": "受渡期日2026年12月11日（金曜日）【訂正後】（2）募集株式の払込金額未定（2026年11月26日開催の取締役会で決定する",
         "settlement_estimated": false,
         "settlement_date_status": "confirmed",
         "parse_warnings": [
@@ -6714,7 +6735,7 @@
         "calculation_missing_fields": [],
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120261109568784.pdf",
         "calculation_recovery_attempt_date": "2026-11-10",
-        "latest_source_stage": "announcement",
+        "latest_source_stage": "correction",
         "reference_close_yen": 505.0,
         "reference_close_date": "2026-11-09",
         "reference_close_source": "Yahoo Finance chart (raw close)",
@@ -6724,7 +6745,7 @@
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261109568784.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261109568784.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261112576184.pdf",
       "source_title": "募集株式発行及び株式売出しに関する取締役会決議のお知らせ",
       "related_disclosures": [
         {
@@ -6733,6 +6754,14 @@
           "title": "募集株式発行及び株式売出しに関する取締役会決議のお知らせ",
           "announced_at": "2026-11-09T16:15:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261109568784.pdf",
+          "market": "東証"
+        },
+        {
+          "id": "140120261112576184",
+          "relation": "correction",
+          "title": "（訂正）「募集株式発行及び株式売出しに関する取締役会決議のお知らせ」の一部訂正について",
+          "announced_at": "2026-11-12T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261112576184.pdf",
           "market": "東証"
         }
       ],
@@ -7233,6 +7262,134 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "split-6490-2026-11-12",
+      "type": "split",
+      "code": "6490",
+      "name": "ＰＩＬＬＡＲ",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-11-12T15:30:00+09:00",
+      "detail": {
+        "ratio": null,
+        "record_date": "2026-12-31",
+        "record_date_raw": "基準日2026年12月31日",
+        "rights_final_date": "2026-12-28",
+        "rights_final_date_raw": null,
+        "rights_final_source": "record_date_t_plus_2",
+        "rights_final_calculation_basis": "record_date_t_plus_2",
+        "rights_final_confirmed": false,
+        "rights_final_status": "provisional",
+        "rights_date_conflict": false,
+        "ex_right_date": "2026-12-29",
+        "effective_date": "2027-01-01",
+        "effective_date_raw": "効力発生日 2027年 1月 1日（金） ※実質上の基準日は 2026年 12月 30日（水）となります。 （3）資本金の額の変更 今回の株式分割に際して、資本金の額に変更はありません。 2.株式分割に伴う定款の一部変更について （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2027年1月1日(金)をもっ て当社定款第5条に定",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-12-28",
+          "label": "rights_final+0_after_close",
+          "sent": false,
+          "not_before_jst": "19:00"
+        },
+        {
+          "date": "2026-12-29",
+          "label": "rights_final+1_noon",
+          "sent": false,
+          "not_before_jst": "12:00",
+          "action_cutoff_jst": "15:30"
+        },
+        {
+          "date": "2027-01-06",
+          "label": "rights_final+5_preopen",
+          "sent": false,
+          "not_before_jst": "08:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261109569810.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261109569810.pdf",
+      "source_title": "株式分割、株式分割に伴う定款の一部変更及び株主優待制度に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261109569810",
+          "relation": "source",
+          "title": "株式分割、株式分割に伴う定款の一部変更及び株主優待制度に関するお知らせ",
+          "announced_at": "2026-11-12T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261109569810.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
+    },
+    {
+      "id": "split-3864-2026-11-12",
+      "type": "split",
+      "code": "3864",
+      "name": "三菱製紙",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-11-12T15:30:00+09:00",
+      "detail": {
+        "ratio": null,
+        "record_date": "2026-12-31",
+        "record_date_raw": "基準日2026年12月31日",
+        "rights_final_date": "2026-12-28",
+        "rights_final_date_raw": null,
+        "rights_final_source": "record_date_t_plus_2",
+        "rights_final_calculation_basis": "record_date_t_plus_2",
+        "rights_final_confirmed": false,
+        "rights_final_status": "provisional",
+        "rights_date_conflict": false,
+        "ex_right_date": "2026-12-29",
+        "effective_date": "2027-01-01",
+        "effective_date_raw": "効力発生日 2027年 1月 1日（金） 5.剰余金の配当 （1）配当の内容（実質的な増配予想） 年間配当金 2027年3月期第2四半期末 2027年3月期第4四半期末 合計 前回予想（2026年5月14日） 7円（分割前1株当たり） 13円（分割前1株当たり） 20円（分割前1株当たり） 今回予想（2026年11月12日） ― 16.5円（分割後1株当たり",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-12-28",
+          "label": "rights_final+0_after_close",
+          "sent": false,
+          "not_before_jst": "19:00"
+        },
+        {
+          "date": "2026-12-29",
+          "label": "rights_final+1_noon",
+          "sent": false,
+          "not_before_jst": "12:00",
+          "action_cutoff_jst": "15:30"
+        },
+        {
+          "date": "2027-01-06",
+          "label": "rights_final+5_preopen",
+          "sent": false,
+          "not_before_jst": "08:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261111572676.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261111572676.pdf",
+      "source_title": "株式分割及び株式分割に伴う定款の一部変更並びに配当予想の修正に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261111572676",
+          "relation": "source",
+          "title": "株式分割及び株式分割に伴う定款の一部変更並びに配当予想の修正に関するお知らせ",
+          "announced_at": "2026-11-12T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261111572676.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
@@ -7240,7 +7397,7 @@
       "last_checked_date": "2026-11-12",
       "last_success_date": "2026-11-12",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-12T15:35:23.644398+09:00",
+      "last_success_at": "2026-11-12T15:46:00.990864+09:00",
       "by_date": {
         "2026-10-13": {
           "checked_at": "2026-10-14T23:28:38.580745+09:00",
@@ -7363,20 +7520,20 @@
           "last_success_at": "2026-11-11T21:31:18.326921+09:00"
         },
         "2026-11-11": {
-          "checked_at": "2026-11-12T15:35:22.750402+09:00",
+          "checked_at": "2026-11-12T15:45:59.641346+09:00",
           "count": 765,
           "status": "success",
-          "last_success_at": "2026-11-12T15:35:22.750402+09:00"
+          "last_success_at": "2026-11-12T15:45:59.641346+09:00"
         },
         "2026-11-12": {
-          "checked_at": "2026-11-12T15:35:23.643670+09:00",
-          "count": 298,
+          "checked_at": "2026-11-12T15:46:00.989726+09:00",
+          "count": 870,
           "status": "success",
-          "last_success_at": "2026-11-12T15:35:23.643670+09:00"
+          "last_success_at": "2026-11-12T15:46:00.989726+09:00"
         }
       },
-      "last_checked_at": "2026-11-12T15:35:23.643670+09:00",
-      "last_complete_poll_at": "2026-11-12T15:35:23.644407+09:00"
+      "last_checked_at": "2026-11-12T15:46:00.989726+09:00",
+      "last_complete_poll_at": "2026-11-12T15:46:00.990873+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-12",
@@ -7668,11 +7825,11 @@
       "last_success_at": "2026-11-12T10:59:29.348690+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-12T15:35:19.595217+09:00",
-      "last_finished_at": "2026-11-12T15:35:23.714303+09:00",
+      "last_started_at": "2026-11-12T15:45:56.125538+09:00",
+      "last_finished_at": "2026-11-12T15:46:01.822072+09:00",
       "status": "success",
-      "run_id": "43169143614",
-      "last_success_at": "2026-11-12T15:35:23.714303+09:00"
+      "run_id": "43170399007",
+      "last_success_at": "2026-11-12T15:46:01.822072+09:00"
     }
   },
   "notification_log": [
