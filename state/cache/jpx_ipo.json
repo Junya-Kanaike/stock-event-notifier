@@ -1,7 +1,21 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-12T01:59:29.009573+00:00",
+  "fetched_at": "2026-11-12T20:41:12.453177+00:00",
   "data": [
+    {
+      "code": "677A",
+      "name": "（株）FOLIOホールディングス",
+      "market": "グロース",
+      "listing_date": "2026-12-17",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "code": "676A",
+      "name": "スマートニュース（株）",
+      "market": "グロース",
+      "listing_date": "2026-12-15",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
     {
       "code": "674A",
       "name": "（株）Ｂｅｙｏｎｔ",
