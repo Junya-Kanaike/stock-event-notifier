@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-12T20:41:09.686394+00:00",
+  "fetched_at": "2026-11-13T01:27:11.426536+00:00",
   "data": {
     "9706": [
       {
@@ -82,6 +82,16 @@
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
+    "5537": [
+      {
+        "code": "5537",
+        "name": "ＡｌｂａＬｉｎｋ",
+        "rights_final_date": "2026-12-28",
+        "ratio": "2",
+        "effective_date": "2027-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
     "9324": [
       {
         "code": "9324",
@@ -112,6 +122,16 @@
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
+    "6490": [
+      {
+        "code": "6490",
+        "name": "ＰＩＬＬＡＲ",
+        "rights_final_date": "2026-12-28",
+        "ratio": "3",
+        "effective_date": "2027-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
     "6465": [
       {
         "code": "6465",
@@ -128,6 +148,16 @@
         "name": "メック",
         "rights_final_date": "2026-12-28",
         "ratio": "3",
+        "effective_date": "2027-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3864": [
+      {
+        "code": "3864",
+        "name": "三菱紙",
+        "rights_final_date": "2026-12-28",
+        "ratio": "2",
         "effective_date": "2027-01-01",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }

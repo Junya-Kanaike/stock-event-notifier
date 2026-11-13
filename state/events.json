@@ -5710,8 +5710,8 @@
         "record_date_raw": "基準日:2026年11月20日",
         "rights_final_date": "2026-11-18",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7115,20 +7115,23 @@
       "margin": "貸借",
       "announced_at": "2026-11-12T15:30:00+09:00",
       "detail": {
-        "ratio": null,
+        "ratio": "3",
         "record_date": "2026-12-31",
         "record_date_raw": "基準日2026年12月31日",
         "rights_final_date": "2026-12-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "record_date_t_plus_2",
-        "rights_final_calculation_basis": "record_date_t_plus_2",
-        "rights_final_confirmed": false,
-        "rights_final_status": "provisional",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_confirmed": true,
+        "rights_final_status": "confirmed",
         "rights_date_conflict": false,
         "ex_right_date": "2026-12-29",
         "effective_date": "2027-01-01",
         "effective_date_raw": "効力発生日 2027年 1月 1日（金） ※実質上の基準日は 2026年 12月 30日（水）となります。 （3）資本金の額の変更 今回の株式分割に際して、資本金の額に変更はありません。 2.株式分割に伴う定款の一部変更について （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2027年1月1日(金)をもっ て当社定款第5条に定",
-        "eligible_notified": true
+        "eligible_notified": true,
+        "traders_rights_final_date": "2026-12-28",
+        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
+        "ratio_source": "traders_web"
       },
       "schedule": [
         {
@@ -7179,20 +7182,23 @@
       "margin": "貸借",
       "announced_at": "2026-11-12T15:30:00+09:00",
       "detail": {
-        "ratio": null,
+        "ratio": "2",
         "record_date": "2026-12-31",
         "record_date_raw": "基準日2026年12月31日",
         "rights_final_date": "2026-12-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "record_date_t_plus_2",
-        "rights_final_calculation_basis": "record_date_t_plus_2",
-        "rights_final_confirmed": false,
-        "rights_final_status": "provisional",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_confirmed": true,
+        "rights_final_status": "confirmed",
         "rights_date_conflict": false,
         "ex_right_date": "2026-12-29",
         "effective_date": "2027-01-01",
         "effective_date_raw": "効力発生日 2027年 1月 1日（金） 5.剰余金の配当 （1）配当の内容（実質的な増配予想） 年間配当金 2027年3月期第2四半期末 2027年3月期第4四半期末 合計 前回予想（2026年5月14日） 7円（分割前1株当たり） 13円（分割前1株当たり） 20円（分割前1株当たり） 今回予想（2026年11月12日） ― 16.5円（分割後1株当たり",
-        "eligible_notified": true
+        "eligible_notified": true,
+        "traders_rights_final_date": "2026-12-28",
+        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
+        "ratio_source": "traders_web"
       },
       "schedule": [
         {
@@ -7243,19 +7249,22 @@
       "margin": "信用",
       "announced_at": "2026-11-12T16:00:00+09:00",
       "detail": {
-        "ratio": null,
+        "ratio": "2",
         "record_date": "2026-12-31",
         "record_date_raw": "基準日2026年12月31日",
         "rights_final_date": "2026-12-28",
         "rights_final_date_raw": null,
-        "rights_final_source": "record_date_t_plus_2",
-        "rights_final_calculation_basis": "record_date_t_plus_2",
-        "rights_final_confirmed": false,
-        "rights_final_status": "provisional",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_confirmed": true,
+        "rights_final_status": "confirmed",
         "rights_date_conflict": false,
         "ex_right_date": "2026-12-29",
         "effective_date": "2026-12-16",
-        "effective_date_raw": "効力発生日）までの間に これらの株式数は変動する可能性があります。 ③ 分割の日程 基準日公告日 2026年12月16日（水曜日）（予定） 基準日 2026年12月31日（木曜日）（注） 効力発生日 2027年1月1日（金曜日） （注）当日は株主名簿管理人の休業日につき、実質的には2026年12月30日（水曜日）を基準 日とします。 （3）その他 ① 今回の"
+        "effective_date_raw": "効力発生日）までの間に これらの株式数は変動する可能性があります。 ③ 分割の日程 基準日公告日 2026年12月16日（水曜日）（予定） 基準日 2026年12月31日（木曜日）（注） 効力発生日 2027年1月1日（金曜日） （注）当日は株主名簿管理人の休業日につき、実質的には2026年12月30日（水曜日）を基準 日とします。 （3）その他 ① 今回の",
+        "traders_rights_final_date": "2026-12-28",
+        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
+        "ratio_source": "traders_web"
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261112575279.pdf",
@@ -7488,15 +7497,15 @@
     },
     "jpx_master": {
       "last_success_date": "2026-11-13",
-      "last_success_at": "2026-11-13T05:41:06.914809+09:00"
+      "last_success_at": "2026-11-13T10:27:08.917232+09:00"
     },
     "jpx_margin": {
       "last_success_date": "2026-11-13",
-      "last_success_at": "2026-11-13T05:41:07.798366+09:00"
+      "last_success_at": "2026-11-13T10:27:09.666753+09:00"
     },
     "jpx_ex_rights": {
       "last_success_date": "2026-11-13",
-      "last_success_at": "2026-11-13T05:41:11.849703+09:00"
+      "last_success_at": "2026-11-13T10:27:12.104036+09:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-11-12",
@@ -7504,15 +7513,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-11-13",
-      "last_success_at": "2026-11-13T05:41:09.686394+09:00"
+      "last_success_at": "2026-11-13T10:27:11.426536+09:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-11-13",
-      "last_success_at": "2026-11-13T05:41:12.453177+09:00"
+      "last_success_at": "2026-11-13T10:27:12.332120+09:00"
     },
     "jpx_bunbai": {
       "last_success_date": "2026-11-13",
-      "last_success_at": "2026-11-13T05:41:12.923707+09:00"
+      "last_success_at": "2026-11-13T10:27:12.557006+09:00"
     }
   },
   "schema_version": 2,
@@ -7770,11 +7779,11 @@
       "last_success_at": "2026-11-13T10:05:10.539113+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-11-13T05:41:06.138678+09:00",
-      "last_finished_at": "2026-11-13T05:41:12.924722+09:00",
+      "last_started_at": "2026-11-13T10:27:08.097240+09:00",
+      "last_finished_at": "2026-11-13T10:27:12.557992+09:00",
       "status": "success",
-      "run_id": "43302700761",
-      "last_success_at": "2026-11-13T05:41:12.924722+09:00"
+      "run_id": "43344962220",
+      "last_success_at": "2026-11-13T10:27:12.557992+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-11-13T10:19:57.474059+09:00",
