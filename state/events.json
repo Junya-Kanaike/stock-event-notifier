@@ -2469,7 +2469,24 @@
     "140120261027557082",
     "140120261112576958",
     "140120261113578779",
-    "140120261112576953"
+    "140120261112576953",
+    "140120261026556316",
+    "140120261106568305",
+    "140120261109568717",
+    "140120261111574454",
+    "140120261112575563",
+    "140120261112576513",
+    "140120261112576751",
+    "140120261112577384",
+    "140120261112577404",
+    "140120261113577833",
+    "140120261113578145",
+    "140120261113578478",
+    "140120261113579244",
+    "140120261113579364",
+    "140120261113579613",
+    "140120261113579627",
+    "140120261112575354"
   ],
   "events": [
     {
@@ -7370,6 +7387,212 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "split-6856-2026-11-13",
+      "type": "split",
+      "code": "6856",
+      "name": "堀場製作所",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-11-13T15:30:00+09:00",
+      "detail": {
+        "ratio": null,
+        "record_date": "2026-12-31",
+        "record_date_raw": "基準日2026年12月31日",
+        "rights_final_date": "2026-12-28",
+        "rights_final_date_raw": null,
+        "rights_final_source": "record_date_t_plus_2",
+        "rights_final_calculation_basis": "record_date_t_plus_2",
+        "rights_final_confirmed": false,
+        "rights_final_status": "provisional",
+        "rights_date_conflict": false,
+        "ex_right_date": "2026-12-29",
+        "effective_date": "2026-12-31",
+        "effective_date_raw": "効力発生日としていますので、2026年12月31日を基準日 とする2026年12月期の期末配当については、株式分割前の株式が対象となります。 1/2 ③ 新株予約権の行使価格等の調整 今回の株式分割に伴い、第1回株式報酬型新株予約権（2009年）から第13回株式報酬型新株予 約権（2021年）につき、行使価格の調整は行わず1株につき1円とし、調整後の付与株式",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-12-28",
+          "label": "rights_final+0_after_close",
+          "sent": false,
+          "not_before_jst": "19:00"
+        },
+        {
+          "date": "2026-12-29",
+          "label": "rights_final+1_noon",
+          "sent": false,
+          "not_before_jst": "12:00",
+          "action_cutoff_jst": "15:30"
+        },
+        {
+          "date": "2027-01-06",
+          "label": "rights_final+5_preopen",
+          "sent": false,
+          "not_before_jst": "08:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261109568717.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261109568717.pdf",
+      "source_title": "株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261109568717",
+          "relation": "source",
+          "title": "株式分割及び株式分割に伴う定款の一部変更に関するお知らせ",
+          "announced_at": "2026-11-13T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261109568717.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
+    },
+    {
+      "id": "po-5930-2026-11-13",
+      "type": "po",
+      "code": "5930",
+      "name": "文化シヤッター",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-11-13T15:30:00+09:00",
+      "detail": {
+        "parser_version": 4,
+        "po_kind": "secondary",
+        "source_stage": "announcement",
+        "size_oku": 273.892,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "confirmed",
+        "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "public_offering_shares": null,
+        "secondary_sale_shares": 13694600,
+        "oa_shares": 0,
+        "total_offered_shares": 13694600,
+        "share_breakdown_complete": true,
+        "oa_marker_present": false,
+        "issue_price_yen": 2000.0,
+        "sale_price_yen": 2000.0,
+        "offer_price_yen": 2000.0,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": null,
+        "pricing_date_end": null,
+        "pricing_date_raw": null,
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "unavailable",
+        "settlement_date": "2026-11-17",
+        "settlement_date_end": null,
+        "settlement_date_raw": "受渡期日2026年11月17日（予定）（8）申込証拠金該当事項はありません",
+        "settlement_estimated": false,
+        "settlement_date_status": "provisional",
+        "parse_warnings": [],
+        "missing_fields": [
+          "dilution_pct",
+          "pricing_date"
+        ],
+        "notification_tracking_started": true,
+        "reference_close_yen": 1890.0,
+        "reference_close_date": "2026-11-13",
+        "reference_close_source": "Yahoo Finance chart (raw close)",
+        "reference_close_kind": "announcement_close",
+        "confirmed_size_yen": 27389200000,
+        "confirmed_size_oku": 273.892,
+        "effective_size_yen": 27389200000,
+        "po_threshold_ever_met": true,
+        "calculation_missing_fields": [],
+        "eligible_notified": true
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261112577384.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261112577384.pdf",
+      "source_title": "伊藤忠商事株式会社との資本業務提携契約の締結、株式の売出し、主要株主及び主要株主である筆頭株主の異動に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261112577384",
+          "relation": "source",
+          "title": "伊藤忠商事株式会社との資本業務提携契約の締結、株式の売出し、主要株主及び主要株主である筆頭株主の異動に関するお知らせ",
+          "announced_at": "2026-11-13T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261112577384.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
+    },
+    {
+      "id": "split-7812-2026-11-13",
+      "type": "split",
+      "code": "7812",
+      "name": "クレステック",
+      "market": "スタンダード",
+      "margin": "貸借",
+      "announced_at": "2026-11-13T15:31:00+09:00",
+      "detail": {
+        "ratio": null,
+        "record_date": "2026-12-31",
+        "record_date_raw": "基準日2026年12月31日",
+        "rights_final_date": "2026-12-28",
+        "rights_final_date_raw": null,
+        "rights_final_source": "record_date_t_plus_2",
+        "rights_final_calculation_basis": "record_date_t_plus_2",
+        "rights_final_confirmed": false,
+        "rights_final_status": "provisional",
+        "rights_date_conflict": false,
+        "ex_right_date": "2026-12-29",
+        "effective_date": "2027-01-01",
+        "effective_date_raw": "効力発生日 2027年1月1日 4. 株式分割に伴う定款の一部変更 （1）定款変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2027年1月1日をもって、当社定款 第6条の発行可能株式総数を変更いたします。 1 （2）定款変更の内容 （下線は変更箇所を示しております。） 現行定款 変更後定款 （発行可能株式総数） （発行可能株式総数）",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-12-28",
+          "label": "rights_final+0_after_close",
+          "sent": false,
+          "not_before_jst": "19:00"
+        },
+        {
+          "date": "2026-12-29",
+          "label": "rights_final+1_noon",
+          "sent": false,
+          "not_before_jst": "12:00",
+          "action_cutoff_jst": "15:30"
+        },
+        {
+          "date": "2027-01-06",
+          "label": "rights_final+5_preopen",
+          "sent": false,
+          "not_before_jst": "08:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261112575354.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261112575354.pdf",
+      "source_title": "株式分割及び株式分割に伴う定款の一部変更並びに配当予想の修正に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261112575354",
+          "relation": "source",
+          "title": "株式分割及び株式分割に伴う定款の一部変更並びに配当予想の修正に関するお知らせ",
+          "announced_at": "2026-11-13T15:31:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261112575354.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
@@ -7377,7 +7600,7 @@
       "last_checked_date": "2026-11-13",
       "last_success_date": "2026-11-13",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-13T15:32:39.877052+09:00",
+      "last_success_at": "2026-11-13T15:43:15.014285+09:00",
       "by_date": {
         "2026-10-14": {
           "checked_at": "2026-10-15T22:40:43.370413+09:00",
@@ -7500,20 +7723,20 @@
           "last_success_at": "2026-11-12T19:52:12.450234+09:00"
         },
         "2026-11-12": {
-          "checked_at": "2026-11-13T15:32:39.026713+09:00",
+          "checked_at": "2026-11-13T15:43:13.237503+09:00",
           "count": 1169,
           "status": "success",
-          "last_success_at": "2026-11-13T15:32:39.026713+09:00"
+          "last_success_at": "2026-11-13T15:43:13.237503+09:00"
         },
         "2026-11-13": {
-          "checked_at": "2026-11-13T15:32:39.876337+09:00",
-          "count": 549,
+          "checked_at": "2026-11-13T15:43:15.012463+09:00",
+          "count": 1513,
           "status": "success",
-          "last_success_at": "2026-11-13T15:32:39.876337+09:00"
+          "last_success_at": "2026-11-13T15:43:15.012463+09:00"
         }
       },
-      "last_checked_at": "2026-11-13T15:32:39.876337+09:00",
-      "last_complete_poll_at": "2026-11-13T15:32:39.877057+09:00"
+      "last_checked_at": "2026-11-13T15:43:15.012463+09:00",
+      "last_complete_poll_at": "2026-11-13T15:43:15.014294+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-13",
@@ -7528,8 +7751,8 @@
       "last_success_at": "2026-11-13T10:27:12.104036+09:00"
     },
     "yahoo_price": {
-      "last_success_date": "2026-11-12",
-      "last_success_at": "2026-11-12T13:58:33.357923+09:00"
+      "last_success_date": "2026-11-13",
+      "last_success_at": "2026-11-13T15:43:16.132550+09:00"
     },
     "traders_split": {
       "last_success_date": "2026-11-13",
@@ -7723,7 +7946,7 @@
       "failure": 0
     },
     "2026-11-13": {
-      "success": 2,
+      "success": 4,
       "failure": 0
     }
   },
@@ -7806,11 +8029,11 @@
       "last_success_at": "2026-11-13T10:27:12.557992+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-13T15:32:33.846566+09:00",
-      "last_finished_at": "2026-11-13T15:32:39.941412+09:00",
+      "last_started_at": "2026-11-13T15:43:09.409752+09:00",
+      "last_finished_at": "2026-11-13T15:43:16.671789+09:00",
       "status": "success",
-      "run_id": "43379395343",
-      "last_success_at": "2026-11-13T15:32:39.941412+09:00"
+      "run_id": "43380618888",
+      "last_success_at": "2026-11-13T15:43:16.671789+09:00"
     }
   },
   "notification_log": [
