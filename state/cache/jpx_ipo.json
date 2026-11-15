@@ -1,7 +1,14 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-13T01:27:12.332120+00:00",
+  "fetched_at": "2026-11-15T20:41:14.767109+00:00",
   "data": [
+    {
+      "code": "681A",
+      "name": "（株）Ｂｅｒｒｙ",
+      "market": "グロース",
+      "listing_date": "2026-12-18",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
     {
       "code": "677A",
       "name": "（株）FOLIOホールディングス",
@@ -13,6 +20,13 @@
       "code": "676A",
       "name": "スマートニュース（株）",
       "market": "グロース",
+      "listing_date": "2026-12-15",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "code": "679A",
+      "name": "（株）WHI Holdings（※）",
+      "market": "プライム",
       "listing_date": "2026-12-15",
       "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
     },
