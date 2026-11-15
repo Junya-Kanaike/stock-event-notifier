@@ -3828,9 +3828,13 @@
         {
           "date": "2026-11-16",
           "label": "pricing_day+26bd",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "4dc877e58dd1d548c7e1dabac6c920066fc32346b509daa356d58aaf7fe1569e",
+          "sent_at": "2026-11-16T06:00:19.148034+09:00",
+          "sent_by": "43761172082",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120260928540928.pdf",
@@ -7482,10 +7486,6 @@
   },
   "schema_version": 2,
   "notification_stats": {
-    "2026-10-02": {
-      "success": 7,
-      "failure": 0
-    },
     "2026-10-03": {
       "success": 2,
       "failure": 0
@@ -7661,6 +7661,10 @@
     "2026-11-15": {
       "success": 1,
       "failure": 0
+    },
+    "2026-11-16": {
+      "success": 1,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -7731,11 +7735,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-14T03:28:56.680771+09:00",
-      "last_finished_at": "2026-11-14T03:28:56.702722+09:00",
+      "last_started_at": "2026-11-16T06:00:19.091459+09:00",
+      "last_finished_at": "2026-11-16T06:00:19.420600+09:00",
       "status": "success",
-      "run_id": "43483016110",
-      "last_success_at": "2026-11-14T03:28:56.702722+09:00"
+      "run_id": "43761172082",
+      "last_success_at": "2026-11-16T06:00:19.420600+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-16T05:41:11.078728+09:00",
@@ -9614,6 +9618,18 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "43306000965"
+    },
+    {
+      "event_id": "po-4221-2026-09-30",
+      "channel": "po",
+      "scheduled_for": "2026-11-16",
+      "label": "pricing_day+26bd",
+      "attempted_at": "2026-11-16T06:00:19.148034+09:00",
+      "outcome": "accepted",
+      "notification_id": "4dc877e58dd1d548c7e1dabac6c920066fc32346b509daa356d58aaf7fe1569e",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "43761172082"
     }
   ],
   "delivery_receipt_artifacts": [
