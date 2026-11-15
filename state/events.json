@@ -2927,7 +2927,7 @@
         "confirmed_size_yen": 8708427200,
         "confirmed_size_oku": 87.084272,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260827527452.pdf|https://www.release.tdnet.info/inbs/140120260907532664.pdf",
-        "calculation_recovery_attempt_date": "2026-11-13",
+        "calculation_recovery_attempt_date": "2026-11-16",
         "calculation_missing_fields": [],
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260827527452.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260907532664.pdf: RuntimeError",
         "calculation_recovery_alerted": true
@@ -5364,8 +5364,8 @@
         "record_date_raw": "基準日:2026年11月20日",
         "rights_final_date": "2026-11-18",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -5644,7 +5644,7 @@
         ],
         "pending_notified": true,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120261104563800.pdf|https://www.release.tdnet.info/inbs/140120261111574098.pdf",
-        "calculation_recovery_attempt_date": "2026-11-13",
+        "calculation_recovery_attempt_date": "2026-11-16",
         "latest_source_stage": "pricing"
       },
       "schedule": [],
@@ -5802,7 +5802,7 @@
         ],
         "pending_notified": true,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120261104563441.pdf",
-        "calculation_recovery_attempt_date": "2026-11-13",
+        "calculation_recovery_attempt_date": "2026-11-16",
         "latest_source_stage": "announcement"
       },
       "schedule": [],
@@ -7314,29 +7314,11 @@
   ],
   "source_health": {
     "tdnet": {
-      "last_checked_date": "2026-11-13",
-      "last_success_date": "2026-11-13",
+      "last_checked_date": "2026-11-16",
+      "last_success_date": "2026-11-16",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-13T22:20:34.546862+09:00",
+      "last_success_at": "2026-11-16T08:01:33.273768+09:00",
       "by_date": {
-        "2026-10-14": {
-          "checked_at": "2026-10-15T22:40:43.370413+09:00",
-          "count": 300,
-          "status": "success",
-          "last_success_at": "2026-10-15T22:40:43.370413+09:00"
-        },
-        "2026-10-15": {
-          "checked_at": "2026-10-16T22:26:38.212252+09:00",
-          "count": 300,
-          "status": "success",
-          "last_success_at": "2026-10-16T22:26:38.212252+09:00"
-        },
-        "2026-10-16": {
-          "checked_at": "2026-10-19T19:53:31.599339+09:00",
-          "count": 202,
-          "status": "success",
-          "last_success_at": "2026-10-19T19:53:31.599339+09:00"
-        },
         "2026-10-19": {
           "checked_at": "2026-10-20T23:08:41.259688+09:00",
           "count": 140,
@@ -7446,14 +7428,20 @@
           "last_success_at": "2026-11-13T22:20:32.872559+09:00"
         },
         "2026-11-13": {
-          "checked_at": "2026-11-13T22:20:34.544149+09:00",
+          "checked_at": "2026-11-16T08:01:32.104442+09:00",
           "count": 2221,
           "status": "success",
-          "last_success_at": "2026-11-13T22:20:34.544149+09:00"
+          "last_success_at": "2026-11-16T08:01:32.104442+09:00"
+        },
+        "2026-11-16": {
+          "checked_at": "2026-11-16T08:01:33.272379+09:00",
+          "count": 0,
+          "status": "success",
+          "last_success_at": "2026-11-16T08:01:33.272379+09:00"
         }
       },
-      "last_checked_at": "2026-11-13T22:20:34.544149+09:00",
-      "last_complete_poll_at": "2026-11-13T22:20:34.546872+09:00"
+      "last_checked_at": "2026-11-16T08:01:33.272379+09:00",
+      "last_complete_poll_at": "2026-11-16T08:01:33.273775+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-16",
@@ -7749,11 +7737,11 @@
       "last_success_at": "2026-11-16T05:41:14.992855+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-13T22:20:29.271849+09:00",
-      "last_finished_at": "2026-11-13T22:20:34.775337+09:00",
+      "last_started_at": "2026-11-16T08:01:21.171504+09:00",
+      "last_finished_at": "2026-11-16T08:01:33.395522+09:00",
       "status": "success",
-      "run_id": "43432786006",
-      "last_success_at": "2026-11-13T22:20:34.775337+09:00"
+      "run_id": "43772456452",
+      "last_success_at": "2026-11-16T08:01:33.395522+09:00"
     }
   },
   "notification_log": [
