@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-15T20:41:13.971340+00:00",
+  "fetched_at": "2026-11-16T00:19:53.160524+00:00",
   "data": {
     "9706": [
       {
@@ -112,6 +112,16 @@
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
+    "6856": [
+      {
+        "code": "6856",
+        "name": "堀場製",
+        "rights_final_date": "2026-12-28",
+        "ratio": "5",
+        "effective_date": "2027-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
     "6507": [
       {
         "code": "6507",
@@ -166,6 +176,16 @@
       {
         "code": "2207",
         "name": "ｍｅｉｔｏ",
+        "rights_final_date": "2026-12-28",
+        "ratio": "2",
+        "effective_date": "2027-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "7812": [
+      {
+        "code": "7812",
+        "name": "クレステック",
         "rights_final_date": "2026-12-28",
         "ratio": "2",
         "effective_date": "2027-01-01",
