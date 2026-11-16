@@ -2520,7 +2520,11 @@
     "140120261116581180",
     "140120261113580251",
     "140120261116581228",
-    "140120261116581291"
+    "140120261116581291",
+    "140120261113580299",
+    "140120261116580893",
+    "140120261116581122",
+    "140120261116581421"
   ],
   "events": [
     {
@@ -7455,6 +7459,84 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "po-249A-2026-11-16",
+      "type": "po",
+      "code": "249A",
+      "name": "ヒューマンアジャスト",
+      "market": "PRO Market",
+      "margin": "対象外",
+      "announced_at": "2026-11-16T16:15:00+09:00",
+      "detail": {
+        "parser_version": 4,
+        "po_kind": "both",
+        "source_stage": "announcement",
+        "size_oku": null,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "unavailable",
+        "size_basis": null,
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "public_offering_shares": 120000,
+        "secondary_sale_shares": 80000,
+        "oa_shares": 30000,
+        "total_offered_shares": 230000,
+        "share_breakdown_complete": true,
+        "oa_marker_present": true,
+        "issue_price_yen": null,
+        "sale_price_yen": null,
+        "offer_price_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": "2026-12-11",
+        "pricing_date_end": "2026-12-14",
+        "pricing_date_raw": "価格決定日2026年12月11日（金曜日）（発行価格及び売出価格は、募集株式の払込金額以上の価格で、仮条件における需要状況等を勘案したうえで決定する。）（4）募集・売出期間2026年12月14日（月曜日）から2026年12月17日（木曜日）まで（5）払込期日2026年12月18日（金曜日）（※）オーバーアロットメントによる売出しは、公募による募集株式発行及び",
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "provisional",
+        "settlement_date": "2026-12-21",
+        "settlement_date_end": null,
+        "settlement_date_raw": "受渡期日2026年12月21日（月曜日）（10）引受人の対価引受手数料は支払わず、これに代わるものとして一般募集における発行価格から引受価額を差し引いた額の総額を引受人の手取金とする",
+        "settlement_estimated": false,
+        "settlement_date_status": "confirmed",
+        "parse_warnings": [
+          "⚠️ Yahoo終値取得失敗 (RuntimeError)"
+        ],
+        "missing_fields": [
+          "size",
+          "dilution_pct"
+        ],
+        "notification_tracking_started": true,
+        "effective_size_yen": null,
+        "po_threshold_ever_met": false,
+        "calculation_missing_fields": [
+          "effective_size_yen"
+        ],
+        "reference_close_failure_key": "2026-11-16:RuntimeError"
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261116581421.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261116581421.pdf",
+      "source_title": "募集株式発行及び株式売出しに関する取締役会決議に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261116581421",
+          "relation": "source",
+          "title": "募集株式発行及び株式売出しに関する取締役会決議に関するお知らせ",
+          "announced_at": "2026-11-16T16:15:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261116581421.pdf",
+          "market": "東証・福証"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "PRO Market"
+        ]
+      }
     }
   ],
   "source_health": {
@@ -7462,7 +7544,7 @@
       "last_checked_date": "2026-11-16",
       "last_success_date": "2026-11-16",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-16T16:17:43.610525+09:00",
+      "last_success_at": "2026-11-16T16:28:14.587563+09:00",
       "by_date": {
         "2026-10-19": {
           "checked_at": "2026-10-20T23:08:41.259688+09:00",
@@ -7573,20 +7655,20 @@
           "last_success_at": "2026-11-13T22:20:32.872559+09:00"
         },
         "2026-11-13": {
-          "checked_at": "2026-11-16T16:17:42.711860+09:00",
+          "checked_at": "2026-11-16T16:28:13.748331+09:00",
           "count": 2221,
           "status": "success",
-          "last_success_at": "2026-11-16T16:17:42.711860+09:00"
+          "last_success_at": "2026-11-16T16:28:13.748331+09:00"
         },
         "2026-11-16": {
-          "checked_at": "2026-11-16T16:17:43.609100+09:00",
-          "count": 240,
+          "checked_at": "2026-11-16T16:28:14.586168+09:00",
+          "count": 302,
           "status": "success",
-          "last_success_at": "2026-11-16T16:17:43.609100+09:00"
+          "last_success_at": "2026-11-16T16:28:14.586168+09:00"
         }
       },
-      "last_checked_at": "2026-11-16T16:17:43.609100+09:00",
-      "last_complete_poll_at": "2026-11-16T16:17:43.610532+09:00"
+      "last_checked_at": "2026-11-16T16:28:14.586168+09:00",
+      "last_complete_poll_at": "2026-11-16T16:28:14.587571+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-16",
@@ -7796,7 +7878,7 @@
       "failure": 0
     },
     "2026-11-16": {
-      "success": 3,
+      "success": 4,
       "failure": 0
     }
   },
@@ -7882,11 +7964,11 @@
       "last_success_at": "2026-11-16T09:19:54.240343+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-16T16:17:39.447202+09:00",
-      "last_finished_at": "2026-11-16T16:17:43.736634+09:00",
+      "last_started_at": "2026-11-16T16:28:10.907394+09:00",
+      "last_finished_at": "2026-11-16T16:28:15.274939+09:00",
       "status": "success",
-      "run_id": "43822754959",
-      "last_success_at": "2026-11-16T16:17:43.736634+09:00"
+      "run_id": "43824046545",
+      "last_success_at": "2026-11-16T16:28:15.274939+09:00"
     }
   },
   "notification_log": [
