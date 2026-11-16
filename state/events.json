@@ -2517,7 +2517,10 @@
     "140120261113580148",
     "140120261116580798",
     "140120261116580876",
-    "140120261116581180"
+    "140120261116581180",
+    "140120261113580251",
+    "140120261116581228",
+    "140120261116581291"
   ],
   "events": [
     {
@@ -7328,6 +7331,126 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "po-6036-2026-11-16",
+      "type": "po",
+      "code": "6036",
+      "name": "ＫｅｅＰｅｒ技研",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-11-16T15:30:00+09:00",
+      "detail": {
+        "parser_version": 4,
+        "po_kind": "secondary",
+        "source_stage": "announcement",
+        "size_oku": 129.22481728,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "estimated",
+        "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "public_offering_shares": null,
+        "secondary_sale_shares": 7309096,
+        "oa_shares": 0,
+        "total_offered_shares": 7309096,
+        "share_breakdown_complete": true,
+        "oa_marker_present": false,
+        "issue_price_yen": null,
+        "sale_price_yen": null,
+        "offer_price_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": "2026-11-16",
+        "pricing_date_end": null,
+        "pricing_date_raw": "売出価格 1株当たり1,871円 売出価額の総額 13,675,318,616円 売出方法 出光興産株式会社を相手方とする相対取引による売出し 売出しの相手方 出光興産株式会社 申込期間 該当事項なし 受渡予定日 2026年11月16日（予定） 本件売出しは、VTホールディングスが保有する既発行の当社普通株式を出光興産に譲渡するものであり、 当社による新株式",
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "provisional",
+        "settlement_date": "2026-11-24",
+        "settlement_date_end": null,
+        "settlement_date_raw": null,
+        "settlement_estimated": true,
+        "settlement_date_status": "estimated",
+        "parse_warnings": [],
+        "missing_fields": [
+          "dilution_pct"
+        ],
+        "notification_tracking_started": true,
+        "reference_close_yen": 1768.0,
+        "reference_close_date": "2026-11-16",
+        "reference_close_source": "Yahoo Finance chart (raw close)",
+        "reference_close_kind": "announcement_close",
+        "estimated_size_yen": 12922481728,
+        "estimated_size_oku": 129.22481728,
+        "effective_size_yen": 12922481728,
+        "po_threshold_ever_met": true,
+        "calculation_missing_fields": [],
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-11-16",
+          "label": "pricing_day",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-11-17",
+          "label": "pricing_day+1",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-11-18",
+          "label": "pricing_day+2",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-11-24",
+          "label": "settlement",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-12-22",
+          "label": "pricing_day+25bd",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-12-23",
+          "label": "pricing_day+26bd",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261116581228.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261116581228.pdf",
+      "source_title": "株式の売出し及び主要株主の異動に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261116581228",
+          "relation": "source",
+          "title": "株式の売出し及び主要株主の異動に関するお知らせ",
+          "announced_at": "2026-11-16T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261116581228.pdf",
+          "market": "東証・名証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
@@ -7335,7 +7458,7 @@
       "last_checked_date": "2026-11-16",
       "last_success_date": "2026-11-16",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-16T15:35:10.108778+09:00",
+      "last_success_at": "2026-11-16T15:45:47.885461+09:00",
       "by_date": {
         "2026-10-19": {
           "checked_at": "2026-10-20T23:08:41.259688+09:00",
@@ -7446,20 +7569,20 @@
           "last_success_at": "2026-11-13T22:20:32.872559+09:00"
         },
         "2026-11-13": {
-          "checked_at": "2026-11-16T15:35:09.293577+09:00",
+          "checked_at": "2026-11-16T15:45:46.632856+09:00",
           "count": 2221,
           "status": "success",
-          "last_success_at": "2026-11-16T15:35:09.293577+09:00"
+          "last_success_at": "2026-11-16T15:45:46.632856+09:00"
         },
         "2026-11-16": {
-          "checked_at": "2026-11-16T15:35:10.107780+09:00",
-          "count": 89,
+          "checked_at": "2026-11-16T15:45:47.883687+09:00",
+          "count": 235,
           "status": "success",
-          "last_success_at": "2026-11-16T15:35:10.107780+09:00"
+          "last_success_at": "2026-11-16T15:45:47.883687+09:00"
         }
       },
-      "last_checked_at": "2026-11-16T15:35:10.107780+09:00",
-      "last_complete_poll_at": "2026-11-16T15:35:10.108784+09:00"
+      "last_checked_at": "2026-11-16T15:45:47.883687+09:00",
+      "last_complete_poll_at": "2026-11-16T15:45:47.885470+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-16",
@@ -7474,8 +7597,8 @@
       "last_success_at": "2026-11-16T09:19:53.697221+09:00"
     },
     "yahoo_price": {
-      "last_success_date": "2026-11-13",
-      "last_success_at": "2026-11-13T15:43:16.132550+09:00"
+      "last_success_date": "2026-11-16",
+      "last_success_at": "2026-11-16T15:45:48.365457+09:00"
     },
     "traders_split": {
       "last_success_date": "2026-11-16",
@@ -7669,7 +7792,7 @@
       "failure": 0
     },
     "2026-11-16": {
-      "success": 1,
+      "success": 2,
       "failure": 0
     }
   },
@@ -7755,11 +7878,11 @@
       "last_success_at": "2026-11-16T09:19:54.240343+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-16T15:35:05.299195+09:00",
-      "last_finished_at": "2026-11-16T15:35:10.190286+09:00",
+      "last_started_at": "2026-11-16T15:45:42.512038+09:00",
+      "last_finished_at": "2026-11-16T15:45:48.694866+09:00",
       "status": "success",
-      "run_id": "43817713806",
-      "last_success_at": "2026-11-16T15:35:10.190286+09:00"
+      "run_id": "43818960083",
+      "last_success_at": "2026-11-16T15:45:48.694866+09:00"
     }
   },
   "notification_log": [
