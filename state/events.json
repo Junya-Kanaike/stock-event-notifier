@@ -4326,8 +4326,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -4337,7 +4337,10 @@
         "eligible_notified": true,
         "traders_rights_final_date": "2026-11-26",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "ratio_source": "traders_web"
+        "ratio_source": "traders_web",
+        "jpx_ex_right_date": "2026-11-27",
+        "jpx_rights_final_date": "2026-11-26",
+        "jpx_ex_rights_source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
       },
       "schedule": [
         {
@@ -4668,8 +4671,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -4678,7 +4681,10 @@
         "effective_date_raw": "効力発生日 2026 年12月 1日（火） （5） その他 今回の株式分割に際しまして、資本金の額に変更はありません。 2.定款の一部変更 （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2026年12月1日をもって当社定款第6条 に定める発行可能株式総数を変更いたします。 （2）変更の内容 （下線は変更部分を示しております。）",
         "eligible_notified": true,
         "traders_rights_final_date": "2026-11-26",
-        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split"
+        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
+        "jpx_ex_right_date": "2026-11-27",
+        "jpx_rights_final_date": "2026-11-26",
+        "jpx_ex_rights_source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
       },
       "schedule": [
         {
@@ -5292,8 +5298,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -5303,7 +5309,10 @@
         "eligible_notified": true,
         "traders_rights_final_date": "2026-11-26",
         "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
-        "ratio_source": "traders_web"
+        "ratio_source": "traders_web",
+        "jpx_ex_right_date": "2026-11-27",
+        "jpx_rights_final_date": "2026-11-26",
+        "jpx_ex_rights_source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
       },
       "schedule": [
         {
@@ -5390,8 +5399,8 @@
         "record_date_raw": "基準日:2026年11月20日",
         "rights_final_date": "2026-11-18",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -6153,9 +6162,13 @@
         {
           "date": "2026-11-17",
           "label": "pricing_day",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "0115d0a7bf91c6994485d081a9c13873787ceb50026daada7eee52daa115f526",
+          "sent_at": "2026-11-17T06:08:27.738600+09:00",
+          "sent_by": "43952224261",
+          "reference_only": false
         },
         {
           "date": "2026-11-18",
@@ -6354,8 +6367,12 @@
         {
           "date": "2026-11-17",
           "label": "execution-1bd",
-          "sent": false,
-          "not_before_jst": "06:00"
+          "sent": true,
+          "not_before_jst": "06:00",
+          "notification_id": "1d9b4b0df0d3572520ff5c7fb6e47396a3c51358f4daf3969e620c3d2f693b8c",
+          "sent_at": "2026-11-17T06:08:27.557426+09:00",
+          "sent_by": "43952224261",
+          "reference_only": false
         },
         {
           "date": "2026-11-18",
@@ -7423,9 +7440,13 @@
         {
           "date": "2026-11-17",
           "label": "pricing_day+1",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "9a6da299ae2509665c717d413516f3adf7c80a869d52562de211c8284fba582f",
+          "sent_at": "2026-11-17T06:08:27.917195+09:00",
+          "sent_by": "43952224261",
+          "reference_only": false
         },
         {
           "date": "2026-11-18",
@@ -7553,6 +7574,70 @@
         "reasons": [
           "PRO Market"
         ]
+      }
+    },
+    {
+      "id": "ipo-686A-2026-12-18",
+      "type": "ipo",
+      "code": "686A",
+      "name": "（株）ＩＧホールディングス",
+      "market": "スタンダード",
+      "margin": "対象外",
+      "announced_at": "2026-11-17T06:08:27.276270+09:00",
+      "detail": {
+        "listing_date": "2026-12-18",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-12-17",
+          "label": "listing-1bd",
+          "sent": false,
+          "not_before_jst": "06:00"
+        },
+        {
+          "date": "2026-12-18",
+          "label": "listing_day",
+          "sent": false,
+          "not_before_jst": "06:00"
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
+    },
+    {
+      "id": "ipo-688A-2026-12-18",
+      "type": "ipo",
+      "code": "688A",
+      "name": "（株）コネクティ",
+      "market": "グロース",
+      "margin": "対象外",
+      "announced_at": "2026-11-17T06:08:27.276319+09:00",
+      "detail": {
+        "listing_date": "2026-12-18",
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-12-17",
+          "label": "listing-1bd",
+          "sent": false,
+          "not_before_jst": "06:00"
+        },
+        {
+          "date": "2026-12-18",
+          "label": "listing_day",
+          "sent": false,
+          "not_before_jst": "06:00"
+        }
+      ],
+      "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
       }
     }
   ],
@@ -7688,40 +7773,36 @@
       "last_complete_poll_at": "2026-11-16T22:34:14.476508+09:00"
     },
     "jpx_master": {
-      "last_success_date": "2026-11-16",
-      "last_success_at": "2026-11-16T09:19:50.700168+09:00"
+      "last_success_date": "2026-11-17",
+      "last_success_at": "2026-11-17T06:08:23.952457+09:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-11-16",
-      "last_success_at": "2026-11-16T09:19:51.448841+09:00"
+      "last_success_date": "2026-11-17",
+      "last_success_at": "2026-11-17T06:08:24.718598+09:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-11-16",
-      "last_success_at": "2026-11-16T09:19:53.697221+09:00"
+      "last_success_date": "2026-11-17",
+      "last_success_at": "2026-11-17T06:08:26.902394+09:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-11-16",
       "last_success_at": "2026-11-16T15:45:48.365457+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-11-16",
-      "last_success_at": "2026-11-16T22:34:10.031466+09:00"
+      "last_success_date": "2026-11-17",
+      "last_success_at": "2026-11-17T06:08:26.353651+09:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-11-16",
-      "last_success_at": "2026-11-16T09:19:53.939879+09:00"
+      "last_success_date": "2026-11-17",
+      "last_success_at": "2026-11-17T06:08:27.275370+09:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-11-16",
-      "last_success_at": "2026-11-16T09:19:54.239249+09:00"
+      "last_success_date": "2026-11-17",
+      "last_success_at": "2026-11-17T06:08:27.554345+09:00"
     }
   },
   "schema_version": 2,
   "notification_stats": {
-    "2026-10-03": {
-      "success": 2,
-      "failure": 0
-    },
     "2026-10-04": {
       "success": 1,
       "failure": 0
@@ -7897,6 +7978,10 @@
     "2026-11-16": {
       "success": 5,
       "failure": 0
+    },
+    "2026-11-17": {
+      "success": 3,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -7975,11 +8060,11 @@
       "last_success_at": "2026-11-17T05:57:25.258792+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-11-16T09:19:49.961724+09:00",
-      "last_finished_at": "2026-11-16T09:19:54.240343+09:00",
+      "last_started_at": "2026-11-17T06:08:23.066406+09:00",
+      "last_finished_at": "2026-11-17T06:08:28.098051+09:00",
       "status": "success",
-      "run_id": "43779698463",
-      "last_success_at": "2026-11-16T09:19:54.240343+09:00"
+      "run_id": "43952224261",
+      "last_success_at": "2026-11-17T06:08:28.098051+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-11-16T22:34:08.641618+09:00",
@@ -9875,6 +9960,42 @@
       "reference_only": true,
       "error_type": null,
       "run_id": "43819825303"
+    },
+    {
+      "event_id": "bunbai-7444-2026-11-10",
+      "channel": "bunbai",
+      "scheduled_for": "2026-11-17",
+      "label": "execution-1bd",
+      "attempted_at": "2026-11-17T06:08:27.557426+09:00",
+      "outcome": "accepted",
+      "notification_id": "1d9b4b0df0d3572520ff5c7fb6e47396a3c51358f4daf3969e620c3d2f693b8c",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "43952224261"
+    },
+    {
+      "event_id": "po-446A-2026-11-09",
+      "channel": "po",
+      "scheduled_for": "2026-11-17",
+      "label": "pricing_day",
+      "attempted_at": "2026-11-17T06:08:27.738600+09:00",
+      "outcome": "accepted",
+      "notification_id": "0115d0a7bf91c6994485d081a9c13873787ceb50026daada7eee52daa115f526",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "43952224261"
+    },
+    {
+      "event_id": "po-6036-2026-11-16",
+      "channel": "po",
+      "scheduled_for": "2026-11-17",
+      "label": "pricing_day+1",
+      "attempted_at": "2026-11-17T06:08:27.917195+09:00",
+      "outcome": "accepted",
+      "notification_id": "9a6da299ae2509665c717d413516f3adf7c80a869d52562de211c8284fba582f",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "43952224261"
     }
   ],
   "delivery_receipt_artifacts": [

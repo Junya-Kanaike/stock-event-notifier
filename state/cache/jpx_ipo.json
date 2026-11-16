@@ -1,10 +1,24 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-16T00:19:53.939879+00:00",
+  "fetched_at": "2026-11-16T21:08:27.275370+00:00",
   "data": [
     {
       "code": "681A",
       "name": "（株）Ｂｅｒｒｙ",
+      "market": "グロース",
+      "listing_date": "2026-12-18",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "code": "686A",
+      "name": "（株）ＩＧホールディングス",
+      "market": "スタンダード",
+      "listing_date": "2026-12-18",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "code": "688A",
+      "name": "（株）コネクティ",
       "market": "グロース",
       "listing_date": "2026-12-18",
       "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"

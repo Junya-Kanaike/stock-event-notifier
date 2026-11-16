@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-16T00:19:53.697221+00:00",
+  "fetched_at": "2026-11-16T21:08:26.902394+00:00",
   "data": {
     "6861": {
       "code": "6861",
@@ -9,6 +9,60 @@
       "ex_right_date": "2026-11-19",
       "record_date": "2026-11-20",
       "rights_final_date": "2026-11-18",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "138A": {
+      "code": "138A",
+      "name": "Ｇ－光フードサービス",
+      "market": "グロース市場",
+      "ex_right_date": "2026-11-27",
+      "record_date": "2026-11-30",
+      "rights_final_date": "2026-11-26",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "3374": {
+      "code": "3374",
+      "name": "内外テック",
+      "market": "スタンダード市場",
+      "ex_right_date": "2026-11-27",
+      "record_date": "2026-11-30",
+      "rights_final_date": "2026-11-26",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "4616": {
+      "code": "4616",
+      "name": "川上塗料",
+      "market": "スタンダード市場",
+      "ex_right_date": "2026-11-27",
+      "record_date": "2026-11-30",
+      "rights_final_date": "2026-11-26",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "6474": {
+      "code": "6474",
+      "name": "不二越",
+      "market": "プライム市場",
+      "ex_right_date": "2026-11-27",
+      "record_date": "2026-11-30",
+      "rights_final_date": "2026-11-26",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "7921": {
+      "code": "7921",
+      "name": "ＴＡＫＡＲＡ＆ＣＯ",
+      "market": "プライム市場",
+      "ex_right_date": "2026-11-27",
+      "record_date": "2026-11-30",
+      "rights_final_date": "2026-11-26",
+      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
+    },
+    "8976": {
+      "code": "8976",
+      "name": "Ｒ－大和ＯＦ",
+      "market": "その他",
+      "ex_right_date": "2026-11-27",
+      "record_date": "2026-11-30",
+      "rights_final_date": "2026-11-26",
       "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
     }
   }
