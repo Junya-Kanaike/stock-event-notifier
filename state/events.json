@@ -2544,7 +2544,9 @@
     "140120261110570522",
     "140120261117581913",
     "140120261117582120",
-    "140120261116581091"
+    "140120261116581091",
+    "140120261117582038",
+    "140120261117582271"
   ],
   "events": [
     {
@@ -6125,11 +6127,11 @@
         "parser_version": 4,
         "po_kind": "secondary",
         "source_stage": "announcement",
-        "size_oku": 332.514,
+        "size_oku": 281.61,
         "size_oku_min": null,
         "size_oku_max": null,
-        "size_status": "estimated",
-        "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+        "size_status": "confirmed",
+        "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
         "share_count": null,
         "oa_share_count": null,
         "price_min_yen": null,
@@ -6140,21 +6142,21 @@
         "total_offered_shares": 12600000,
         "share_breakdown_complete": true,
         "oa_marker_present": true,
-        "issue_price_yen": null,
-        "sale_price_yen": null,
-        "offer_price_yen": null,
+        "issue_price_yen": 2235.0,
+        "sale_price_yen": 2235.0,
+        "offer_price_yen": 2235.0,
         "dilution_pct": null,
         "dilution_status": "unavailable",
         "pricing_date": "2026-11-17",
-        "pricing_date_end": "2026-11-20",
+        "pricing_date_end": "2026-11-17",
         "pricing_date_raw": "2026年11月17日（火）から2026年11月20日（金）までの間のいずれかの日（以下、「売出価格等決定日",
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "provisional",
+        "pricing_date_confirmed": true,
+        "pricing_date_status": "confirmed",
         "settlement_date": "2026-11-25",
         "settlement_date_end": null,
-        "settlement_date_raw": "受渡期日売出価格等決定日の5営業日後の日（7）申込証拠金1株につき売出価格と同一の金額とする",
-        "settlement_estimated": true,
-        "settlement_date_status": "estimated",
+        "settlement_date_raw": "受渡期日2026年11月25日（水）（注）引受人は、引受価額で買取引受けを行い、売出価格で売出しを行います",
+        "settlement_estimated": false,
+        "settlement_date_status": "confirmed",
         "parse_warnings": [],
         "missing_fields": [
           "dilution_pct"
@@ -6166,10 +6168,13 @@
         "reference_close_kind": "announcement_close",
         "estimated_size_yen": 33251400000,
         "estimated_size_oku": 332.514,
-        "effective_size_yen": 33251400000,
+        "effective_size_yen": 28161000000,
         "po_threshold_ever_met": true,
         "calculation_missing_fields": [],
-        "eligible_notified": true
+        "eligible_notified": true,
+        "latest_source_stage": "pricing",
+        "confirmed_size_yen": 28161000000,
+        "confirmed_size_oku": 281.61
       },
       "schedule": [
         {
@@ -6220,7 +6225,7 @@
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261007547553.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261007547553.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261117582038.pdf",
       "source_title": "株式の売出しに関するお知らせ",
       "related_disclosures": [
         {
@@ -6229,6 +6234,14 @@
           "title": "株式の売出しに関するお知らせ",
           "announced_at": "2026-11-09T16:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261007547553.pdf",
+          "market": "東証"
+        },
+        {
+          "id": "140120261117582038",
+          "relation": "pricing",
+          "title": "売出価格等の決定に関するお知らせ",
+          "announced_at": "2026-11-17T17:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261117582038.pdf",
           "market": "東証"
         }
       ],
@@ -6371,8 +6384,8 @@
       "announced_at": "2026-11-10T16:00:00+09:00",
       "detail": {
         "execution_date": "2026-11-18",
-        "execution_date_raw": "分売予定期間2026年11月18日（水）～2026年11月25日（水）3.分売値段分売実施の前日の終値もしくは最終気配値を基準として決定いたします4.買付申込数量の限度買付顧客1人につき1,000株（売買単位:100株）5.実施取引所東京証券取引所6.実施の目的一定数量の売却意向があり、当社として検討した結果、当社株式の分布状況の改善および流動性向上を図るた",
-        "execution_date_confirmed": false,
+        "execution_date_raw": "分売実施日2026年11月18日（水）3.分売値段1,817円4.買付申込数量の限度買付顧客1人につき1,000株（売買単位:100株）5.実施取引所東京証券取引所6.実施の目的一定数量の売却意向があり、当社として検討した結果、当社株式の分布状況の改善および流動性向上を図るため（ご参考）分売値段の算定①算定基準日およびその価格2026年11月17日（火）1,",
+        "execution_date_confirmed": true,
         "notification_tracking_started": true,
         "eligible_notified": true
       },
@@ -6403,7 +6416,7 @@
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261110570919.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261110570919.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261117582271.pdf",
       "source_title": "株式の立会外分売に関するお知らせ",
       "related_disclosures": [
         {
@@ -6412,6 +6425,14 @@
           "title": "株式の立会外分売に関するお知らせ",
           "announced_at": "2026-11-10T16:00:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261110570919.pdf",
+          "market": "東証"
+        },
+        {
+          "id": "140120261117582271",
+          "relation": "execution",
+          "title": "株式の立会外分売実施に関するお知らせ",
+          "announced_at": "2026-11-17T17:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261117582271.pdf",
           "market": "東証"
         }
       ],
@@ -7661,7 +7682,7 @@
       "last_checked_date": "2026-11-17",
       "last_success_date": "2026-11-17",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-17T16:58:26.736069+09:00",
+      "last_success_at": "2026-11-17T17:08:54.987338+09:00",
       "by_date": {
         "2026-10-19": {
           "checked_at": "2026-10-20T23:08:41.259688+09:00",
@@ -7778,20 +7799,20 @@
           "last_success_at": "2026-11-16T22:34:13.704823+09:00"
         },
         "2026-11-16": {
-          "checked_at": "2026-11-17T16:58:26.026956+09:00",
+          "checked_at": "2026-11-17T17:08:54.256579+09:00",
           "count": 408,
           "status": "success",
-          "last_success_at": "2026-11-17T16:58:26.026956+09:00"
+          "last_success_at": "2026-11-17T17:08:54.256579+09:00"
         },
         "2026-11-17": {
-          "checked_at": "2026-11-17T16:58:26.735704+09:00",
-          "count": 115,
+          "checked_at": "2026-11-17T17:08:54.987005+09:00",
+          "count": 135,
           "status": "success",
-          "last_success_at": "2026-11-17T16:58:26.735704+09:00"
+          "last_success_at": "2026-11-17T17:08:54.987005+09:00"
         }
       },
-      "last_checked_at": "2026-11-17T16:58:26.735704+09:00",
-      "last_complete_poll_at": "2026-11-17T16:58:26.736077+09:00"
+      "last_checked_at": "2026-11-17T17:08:54.987005+09:00",
+      "last_complete_poll_at": "2026-11-17T17:08:54.987345+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-17",
@@ -8001,7 +8022,7 @@
       "failure": 0
     },
     "2026-11-17": {
-      "success": 3,
+      "success": 4,
       "failure": 0
     }
   },
@@ -8088,11 +8109,11 @@
       "last_success_at": "2026-11-17T12:07:04.221093+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-17T16:58:21.788686+09:00",
-      "last_finished_at": "2026-11-17T16:58:26.781353+09:00",
+      "last_started_at": "2026-11-17T17:08:50.907910+09:00",
+      "last_finished_at": "2026-11-17T17:08:55.769571+09:00",
       "status": "success",
-      "run_id": "44042779454",
-      "last_success_at": "2026-11-17T16:58:26.781353+09:00"
+      "run_id": "44044209408",
+      "last_success_at": "2026-11-17T17:08:55.769571+09:00"
     }
   },
   "notification_log": [
