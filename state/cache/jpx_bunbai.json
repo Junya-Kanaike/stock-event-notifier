@@ -1,7 +1,13 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-17T03:07:04.220146+00:00",
+  "fetched_at": "2026-11-17T20:41:29.006515+00:00",
   "data": [
+    {
+      "code": "7444",
+      "name": "ハリマ共和物産（株）",
+      "execution_date": "2026-11-18",
+      "source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
+    },
     {
       "code": "3371",
       "name": "（株）ソフトクリエイトホールディングス",
