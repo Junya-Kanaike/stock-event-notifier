@@ -5597,9 +5597,13 @@
         {
           "date": "2026-11-18",
           "label": "execution+5bd",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "186e20825523e9416c2e3c71120861dc9321c04e35950fd1cc6b519b1bf97eb2",
+          "sent_at": "2026-11-18T06:00:39.012226+09:00",
+          "sent_by": "44175226877",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261029559957.pdf",
@@ -6192,9 +6196,13 @@
         {
           "date": "2026-11-18",
           "label": "pricing_day+1",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "f790f92aec4597d7f219db94a36252ce662c03acfe7066606a4c968ac38d5c2f",
+          "sent_at": "2026-11-18T06:00:39.333149+09:00",
+          "sent_by": "44175226877",
+          "reference_only": false
         },
         {
           "date": "2026-11-19",
@@ -6404,9 +6412,13 @@
         {
           "date": "2026-11-18",
           "label": "execution_day",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "eb0b8e6c3a03d85c05008aeb08460419fbdc779c5aea6b83e660500064289d17",
+          "sent_at": "2026-11-18T06:00:39.169511+09:00",
+          "sent_by": "44175226877",
+          "reference_only": false
         },
         {
           "date": "2026-11-26",
@@ -7487,9 +7499,13 @@
         {
           "date": "2026-11-18",
           "label": "pricing_day+2",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "b8cf24db7aed061aee2e6b33c17016111294300ba8a5d74afdd94a95c792b5d6",
+          "sent_at": "2026-11-18T06:00:39.795835+09:00",
+          "sent_by": "44175226877",
+          "reference_only": false
         },
         {
           "date": "2026-11-24",
@@ -7853,10 +7869,6 @@
   },
   "schema_version": 2,
   "notification_stats": {
-    "2026-10-04": {
-      "success": 1,
-      "failure": 0
-    },
     "2026-10-05": {
       "success": 35,
       "failure": 0
@@ -8032,6 +8044,10 @@
     "2026-11-17": {
       "success": 5,
       "failure": 0
+    },
+    "2026-11-18": {
+      "success": 4,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -8104,11 +8120,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-18T04:46:50.863623+09:00",
-      "last_finished_at": "2026-11-18T04:46:50.876602+09:00",
+      "last_started_at": "2026-11-18T06:00:38.961760+09:00",
+      "last_finished_at": "2026-11-18T06:00:40.145688+09:00",
       "status": "success",
-      "run_id": "44162166679",
-      "last_success_at": "2026-11-18T04:46:50.876602+09:00"
+      "run_id": "44175226877",
+      "last_success_at": "2026-11-18T06:00:40.145688+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-18T05:41:23.199398+09:00",
@@ -10047,6 +10063,54 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "43952224261"
+    },
+    {
+      "event_id": "bunbai-3371-2026-11-02",
+      "channel": "bunbai",
+      "scheduled_for": "2026-11-18",
+      "label": "execution+5bd",
+      "attempted_at": "2026-11-18T06:00:39.012226+09:00",
+      "outcome": "accepted",
+      "notification_id": "186e20825523e9416c2e3c71120861dc9321c04e35950fd1cc6b519b1bf97eb2",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "44175226877"
+    },
+    {
+      "event_id": "bunbai-7444-2026-11-10",
+      "channel": "bunbai",
+      "scheduled_for": "2026-11-18",
+      "label": "execution_day",
+      "attempted_at": "2026-11-18T06:00:39.169511+09:00",
+      "outcome": "accepted",
+      "notification_id": "eb0b8e6c3a03d85c05008aeb08460419fbdc779c5aea6b83e660500064289d17",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "44175226877"
+    },
+    {
+      "event_id": "po-446A-2026-11-09",
+      "channel": "po",
+      "scheduled_for": "2026-11-18",
+      "label": "pricing_day+1",
+      "attempted_at": "2026-11-18T06:00:39.333149+09:00",
+      "outcome": "accepted",
+      "notification_id": "f790f92aec4597d7f219db94a36252ce662c03acfe7066606a4c968ac38d5c2f",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "44175226877"
+    },
+    {
+      "event_id": "po-6036-2026-11-16",
+      "channel": "po",
+      "scheduled_for": "2026-11-18",
+      "label": "pricing_day+2",
+      "attempted_at": "2026-11-18T06:00:39.795835+09:00",
+      "outcome": "accepted",
+      "notification_id": "b8cf24db7aed061aee2e6b33c17016111294300ba8a5d74afdd94a95c792b5d6",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "44175226877"
     }
   ],
   "delivery_receipt_artifacts": [
