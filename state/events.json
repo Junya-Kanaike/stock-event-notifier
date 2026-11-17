@@ -2969,7 +2969,7 @@
         "confirmed_size_yen": 8708427200,
         "confirmed_size_oku": 87.084272,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260827527452.pdf|https://www.release.tdnet.info/inbs/140120260907532664.pdf",
-        "calculation_recovery_attempt_date": "2026-11-17",
+        "calculation_recovery_attempt_date": "2026-11-18",
         "calculation_missing_fields": [],
         "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260827527452.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260907532664.pdf: RuntimeError",
         "calculation_recovery_alerted": true
@@ -5695,7 +5695,7 @@
         ],
         "pending_notified": true,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120261104563800.pdf|https://www.release.tdnet.info/inbs/140120261111574098.pdf",
-        "calculation_recovery_attempt_date": "2026-11-17",
+        "calculation_recovery_attempt_date": "2026-11-18",
         "latest_source_stage": "pricing"
       },
       "schedule": [],
@@ -5852,7 +5852,7 @@
         ],
         "pending_notified": true,
         "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120261104563441.pdf|https://www.release.tdnet.info/inbs/140120261113580177.pdf",
-        "calculation_recovery_attempt_date": "2026-11-17",
+        "calculation_recovery_attempt_date": "2026-11-18",
         "latest_source_stage": "pricing"
       },
       "schedule": [],
@@ -7680,10 +7680,10 @@
   ],
   "source_health": {
     "tdnet": {
-      "last_checked_date": "2026-11-17",
-      "last_success_date": "2026-11-17",
+      "last_checked_date": "2026-11-18",
+      "last_success_date": "2026-11-18",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-17T19:59:33.072513+09:00",
+      "last_success_at": "2026-11-18T01:43:52.502053+09:00",
       "by_date": {
         "2026-10-19": {
           "checked_at": "2026-10-20T23:08:41.259688+09:00",
@@ -7806,14 +7806,20 @@
           "last_success_at": "2026-11-17T19:59:32.336171+09:00"
         },
         "2026-11-17": {
-          "checked_at": "2026-11-17T19:59:33.072134+09:00",
+          "checked_at": "2026-11-18T01:43:51.690968+09:00",
           "count": 147,
           "status": "success",
-          "last_success_at": "2026-11-17T19:59:33.072134+09:00"
+          "last_success_at": "2026-11-18T01:43:51.690968+09:00"
+        },
+        "2026-11-18": {
+          "checked_at": "2026-11-18T01:43:52.501866+09:00",
+          "count": 0,
+          "status": "success",
+          "last_success_at": "2026-11-18T01:43:52.501866+09:00"
         }
       },
-      "last_checked_at": "2026-11-17T19:59:33.072134+09:00",
-      "last_complete_poll_at": "2026-11-17T19:59:33.072521+09:00"
+      "last_checked_at": "2026-11-18T01:43:52.501866+09:00",
+      "last_complete_poll_at": "2026-11-18T01:43:52.502061+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-17",
@@ -7832,8 +7838,8 @@
       "last_success_at": "2026-11-17T08:00:37.212570+09:00"
     },
     "traders_split": {
-      "last_success_date": "2026-11-17",
-      "last_success_at": "2026-11-17T18:12:33.082557+09:00"
+      "last_success_date": "2026-11-18",
+      "last_success_at": "2026-11-18T01:43:41.266560+09:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-11-17",
@@ -8111,11 +8117,11 @@
       "last_success_at": "2026-11-17T12:07:04.221093+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-17T19:59:29.068621+09:00",
-      "last_finished_at": "2026-11-17T19:59:33.113351+09:00",
+      "last_started_at": "2026-11-18T01:43:39.675674+09:00",
+      "last_finished_at": "2026-11-18T01:43:52.521766+09:00",
       "status": "success",
-      "run_id": "44069824353",
-      "last_success_at": "2026-11-17T19:59:33.113351+09:00"
+      "run_id": "44128988536",
+      "last_success_at": "2026-11-18T01:43:52.521766+09:00"
     }
   },
   "notification_log": [
