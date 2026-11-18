@@ -6669,8 +6669,12 @@
         {
           "date": "2026-11-18",
           "label": "execution-1bd",
-          "sent": false,
-          "not_before_jst": "06:00"
+          "sent": true,
+          "not_before_jst": "06:00",
+          "notification_id": "986b3ca6c03b1a5c778fcfc69325e8cdced6ccb1d69b26cc8765a9a9f40d5c81",
+          "sent_at": "2026-11-18T16:57:37.000459+09:00",
+          "sent_by": "44262917183",
+          "reference_only": false
         },
         {
           "date": "2026-11-19",
@@ -8091,7 +8095,7 @@
       "failure": 0
     },
     "2026-11-18": {
-      "success": 6,
+      "success": 7,
       "failure": 0
     }
   },
@@ -8165,11 +8169,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-18T16:27:16.779693+09:00",
-      "last_finished_at": "2026-11-18T16:27:16.801012+09:00",
+      "last_started_at": "2026-11-18T16:57:36.934637+09:00",
+      "last_finished_at": "2026-11-18T16:57:37.079179+09:00",
       "status": "success",
-      "run_id": "44258966224",
-      "last_success_at": "2026-11-18T16:27:16.801012+09:00"
+      "run_id": "44262917183",
+      "last_success_at": "2026-11-18T16:57:37.079179+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-18T11:34:14.474311+09:00",
@@ -10156,6 +10160,18 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "44175226877"
+    },
+    {
+      "event_id": "bunbai-6570-2026-11-11",
+      "channel": "bunbai",
+      "scheduled_for": "2026-11-18",
+      "label": "execution-1bd",
+      "attempted_at": "2026-11-18T16:57:37.000459+09:00",
+      "outcome": "accepted",
+      "notification_id": "986b3ca6c03b1a5c778fcfc69325e8cdced6ccb1d69b26cc8765a9a9f40d5c81",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "44262917183"
     }
   ],
   "delivery_receipt_artifacts": [
