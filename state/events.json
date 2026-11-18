@@ -2559,7 +2559,8 @@
     "140120261118582831",
     "140120261118582832",
     "140120261118582913",
-    "140120261118582808"
+    "140120261118582808",
+    "140120261118582849"
   ],
   "events": [
     {
@@ -6551,13 +6552,13 @@
       "announced_at": "2026-11-10T16:30:00+09:00",
       "detail": {
         "parser_version": 4,
-        "po_kind": "secondary",
+        "po_kind": "both",
         "source_stage": "announcement",
-        "size_oku": 3.4785,
+        "size_oku": 3.279,
         "size_oku_min": null,
         "size_oku_max": null,
-        "size_status": "estimated",
-        "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+        "size_status": "confirmed",
+        "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
         "share_count": null,
         "oa_share_count": null,
         "price_min_yen": null,
@@ -6568,26 +6569,24 @@
         "total_offered_shares": 150000,
         "share_breakdown_complete": true,
         "oa_marker_present": true,
-        "issue_price_yen": null,
-        "sale_price_yen": null,
-        "offer_price_yen": null,
+        "issue_price_yen": 2186.0,
+        "sale_price_yen": 2186.0,
+        "offer_price_yen": 2186.0,
         "dilution_pct": null,
         "dilution_status": "unavailable",
-        "pricing_date": null,
-        "pricing_date_end": null,
+        "pricing_date": "2026-11-18",
+        "pricing_date_end": "2026-11-18",
         "pricing_date_raw": null,
-        "pricing_date_confirmed": false,
-        "pricing_date_status": "unavailable",
-        "settlement_date": null,
+        "pricing_date_confirmed": true,
+        "pricing_date_status": "confirmed",
+        "settlement_date": "2026-11-26",
         "settlement_date_end": null,
-        "settlement_date_raw": "受渡期日一般募集における払込期日の翌営業日とする",
+        "settlement_date_raw": "受渡期日2026年11月26日(木)ご注意:この文書は、いかなる証券についての投資募集行為の一部をなすものでもありません",
         "settlement_estimated": false,
-        "settlement_date_status": "unavailable",
+        "settlement_date_status": "confirmed",
         "parse_warnings": [],
         "missing_fields": [
-          "dilution_pct",
-          "pricing_date",
-          "settlement_date"
+          "dilution_pct"
         ],
         "notification_tracking_started": true,
         "reference_close_yen": 2319.0,
@@ -6596,12 +6595,16 @@
         "reference_close_kind": "announcement_close",
         "estimated_size_yen": 347850000,
         "estimated_size_oku": 3.4785,
-        "effective_size_yen": 347850000,
-        "calculation_missing_fields": []
+        "effective_size_yen": 327900000,
+        "calculation_missing_fields": [],
+        "latest_source_stage": "pricing",
+        "po_threshold_ever_met": false,
+        "confirmed_size_yen": 327900000,
+        "confirmed_size_oku": 3.279
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261110571659.pdf",
-      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261110571659.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261118582849.pdf",
       "source_title": "自己株式の処分及び株式売出し並びに親会社及びその他の関係会社の異動に関するお知らせ",
       "related_disclosures": [
         {
@@ -6610,6 +6613,14 @@
           "title": "自己株式の処分及び株式売出し並びに親会社及びその他の関係会社の異動に関するお知らせ",
           "announced_at": "2026-11-10T16:30:00+09:00",
           "pdf_url": "https://www.release.tdnet.info/inbs/140120261110571659.pdf",
+          "market": "東証"
+        },
+        {
+          "id": "140120261118582849",
+          "relation": "pricing",
+          "title": "処分価格及び売出価格等の決定に関するお知らせ",
+          "announced_at": "2026-11-18T17:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261118582849.pdf",
           "market": "東証"
         }
       ],
@@ -7796,7 +7807,7 @@
       "last_checked_date": "2026-11-18",
       "last_success_date": "2026-11-18",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-18T17:33:31.703423+09:00",
+      "last_success_at": "2026-11-18T17:44:00.471812+09:00",
       "by_date": {
         "2026-10-19": {
           "checked_at": "2026-10-20T23:08:41.259688+09:00",
@@ -7919,20 +7930,20 @@
           "last_success_at": "2026-11-17T19:59:32.336171+09:00"
         },
         "2026-11-17": {
-          "checked_at": "2026-11-18T17:33:30.801681+09:00",
+          "checked_at": "2026-11-18T17:43:59.747994+09:00",
           "count": 147,
           "status": "success",
-          "last_success_at": "2026-11-18T17:33:30.801681+09:00"
+          "last_success_at": "2026-11-18T17:43:59.747994+09:00"
         },
         "2026-11-18": {
-          "checked_at": "2026-11-18T17:33:31.703225+09:00",
-          "count": 132,
+          "checked_at": "2026-11-18T17:44:00.471570+09:00",
+          "count": 134,
           "status": "success",
-          "last_success_at": "2026-11-18T17:33:31.703225+09:00"
+          "last_success_at": "2026-11-18T17:44:00.471570+09:00"
         }
       },
-      "last_checked_at": "2026-11-18T17:33:31.703225+09:00",
-      "last_complete_poll_at": "2026-11-18T17:33:31.703429+09:00"
+      "last_checked_at": "2026-11-18T17:44:00.471570+09:00",
+      "last_complete_poll_at": "2026-11-18T17:44:00.471820+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-18",
@@ -7952,7 +7963,7 @@
     },
     "traders_split": {
       "last_success_date": "2026-11-18",
-      "last_success_at": "2026-11-18T11:34:17.456215+09:00"
+      "last_success_at": "2026-11-18T17:43:55.857651+09:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-11-18",
@@ -8230,11 +8241,11 @@
       "last_success_at": "2026-11-18T11:34:18.394575+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-18T17:33:27.703331+09:00",
-      "last_finished_at": "2026-11-18T17:33:31.722558+09:00",
+      "last_started_at": "2026-11-18T17:43:53.681571+09:00",
+      "last_finished_at": "2026-11-18T17:44:00.940379+09:00",
       "status": "success",
-      "run_id": "44267967817",
-      "last_success_at": "2026-11-18T17:33:31.722558+09:00"
+      "run_id": "44269473216",
+      "last_success_at": "2026-11-18T17:44:00.940379+09:00"
     }
   },
   "notification_log": [
