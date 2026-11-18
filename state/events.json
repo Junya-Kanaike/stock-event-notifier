@@ -4345,8 +4345,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -4690,8 +4690,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -5317,8 +5317,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -5418,8 +5418,8 @@
         "record_date_raw": "基準日:2026年11月20日",
         "rights_final_date": "2026-11-18",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7851,15 +7851,15 @@
     },
     "jpx_master": {
       "last_success_date": "2026-11-18",
-      "last_success_at": "2026-11-18T05:41:24.120887+09:00"
+      "last_success_at": "2026-11-18T11:34:15.434074+09:00"
     },
     "jpx_margin": {
       "last_success_date": "2026-11-18",
-      "last_success_at": "2026-11-18T05:41:25.110884+09:00"
+      "last_success_at": "2026-11-18T11:34:16.164780+09:00"
     },
     "jpx_ex_rights": {
       "last_success_date": "2026-11-18",
-      "last_success_at": "2026-11-18T05:41:28.200694+09:00"
+      "last_success_at": "2026-11-18T11:34:17.963264+09:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-11-17",
@@ -7867,15 +7867,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-11-18",
-      "last_success_at": "2026-11-18T05:41:27.471205+09:00"
+      "last_success_at": "2026-11-18T11:34:17.456215+09:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-11-18",
-      "last_success_at": "2026-11-18T05:41:28.638506+09:00"
+      "last_success_at": "2026-11-18T11:34:18.234709+09:00"
     },
     "jpx_bunbai": {
       "last_success_date": "2026-11-18",
-      "last_success_at": "2026-11-18T05:41:29.006515+09:00"
+      "last_success_at": "2026-11-18T11:34:18.393400+09:00"
     }
   },
   "schema_version": 2,
@@ -8138,11 +8138,11 @@
       "last_success_at": "2026-11-18T11:04:33.000766+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-11-18T05:41:23.199398+09:00",
-      "last_finished_at": "2026-11-18T05:41:29.013462+09:00",
+      "last_started_at": "2026-11-18T11:34:14.474311+09:00",
+      "last_finished_at": "2026-11-18T11:34:18.394575+09:00",
       "status": "success",
-      "run_id": "44171881652",
-      "last_success_at": "2026-11-18T05:41:29.013462+09:00"
+      "run_id": "44224193053",
+      "last_success_at": "2026-11-18T11:34:18.394575+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-11-18T11:33:09.880532+09:00",
