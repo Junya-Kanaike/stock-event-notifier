@@ -6022,5 +6022,180 @@
         "PRO Market"
       ]
     }
+  },
+  {
+    "id": "po-8117-2026-08-28",
+    "type": "po",
+    "code": "8117",
+    "name": "中央自動車工業",
+    "market": "スタンダード",
+    "margin": "貸借",
+    "announced_at": "2026-08-28T16:00:00+09:00",
+    "detail": {
+      "parser_version": 3,
+      "po_kind": "secondary",
+      "source_stage": "announcement",
+      "size_oku": 87.084272,
+      "size_oku_min": null,
+      "size_oku_max": null,
+      "size_status": "confirmed",
+      "size_basis": "決定価格×（公募株数＋売出株数＋OA株数）",
+      "share_count": null,
+      "oa_share_count": null,
+      "price_min_yen": null,
+      "price_max_yen": null,
+      "public_offering_shares": null,
+      "secondary_sale_shares": 3548600,
+      "oa_shares": 532200,
+      "total_offered_shares": 4080800,
+      "share_breakdown_complete": true,
+      "oa_marker_present": true,
+      "issue_price_yen": 2134.0,
+      "sale_price_yen": 2134.0,
+      "offer_price_yen": 2134.0,
+      "dilution_pct": null,
+      "dilution_status": "unavailable",
+      "pricing_date": "2026-09-07",
+      "pricing_date_end": "2026-09-07",
+      "pricing_date_raw": "売出価格未定（日本証券業協会の定める有価証券の引受け等に関する規則第25条に規定される方式により、2026年9月7日(月)から2026年9月10日(木)までの間のいずれかの日（以下「売出価格等決定日」という。）の株式会社東京証券取引所における当社ご注意:この文書は、いかなる証券についての投資募集行為の一部をなすものでもありません。この文書は、当社株式の売出し",
+      "pricing_date_confirmed": true,
+      "pricing_date_status": "confirmed",
+      "settlement_date": "2026-09-14",
+      "settlement_date_end": null,
+      "settlement_date_raw": "受渡期日2026年9月14日(月)(注)引受人は引受価額で買取引受けを行い、売出価格で売出しを行います。2.株式売出し（オーバーアロットメントによる売出し）（1）売出株式数532,200株（2）売出価格1株につき2,134円（3）売出価格の総額1,135,714,800円（4）申込期間2026年9月8日(火)から2026年9月9日(水)まで（5）受渡期日20",
+      "settlement_estimated": false,
+      "settlement_date_status": "confirmed",
+      "parse_warnings": [],
+      "missing_fields": [
+        "dilution_pct"
+      ],
+      "reference_close_yen": 2286.0,
+      "reference_close_date": "2026-08-28",
+      "reference_close_source": "Yahoo Finance chart (raw close)",
+      "reference_close_kind": "announcement_close",
+      "estimated_size_yen": 9328708800,
+      "estimated_size_oku": 93.287088,
+      "effective_size_yen": 8708427200,
+      "po_threshold_ever_met": true,
+      "latest_source_stage": "pricing",
+      "notification_tracking_started": true,
+      "eligible_notified": true,
+      "confirmed_size_yen": 8708427200,
+      "confirmed_size_oku": 87.084272,
+      "calculation_recovery_key": "4:https://www.release.tdnet.info/inbs/140120260827527452.pdf|https://www.release.tdnet.info/inbs/140120260907532664.pdf",
+      "calculation_recovery_attempt_date": "2026-11-19",
+      "calculation_missing_fields": [],
+      "calculation_recovery_last_error": "RuntimeError: https://www.release.tdnet.info/inbs/140120260827527452.pdf: RuntimeError; https://www.release.tdnet.info/inbs/140120260907532664.pdf: RuntimeError",
+      "calculation_recovery_alerted": true
+    },
+    "schedule": [
+      {
+        "date": "2026-09-07",
+        "label": "pricing_day",
+        "sent": true,
+        "not_before_jst": "06:00",
+        "action_cutoff_jst": "09:00"
+      },
+      {
+        "date": "2026-09-08",
+        "label": "pricing_day+1",
+        "sent": true,
+        "not_before_jst": "06:00",
+        "action_cutoff_jst": "09:00"
+      },
+      {
+        "date": "2026-09-09",
+        "label": "pricing_day+2",
+        "sent": true,
+        "not_before_jst": "06:00",
+        "action_cutoff_jst": "09:00",
+        "sent_at": "2026-09-09T00:03:06.536417+09:00"
+      },
+      {
+        "date": "2026-09-14",
+        "label": "settlement",
+        "sent": true,
+        "not_before_jst": "06:00",
+        "action_cutoff_jst": "09:00",
+        "sent_at": "2026-09-14T07:35:02.535404+09:00"
+      },
+      {
+        "date": "2026-10-16",
+        "label": "pricing_day+25bd",
+        "sent": true,
+        "not_before_jst": "06:00",
+        "action_cutoff_jst": "09:00",
+        "sent_at": "2026-10-16T00:34:09.862289+09:00",
+        "sent_by": "38761439458",
+        "reference_only": false
+      },
+      {
+        "date": "2026-10-19",
+        "label": "pricing_day+26bd",
+        "sent": true,
+        "not_before_jst": "06:00",
+        "action_cutoff_jst": "09:00",
+        "sent_at": "2026-10-19T06:01:11.957793+09:00",
+        "sent_by": "39165919621",
+        "reference_only": false
+      }
+    ],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120260827527452.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120260907532664.pdf",
+    "source_title": "株式の売出しに関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120260827527452",
+        "relation": "source",
+        "title": "株式の売出しに関するお知らせ",
+        "announced_at": "2026-08-28T16:00:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260827527452.pdf",
+        "market": "東証"
+      },
+      {
+        "id": "140120260907532664",
+        "relation": "pricing",
+        "title": "売出価格等の決定に関するお知らせ",
+        "announced_at": "2026-09-07T17:30:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120260907532664.pdf",
+        "market": "東証"
+      }
+    ],
+    "eligibility": {
+      "status": "eligible",
+      "reasons": []
+    }
+  },
+  {
+    "id": "cb-4572-2026-10-19",
+    "type": "cb",
+    "code": "4572",
+    "name": "カルナバイオサイエンス",
+    "market": "グロース",
+    "margin": "信用",
+    "announced_at": "2026-10-19T17:15:00+09:00",
+    "detail": {
+      "amount": null,
+      "canceled": false
+    },
+    "schedule": [],
+    "pdf_url": "https://www.release.tdnet.info/inbs/140120261014550573.pdf",
+    "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261014550573.pdf",
+    "source_title": "新株予約権付社債発行プログラム設定契約に基づく第三者割当による第５回無担保転換社債型新株予約権付社債の発行に関するお知らせ",
+    "related_disclosures": [
+      {
+        "id": "140120261014550573",
+        "relation": "source",
+        "title": "新株予約権付社債発行プログラム設定契約に基づく第三者割当による第５回無担保転換社債型新株予約権付社債の発行に関するお知らせ",
+        "announced_at": "2026-10-19T17:15:00+09:00",
+        "pdf_url": "https://www.release.tdnet.info/inbs/140120261014550573.pdf"
+      }
+    ],
+    "eligibility": {
+      "status": "excluded",
+      "reasons": [
+        "貸借対象外"
+      ]
+    }
   }
 ]

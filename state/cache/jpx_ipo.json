@@ -1,7 +1,14 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-18T02:34:18.234709+00:00",
+  "fetched_at": "2026-11-18T20:40:35.585655+00:00",
   "data": [
+    {
+      "code": "711A",
+      "name": "ユニテックフーズ（株）",
+      "market": "スタンダード",
+      "listing_date": "2026-12-22",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
     {
       "code": "681A",
       "name": "（株）Ｂｅｒｒｙ",
@@ -19,6 +26,13 @@
     {
       "code": "688A",
       "name": "（株）コネクティ",
+      "market": "グロース",
+      "listing_date": "2026-12-18",
+      "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
+    },
+    {
+      "code": "710A",
+      "name": "（株）GROWTH VERSE",
       "market": "グロース",
       "listing_date": "2026-12-18",
       "source_url": "https://www.jpx.co.jp/listing/stocks/new/index.html"
