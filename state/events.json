@@ -2571,7 +2571,10 @@
     "140120261016552142",
     "140120261117581772",
     "140120261118582843",
-    "140120261119583312"
+    "140120261119583312",
+    "140120261118583018",
+    "140120261118583026",
+    "140120261119583086"
   ],
   "events": [
     {
@@ -7736,6 +7739,126 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "po-9065-2026-11-19",
+      "type": "po",
+      "code": "9065",
+      "name": "山九",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-11-19T16:00:00+09:00",
+      "detail": {
+        "parser_version": 4,
+        "po_kind": "secondary",
+        "source_stage": "announcement",
+        "size_oku": 386.63005,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "estimated",
+        "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "public_offering_shares": null,
+        "secondary_sale_shares": 20131800,
+        "oa_shares": 3019700,
+        "total_offered_shares": 23151500,
+        "share_breakdown_complete": true,
+        "oa_marker_present": true,
+        "issue_price_yen": null,
+        "sale_price_yen": null,
+        "offer_price_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": "2026-11-30",
+        "pricing_date_end": "2026-12-03",
+        "pricing_date_raw": "2026年11月30日(月)から2026年12月3日(木)までの間のいずれかの日（以下「売出価格等決定日",
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "provisional",
+        "settlement_date": "2026-12-07",
+        "settlement_date_end": null,
+        "settlement_date_raw": "受渡期日売出価格等決定日の5営業日後の日(7)申込証拠金1株につき売出価格と同一の金額とする",
+        "settlement_estimated": true,
+        "settlement_date_status": "estimated",
+        "parse_warnings": [],
+        "missing_fields": [
+          "dilution_pct"
+        ],
+        "notification_tracking_started": true,
+        "reference_close_yen": 1670.0,
+        "reference_close_date": "2026-11-19",
+        "reference_close_source": "Yahoo Finance chart (raw close)",
+        "reference_close_kind": "announcement_close",
+        "estimated_size_yen": 38663005000,
+        "estimated_size_oku": 386.63005,
+        "effective_size_yen": 38663005000,
+        "po_threshold_ever_met": true,
+        "calculation_missing_fields": [],
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-11-30",
+          "label": "pricing_day",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-12-01",
+          "label": "pricing_day+1",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-12-02",
+          "label": "pricing_day+2",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-12-07",
+          "label": "settlement",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2027-01-06",
+          "label": "pricing_day+25bd",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2027-01-07",
+          "label": "pricing_day+26bd",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261118583018.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261118583018.pdf",
+      "source_title": "株式の売出しに関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261118583018",
+          "relation": "source",
+          "title": "株式の売出しに関するお知らせ",
+          "announced_at": "2026-11-19T16:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261118583018.pdf",
+          "market": "東証・福証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
@@ -7743,7 +7866,7 @@
       "last_checked_date": "2026-11-19",
       "last_success_date": "2026-11-19",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-19T15:59:54.777302+09:00",
+      "last_success_at": "2026-11-19T16:11:18.506687+09:00",
       "by_date": {
         "2026-10-20": {
           "checked_at": "2026-10-21T23:10:13.768583+09:00",
@@ -7866,20 +7989,20 @@
           "last_success_at": "2026-11-18T19:50:52.780998+09:00"
         },
         "2026-11-18": {
-          "checked_at": "2026-11-19T15:59:54.052799+09:00",
+          "checked_at": "2026-11-19T16:11:17.595061+09:00",
           "count": 139,
           "status": "success",
-          "last_success_at": "2026-11-19T15:59:54.052799+09:00"
+          "last_success_at": "2026-11-19T16:11:17.595061+09:00"
         },
         "2026-11-19": {
-          "checked_at": "2026-11-19T15:59:54.777131+09:00",
-          "count": 138,
+          "checked_at": "2026-11-19T16:11:18.506470+09:00",
+          "count": 168,
           "status": "success",
-          "last_success_at": "2026-11-19T15:59:54.777131+09:00"
+          "last_success_at": "2026-11-19T16:11:18.506470+09:00"
         }
       },
-      "last_checked_at": "2026-11-19T15:59:54.777131+09:00",
-      "last_complete_poll_at": "2026-11-19T15:59:54.777308+09:00"
+      "last_checked_at": "2026-11-19T16:11:18.506470+09:00",
+      "last_complete_poll_at": "2026-11-19T16:11:18.506693+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-19",
@@ -7894,8 +8017,8 @@
       "last_success_at": "2026-11-19T10:58:57.777511+09:00"
     },
     "yahoo_price": {
-      "last_success_date": "2026-11-17",
-      "last_success_at": "2026-11-17T08:00:37.212570+09:00"
+      "last_success_date": "2026-11-19",
+      "last_success_at": "2026-11-19T16:11:18.852334+09:00"
     },
     "traders_split": {
       "last_success_date": "2026-11-19",
@@ -8089,7 +8212,7 @@
       "failure": 0
     },
     "2026-11-19": {
-      "success": 7,
+      "success": 8,
       "failure": 0
     }
   },
@@ -8178,11 +8301,11 @@
       "last_success_at": "2026-11-19T10:58:58.306968+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-19T15:59:51.378990+09:00",
-      "last_finished_at": "2026-11-19T15:59:54.796442+09:00",
+      "last_started_at": "2026-11-19T16:11:14.615782+09:00",
+      "last_finished_at": "2026-11-19T16:11:19.106846+09:00",
       "status": "success",
-      "run_id": "44476175418",
-      "last_success_at": "2026-11-19T15:59:54.796442+09:00"
+      "run_id": "44477631806",
+      "last_success_at": "2026-11-19T16:11:19.106846+09:00"
     }
   },
   "notification_log": [
