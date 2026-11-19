@@ -2583,7 +2583,8 @@
     "140120261119583106",
     "140120261119583171",
     "140120261119583476",
-    "140120261119583302"
+    "140120261119583302",
+    "140120261120583789"
   ],
   "events": [
     {
@@ -4243,8 +4244,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -4588,8 +4589,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -5191,8 +5192,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -5292,8 +5293,8 @@
         "record_date_raw": "基準日:2026年11月20日",
         "rights_final_date": "2026-11-18",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7985,6 +7986,38 @@
           "吸収規模80億円未満"
         ]
       }
+    },
+    {
+      "id": "cb-8473-2026-11-20",
+      "type": "cb",
+      "code": "8473",
+      "name": "ＳＢＩホールディングス",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-11-20T02:00:00+09:00",
+      "detail": {
+        "amount": "1,500億円",
+        "canceled": false,
+        "eligible_notified": true
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261120583789.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261120583789.pdf",
+      "source_title": "2033年満期ユーロ円建転換社債型新株予約権付社債の発行条件等の決定に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261120583789",
+          "relation": "source",
+          "title": "2033年満期ユーロ円建転換社債型新株予約権付社債の発行条件等の決定に関するお知らせ",
+          "announced_at": "2026-11-20T02:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261120583789.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
@@ -7992,7 +8025,7 @@
       "last_checked_date": "2026-11-20",
       "last_success_date": "2026-11-20",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-20T00:53:17.559288+09:00",
+      "last_success_at": "2026-11-20T08:01:11.290926+09:00",
       "by_date": {
         "2026-10-21": {
           "checked_at": "2026-10-22T23:22:48.626683+09:00",
@@ -8115,20 +8148,20 @@
           "last_success_at": "2026-11-19T19:56:14.100098+09:00"
         },
         "2026-11-19": {
-          "checked_at": "2026-11-20T00:53:16.475623+09:00",
+          "checked_at": "2026-11-20T08:01:10.464487+09:00",
           "count": 205,
           "status": "success",
-          "last_success_at": "2026-11-20T00:53:16.475623+09:00"
+          "last_success_at": "2026-11-20T08:01:10.464487+09:00"
         },
         "2026-11-20": {
-          "checked_at": "2026-11-20T00:53:17.559092+09:00",
-          "count": 0,
+          "checked_at": "2026-11-20T08:01:11.290684+09:00",
+          "count": 1,
           "status": "success",
-          "last_success_at": "2026-11-20T00:53:17.559092+09:00"
+          "last_success_at": "2026-11-20T08:01:11.290684+09:00"
         }
       },
-      "last_checked_at": "2026-11-20T00:53:17.559092+09:00",
-      "last_complete_poll_at": "2026-11-20T00:53:17.559293+09:00"
+      "last_checked_at": "2026-11-20T08:01:11.290684+09:00",
+      "last_complete_poll_at": "2026-11-20T08:01:11.290935+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-20",
@@ -8338,7 +8371,7 @@
       "failure": 0
     },
     "2026-11-20": {
-      "success": 2,
+      "success": 3,
       "failure": 0
     }
   },
@@ -8428,11 +8461,11 @@
       "last_success_at": "2026-11-20T05:40:28.417643+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-20T00:53:11.363550+09:00",
-      "last_finished_at": "2026-11-20T00:53:17.579813+09:00",
+      "last_started_at": "2026-11-20T08:01:06.743238+09:00",
+      "last_finished_at": "2026-11-20T08:01:11.699294+09:00",
       "status": "success",
-      "run_id": "44559766440",
-      "last_success_at": "2026-11-20T00:53:17.579813+09:00"
+      "run_id": "44633865729",
+      "last_success_at": "2026-11-20T08:01:11.699294+09:00"
     }
   },
   "notification_log": [
