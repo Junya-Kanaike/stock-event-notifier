@@ -5294,9 +5294,13 @@
         {
           "date": "2026-11-19",
           "label": "rights_final+1_noon",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "12:00",
-          "action_cutoff_jst": "15:30"
+          "action_cutoff_jst": "15:30",
+          "notification_id": "61aa7dd4c42eafd7400468ef2de7e9c9bef2526e9d76eb7085d061e92ad02630",
+          "sent_at": "2026-11-19T12:09:22.521751+09:00",
+          "sent_by": "44449401021",
+          "reference_only": false
         },
         {
           "date": "2026-11-26",
@@ -8078,7 +8082,7 @@
       "failure": 0
     },
     "2026-11-19": {
-      "success": 6,
+      "success": 7,
       "failure": 0
     }
   },
@@ -8153,11 +8157,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-19T11:58:54.043912+09:00",
-      "last_finished_at": "2026-11-19T11:58:54.065278+09:00",
+      "last_started_at": "2026-11-19T12:09:22.462990+09:00",
+      "last_finished_at": "2026-11-19T12:09:22.666966+09:00",
       "status": "success",
-      "run_id": "44448137007",
-      "last_success_at": "2026-11-19T11:58:54.065278+09:00"
+      "run_id": "44449401021",
+      "last_success_at": "2026-11-19T12:09:22.666966+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-19T10:58:53.821430+09:00",
@@ -10216,6 +10220,18 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "44396904798"
+    },
+    {
+      "event_id": "split-6861-2026-10-29",
+      "channel": "split",
+      "scheduled_for": "2026-11-19",
+      "label": "rights_final+1_noon",
+      "attempted_at": "2026-11-19T12:09:22.521751+09:00",
+      "outcome": "accepted",
+      "notification_id": "61aa7dd4c42eafd7400468ef2de7e9c9bef2526e9d76eb7085d061e92ad02630",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "44449401021"
     }
   ],
   "delivery_receipt_artifacts": [
