@@ -7895,10 +7895,8 @@
         }
       ],
       "eligibility": {
-        "status": "excluded",
-        "reasons": [
-          "自社株買い同時発表"
-        ]
+        "status": "eligible",
+        "reasons": []
       }
     },
     {
@@ -8405,11 +8403,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-19T16:23:48.400312+09:00",
-      "last_finished_at": "2026-11-19T16:23:48.416575+09:00",
+      "last_started_at": "2026-11-19T16:54:32.447795+09:00",
+      "last_finished_at": "2026-11-19T16:54:32.463848+09:00",
       "status": "success",
-      "run_id": "44479249980",
-      "last_success_at": "2026-11-19T16:23:48.416575+09:00"
+      "run_id": "44483209697",
+      "last_success_at": "2026-11-19T16:54:32.463848+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-19T10:58:53.821430+09:00",
