@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-18T20:40:34.701015+00:00",
+  "fetched_at": "2026-11-19T01:58:57.038497+00:00",
   "data": {
     "9706": [
       {
@@ -208,6 +208,16 @@
         "name": "ウイルテック",
         "rights_final_date": "2026-12-28",
         "ratio": "2",
+        "effective_date": "2027-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "3490": [
+      {
+        "code": "3490",
+        "name": "アズ企画",
+        "rights_final_date": "2026-12-28",
+        "ratio": "3",
         "effective_date": "2027-01-01",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }

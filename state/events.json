@@ -4220,8 +4220,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -4565,8 +4565,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -5164,8 +5164,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -5265,8 +5265,8 @@
         "record_date_raw": "基準日:2026年11月20日",
         "rights_final_date": "2026-11-18",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7631,12 +7631,15 @@
         "rights_final_date_raw": "権利付き最終日: お手元に 2027年2月24日） 1株当たり配当金、および新株予約権の行使価額・目的となる株式の数は、分割比率に応じて調整します。株主の皆様 配当・新株予約権 の実質的なご負担や権利の割合は変わりません。 本資料は、投資判断の参考となる情報の提供を目的としたものであり、投資の勧誘を目的としたものではありません。実際の投資に際しては、 ご自身",
         "rights_final_source": "pdf_explicit",
         "rights_final_calculation_basis": "pdf_explicit",
-        "rights_final_confirmed": true,
-        "rights_final_status": "confirmed",
-        "rights_date_conflict": false,
+        "rights_final_confirmed": false,
+        "rights_final_status": "conflict",
+        "rights_date_conflict": true,
         "ex_right_date": "2027-02-25",
         "effective_date": "2027-01-01",
-        "effective_date_raw": "効力発生日 2027 年1月1日（金） （3）その他 今回の株式分割に際して、資本金の額の変更はありません。 2.株式分割に伴う定款の一部変更について （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づく取締役会決議により、2027年1月 1日（金）を効力発生日として、当社定款の一部を変更いたします。 （2）変更の内容 変更内容は次の"
+        "effective_date_raw": "効力発生日 2027 年1月1日（金） （3）その他 今回の株式分割に際して、資本金の額の変更はありません。 2.株式分割に伴う定款の一部変更について （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づく取締役会決議により、2027年1月 1日（金）を効力発生日として、当社定款の一部を変更いたします。 （2）変更の内容 変更内容は次の",
+        "traders_rights_final_date": "2026-12-28",
+        "traders_split_source_url": "https://www.traders.co.jp/stock_data/split",
+        "traders_conflict_notified": true
       },
       "schedule": [],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261118582808.pdf",
@@ -7869,15 +7872,15 @@
     },
     "jpx_master": {
       "last_success_date": "2026-11-19",
-      "last_success_at": "2026-11-19T05:40:32.313001+09:00"
+      "last_success_at": "2026-11-19T10:58:54.568800+09:00"
     },
     "jpx_margin": {
       "last_success_date": "2026-11-19",
-      "last_success_at": "2026-11-19T05:40:32.971000+09:00"
+      "last_success_at": "2026-11-19T10:58:55.386040+09:00"
     },
     "jpx_ex_rights": {
       "last_success_date": "2026-11-19",
-      "last_success_at": "2026-11-19T05:40:35.248300+09:00"
+      "last_success_at": "2026-11-19T10:58:57.777511+09:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-11-17",
@@ -7885,15 +7888,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-11-19",
-      "last_success_at": "2026-11-19T05:40:34.701015+09:00"
+      "last_success_at": "2026-11-19T10:58:57.038497+09:00"
     },
     "jpx_ipo": {
       "last_success_date": "2026-11-19",
-      "last_success_at": "2026-11-19T05:40:35.585655+09:00"
+      "last_success_at": "2026-11-19T10:58:58.023213+09:00"
     },
     "jpx_bunbai": {
       "last_success_date": "2026-11-19",
-      "last_success_at": "2026-11-19T05:40:35.847417+09:00"
+      "last_success_at": "2026-11-19T10:58:58.304657+09:00"
     }
   },
   "schema_version": 2,
@@ -8075,7 +8078,7 @@
       "failure": 0
     },
     "2026-11-19": {
-      "success": 5,
+      "success": 6,
       "failure": 0
     }
   },
@@ -8157,11 +8160,11 @@
       "last_success_at": "2026-11-19T10:40:57.954782+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-11-19T05:40:31.562498+09:00",
-      "last_finished_at": "2026-11-19T05:40:35.858832+09:00",
+      "last_started_at": "2026-11-19T10:58:53.821430+09:00",
+      "last_finished_at": "2026-11-19T10:58:58.306968+09:00",
       "status": "success",
-      "run_id": "44393449398",
-      "last_success_at": "2026-11-19T05:40:35.858832+09:00"
+      "run_id": "44440883060",
+      "last_success_at": "2026-11-19T10:58:58.306968+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-11-19T10:52:30.880732+09:00",
