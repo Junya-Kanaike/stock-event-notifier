@@ -4598,8 +4598,12 @@
         {
           "date": "2026-11-24",
           "label": "listing-1bd",
-          "sent": false,
-          "not_before_jst": "06:00"
+          "sent": true,
+          "not_before_jst": "06:00",
+          "notification_id": "2c0902964a94053a67e01ca94f94714b888cbcc3e8e8d6530e98f4d0a6f7d6e4",
+          "sent_at": "2026-11-24T06:00:35.283221+09:00",
+          "sent_by": "45265157076",
+          "reference_only": false
         },
         {
           "date": "2026-11-25",
@@ -7241,9 +7245,13 @@
         {
           "date": "2026-11-24",
           "label": "settlement",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "859892ec42a34f7492951ed06218a5e3dc8239628a4329f9009f45e712b06dbf",
+          "sent_at": "2026-11-24T06:00:35.464730+09:00",
+          "sent_by": "45265157076",
+          "reference_only": false
         },
         {
           "date": "2026-12-22",
@@ -8288,10 +8296,6 @@
   },
   "schema_version": 2,
   "notification_stats": {
-    "2026-10-10": {
-      "success": 2,
-      "failure": 0
-    },
     "2026-10-11": {
       "success": 1,
       "failure": 0
@@ -8467,6 +8471,10 @@
     "2026-11-23": {
       "success": 1,
       "failure": 0
+    },
+    "2026-11-24": {
+      "success": 2,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -8545,11 +8553,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-23T20:54:26.526877+09:00",
-      "last_finished_at": "2026-11-23T20:54:26.544306+09:00",
+      "last_started_at": "2026-11-24T06:00:35.200033+09:00",
+      "last_finished_at": "2026-11-24T06:00:35.594638+09:00",
       "status": "success",
-      "run_id": "45169319880",
-      "last_success_at": "2026-11-23T20:54:26.544306+09:00"
+      "run_id": "45265157076",
+      "last_success_at": "2026-11-24T06:00:35.594638+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-24T05:40:35.993589+09:00",
@@ -10644,6 +10652,30 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "44614322962"
+    },
+    {
+      "event_id": "ipo-664A-2026-11-25",
+      "channel": "ipo",
+      "scheduled_for": "2026-11-24",
+      "label": "listing-1bd",
+      "attempted_at": "2026-11-24T06:00:35.283221+09:00",
+      "outcome": "accepted",
+      "notification_id": "2c0902964a94053a67e01ca94f94714b888cbcc3e8e8d6530e98f4d0a6f7d6e4",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "45265157076"
+    },
+    {
+      "event_id": "po-6036-2026-11-16",
+      "channel": "po",
+      "scheduled_for": "2026-11-24",
+      "label": "settlement",
+      "attempted_at": "2026-11-24T06:00:35.464730+09:00",
+      "outcome": "accepted",
+      "notification_id": "859892ec42a34f7492951ed06218a5e3dc8239628a4329f9009f45e712b06dbf",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "45265157076"
     }
   ],
   "delivery_receipt_artifacts": [
