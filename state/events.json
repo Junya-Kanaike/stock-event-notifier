@@ -8662,11 +8662,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-24T18:49:09.817440+09:00",
-      "last_finished_at": "2026-11-24T18:49:09.830411+09:00",
+      "last_started_at": "2026-11-24T19:00:45.594067+09:00",
+      "last_finished_at": "2026-11-24T19:00:45.606045+09:00",
       "status": "success",
-      "run_id": "45368764138",
-      "last_success_at": "2026-11-24T18:49:09.830411+09:00"
+      "run_id": "45370582297",
+      "last_success_at": "2026-11-24T19:00:45.606045+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-24T13:57:00.050494+09:00",
