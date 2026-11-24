@@ -1,16 +1,7 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-23T20:40:42.143070+00:00",
+  "fetched_at": "2026-11-24T04:57:04.504499+00:00",
   "data": {
-    "6861": {
-      "code": "6861",
-      "name": "キーエンス",
-      "market": "プライム市場",
-      "ex_right_date": "2026-11-19",
-      "record_date": "2026-11-20",
-      "rights_final_date": "2026-11-18",
-      "source_url": "https://www.jpx.co.jp/listing/others/ex-rights/index.html"
-    },
     "138A": {
       "code": "138A",
       "name": "Ｇ－光フードサービス",
