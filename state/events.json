@@ -4039,8 +4039,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -4384,8 +4384,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -4991,8 +4991,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "traders_web",
-        "rights_final_calculation_basis": "traders_web_rights_final_date",
+        "rights_final_source": "jpx_ex_rights",
+        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -7130,6 +7130,7 @@
           "market": "東証"
         }
       ],
+      "jpx_source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html",
       "eligibility": {
         "status": "eligible",
         "reasons": []
@@ -8381,16 +8382,16 @@
       "last_complete_poll_at": "2026-11-25T04:44:22.600831+09:00"
     },
     "jpx_master": {
-      "last_success_date": "2026-11-24",
-      "last_success_at": "2026-11-24T13:57:00.930046+09:00"
+      "last_success_date": "2026-11-25",
+      "last_success_at": "2026-11-25T05:40:39.705600+09:00"
     },
     "jpx_margin": {
-      "last_success_date": "2026-11-24",
-      "last_success_at": "2026-11-24T13:57:01.587224+09:00"
+      "last_success_date": "2026-11-25",
+      "last_success_at": "2026-11-25T05:40:40.663204+09:00"
     },
     "jpx_ex_rights": {
-      "last_success_date": "2026-11-24",
-      "last_success_at": "2026-11-24T13:57:04.504499+09:00"
+      "last_success_date": "2026-11-25",
+      "last_success_at": "2026-11-25T05:40:42.887826+09:00"
     },
     "yahoo_price": {
       "last_success_date": "2026-11-20",
@@ -8398,15 +8399,15 @@
     },
     "traders_split": {
       "last_success_date": "2026-11-25",
-      "last_success_at": "2026-11-25T04:44:17.952125+09:00"
+      "last_success_at": "2026-11-25T05:40:42.063755+09:00"
     },
     "jpx_ipo": {
-      "last_success_date": "2026-11-24",
-      "last_success_at": "2026-11-24T13:57:04.863575+09:00"
+      "last_success_date": "2026-11-25",
+      "last_success_at": "2026-11-25T05:40:43.347218+09:00"
     },
     "jpx_bunbai": {
-      "last_success_date": "2026-11-24",
-      "last_success_at": "2026-11-24T13:57:05.160116+09:00"
+      "last_success_date": "2026-11-25",
+      "last_success_at": "2026-11-25T05:40:43.688092+09:00"
     }
   },
   "schema_version": 2,
@@ -8676,11 +8677,11 @@
       "last_success_at": "2026-11-25T05:34:13.015085+09:00"
     },
     "daily_morning": {
-      "last_started_at": "2026-11-24T13:57:00.050494+09:00",
-      "last_finished_at": "2026-11-24T13:57:05.161670+09:00",
+      "last_started_at": "2026-11-25T05:40:38.796252+09:00",
+      "last_finished_at": "2026-11-25T05:40:43.695297+09:00",
       "status": "success",
-      "run_id": "45329855230",
-      "last_success_at": "2026-11-24T13:57:05.161670+09:00"
+      "run_id": "45483205105",
+      "last_success_at": "2026-11-25T05:40:43.695297+09:00"
     },
     "poll_tdnet": {
       "last_started_at": "2026-11-25T04:44:16.479830+09:00",

@@ -1,7 +1,13 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-24T04:57:05.160116+00:00",
+  "fetched_at": "2026-11-24T20:40:43.688092+00:00",
   "data": [
+    {
+      "code": "7217",
+      "name": "（株）テイン",
+      "execution_date": "2026-11-25",
+      "source_url": "https://www.jpx.co.jp/markets/equities/off-auction-distro/index.html"
+    },
     {
       "code": "6570",
       "name": "（株）共和コーポレーション",
