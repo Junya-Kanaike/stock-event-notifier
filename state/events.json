@@ -4241,9 +4241,14 @@
         {
           "date": "2026-11-25",
           "label": "pricing_day+25bd",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-11-25T06:00:35.299047+09:00",
+          "sent_by": "45486606776",
+          "reference_only": false,
+          "notification_id": "91db145cba64793c5c052046af6ddfe3913db1fc1175ef5ac7b32c9137df7c27",
+          "restored_from_receipt": true
         },
         {
           "date": "2026-11-26",
@@ -4625,8 +4630,13 @@
         {
           "date": "2026-11-25",
           "label": "listing_day",
-          "sent": false,
-          "not_before_jst": "06:00"
+          "sent": true,
+          "not_before_jst": "06:00",
+          "sent_at": "2026-11-25T06:00:34.935297+09:00",
+          "sent_by": "45486606776",
+          "reference_only": false,
+          "notification_id": "6f1b39380812ec657e7d31131eec69f584612d8c5c5dd89aee6fdbee06014551",
+          "restored_from_receipt": true
         }
       ],
       "pdf_url": "https://www.jpx.co.jp/listing/stocks/new/index.html",
@@ -5903,9 +5913,14 @@
         {
           "date": "2026-11-25",
           "label": "settlement",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-11-25T06:00:35.131149+09:00",
+          "sent_by": "45486606776",
+          "reference_only": false,
+          "notification_id": "60abfe557846962020130b3c9d46e3077d4d208c9e57b7e9a8c150d6b8246819",
+          "restored_from_receipt": true
         },
         {
           "date": "2026-12-23",
@@ -7097,9 +7112,14 @@
         {
           "date": "2026-11-25",
           "label": "execution_day",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "sent_at": "2026-11-25T06:00:34.726148+09:00",
+          "sent_by": "45486606776",
+          "reference_only": false,
+          "notification_id": "055700dee335c620d5530924e151cf86e6e15a4e8547422bcb3a5a2d782d4c45",
+          "restored_from_receipt": true
         },
         {
           "date": "2026-12-02",
@@ -8591,6 +8611,10 @@
     "2026-11-24": {
       "success": 6,
       "failure": 0
+    },
+    "2026-11-25": {
+      "success": 4,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -8670,11 +8694,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-25T05:34:13.000393+09:00",
-      "last_finished_at": "2026-11-25T05:34:13.015085+09:00",
+      "last_started_at": "2026-11-25T06:06:14.651223+09:00",
+      "last_finished_at": "2026-11-25T06:06:14.665982+09:00",
       "status": "success",
-      "run_id": "45482109327",
-      "last_success_at": "2026-11-25T05:34:13.015085+09:00"
+      "run_id": "45487584782",
+      "last_success_at": "2026-11-25T06:06:14.665982+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-25T05:40:38.796252+09:00",
@@ -10805,6 +10829,58 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "45354730604"
+    },
+    {
+      "schema_version": 1,
+      "notification_id": "055700dee335c620d5530924e151cf86e6e15a4e8547422bcb3a5a2d782d4c45",
+      "event_id": "bunbai-7217-2026-11-13",
+      "scheduled_for": "2026-11-25",
+      "label": "execution_day",
+      "attempted_at": "2026-11-25T06:00:34.726148+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "run_id": "45486606776",
+      "channel": "bunbai",
+      "restored_from_receipt": true
+    },
+    {
+      "schema_version": 1,
+      "notification_id": "6f1b39380812ec657e7d31131eec69f584612d8c5c5dd89aee6fdbee06014551",
+      "event_id": "ipo-664A-2026-11-25",
+      "scheduled_for": "2026-11-25",
+      "label": "listing_day",
+      "attempted_at": "2026-11-25T06:00:34.935297+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "run_id": "45486606776",
+      "channel": "ipo",
+      "restored_from_receipt": true
+    },
+    {
+      "schema_version": 1,
+      "notification_id": "60abfe557846962020130b3c9d46e3077d4d208c9e57b7e9a8c150d6b8246819",
+      "event_id": "po-446A-2026-11-09",
+      "scheduled_for": "2026-11-25",
+      "label": "settlement",
+      "attempted_at": "2026-11-25T06:00:35.131149+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "run_id": "45486606776",
+      "channel": "po",
+      "restored_from_receipt": true
+    },
+    {
+      "schema_version": 1,
+      "notification_id": "91db145cba64793c5c052046af6ddfe3913db1fc1175ef5ac7b32c9137df7c27",
+      "event_id": "po-6407-2026-10-07",
+      "scheduled_for": "2026-11-25",
+      "label": "pricing_day+25bd",
+      "attempted_at": "2026-11-25T06:00:35.299047+09:00",
+      "outcome": "accepted",
+      "reference_only": false,
+      "run_id": "45486606776",
+      "channel": "po",
+      "restored_from_receipt": true
     }
   ],
   "delivery_receipt_artifacts": [
@@ -10827,6 +10903,7 @@
     14495076205,
     14574261830,
     14862396657,
-    14900554888
+    14900554888,
+    14965040173
   ]
 }
