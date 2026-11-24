@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-23T20:40:41.427241+00:00",
+  "fetched_at": "2026-11-24T02:47:33.882631+00:00",
   "data": {
     "9706": [
       {
@@ -212,6 +212,16 @@
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
+    "4124": [
+      {
+        "code": "4124",
+        "name": "大阪油化",
+        "rights_final_date": "2026-12-28",
+        "ratio": "3",
+        "effective_date": "2027-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
     "3490": [
       {
         "code": "3490",
@@ -229,6 +239,16 @@
         "rights_final_date": "2026-12-28",
         "ratio": "2",
         "effective_date": "2027-01-01",
+        "source_url": "https://www.traders.co.jp/stock_data/split"
+      }
+    ],
+    "5078": [
+      {
+        "code": "5078",
+        "name": "セレコーポ",
+        "rights_final_date": "2026-12-09",
+        "ratio": "2",
+        "effective_date": "2026-12-14",
         "source_url": "https://www.traders.co.jp/stock_data/split"
       }
     ],
