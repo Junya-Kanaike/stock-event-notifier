@@ -4272,9 +4272,13 @@
         {
           "date": "2026-11-26",
           "label": "pricing_day+26bd",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "a9dbf59ab519779d597cd4deac79afb8c48e6fb2c394405b2ee885ecfaa3299e",
+          "sent_at": "2026-11-26T06:00:18.926424+09:00",
+          "sent_by": "45700227749",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261007547282.pdf",
@@ -6021,9 +6025,13 @@
         {
           "date": "2026-11-26",
           "label": "execution+5bd",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "88cafb8778cb853fd87725bdaeffbc7712be653750a0ab098956f6c5c3bee16a",
+          "sent_at": "2026-11-26T06:00:18.609072+09:00",
+          "sent_by": "45700227749",
+          "reference_only": false
         }
       ],
       "pdf_url": "https://www.release.tdnet.info/inbs/140120261110570919.pdf",
@@ -8250,9 +8258,13 @@
         {
           "date": "2026-11-26",
           "label": "pricing_day+1",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "2c57f6bb22aa72d4bcc00004d71b7aead2bf7c0d85b5f659691c0c2e7191aa37",
+          "sent_at": "2026-11-26T06:00:18.781122+09:00",
+          "sent_by": "45700227749",
+          "reference_only": false
         },
         {
           "date": "2026-11-27",
@@ -8591,10 +8603,6 @@
   },
   "schema_version": 2,
   "notification_stats": {
-    "2026-10-12": {
-      "success": 1,
-      "failure": 0
-    },
     "2026-10-13": {
       "success": 3,
       "failure": 0
@@ -8770,6 +8778,10 @@
     "2026-11-25": {
       "success": 8,
       "failure": 0
+    },
+    "2026-11-26": {
+      "success": 3,
+      "failure": 0
     }
   },
   "daily_system_summary": {
@@ -8850,11 +8862,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-26T05:26:42.939835+09:00",
-      "last_finished_at": "2026-11-26T05:26:42.971797+09:00",
+      "last_started_at": "2026-11-26T06:00:18.528573+09:00",
+      "last_finished_at": "2026-11-26T06:00:19.049484+09:00",
       "status": "success",
-      "run_id": "45694981993",
-      "last_success_at": "2026-11-26T05:26:42.971797+09:00"
+      "run_id": "45700227749",
+      "last_success_at": "2026-11-26T06:00:19.049484+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-26T05:40:20.049778+09:00",
@@ -11049,6 +11061,42 @@
       "reference_only": true,
       "error_type": null,
       "run_id": "45565686057"
+    },
+    {
+      "event_id": "bunbai-7444-2026-11-10",
+      "channel": "bunbai",
+      "scheduled_for": "2026-11-26",
+      "label": "execution+5bd",
+      "attempted_at": "2026-11-26T06:00:18.609072+09:00",
+      "outcome": "accepted",
+      "notification_id": "88cafb8778cb853fd87725bdaeffbc7712be653750a0ab098956f6c5c3bee16a",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "45700227749"
+    },
+    {
+      "event_id": "po-166A-2026-11-25",
+      "channel": "po",
+      "scheduled_for": "2026-11-26",
+      "label": "pricing_day+1",
+      "attempted_at": "2026-11-26T06:00:18.781122+09:00",
+      "outcome": "accepted",
+      "notification_id": "2c57f6bb22aa72d4bcc00004d71b7aead2bf7c0d85b5f659691c0c2e7191aa37",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "45700227749"
+    },
+    {
+      "event_id": "po-6407-2026-10-07",
+      "channel": "po",
+      "scheduled_for": "2026-11-26",
+      "label": "pricing_day+26bd",
+      "attempted_at": "2026-11-26T06:00:18.926424+09:00",
+      "outcome": "accepted",
+      "notification_id": "a9dbf59ab519779d597cd4deac79afb8c48e6fb2c394405b2ee885ecfaa3299e",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "45700227749"
     }
   ],
   "delivery_receipt_artifacts": [
