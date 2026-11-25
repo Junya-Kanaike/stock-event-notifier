@@ -2632,7 +2632,12 @@
     "140120261119583567",
     "140120261125585706",
     "140120261125585899",
-    "140120261125586000"
+    "140120261125586000",
+    "140120261124585457",
+    "140120261125585794",
+    "140120261125585921",
+    "140120261125586042",
+    "140120261125586109"
   ],
   "events": [
     {
@@ -8279,6 +8284,126 @@
         "status": "eligible",
         "reasons": []
       }
+    },
+    {
+      "id": "po-166A-2026-11-25",
+      "type": "po",
+      "code": "166A",
+      "name": "タスキホールディングス",
+      "market": "プライム",
+      "margin": "貸借",
+      "announced_at": "2026-11-25T15:30:00+09:00",
+      "detail": {
+        "parser_version": 4,
+        "po_kind": "secondary",
+        "source_stage": "announcement",
+        "size_oku": 81.92,
+        "size_oku_min": null,
+        "size_oku_max": null,
+        "size_status": "estimated",
+        "size_basis": "発表日終値×（公募株数＋売出株数＋OA株数）",
+        "share_count": null,
+        "oa_share_count": null,
+        "price_min_yen": null,
+        "price_max_yen": null,
+        "public_offering_shares": null,
+        "secondary_sale_shares": 8000000,
+        "oa_shares": 0,
+        "total_offered_shares": 8000000,
+        "share_breakdown_complete": true,
+        "oa_marker_present": false,
+        "issue_price_yen": null,
+        "sale_price_yen": null,
+        "offer_price_yen": null,
+        "dilution_pct": null,
+        "dilution_status": "unavailable",
+        "pricing_date": "2026-11-25",
+        "pricing_date_end": null,
+        "pricing_date_raw": "売出価格売出価格については、売買当事者間における協議のうえ、決定されております。（3）売出価額の総額8,640,000,000円売出株式の所有者及び（4）村上三郎8,000,000株売出株式数村上氏によるＮＡＮＫＡＩに対する、市場外での相対取引による当（5）売出方法社普通株式の譲渡（6）申込期間2026年11月25日（7）受渡期日2026年12月上旬（予定）",
+        "pricing_date_confirmed": false,
+        "pricing_date_status": "provisional",
+        "settlement_date": "2026-12-02",
+        "settlement_date_end": null,
+        "settlement_date_raw": "受渡期日2026年12月上旬（予定）（8）申込証拠金該当事項はありません",
+        "settlement_estimated": true,
+        "settlement_date_status": "estimated",
+        "parse_warnings": [],
+        "missing_fields": [
+          "dilution_pct"
+        ],
+        "notification_tracking_started": true,
+        "reference_close_yen": 1024.0,
+        "reference_close_date": "2026-11-25",
+        "reference_close_source": "Yahoo Finance chart (raw close)",
+        "reference_close_kind": "announcement_close",
+        "estimated_size_yen": 8192000000,
+        "estimated_size_oku": 81.92,
+        "effective_size_yen": 8192000000,
+        "po_threshold_ever_met": true,
+        "calculation_missing_fields": [],
+        "eligible_notified": true
+      },
+      "schedule": [
+        {
+          "date": "2026-11-25",
+          "label": "pricing_day",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-11-26",
+          "label": "pricing_day+1",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-11-27",
+          "label": "pricing_day+2",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-12-02",
+          "label": "settlement",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2026-12-30",
+          "label": "pricing_day+25bd",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        },
+        {
+          "date": "2027-01-04",
+          "label": "pricing_day+26bd",
+          "sent": false,
+          "not_before_jst": "06:00",
+          "action_cutoff_jst": "09:00"
+        }
+      ],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261125585794.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261125585794.pdf",
+      "source_title": "株式会社NANKAIとの資本業務提携契約の締結、株式の売出し並びに主要株主、主要株主である筆頭株主及びその他の関係会社の異動に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261125585794",
+          "relation": "source",
+          "title": "株式会社NANKAIとの資本業務提携契約の締結、株式の売出し並びに主要株主、主要株主である筆頭株主及びその他の関係会社の異動に関するお知らせ",
+          "announced_at": "2026-11-25T15:30:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261125585794.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "eligible",
+        "reasons": []
+      }
     }
   ],
   "source_health": {
@@ -8286,7 +8411,7 @@
       "last_checked_date": "2026-11-25",
       "last_success_date": "2026-11-25",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-25T15:36:14.348727+09:00",
+      "last_success_at": "2026-11-25T15:46:46.257968+09:00",
       "by_date": {
         "2026-10-26": {
           "checked_at": "2026-10-27T19:58:38.834825+09:00",
@@ -8403,20 +8528,20 @@
           "last_success_at": "2026-11-24T19:54:47.102776+09:00"
         },
         "2026-11-24": {
-          "checked_at": "2026-11-25T15:36:13.533205+09:00",
+          "checked_at": "2026-11-25T15:46:45.510878+09:00",
           "count": 200,
           "status": "success",
-          "last_success_at": "2026-11-25T15:36:13.533205+09:00"
+          "last_success_at": "2026-11-25T15:46:45.510878+09:00"
         },
         "2026-11-25": {
-          "checked_at": "2026-11-25T15:36:14.348499+09:00",
-          "count": 49,
+          "checked_at": "2026-11-25T15:46:46.257707+09:00",
+          "count": 121,
           "status": "success",
-          "last_success_at": "2026-11-25T15:36:14.348499+09:00"
+          "last_success_at": "2026-11-25T15:46:46.257707+09:00"
         }
       },
-      "last_checked_at": "2026-11-25T15:36:14.348499+09:00",
-      "last_complete_poll_at": "2026-11-25T15:36:14.348734+09:00"
+      "last_checked_at": "2026-11-25T15:46:46.257707+09:00",
+      "last_complete_poll_at": "2026-11-25T15:46:46.257976+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-25",
@@ -8431,8 +8556,8 @@
       "last_success_at": "2026-11-25T12:43:05.721701+09:00"
     },
     "yahoo_price": {
-      "last_success_date": "2026-11-20",
-      "last_success_at": "2026-11-20T16:27:16.043556+09:00"
+      "last_success_date": "2026-11-25",
+      "last_success_at": "2026-11-25T15:46:47.477174+09:00"
     },
     "traders_split": {
       "last_success_date": "2026-11-25",
@@ -8626,7 +8751,7 @@
       "failure": 0
     },
     "2026-11-25": {
-      "success": 5,
+      "success": 6,
       "failure": 0
     }
   },
@@ -8721,11 +8846,11 @@
       "last_success_at": "2026-11-25T12:43:06.420588+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-25T15:36:09.716900+09:00",
-      "last_finished_at": "2026-11-25T15:36:14.370880+09:00",
+      "last_started_at": "2026-11-25T15:46:41.534786+09:00",
+      "last_finished_at": "2026-11-25T15:46:47.857138+09:00",
       "status": "success",
-      "run_id": "45561792453",
-      "last_success_at": "2026-11-25T15:36:14.370880+09:00"
+      "run_id": "45563090585",
+      "last_success_at": "2026-11-25T15:46:47.857138+09:00"
     }
   },
   "notification_log": [
