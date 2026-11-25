@@ -2640,7 +2640,8 @@
     "140120261125586109",
     "140120261125585982",
     "140120261125585994",
-    "140120261125586142"
+    "140120261125586142",
+    "140120261125585738"
   ],
   "events": [
     {
@@ -8488,6 +8489,50 @@
           "吸収規模80億円未満"
         ]
       }
+    },
+    {
+      "id": "split-9731-2026-11-25",
+      "type": "split",
+      "code": "9731",
+      "name": "白洋舎",
+      "market": "スタンダード",
+      "margin": "信用",
+      "announced_at": "2026-11-25T17:00:00+09:00",
+      "detail": {
+        "ratio": "2",
+        "record_date": "2026-12-30",
+        "record_date_raw": "基準日は2026年12月30日",
+        "rights_final_date": "2026-12-28",
+        "rights_final_date_raw": null,
+        "rights_final_source": "record_date_t_plus_2",
+        "rights_final_calculation_basis": "record_date_t_plus_2",
+        "rights_final_confirmed": false,
+        "rights_final_status": "provisional",
+        "rights_date_conflict": false,
+        "ex_right_date": "2026-12-29",
+        "effective_date": "2027-01-01",
+        "effective_date_raw": "効力発生日 2027年 1 月 1 日 （5）その他 今回の株式分割に際して、資本金の額に変更はありません。 2.株式分割に伴う定款の一部変更について （1）変更の理由 今回の株式分割に伴い、会社法第184条第2項の規定に基づき、2027年1月1日をもって、当社 定款第5条に定める発行可能株式総数を分割比率に合わせて変更いたします。 （2）変更の内容 （下線"
+      },
+      "schedule": [],
+      "pdf_url": "https://www.release.tdnet.info/inbs/140120261125585738.pdf",
+      "latest_pdf_url": "https://www.release.tdnet.info/inbs/140120261125585738.pdf",
+      "source_title": "株式分割、株式分割に伴う定款の一部変更および株主優待制度の変更に関するお知らせ",
+      "related_disclosures": [
+        {
+          "id": "140120261125585738",
+          "relation": "source",
+          "title": "株式分割、株式分割に伴う定款の一部変更および株主優待制度の変更に関するお知らせ",
+          "announced_at": "2026-11-25T17:00:00+09:00",
+          "pdf_url": "https://www.release.tdnet.info/inbs/140120261125585738.pdf",
+          "market": "東証"
+        }
+      ],
+      "eligibility": {
+        "status": "excluded",
+        "reasons": [
+          "貸借対象外"
+        ]
+      }
     }
   ],
   "source_health": {
@@ -8495,7 +8540,7 @@
       "last_checked_date": "2026-11-25",
       "last_success_date": "2026-11-25",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-25T17:00:11.674838+09:00",
+      "last_success_at": "2026-11-25T17:10:45.964622+09:00",
       "by_date": {
         "2026-10-26": {
           "checked_at": "2026-10-27T19:58:38.834825+09:00",
@@ -8612,20 +8657,20 @@
           "last_success_at": "2026-11-24T19:54:47.102776+09:00"
         },
         "2026-11-24": {
-          "checked_at": "2026-11-25T17:00:10.409383+09:00",
+          "checked_at": "2026-11-25T17:10:44.857025+09:00",
           "count": 200,
           "status": "success",
-          "last_success_at": "2026-11-25T17:00:10.409383+09:00"
+          "last_success_at": "2026-11-25T17:10:44.857025+09:00"
         },
         "2026-11-25": {
-          "checked_at": "2026-11-25T17:00:11.674623+09:00",
-          "count": 168,
+          "checked_at": "2026-11-25T17:10:45.964293+09:00",
+          "count": 178,
           "status": "success",
-          "last_success_at": "2026-11-25T17:00:11.674623+09:00"
+          "last_success_at": "2026-11-25T17:10:45.964293+09:00"
         }
       },
-      "last_checked_at": "2026-11-25T17:00:11.674623+09:00",
-      "last_complete_poll_at": "2026-11-25T17:00:11.674843+09:00"
+      "last_checked_at": "2026-11-25T17:10:45.964293+09:00",
+      "last_complete_poll_at": "2026-11-25T17:10:45.964632+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-25",
@@ -8930,11 +8975,11 @@
       "last_success_at": "2026-11-25T12:43:06.420588+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-25T17:00:07.100072+09:00",
-      "last_finished_at": "2026-11-25T17:00:11.688285+09:00",
+      "last_started_at": "2026-11-25T17:10:41.375423+09:00",
+      "last_finished_at": "2026-11-25T17:10:46.482265+09:00",
       "status": "success",
-      "run_id": "45572497100",
-      "last_success_at": "2026-11-25T17:00:11.688285+09:00"
+      "run_id": "45573989198",
+      "last_success_at": "2026-11-25T17:10:46.482265+09:00"
     }
   },
   "notification_log": [
