@@ -8347,9 +8347,13 @@
         {
           "date": "2026-11-25",
           "label": "pricing_day",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "06:00",
-          "action_cutoff_jst": "09:00"
+          "action_cutoff_jst": "09:00",
+          "notification_id": "bb7a341e6023064a49bd5b7a211fc6c50f5e1d3f3789129fc434cdcb28763f12",
+          "sent_at": "2026-11-25T16:07:42.703998+09:00",
+          "sent_by": "45565686057",
+          "reference_only": true
         },
         {
           "date": "2026-11-26",
@@ -8751,7 +8755,7 @@
       "failure": 0
     },
     "2026-11-25": {
-      "success": 6,
+      "success": 7,
       "failure": 0
     }
   },
@@ -8832,11 +8836,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-25T15:37:11.261421+09:00",
-      "last_finished_at": "2026-11-25T15:37:11.279146+09:00",
+      "last_started_at": "2026-11-25T16:07:42.642535+09:00",
+      "last_finished_at": "2026-11-25T16:07:42.895660+09:00",
       "status": "success",
-      "run_id": "45561923981",
-      "last_success_at": "2026-11-25T15:37:11.279146+09:00"
+      "run_id": "45565686057",
+      "last_success_at": "2026-11-25T16:07:42.895660+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-25T12:43:01.587736+09:00",
@@ -11019,6 +11023,18 @@
       "run_id": "45486606776",
       "channel": "po",
       "restored_from_receipt": true
+    },
+    {
+      "event_id": "po-166A-2026-11-25",
+      "channel": "po",
+      "scheduled_for": "2026-11-25",
+      "label": "pricing_day",
+      "attempted_at": "2026-11-25T16:07:42.703998+09:00",
+      "outcome": "accepted",
+      "notification_id": "bb7a341e6023064a49bd5b7a211fc6c50f5e1d3f3789129fc434cdcb28763f12",
+      "reference_only": true,
+      "error_type": null,
+      "run_id": "45565686057"
     }
   ],
   "delivery_receipt_artifacts": [
