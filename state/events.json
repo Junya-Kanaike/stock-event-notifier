@@ -4058,8 +4058,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -4412,8 +4412,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -4899,8 +4899,8 @@
         "record_date_raw": "基準日2026年11月30日",
         "rights_final_date": "2026-11-26",
         "rights_final_date_raw": null,
-        "rights_final_source": "jpx_ex_rights",
-        "rights_final_calculation_basis": "jpx_ex_right_date_minus_1_business_day",
+        "rights_final_source": "traders_web",
+        "rights_final_calculation_basis": "traders_web_rights_final_date",
         "rights_final_confirmed": true,
         "rights_final_status": "confirmed",
         "rights_date_conflict": false,
@@ -8444,7 +8444,7 @@
       "last_checked_date": "2026-11-26",
       "last_success_date": "2026-11-26",
       "consecutive_empty_days": 0,
-      "last_success_at": "2026-11-26T03:01:38.140064+09:00",
+      "last_success_at": "2026-11-26T08:01:51.255465+09:00",
       "by_date": {
         "2026-10-27": {
           "checked_at": "2026-10-28T19:55:10.273259+09:00",
@@ -8561,20 +8561,20 @@
           "last_success_at": "2026-11-25T20:00:12.366928+09:00"
         },
         "2026-11-25": {
-          "checked_at": "2026-11-26T03:01:37.087672+09:00",
+          "checked_at": "2026-11-26T08:01:50.236190+09:00",
           "count": 200,
           "status": "success",
-          "last_success_at": "2026-11-26T03:01:37.087672+09:00"
+          "last_success_at": "2026-11-26T08:01:50.236190+09:00"
         },
         "2026-11-26": {
-          "checked_at": "2026-11-26T03:01:38.139852+09:00",
+          "checked_at": "2026-11-26T08:01:51.255311+09:00",
           "count": 0,
           "status": "success",
-          "last_success_at": "2026-11-26T03:01:38.139852+09:00"
+          "last_success_at": "2026-11-26T08:01:51.255311+09:00"
         }
       },
-      "last_checked_at": "2026-11-26T03:01:38.139852+09:00",
-      "last_complete_poll_at": "2026-11-26T03:01:38.140072+09:00"
+      "last_checked_at": "2026-11-26T08:01:51.255311+09:00",
+      "last_complete_poll_at": "2026-11-26T08:01:51.255471+09:00"
     },
     "jpx_master": {
       "last_success_date": "2026-11-26",
@@ -8880,11 +8880,11 @@
       "last_success_at": "2026-11-26T05:40:25.311613+09:00"
     },
     "poll_tdnet": {
-      "last_started_at": "2026-11-26T03:01:30.072922+09:00",
-      "last_finished_at": "2026-11-26T03:01:38.167769+09:00",
+      "last_started_at": "2026-11-26T08:01:47.016912+09:00",
+      "last_finished_at": "2026-11-26T08:01:51.263419+09:00",
       "status": "success",
-      "run_id": "45670809863",
-      "last_success_at": "2026-11-26T03:01:38.167769+09:00"
+      "run_id": "45718065351",
+      "last_success_at": "2026-11-26T08:01:51.263419+09:00"
     }
   },
   "notification_log": [
@@ -11138,6 +11138,7 @@
     14900554888,
     14965040173,
     14999607907,
-    15062542244
+    15062542244,
+    15069948888
   ]
 }
