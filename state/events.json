@@ -4109,9 +4109,13 @@
         {
           "date": "2026-11-27",
           "label": "rights_final+1_noon",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "12:00",
-          "action_cutoff_jst": "15:30"
+          "action_cutoff_jst": "15:30",
+          "notification_id": "bf4cc9a44ef32b2f0aec039411900cb4664e58e16b3d1f40ed936210ae104c7d",
+          "sent_at": "2026-11-27T12:00:29.424806+09:00",
+          "sent_by": "45931574295",
+          "reference_only": false
         },
         {
           "date": "2026-12-03",
@@ -4466,9 +4470,13 @@
         {
           "date": "2026-11-27",
           "label": "rights_final+1_noon",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "12:00",
-          "action_cutoff_jst": "15:30"
+          "action_cutoff_jst": "15:30",
+          "notification_id": "a55cce469d88c5e04c04638b2822d85de6e4595e5ed706f9f0895f25f1324fe7",
+          "sent_at": "2026-11-27T12:00:29.358242+09:00",
+          "sent_by": "45931574295",
+          "reference_only": false
         },
         {
           "date": "2026-12-03",
@@ -4962,9 +4970,13 @@
         {
           "date": "2026-11-27",
           "label": "rights_final+1_noon",
-          "sent": false,
+          "sent": true,
           "not_before_jst": "12:00",
-          "action_cutoff_jst": "15:30"
+          "action_cutoff_jst": "15:30",
+          "notification_id": "d49103c3bd1a02783e9442cafc947979fd30d10c1d1d57d86f773c4d4d666360",
+          "sent_at": "2026-11-27T12:00:29.486526+09:00",
+          "sent_by": "45931574295",
+          "reference_only": false
         },
         {
           "date": "2026-12-03",
@@ -8831,7 +8843,7 @@
       "failure": 0
     },
     "2026-11-27": {
-      "success": 4,
+      "success": 7,
       "failure": 0
     }
   },
@@ -8914,11 +8926,11 @@
   },
   "workflow_health": {
     "timed_notifications": {
-      "last_started_at": "2026-11-27T11:43:28.623605+09:00",
-      "last_finished_at": "2026-11-27T11:43:28.650723+09:00",
+      "last_started_at": "2026-11-27T12:00:29.304899+09:00",
+      "last_finished_at": "2026-11-27T12:00:29.539362+09:00",
       "status": "success",
-      "run_id": "45929982695",
-      "last_success_at": "2026-11-27T11:43:28.650723+09:00"
+      "run_id": "45931574295",
+      "last_success_at": "2026-11-27T12:00:29.539362+09:00"
     },
     "daily_morning": {
       "last_started_at": "2026-11-27T05:40:40.695672+09:00",
@@ -11245,6 +11257,42 @@
       "reference_only": false,
       "error_type": null,
       "run_id": "45895093057"
+    },
+    {
+      "event_id": "split-3374-2026-10-14",
+      "channel": "split",
+      "scheduled_for": "2026-11-27",
+      "label": "rights_final+1_noon",
+      "attempted_at": "2026-11-27T12:00:29.358242+09:00",
+      "outcome": "accepted",
+      "notification_id": "a55cce469d88c5e04c04638b2822d85de6e4595e5ed706f9f0895f25f1324fe7",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "45931574295"
+    },
+    {
+      "event_id": "split-6474-2026-10-05",
+      "channel": "split",
+      "scheduled_for": "2026-11-27",
+      "label": "rights_final+1_noon",
+      "attempted_at": "2026-11-27T12:00:29.424806+09:00",
+      "outcome": "accepted",
+      "notification_id": "bf4cc9a44ef32b2f0aec039411900cb4664e58e16b3d1f40ed936210ae104c7d",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "45931574295"
+    },
+    {
+      "event_id": "split-7921-2026-10-27",
+      "channel": "split",
+      "scheduled_for": "2026-11-27",
+      "label": "rights_final+1_noon",
+      "attempted_at": "2026-11-27T12:00:29.486526+09:00",
+      "outcome": "accepted",
+      "notification_id": "d49103c3bd1a02783e9442cafc947979fd30d10c1d1d57d86f773c4d4d666360",
+      "reference_only": false,
+      "error_type": null,
+      "run_id": "45931574295"
     }
   ],
   "delivery_receipt_artifacts": [
