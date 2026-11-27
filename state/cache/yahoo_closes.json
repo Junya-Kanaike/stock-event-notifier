@@ -1,6 +1,6 @@
 {
   "cache_version": 1,
-  "fetched_at": "2026-11-25T07:20:10.314228+00:00",
+  "fetched_at": "2026-11-27T06:53:30.636984+00:00",
   "data": {
     "9235:2026-07-31": {
       "code": "9235",
@@ -369,6 +369,22 @@
       "close_yen": 1016.0,
       "source": "Yahoo Finance chart (raw close)",
       "requested_date": "2026-11-25"
+    },
+    "9889:2026-11-27": {
+      "code": "9889",
+      "symbol": "9889.T",
+      "date": "2026-11-27",
+      "close_yen": 2249.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-11-27"
+    },
+    "1762:2026-11-27": {
+      "code": "1762",
+      "symbol": "1762.T",
+      "date": "2026-11-27",
+      "close_yen": 4610.0,
+      "source": "Yahoo Finance chart (raw close)",
+      "requested_date": "2026-11-27"
     }
   }
 }
